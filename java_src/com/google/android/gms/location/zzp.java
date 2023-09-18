@@ -3,7 +3,7 @@ package com.google.android.gms.location;
 import android.os.IBinder;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzp extends com.google.android.gms.internal.location.zza implements zzr {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzp(IBinder iBinder) {

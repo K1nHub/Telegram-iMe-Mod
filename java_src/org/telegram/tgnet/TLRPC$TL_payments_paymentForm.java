@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_payments_paymentForm extends TLObject {
     public static int constructor = -1610250415;
     public long bot_id;

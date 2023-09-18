@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GatePair.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum GatePair {
     LIME_ETH(R$string.wallet_gate_pair_lime_eth, R$string.wallet_gate_pair_lime_eth_url),
     LIME_USDT(R$string.wallet_gate_pair_lime_usdt, R$string.wallet_gate_pair_lime_usdt_url),
@@ -42,7 +42,7 @@ public enum GatePair {
     }
 
     /* compiled from: GatePair.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

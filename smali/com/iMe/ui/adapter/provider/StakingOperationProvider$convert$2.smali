@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$2;->this$0:Lcom/iMe/ui/adapter/provider/StakingOperationProvider;
 
-    .line 49
+    .line 50
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -84,9 +84,10 @@
 
     move-result-object v2
 
+    .line 49
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 50
+    .line 51
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;)F
 
     move-result v1

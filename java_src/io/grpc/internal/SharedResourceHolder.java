@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SharedResourceHolder {
     private static final SharedResourceHolder holder = new SharedResourceHolder(new ScheduledExecutorFactory() { // from class: io.grpc.internal.SharedResourceHolder.1
         @Override // io.grpc.internal.SharedResourceHolder.ScheduledExecutorFactory
@@ -18,7 +18,7 @@ public final class SharedResourceHolder {
     private final ScheduledExecutorFactory destroyerFactory;
     private final IdentityHashMap<Resource<?>, Instance> instances = new IdentityHashMap<>();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Resource<T> {
         void close(T t);
 
@@ -26,7 +26,7 @@ public final class SharedResourceHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ScheduledExecutorFactory {
         ScheduledExecutorService createScheduledExecutor();
     }
@@ -93,7 +93,7 @@ public final class SharedResourceHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Instance {
         ScheduledFuture<?> destroyTask;
         final Object payload;

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CatalogAllView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CatalogAllView extends BaseView, GlobalStateView, LoadMoreView<BaseNode>, SwipeRefreshView {
     void onCategoriesLoaded(List<BaseNode> list);
 

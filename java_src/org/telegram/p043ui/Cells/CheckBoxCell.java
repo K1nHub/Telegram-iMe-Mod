@@ -18,7 +18,7 @@ import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -28,7 +28,7 @@ import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.CheckBoxCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CheckBoxCell extends FrameLayout {
     private final View checkBox;
     private CheckBox2 checkBoxRound;
@@ -122,7 +122,7 @@ public class CheckBoxCell extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-2, -1, (LocaleController.isRTL ? 3 : 5) | 48, i2, 0, i2, 0));
         if (i == i3) {
             ImageView imageView = new ImageView(context);
-            imageView.setImageResource(C3558R.C3560drawable.account_check);
+            imageView.setImageResource(C3473R.C3475drawable.account_check);
             ImageViewExtKt.setImageColor(imageView, getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon));
             this.checkBox = imageView;
             this.checkBoxSize = 20;
@@ -226,7 +226,7 @@ public class CheckBoxCell extends FrameLayout {
         }
         if (this.collapsedArrow == null) {
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3558R.C3560drawable.arrow_more).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3473R.C3475drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             addView(this.collapsedArrow, LayoutHelper.createFrame(16, 16, 16));

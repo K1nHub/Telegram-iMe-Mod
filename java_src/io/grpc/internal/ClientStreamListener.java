@@ -2,10 +2,10 @@ package io.grpc.internal;
 
 import io.grpc.Metadata;
 import io.grpc.Status;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ClientStreamListener extends StreamListener {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum RpcProgress {
         PROCESSED,
         REFUSED,

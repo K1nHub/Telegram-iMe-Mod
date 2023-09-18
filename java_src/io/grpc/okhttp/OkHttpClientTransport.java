@@ -80,7 +80,7 @@ import okio.Okio;
 import okio.Source;
 import okio.Timeout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class OkHttpClientTransport implements ConnectionClientTransport, ExceptionHandlingFrameWriter.TransportExceptionHandler {
     private final InetSocketAddress address;
     private Attributes attributes;
@@ -760,7 +760,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
         return status2.withDescription("Unknown http2 error code: " + errorCode.httpCode);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     class ClientFrameHandler implements FrameReader.Handler, Runnable {
         boolean firstSettings;
         FrameReader frameReader;

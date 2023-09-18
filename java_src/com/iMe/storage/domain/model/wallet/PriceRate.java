@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet;
 
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 /* compiled from: PriceRate.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PriceRate {
     private final float ratePercentageChange24h;
     private final double rateToDollars;

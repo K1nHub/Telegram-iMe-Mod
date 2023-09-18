@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import java.io.Closeable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ReadableBuffer extends Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     void close();

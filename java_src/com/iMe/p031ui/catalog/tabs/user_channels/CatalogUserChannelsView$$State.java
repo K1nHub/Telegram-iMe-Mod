@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChannelsView> implements CatalogUserChannelsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -117,7 +117,7 @@ public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChan
 
     /* compiled from: CatalogUserChannelsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State$ShowItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowItemsCommand extends ViewCommand<CatalogUserChannelsView> {
         public final List<BaseNode> items;
 
@@ -134,7 +134,7 @@ public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChan
 
     /* compiled from: CatalogUserChannelsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State$OpenAddChannelScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenAddChannelScreenCommand extends ViewCommand<CatalogUserChannelsView> {
         OpenAddChannelScreenCommand(CatalogUserChannelsView$$State catalogUserChannelsView$$State) {
             super("openAddChannelScreen", OneExecutionStateStrategy.class);
@@ -148,7 +148,7 @@ public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChan
 
     /* compiled from: CatalogUserChannelsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<CatalogUserChannelsView> {
         public final String text;
 
@@ -165,7 +165,7 @@ public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChan
 
     /* compiled from: CatalogUserChannelsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogUserChannelsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -186,7 +186,7 @@ public class CatalogUserChannelsView$$State extends MvpViewState<CatalogUserChan
 
     /* compiled from: CatalogUserChannelsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogUserChannelsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

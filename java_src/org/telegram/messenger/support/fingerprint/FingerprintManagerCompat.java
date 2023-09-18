@@ -8,12 +8,12 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.support.fingerprint.FingerprintManagerCompatApi23;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FingerprintManagerCompat {
     static final FingerprintManagerCompatImpl IMPL;
     private Context mContext;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class AuthenticationCallback {
         public abstract void onAuthenticationError(int i, CharSequence charSequence);
 
@@ -24,7 +24,7 @@ public final class FingerprintManagerCompat {
         public abstract void onAuthenticationSucceeded(AuthenticationResult authenticationResult);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private interface FingerprintManagerCompatImpl {
         void authenticate(Context context, CryptoObject cryptoObject, int i, CancellationSignal cancellationSignal, AuthenticationCallback authenticationCallback, Handler handler);
 
@@ -33,7 +33,7 @@ public final class FingerprintManagerCompat {
         boolean isHardwareDetected(Context context);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class LegacyFingerprintManagerCompatImpl implements FingerprintManagerCompatImpl {
         @Override // org.telegram.messenger.support.fingerprint.FingerprintManagerCompat.FingerprintManagerCompatImpl
         public void authenticate(Context context, CryptoObject cryptoObject, int i, CancellationSignal cancellationSignal, AuthenticationCallback authenticationCallback, Handler handler) {
@@ -78,7 +78,7 @@ public final class FingerprintManagerCompat {
         IMPL.authenticate(this.mContext, cryptoObject, i, cancellationSignal, authenticationCallback, handler);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class CryptoObject {
         private final Cipher mCipher;
         private final Mac mMac;
@@ -115,7 +115,7 @@ public final class FingerprintManagerCompat {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class AuthenticationResult {
         private CryptoObject mCryptoObject;
 
@@ -128,7 +128,7 @@ public final class FingerprintManagerCompat {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class Api23FingerprintManagerCompatImpl implements FingerprintManagerCompatImpl {
         @Override // org.telegram.messenger.support.fingerprint.FingerprintManagerCompat.FingerprintManagerCompatImpl
         public boolean hasEnrolledFingerprints(Context context) {

@@ -10,18 +10,18 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: FiltersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.adapter.FiltersRecycleAdapter */
 /* loaded from: classes.dex */
 public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, BaseViewHolder> {
-    public FiltersRecycleAdapter() {
-        super(C3558R.layout.fork_recycle_item_filter, null, 2, null);
-    }
-
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, FilterItem filterItem, List list) {
         convert2(baseViewHolder, filterItem, (List<? extends Object>) list);
+    }
+
+    public FiltersRecycleAdapter() {
+        super(C3473R.layout.fork_recycle_item_filter, null, 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -29,7 +29,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
     public void convert(BaseViewHolder holder, final FilterItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(holder, C3558R.C3561id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$1
+        BaseQuickAdapterExtKt.applyForView(holder, C3473R.C3476id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -55,7 +55,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(holder, C3558R.C3561id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$2
+        BaseQuickAdapterExtKt.applyForView(holder, C3473R.C3476id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

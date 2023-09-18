@@ -1,6 +1,6 @@
 package com.iMe.storage.data.network.model.response.twitter;
 /* compiled from: TweetLikedStatusResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TweetLikedStatusResponse {
     private final boolean liked;
 

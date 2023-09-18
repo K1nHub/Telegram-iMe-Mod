@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.swap.SwapSlippage;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapFeeScreenArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SwapFeeScreenArgs {
     private final CryptoSwapMetadata metadata;
     private final SwapProtocol protocol;

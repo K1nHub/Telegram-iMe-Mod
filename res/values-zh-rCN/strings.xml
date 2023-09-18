@@ -5014,25 +5014,6 @@ Do you still remember your password?"</string>
     <string name="already_removing">另一删除进程已开始，请稍后重试</string>
     <string name="app_restart_error">我们无法打开应用，请您自己试试。</string>
     <string name="app_update_dialog_description">请更新应用以使用此功能</string>
-    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">已禁用分发</string>
-    <string name="appcenter_distribute_download_progress_number_format">%1$d MB，共 %2$d MB</string>
-    <string name="appcenter_distribute_downloading_mandatory_update">正在下载更新</string>
-    <string name="appcenter_distribute_install">安装</string>
-    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) 已下载并可供安装。</string>
-    <string name="appcenter_distribute_install_ready_title">已下载应用更新</string>
-    <string name="appcenter_distribute_notification_category">应用更新</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_message">为了安全起见，设备设置为阻止安装从未知来源获取的应用。</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_settings">设置</string>
-    <string name="appcenter_distribute_update_dialog_download">下载</string>
-    <string name="appcenter_distribute_update_dialog_message_mandatory">此应用的开发人员要求用户更新为 %1$s %2$s (%3$d)。</string>
-    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) 可供下载和安装。</string>
-    <string name="appcenter_distribute_update_dialog_postpone">一天内询问我</string>
-    <string name="appcenter_distribute_update_dialog_title">可用的应用更新</string>
-    <string name="appcenter_distribute_update_dialog_view_release_notes">查看发行说明</string>
-    <string name="appcenter_distribute_update_failed_dialog_ignore">忽略</string>
-    <string name="appcenter_distribute_update_failed_dialog_message">此版本是侧载或者在浏览器的隐私模式中下载的。</string>
-    <string name="appcenter_distribute_update_failed_dialog_reinstall">重新安装应用程序</string>
-    <string name="appcenter_distribute_update_failed_dialog_title">禁用应用程序更新</string>
     <string name="archive_content_is_hidden">内容已隐藏</string>
     <string name="archive_empty_subtitle">您发送到归档的聊天记录便存储在这里</string>
     <string name="archive_empty_title">归档为空</string>
@@ -6193,8 +6174,8 @@ iMe不收取任何额外费用。"</string>
     <string name="wallet_backup_ready">准备好出发！</string>
     <string name="wallet_backup_ready_info">你都准备好了。 现在你有一个只有你自己控制的钱包——直接控制，没有中间商或银行家。</string>
     <string name="wallet_backup_scan_qr">扫描二维码</string>
-    <string name="wallet_backup_secret_words">24个密语</string>
-    <string name="wallet_backup_secret_words_info">"按照正确的顺序写下这 24 个单词，并将它们存放在一个秘密的地方。
+    <string name="wallet_backup_secret_words">个密语</string>
+    <string name="wallet_backup_secret_words_info">"按照正确的顺序写下这 个单词，并将它们存放在一个秘密的地方。
 
 如果您丢失了密码或设备，请使用这些密语来恢复对您钱包的访问。"</string>
     <string name="wallet_backup_secret_words_pdf">保存为PDF</string>
@@ -6603,7 +6584,7 @@ iMe钱包。"</string>
     <string name="wallet_swap_process_what_is_approve">通证授权是什么？</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">授权是通证的一次性交易，需要在交换开始前进行。此操作让您授予权限使用智能合约通过去中心化交易所（DEX）协议来交换通证。由于此操作在区块链上进行，因此将收取矿工费。当前通证无需您重新授权。</string>
     <string name="wallet_swap_protocols_1inch_description">提供最优惠价格的去中心化交易所聚合平台</string>
-    <string name="wallet_swap_protocols_1inch_long_description">您可以通过智能合约，使用去中心化交易所聚合平台在以太坊、BNB链、Polygon网络以最优惠的价格相互交换通证</string>
+    <string name="wallet_swap_protocols_1inch_long_description">您可以通过智能合约，使用去中心化交易所聚合平台在以太坊、BNB链、Fantom、Polygon网络以最优惠的价格相互交换通证</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">桥</string>
     <string name="wallet_swap_protocols_header_title">去中心化交易所</string>
     <string name="wallet_swap_protocols_pancake_swap_description">基于BNB链的去中心化交易所协议</string>

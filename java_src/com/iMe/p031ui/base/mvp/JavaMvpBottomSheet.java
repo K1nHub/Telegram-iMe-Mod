@@ -6,7 +6,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: JavaMvpBottomSheet.kt */
 /* renamed from: com.iMe.ui.base.mvp.JavaMvpBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class JavaMvpBottomSheet extends MvpBottomSheet {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public JavaMvpBottomSheet(Context context, boolean z) {

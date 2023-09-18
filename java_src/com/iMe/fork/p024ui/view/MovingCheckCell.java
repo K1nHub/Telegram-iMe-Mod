@@ -19,13 +19,13 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: MovingCheckCell.kt */
 /* renamed from: com.iMe.fork.ui.view.MovingCheckCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MovingCheckCell extends FrameLayout {
     private final CheckBoxSquare checkBox;
     private final AppCompatImageView iconView;
@@ -130,9 +130,9 @@ public final class MovingCheckCell extends FrameLayout {
         int i;
         ImageView imageView = this.moveIconView;
         if (z) {
-            i = C3558R.C3560drawable.chats_pin;
+            i = C3473R.C3475drawable.chats_pin;
         } else {
-            i = C3558R.C3560drawable.list_reorder;
+            i = C3473R.C3475drawable.list_reorder;
         }
         imageView.setImageResource(i);
         ViewExtKt.gone(this.checkBox, z);
@@ -158,7 +158,7 @@ public final class MovingCheckCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3558R.C3560drawable.list_reorder);
+        imageView.setImageResource(C3473R.C3475drawable.list_reorder);
         return imageView;
     }
 
@@ -237,7 +237,7 @@ public final class MovingCheckCell extends FrameLayout {
 
     /* compiled from: MovingCheckCell.kt */
     /* renamed from: com.iMe.fork.ui.view.MovingCheckCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

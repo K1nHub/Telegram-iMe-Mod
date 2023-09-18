@@ -1,5 +1,5 @@
 package com.google.firebase.firestore.util;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Assert {
     public static void hardAssert(boolean z, String str, Object... objArr) {
         if (!z) {

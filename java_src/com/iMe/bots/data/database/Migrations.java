@@ -7,7 +7,7 @@ import com.iMe.bots.data.model.BotType;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__IndentKt;
 /* compiled from: Migrations.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Migrations {
     public static final Migrations INSTANCE = new Migrations();
     private static final Migration FROM_6_TO_7 = new Migration() { // from class: com.iMe.bots.data.database.Migrations$FROM_6_TO_7$1

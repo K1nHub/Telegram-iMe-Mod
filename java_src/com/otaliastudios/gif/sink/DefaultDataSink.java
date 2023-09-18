@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DefaultDataSink implements DataSink {
     private static final Logger LOG = new Logger(DefaultDataSink.class.getSimpleName());
     private final MediaMuxer mMuxer;
@@ -20,7 +20,7 @@ public class DefaultDataSink implements DataSink {
     private ByteBuffer mQueueBuffer;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class QueuedSample {
         private final int mFlags;
         private final int mSize;

@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedTextView;
@@ -21,7 +21,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Switch;
 /* renamed from: org.telegram.ui.Cells.TextCheckCell2 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextCheckCell2 extends FrameLayout {
     private AnimatedTextView animatedTextView;
     private Switch checkBox;
@@ -48,7 +48,7 @@ public class TextCheckCell2 extends FrameLayout {
             this.animatedTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.collapseViewContainer.addView(this.animatedTextView, LayoutHelper.createFrame(-2, 20));
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3558R.C3560drawable.arrow_more).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3473R.C3475drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             this.collapseViewContainer.addView(this.collapsedArrow, LayoutHelper.createLinear(16, 16, 16));

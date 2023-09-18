@@ -3,7 +3,7 @@ package com.google.firebase.firestore.core;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AsyncEventListener<T> implements EventListener<T> {
     private final EventListener<T> eventListener;
     private final Executor executor;

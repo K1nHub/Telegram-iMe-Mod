@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Stories.UploadingDotsSpannable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class UploadingDotsSpannable extends ReplacementSpan {
     private boolean isMediumTypeface;
     long lastTime;

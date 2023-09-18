@@ -4,7 +4,7 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class NumericIncrementTransformOperation implements TransformOperation {
     private Value operand;
 

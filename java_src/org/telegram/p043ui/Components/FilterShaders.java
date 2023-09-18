@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* renamed from: org.telegram.ui.Components.FilterShaders */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FilterShaders {
     private BlurProgram blurProgram;
     private boolean blurTextureCreated;
@@ -138,7 +138,7 @@ public class FilterShaders {
     private boolean scaleBitmap = true;
 
     /* renamed from: org.telegram.ui.Components.FilterShaders$FilterShadersDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface FilterShadersDelegate {
         ByteBuffer fillAndGetCurveBuffer();
 
@@ -307,7 +307,7 @@ public class FilterShaders {
     }
 
     /* renamed from: org.telegram.ui.Components.FilterShaders$BlurProgram */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static class BlurProgram {
         public int blurHeightHandle;
         public int blurInputTexCoordHandle;
@@ -373,7 +373,7 @@ public class FilterShaders {
     }
 
     /* renamed from: org.telegram.ui.Components.FilterShaders$ToneCurve */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static class ToneCurve {
         private float[] blueCurve;
         private int[] curveTexture = new int[1];
@@ -837,9 +837,9 @@ public class FilterShaders {
         int i = 2;
         int i2 = 1;
         if (hDRType == 1) {
-            readRes = RLottieDrawable.readRes(null, C3558R.raw.yuv_hlg2rgb);
+            readRes = RLottieDrawable.readRes(null, C3473R.raw.yuv_hlg2rgb);
         } else {
-            readRes = hDRType == 2 ? RLottieDrawable.readRes(null, C3558R.raw.yuv_pq2rgb) : "";
+            readRes = hDRType == 2 ? RLottieDrawable.readRes(null, C3473R.raw.yuv_pq2rgb) : "";
         }
         boolean z = this.isVideo;
         String str = z ? "#extension GL_OES_EGL_image_external : require" : "";
@@ -1351,7 +1351,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.radialBlurExcludeSizeHandle, this.delegate.getBlurExcludeSize());
             GLES20.glUniform1f(this.radialBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             Point blurExcludePoint = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1815x, blurExcludePoint.f1816y);
+            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1806x, blurExcludePoint.f1807y);
             GLES20.glUniform1f(this.radialBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.radialBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.radialBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);
@@ -1365,7 +1365,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.linearBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             GLES20.glUniform1f(this.linearBlurAngleHandle, this.delegate.getBlurAngle());
             Point blurExcludePoint2 = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1815x, blurExcludePoint2.f1816y);
+            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1806x, blurExcludePoint2.f1807y);
             GLES20.glUniform1f(this.linearBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.linearBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.linearBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);

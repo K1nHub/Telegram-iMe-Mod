@@ -7,14 +7,14 @@ import com.iMe.model.catalog.CampaignItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CampaignProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CampaignProvider */
 /* loaded from: classes.dex */
 public final class CampaignProvider extends BaseNodeProvider<CampaignItem> {
     private final int itemViewType = IdFabric$ViewTypes.CATALOG_CAMPAIGN;
-    private final int layoutId = C3558R.layout.fork_recycle_item_catalog_channel;
+    private final int layoutId = C3473R.layout.fork_recycle_item_catalog_channel;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public int getItemViewType() {
@@ -30,11 +30,11 @@ public final class CampaignProvider extends BaseNodeProvider<CampaignItem> {
     public void convert(BaseViewHolder helper, CampaignItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.card_channel;
+        int i = C3473R.C3476id.card_channel;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3558R.C3561id.text_name;
+        int i2 = C3473R.C3476id.text_name;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, Theme.key_chat_messagePanelText);
-        int i3 = C3558R.C3561id.text_subscribers_count;
-        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_windowBackgroundWhiteGrayText2), i2).setText(i2, item.getTitle()).setText(i3, AndroidUtilities.formatNumber(item.getMembersCount())), C3558R.C3561id.image_verified, item.isVerified()), C3558R.C3561id.image_logo, item.getPhoto(), null, false, 12, null);
+        int i3 = C3473R.C3476id.text_subscribers_count;
+        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_windowBackgroundWhiteGrayText2), i2).setText(i2, item.getTitle()).setText(i3, AndroidUtilities.formatNumber(item.getMembersCount())), C3473R.C3476id.image_verified, item.isVerified()), C3473R.C3476id.image_logo, item.getPhoto(), null, false, 12, null);
     }
 }

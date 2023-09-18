@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerializer;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CallbackInputCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CallbackInput extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CallbackInput> CREATOR = new zzh();
     @SafeParcelable.Field(m797id = 1)
@@ -18,7 +18,7 @@ public class CallbackInput extends AbstractSafeParcelable implements ReflectedPa
     byte[] zzb;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzg zzgVar) {
         }

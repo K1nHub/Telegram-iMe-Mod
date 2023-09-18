@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class LazyStandaloneCoroutine extends StandaloneCoroutine {
     private final Continuation<Unit> continuation;
 

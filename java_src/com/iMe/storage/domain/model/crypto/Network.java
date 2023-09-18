@@ -4,7 +4,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: Network.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Network {
     public static final Companion Companion = new Companion(null);
     private static final String PATH_TEMPLATE_ADDRESS_PART = "{address}";
@@ -147,7 +147,7 @@ public final class Network {
     }
 
     /* compiled from: Network.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Explorer {
         private final String logoUrl;
         private final String name;
@@ -241,7 +241,7 @@ public final class Network {
         }
 
         /* compiled from: Network.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class PathTemplate {
             private final String address;
             private final String token;
@@ -361,7 +361,7 @@ public final class Network {
     }
 
     /* compiled from: Network.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

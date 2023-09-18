@@ -15,7 +15,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: SequenceBuilder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker, p033j$.util.Iterator {
     private Iterator<? extends T> nextIterator;
     private Continuation<? super Unit> nextStep;
@@ -63,7 +63,7 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
             Intrinsics.checkNotNull(continuation);
             this.nextStep = null;
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
         }
     }
 

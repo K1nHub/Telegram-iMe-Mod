@@ -3,7 +3,7 @@ package com.google.firebase.firestore.model.mutation;
 import com.google.firebase.firestore.model.MutableDocument;
 import com.google.firebase.firestore.model.SnapshotVersion;
 import com.google.firebase.firestore.util.Assert;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Precondition {
     public static final Precondition NONE = new Precondition(null, null);
     private final Boolean exists;

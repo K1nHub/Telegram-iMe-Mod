@@ -6,7 +6,7 @@ import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: AbstractCollection.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractCollection<E> implements Collection<E>, KMappedMarker {
     @Override // java.util.Collection
     public boolean add(E e) {

@@ -14,7 +14,7 @@ import com.google.firebase.messaging.WithinAppServiceBinder;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EnhancedIntentService extends Service {
     private Binder binder;
     private int lastStartId;

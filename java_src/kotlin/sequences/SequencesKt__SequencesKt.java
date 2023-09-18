@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Sequences.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
     public static <T> Sequence<T> asSequence(final Iterator<? extends T> it) {
         Intrinsics.checkNotNullParameter(it, "<this>");

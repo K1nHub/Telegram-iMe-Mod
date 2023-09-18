@@ -2,7 +2,7 @@ package io.reactivex.disposables;
 
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class ReferenceDisposable<T> extends AtomicReference<T> implements Disposable {
     protected abstract void onDisposed(T t);
 

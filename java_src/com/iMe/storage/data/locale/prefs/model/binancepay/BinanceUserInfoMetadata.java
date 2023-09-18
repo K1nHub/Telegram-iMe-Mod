@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.prefs.model.binancepay;
 import com.iMe.storage.domain.model.binancepay.BinanceUserInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceUserInfoMetadata.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceUserInfoMetadata {
     private final BinanceUserInfo info;
 

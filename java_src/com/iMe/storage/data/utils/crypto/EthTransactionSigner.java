@@ -7,7 +7,7 @@ import wallet.core.java.AnySigner;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: EthTransactionSigner.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EthTransactionSigner {
     public static final EthTransactionSigner INSTANCE = new EthTransactionSigner();
 
@@ -25,7 +25,7 @@ public final class EthTransactionSigner {
             erc20Transfer = newBuilder.setErc20Transfer(Ethereum.Transaction.ERC20Transfer.newBuilder().setAmount(CryptoExtKt.toByteString(amount)).setTo(recipientAddress));
         }
         Ethereum.Transaction build = erc20Transfer.build();
-        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …                 .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …   }\n            .build()");
         return build;
     }
 

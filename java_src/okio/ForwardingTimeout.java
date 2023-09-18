@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ForwardingTimeout.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ForwardingTimeout extends Timeout {
     private Timeout delegate;
 

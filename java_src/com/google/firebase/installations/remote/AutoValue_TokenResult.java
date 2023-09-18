@@ -1,7 +1,7 @@
 package com.google.firebase.installations.remote;
 
 import com.google.firebase.installations.remote.TokenResult;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_TokenResult extends TokenResult {
     private final TokenResult.ResponseCode responseCode;
     private final String token;
@@ -65,7 +65,7 @@ final class AutoValue_TokenResult extends TokenResult {
         return i ^ (responseCode != null ? responseCode.hashCode() : 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends TokenResult.Builder {
         private TokenResult.ResponseCode responseCode;
         private String token;

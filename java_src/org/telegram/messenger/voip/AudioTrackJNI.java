@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import android.media.AudioTrack;
 import com.google.android.exoplayer2.audio.OpusUtil;
 import java.nio.ByteBuffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AudioTrackJNI {
     private AudioTrack audioTrack;
     private byte[] buffer = new byte[1920];

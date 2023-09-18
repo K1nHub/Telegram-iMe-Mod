@@ -3,7 +3,7 @@ package com.iMe.model.hint;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HintModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HintModel {
     private final boolean autoHide;
     private final String text;

@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.LockFreeLinkedListHead;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NodeList extends LockFreeLinkedListHead implements Incomplete {
     @Override // kotlinx.coroutines.Incomplete
     public NodeList getList() {

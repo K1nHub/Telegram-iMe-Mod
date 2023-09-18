@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: User.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class User {
 
     /* renamed from: id */

@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 56
+    .line 83
     check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$convert$1$1;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$convert$1$1;->$this_with:Lcom/iMe/model/staking/StakingProgrammeItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -105,14 +105,14 @@
 
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
-    .line 58
+    .line 85
     new-instance v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
     invoke-direct {v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;
 
-    .line 59
+    .line 87
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -123,16 +123,17 @@
 
     move-result-object v2
 
+    .line 86
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 60
+    .line 88
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;)F
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 58
+    .line 85
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void

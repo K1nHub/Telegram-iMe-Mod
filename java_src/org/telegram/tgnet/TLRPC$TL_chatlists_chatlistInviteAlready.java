@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_chatlists_chatlistInviteAlready extends TLRPC$chatlist_ChatlistInvite {
     public static int constructor = -91752871;
     public int filter_id;

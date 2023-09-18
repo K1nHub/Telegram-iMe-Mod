@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.Unit;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 /* compiled from: CancellableContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class RemoveOnCancel extends BeforeResumeCancelHandler {
     private final LockFreeLinkedListNode node;
 
@@ -20,7 +20,7 @@ final class RemoveOnCancel extends BeforeResumeCancelHandler {
     @Override // kotlinx.coroutines.CancelHandlerBase
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public void invoke2(Throwable th) {
-        this.node.mo1689remove();
+        this.node.mo1687remove();
     }
 
     public String toString() {

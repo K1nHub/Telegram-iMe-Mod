@@ -15,7 +15,7 @@ import org.telegram.p043ui.Components.Forum.ForumUtilities;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.tgnet.TLRPC$TL_forumTopic;
 /* renamed from: org.telegram.ui.Cells.TopicSearchCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TopicSearchCell extends FrameLayout {
     BackupImageView backupImageView;
     public boolean drawDivider;

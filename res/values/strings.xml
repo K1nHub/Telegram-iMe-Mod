@@ -7327,31 +7327,6 @@ To get the reward, you need to:"</string>
     <string name="app_update_dialog_description">Update the application to use this functionality</string>
     <string name="app_update_not_found">The latest version of the application is already installed</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
-    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Distribute was disabled</string>
-    <string name="appcenter_distribute_download_progress_number_format">%1$d MB of %2$d MB</string>
-    <string name="appcenter_distribute_downloading_error">Failed to download app update</string>
-    <string name="appcenter_distribute_downloading_mandatory_update">Downloading update</string>
-    <string name="appcenter_distribute_downloading_update">@string/appcenter_distribute_downloading_mandatory_update</string>
-    <string name="appcenter_distribute_downloading_version">Downloading version %1$s (%2$d)</string>
-    <string name="appcenter_distribute_install">Install</string>
-    <string name="appcenter_distribute_install_completed_message">%1$s %2$s (%3$d) has been installed.</string>
-    <string name="appcenter_distribute_install_completed_title">App update installed</string>
-    <string name="appcenter_distribute_install_error">Failed to install app update</string>
-    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) has been downloaded and is ready to be installed.</string>
-    <string name="appcenter_distribute_install_ready_title">App update downloaded</string>
-    <string name="appcenter_distribute_notification_category">App updates</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_message">For security, your device is set to block installation of apps obtained from unknown sources.</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_settings">Settings</string>
-    <string name="appcenter_distribute_update_dialog_download">Download</string>
-    <string name="appcenter_distribute_update_dialog_message_mandatory">The developers of this app require you to update to %1$s %2$s (%3$d).</string>
-    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) is available to download and install.</string>
-    <string name="appcenter_distribute_update_dialog_postpone">Ask me in a day</string>
-    <string name="appcenter_distribute_update_dialog_title">App update available</string>
-    <string name="appcenter_distribute_update_dialog_view_release_notes">View release notes</string>
-    <string name="appcenter_distribute_update_failed_dialog_ignore">Ignore</string>
-    <string name="appcenter_distribute_update_failed_dialog_message">This release was either side-loaded or downloaded using a browser in private mode.</string>
-    <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstall app</string>
-    <string name="appcenter_distribute_update_failed_dialog_title">In-app updates disabled</string>
     <string name="archive_content_is_hidden">The content is hidden</string>
     <string name="archive_empty_subtitle">This is where the chats you sent to the archive are stored</string>
     <string name="archive_empty_title">Archive is empty</string>
@@ -7368,6 +7343,7 @@ You agree to the *iMe Terms of Service*
 
 We reserve the right to update these
 Terms of Service later."</string>
+    <string name="auth_success">Authorization completed successfully</string>
     <string name="auto_open_forwarding_options">Auto-opening forwarding options</string>
     <string name="auto_open_forwarding_options_alert_message">Enable auto-opening forwarding options?</string>
     <string name="auto_open_forwarding_options_hint">"You can always change it in 
@@ -7725,7 +7701,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">8d5bc7faf668408498095892200460ee</string>
+    <string name="com.crashlytics.android.build_id">9597e7d5f5d3463ea062c95d12c8d74d</string>
     <string name="combine_messages_disable">Do not combine messages</string>
     <string name="combine_messages_enable">Combine messages</string>
     <string name="combine_messages_send_without_combine">Send without combining</string>
@@ -7852,7 +7828,7 @@ Approval will be given for this smart contract:
     <string name="cryptobox_create_success_title">Success</string>
     <string name="cryptobox_create_title">Create new CryptoBox</string>
     <string name="cryptobox_create_user_not_owner">Please promote the bot to an admin for correct CryptoBoxes operation</string>
-    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Please allow admin rights for @iMeWalletBot to correct CryptoBoxes operation</string>
+    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Please allow admin rights for @iMe_Official_Bot for correct CryptoBoxes operation</string>
     <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_title">Required Admin Rights</string>
     <string name="cryptobox_details_balance">Balance</string>
     <string name="cryptobox_details_chat">Chat name</string>
@@ -7866,6 +7842,7 @@ Approval will be given for this smart contract:
     <string name="cryptobox_participation_chat_unavailable">Unavailable chat</string>
     <string name="cryptobox_participation_info_activate">To get CryptoBox you need to have an actived wallet</string>
     <string name="cryptobox_participation_info_create">To get CryptoBox you need to create or import crypto wallet</string>
+    <string name="cryptobox_participation_info_forwarded">CryptoBox can be claimed only in the chat where it was created</string>
     <string name="cryptobox_participation_info_subscribe">To get CryptoBox you need to be a subscriber of %s</string>
     <string name="cryptobox_participation_success_description">The participation request was created</string>
     <string name="cryptobox_participation_success_title">Success</string>
@@ -8270,6 +8247,7 @@ and we will try to find his Telegram account"</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">Remember tab</string>
     <string name="folder_tabs_settings_folders_first">To the left of the sorting tabs</string>
     <string name="folder_tabs_settings_header">Tab settings</string>
+    <string name="folder_tabs_settings_hide_folder_undo_messages">The folder is hidden from the list, your chats are not affected.</string>
     <string name="folder_tabs_settings_hide_folders">Hide folders</string>
     <string name="folder_tabs_sorting_settings">Tabs by type</string>
     <string name="folder_tabs_sorting_settings_item_title">Chat sorting</string>
@@ -8311,7 +8289,7 @@ and we will try to find his Telegram account"</string>
     <string name="gcm_defaultSenderId">444157464191</string>
     <string name="gif_sticker_preview_choose_alert_message">Do you want to preview stickers and GIFs before sending it in chat? You can always configure this option in the interface settings.</string>
     <string name="google_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
-    <string name="google_app_id">1:444157464191:android:f0774a8183f85b2d20b94a</string>
+    <string name="google_app_id">1:444157464191:android:dd047cf092fd1ad8</string>
     <string name="google_assistant_verification_channel_name">Assistant verifier</string>
     <string name="google_assistant_verification_notification_title">Google Assistant sending message</string>
     <string name="google_crash_reporting_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
@@ -8575,6 +8553,7 @@ Add music to the Playlist"</string>
     <string name="processing_participants">Processing participants… Processed %1$d of %2$d</string>
     <string name="processing_participants_success">Participants have been processed</string>
     <string name="processing_type_1inch">1inch</string>
+    <string name="processing_type_1inch_fusion">1inch Fusion</string>
     <string name="processing_type_bsc">BNB Chain</string>
     <string name="processing_type_eth">Ethereum</string>
     <string name="processing_type_pancakeswap_v2">PancakeSwap v2</string>
@@ -9044,6 +9023,7 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="topic_create_discard_title">Do you want to create a Topic?</string>
     <string name="topic_edit">Edit topic</string>
     <string name="topic_edit_discard_message">You have edited this topic. Apply changes?</string>
+    <string name="topic_hide_undo_messages">The topic is hidden from the list, your chats are not affected.</string>
     <string name="topic_main_chats">Main chats</string>
     <string name="topic_name_hint">Topic name</string>
     <string name="topic_new">New Topic</string>
@@ -9246,8 +9226,8 @@ After activating the wallet, you will be able to use fully and safely, Voice to 
     <string name="wallet_backup_ready">Ready to go!</string>
     <string name="wallet_backup_ready_info">You are all set. Now you have a wallet that only you control — directly, without middlemen or bankers.</string>
     <string name="wallet_backup_scan_qr">Scan QR</string>
-    <string name="wallet_backup_secret_words">24 Secret Words</string>
-    <string name="wallet_backup_secret_words_info">"Write down these 24 words in the correct order and store them in a secret place.
+    <string name="wallet_backup_secret_words">Secret Words</string>
+    <string name="wallet_backup_secret_words_info">"Write down these words in the correct order and store them in a secret place.
 
 Use these secret words to restore access to your wallet if you lose your passcode or device."</string>
     <string name="wallet_backup_secret_words_pdf">Save as PDF</string>
@@ -9774,8 +9754,9 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_swap_process_confirm_approve_alert_action">Approve</string>
     <string name="wallet_swap_process_confirm_approve_alert_description">Are you sure you want to make an approval of %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Approval Confirmation</string>
+    <string name="wallet_swap_process_confirm_binance_swap_alert_description">Are you sure you want to make a swap from **%1$s %2$s** to **%3$s %4$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Swap</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Are you sure you want to make a swap from %1$s %2$s to %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Are you sure you want to make a swap from **%1$s %2$s** to **%3$s %4$s** with fee **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Swap Confirmation</string>
     <string name="wallet_swap_process_description">You can swap tokens for each other via smart contracts using the Uniswap decentralized exchange for Ethereum and Polygon networks</string>
     <string name="wallet_swap_process_diff_tokens_validation">Please, select different received and given tokens</string>
@@ -9787,6 +9768,9 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_swap_process_from_title">I give</string>
     <string name="wallet_swap_process_give_token_amount_validation">Please, enter valid given amount</string>
     <string name="wallet_swap_process_give_token_validation">Please, select given token</string>
+    <string name="wallet_swap_process_insufficient_funds">Insufficient funds</string>
+    <string name="wallet_swap_process_low_amount">Low amount</string>
+    <string name="wallet_swap_process_max">Max:</string>
     <string name="wallet_swap_process_my_balance">My balance: %1$s</string>
     <string name="wallet_swap_process_receive_token_amount_validation">Please, select receive token</string>
     <string name="wallet_swap_process_select_placeholder">Select coin</string>
@@ -9799,7 +9783,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_swap_process_what_is_approve">What is token approval?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">Approval is a one-time transaction for tokens required before the swap. With this operation, you give permission to swap your token via the DEX protocol using smart contracts. As this operation takes place in the blockchain, the Gas fee will be withheld. You will not need to re-approve the current token.</string>
     <string name="wallet_swap_protocols_1inch_description">DEX aggregator with the best prices</string>
-    <string name="wallet_swap_protocols_1inch_long_description">You can swap tokens for each other via smart contracts using DEX aggregator with the best prices for Ethereum, BNB Chain, Polygon networks</string>
+    <string name="wallet_swap_protocols_1inch_long_description">You can swap tokens for each other via smart contracts using DEX aggregator with the best prices for Ethereum, BNB Chain, Polygon and Fantom networks</string>
     <string name="wallet_swap_protocols_1inch_name">1inch</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Bridge</string>
     <string name="wallet_swap_protocols_header_title">Decentralized exchanges</string>
@@ -9907,6 +9891,7 @@ Custom tokens can be set up in crypto account settings."</string>
     <string name="wallet_transaction_details_transaction_hash_title">Hash</string>
     <string name="wallet_transactions_header">Transactions</string>
     <string name="wallet_transactions_toolbar_title">Transactions</string>
+    <string name="wallet_transactions_type_1inch_fusion_title">Swap via 1inch Fusion</string>
     <string name="wallet_transactions_type_1inch_title">Swap via 1inch</string>
     <string name="wallet_transactions_type_approve_title">%1$s token approval</string>
     <string name="wallet_transactions_type_cancel_title">Cancel transaction</string>

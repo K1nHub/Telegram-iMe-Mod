@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: WalletConnectApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletConnectApi {
     @POST("wallet-connect/prepareTx")
     Observable<ApiBaseResponse<ParamsForCryptoTransactionResponse>> getWalletConnectParamsForCryptoTransaction(@Body GetParamsForCryptoTransactionRequest getParamsForCryptoTransactionRequest);

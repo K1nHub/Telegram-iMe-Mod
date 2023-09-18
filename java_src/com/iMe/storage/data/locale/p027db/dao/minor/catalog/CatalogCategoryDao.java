@@ -7,7 +7,7 @@ import io.reactivex.Single;
 import java.util.List;
 /* compiled from: CatalogCategoryDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.catalog.CatalogCategoryDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CatalogCategoryDao implements BaseDao<CatalogCategoryDb> {
     public abstract Single<List<CatalogCategoryDb>> getCategories();
 

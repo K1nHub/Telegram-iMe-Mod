@@ -4,7 +4,7 @@ import java.io.IOException;
 import kotlin.ExceptionsKt__ExceptionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RouteException.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RouteException extends RuntimeException {
     private final IOException firstConnectException;
     private IOException lastConnectException;

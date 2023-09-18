@@ -20,7 +20,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.ext.KClassExtKt;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: Scope.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Scope {
     private final ArrayList<ScopeCallback> _callbacks;
     private boolean _closed;
@@ -29,7 +29,7 @@ public final class Scope {
     private Object _source;
 
     /* renamed from: id */
-    private final String f1448id;
+    private final String f1439id;
     private final boolean isRoot;
     private final ArrayList<Scope> linkedScopes;
     private final Qualifier scopeQualifier;
@@ -40,14 +40,14 @@ public final class Scope {
         }
         if (obj instanceof Scope) {
             Scope scope = (Scope) obj;
-            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1448id, scope.f1448id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
+            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1439id, scope.f1439id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1448id.hashCode()) * 31;
+        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1439id.hashCode()) * 31;
         boolean z = this.isRoot;
         int i = z;
         if (z != 0) {
@@ -61,7 +61,7 @@ public final class Scope {
     }
 
     public final String getId() {
-        return this.f1448id;
+        return this.f1439id;
     }
 
     public final Koin get_koin() {
@@ -73,7 +73,7 @@ public final class Scope {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(_koin, "_koin");
         this.scopeQualifier = scopeQualifier;
-        this.f1448id = id;
+        this.f1439id = id;
         this.isRoot = z;
         this._koin = _koin;
         this.linkedScopes = new ArrayList<>();
@@ -203,7 +203,7 @@ public final class Scope {
 
     private final <T> T resolveInstance(Qualifier qualifier, KClass<?> kClass, Function0<? extends ParametersHolder> function0) {
         if (this._closed) {
-            throw new ClosedScopeException("Scope '" + this.f1448id + "' is closed");
+            throw new ClosedScopeException("Scope '" + this.f1439id + "' is closed");
         }
         final ParametersHolder invoke = function0 != null ? function0.invoke() : null;
         if (invoke != null) {
@@ -212,7 +212,7 @@ public final class Scope {
             if (logger.isAt(level)) {
                 logger.display(level, "| >> parameters " + invoke + ' ');
             }
-            KoinPlatformTools.INSTANCE.m1698synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveInstance$2
+            KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveInstance$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -238,7 +238,7 @@ public final class Scope {
             if (logger2.isAt(level2)) {
                 logger2.display(level2, "| << parameters");
             }
-            KoinPlatformTools.INSTANCE.m1698synchronized(this, new Function0<ParametersHolder>() { // from class: org.koin.core.scope.Scope$resolveInstance$3
+            KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<ParametersHolder>() { // from class: org.koin.core.scope.Scope$resolveInstance$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -287,7 +287,7 @@ public final class Scope {
                     }
                     t = (T) findInOtherScope(kClass, qualifier, function0);
                     if (t == null) {
-                        KoinPlatformTools.INSTANCE.m1698synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveValue$4$1
+                        KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveValue$4$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             {
                                 super(0);
@@ -368,7 +368,7 @@ public final class Scope {
     }
 
     public final void close() {
-        KoinPlatformTools.INSTANCE.m1698synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$close$1
+        KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$close$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -405,6 +405,6 @@ public final class Scope {
     }
 
     public String toString() {
-        return "['" + this.f1448id + "']";
+        return "['" + this.f1439id + "']";
     }
 }

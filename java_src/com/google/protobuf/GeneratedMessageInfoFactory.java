@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class GeneratedMessageInfoFactory implements MessageInfoFactory {
     private static final GeneratedMessageInfoFactory instance = new GeneratedMessageInfoFactory();
 

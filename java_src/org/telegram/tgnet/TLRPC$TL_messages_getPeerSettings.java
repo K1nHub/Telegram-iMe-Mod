@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_getPeerSettings extends TLObject {
     public static int constructor = -270948702;
     public TLRPC$InputPeer peer;

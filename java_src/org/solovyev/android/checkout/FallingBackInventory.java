@@ -3,13 +3,13 @@ package org.solovyev.android.checkout;
 import org.solovyev.android.checkout.BaseInventory;
 import org.solovyev.android.checkout.Inventory;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FallingBackInventory extends BaseInventory {
     private final Inventory mFallbackInventory;
     private final CheckoutInventory mMainInventory;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class Worker implements Runnable {
         private final BaseInventory.Task mTask;
         private final MainCallback mMainCallback = new MainCallback();
@@ -24,7 +24,7 @@ public class FallingBackInventory extends BaseInventory {
             this.mMainCallback.load();
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private class MainCallback implements Inventory.Callback {
             private MainCallback() {
             }
@@ -42,7 +42,7 @@ public class FallingBackInventory extends BaseInventory {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private class FallbackCallback implements Inventory.Callback {
             private FallbackCallback() {
             }

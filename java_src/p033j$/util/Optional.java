@@ -7,22 +7,22 @@ import java.util.Objects;
 public final class Optional<T> {
 
     /* renamed from: b */
-    private static final Optional f663b = new Optional();
+    private static final Optional f654b = new Optional();
 
     /* renamed from: a */
-    private final Object f664a;
+    private final Object f655a;
 
     private Optional() {
-        this.f664a = null;
+        this.f655a = null;
     }
 
     private Optional(Object obj) {
         Objects.requireNonNull(obj);
-        this.f664a = obj;
+        this.f655a = obj;
     }
 
     public static <T> Optional<T> empty() {
-        return f663b;
+        return f654b;
     }
 
     /* renamed from: of */
@@ -39,13 +39,13 @@ public final class Optional<T> {
             return true;
         }
         if (obj instanceof Optional) {
-            return AbstractC2919a.m608u(this.f664a, ((Optional) obj).f664a);
+            return AbstractC2835a.m608u(this.f655a, ((Optional) obj).f655a);
         }
         return false;
     }
 
     public T get() {
-        T t = (T) this.f664a;
+        T t = (T) this.f655a;
         if (t != null) {
             return t;
         }
@@ -53,7 +53,7 @@ public final class Optional<T> {
     }
 
     public int hashCode() {
-        Object obj = this.f664a;
+        Object obj = this.f655a;
         if (obj != null) {
             return obj.hashCode();
         }
@@ -61,11 +61,11 @@ public final class Optional<T> {
     }
 
     public boolean isPresent() {
-        return this.f664a != null;
+        return this.f655a != null;
     }
 
     public String toString() {
-        Object obj = this.f664a;
+        Object obj = this.f655a;
         return obj != null ? String.format("Optional[%s]", obj) : "Optional.empty";
     }
 }

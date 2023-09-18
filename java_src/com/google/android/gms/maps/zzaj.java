@@ -4,7 +4,7 @@ import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.internal.zzbj;
 import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzaj extends zzbj {
     final /* synthetic */ StreetViewPanorama.OnStreetViewPanoramaCameraChangeListener zza;
 

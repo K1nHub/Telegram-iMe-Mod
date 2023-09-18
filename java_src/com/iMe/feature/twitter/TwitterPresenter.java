@@ -38,12 +38,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import okhttp3.internal.Util;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: TwitterPresenter.kt */
 @InjectViewState
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterPresenter extends BasePresenter<TwitterView> {
     private final List<BaseNode> items;
     private Long lastItemId;
@@ -99,133 +99,133 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     public final void loadTweets(final boolean z, boolean z2) {
         long longOrDefault = Util.toLongOrDefault(this.socialNetwork.getSocialElementId(), -1L);
         final boolean z3 = (z || z2) ? false : true;
-        if (!z3 || this.lastItemId != null) {
-            Disposable subscribe = SchedulersExtKt.scheduleIO(this.twitterInteractor.getUserTweets(this.telegramProfileId, longOrDefault, this.lastItemId)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TweetInfo>>, Unit>() { // from class: com.iMe.feature.twitter.TwitterPresenter$loadTweets$$inlined$subscribeWithErrorHandle$default$1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TweetInfo>> result) {
-                    m1194invoke(result);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1194invoke(Result<? extends List<? extends TweetInfo>> it) {
-                    List list;
-                    List list2;
-                    List list3;
-                    List distinct;
-                    List<BaseNode> list4;
-                    List<BaseNode> list5;
-                    List list6;
-                    List list7;
-                    List list8;
-                    int collectionSizeOrDefault;
-                    Intrinsics.checkNotNullExpressionValue(it, "it");
-                    Result<? extends List<? extends TweetInfo>> result = it;
-                    if (result instanceof Result.Success) {
-                        ((TwitterView) TwitterPresenter.this.getViewState()).showRefreshing(false);
-                        TwitterPresenter twitterPresenter = TwitterPresenter.this;
-                        Result.Success success = (Result.Success) result;
-                        TweetInfo tweetInfo = (TweetInfo) CollectionsKt.lastOrNull((List<? extends Object>) success.getData());
-                        twitterPresenter.lastItemId = tweetInfo != null ? Long.valueOf(tweetInfo.getId()) : null;
-                        if (!((List) success.getData()).isEmpty()) {
-                            list = TwitterPresenter.this.items;
-                            list.clear();
-                            list2 = TwitterPresenter.this.tweets;
-                            list2.addAll((Collection) success.getData());
-                            list3 = TwitterPresenter.this.tweets;
-                            distinct = CollectionsKt___CollectionsKt.distinct(list3);
-                            LinkedHashMap linkedHashMap = new LinkedHashMap();
-                            for (Object obj : distinct) {
-                                String formatDateChat = LocaleController.formatDateChat(((TweetInfo) obj).getCreatedAt());
-                                Object obj2 = linkedHashMap.get(formatDateChat);
-                                if (obj2 == null) {
-                                    obj2 = new ArrayList();
-                                    linkedHashMap.put(formatDateChat, obj2);
-                                }
-                                ((List) obj2).add(obj);
-                            }
-                            for (Map.Entry entry : linkedHashMap.entrySet()) {
-                                String date = (String) entry.getKey();
-                                List<TweetInfo> list9 = (List) entry.getValue();
-                                list7 = TwitterPresenter.this.items;
-                                Intrinsics.checkNotNullExpressionValue(date, "date");
-                                list7.add(new TweetsDateItem(date));
-                                list8 = TwitterPresenter.this.items;
-                                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list9, 10);
-                                ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-                                for (TweetInfo tweetInfo2 : list9) {
-                                    arrayList.add(TweetInfoUiMappingKt.mapToUi(tweetInfo2));
-                                }
-                                list8.addAll(arrayList);
-                            }
-                            if (z3) {
-                                list6 = TwitterPresenter.this.items;
-                                ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreItems(list6);
-                                return;
-                            } else if (z) {
-                                list5 = TwitterPresenter.this.items;
-                                ((TwitterView) TwitterPresenter.this.getViewState()).renderInitialItems(list5);
-                                return;
-                            } else {
-                                list4 = TwitterPresenter.this.items;
-                                ((TwitterView) TwitterPresenter.this.getViewState()).renderItems(list4);
-                                return;
-                            }
-                        }
-                        if (!z3) {
-                            TwitterPresenter.this.renderGlobalState(GlobalState.Empty.Twitter.INSTANCE);
-                        }
-                        ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreComplete();
-                    } else if (result instanceof Result.Loading) {
-                        if (z) {
-                            TwitterPresenter.this.renderGlobalState(GlobalState.Progress.INSTANCE);
-                        }
-                    } else if (result instanceof Result.Error) {
-                        ((TwitterView) TwitterPresenter.this.getViewState()).showRefreshing(false);
-                        if (z3) {
-                            ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreError();
-                        } else if (((Result.Error) result).getError().isNoConnectionStatus()) {
-                            TwitterPresenter.this.renderGlobalState(GlobalState.NoInternet.INSTANCE);
-                        } else {
-                            TwitterPresenter.this.renderGlobalState(GlobalState.Unexpected.INSTANCE);
-                        }
-                    }
-                }
-            }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.twitter.TwitterPresenter$loadTweets$$inlined$subscribeWithErrorHandle$default$2
-                {
-                    super(1);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                    invoke2(th);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Throwable error) {
-                    Timber.m6e(error);
-                    BaseView baseView = BaseView.this;
-                    if (baseView != null) {
-                        String message = error.getMessage();
-                        if (message == null) {
-                            message = "";
-                        }
-                        baseView.showToast(message);
-                    }
-                    Intrinsics.checkNotNullExpressionValue(error, "error");
-                }
-            }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
-            BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+        if (z3 && this.lastItemId == null) {
+            ((TwitterView) getViewState()).onLoadMoreComplete();
             return;
         }
-        ((TwitterView) getViewState()).onLoadMoreComplete();
+        Disposable subscribe = SchedulersExtKt.scheduleIO(this.twitterInteractor.getUserTweets(this.telegramProfileId, longOrDefault, this.lastItemId)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TweetInfo>>, Unit>() { // from class: com.iMe.feature.twitter.TwitterPresenter$loadTweets$$inlined$subscribeWithErrorHandle$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TweetInfo>> result) {
+                m1192invoke(result);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: collision with other method in class */
+            public final void m1192invoke(Result<? extends List<? extends TweetInfo>> it) {
+                List list;
+                List list2;
+                List list3;
+                List distinct;
+                List<BaseNode> list4;
+                List<BaseNode> list5;
+                List list6;
+                List list7;
+                List list8;
+                int collectionSizeOrDefault;
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                Result<? extends List<? extends TweetInfo>> result = it;
+                if (result instanceof Result.Success) {
+                    ((TwitterView) TwitterPresenter.this.getViewState()).showRefreshing(false);
+                    TwitterPresenter twitterPresenter = TwitterPresenter.this;
+                    Result.Success success = (Result.Success) result;
+                    TweetInfo tweetInfo = (TweetInfo) CollectionsKt.lastOrNull((List<? extends Object>) success.getData());
+                    twitterPresenter.lastItemId = tweetInfo != null ? Long.valueOf(tweetInfo.getId()) : null;
+                    if (!((List) success.getData()).isEmpty()) {
+                        list = TwitterPresenter.this.items;
+                        list.clear();
+                        list2 = TwitterPresenter.this.tweets;
+                        list2.addAll((Collection) success.getData());
+                        list3 = TwitterPresenter.this.tweets;
+                        distinct = CollectionsKt___CollectionsKt.distinct(list3);
+                        LinkedHashMap linkedHashMap = new LinkedHashMap();
+                        for (Object obj : distinct) {
+                            String formatDateChat = LocaleController.formatDateChat(((TweetInfo) obj).getCreatedAt());
+                            Object obj2 = linkedHashMap.get(formatDateChat);
+                            if (obj2 == null) {
+                                obj2 = new ArrayList();
+                                linkedHashMap.put(formatDateChat, obj2);
+                            }
+                            ((List) obj2).add(obj);
+                        }
+                        for (Map.Entry entry : linkedHashMap.entrySet()) {
+                            String date = (String) entry.getKey();
+                            List<TweetInfo> list9 = (List) entry.getValue();
+                            list7 = TwitterPresenter.this.items;
+                            Intrinsics.checkNotNullExpressionValue(date, "date");
+                            list7.add(new TweetsDateItem(date));
+                            list8 = TwitterPresenter.this.items;
+                            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list9, 10);
+                            ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                            for (TweetInfo tweetInfo2 : list9) {
+                                arrayList.add(TweetInfoUiMappingKt.mapToUi(tweetInfo2));
+                            }
+                            list8.addAll(arrayList);
+                        }
+                        if (z3) {
+                            list6 = TwitterPresenter.this.items;
+                            ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreItems(list6);
+                            return;
+                        } else if (z) {
+                            list5 = TwitterPresenter.this.items;
+                            ((TwitterView) TwitterPresenter.this.getViewState()).renderInitialItems(list5);
+                            return;
+                        } else {
+                            list4 = TwitterPresenter.this.items;
+                            ((TwitterView) TwitterPresenter.this.getViewState()).renderItems(list4);
+                            return;
+                        }
+                    }
+                    if (!z3) {
+                        TwitterPresenter.this.renderGlobalState(GlobalState.Empty.Twitter.INSTANCE);
+                    }
+                    ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreComplete();
+                } else if (result instanceof Result.Loading) {
+                    if (z) {
+                        TwitterPresenter.this.renderGlobalState(GlobalState.Progress.INSTANCE);
+                    }
+                } else if (result instanceof Result.Error) {
+                    ((TwitterView) TwitterPresenter.this.getViewState()).showRefreshing(false);
+                    if (z3) {
+                        ((TwitterView) TwitterPresenter.this.getViewState()).onLoadMoreError();
+                    } else if (((Result.Error) result).getError().isNoConnectionStatus()) {
+                        TwitterPresenter.this.renderGlobalState(GlobalState.NoInternet.INSTANCE);
+                    } else {
+                        TwitterPresenter.this.renderGlobalState(GlobalState.Unexpected.INSTANCE);
+                    }
+                }
+            }
+        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.twitter.TwitterPresenter$loadTweets$$inlined$subscribeWithErrorHandle$default$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable error) {
+                Timber.m6e(error);
+                BaseView baseView = BaseView.this;
+                if (baseView != null) {
+                    String message = error.getMessage();
+                    if (message == null) {
+                        message = "";
+                    }
+                    baseView.showToast(message);
+                }
+                Intrinsics.checkNotNullExpressionValue(error, "error");
+            }
+        }));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
+        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void onOpenInTwitterClick() {
@@ -238,7 +238,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     }
 
     public final void onResetMenuClicked() {
-        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3558R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3558R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3558R.string.social_reset_account_negative_button), this.resourceManager.getString(C3558R.string.social_reset_account_positive_button)));
+        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3473R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3473R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3473R.string.social_reset_account_negative_button), this.resourceManager.getString(C3473R.string.social_reset_account_positive_button)));
     }
 
     public final void onResetConfirmClicked() {
@@ -254,12 +254,12 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1195invoke(result);
+                m1193invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1195invoke(Result<? extends Boolean> it) {
+            public final void m1193invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ((TwitterView) TwitterPresenter.this.getViewState()).finishScreen();
             }
@@ -288,7 +288,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -302,12 +302,12 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TweetItem tweetItem) {
-                m1196invoke(tweetItem);
+                m1194invoke(tweetItem);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1196invoke(TweetItem it) {
+            public final void m1194invoke(TweetItem it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 TwitterPresenter.this.toggleItemLikeStatus(it);
             }
@@ -336,7 +336,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

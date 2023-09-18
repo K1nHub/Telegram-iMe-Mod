@@ -10,7 +10,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ProgressButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ProgressButton extends Button {
     private int angle;
     private boolean drawProgress;

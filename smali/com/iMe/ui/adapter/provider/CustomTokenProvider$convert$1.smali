@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 43
     check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CustomTokenProvider$convert$1;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 44
     new-instance v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
     invoke-direct {v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
@@ -84,6 +84,7 @@
 
     move-result-object v2
 
+    .line 45
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
     .line 47
@@ -93,7 +94,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 45
+    .line 44
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void

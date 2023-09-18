@@ -9,7 +9,7 @@ import java.util.Set;
 import javax.security.auth.x500.X500Principal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BasicTrustRootIndex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BasicTrustRootIndex implements TrustRootIndex {
     private final Map<X500Principal, Set<X509Certificate>> subjectToCaCerts;
 

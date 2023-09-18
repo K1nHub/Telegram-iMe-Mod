@@ -19,7 +19,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* renamed from: com.google.mlkit.nl.languageid.LanguageIdentifierImpl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LanguageIdentifierImpl implements LanguageIdentifier {
     private final LanguageIdentificationOptions zza;
     private final zzcv zzb;
@@ -37,7 +37,7 @@ public class LanguageIdentifierImpl implements LanguageIdentifier {
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     @KeepForSdk
     /* renamed from: com.google.mlkit.nl.languageid.LanguageIdentifierImpl$Factory */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Factory {
         private final zzcv zza;
         private final LanguageIdentificationJni zzb;

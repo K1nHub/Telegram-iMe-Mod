@@ -13,7 +13,7 @@ import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 import org.webrtc.VideoSink;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Camera1Session implements CameraSession {
     private static final int NUMBER_OF_CAPTURE_BUFFERS = 3;
     private static final String TAG = "Camera1Session";
@@ -35,7 +35,7 @@ public class Camera1Session implements CameraSession {
     private static final Histogram camera1ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera1.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum SessionState {
         RUNNING,
         STOPPED
@@ -229,9 +229,9 @@ public class Camera1Session implements CameraSession {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.Camera1Session$2 */
-    /* loaded from: classes6.dex */
-    public class C73212 implements Camera.PreviewCallback {
-        C73212() {
+    /* loaded from: classes7.dex */
+    public class C72362 implements Camera.PreviewCallback {
+        C72362() {
         }
 
         @Override // android.hardware.Camera.PreviewCallback
@@ -250,7 +250,7 @@ public class Camera1Session implements CameraSession {
                 VideoFrame videoFrame = new VideoFrame(new NV21Buffer(bArr, Camera1Session.this.captureFormat.width, Camera1Session.this.captureFormat.height, new Runnable() { // from class: org.webrtc.Camera1Session$2$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        Camera1Session.C73212.this.lambda$onPreviewFrame$1(bArr);
+                        Camera1Session.C72362.this.lambda$onPreviewFrame$1(bArr);
                     }
                 }), Camera1Session.this.getFrameOrientation(), nanos);
                 Camera1Session.this.events.onFrameCaptured(Camera1Session.this, videoFrame);
@@ -265,7 +265,7 @@ public class Camera1Session implements CameraSession {
             Camera1Session.this.cameraThreadHandler.post(new Runnable() { // from class: org.webrtc.Camera1Session$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Camera1Session.C73212.this.lambda$onPreviewFrame$0(bArr);
+                    Camera1Session.C72362.this.lambda$onPreviewFrame$0(bArr);
                 }
             });
         }
@@ -279,7 +279,7 @@ public class Camera1Session implements CameraSession {
     }
 
     private void listenForBytebufferFrames() {
-        this.camera.setPreviewCallbackWithBuffer(new C73212());
+        this.camera.setPreviewCallbackWithBuffer(new C72362());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

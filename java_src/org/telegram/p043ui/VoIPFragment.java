@@ -51,7 +51,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.ByteArrayOutputStream;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -67,7 +67,7 @@ import org.telegram.messenger.voip.EncryptionKeyEmojifier;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.DarkAlertDialog;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AlertsCreator;
@@ -96,7 +96,7 @@ import org.webrtc.GlRectDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 /* renamed from: org.telegram.ui.VoIPFragment */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VoIPFragment implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     private static VoIPFragment instance;
     private AcceptDeclineView acceptDeclineView;
@@ -570,10 +570,10 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                         rectF.set(fullscreenTextureView.getX(), fullscreenTextureView.getY(), fullscreenTextureView.getX() + fullscreenTextureView.getMeasuredWidth(), fullscreenTextureView.getY() + fullscreenTextureView.getMeasuredHeight());
                         rectF.inset(((fullscreenTextureView.getMeasuredHeight() * fullscreenTextureView.scaleTextureToFill) - fullscreenTextureView.getMeasuredHeight()) / 2.0f, ((fullscreenTextureView.getMeasuredWidth() * fullscreenTextureView.scaleTextureToFill) - fullscreenTextureView.getMeasuredWidth()) / 2.0f);
                         if (!GroupCallActivity.isLandscapeMode) {
-                            rectF.top = Math.max(rectF.top, C3626ActionBar.getCurrentActionBarHeight());
+                            rectF.top = Math.max(rectF.top, C3541ActionBar.getCurrentActionBarHeight());
                             rectF.bottom = Math.min(rectF.bottom, fullscreenTextureView.getMeasuredHeight() - AndroidUtilities.m72dp(90));
                         } else {
-                            rectF.top = Math.max(rectF.top, C3626ActionBar.getCurrentActionBarHeight());
+                            rectF.top = Math.max(rectF.top, C3541ActionBar.getCurrentActionBarHeight());
                             rectF.right = Math.min(rectF.right, fullscreenTextureView.getMeasuredWidth() - AndroidUtilities.m72dp(90));
                         }
                         VoIPFragment.this.canZoomGesture = rectF.contains(motionEvent.getX(), motionEvent.getY());
@@ -813,7 +813,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         });
         TextView textView = new TextView(context);
         this.emojiRationalTextView = textView;
-        textView.setText(LocaleController.formatString("CallEmojiKeyTooltip", C3558R.string.CallEmojiKeyTooltip, UserObject.getFirstName(this.callingUser)));
+        textView.setText(LocaleController.formatString("CallEmojiKeyTooltip", C3473R.string.CallEmojiKeyTooltip, UserObject.getFirstName(this.callingUser)));
         this.emojiRationalTextView.setTextSize(1, 16.0f);
         this.emojiRationalTextView.setTextColor(-1);
         this.emojiRationalTextView.setGravity(17);
@@ -838,9 +838,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                 sb.append(", ");
                 TLRPC$PhoneCall tLRPC$PhoneCall = sharedInstance.privateCall;
                 if (tLRPC$PhoneCall != null && tLRPC$PhoneCall.video) {
-                    sb.append(LocaleController.getString("VoipInVideoCallBranding", C3558R.string.VoipInVideoCallBranding));
+                    sb.append(LocaleController.getString("VoipInVideoCallBranding", C3473R.string.VoipInVideoCallBranding));
                 } else {
-                    sb.append(LocaleController.getString("VoipInCallBranding", C3558R.string.VoipInCallBranding));
+                    sb.append(LocaleController.getString("VoipInCallBranding", C3473R.string.VoipInCallBranding));
                 }
                 long callDuration = sharedInstance.getCallDuration();
                 if (callDuration > 0) {
@@ -892,7 +892,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             public void onAccept() {
                 if (VoIPFragment.this.currentState == 17) {
                     Intent intent = new Intent(VoIPFragment.this.activity, VoIPService.class);
-                    intent.putExtra("user_id", VoIPFragment.this.callingUser.f1694id);
+                    intent.putExtra("user_id", VoIPFragment.this.callingUser.f1685id);
                     intent.putExtra("is_outgoing", true);
                     intent.putExtra("start_incall_activity", false);
                     intent.putExtra("video_call", VoIPFragment.this.isVideoCall);
@@ -928,9 +928,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         ImageView imageView = new ImageView(context);
         this.backIcon = imageView;
         imageView.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(-1, 76)));
-        this.backIcon.setImageResource(C3558R.C3560drawable.ic_ab_back);
+        this.backIcon.setImageResource(C3473R.C3475drawable.ic_ab_back);
         this.backIcon.setPadding(AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(16), AndroidUtilities.m72dp(16));
-        this.backIcon.setContentDescription(LocaleController.getString("Back", C3558R.string.Back));
+        this.backIcon.setContentDescription(LocaleController.getString("Back", C3473R.string.Back));
         frameLayout.addView(this.backIcon, LayoutHelper.createFrame(56, 56, 51));
         ImageView imageView2 = new ImageView(this, context) { // from class: org.telegram.ui.VoIPFragment.8
             @Override // android.view.View
@@ -945,7 +945,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             }
         };
         this.speakerPhoneIcon = imageView2;
-        imageView2.setContentDescription(LocaleController.getString("VoipSpeaker", C3558R.string.VoipSpeaker));
+        imageView2.setContentDescription(LocaleController.getString("VoipSpeaker", C3473R.string.VoipSpeaker));
         this.speakerPhoneIcon.setBackground(Theme.createSelectorDrawable(ColorUtils.setAlphaComponent(-1, 76)));
         this.speakerPhoneIcon.setPadding(AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(12));
         frameLayout.addView(this.speakerPhoneIcon, LayoutHelper.createFrame(56, 56, 53));
@@ -976,7 +976,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         frameLayout.addView(this.notificationsLayout, LayoutHelper.createFrame(-1, 200, 80, 16, 0, 16, 0));
         HintView hintView = new HintView(context, 4);
         this.tapToVideoTooltip = hintView;
-        hintView.setText(LocaleController.getString("TapToTurnCamera", C3558R.string.TapToTurnCamera));
+        hintView.setText(LocaleController.getString("TapToTurnCamera", C3473R.string.TapToTurnCamera));
         frameLayout.addView(this.tapToVideoTooltip, LayoutHelper.createFrame(-2, -2, 51, 19, 0, 19, 8));
         this.tapToVideoTooltip.setBottomOffset(AndroidUtilities.m72dp(4));
         this.tapToVideoTooltip.setVisibility(8);
@@ -1134,13 +1134,13 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.VoIPFragment$10 */
-    /* loaded from: classes5.dex */
-    public class C728210 implements RendererCommon.RendererEvents {
+    /* loaded from: classes3.dex */
+    public class C719710 implements RendererCommon.RendererEvents {
         @Override // org.webrtc.RendererCommon.RendererEvents
         public void onFrameResolutionChanged(int i, int i2, int i3) {
         }
 
-        C728210() {
+        C719710() {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1153,27 +1153,27 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.VoIPFragment$10$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPFragment.C728210.this.lambda$onFirstFrameRendered$0();
+                    VoIPFragment.C719710.this.lambda$onFirstFrameRendered$0();
                 }
             });
         }
     }
 
     private void initRenderers() {
-        this.currentUserTextureView.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new C728210());
-        this.callingUserTextureView.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new C728311(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
+        this.currentUserTextureView.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new C719710());
+        this.callingUserTextureView.renderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new C719811(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
         this.callingUserMiniTextureRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.VoIPFragment$11 */
-    /* loaded from: classes5.dex */
-    public class C728311 implements RendererCommon.RendererEvents {
+    /* loaded from: classes3.dex */
+    public class C719811 implements RendererCommon.RendererEvents {
         @Override // org.webrtc.RendererCommon.RendererEvents
         public void onFrameResolutionChanged(int i, int i2, int i3) {
         }
 
-        C728311() {
+        C719811() {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1186,7 +1186,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.VoIPFragment$11$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPFragment.C728311.this.lambda$onFirstFrameRendered$0();
+                    VoIPFragment.C719811.this.lambda$onFirstFrameRendered$0();
                 }
             });
         }
@@ -1233,7 +1233,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             return;
         }
         this.notificationsLocker.lock();
-        createPiPTransition.addListener(new C728412());
+        createPiPTransition.addListener(new C719912());
         createPiPTransition.setDuration(350L);
         createPiPTransition.setInterpolator(cubicBezierInterpolator);
         createPiPTransition.start();
@@ -1241,9 +1241,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.VoIPFragment$12 */
-    /* loaded from: classes5.dex */
-    public class C728412 extends AnimatorListenerAdapter {
-        C728412() {
+    /* loaded from: classes3.dex */
+    public class C719912 extends AnimatorListenerAdapter {
+        C719912() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -1252,7 +1252,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.VoIPFragment$12$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPFragment.C728412.this.lambda$onAnimationEnd$0();
+                    VoIPFragment.C719912.this.lambda$onAnimationEnd$0();
                 }
             }, 200L);
         }
@@ -1556,7 +1556,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         zArr[0] = true;
         this.currentState = 17;
         Intent intent = new Intent(this.activity, VoIPService.class);
-        intent.putExtra("user_id", this.callingUser.f1694id);
+        intent.putExtra("user_id", this.callingUser.f1685id);
         intent.putExtra("is_outgoing", true);
         intent.putExtra("start_incall_activity", false);
         intent.putExtra("video_call", false);
@@ -1922,7 +1922,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             }
             setVideoAction(this.bottomButtons[1], sharedInstance, z);
             setMicrohoneAction(this.bottomButtons[2], sharedInstance, z);
-            this.bottomButtons[3].setData(C3558R.C3560drawable.calls_decline, -1, -1041108, LocaleController.getString("VoipEndCall", C3558R.string.VoipEndCall), false, z);
+            this.bottomButtons[3].setData(C3473R.C3475drawable.calls_decline, -1, -1041108, LocaleController.getString("VoipEndCall", C3473R.string.VoipEndCall), false, z);
             this.bottomButtons[3].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda20
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1949,9 +1949,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
 
     private void setMicrohoneAction(VoIPToggleButton voIPToggleButton, VoIPService voIPService, boolean z) {
         if (voIPService.isMicMute()) {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_unmute, -16777216, -1, LocaleController.getString("VoipUnmute", C3558R.string.VoipUnmute), true, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_unmute, -16777216, -1, LocaleController.getString("VoipUnmute", C3473R.string.VoipUnmute), true, z);
         } else {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_unmute, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipMute", C3558R.string.VoipMute), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_unmute, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipMute", C3473R.string.VoipMute), false, z);
         }
         this.currentUserCameraFloatingLayout.setMuted(voIPService.isMicMute(), z);
         voIPToggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda15
@@ -1970,9 +1970,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             boolean z = !sharedInstance.isMicMute();
             if (this.accessibilityManager.isTouchExplorationEnabled()) {
                 if (z) {
-                    string = LocaleController.getString("AccDescrVoipMicOff", C3558R.string.AccDescrVoipMicOff);
+                    string = LocaleController.getString("AccDescrVoipMicOff", C3473R.string.AccDescrVoipMicOff);
                 } else {
-                    string = LocaleController.getString("AccDescrVoipMicOn", C3558R.string.AccDescrVoipMicOn);
+                    string = LocaleController.getString("AccDescrVoipMicOn", C3473R.string.AccDescrVoipMicOn);
                 }
                 view.announceForAccessibility(string);
             }
@@ -1985,9 +1985,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     private void setVideoAction(VoIPToggleButton voIPToggleButton, final VoIPService voIPService, boolean z) {
         if ((this.currentUserIsVideo || this.callingUserIsVideo) ? true : voIPService.isVideoAvailable()) {
             if (this.currentUserIsVideo) {
-                voIPToggleButton.setData(voIPService.isScreencast() ? C3558R.C3560drawable.calls_sharescreen : C3558R.C3560drawable.calls_video, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipStopVideo", C3558R.string.VoipStopVideo), false, z);
+                voIPToggleButton.setData(voIPService.isScreencast() ? C3473R.C3475drawable.calls_sharescreen : C3473R.C3475drawable.calls_video, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipStopVideo", C3473R.string.VoipStopVideo), false, z);
             } else {
-                voIPToggleButton.setData(C3558R.C3560drawable.calls_video, -16777216, -1, LocaleController.getString("VoipStartVideo", C3558R.string.VoipStartVideo), true, z);
+                voIPToggleButton.setData(C3473R.C3475drawable.calls_video, -16777216, -1, LocaleController.getString("VoipStartVideo", C3473R.string.VoipStartVideo), true, z);
             }
             voIPToggleButton.setCrossOffset(-AndroidUtilities.dpf2(3.5f));
             voIPToggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda19
@@ -1999,7 +1999,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             voIPToggleButton.setEnabled(true);
             return;
         }
-        voIPToggleButton.setData(C3558R.C3560drawable.calls_video, ColorUtils.setAlphaComponent(-1, 127), ColorUtils.setAlphaComponent(-1, 30), "Video", false, z);
+        voIPToggleButton.setData(C3473R.C3475drawable.calls_video, ColorUtils.setAlphaComponent(-1, 127), ColorUtils.setAlphaComponent(-1, 30), "Video", false, z);
         voIPToggleButton.setOnClickListener(null);
         voIPToggleButton.setEnabled(false);
     }
@@ -2012,14 +2012,14 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             this.activity.requestPermissions(new String[]{"android.permission.CAMERA"}, 102);
         } else if (i < 21 && (tLRPC$PhoneCall = voIPService.privateCall) != null && !tLRPC$PhoneCall.video && !this.callingUserIsVideo && !voIPService.sharedUIParams.cameraAlertWasShowed) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-            builder.setMessage(LocaleController.getString("VoipSwitchToVideoCall", C3558R.string.VoipSwitchToVideoCall));
-            builder.setPositiveButton(LocaleController.getString("VoipSwitch", C3558R.string.VoipSwitch), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda6
+            builder.setMessage(LocaleController.getString("VoipSwitchToVideoCall", C3473R.string.VoipSwitchToVideoCall));
+            builder.setPositiveButton(LocaleController.getString("VoipSwitch", C3473R.string.VoipSwitch), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda6
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     VoIPFragment.this.lambda$setVideoAction$24(voIPService, dialogInterface, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3558R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3473R.string.Cancel), null);
             builder.create().show();
         } else {
             toggleCameraInput();
@@ -2038,25 +2038,25 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             return;
         }
         if (sharedInstance.isBluetoothOn()) {
-            this.speakerPhoneIcon.setImageResource(C3558R.C3560drawable.calls_bluetooth);
+            this.speakerPhoneIcon.setImageResource(C3473R.C3475drawable.calls_bluetooth);
         } else if (sharedInstance.isSpeakerphoneOn()) {
-            this.speakerPhoneIcon.setImageResource(C3558R.C3560drawable.calls_speaker);
+            this.speakerPhoneIcon.setImageResource(C3473R.C3475drawable.calls_speaker);
         } else if (sharedInstance.isHeadsetPlugged()) {
-            this.speakerPhoneIcon.setImageResource(C3558R.C3560drawable.calls_menu_headset);
+            this.speakerPhoneIcon.setImageResource(C3473R.C3475drawable.calls_menu_headset);
         } else {
-            this.speakerPhoneIcon.setImageResource(C3558R.C3560drawable.calls_menu_phone);
+            this.speakerPhoneIcon.setImageResource(C3473R.C3475drawable.calls_menu_phone);
         }
     }
 
     private void setSpeakerPhoneAction(VoIPToggleButton voIPToggleButton, VoIPService voIPService, boolean z) {
         if (voIPService.isBluetoothOn()) {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_bluetooth, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipAudioRoutingBluetooth", C3558R.string.VoipAudioRoutingBluetooth), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_bluetooth, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipAudioRoutingBluetooth", C3473R.string.VoipAudioRoutingBluetooth), false, z);
             voIPToggleButton.setChecked(false, z);
         } else if (voIPService.isSpeakerphoneOn()) {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_speaker, -16777216, -1, LocaleController.getString("VoipSpeaker", C3558R.string.VoipSpeaker), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_speaker, -16777216, -1, LocaleController.getString("VoipSpeaker", C3473R.string.VoipSpeaker), false, z);
             voIPToggleButton.setChecked(true, z);
         } else {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_speaker, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipSpeaker", C3558R.string.VoipSpeaker), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_speaker, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipSpeaker", C3473R.string.VoipSpeaker), false, z);
             voIPToggleButton.setChecked(false, z);
         }
         voIPToggleButton.setCheckableForAccessibility(true);
@@ -2078,16 +2078,16 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
 
     private void setFrontalCameraAction(VoIPToggleButton voIPToggleButton, final VoIPService voIPService, boolean z) {
         if (!this.currentUserIsVideo) {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_flip, ColorUtils.setAlphaComponent(-1, 127), ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipFlip", C3558R.string.VoipFlip), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_flip, ColorUtils.setAlphaComponent(-1, 127), ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipFlip", C3473R.string.VoipFlip), false, z);
             voIPToggleButton.setOnClickListener(null);
             voIPToggleButton.setEnabled(false);
             return;
         }
         voIPToggleButton.setEnabled(true);
         if (!voIPService.isFrontFaceCamera()) {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_flip, -16777216, -1, LocaleController.getString("VoipFlip", C3558R.string.VoipFlip), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_flip, -16777216, -1, LocaleController.getString("VoipFlip", C3473R.string.VoipFlip), false, z);
         } else {
-            voIPToggleButton.setData(C3558R.C3560drawable.calls_flip, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipFlip", C3558R.string.VoipFlip), false, z);
+            voIPToggleButton.setData(C3473R.C3475drawable.calls_flip, -1, ColorUtils.setAlphaComponent(-1, 30), LocaleController.getString("VoipFlip", C3473R.string.VoipFlip), false, z);
         }
         voIPToggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
@@ -2104,9 +2104,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         if (sharedInstance != null) {
             if (this.accessibilityManager.isTouchExplorationEnabled()) {
                 if (voIPService.isFrontFaceCamera()) {
-                    string = LocaleController.getString("AccDescrVoipCamSwitchedToBack", C3558R.string.AccDescrVoipCamSwitchedToBack);
+                    string = LocaleController.getString("AccDescrVoipCamSwitchedToBack", C3473R.string.AccDescrVoipCamSwitchedToBack);
                 } else {
-                    string = LocaleController.getString("AccDescrVoipCamSwitchedToFront", C3558R.string.AccDescrVoipCamSwitchedToFront);
+                    string = LocaleController.getString("AccDescrVoipCamSwitchedToFront", C3473R.string.AccDescrVoipCamSwitchedToFront);
                 }
                 view.announceForAccessibility(string);
             }
@@ -2128,9 +2128,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         if (sharedInstance != null) {
             if (this.accessibilityManager.isTouchExplorationEnabled()) {
                 if (!this.currentUserIsVideo) {
-                    string = LocaleController.getString("AccDescrVoipCamOn", C3558R.string.AccDescrVoipCamOn);
+                    string = LocaleController.getString("AccDescrVoipCamOn", C3473R.string.AccDescrVoipCamOn);
                 } else {
-                    string = LocaleController.getString("AccDescrVoipCamOff", C3558R.string.AccDescrVoipCamOff);
+                    string = LocaleController.getString("AccDescrVoipCamOff", C3473R.string.AccDescrVoipCamOff);
                 }
                 this.fragmentView.announceForAccessibility(string);
             }
@@ -2312,7 +2312,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         if (this.activity.isFinishing()) {
             return;
         }
-        AlertDialog show = new DarkAlertDialog.Builder(this.activity).setTitle(LocaleController.getString("VoipFailed", C3558R.string.VoipFailed)).setMessage(charSequence).setPositiveButton(LocaleController.getString("OK", C3558R.string.OK), null).show();
+        AlertDialog show = new DarkAlertDialog.Builder(this.activity).setTitle(LocaleController.getString("VoipFailed", C3473R.string.VoipFailed)).setMessage(charSequence).setPositiveButton(LocaleController.getString("OK", C3473R.string.OK), null).show();
         show.setCanceledOnTouchOutside(true);
         show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda8
             @Override // android.content.DialogInterface.OnDismissListener

@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Locale;
 import java.util.PriorityQueue;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LruGarbageCollector {
     private static final long INITIAL_GC_DELAY_MS;
     private static final long REGULAR_GC_DELAY_MS;
@@ -22,7 +22,7 @@ public class LruGarbageCollector {
         REGULAR_GC_DELAY_MS = timeUnit.toMillis(5L);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Params {
         final int maximumSequenceNumbersToCollect;
         final long minBytesThreshold;
@@ -39,7 +39,7 @@ public class LruGarbageCollector {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Results {
         static Results DidNotRun() {
             return new Results(false, 0, 0, 0);
@@ -49,7 +49,7 @@ public class LruGarbageCollector {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class GCScheduler implements Scheduler {
         private final AsyncQueue asyncQueue;
         private boolean hasRun = false;
@@ -99,7 +99,7 @@ public class LruGarbageCollector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RollingSequenceNumberBuffer {
         private static final Comparator<Long> COMPARATOR = new Comparator() { // from class: com.google.firebase.firestore.local.LruGarbageCollector$RollingSequenceNumberBuffer$$ExternalSyntheticLambda0
             @Override // java.util.Comparator

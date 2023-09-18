@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 69
+    .line 70
     check-cast p1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$2;->invoke(Lorg/telegram/ui/Components/BackupImageView;)V
@@ -76,7 +76,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 70
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_binance_40:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImageResource(I)V

@@ -6,7 +6,7 @@ import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
 import moxy.MvpPresenter;
 /* compiled from: Delegates.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelegatesKt {
     public static /* synthetic */ MoxyKtxDelegate moxyPresenter$default(MvpDelegateHolder moxyPresenter, String name, Function0 factory, int i, Object obj) {
         if ((i & 1) != 0) {

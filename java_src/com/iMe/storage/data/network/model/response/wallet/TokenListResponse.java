@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenListsResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenListResponse {
     private final String icon;
     private final boolean isVerified;

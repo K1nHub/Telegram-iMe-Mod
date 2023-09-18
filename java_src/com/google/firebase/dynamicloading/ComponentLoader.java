@@ -1,4 +1,4 @@
 package com.google.firebase.dynamicloading;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ComponentLoader {
 }

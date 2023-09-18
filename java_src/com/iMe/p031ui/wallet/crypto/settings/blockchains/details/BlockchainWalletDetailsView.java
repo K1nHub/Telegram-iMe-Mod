@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: BlockchainWalletDetailsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface BlockchainWalletDetailsView extends BaseView {
     void setupScreenWithData(int i, String str, String str2, String str3, String str4);
 

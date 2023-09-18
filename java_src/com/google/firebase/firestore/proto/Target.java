@@ -7,7 +7,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Target extends GeneratedMessageLite<Target, Builder> implements MessageLiteOrBuilder {
     private static final Target DEFAULT_INSTANCE;
     public static final int DOCUMENTS_FIELD_NUMBER = 6;
@@ -29,7 +29,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     private Target() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum TargetTypeCase {
         QUERY(5),
         DOCUMENTS(6),
@@ -159,7 +159,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
         return DEFAULT_INSTANCE.createBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Target, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10231 c10231) {
             this();
@@ -219,7 +219,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     }
 
     /* renamed from: com.google.firebase.firestore.proto.Target$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10231 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

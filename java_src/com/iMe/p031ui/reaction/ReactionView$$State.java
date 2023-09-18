@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.reaction.ReactionView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ReactionView$$State extends MvpViewState<ReactionView> implements ReactionView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -102,7 +102,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$MessageCreatedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class MessageCreatedCommand extends ViewCommand<ReactionView> {
         MessageCreatedCommand(ReactionView$$State reactionView$$State) {
             super("messageCreated", AddToEndSingleStrategy.class);
@@ -116,7 +116,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$OnUrlValidCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnUrlValidCommand extends ViewCommand<ReactionView> {
         public final int position;
         public final String url;
@@ -135,7 +135,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$ShowButtonPositionDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowButtonPositionDialogCommand extends ViewCommand<ReactionView> {
         public final ReactionButtonsRowsType buttonPosition;
 
@@ -152,7 +152,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<ReactionView> {
         public final String text;
 
@@ -169,7 +169,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<ReactionView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -190,7 +190,7 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
 
     /* compiled from: ReactionView$$State.java */
     /* renamed from: com.iMe.ui.reaction.ReactionView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<ReactionView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

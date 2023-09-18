@@ -10,7 +10,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
 @DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1", m101f = "AuthViewModel.kt", m100l = {23, 24, 26}, m99m = "invokeSuspend")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AuthViewModel$onWebViewCreated$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ SocialAuthDomain $socialAuthDomain;
     private /* synthetic */ Object L$0;

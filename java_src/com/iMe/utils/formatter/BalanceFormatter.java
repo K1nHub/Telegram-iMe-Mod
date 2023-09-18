@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BalanceFormatter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BalanceFormatter {
     public static final BalanceFormatter INSTANCE = new BalanceFormatter();
     private static final HashMap<String, BalanceFormatterInfo> availableLocalesFormatter = new HashMap<>();
@@ -43,7 +43,7 @@ public final class BalanceFormatter {
 
     public final String formatPercents(Number percentage, int i) {
         Intrinsics.checkNotNullParameter(percentage, "percentage");
-        return formatBalance(percentage, Integer.valueOf(i));
+        return format(percentage, Integer.valueOf(i));
     }
 
     public static /* synthetic */ String formatFiatBalance$default(BalanceFormatter balanceFormatter, Number number, Integer num, int i, Object obj) {
@@ -55,7 +55,7 @@ public final class BalanceFormatter {
 
     public final String formatFiatBalance(Number balance, Integer num) {
         Intrinsics.checkNotNullParameter(balance, "balance");
-        return formatBalance(balance, num) + ' ' + TokenDetailed.Companion.getUSD().getTicker();
+        return format(balance, num) + ' ' + TokenDetailed.Companion.getUSD().getTicker();
     }
 
     public final String formatShortFiatBalance(Number balance) {
@@ -66,17 +66,17 @@ public final class BalanceFormatter {
     public final String formatTokenBalance(Number balance, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(balance, "balance");
         Intrinsics.checkNotNullParameter(token, "token");
-        return formatBalance(balance, Integer.valueOf(token.getDecimals())) + ' ' + token.getTicker();
+        return format(balance, Integer.valueOf(token.getDecimals())) + ' ' + token.getTicker();
     }
 
-    public static /* synthetic */ String formatBalance$default(Number number, Integer num, int i, Object obj) {
+    public static /* synthetic */ String format$default(Number number, Integer num, int i, Object obj) {
         if ((i & 2) != 0) {
             num = null;
         }
-        return formatBalance(number, num);
+        return format(number, num);
     }
 
-    public static final String formatBalance(Number balance, Integer num) {
+    public static final String format(Number balance, Integer num) {
         Intrinsics.checkNotNullParameter(balance, "balance");
         BalanceFormatterInfo currentLocaleFormatter = INSTANCE.getCurrentLocaleFormatter();
         NumberFormat numberFormat = currentLocaleFormatter.getNumberFormat();

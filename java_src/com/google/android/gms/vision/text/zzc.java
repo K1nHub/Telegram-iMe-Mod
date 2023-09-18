@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import com.google.android.gms.internal.vision.zzab;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzc {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Rect zza(Text text) {

@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_updatePinnedMessage extends TLObject {
     public static int constructor = -760547348;
     public int flags;
 
     /* renamed from: id */
-    public int f1654id;
+    public int f1645id;
     public TLRPC$InputPeer peer;
     public boolean pm_oneside;
     public boolean silent;
@@ -27,6 +27,6 @@ public class TLRPC$TL_messages_updatePinnedMessage extends TLObject {
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1654id);
+        abstractSerializedData.writeInt32(this.f1645id);
     }
 }

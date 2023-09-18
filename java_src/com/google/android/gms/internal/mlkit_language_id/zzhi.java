@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhi extends AbstractList<String> implements zzfg, RandomAccess {
     private final zzfg zza;
 

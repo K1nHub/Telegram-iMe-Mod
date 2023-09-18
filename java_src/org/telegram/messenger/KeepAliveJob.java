@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class KeepAliveJob extends JobIntentService {
     private static volatile CountDownLatch countDownLatch;
     private static volatile boolean startingJob;

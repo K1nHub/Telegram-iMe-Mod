@@ -1,6 +1,6 @@
 package kotlinx.coroutines.internal;
 /* compiled from: LockFreeLinkedList.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LockFreeLinkedListHead extends LockFreeLinkedListNode {
     @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode
     public boolean isRemoved() {
@@ -9,7 +9,7 @@ public class LockFreeLinkedListHead extends LockFreeLinkedListNode {
 
     @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode
     /* renamed from: remove  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ boolean mo1689remove() {
+    public /* bridge */ /* synthetic */ boolean mo1687remove() {
         return ((Boolean) remove()).booleanValue();
     }
 

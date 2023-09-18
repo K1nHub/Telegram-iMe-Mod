@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterFragment.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class TwitterFragment$setupListeners$1$1 extends FunctionReferenceImpl implements Function1<TweetItem, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public TwitterFragment$setupListeners$1$1(Object obj) {

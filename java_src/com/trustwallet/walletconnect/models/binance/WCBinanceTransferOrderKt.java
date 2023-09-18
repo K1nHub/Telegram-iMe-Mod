@@ -12,7 +12,7 @@ import com.trustwallet.walletconnect.models.binance.WCBinanceTransferOrder;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceTransferOrder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCBinanceTransferOrderKt {
     private static final JsonDeserializer<WCBinanceTransferOrder.Message> transferOrderDeserializer = GsonBuilderKt.jsonDeserializer(new Function1<DeserializerArg, WCBinanceTransferOrder.Message>() { // from class: com.trustwallet.walletconnect.models.binance.WCBinanceTransferOrderKt$transferOrderDeserializer$1
         /* JADX WARN: Removed duplicated region for block: B:10:0x0081  */

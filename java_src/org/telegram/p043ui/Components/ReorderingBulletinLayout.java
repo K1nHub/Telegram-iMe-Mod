@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.Bulletin;
 /* renamed from: org.telegram.ui.Components.ReorderingBulletinLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ReorderingBulletinLayout extends Bulletin.SimpleLayout {
     private final ReorderingHintDrawable hintDrawable;
 

@@ -13,7 +13,7 @@ import com.google.firebase.components.Dependency;
 import java.util.Collections;
 import java.util.List;
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {

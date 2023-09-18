@@ -13,7 +13,7 @@ import org.telegram.messenger.databinding.ForkShopItemGridBinding;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: BotsPreviewAdapter.kt */
 /* renamed from: com.iMe.ui.shop.view.adapter.BotsPreviewAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelectionAdapter<ForkShopItemGridBinding> {
     private List<ShopItem> content = new ArrayList();
     private final int currentAccount;

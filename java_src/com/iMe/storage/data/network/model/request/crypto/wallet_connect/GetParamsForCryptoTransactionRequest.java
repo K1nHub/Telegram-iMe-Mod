@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.wallet_connect;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetParamsForCryptoTransactionRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GetParamsForCryptoTransactionRequest {
     private final String data;
     private final String from;

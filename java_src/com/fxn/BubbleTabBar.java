@@ -6,13 +6,11 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
-import androidx.core.view.ViewGroupKt;
 import com.fxn.bubbletabbar.R$dimen;
 import com.fxn.bubbletabbar.R$styleable;
 import com.fxn.parser.MenuItem;
 import com.fxn.parser.MenuParser;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -31,7 +29,6 @@ public final class BubbleTabBar extends LinearLayout {
     private Bubble oldBubble;
     private OnBubbleClickListener onBubbleClickListener;
     private int tabContainerBackground;
-    private HashMap<Integer, Boolean> tabsVisible;
     private float title_sizeParam;
     private float vertical_paddingParam;
 
@@ -54,49 +51,10 @@ public final class BubbleTabBar extends LinearLayout {
         this.menuItems = emptyList;
         this.disabled_icon_colorParam = -7829368;
         this.badgeVisibleValues = new HashMap<>();
-        this.tabsVisible = new HashMap<>();
+        new HashMap();
         setOrientation(0);
         setGravity(17);
         init(context, attributeSet);
-    }
-
-    public final void setTabVisible(int i, boolean z) {
-        View view;
-        boolean z2;
-        Iterator<View> it = ViewGroupKt.getChildren(this).iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                view = null;
-                break;
-            }
-            view = it.next();
-            if (view.getId() == i) {
-                z2 = true;
-                continue;
-            } else {
-                z2 = false;
-                continue;
-            }
-            if (z2) {
-                break;
-            }
-        }
-        Bubble bubble = view instanceof Bubble ? (Bubble) view : null;
-        if (getTabVisible(i) != z) {
-            this.tabsVisible.put(Integer.valueOf(i), Boolean.valueOf(z));
-            if (bubble == null) {
-                return;
-            }
-            bubble.setVisibility(z ? 0 : 8);
-        }
-    }
-
-    public final boolean getTabVisible(int i) {
-        Boolean bool = this.tabsVisible.get(Integer.valueOf(i));
-        if (bool == null) {
-            return true;
-        }
-        return bool.booleanValue();
     }
 
     public final void addBubbleListener(OnBubbleClickListener onBubbleClickListener) {

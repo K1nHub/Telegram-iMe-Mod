@@ -33,13 +33,13 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: WalletConnectPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletConnectPresenter extends BasePresenter<WalletConnectView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final HintsPreferenceHelper hintsPreferenceHelper;
@@ -100,7 +100,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     public final DialogModel getDisconnectAllConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3558R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3558R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3558R.string.Cancel), LocaleController.getString("Terminate", C3558R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3473R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3473R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3473R.string.Cancel), LocaleController.getString("Terminate", C3473R.string.Terminate));
     }
 
     public final void showChangeNetworkHintIfNeeded() {
@@ -123,7 +123,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.NetworkUpdated, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -131,12 +131,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.NetworkUpdated networkUpdated) {
-                m1480invoke(networkUpdated);
+                m1471invoke(networkUpdated);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1480invoke(DomainRxEvents.NetworkUpdated it) {
+            public final void m1471invoke(DomainRxEvents.NetworkUpdated it) {
                 Network currentNetwork;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 currentNetwork = WalletConnectPresenter.this.getCurrentNetwork();
@@ -167,7 +167,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -182,12 +182,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends WCSessionStoreItem>> result) {
-                m1481invoke(result);
+                m1472invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1481invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
+            public final void m1472invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends WCSessionStoreItem>> result = it;

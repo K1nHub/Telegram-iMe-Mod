@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.math.linearalgebra;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PolynomialRingGF2 {
     public static int degree(int i) {
         int i2 = -1;

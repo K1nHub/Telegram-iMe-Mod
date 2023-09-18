@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 import kotlin.jvm.functions.Function1;
 import kotlin.random.Random;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CollectionsKt extends CollectionsKt___CollectionsKt {
     public static /* bridge */ /* synthetic */ <T> boolean addAll(Collection<? super T> collection, T[] tArr) {
         return CollectionsKt__MutableCollectionsKt.addAll(collection, tArr);

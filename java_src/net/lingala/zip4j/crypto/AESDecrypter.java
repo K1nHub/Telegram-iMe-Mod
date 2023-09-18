@@ -10,7 +10,7 @@ import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.AESExtraDataRecord;
 import net.lingala.zip4j.model.LocalFileHeader;
 import net.lingala.zip4j.util.Raw;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AESDecrypter implements IDecrypter {
     private int KEY_LENGTH;
     private int MAC_LENGTH;
@@ -21,7 +21,7 @@ public class AESDecrypter implements IDecrypter {
     private byte[] derivedPasswordVerifier;
 
     /* renamed from: iv */
-    private byte[] f1322iv;
+    private byte[] f1313iv;
     private LocalFileHeader localFileHeader;
     private MacBasedPRF mac;
     private byte[] macKey;
@@ -39,7 +39,7 @@ public class AESDecrypter implements IDecrypter {
         }
         this.localFileHeader = localFileHeader;
         this.storedMac = null;
-        this.f1322iv = new byte[16];
+        this.f1313iv = new byte[16];
         this.counterBlock = new byte[16];
         init(bArr, bArr2);
     }
@@ -118,8 +118,8 @@ public class AESDecrypter implements IDecrypter {
             try {
                 this.loopCount = i6;
                 this.mac.update(bArr, i3, i6);
-                Raw.prepareBuffAESIVBytes(this.f1322iv, this.nonce, 16);
-                this.aesEngine.processBlock(this.f1322iv, this.counterBlock);
+                Raw.prepareBuffAESIVBytes(this.f1313iv, this.nonce, 16);
+                this.aesEngine.processBlock(this.f1313iv, this.counterBlock);
                 for (int i7 = 0; i7 < this.loopCount; i7++) {
                     int i8 = i3 + i7;
                     bArr[i8] = (byte) (bArr[i8] ^ this.counterBlock[i7]);

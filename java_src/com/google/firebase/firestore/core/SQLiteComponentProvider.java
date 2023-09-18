@@ -7,7 +7,7 @@ import com.google.firebase.firestore.local.Persistence;
 import com.google.firebase.firestore.local.SQLitePersistence;
 import com.google.firebase.firestore.local.Scheduler;
 import com.google.firebase.firestore.remote.RemoteSerializer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SQLiteComponentProvider extends MemoryComponentProvider {
     @Override // com.google.firebase.firestore.core.MemoryComponentProvider, com.google.firebase.firestore.core.ComponentProvider
     protected Scheduler createGarbageCollectionScheduler(ComponentProvider.Configuration configuration) {

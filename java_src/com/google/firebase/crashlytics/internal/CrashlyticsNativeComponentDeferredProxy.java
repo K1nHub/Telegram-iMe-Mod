@@ -5,7 +5,7 @@ import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CrashlyticsNativeComponentDeferredProxy implements CrashlyticsNativeComponent {
     private static final NativeSessionFileProvider MISSING_NATIVE_SESSION_FILE_PROVIDER = new MissingNativeSessionFileProvider();
     private final AtomicReference<CrashlyticsNativeComponent> availableNativeComponent = new AtomicReference<>(null);
@@ -80,7 +80,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
         return crashlyticsNativeComponent.getSessionFileProvider(str);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class MissingNativeSessionFileProvider implements NativeSessionFileProvider {
         @Override // com.google.firebase.crashlytics.internal.NativeSessionFileProvider
         public File getAppFile() {

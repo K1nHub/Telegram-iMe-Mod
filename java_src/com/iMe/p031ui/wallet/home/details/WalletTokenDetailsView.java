@@ -24,7 +24,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletTokenDetailsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletTokenDetailsView extends BaseView, WalletCreateManagerView, SwipeRefreshView {
     void actionCopyToClipboard(String str);
 

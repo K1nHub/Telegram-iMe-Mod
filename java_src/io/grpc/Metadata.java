@@ -14,21 +14,21 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Metadata {
     public static final AsciiMarshaller<String> ASCII_STRING_MARSHALLER;
     static final BaseEncoding BASE64_ENCODING_OMIT_PADDING;
     private Object[] namesAndValues;
     private int size;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface AsciiMarshaller<T> {
         T parseAsciiString(String str);
 
         String toAsciiString(T t);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface BinaryStreamMarshaller<T> {
         T parseStream(InputStream inputStream);
 
@@ -36,7 +36,7 @@ public final class Metadata {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface TrustedAsciiMarshaller<T> {
         T parseAsciiString(byte[] bArr);
 
@@ -253,7 +253,7 @@ public final class Metadata {
         return Arrays.equals(bArr, bArr2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Key<T> {
         private static final BitSet VALID_T_CHARS = generateValidTChars();
         private final Object marshaller;
@@ -355,7 +355,7 @@ public final class Metadata {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class LazyValue<T> {
         private final BinaryStreamMarshaller<T> marshaller;
         private volatile byte[] serialized;
@@ -399,7 +399,7 @@ public final class Metadata {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class AsciiKey<T> extends Key<T> {
         private final AsciiMarshaller<T> marshaller;
 
@@ -421,7 +421,7 @@ public final class Metadata {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class TrustedAsciiKey<T> extends Key<T> {
         private final TrustedAsciiMarshaller<T> marshaller;
 

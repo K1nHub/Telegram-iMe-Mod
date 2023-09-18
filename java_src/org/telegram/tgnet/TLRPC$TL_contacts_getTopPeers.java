@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_contacts_getTopPeers extends TLObject {
     public static int constructor = -1758168906;
     public boolean bots_inline;

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.firebase.firestore.util.Preconditions;
 import java.util.Date;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Timestamp implements Comparable<Timestamp>, Parcelable {
     public static final Parcelable.Creator<Timestamp> CREATOR = new Parcelable.Creator<Timestamp>() { // from class: com.google.firebase.Timestamp.1
         /* JADX WARN: Can't rename method to resolve collision */

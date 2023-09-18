@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlinx.coroutines.internal.ArrayQueue;
 /* compiled from: EventLoop.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class EventLoop extends CoroutineDispatcher {
     private boolean shared;
     private ArrayQueue<DispatchedTask<?>> unconfinedQueue;

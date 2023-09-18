@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzin extends zzhj<Double> implements zzjl<Double>, zzkw {
     private static final zzin zza;
     private double[] zzb;

@@ -5,7 +5,7 @@ import com.google.android.gms.internal.firebase_ml.zzkm;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.internal.firebase_ml.zzuu;
 /* renamed from: com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionFaceDetectorOptions {
     private final boolean trackingEnabled;
     private final int zzbbz;

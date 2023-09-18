@@ -4,9 +4,9 @@ import com.iMe.model.wallet.ActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: TransactionActionItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TransactionActionItem implements ActionItem {
     private final int icon;
     private final int title;
@@ -47,62 +47,62 @@ public abstract class TransactionActionItem implements ActionItem {
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Send extends TransactionActionItem {
         public static final Send INSTANCE = new Send();
 
         private Send() {
-            super(C3558R.string.wallet_token_details_details_action_send, C3558R.C3560drawable.msg_send, null, 4, null);
+            super(C3473R.string.wallet_token_details_details_action_send, C3473R.C3475drawable.msg_send, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Support extends TransactionActionItem {
         public static final Support INSTANCE = new Support();
 
         private Support() {
-            super(C3558R.string.wallet_token_details_action_simplex_support, C3558R.C3560drawable.msg_help, null, 4, null);
+            super(C3473R.string.wallet_token_details_action_simplex_support, C3473R.C3475drawable.msg_help, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Profile extends TransactionActionItem {
         public static final Profile INSTANCE = new Profile();
 
         private Profile() {
-            super(C3558R.string.wallet_transaction_details_action_open_profile, C3558R.C3560drawable.msg_openprofile, null, 4, null);
+            super(C3473R.string.wallet_transaction_details_action_open_profile, C3473R.C3475drawable.msg_openprofile, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Cancel extends TransactionActionItem {
         public static final Cancel INSTANCE = new Cancel();
 
         private Cancel() {
-            super(C3558R.string.wallet_transaction_details_action_cancel, C3558R.C3560drawable.fork_cancel_transaction, null, 4, null);
+            super(C3473R.string.wallet_transaction_details_action_cancel, C3473R.C3475drawable.fork_cancel_transaction, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Boost extends TransactionActionItem {
         public static final Boost INSTANCE = new Boost();
 
         private Boost() {
-            super(C3558R.string.wallet_transaction_details_action_boost, C3558R.C3560drawable.fork_ic_speed_up_transaction, null, 4, null);
+            super(C3473R.string.wallet_transaction_details_action_boost, C3473R.C3475drawable.fork_ic_speed_up_transaction, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Copy extends TransactionActionItem {
         private final int title;
 
         public Copy(int i) {
-            super(i, C3558R.C3560drawable.fork_ic_id_28, null, 4, null);
+            super(i, C3473R.C3475drawable.fork_ic_id_28, null, 4, null);
             this.title = i;
         }
 
@@ -113,19 +113,10 @@ public abstract class TransactionActionItem implements ActionItem {
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class OpenScan extends TransactionActionItem {
         private final String iconUrl;
         private final String titleString;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public OpenScan(String titleString, String iconUrl) {
-            super(0, 0, titleString, null);
-            Intrinsics.checkNotNullParameter(titleString, "titleString");
-            Intrinsics.checkNotNullParameter(iconUrl, "iconUrl");
-            this.titleString = titleString;
-            this.iconUrl = iconUrl;
-        }
 
         public final String getIconUrl() {
             return this.iconUrl;
@@ -134,6 +125,15 @@ public abstract class TransactionActionItem implements ActionItem {
         @Override // com.iMe.model.wallet.transaction.TransactionActionItem, com.iMe.model.wallet.ActionItem
         public String getTitleString() {
             return this.titleString;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public OpenScan(String titleString, String iconUrl) {
+            super(0, 0, titleString, null);
+            Intrinsics.checkNotNullParameter(titleString, "titleString");
+            Intrinsics.checkNotNullParameter(iconUrl, "iconUrl");
+            this.titleString = titleString;
+            this.iconUrl = iconUrl;
         }
     }
 }

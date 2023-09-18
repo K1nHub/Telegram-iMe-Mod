@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: TwitterSearchView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TwitterSearchView extends BaseView, LoadMoreView<BaseNode>, CryptoRecipientView {
     @AddToEndSingle
     void onUserSelected(TwitterUserItem twitterUserItem, String str);

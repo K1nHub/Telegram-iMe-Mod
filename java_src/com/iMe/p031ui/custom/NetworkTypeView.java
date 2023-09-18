@@ -28,12 +28,12 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentNetworkTypeBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
 /* renamed from: com.iMe.ui.custom.NetworkTypeView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworkTypeView extends FrameLayout implements KoinComponent {
     private final ForkContentNetworkTypeBinding binding;
     private final Lazy cornerRadius$delegate;
@@ -126,9 +126,9 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
         ForkContentNetworkTypeBinding forkContentNetworkTypeBinding = this.binding;
         NetworkItem networkItem = this.network;
         if (networkItem instanceof NetworkItem.All) {
-            str = getResourceManager().getString(C3558R.string.networks_all);
-            i = getResourceManager().getColor(C3558R.C3559color.wallet_network_all);
-            forkContentNetworkTypeBinding.imageNetwork.setImageResource(C3558R.C3560drawable.fork_ic_all_networks_small);
+            str = getResourceManager().getString(C3473R.string.networks_all);
+            i = getResourceManager().getColor(C3473R.C3474color.wallet_network_all);
+            forkContentNetworkTypeBinding.imageNetwork.setImageResource(C3473R.C3475drawable.fork_ic_all_networks_small);
         } else if (networkItem instanceof NetworkItem.Crypto) {
             NetworkItem.Crypto crypto = (NetworkItem.Crypto) networkItem;
             String fullName = crypto.getFullName();
@@ -144,7 +144,7 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
         forkContentNetworkTypeBinding.getRoot().setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), i, 1090519039));
         AppCompatTextView updateView$lambda$1$lambda$0 = forkContentNetworkTypeBinding.textNetwork;
         updateView$lambda$1$lambda$0.setText(str);
-        updateView$lambda$1$lambda$0.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3558R.C3560drawable.fork_ic_arrow_down_16, 0);
+        updateView$lambda$1$lambda$0.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3473R.C3475drawable.fork_ic_arrow_down_16, 0);
         updateView$lambda$1$lambda$0.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));
         Intrinsics.checkNotNullExpressionValue(updateView$lambda$1$lambda$0, "updateView$lambda$1$lambda$0");
         ViewExtKt.setCompoundDrawablesColor(updateView$lambda$1$lambda$0, -1);
@@ -165,7 +165,7 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
 
     /* compiled from: NetworkTypeView.kt */
     /* renamed from: com.iMe.ui.custom.NetworkTypeView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

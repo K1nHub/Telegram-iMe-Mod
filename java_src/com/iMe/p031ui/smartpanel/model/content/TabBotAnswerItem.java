@@ -4,7 +4,7 @@ import com.iMe.p031ui.smartpanel.model.SmartPanelTabContent;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TabBotAnswerItem.kt */
 /* renamed from: com.iMe.ui.smartpanel.model.content.TabBotAnswerItem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TabBotAnswerItem implements SmartPanelTabContent {
     private final String botId;
     private final SmartPanelTabContent.Type contentType;

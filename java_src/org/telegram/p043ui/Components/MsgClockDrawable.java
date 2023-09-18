@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.MsgClockDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MsgClockDrawable extends Drawable {
     private int alpha;
     private int color;

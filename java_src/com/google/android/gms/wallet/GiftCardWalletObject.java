@@ -19,7 +19,7 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "GiftCardWalletObjectCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GiftCardWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GiftCardWalletObject> CREATOR = new zzn();
     @SafeParcelable.Field(m797id = 2)
@@ -41,7 +41,7 @@ public final class GiftCardWalletObject extends AbstractSafeParcelable {
     String zzh;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         private com.google.android.gms.wallet.wobs.zzb zzb = CommonWalletObject.zzb();
 

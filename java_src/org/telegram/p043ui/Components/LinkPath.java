@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 /* renamed from: org.telegram.ui.Components.LinkPath */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LinkPath extends Path {
     private static CornerPathEffect roundedEffect;
     private static int roundedEffectRadius;

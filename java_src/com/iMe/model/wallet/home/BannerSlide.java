@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum FAQ uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -18,7 +18,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum FAQ uses external 
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: BannerSlide.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BannerSlide {
     private static final /* synthetic */ BannerSlide[] $VALUES;
     public static final BannerSlide ASCENDEEX;
@@ -82,27 +82,27 @@ public final class BannerSlide {
     }
 
     static {
-        int i = C3558R.string.wallet_banner_slide_faq_title;
-        int i2 = C3558R.string.wallet_banner_slide_faq_description;
-        int i3 = C3558R.string.wallet_banner_slide_faq_long_description;
-        int i4 = C3558R.string.common_next;
-        FAQ = new BannerSlide("FAQ", 0, i, i2, i3, i4, C3558R.raw.fork_faq);
-        NON_CUSTODIAL = new BannerSlide("NON_CUSTODIAL", 1, C3558R.string.wallet_banner_slide_non_custodial_title, C3558R.string.wallet_banner_slide_non_custodial_description, C3558R.string.wallet_banner_slide_non_custodial_long_description, C3558R.string.wallet_eth_backup_info_start_dialog_title, C3558R.raw.fork_non_custodial);
-        int i5 = C3558R.string.wallet_banner_slide_safe_title;
-        int i6 = C3558R.string.wallet_banner_slide_safe_description;
-        int i7 = C3558R.string.wallet_banner_slide_safe_long_description;
-        int i8 = C3558R.string.common_ok;
-        SAFE = new BannerSlide("SAFE", 2, i5, i6, i7, i8, C3558R.raw.fork_safe);
-        CRYPTO_TRANSFERS = new BannerSlide("CRYPTO_TRANSFERS", 3, C3558R.string.wallet_banner_slide_crypto_transfers_title, C3558R.string.wallet_banner_slide_crypto_transfers_description, C3558R.string.wallet_banner_slide_crypto_transfers_long_description, C3558R.string.transfer_via_wallet_action_item, C3558R.raw.fork_crypto_transfers);
-        SWAP = new BannerSlide("SWAP", 4, C3558R.string.wallet_banner_slide_swap_title, C3558R.string.wallet_banner_slide_swap_description, C3558R.string.wallet_banner_slide_swap_long_description, C3558R.string.wallet_swap_process_button_exchange, C3558R.raw.fork_swap);
-        MULTI_NETWORKS = new BannerSlide("MULTI_NETWORKS", 5, C3558R.string.wallet_banner_slide_multi_networks_title, C3558R.string.wallet_banner_slide_multi_networks_description, C3558R.string.wallet_banner_slide_multi_networks_long_description, i8, C3558R.raw.fork_multi_networking);
-        GATE = new BannerSlide("GATE", 6, C3558R.string.wallet_banner_slide_gate_title, C3558R.string.wallet_banner_slide_gate_description, C3558R.string.wallet_banner_slide_gate_long_description, i4, C3558R.raw.fork_gate);
-        ASCENDEEX = new BannerSlide("ASCENDEEX", 7, C3558R.string.wallet_banner_slide_ascendeex_title, C3558R.string.wallet_banner_slide_ascendeex_description, C3558R.string.wallet_banner_slide_ascendeex_long_description, i4, C3558R.raw.fork_ascendeex);
-        STAKING = new BannerSlide("STAKING", 8, C3558R.string.wallet_banner_slide_staking_title, C3558R.string.wallet_banner_slide_staking_description, C3558R.string.wallet_banner_slide_staking_long_description, i4, C3558R.raw.fork_staking_profit);
-        BINANCE_PAY_INFORMATION = new BannerSlide("BINANCE_PAY_INFORMATION", 9, C3558R.string.wallet_banner_slide_binance_pay_information_title, C3558R.string.wallet_banner_slide_binance_pay_information_description, C3558R.string.wallet_banner_slide_binance_pay_information_long_description, i8, C3558R.raw.fork_binance_pay_information);
-        BINANCE_PAY_OPERATION_WITHOUT_FEE = new BannerSlide("BINANCE_PAY_OPERATION_WITHOUT_FEE", 10, C3558R.string.wallet_banner_slide_binance_pay_operation_without_fee_title, C3558R.string.wallet_banner_slide_binance_pay_operation_without_fee_description, C3558R.string.wallet_banner_slide_binance_pay_operation_without_fee_long_description, i8, C3558R.raw.fork_binance_pay_operation_without_fee);
-        BINANCE_PAY_MARKETPLACE = new BannerSlide("BINANCE_PAY_MARKETPLACE", 11, C3558R.string.wallet_banner_slide_binance_pay_marketplace_title, C3558R.string.wallet_banner_slide_binance_pay_marketplace_description, C3558R.string.wallet_banner_slide_binance_pay_marketplace_long_description, i4, C3558R.raw.fork_binance_pay_marketplace);
-        BINANCE_PAY_FAQ = new BannerSlide("BINANCE_PAY_FAQ", 12, C3558R.string.wallet_banner_slide_binance_pay_faq_title, C3558R.string.wallet_banner_slide_binance_pay_faq_description, C3558R.string.wallet_banner_slide_binance_pay_faq_long_description, i4, C3558R.raw.fork_binance_pay_faq);
+        int i = C3473R.string.wallet_banner_slide_faq_title;
+        int i2 = C3473R.string.wallet_banner_slide_faq_description;
+        int i3 = C3473R.string.wallet_banner_slide_faq_long_description;
+        int i4 = C3473R.string.common_next;
+        FAQ = new BannerSlide("FAQ", 0, i, i2, i3, i4, C3473R.raw.fork_faq);
+        NON_CUSTODIAL = new BannerSlide("NON_CUSTODIAL", 1, C3473R.string.wallet_banner_slide_non_custodial_title, C3473R.string.wallet_banner_slide_non_custodial_description, C3473R.string.wallet_banner_slide_non_custodial_long_description, C3473R.string.wallet_eth_backup_info_start_dialog_title, C3473R.raw.fork_non_custodial);
+        int i5 = C3473R.string.wallet_banner_slide_safe_title;
+        int i6 = C3473R.string.wallet_banner_slide_safe_description;
+        int i7 = C3473R.string.wallet_banner_slide_safe_long_description;
+        int i8 = C3473R.string.common_ok;
+        SAFE = new BannerSlide("SAFE", 2, i5, i6, i7, i8, C3473R.raw.fork_safe);
+        CRYPTO_TRANSFERS = new BannerSlide("CRYPTO_TRANSFERS", 3, C3473R.string.wallet_banner_slide_crypto_transfers_title, C3473R.string.wallet_banner_slide_crypto_transfers_description, C3473R.string.wallet_banner_slide_crypto_transfers_long_description, C3473R.string.transfer_via_wallet_action_item, C3473R.raw.fork_crypto_transfers);
+        SWAP = new BannerSlide("SWAP", 4, C3473R.string.wallet_banner_slide_swap_title, C3473R.string.wallet_banner_slide_swap_description, C3473R.string.wallet_banner_slide_swap_long_description, C3473R.string.wallet_swap_process_button_exchange, C3473R.raw.fork_swap);
+        MULTI_NETWORKS = new BannerSlide("MULTI_NETWORKS", 5, C3473R.string.wallet_banner_slide_multi_networks_title, C3473R.string.wallet_banner_slide_multi_networks_description, C3473R.string.wallet_banner_slide_multi_networks_long_description, i8, C3473R.raw.fork_multi_networking);
+        GATE = new BannerSlide("GATE", 6, C3473R.string.wallet_banner_slide_gate_title, C3473R.string.wallet_banner_slide_gate_description, C3473R.string.wallet_banner_slide_gate_long_description, i4, C3473R.raw.fork_gate);
+        ASCENDEEX = new BannerSlide("ASCENDEEX", 7, C3473R.string.wallet_banner_slide_ascendeex_title, C3473R.string.wallet_banner_slide_ascendeex_description, C3473R.string.wallet_banner_slide_ascendeex_long_description, i4, C3473R.raw.fork_ascendeex);
+        STAKING = new BannerSlide("STAKING", 8, C3473R.string.wallet_banner_slide_staking_title, C3473R.string.wallet_banner_slide_staking_description, C3473R.string.wallet_banner_slide_staking_long_description, i4, C3473R.raw.fork_staking_profit);
+        BINANCE_PAY_INFORMATION = new BannerSlide("BINANCE_PAY_INFORMATION", 9, C3473R.string.wallet_banner_slide_binance_pay_information_title, C3473R.string.wallet_banner_slide_binance_pay_information_description, C3473R.string.wallet_banner_slide_binance_pay_information_long_description, i8, C3473R.raw.fork_binance_pay_information);
+        BINANCE_PAY_OPERATION_WITHOUT_FEE = new BannerSlide("BINANCE_PAY_OPERATION_WITHOUT_FEE", 10, C3473R.string.wallet_banner_slide_binance_pay_operation_without_fee_title, C3473R.string.wallet_banner_slide_binance_pay_operation_without_fee_description, C3473R.string.wallet_banner_slide_binance_pay_operation_without_fee_long_description, i8, C3473R.raw.fork_binance_pay_operation_without_fee);
+        BINANCE_PAY_MARKETPLACE = new BannerSlide("BINANCE_PAY_MARKETPLACE", 11, C3473R.string.wallet_banner_slide_binance_pay_marketplace_title, C3473R.string.wallet_banner_slide_binance_pay_marketplace_description, C3473R.string.wallet_banner_slide_binance_pay_marketplace_long_description, i4, C3473R.raw.fork_binance_pay_marketplace);
+        BINANCE_PAY_FAQ = new BannerSlide("BINANCE_PAY_FAQ", 12, C3473R.string.wallet_banner_slide_binance_pay_faq_title, C3473R.string.wallet_banner_slide_binance_pay_faq_description, C3473R.string.wallet_banner_slide_binance_pay_faq_long_description, i4, C3473R.raw.fork_binance_pay_faq);
         $VALUES = $values();
         Companion = new Companion(null);
     }
@@ -110,13 +110,13 @@ public final class BannerSlide {
     public final int getActionButtonText(CryptoAccessManager cryptoAccessManager) {
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
         if ((this == SWAP || this == NON_CUSTODIAL) && !cryptoAccessManager.isCurrentBlockchainWalletCreated()) {
-            return C3558R.string.common_ok;
+            return C3473R.string.common_ok;
         }
         return getAction();
     }
 
     /* compiled from: BannerSlide.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

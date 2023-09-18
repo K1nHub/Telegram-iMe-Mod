@@ -9,7 +9,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Charts.BaseChartView;
 import org.telegram.p043ui.Charts.data.ChartData;
 /* renamed from: org.telegram.ui.Charts.view_data.LineViewData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LineViewData {
     public float alpha;
     public ValueAnimator animatorIn;
@@ -53,7 +53,7 @@ public class LineViewData {
         paint3.setStyle(Paint.Style.STROKE);
         paint3.setStrokeCap(Paint.Cap.ROUND);
         paint3.setColor(line.color);
-        int[] iArr = line.f1730y;
+        int[] iArr = line.f1721y;
         this.linesPath = new float[iArr.length << 2];
         this.linesPathBottom = new float[iArr.length << 2];
     }

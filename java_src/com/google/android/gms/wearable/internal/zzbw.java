@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "ChannelReceiveFileResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbw extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbw> CREATOR = new zzbx();
     @SafeParcelable.Field(m797id = 2)

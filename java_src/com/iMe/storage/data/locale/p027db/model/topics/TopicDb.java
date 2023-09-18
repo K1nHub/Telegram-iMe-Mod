@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TopicDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.topics.TopicDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TopicDb {
     private final List<Long> dialogs;
     private final String icon;

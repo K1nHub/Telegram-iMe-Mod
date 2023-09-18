@@ -3,7 +3,7 @@ package com.iMe.model.dialog;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EditTextDialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EditTextDialogModel {
     private final String hint;
     private final String negativeButtonText;

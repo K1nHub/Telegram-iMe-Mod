@@ -5,6 +5,6 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: SimplexWebViewProcessingView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface SimplexWebViewProcessingView extends BaseView {
 }

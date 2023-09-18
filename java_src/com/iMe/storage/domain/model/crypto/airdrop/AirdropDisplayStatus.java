@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.airdrop;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AirdropDisplayStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum AirdropDisplayStatus {
     ACCEPTED,
     REJECTED,
@@ -24,7 +24,7 @@ public enum AirdropDisplayStatus {
     }
 
     /* compiled from: AirdropDisplayStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

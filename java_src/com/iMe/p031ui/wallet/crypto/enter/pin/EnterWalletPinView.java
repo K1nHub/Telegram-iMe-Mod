@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: EnterWalletPinView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface EnterWalletPinView extends BaseView {
     void onDeleteWalletSuccess();
 

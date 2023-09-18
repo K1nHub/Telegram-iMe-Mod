@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LMSigParameters {
     public static final LMSigParameters lms_sha256_n32_h10;
     public static final LMSigParameters lms_sha256_n32_h15;
@@ -15,10 +15,10 @@ public class LMSigParameters {
     private final ASN1ObjectIdentifier digestOid;
 
     /* renamed from: h */
-    private final int f1417h;
+    private final int f1408h;
 
     /* renamed from: m */
-    private final int f1418m;
+    private final int f1409m;
     private final int type;
 
     static {
@@ -46,8 +46,8 @@ public class LMSigParameters {
 
     protected LMSigParameters(int i, int i2, int i3, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         this.type = i;
-        this.f1418m = i2;
-        this.f1417h = i3;
+        this.f1409m = i2;
+        this.f1408h = i3;
         this.digestOid = aSN1ObjectIdentifier;
     }
 
@@ -61,11 +61,11 @@ public class LMSigParameters {
     }
 
     public int getH() {
-        return this.f1417h;
+        return this.f1408h;
     }
 
     public int getM() {
-        return this.f1418m;
+        return this.f1409m;
     }
 
     public int getType() {

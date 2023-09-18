@@ -3,7 +3,7 @@ package kotlin.text;
 import kotlin.ranges.IntRange;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CharJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CharsKt__CharJVMKt {
     public static final boolean isWhitespace(char c) {
         return Character.isWhitespace(c) || Character.isSpaceChar(c);

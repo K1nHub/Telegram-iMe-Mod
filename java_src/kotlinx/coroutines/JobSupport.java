@@ -23,7 +23,7 @@ import kotlinx.coroutines.internal.OpDescriptor;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class JobSupport implements Job, ChildJob, ParentJob {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(JobSupport.class, Object.class, "_state");
     private volatile /* synthetic */ Object _parentHandle;
@@ -242,7 +242,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (!(state$kotlinx_coroutines_core instanceof Incomplete) || ((Incomplete) state$kotlinx_coroutines_core).getList() == null) {
                     return;
                 }
-                jobNode.mo1689remove();
+                jobNode.mo1687remove();
                 return;
             } else if (state$kotlinx_coroutines_core != jobNode) {
                 return;
@@ -897,7 +897,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: JobSupport.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Finishing implements Incomplete {
         private volatile /* synthetic */ Object _exceptionsHolder = null;
         private volatile /* synthetic */ int _isCompleting;
@@ -915,7 +915,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             this._rootCause = th;
         }
 
-        /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+        /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
         public final boolean isCompleting() {
             return this._isCompleting;
         }
@@ -1020,7 +1020,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: JobSupport.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ChildCompletion extends JobNode {
         private final ChildHandleNode child;
         private final JobSupport parent;

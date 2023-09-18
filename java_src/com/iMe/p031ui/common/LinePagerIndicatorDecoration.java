@@ -13,7 +13,7 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LinePagerIndicatorDecoration.kt */
 /* renamed from: com.iMe.ui.common.LinePagerIndicatorDecoration */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LinePagerIndicatorDecoration extends RecyclerView.ItemDecoration {
     private final int colorActive = -1;
     private final int colorInactive = 1728053247;

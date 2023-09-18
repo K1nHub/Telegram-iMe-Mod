@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.IInterface;
 import android.os.RemoteException;
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zzg extends IInterface {
     void zza(Bundle bundle) throws RemoteException;
 }

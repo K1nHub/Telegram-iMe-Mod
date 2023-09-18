@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_channelParticipantsBots extends TLRPC$ChannelParticipantsFilter {
     public static int constructor = -1328445861;
 

@@ -19,7 +19,7 @@ import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DotsIndicator.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DotsIndicator extends BaseDotsIndicator {
     private final ArgbEvaluator argbEvaluator;
     private float dotsElevation;
@@ -49,7 +49,7 @@ public final class DotsIndicator extends BaseDotsIndicator {
     }
 
     /* compiled from: DotsIndicator.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

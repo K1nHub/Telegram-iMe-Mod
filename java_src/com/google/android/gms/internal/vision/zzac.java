@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzac extends zzb implements zzad {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzac(IBinder iBinder) {

@@ -11,7 +11,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.ProgressButton;
 import org.telegram.tgnet.TLRPC$StickerSetCovered;
 /* renamed from: org.telegram.ui.Cells.FeaturedStickerSetCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FeaturedStickerSetCell extends FrameLayout {
     private ProgressButton addButton;
     private ImageView checkImage;

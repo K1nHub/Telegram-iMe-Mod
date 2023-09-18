@@ -5,7 +5,7 @@ import androidx.sqlite.p011db.SupportSQLiteDatabase;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppCacheDatabaseMigrations.kt */
 /* renamed from: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppCacheDatabaseMigrations {
     public static final AppCacheDatabaseMigrations INSTANCE = new AppCacheDatabaseMigrations();
     private static final AppCacheDatabaseMigrations$MIGRATION_10_11$1 MIGRATION_10_11;

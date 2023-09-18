@@ -20,7 +20,7 @@ import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
 import org.telegram.p043ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AccountInstance {
     private static volatile AccountInstance[] Instance = new AccountInstance[5];
     private int currentAccount;

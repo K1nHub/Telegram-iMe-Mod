@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 /* compiled from: ProfileView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ProfileView extends BaseView {
     @AddToEndSingle
     void onFilteredMembers(ArrayList<TLRPC$ChatParticipant> arrayList);
@@ -23,9 +23,6 @@ public interface ProfileView extends BaseView {
     void openTwitterScreen(long j, SocialNetwork socialNetwork);
 
     void showBeforeConnectMessage(SocialNetwork socialNetwork, DialogModel dialogModel);
-
-    @OneExecution
-    void showLinkConfirmationDialog(DialogModel dialogModel, long j);
 
     @OneExecution
     void showNeedAuthorizeDialog(DialogModel dialogModel);

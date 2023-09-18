@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.MapPlaceholderDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MapPlaceholderDrawable extends Drawable {
     private Paint linePaint;
     private Paint paint;

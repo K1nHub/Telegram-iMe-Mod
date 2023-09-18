@@ -9,7 +9,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: MvpNoParentCustomView.kt */
 /* renamed from: com.iMe.ui.base.mvp.view.MvpNoParentCustomView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class MvpNoParentCustomView implements ICustomMvpView<MvpNoParentCustomView> {
     private final Lazy mMvpDelegate$delegate;
 

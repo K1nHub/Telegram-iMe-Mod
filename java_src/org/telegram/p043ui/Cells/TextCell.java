@@ -25,7 +25,7 @@ import org.telegram.p043ui.Components.RLottieDrawable;
 import org.telegram.p043ui.Components.RLottieImageView;
 import org.telegram.p043ui.Components.Switch;
 /* renamed from: org.telegram.ui.Cells.TextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextCell extends FrameLayout {
     private int changeProgressStartDelay;
     private Switch checkBox;

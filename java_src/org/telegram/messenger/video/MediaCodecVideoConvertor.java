@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p043ui.Components.RLottieDrawable;
 import org.telegram.p043ui.Stories.recorder.StoryEntry;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MediaCodecVideoConvertor {
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
     private static final int MEDIACODEC_TIMEOUT_INCREASED = 22000;
@@ -50,7 +50,7 @@ public class MediaCodecVideoConvertor {
         */
     private boolean convertVideoInternal(java.lang.String r76, java.io.File r77, int r78, boolean r79, int r80, int r81, int r82, int r83, int r84, int r85, int r86, long r87, long r89, long r91, long r93, boolean r95, boolean r96, org.telegram.messenger.MediaController.SavedFilterState r97, java.lang.String r98, java.util.ArrayList<org.telegram.messenger.VideoEditedInfo.MediaEntity> r99, boolean r100, org.telegram.messenger.MediaController.CropState r101, boolean r102, java.lang.Integer r103, java.lang.Integer r104, boolean r105, boolean r106, org.telegram.p043ui.Stories.recorder.StoryEntry.HDRInfo r107, java.util.ArrayList<org.telegram.p043ui.Stories.recorder.StoryEntry.Part> r108, int r109) {
         /*
-            Method dump skipped, instructions count: 7661
+            Method dump skipped, instructions count: 7660
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(java.lang.String, java.io.File, int, boolean, int, int, int, int, int, int, int, long, long, long, long, boolean, boolean, org.telegram.messenger.MediaController$SavedFilterState, java.lang.String, java.util.ArrayList, boolean, org.telegram.messenger.MediaController$CropState, boolean, java.lang.Integer, java.lang.Integer, boolean, boolean, org.telegram.ui.Stories.recorder.StoryEntry$HDRInfo, java.util.ArrayList, int):boolean");
@@ -124,9 +124,9 @@ public class MediaCodecVideoConvertor {
         String readRes;
         if (z) {
             if (hDRInfo.getHDRType() == 1) {
-                readRes = RLottieDrawable.readRes(null, C3558R.raw.yuv_hlg2rgb);
+                readRes = RLottieDrawable.readRes(null, C3473R.raw.yuv_hlg2rgb);
             } else {
-                readRes = RLottieDrawable.readRes(null, C3558R.raw.yuv_pq2rgb);
+                readRes = RLottieDrawable.readRes(null, C3473R.raw.yuv_pq2rgb);
             }
             String replace = readRes.replace("$dstWidth", i3 + ".0");
             String replace2 = replace.replace("$dstHeight", i4 + ".0");
@@ -148,7 +148,7 @@ public class MediaCodecVideoConvertor {
         return "precision mediump float;\nvarying vec2 vTextureCoord;\nconst float kernel = " + min + ".0;\nconst float pixelSizeX = 1.0 / " + i2 + ".0;\nconst float pixelSizeY = 1.0 / " + i + ".0;\nuniform sampler2D sTexture;\nvoid main() {\nvec3 accumulation = vec3(0);\nvec3 weightsum = vec3(0);\nfor (float x = -kernel; x <= kernel; x++){\n   for (float y = -kernel; y <= kernel; y++){\n       accumulation += texture2D(sTexture, vTextureCoord + vec2(x * pixelSizeX, y * pixelSizeY)).xyz;\n       weightsum += 1.0;\n   }\n}\ngl_FragColor = vec4(accumulation / weightsum, 1.0);\n}\n";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");

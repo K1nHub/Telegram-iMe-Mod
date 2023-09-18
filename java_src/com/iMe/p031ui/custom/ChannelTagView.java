@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChannelTagView.kt */
 /* renamed from: com.iMe.ui.custom.ChannelTagView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ChannelTagView extends AppCompatTextView {
     public /* synthetic */ ChannelTagView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);

@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MutableCollectionsJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CollectionsKt__MutableCollectionsJVMKt extends CollectionsKt__IteratorsKt {
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");

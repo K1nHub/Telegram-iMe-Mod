@@ -20,7 +20,7 @@ import okhttp3.internal.platform.android.DeferredSocketAdapter;
 import okhttp3.internal.platform.android.SocketAdapter;
 import okhttp3.internal.tls.CertificateChainCleaner;
 /* compiled from: Android10Platform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Android10Platform extends Platform {
     public static final Companion Companion = new Companion(null);
     private static final boolean isSupported;
@@ -96,7 +96,7 @@ public final class Android10Platform extends Platform {
     }
 
     /* compiled from: Android10Platform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

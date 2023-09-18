@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 /* renamed from: org.telegram.ui.Components.HideViewAfterAnimation */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HideViewAfterAnimation extends AnimatorListenerAdapter {
     private final boolean goneOnHide;
     private final View view;

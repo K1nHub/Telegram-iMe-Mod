@@ -13,7 +13,7 @@ import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.JobKt;
 /* compiled from: HandlerDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HandlerContext extends HandlerDispatcher {
     private volatile HandlerContext _immediate;
     private final Handler handler;
@@ -23,7 +23,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1691scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo1689scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         long coerceAtMost;
         final Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
             @Override // java.lang.Runnable
@@ -93,7 +93,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (this.handler.post(runnable)) {
             return;
         }
@@ -102,7 +102,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
         JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().mo1690dispatch(coroutineContext, runnable);
+        Dispatchers.getIO().mo1688dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.MainCoroutineDispatcher, kotlinx.coroutines.CoroutineDispatcher

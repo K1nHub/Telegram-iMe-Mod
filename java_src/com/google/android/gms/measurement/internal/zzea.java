@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzea extends com.google.android.gms.internal.measurement.zzbn implements zzeb {
     public zzea() {
         super("com.google.android.gms.measurement.internal.IMeasurementService");

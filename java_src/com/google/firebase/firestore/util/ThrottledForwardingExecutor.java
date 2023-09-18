@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.Semaphore;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ThrottledForwardingExecutor implements Executor {
     private final Semaphore availableSlots;
     private final Executor executor;

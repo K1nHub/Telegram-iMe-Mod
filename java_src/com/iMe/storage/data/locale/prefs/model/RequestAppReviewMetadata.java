@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.prefs.model;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: RequestAppReviewMetadata.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RequestAppReviewMetadata {
     private int count;
     private long lastRequestTime;

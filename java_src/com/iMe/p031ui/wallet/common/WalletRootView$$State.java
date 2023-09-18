@@ -4,13 +4,12 @@ import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
-import java.util.HashMap;
 import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletRootView$$State extends MvpViewState<WalletRootView> implements WalletRootView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -33,19 +32,6 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
             view.onTabSelected(i);
         }
         this.viewCommands.afterApply(onTabSelectedCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.common.WalletRootView
-    public void setupNavigationTabsEnabled(HashMap<Integer, Boolean> hashMap) {
-        SetupNavigationTabsEnabledCommand setupNavigationTabsEnabledCommand = new SetupNavigationTabsEnabledCommand(this, hashMap);
-        this.viewCommands.beforeApply(setupNavigationTabsEnabledCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.setupNavigationTabsEnabled(hashMap);
-        }
-        this.viewCommands.afterApply(setupNavigationTabsEnabledCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.common.WalletRootView
@@ -115,7 +101,7 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
 
     /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$OnTabSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnTabSelectedCommand extends ViewCommand<WalletRootView> {
 
         /* renamed from: id */
@@ -133,25 +119,8 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
     }
 
     /* compiled from: WalletRootView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$SetupNavigationTabsEnabledCommand */
-    /* loaded from: classes4.dex */
-    public class SetupNavigationTabsEnabledCommand extends ViewCommand<WalletRootView> {
-        public final HashMap<Integer, Boolean> availableTabs;
-
-        SetupNavigationTabsEnabledCommand(WalletRootView$$State walletRootView$$State, HashMap<Integer, Boolean> hashMap) {
-            super("setupNavigationTabsEnabled", AddToEndSingleStrategy.class);
-            this.availableTabs = hashMap;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletRootView walletRootView) {
-            walletRootView.setupNavigationTabsEnabled(this.availableTabs);
-        }
-    }
-
-    /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$ShowNotificationItemCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowNotificationItemCommand extends ViewCommand<WalletRootView> {
         public final boolean show;
 
@@ -168,7 +137,7 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
 
     /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$ShowWalletConnectItemCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowWalletConnectItemCommand extends ViewCommand<WalletRootView> {
         public final boolean show;
 
@@ -185,7 +154,7 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
 
     /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletRootView> {
         public final String text;
 
@@ -202,7 +171,7 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
 
     /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletRootView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -223,7 +192,7 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
 
     /* compiled from: WalletRootView$$State.java */
     /* renamed from: com.iMe.ui.wallet.common.WalletRootView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletRootView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

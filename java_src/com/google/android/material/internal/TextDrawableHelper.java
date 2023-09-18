@@ -7,7 +7,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.resources.TextAppearance;
 import com.google.android.material.resources.TextAppearanceFontCallback;
 import java.lang.ref.WeakReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TextDrawableHelper {
     private TextAppearance textAppearance;
     private float textWidth;
@@ -37,7 +37,7 @@ public class TextDrawableHelper {
     private boolean textWidthDirty = true;
     private WeakReference<TextDrawableDelegate> delegate = new WeakReference<>(null);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TextDrawableDelegate {
         int[] getState();
 

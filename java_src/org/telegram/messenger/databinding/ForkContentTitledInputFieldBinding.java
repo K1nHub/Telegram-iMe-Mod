@@ -8,9 +8,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.LinkActionView;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkContentTitledInputFieldBinding implements ViewBinding {
     public final FrameLayout frameContainer;
     private final LinearLayout rootView;
@@ -34,7 +34,7 @@ public final class ForkContentTitledInputFieldBinding implements ViewBinding {
     }
 
     public static ForkContentTitledInputFieldBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_titled_input_field, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_titled_input_field, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,13 +42,13 @@ public final class ForkContentTitledInputFieldBinding implements ViewBinding {
     }
 
     public static ForkContentTitledInputFieldBinding bind(View view) {
-        int i = C3558R.C3561id.frame_container;
+        int i = C3473R.C3476id.frame_container;
         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
         if (frameLayout != null) {
-            i = C3558R.C3561id.text_title;
+            i = C3473R.C3476id.text_title;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3558R.C3561id.view_input;
+                i = C3473R.C3476id.view_input;
                 LinkActionView linkActionView = (LinkActionView) ViewBindings.findChildViewById(view, i);
                 if (linkActionView != null) {
                     return new ForkContentTitledInputFieldBinding((LinearLayout) view, frameLayout, textView, linkActionView);

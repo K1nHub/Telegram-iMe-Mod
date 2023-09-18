@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CacheManagerStrategy.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CacheManagerStrategy {
     public static final CacheManagerStrategy INSTANCE = new CacheManagerStrategy();
 

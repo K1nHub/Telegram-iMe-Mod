@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ChatMessageSharedResources {
     public Drawable chat_msgAvatarLiveLocationDrawable;
     public Drawable chat_redLocationIcon;
@@ -14,14 +14,14 @@ public class ChatMessageSharedResources {
 
     public Drawable getRedLocationIcon() {
         if (this.chat_redLocationIcon == null) {
-            this.chat_redLocationIcon = this.context.getResources().getDrawable(C3558R.C3560drawable.map_pin).mutate();
+            this.chat_redLocationIcon = this.context.getResources().getDrawable(C3473R.C3475drawable.map_pin).mutate();
         }
         return this.chat_redLocationIcon;
     }
 
     public Drawable getAvatarLiveLocation() {
         if (this.chat_msgAvatarLiveLocationDrawable == null) {
-            this.chat_msgAvatarLiveLocationDrawable = this.context.getResources().getDrawable(C3558R.C3560drawable.livepin).mutate();
+            this.chat_msgAvatarLiveLocationDrawable = this.context.getResources().getDrawable(C3473R.C3475drawable.livepin).mutate();
         }
         return this.chat_msgAvatarLiveLocationDrawable;
     }

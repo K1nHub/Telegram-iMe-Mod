@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_reactionCount extends TLRPC$ReactionCount {
     public static int constructor = -1546531968;
 

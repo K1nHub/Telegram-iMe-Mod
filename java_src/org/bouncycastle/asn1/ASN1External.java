@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ASN1External extends ASN1Primitive {
     protected ASN1Primitive dataValueDescriptor;
     protected ASN1ObjectIdentifier directReference;

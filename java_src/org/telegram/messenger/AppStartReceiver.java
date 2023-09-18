@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.enums.LockedSection;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AppStartReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {

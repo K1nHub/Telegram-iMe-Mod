@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableRetryPredicate<T> extends AbstractObservableWithUpstream<T, T> {
     final long count;
     final Predicate<? super Throwable> predicate;
@@ -27,7 +27,7 @@ public final class ObservableRetryPredicate<T> extends AbstractObservableWithUps
         new RepeatObserver(observer, this.count, this.predicate, sequentialDisposable, this.source).subscribeNext();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class RepeatObserver<T> extends AtomicInteger implements Observer<T> {
         final Observer<? super T> downstream;
         final Predicate<? super Throwable> predicate;

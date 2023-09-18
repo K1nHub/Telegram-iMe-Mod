@@ -17,7 +17,7 @@ import java.util.List;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 @KeepForSdk
 /* renamed from: com.google.mlkit.nl.languageid.LanguageIdRegistrar */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {

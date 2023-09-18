@@ -7,7 +7,7 @@ import com.google.firebase.firestore.util.Assert;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MutationBatch {
     private final List<Mutation> baseMutations;
     private final int batchId;

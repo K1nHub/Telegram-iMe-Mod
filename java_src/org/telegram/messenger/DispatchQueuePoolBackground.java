@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.p043ui.Components.Reactions.HwEmojis;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
     private static DispatchQueuePoolBackground backgroundQueue;

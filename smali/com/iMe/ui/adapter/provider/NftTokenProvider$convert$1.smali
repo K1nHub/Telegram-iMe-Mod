@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 38
+    .line 40
     check-cast p1, Lcom/iMe/ui/custom/nft/NftRootView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->invoke(Lcom/iMe/ui/custom/nft/NftRootView;)V
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/nft/NftRootView;->setNftToken(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;)V
 
-    .line 40
+    .line 42
     iget v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$leftPadding:I
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingTop()I

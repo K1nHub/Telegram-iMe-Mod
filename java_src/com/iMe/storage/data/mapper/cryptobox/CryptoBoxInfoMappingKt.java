@@ -9,7 +9,7 @@ import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxStatus;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInfoMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxInfoMappingKt {
     public static final CryptoBoxInfo mapToDomain(CryptoBoxInfoResponse cryptoBoxInfoResponse) {
         Intrinsics.checkNotNullParameter(cryptoBoxInfoResponse, "<this>");

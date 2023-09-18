@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.EditTextSettingsCell;
@@ -25,7 +25,7 @@ import org.telegram.p043ui.Cells.TextSettingsCell;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.QuickRepliesSettingsActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class QuickRepliesSettingsActivity extends BaseFragment {
     private int explanationRow;
     private ListAdapter listAdapter;
@@ -60,14 +60,14 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("VoipQuickReplies", C3558R.string.VoipQuickReplies));
+        this.actionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("VoipQuickReplies", C3473R.string.VoipQuickReplies));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.QuickRepliesSettingsActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.QuickRepliesSettingsActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     QuickRepliesSettingsActivity.this.finishFragment();
@@ -121,7 +121,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.QuickRepliesSettingsActivity$ListAdapter */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     private class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
 
@@ -167,7 +167,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
                 int r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.access$100(r0)
                 r2 = 0
                 if (r9 != r0) goto L2f
-                int r0 = org.telegram.messenger.C3558R.string.QuickReplyDefault1
+                int r0 = org.telegram.messenger.C3473R.string.QuickReplyDefault1
                 java.lang.String r2 = "QuickReplyDefault1"
                 java.lang.String r2 = org.telegram.messenger.LocaleController.getString(r2, r0)
                 java.lang.String r0 = "quick_reply_msg1"
@@ -180,7 +180,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
                 org.telegram.ui.QuickRepliesSettingsActivity r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.this
                 int r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.access$200(r0)
                 if (r9 != r0) goto L42
-                int r0 = org.telegram.messenger.C3558R.string.QuickReplyDefault2
+                int r0 = org.telegram.messenger.C3473R.string.QuickReplyDefault2
                 java.lang.String r2 = "QuickReplyDefault2"
                 java.lang.String r2 = org.telegram.messenger.LocaleController.getString(r2, r0)
                 java.lang.String r0 = "quick_reply_msg2"
@@ -189,7 +189,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
                 org.telegram.ui.QuickRepliesSettingsActivity r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.this
                 int r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.access$300(r0)
                 if (r9 != r0) goto L55
-                int r0 = org.telegram.messenger.C3558R.string.QuickReplyDefault3
+                int r0 = org.telegram.messenger.C3473R.string.QuickReplyDefault3
                 java.lang.String r2 = "QuickReplyDefault3"
                 java.lang.String r2 = org.telegram.messenger.LocaleController.getString(r2, r0)
                 java.lang.String r0 = "quick_reply_msg3"
@@ -198,7 +198,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
                 org.telegram.ui.QuickRepliesSettingsActivity r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.this
                 int r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.access$400(r0)
                 if (r9 != r0) goto L68
-                int r0 = org.telegram.messenger.C3558R.string.QuickReplyDefault4
+                int r0 = org.telegram.messenger.C3473R.string.QuickReplyDefault4
                 java.lang.String r2 = "QuickReplyDefault4"
                 java.lang.String r2 = org.telegram.messenger.LocaleController.getString(r2, r0)
                 java.lang.String r0 = "quick_reply_msg4"
@@ -223,7 +223,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
             L87:
                 android.view.View r8 = r8.itemView
                 org.telegram.ui.Cells.TextCheckCell r8 = (org.telegram.p043ui.Cells.TextCheckCell) r8
-                int r9 = org.telegram.messenger.C3558R.string.AllowCustomQuickReply
+                int r9 = org.telegram.messenger.C3473R.string.AllowCustomQuickReply
                 java.lang.String r0 = "AllowCustomQuickReply"
                 java.lang.String r9 = org.telegram.messenger.LocaleController.getString(r0, r9)
                 org.telegram.ui.QuickRepliesSettingsActivity r0 = org.telegram.p043ui.QuickRepliesSettingsActivity.this
@@ -241,11 +241,11 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
                 android.view.View r8 = r8.itemView
                 org.telegram.ui.Cells.TextInfoPrivacyCell r8 = (org.telegram.p043ui.Cells.TextInfoPrivacyCell) r8
                 android.content.Context r9 = r7.mContext
-                int r0 = org.telegram.messenger.C3558R.C3560drawable.greydivider_bottom
+                int r0 = org.telegram.messenger.C3473R.C3475drawable.greydivider_bottom
                 int r1 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundGrayShadow
                 android.graphics.drawable.Drawable r9 = org.telegram.p043ui.ActionBar.Theme.getThemedDrawableByKey(r9, r0, r1)
                 r8.setBackgroundDrawable(r9)
-                int r9 = org.telegram.messenger.C3558R.string.VoipQuickRepliesExplain
+                int r9 = org.telegram.messenger.C3473R.string.VoipQuickRepliesExplain
                 java.lang.String r0 = "VoipQuickRepliesExplain"
                 java.lang.String r9 = org.telegram.messenger.LocaleController.getString(r0, r9)
                 r8.setText(r9)
@@ -307,10 +307,10 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCheckCell.class, EditTextSettingsCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3626ActionBar c3626ActionBar = this.actionBar;
+        C3541ActionBar c3541ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3626ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3541ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

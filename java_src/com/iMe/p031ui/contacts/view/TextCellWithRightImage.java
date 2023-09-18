@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Cells.TextCell;
 /* compiled from: TextCellWithRightImage.kt */
 /* renamed from: com.iMe.ui.contacts.view.TextCellWithRightImage */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TextCellWithRightImage extends TextCell {
     private final Lazy rightImage$delegate;
     private final int rightImageHeight;

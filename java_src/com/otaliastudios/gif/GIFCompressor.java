@@ -10,14 +10,14 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GIFCompressor {
     private static final Logger LOG = new Logger(GIFCompressor.class.getSimpleName());
     private static final String TAG = "GIFCompressor";
     private static volatile GIFCompressor sGIFCompressor;
     private ThreadPoolExecutor mExecutor;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class Factory implements ThreadFactory {
         private AtomicInteger count;
 
@@ -121,13 +121,13 @@ public class GIFCompressor {
                     r1.onGIFCompressionFailed(r0)
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.otaliastudios.gif.GIFCompressor.CallableC26991.call():java.lang.Void");
+                throw new UnsupportedOperationException("Method not decompiled: com.otaliastudios.gif.GIFCompressor.CallableC26151.call():java.lang.Void");
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ListenerWrapper implements GIFListener {
         private Handler mHandler;
         private GIFListener mListener;

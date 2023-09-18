@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ImmutableSortedMapIterator<K, V> implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     private final boolean isReverse;
     private final ArrayDeque<LLRBValueNode<K, V>> nodeStack = new ArrayDeque<>();

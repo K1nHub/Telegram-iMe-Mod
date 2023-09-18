@@ -2,7 +2,7 @@ package kotlin.jvm.internal;
 
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KProperty;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class PropertyReference extends CallableReference implements KProperty {
     public PropertyReference() {
     }

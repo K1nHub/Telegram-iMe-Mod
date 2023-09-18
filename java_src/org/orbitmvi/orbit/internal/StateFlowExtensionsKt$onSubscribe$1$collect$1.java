@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlowExtensions.kt */
 @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.StateFlowExtensionsKt$onSubscribe$1", m101f = "StateFlowExtensions.kt", m100l = {16}, m99m = "collect")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StateFlowExtensionsKt$onSubscribe$1$collect$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

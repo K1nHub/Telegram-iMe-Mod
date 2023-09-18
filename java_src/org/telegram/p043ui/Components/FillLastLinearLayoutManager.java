@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 /* renamed from: org.telegram.ui.Components.FillLastLinearLayoutManager */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FillLastLinearLayoutManager extends LinearLayoutManager {
     private int additionalHeight;
     private boolean bind;

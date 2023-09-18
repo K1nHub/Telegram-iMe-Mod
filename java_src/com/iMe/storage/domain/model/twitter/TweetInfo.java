@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TweetInfo {
     private final String authorName;
     private final String authorNickname;

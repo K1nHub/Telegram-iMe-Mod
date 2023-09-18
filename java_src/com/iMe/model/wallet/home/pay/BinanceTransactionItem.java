@@ -13,9 +13,9 @@ import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: BinanceTransactionItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceTransactionItem extends NoChildNode {
     private final BinanceTransaction transaction;
 
@@ -65,7 +65,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return BinancePayExtKt.icon(binanceTransaction.getDirection());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return C3558R.C3560drawable.fork_ic_transaction_binance_convert;
+            return C3473R.C3475drawable.fork_ic_transaction_binance_convert;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -77,7 +77,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return resourceManager.getString(binanceTransaction.getDirection().getTitle());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return resourceManager.getString(C3558R.string.binance_convert_toolbar_title);
+            return resourceManager.getString(C3473R.string.binance_convert_toolbar_title);
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -106,17 +106,15 @@ public final class BinanceTransactionItem extends NoChildNode {
     public final String getAmount() {
         BinanceTransaction binanceTransaction = this.transaction;
         if (binanceTransaction instanceof BinanceTransaction.Pay ? true : binanceTransaction instanceof BinanceTransaction.Unsupported) {
-            return BalanceFormatter.formatBalance(Double.valueOf(this.transaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())) + ' ' + this.transaction.getAsset();
+            return BalanceFormatter.format(Double.valueOf(this.transaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())) + ' ' + this.transaction.getAsset();
         } else if (binanceTransaction instanceof BinanceTransaction.Convert) {
             StringBuilder sb = new StringBuilder();
             Double valueOf = Double.valueOf(((BinanceTransaction.Convert) this.transaction).getInputAmount());
             TokenDetailed.Companion companion = TokenDetailed.Companion;
-            sb.append(BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getBNB().getDecimals())));
+            sb.append(BalanceFormatter.format(valueOf, Integer.valueOf(companion.getBNB().getDecimals())));
             sb.append(' ');
             sb.append(((BinanceTransaction.Convert) this.transaction).getInputAssetShortName());
-            sb.append(" -> ");
-            sb.append(BalanceFormatter.formatBalance(Double.valueOf(((BinanceTransaction.Convert) this.transaction).getOutputAmount()), Integer.valueOf(companion.getBNB().getDecimals())));
-            sb.append(' ');
+            sb.append(BalanceFormatter.format(Double.valueOf(((BinanceTransaction.Convert) this.transaction).getOutputAmount()), Integer.valueOf(companion.getBNB().getDecimals())));
             sb.append(((BinanceTransaction.Convert) this.transaction).getOutputAssetShortName());
             return sb.toString();
         } else {

@@ -7,7 +7,7 @@ import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.util.DigestFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class Utils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AlgorithmIdentifier getDigAlgId(String str) {

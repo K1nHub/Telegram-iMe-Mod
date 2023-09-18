@@ -6,7 +6,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class UnmodifiableLazyStringList extends AbstractList<String> implements LazyStringList, RandomAccess {
     private final LazyStringList list;
 
@@ -40,7 +40,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     class C12141 implements ListIterator<String>, Iterator {
         ListIterator<String> iter;
         final /* synthetic */ int val$index;
@@ -107,7 +107,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$2 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     class C12152 implements java.util.Iterator<String>, Iterator {
         java.util.Iterator<String> iter;
 

@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletConnectTransactionView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletConnectTransactionView extends BaseView {
     @OneExecution
     void onTransactionSuccess();

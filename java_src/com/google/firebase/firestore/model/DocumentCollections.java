@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.model;
 
 import com.google.firebase.database.collection.ImmutableSortedMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DocumentCollections {
     private static final ImmutableSortedMap<DocumentKey, ?> EMPTY_DOCUMENT_MAP = ImmutableSortedMap.Builder.emptyMap(DocumentKey.comparator());
 

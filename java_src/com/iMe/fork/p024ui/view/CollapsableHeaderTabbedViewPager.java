@@ -18,7 +18,7 @@ import org.telegram.messenger.databinding.ForkViewCollapsableHeaderPagerBinding;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: CollapsableHeaderTabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.CollapsableHeaderTabbedViewPager */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
     private ForkViewCollapsableHeaderPagerBinding binding;
     private AppBarLayout.OnOffsetChangedListener onOffsetChangedListener;

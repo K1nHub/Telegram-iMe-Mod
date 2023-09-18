@@ -10,7 +10,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.voip.FabBackgroundDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FabBackgroundDrawable extends Drawable {
     private Paint bgPaint = new Paint(1);
     private Bitmap shadowBitmap;

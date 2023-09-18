@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.jcajce.provider.xmss;
 
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class DigestUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static ASN1ObjectIdentifier getDigestOID(String str) {

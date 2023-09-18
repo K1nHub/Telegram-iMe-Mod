@@ -9,7 +9,7 @@ import p033j$.util.function.ToIntFunction;
 import p033j$.util.function.ToLongFunction;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Comparisons.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NaturalOrderComparator implements Comparator<Comparable<? super Object>>, p033j$.util.Comparator {
     public static final NaturalOrderComparator INSTANCE = new NaturalOrderComparator();
 

@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerializer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza extends com.google.android.gms.internal.wallet.zzh {
     final /* synthetic */ zzd zza;
 

@@ -36,13 +36,13 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$LongRef;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
 import timber.log.Timber;
 /* compiled from: CryptoRecipientManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoRecipientManager {
     private final CryptoPermissionInteractor cryptoPermissionInteractor;
     private final ResourceManager resourceManager;
@@ -87,7 +87,7 @@ public final class CryptoRecipientManager {
         Intrinsics.checkNotNullParameter(recipient, "recipient");
         final Ref$LongRef ref$LongRef = new Ref$LongRef();
         ref$LongRef.element = -1L;
-        Observable<R> flatMap = this.cryptoPermissionInteractor.requestAllAddressesPermission(recipient).flatMap(new C1615xd06610b9(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$$inlined$flatMapSuccess$1
+        Observable<R> flatMap = this.cryptoPermissionInteractor.requestAllAddressesPermission(recipient).flatMap(new C1611xd06610b9(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
@@ -121,7 +121,7 @@ public final class CryptoRecipientManager {
                     org.telegram.messenger.MessagesController r6 = com.iMe.gateway.TelegramControllersGateway.CC.getMessagesController$default(r6, r7, r8, r2)
                     org.telegram.tgnet.TLRPC$User r0 = r6.getUser(r0)
                     if (r0 == 0) goto L2c
-                    long r6 = r0.f1694id
+                    long r6 = r0.f1685id
                     goto L2d
                 L2c:
                     r6 = r4
@@ -152,7 +152,7 @@ public final class CryptoRecipientManager {
  com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$lambda$0$$inlined$wrapAsResult$1.INSTANCE com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$lambda$0$$inlined$wrapAsResult$1
                                 return
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1613x5109593.<clinit>():void");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1609x5109593.<clinit>():void");
                         }
 
                         {
@@ -162,7 +162,7 @@ public final class CryptoRecipientManager {
                                 r1.<init>(r0)
                                 return
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1613x5109593.<init>():void");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1609x5109593.<init>():void");
                         }
 
                         @Override // kotlin.jvm.functions.Function1
@@ -173,7 +173,7 @@ public final class CryptoRecipientManager {
                                 com.iMe.storage.domain.model.Result r2 = r0.success(r2)
                                 return r2
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1613x5109593.invoke(java.lang.Object):com.iMe.storage.domain.model.Result");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1609x5109593.invoke(java.lang.Object):com.iMe.storage.domain.model.Result");
                         }
 
                         @Override // kotlin.jvm.functions.Function1
@@ -183,7 +183,7 @@ public final class CryptoRecipientManager {
                                 com.iMe.storage.domain.model.Result r1 = r0.invoke(r1)
                                 return r1
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1613x5109593.invoke(java.lang.Object):java.lang.Object");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1609x5109593.invoke(java.lang.Object):java.lang.Object");
                         }
                     }
                     com.iMe.manager.crypto.recipient.CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0 r1 = new com.iMe.manager.crypto.recipient.CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0
@@ -200,7 +200,7 @@ public final class CryptoRecipientManager {
  com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$lambda$0$$inlined$wrapAsResult$2.INSTANCE com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$lambda$0$$inlined$wrapAsResult$2
                                 return
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1614x5109594.<clinit>():void");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1610x5109594.<clinit>():void");
                         }
 
                         {
@@ -210,7 +210,7 @@ public final class CryptoRecipientManager {
                                 r1.<init>(r0)
                                 return
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1614x5109594.<init>():void");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1610x5109594.<init>():void");
                         }
 
                         @Override // kotlin.jvm.functions.Function1
@@ -228,7 +228,7 @@ public final class CryptoRecipientManager {
                                 com.iMe.storage.domain.model.Result r4 = com.iMe.storage.domain.model.Result.Companion.error$default(r4, r0, r1, r2, r1)
                                 return r4
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1614x5109594.invoke(java.lang.Throwable):com.iMe.storage.domain.model.Result");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1610x5109594.invoke(java.lang.Throwable):com.iMe.storage.domain.model.Result");
                         }
 
                         @Override // kotlin.jvm.functions.Function1
@@ -239,7 +239,7 @@ public final class CryptoRecipientManager {
                                 com.iMe.storage.domain.model.Result r1 = r0.invoke(r1)
                                 return r1
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1614x5109594.invoke(java.lang.Object):java.lang.Object");
+                            throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1610x5109594.invoke(java.lang.Object):java.lang.Object");
                         }
                     }
                     com.iMe.manager.crypto.recipient.CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0 r1 = new com.iMe.manager.crypto.recipient.CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0
@@ -252,7 +252,7 @@ public final class CryptoRecipientManager {
                     com.iMe.storage.data.network.model.error.ErrorModel r10 = new com.iMe.storage.data.network.model.error.ErrorModel
                     com.iMe.manager.crypto.recipient.CryptoRecipientManager r0 = r3
                     com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.manager.crypto.recipient.CryptoRecipientManager.access$getResourceManager$p(r0)
-                    int r3 = org.telegram.messenger.C3558R.string.wallet_recipient_validation_chat_with_user_first_error
+                    int r3 = org.telegram.messenger.C3473R.string.wallet_recipient_validation_chat_with_user_first_error
                     java.lang.String r4 = r0.getString(r3)
                     com.iMe.storage.data.network.handlers.impl.ApiErrorHandler$ErrorStatus r5 = com.iMe.storage.data.network.handlers.impl.ApiErrorHandler.ErrorStatus.BAD_RESPONSE
                     r6 = 0
@@ -282,7 +282,7 @@ public final class CryptoRecipientManager {
                 Lb4:
                     return r10
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1610xd1623ac9.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.manager.crypto.recipient.C1606xd1623ac9.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
@@ -298,12 +298,12 @@ public final class CryptoRecipientManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TLRPC$messages_BotResults> result) {
-                m1299invoke(result);
+                m1297invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1299invoke(Result<? extends TLRPC$messages_BotResults> it) {
+            public final void m1297invoke(Result<? extends TLRPC$messages_BotResults> it) {
                 CryptoRecipientView viewState2;
                 ResourceManager resourceManager;
                 TelegramGateway telegramGateway;
@@ -323,15 +323,15 @@ public final class CryptoRecipientManager {
                     telegramGateway = CryptoRecipientManager.this.telegramGateway;
                     AccountInstance accountInstance = AccountInstance.getInstance(telegramGateway.getSelectedAccountIndex());
                     CryptoRecipientManager cryptoRecipientManager = CryptoRecipientManager.this;
-                    String str = tLRPC$BotInlineResult.f1529id;
+                    String str = tLRPC$BotInlineResult.f1520id;
                     Intrinsics.checkNotNullExpressionValue(str, "inlineBot.id");
                     formatBotRequestParams = cryptoRecipientManager.formatBotRequestParams(str, String.valueOf(((TLRPC$messages_BotResults) success.getData()).query_id));
                     SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, ref$LongRef.element, null, null, null, true, 0, null);
                     viewState3 = CryptoRecipientManager.this.getViewState();
                     resourceManager2 = CryptoRecipientManager.this.resourceManager;
-                    String string = resourceManager2.getString(C3558R.string.wallet_recipient_request_permission_success_dialog_title);
+                    String string = resourceManager2.getString(C3473R.string.wallet_recipient_request_permission_success_dialog_title);
                     resourceManager3 = CryptoRecipientManager.this.resourceManager;
-                    String string2 = resourceManager3.getString(C3558R.string.wallet_recipient_request_permission_success_dialog_description, recipient);
+                    String string2 = resourceManager3.getString(C3473R.string.wallet_recipient_request_permission_success_dialog_description, recipient);
                     final CryptoRecipientManager cryptoRecipientManager2 = CryptoRecipientManager.this;
                     final Ref$LongRef ref$LongRef2 = ref$LongRef;
                     viewState3.showRequestPermissionSuccessDialog(string, string2, new Callbacks$Callback() { // from class: com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$2$1
@@ -373,7 +373,7 @@ public final class CryptoRecipientManager {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         autoDispose(subscribe);
     }
 
@@ -392,12 +392,12 @@ public final class CryptoRecipientManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountInfo> result) {
-                m1298invoke(result);
+                m1296invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1298invoke(Result<? extends AccountInfo> it) {
+            public final void m1296invoke(Result<? extends AccountInfo> it) {
                 CryptoRecipientView viewState2;
                 ResourceManager resourceManager;
                 CryptoRecipientView viewState3;
@@ -458,22 +458,22 @@ public final class CryptoRecipientManager {
                     } else if (addressAccessState instanceof AddressAccessState.NotAvailable) {
                         viewState4 = CryptoRecipientManager.this.getViewState();
                         resourceManager5 = CryptoRecipientManager.this.resourceManager;
-                        String string = resourceManager5.getString(C3558R.string.wallet_amount_error_invalid_user_title);
+                        String string = resourceManager5.getString(C3473R.string.wallet_amount_error_invalid_user_title);
                         resourceManager6 = CryptoRecipientManager.this.resourceManager;
-                        String string2 = resourceManager6.getString(C3558R.string.wallet_recipient_error_dialog_no_eth_address_description);
+                        String string2 = resourceManager6.getString(C3473R.string.wallet_recipient_error_dialog_no_eth_address_description);
                         resourceManager7 = CryptoRecipientManager.this.resourceManager;
-                        viewState4.showErrorDialog(string, string2, resourceManager7.getString(C3558R.string.wallet_amount_error_invalid_user_btn_txt));
+                        viewState4.showErrorDialog(string, string2, resourceManager7.getString(C3473R.string.wallet_amount_error_invalid_user_btn_txt));
                     }
                 } else if (result instanceof Result.Error) {
                     Result.Error error = (Result.Error) result;
                     if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.USER_NOT_FOUND) {
                         viewState3 = CryptoRecipientManager.this.getViewState();
                         resourceManager2 = CryptoRecipientManager.this.resourceManager;
-                        String string3 = resourceManager2.getString(C3558R.string.wallet_amount_error_invalid_user_title);
+                        String string3 = resourceManager2.getString(C3473R.string.wallet_amount_error_invalid_user_title);
                         resourceManager3 = CryptoRecipientManager.this.resourceManager;
-                        String string4 = resourceManager3.getString(C3558R.string.wallet_amount_error_user_wallet_not_activated_description);
+                        String string4 = resourceManager3.getString(C3473R.string.wallet_amount_error_user_wallet_not_activated_description);
                         resourceManager4 = CryptoRecipientManager.this.resourceManager;
-                        viewState3.showErrorDialog(string3, string4, resourceManager4.getString(C3558R.string.wallet_amount_error_invalid_user_btn_txt));
+                        viewState3.showErrorDialog(string3, string4, resourceManager4.getString(C3473R.string.wallet_amount_error_invalid_user_btn_txt));
                         return;
                     }
                     viewState2 = CryptoRecipientManager.this.getViewState();
@@ -506,7 +506,7 @@ public final class CryptoRecipientManager {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         autoDispose(subscribe);
     }
 
@@ -528,7 +528,7 @@ public final class CryptoRecipientManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getRequestPermissionDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3558R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3558R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.wallet_recipient_request_permission_dialog_action_btn_text));
+        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3473R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.wallet_recipient_request_permission_dialog_action_btn_text));
     }
 
     private final void autoDispose(Disposable disposable) {
@@ -536,7 +536,7 @@ public final class CryptoRecipientManager {
     }
 
     /* compiled from: CryptoRecipientManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

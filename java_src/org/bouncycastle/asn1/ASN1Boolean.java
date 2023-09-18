@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ASN1Boolean extends ASN1Primitive {
     public static final ASN1Boolean FALSE = new ASN1Boolean((byte) 0);
     public static final ASN1Boolean TRUE = new ASN1Boolean((byte) -1);

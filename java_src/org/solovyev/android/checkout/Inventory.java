@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.solovyev.android.checkout.Purchase;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Inventory {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Callback {
         void onLoaded(Products products);
     }
 
     int load(Request request, Callback callback);
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Products implements Iterable<Product> {
         private final Map<String, Product> mMap = new HashMap();
 
@@ -36,7 +36,7 @@ public interface Inventory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void add(Product product) {
-            this.mMap.put(product.f1449id, product);
+            this.mMap.put(product.f1440id, product);
         }
 
         public Product get(String str) {
@@ -60,11 +60,11 @@ public interface Inventory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Product {
 
         /* renamed from: id */
-        public final String f1449id;
+        public final String f1440id;
         final List<Purchase> mPurchases = new ArrayList();
         final List<Sku> mSkus = new ArrayList();
         public final boolean supported;
@@ -72,12 +72,12 @@ public interface Inventory {
         /* JADX INFO: Access modifiers changed from: package-private */
         public Product(String str, boolean z) {
             ProductTypes.checkSupported(str);
-            this.f1449id = str;
+            this.f1440id = str;
             this.supported = z;
         }
 
         public boolean isPurchased(Sku sku) {
-            return isPurchased(sku.f1451id.code);
+            return isPurchased(sku.f1442id.code);
         }
 
         public boolean isPurchased(String str) {
@@ -114,7 +114,7 @@ public interface Inventory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Request {
         private final Map<String, List<String>> mSkus = new HashMap();
         private final Set<String> mProducts = new HashSet();

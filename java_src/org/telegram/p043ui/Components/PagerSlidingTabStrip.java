@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PagerSlidingTabStrip */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int currentPosition;
     private float currentPositionOffset;
@@ -46,7 +46,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int underlineHeight;
 
     /* renamed from: org.telegram.ui.Components.PagerSlidingTabStrip$IconTabProvider */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface IconTabProvider {
         boolean canScrollToTab(int i);
 
@@ -302,7 +302,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.PagerSlidingTabStrip$PageListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class PageListener implements ViewPager.OnPageChangeListener {
         private PageListener() {
         }
@@ -452,7 +452,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.PagerSlidingTabStrip$TextTab */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class TextTab extends TextView {
         final int position;
 

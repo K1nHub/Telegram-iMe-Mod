@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "MetadataImplCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzb extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzb> CREATOR = new zzy();
     @SafeParcelable.Field(getter = "getEventStatus", m797id = 1)

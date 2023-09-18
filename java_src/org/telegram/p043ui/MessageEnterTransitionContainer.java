@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 /* renamed from: org.telegram.ui.MessageEnterTransitionContainer */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MessageEnterTransitionContainer extends View {
     private final int currentAccount;
     Runnable hideRunnable;
@@ -14,7 +14,7 @@ public class MessageEnterTransitionContainer extends View {
     private ArrayList<Transition> transitions;
 
     /* renamed from: org.telegram.ui.MessageEnterTransitionContainer$Transition */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface Transition {
         void onDraw(Canvas canvas);
     }

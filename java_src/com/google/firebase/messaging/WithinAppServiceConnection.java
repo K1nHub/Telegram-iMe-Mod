@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
@@ -30,7 +30,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BindRequest {
         final Intent intent;
         private final TaskCompletionSource<Void> taskCompletionSource = new TaskCompletionSource<>();

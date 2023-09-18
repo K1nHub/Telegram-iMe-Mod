@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Utilities {
     private static final String RANDOM_STRING_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static volatile DispatchQueue videoPlayerQueue;
@@ -37,27 +37,27 @@ public class Utilities {
     public static volatile DispatchQueue externalNetworkQueue = new DispatchQueue("externalNetworkQueue");
     protected static final char[] hexArray = "0123456789ABCDEF".toCharArray();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Callback<T> {
         void run(T t);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Callback2<T, T2> {
         void run(T t, T2 t2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Callback3<T, T2, T3> {
         void run(T t, T2 t2, T3 t3);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Callback4<T, T2, T3, T4> {
         void run(T t, T2 t2, T3 t3, T4 t4);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface CallbackReturn<Arg, ReturnType> {
         ReturnType run(Arg arg);
     }

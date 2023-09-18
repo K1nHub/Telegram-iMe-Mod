@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotVoteInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotVoteInfo {
     @SerializedName("created")
     private final long created;

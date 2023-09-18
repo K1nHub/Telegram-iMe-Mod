@@ -13,7 +13,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IidStore {
     private static final String[] ALLOWABLE_SCOPES = {"*", "FCM", CodePackage.GCM, ""};
     private final String defaultSenderId;

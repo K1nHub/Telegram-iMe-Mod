@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -18,7 +18,7 @@ import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Components.Premium.PremiumNotAvailableBottomSheet */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PremiumNotAvailableBottomSheet extends BottomSheet {
     public PremiumNotAvailableBottomSheet(BaseFragment baseFragment) {
         super(baseFragment.getParentActivity(), false);
@@ -44,7 +44,7 @@ public class PremiumNotAvailableBottomSheet extends BottomSheet {
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView3.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 8.0f));
-        textView3.setText(LocaleController.getString(C3558R.string.InstallOfficialApp));
+        textView3.setText(LocaleController.getString(C3473R.string.InstallOfficialApp));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumNotAvailableBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -55,8 +55,8 @@ public class PremiumNotAvailableBottomSheet extends BottomSheet {
         frameLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 16, 16, 0, 16, 0));
         frameLayout.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 68, 80));
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3558R.string.SubscribeToPremiumOfficialAppNeeded)));
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3558R.string.SubscribeToPremiumOfficialAppNeededDescription)));
+        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3473R.string.SubscribeToPremiumOfficialAppNeeded)));
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3473R.string.SubscribeToPremiumOfficialAppNeededDescription)));
         ScrollView scrollView = new ScrollView(parentActivity);
         scrollView.addView(linearLayout);
         setCustomView(scrollView);

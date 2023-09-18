@@ -8,7 +8,7 @@ import io.grpc.internal.ClientTransport;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class KeepAliveManager {
     private static final long MIN_KEEPALIVE_TIME_NANOS = TimeUnit.SECONDS.toNanos(10);
     private final boolean keepAliveDuringTransportIdle;
@@ -23,7 +23,7 @@ public class KeepAliveManager {
     private State state;
     private final Stopwatch stopwatch;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface KeepAlivePinger {
         void onPingTimeout();
 
@@ -31,7 +31,7 @@ public class KeepAliveManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum State {
         IDLE,
         PING_SCHEDULED,
@@ -189,7 +189,7 @@ public class KeepAliveManager {
         return Math.max(j, MIN_KEEPALIVE_TIME_NANOS);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ClientKeepAlivePinger implements KeepAlivePinger {
         private final ConnectionClientTransport transport;
 

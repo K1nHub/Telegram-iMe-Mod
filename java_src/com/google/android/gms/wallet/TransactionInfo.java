@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "TransactionInfoCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransactionInfo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TransactionInfo> CREATOR = new zzao();
     @SafeParcelable.Field(m797id = 1)
@@ -19,7 +19,7 @@ public final class TransactionInfo extends AbstractSafeParcelable {
     String zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzan zzanVar) {
         }

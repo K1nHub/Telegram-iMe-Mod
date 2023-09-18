@@ -19,7 +19,7 @@ import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
@@ -106,7 +106,7 @@ public class CompoundEmoji {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class DrawableInfo {
         private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
         private static final ArrayList<Integer> loading = new ArrayList<>();
@@ -176,7 +176,7 @@ public class CompoundEmoji {
         placeholderPaint.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();

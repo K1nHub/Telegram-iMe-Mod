@@ -48,7 +48,7 @@ import org.telegram.tgnet.TLRPC$User;
 import p033j$.util.Comparator;
 import p033j$.util.function.ToIntFunction;
 /* renamed from: org.telegram.ui.Components.ReactedUsersListView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ReactedUsersListView extends FrameLayout {
     private RecyclerView.Adapter adapter;
     public boolean canLoadMore;
@@ -72,19 +72,19 @@ public class ReactedUsersListView extends FrameLayout {
     private List<TLRPC$MessagePeerReaction> userReactions;
 
     /* renamed from: org.telegram.ui.Components.ReactedUsersListView$OnCustomEmojiSelectedListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnCustomEmojiSelectedListener {
         void showCustomEmojiAlert(ReactedUsersListView reactedUsersListView, ArrayList<TLRPC$InputStickerSet> arrayList);
     }
 
     /* renamed from: org.telegram.ui.Components.ReactedUsersListView$OnHeightChangedListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnHeightChangedListener {
         void onHeightChanged(ReactedUsersListView reactedUsersListView, int i);
     }
 
     /* renamed from: org.telegram.ui.Components.ReactedUsersListView$OnProfileSelectedListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnProfileSelectedListener {
         void onProfileSelected(ReactedUsersListView reactedUsersListView, long j, TLRPC$MessagePeerReaction tLRPC$MessagePeerReaction);
     }
@@ -253,11 +253,11 @@ public class ReactedUsersListView extends FrameLayout {
                 if (tLObject instanceof TLRPC$User) {
                     TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
                     tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerUser;
-                    tLRPC$TL_peerUser.user_id = ((TLRPC$User) userSeen2.user).f1694id;
+                    tLRPC$TL_peerUser.user_id = ((TLRPC$User) userSeen2.user).f1685id;
                 } else if (tLObject instanceof TLRPC$Chat) {
                     TLRPC$TL_peerChat tLRPC$TL_peerChat = new TLRPC$TL_peerChat();
                     tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerChat;
-                    tLRPC$TL_peerChat.chat_id = ((TLRPC$Chat) userSeen2.user).f1531id;
+                    tLRPC$TL_peerChat.chat_id = ((TLRPC$Chat) userSeen2.user).f1522id;
                 }
                 tLRPC$TL_messagePeerReaction.date = userSeen2.date;
                 tLRPC$TL_messagePeerReaction.dateIsSeen = true;
@@ -306,7 +306,7 @@ public class ReactedUsersListView extends FrameLayout {
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
         TLRPC$TL_messages_getMessageReactionsList tLRPC$TL_messages_getMessageReactionsList = new TLRPC$TL_messages_getMessageReactionsList();
         tLRPC$TL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(this.message.getDialogId());
-        tLRPC$TL_messages_getMessageReactionsList.f1632id = this.message.getId();
+        tLRPC$TL_messages_getMessageReactionsList.f1623id = this.message.getId();
         tLRPC$TL_messages_getMessageReactionsList.limit = getLoadCount();
         TLRPC$Reaction tLRPC$Reaction = this.filter;
         tLRPC$TL_messages_getMessageReactionsList.reaction = tLRPC$Reaction;
@@ -444,9 +444,9 @@ public class ReactedUsersListView extends FrameLayout {
         HashSet hashSet = new HashSet();
         for (int i = 0; i < this.customReactionsEmoji.size(); i++) {
             TLRPC$InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(AnimatedEmojiDrawable.findDocument(this.currentAccount, this.customReactionsEmoji.get(i).documentId));
-            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1554id))) {
+            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1545id))) {
                 arrayList.add(inputStickerSet);
-                hashSet.add(Long.valueOf(inputStickerSet.f1554id));
+                hashSet.add(Long.valueOf(inputStickerSet.f1545id));
             }
         }
         if (MessagesController.getInstance(this.currentAccount).premiumLocked) {
@@ -498,7 +498,7 @@ public class ReactedUsersListView extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.ReactedUsersListView$ContainerLinerLayout */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class ContainerLinerLayout extends LinearLayout {
         public boolean hasHeader;
 

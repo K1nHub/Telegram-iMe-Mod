@@ -26,13 +26,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FingerprintController;
 import timber.log.Timber;
 /* compiled from: CreateWalletPinPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPinView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletInteractor cryptoWalletInteractor;
@@ -46,11 +46,11 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
     private final TelegramControllersGateway telegramControllersGateway;
 
     /* renamed from: wallet  reason: collision with root package name */
-    private final Wallet f2005wallet;
+    private final Wallet f1995wallet;
 
     /* compiled from: CreateWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$WhenMappings */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -87,7 +87,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
         this.currentScreenStep = ScreenStep.FIRST_STEP;
         this.password = walletPinScreenArgs.getPassword();
         this.seed = walletPinScreenArgs.getSeed();
-        this.f2005wallet = walletPinScreenArgs.getWallet();
+        this.f1995wallet = walletPinScreenArgs.getWallet();
         this.screenType = walletPinScreenArgs.getScreenType();
         this.pin = "";
     }
@@ -123,7 +123,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
                 return;
             }
         }
-        onPinError(this.resourceManager.getString(C3558R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
+        onPinError(this.resourceManager.getString(C3473R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
     }
 
     private final void changePinCode() {
@@ -160,7 +160,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
                 }
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -170,7 +170,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
             CreateWalletPinView createWalletPinView = (CreateWalletPinView) getViewState();
             String str = this.password;
             String str2 = this.pin;
-            Wallet wallet2 = this.f2005wallet;
+            Wallet wallet2 = this.f1995wallet;
             if (wallet2 == null) {
                 return;
             }
@@ -189,12 +189,12 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                    m1450invoke(result);
+                    m1441invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1450invoke(Result<? extends Wallet> it) {
+                public final void m1441invoke(Result<? extends Wallet> it) {
                     ResourceManager resourceManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     Result<? extends Wallet> result = it;
@@ -233,7 +233,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
                     Intrinsics.checkNotNullExpressionValue(error, "error");
                 }
             }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
@@ -263,7 +263,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
 
     /* compiled from: CreateWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

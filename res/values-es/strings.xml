@@ -4625,25 +4625,6 @@ Para conseguir este premio debes:"</string>
     <string name="already_removing">Ya se ha iniciado otro proceso de eliminación, inténtelo de nuevo más tarde</string>
     <string name="app_restart_error">No hemos podido abrir la aplicación. Prueba a hacerlo tú.</string>
     <string name="app_update_dialog_description">Actualice la aplicación para usar esta funcionalidad</string>
-    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Distribución deshabilitada</string>
-    <string name="appcenter_distribute_download_progress_number_format">%1$d MB de %2$d MB</string>
-    <string name="appcenter_distribute_downloading_mandatory_update">Descargando la actualización</string>
-    <string name="appcenter_distribute_install">Instalar</string>
-    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) se ha descargado y está listo para instalarlo.</string>
-    <string name="appcenter_distribute_install_ready_title">Actualización de la aplicación descargada</string>
-    <string name="appcenter_distribute_notification_category">Actualizaciones de aplicaciones</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_message">Por seguridad, su dispositivo está configurado para bloquear la instalación de aplicaciones procedentes de orígenes desconocidos.</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_settings">Configuración</string>
-    <string name="appcenter_distribute_update_dialog_download">Descargar</string>
-    <string name="appcenter_distribute_update_dialog_message_mandatory">Los desarrolladores de esta aplicación indican que debe actualizar a %1$s %2$s (%3$d).</string>
-    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) está disponible para descargarlo e instalarlo.</string>
-    <string name="appcenter_distribute_update_dialog_postpone">Preguntarme dentro de un día</string>
-    <string name="appcenter_distribute_update_dialog_title">Actualización de aplicación disponible</string>
-    <string name="appcenter_distribute_update_dialog_view_release_notes">Ver notas de la versión</string>
-    <string name="appcenter_distribute_update_failed_dialog_ignore">Ignorar</string>
-    <string name="appcenter_distribute_update_failed_dialog_message">Esta versión se cargó a un lado o se descargó usando un navegador en modo privado.</string>
-    <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstalar aplicación</string>
-    <string name="appcenter_distribute_update_failed_dialog_title">Actualizaciones en la aplicación deshabilitadas</string>
     <string name="archive_content_is_hidden">El contenido está oculto</string>
     <string name="archive_empty_subtitle">Aquí se almacenan los chats que enviaste al archivo.</string>
     <string name="archive_empty_title">Archivo está vacío</string>
@@ -5825,8 +5806,8 @@ Después de activar la billetera, puede usar de forma completa y segura el Tradu
     <string name="wallet_backup_ready">¡Listo para ir!</string>
     <string name="wallet_backup_ready_info">Estas listo. Ahora tiene una billetera que solo usted controla, directamente, sin intermediarios ni banqueros.</string>
     <string name="wallet_backup_scan_qr">Escanear QR</string>
-    <string name="wallet_backup_secret_words">24 palabras secretas</string>
-    <string name="wallet_backup_secret_words_info">"Escriba estas 24 palabras en el orden correcto y guárdelas en un lugar secreto.
+    <string name="wallet_backup_secret_words">Palabras Secretas</string>
+    <string name="wallet_backup_secret_words_info">"Escriba estas palabras en el orden correcto y guárdelas en un lugar secreto.
 
 Use estas palabras secretas para restaurar el acceso a su billetera si pierde su contraseña o dispositivo."</string>
     <string name="wallet_backup_secret_words_pdf">Guardar como PDF</string>
@@ -6257,7 +6238,7 @@ Solo tú tienes acceso a tu billetera, llaves privadas y fondos de tus cuentas."
     <string name="wallet_swap_process_confirm_approve_alert_description">¿Estás seguro de que deseas aprobar %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Confirmación de aprobación</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Intercambio</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">¿Estás seguro de que deseas realizar un intercambio de %1$s %2$s a %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">¿Estás seguro de que deseas realizar un intercambio de **%1$s %2$s** a **%3$s %4$s** con tarifa **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Confirmación de intercambio</string>
     <string name="wallet_swap_process_description">Podéis intercambiar tokens entre vosotros mediante contratos inteligentes utilizando el intercambio descentralizado Uniswap para las redes Ethereum y Polygon.</string>
     <string name="wallet_swap_process_diff_tokens_validation">Por favor, selecciona diferentes tokens para recibir y entregar</string>
@@ -6281,7 +6262,7 @@ Solo tú tienes acceso a tu billetera, llaves privadas y fondos de tus cuentas."
     <string name="wallet_swap_process_what_is_approve">¿Qué es la aprobación de tokens?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">La aprobación es una transacción única para los tokens necesarios antes del intercambio. Con esta operación, das permiso para intercambiar tu token usando el protocolo DEX usando contratos inteligentes. Puesto que esta operación se lleva a cabo en la cadena de bloques, se retendrá la comisión de Gas. No es necesario volver a aprobar el token actual.</string>
     <string name="wallet_swap_protocols_1inch_description">Agregador DEX con los mejores precios</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Los tokens se pueden intercambiar entre sí mediante contratos inteligentes utilizando el agregador DEX a los mejores precios para las redes Ethereum, BNB Chain y Polygon.</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Los tokens se pueden intercambiar entre sí mediante contratos inteligentes utilizando el agregador DEX a los mejores precios para las redes Ethereum, BNB Chain, Fantom y Polygon.</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Puente</string>
     <string name="wallet_swap_protocols_header_title">Intercambios descentralizados</string>
     <string name="wallet_swap_protocols_pancake_swap_description">Protocolo DEX basado en BNB Chain</string>

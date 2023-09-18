@@ -1220,8 +1220,8 @@
     <string name="wallet_backup_ready">آماده انجام!</string>
     <string name="wallet_backup_ready_info">همه‌چیز صحیح است. اکنون کیف پولی دارید که کنترلش فقط در دست شماست — مستقیم و بدون واسط یا صراف.</string>
     <string name="wallet_backup_scan_qr">اسکن QR</string>
-    <string name="wallet_backup_secret_words">24 کلمه محرمانه</string>
-    <string name="wallet_backup_secret_words_info">"این 24 کلمه را به ترتیب صحیح یادداشت کنید و در جایی محرمانه نگه دارید.
+    <string name="wallet_backup_secret_words">کلمات محرمانه</string>
+    <string name="wallet_backup_secret_words_info">"این کلمات را به ترتیب صحیح یادداشت کنید و در مکانی مخفی نگهداری کنید.
 
 در صورت گم کردن کد عبور یا دستگاهتان، از این کلمات محرمانه برای بازیابی دسترسی به کیف پول خود استفاده نمایید."</string>
     <string name="wallet_backup_secret_words_pdf">ذخیره به‌عنوان PDF</string>
@@ -1649,7 +1649,7 @@
     <string name="wallet_swap_process_confirm_approve_alert_description">‏از تأیید ‎%1$s‎‏ اطمینان دارید؟‏</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">موافقت با تأیید</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">سوآپ</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">‏از سوآپ ‎%1$s %2$s‎‏ به ‎%3$s %4$s‎‏ اطمینان دارید؟‏</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">آیا مطمئنید که می‌خواهید **%1$s %2$s** را با **%3$s %4$s** با کارمزد **%5$s %6$s** مبادله کنید؟</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">تأیید سوآپ</string>
     <string name="wallet_swap_process_description">با استفاده از صرافی غیرمتمرکز Uniswap می‌توانید توکن‌ها را در شبکه‌های Ethereum و Polygon از طریق قراردادهای هوشمند سوآپ کنید</string>
     <string name="wallet_swap_process_diff_tokens_validation">لطفاً توکن‌های ارسالی و دریافتی مختلفی را انتخاب کنید</string>
@@ -1673,7 +1673,7 @@
     <string name="wallet_swap_process_what_is_approve">تأیید توکن چیست؟</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">تأیید به تراکنش یک‌باره برای توکن‌ها گفته می‌شود که باید پیش از سوآپ انجام شود. با این عملیات، اجازه می‌دهید توکن شما از طریق پروتکل DEX با استفاده از قراردادهای هوشمند سوآپ شود. با توجه به انجام این عملیات در بلاک‌چین، کارمزد تراکنش نگه داشته می‌شود. نیاز نیست توکن فعلی را مجدداً تأیید کنید.</string>
     <string name="wallet_swap_protocols_1inch_description">تجمیع‌کننده DEX با بهترین قیمت‌ها</string>
-    <string name="wallet_swap_protocols_1inch_long_description">با استفاده از تجمیع‌کننده DEX می‌توانید توکن‌ها را با بهترین قیمت در شبکه‌های اتریوم، BNB Chain و پالیگان از طریق قراردادهای هوشمند سوآپ کنید</string>
+    <string name="wallet_swap_protocols_1inch_long_description">با استفاده از تجمیع‌کننده DEX می‌توانید توکن‌ها را با بهترین قیمت در شبکه‌های اتریوم،Fantom ،BNB Chain و پالیگان از طریق قراردادهای هوشمند سوآپ کنید</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">بریج</string>
     <string name="wallet_swap_protocols_header_title">صرافی‌های غیرمتمرکز</string>
     <string name="wallet_swap_protocols_pancake_swap_description">پروتکل DEX بر پایه BNB Chain</string>

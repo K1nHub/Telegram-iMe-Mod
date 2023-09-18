@@ -6,7 +6,7 @@ import org.telegram.p043ui.Components.AnimatedEmojiSpan;
 import org.telegram.p043ui.Components.TextStyleSpan;
 import org.telegram.p043ui.Components.URLSpanMono;
 import org.telegram.p043ui.Components.URLSpanReplacement;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CustomHtml {
     public static String toHtml(Spanned spanned) {
         StringBuilder sb = new StringBuilder();

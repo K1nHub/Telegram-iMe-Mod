@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ProtoSyntax {
     PROTO2,
     PROTO3

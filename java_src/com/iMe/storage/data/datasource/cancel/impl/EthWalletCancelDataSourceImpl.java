@@ -21,7 +21,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: EthWalletCancelDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EthWalletCancelDataSourceImpl implements WalletCancelDataSource {
     private final CancelApi cancelApi;
     private final CryptoAccessManager cryptoAccessManager;

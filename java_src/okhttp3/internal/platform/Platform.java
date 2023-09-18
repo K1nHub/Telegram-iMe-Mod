@@ -32,7 +32,7 @@ import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.TrustRootIndex;
 import okio.Buffer;
 /* compiled from: Platform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Platform {
     public static final Companion Companion;
     private static final Logger logger;
@@ -162,7 +162,7 @@ public class Platform {
     }
 
     /* compiled from: Platform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsResultCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocationSettingsResult extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<LocationSettingsResult> CREATOR = new zzaa();
     @SafeParcelable.Field(getter = "getStatus", m797id = 1)

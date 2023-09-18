@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BlockingCoroutine<T> extends AbstractCoroutine<T> {
     private final Thread blockedThread;
     private final EventLoop eventLoop;

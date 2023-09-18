@@ -6,7 +6,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.p043ui.Charts.data.ChartData;
 import org.telegram.p043ui.Charts.view_data.LineViewData;
 /* renamed from: org.telegram.ui.Charts.LinearChartView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LinearChartView extends BaseChartView<ChartData, LineViewData> {
     public LinearChartView(Context context) {
         super(context);
@@ -48,7 +48,7 @@ public class LinearChartView extends BaseChartView<ChartData, LineViewData> {
                 if (lineViewData.enabled || lineViewData.alpha != BitmapDescriptorFactory.HUE_RED) {
                     lineViewData.bottomLinePath.reset();
                     int length = this.chartData.xPercentage.length;
-                    int[] iArr = lineViewData.line.f1730y;
+                    int[] iArr = lineViewData.line.f1721y;
                     lineViewData.chartPath.reset();
                     int i2 = 0;
                     for (int i3 = 0; i3 < length; i3++) {

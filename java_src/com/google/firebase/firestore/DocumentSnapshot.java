@@ -5,14 +5,14 @@ import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.util.Preconditions;
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DocumentSnapshot {
     private final Document doc;
     private final FirebaseFirestore firestore;
     private final DocumentKey key;
     private final SnapshotMetadata metadata;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ServerTimestampBehavior {
         NONE,
         ESTIMATE,

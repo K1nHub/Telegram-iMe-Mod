@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SequenceBuilder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SequencesKt__SequenceBuilderKt {
     public static final <T> Sequence<T> sequence(final Function2<? super SequenceScope<? super T>, ? super Continuation<? super Unit>, ? extends Object> block) {
         Intrinsics.checkNotNullParameter(block, "block");

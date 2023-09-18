@@ -49,7 +49,7 @@ import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 import p033j$.util.function.Predicate;
 /* compiled from: RecentChatsController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecentChatsController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, RecentChatsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -429,7 +429,7 @@ public final class RecentChatsController extends BaseController implements KoinC
     }
 
     /* compiled from: RecentChatsController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -478,7 +478,7 @@ public final class RecentChatsController extends BaseController implements KoinC
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) =\n   …ontroller(accountIndex) }");
             return (RecentChatsController) computeIfAbsent;
         }
     }

@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.shadow.ShadowRenderer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ShapePath {
     private boolean containsIncompatibleShadowOp;
     @Deprecated
@@ -26,7 +26,7 @@ public class ShapePath {
     @Deprecated
     public float startY;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class PathOperation {
         protected final Matrix matrix = new Matrix();
 
@@ -182,7 +182,7 @@ public class ShapePath {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ShadowCompatOperation {
         static final Matrix IDENTITY_MATRIX = new Matrix();
 
@@ -196,7 +196,7 @@ public class ShapePath {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class LineShadowOperation extends ShadowCompatOperation {
         private final PathLineOperation operation;
         private final float startX;
@@ -223,7 +223,7 @@ public class ShapePath {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ArcShadowOperation extends ShadowCompatOperation {
         private final PathArcOperation operation;
 
@@ -237,7 +237,7 @@ public class ShapePath {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PathLineOperation extends PathOperation {
 
         /* renamed from: x */
@@ -256,7 +256,7 @@ public class ShapePath {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PathArcOperation extends PathOperation {
         private static final RectF rectF = new RectF();
         @Deprecated

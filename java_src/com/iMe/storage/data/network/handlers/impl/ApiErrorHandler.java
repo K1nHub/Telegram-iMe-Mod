@@ -10,11 +10,11 @@ import retrofit2.HttpException;
 import retrofit2.Response;
 import timber.log.Timber;
 /* compiled from: ApiErrorHandler.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ApiErrorHandler implements ErrorHandler<Throwable> {
 
     /* compiled from: ApiErrorHandler.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ErrorStatus implements IErrorStatus {
         NO_CONNECTION,
         BAD_RESPONSE,
@@ -44,7 +44,11 @@ public class ApiErrorHandler implements ErrorHandler<Throwable> {
                 if (th instanceof FirebaseException) {
                     FirebaseException firebaseException = (FirebaseException) th;
                     Throwable cause = firebaseException.getCause();
-                    errorModel = cause instanceof SocketTimeoutException ? true : cause instanceof IOException ? new ErrorModel(firebaseException.getMessage(), ErrorStatus.NO_CONNECTION, th) : new ErrorModel(null, ErrorStatus.BAD_RESPONSE, th);
+                    if (cause instanceof SocketTimeoutException ? true : cause instanceof IOException) {
+                        errorModel = new ErrorModel(firebaseException.getMessage(), ErrorStatus.NO_CONNECTION, th);
+                    } else {
+                        errorModel = new ErrorModel(null, ErrorStatus.BAD_RESPONSE, th);
+                    }
                 } else {
                     errorModel = new ErrorModel(th != null ? th.getMessage() : null, ErrorStatus.BAD_RESPONSE, th);
                 }

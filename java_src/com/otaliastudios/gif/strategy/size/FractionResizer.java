@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.strategy.size;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FractionResizer implements Resizer {
     private final float fraction;
 

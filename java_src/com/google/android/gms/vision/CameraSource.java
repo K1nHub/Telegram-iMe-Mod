@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.IdentityHashMap;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CameraSource {
     public static final int CAMERA_FACING_BACK = 0;
     public static final int CAMERA_FACING_FRONT = 1;
@@ -38,20 +38,20 @@ public class CameraSource {
     private final IdentityHashMap<byte[], ByteBuffer> zzo;
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface PictureCallback {
         void onPictureTaken(@RecentlyNonNull byte[] bArr);
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ShutterCallback {
         void onShutter();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class zzb implements Camera.PreviewCallback {
         private zzb() {
         }
@@ -63,7 +63,7 @@ public class CameraSource {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class zzc implements Camera.PictureCallback {
         private PictureCallback zza;
 
@@ -85,7 +85,7 @@ public class CameraSource {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class zzd implements Camera.ShutterCallback {
         private ShutterCallback zza;
 
@@ -111,7 +111,7 @@ public class CameraSource {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
     @VisibleForTesting
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class zze {
         private Size zza;
         private Size zzb;
@@ -157,7 +157,7 @@ public class CameraSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class zza implements Runnable {
         private Detector<?> zza;
         private long zze;
@@ -242,7 +242,7 @@ public class CameraSource {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final Detector<?> zza;
         private CameraSource zzb;

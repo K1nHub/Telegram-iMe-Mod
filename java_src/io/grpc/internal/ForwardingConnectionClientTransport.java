@@ -9,7 +9,7 @@ import io.grpc.Status;
 import io.grpc.internal.ClientTransport;
 import io.grpc.internal.ManagedClientTransport;
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class ForwardingConnectionClientTransport implements ConnectionClientTransport {
     protected abstract ConnectionClientTransport delegate();
 

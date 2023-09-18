@@ -11,7 +11,7 @@ import com.iMe.storage.domain.model.crypto.swap.ApproveArgs;
 import com.iMe.storage.domain.model.crypto.swap.SwapArgs;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBoostDataSourceFactory.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBoostDataSourceFactory implements DataSourceFactory<TransactionArgs, SignTransactionDatasource<TransactionArgs>> {
     private final WalletSwapDataSource dexWalletSwapDataSource;
     private final WalletApproveDataSource ethWalletApproveDataSource;

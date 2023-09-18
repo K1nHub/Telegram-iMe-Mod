@@ -2,7 +2,7 @@ package com.iMe.bots.data.model.database;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HolidaysDbModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HolidaysDbModel {
     private final String tags;
     private final long userId;

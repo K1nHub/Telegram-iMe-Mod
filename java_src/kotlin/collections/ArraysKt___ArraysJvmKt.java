@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: _ArraysJvm.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ArraysKt___ArraysJvmKt extends ArraysKt__ArraysKt {
     public static <T> List<T> asList(T[] tArr) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");

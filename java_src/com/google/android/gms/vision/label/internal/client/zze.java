@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "ImageLabelParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zze extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zze> CREATOR = new zzf();
     @SafeParcelable.Field(m797id = 2)

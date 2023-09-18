@@ -16,7 +16,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 /* compiled from: TonConfigRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TonConfigRepositoryImpl implements TonConfigRepository {
     private final ApiErrorHandler errorHandler;
     private final OkHttpClient okHttpClient;
@@ -58,7 +58,7 @@ public final class TonConfigRepositoryImpl implements TonConfigRepository {
                 return tonConfigJsonString$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "fromCallable {\n         …s()\n                    }");
+        Intrinsics.checkNotNullExpressionValue(map, "fromCallable {\n         …toSuccess()\n            }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.repository.crypto.ton.TonConfigRepositoryImpl$getTonConfigJsonString$$inlined$handleError$1
             {

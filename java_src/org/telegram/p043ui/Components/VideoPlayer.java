@@ -65,7 +65,7 @@ import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.p043ui.Components.VideoPlayer;
 import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* renamed from: org.telegram.ui.Components.VideoPlayer */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsListener, NotificationCenter.NotificationCenterDelegate {
     static int playerCounter;
     boolean audioDisabled;
@@ -105,7 +105,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
     private DispatchQueue workerQueue;
 
     /* renamed from: org.telegram.ui.Components.VideoPlayer$AudioVisualizerDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface AudioVisualizerDelegate {
         boolean needUpdate();
 
@@ -113,11 +113,11 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
     }
 
     /* renamed from: org.telegram.ui.Components.VideoPlayer$VideoPlayerDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VideoPlayerDelegate {
 
         /* renamed from: org.telegram.ui.Components.VideoPlayer$VideoPlayerDelegate$-CC */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$onRenderedFirstFrame(VideoPlayerDelegate videoPlayerDelegate, AnalyticsListener.EventTime eventTime) {
             }
@@ -1471,7 +1471,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
     }
 
     /* renamed from: org.telegram.ui.Components.VideoPlayer$AudioVisualizerRenderersFactory */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class AudioVisualizerRenderersFactory extends DefaultRenderersFactory {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public AudioVisualizerRenderersFactory(Context context) {
@@ -1486,7 +1486,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
     }
 
     /* renamed from: org.telegram.ui.Components.VideoPlayer$VisualizerBufferSink */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class VisualizerBufferSink implements TeeAudioProcessor.AudioBufferSink {
         ByteBuffer byteBuffer;
         long lastUpdateTime;

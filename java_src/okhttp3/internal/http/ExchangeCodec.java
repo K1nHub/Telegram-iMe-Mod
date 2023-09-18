@@ -7,7 +7,7 @@ import okhttp3.internal.connection.RealConnection;
 import okio.Sink;
 import okio.Source;
 /* compiled from: ExchangeCodec.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ExchangeCodec {
     void cancel();
 

@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialNetworkDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.social.SocialNetworkDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialNetworkDb {
     private final String beforeConnectMessage;
     private final String iconUrl;

@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.wallet.CreateWalletObjectsRequest;
 import com.google.android.gms.wallet.zzas;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzae extends zzas {
     final /* synthetic */ CreateWalletObjectsRequest zza;
     final /* synthetic */ int zzb;

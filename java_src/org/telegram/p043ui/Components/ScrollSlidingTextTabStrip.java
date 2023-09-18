@@ -22,7 +22,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ScrollSlidingTextTabStrip */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView {
     private int activeTextColorKey;
     private int allTextWidth;
@@ -61,11 +61,11 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView {
     private boolean useSameWidth;
 
     /* renamed from: org.telegram.ui.Components.ScrollSlidingTextTabStrip$ScrollSlidingTabStripDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ScrollSlidingTabStripDelegate {
 
         /* renamed from: org.telegram.ui.Components.ScrollSlidingTextTabStrip$ScrollSlidingTabStripDelegate$-CC */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$onSamePageSelected(ScrollSlidingTabStripDelegate scrollSlidingTabStripDelegate) {
             }

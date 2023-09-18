@@ -5,14 +5,14 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialAuthResult.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SocialAuthResult {
     public /* synthetic */ SocialAuthResult(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Success extends SocialAuthResult {
         @SerializedName("twitterUserId")
         private final long socialId;
@@ -90,7 +90,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Verification extends SocialAuthResult {
         private final long socialId;
 
@@ -135,7 +135,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Failure extends SocialAuthResult {
         private final String message;
 
@@ -183,7 +183,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Cancelled extends SocialAuthResult {
         public static final Cancelled INSTANCE = new Cancelled();
 
@@ -193,7 +193,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Logout extends SocialAuthResult {
         public static final Logout INSTANCE = new Logout();
 

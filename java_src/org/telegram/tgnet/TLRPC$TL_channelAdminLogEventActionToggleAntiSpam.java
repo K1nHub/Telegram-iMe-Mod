@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_channelAdminLogEventActionToggleAntiSpam extends TLRPC$ChannelAdminLogEventAction {
     public static int constructor = 1693675004;
     public boolean new_value;

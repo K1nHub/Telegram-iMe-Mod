@@ -27,7 +27,7 @@ import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -36,7 +36,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Stories.recorder.PreviewButtons;
 /* renamed from: org.telegram.ui.Stories.recorder.PreviewButtons */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PreviewButtons extends FrameLayout {
     private ValueAnimator appearAnimator;
     private float appearT;
@@ -56,11 +56,11 @@ public class PreviewButtons extends FrameLayout {
         this.shadowView = view;
         view.setBackground(new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{1711276032, 0}));
         addView(this.shadowView, LayoutHelper.createFrame(-1, -1, 119));
-        addButton(0, C3558R.C3560drawable.msg_draw_pen, LocaleController.getString("AccDescrPaint", C3558R.string.AccDescrPaint));
-        addButton(2, C3558R.C3560drawable.msg_photo_sticker, LocaleController.getString("AccDescrStickers", C3558R.string.AccDescrStickers));
-        addButton(1, C3558R.C3560drawable.msg_photo_text2, LocaleController.getString("AccDescrPlaceText", C3558R.string.AccDescrPlaceText));
-        addButton(3, C3558R.C3560drawable.msg_photo_settings, LocaleController.getString("AccDescrPhotoAdjust", C3558R.string.AccDescrPhotoAdjust));
-        int i = C3558R.string.Send;
+        addButton(0, C3473R.C3475drawable.msg_draw_pen, LocaleController.getString("AccDescrPaint", C3473R.string.AccDescrPaint));
+        addButton(2, C3473R.C3475drawable.msg_photo_sticker, LocaleController.getString("AccDescrStickers", C3473R.string.AccDescrStickers));
+        addButton(1, C3473R.C3475drawable.msg_photo_text2, LocaleController.getString("AccDescrPlaceText", C3473R.string.AccDescrPlaceText));
+        addButton(3, C3473R.C3475drawable.msg_photo_settings, LocaleController.getString("AccDescrPhotoAdjust", C3473R.string.AccDescrPhotoAdjust));
+        int i = C3473R.string.Send;
         String string = LocaleController.getString("Send", i);
         this.shareText = string;
         ShareButtonView shareButtonView = new ShareButtonView(context, string);
@@ -185,7 +185,7 @@ public class PreviewButtons extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Stories.recorder.PreviewButtons$ShareButtonView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ShareButtonView extends View {
         ValueAnimator backAnimator;
         private final Paint buttonPaint;
@@ -194,14 +194,14 @@ public class PreviewButtons extends FrameLayout {
         private AnimatedFloat enabledT;
 
         /* renamed from: h */
-        private final int f1909h;
+        private final int f1900h;
         private float left;
         float pressedProgress;
         private final StaticLayout staticLayout;
         private final TextPaint textPaint;
 
         /* renamed from: w */
-        private final int f1910w;
+        private final int f1901w;
         private float width;
 
         public ShareButtonView(Context context, String str) {
@@ -221,7 +221,7 @@ public class PreviewButtons extends FrameLayout {
             textPaint.setColor(-1);
             textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             SpannableString spannableString = new SpannableString(">");
-            Drawable mutate = getResources().getDrawable(C3558R.C3560drawable.attach_arrow_right).mutate();
+            Drawable mutate = getResources().getDrawable(C3473R.C3475drawable.attach_arrow_right).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             mutate.setBounds(0, 0, AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(12));
             spannableString.setSpan(new ImageSpan(mutate, 2), 0, spannableString.length(), 33);
@@ -237,8 +237,8 @@ public class PreviewButtons extends FrameLayout {
             this.left = lineCount > 0 ? staticLayout.getLineLeft(0) : 0.0f;
             f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : f;
             this.width = f;
-            this.f1910w = ((int) f) + AndroidUtilities.m72dp(48);
-            this.f1909h = AndroidUtilities.m72dp(40);
+            this.f1901w = ((int) f) + AndroidUtilities.m72dp(48);
+            this.f1900h = AndroidUtilities.m72dp(40);
             setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PreviewButtons$ShareButtonView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -257,7 +257,7 @@ public class PreviewButtons extends FrameLayout {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.f1910w, 1073741824), View.MeasureSpec.makeMeasureSpec(this.f1909h, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.f1901w, 1073741824), View.MeasureSpec.makeMeasureSpec(this.f1900h, 1073741824));
         }
 
         @Override // android.view.View
@@ -343,7 +343,7 @@ public class PreviewButtons extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Stories.recorder.PreviewButtons$ButtonView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ButtonView extends ImageView {
         public ButtonView(Context context, final int i, int i2) {
             super(context);

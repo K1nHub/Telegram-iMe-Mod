@@ -4,7 +4,7 @@ import java.io.Closeable;
 import kotlin.ExceptionsKt__ExceptionsKt;
 /* compiled from: Closeable.kt */
 /* renamed from: kotlin.io.CloseableKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CloseableKt {
     public static final void closeFinally(Closeable closeable, Throwable th) {
         if (closeable != null) {

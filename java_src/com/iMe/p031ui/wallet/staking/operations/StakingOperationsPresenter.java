@@ -16,7 +16,7 @@ import moxy.InjectViewState;
 /* compiled from: StakingOperationsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StakingOperationsPresenter extends BasePresenter<StakingOperationsView> {
     private final RxEventBus rxEventBus;
     private NetworkItem.Crypto selectedNetworkItem;

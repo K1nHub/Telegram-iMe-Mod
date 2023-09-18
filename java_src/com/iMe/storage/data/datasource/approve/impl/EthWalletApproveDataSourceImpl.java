@@ -21,7 +21,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: EthWalletApproveDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -110,7 +110,7 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
 
     private final Ethereum.Transaction createTransaction(ApproveArgs.Dex dex) {
         Ethereum.Transaction build = Ethereum.Transaction.newBuilder().setErc20Approve(Ethereum.Transaction.ERC20Approve.newBuilder().setSpender(dex.getExchangeContractAddress()).setAmount(CryptoExtKt.toByteString(dex.getValue())).build()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …                 .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …   )\n            .build()");
         return build;
     }
 }

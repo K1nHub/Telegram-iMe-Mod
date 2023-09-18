@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.ton;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetParamsForTonCryptoTransferRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GetParamsForTonCryptoTransferRequest {
 
     /* renamed from: to */

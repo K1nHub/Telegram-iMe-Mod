@@ -8,7 +8,7 @@ import com.google.android.gms.common.util.VisibleForTesting;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzai extends SQLiteOpenHelper {
     final /* synthetic */ zzaj zza;
 

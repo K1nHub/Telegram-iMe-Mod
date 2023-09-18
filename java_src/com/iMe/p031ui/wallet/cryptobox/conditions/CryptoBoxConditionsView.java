@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CryptoBoxConditionsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CryptoBoxConditionsView extends BaseView, WalletCreateManagerView {
     void copyNameToClipboard(String str);
 

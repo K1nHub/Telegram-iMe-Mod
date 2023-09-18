@@ -5,7 +5,7 @@ import com.google.firebase.firestore.core.DocumentViewChange;
 import com.google.firebase.firestore.core.ViewSnapshot;
 import com.google.firebase.firestore.model.DocumentKey;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocalViewChanges {
     private final ImmutableSortedSet<DocumentKey> added;
     private final boolean fromCache;
@@ -27,7 +27,7 @@ public final class LocalViewChanges {
     }
 
     /* renamed from: com.google.firebase.firestore.local.LocalViewChanges$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10161 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */

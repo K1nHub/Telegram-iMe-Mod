@@ -11,7 +11,7 @@ import org.telegram.p043ui.Components.Paint.RenderView;
 import org.telegram.p043ui.PhotoViewer;
 import org.telegram.tgnet.TLRPC$InputDocument;
 /* renamed from: org.telegram.ui.Components.IPhotoPaintView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public interface IPhotoPaintView {
     float adjustPanLayoutHelperProgress();
 
@@ -66,7 +66,7 @@ public interface IPhotoPaintView {
     void updateZoom(boolean z);
 
     /* renamed from: org.telegram.ui.Components.IPhotoPaintView$-CC  reason: invalid class name */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public final /* synthetic */ class CC {
         public static void $default$setOffsetTranslationX(IPhotoPaintView iPhotoPaintView, float f) {
         }

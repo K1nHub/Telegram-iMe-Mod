@@ -92,7 +92,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: AdapterModule.kt */
 /* renamed from: com.iMe.di.module.AdapterModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AdapterModuleKt {
     private static Module presentationAdapterModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.di.module.AdapterModuleKt$presentationAdapterModule$1
         @Override // kotlin.jvm.functions.Function1

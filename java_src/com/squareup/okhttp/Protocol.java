@@ -1,7 +1,7 @@
 package com.squareup.okhttp;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum Protocol {
     HTTP_1_0("http/1.0"),
     HTTP_1_1("http/1.1"),

@@ -6,7 +6,7 @@ import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionSet;
 /* renamed from: org.telegram.ui.Components.TransitionExt */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TransitionExt {
     public static Transition createSimpleTransition() {
         TransitionSet transitionSet = new TransitionSet();

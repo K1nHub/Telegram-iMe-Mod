@@ -1,6 +1,6 @@
 package com.google.android.play.core.assetpacks;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbg {
     public static boolean zza(int i) {
         return i == 1 || i == 7 || i == 2 || i == 3;

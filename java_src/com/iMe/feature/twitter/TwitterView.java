@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: TwitterView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TwitterView extends BaseView, LoadMoreView<BaseNode>, SwipeRefreshView {
     void openBrowserUrl(String str);
 

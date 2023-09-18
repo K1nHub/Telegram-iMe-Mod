@@ -5,7 +5,7 @@ import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.FieldPath;
 import com.google.firebase.firestore.model.Values;
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ArrayContainsFilter extends FieldFilter {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ArrayContainsFilter(FieldPath fieldPath, Value value) {

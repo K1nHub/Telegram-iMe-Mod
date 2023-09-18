@@ -5,18 +5,18 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Cells.ChatActionCell$$ExternalSyntheticLambda2;
 /* renamed from: org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
     private TransitState animatingState;
     private State currentState;
     private Map<TransitState, RLottieDrawable> stateMap;
 
     /* renamed from: org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView$State */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum State {
         VOICE,
         VIDEO,
@@ -71,12 +71,12 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
             setAnimation(rLottieDrawable2);
             AndroidUtilities.runOnUIThread(new ChatActionCell$$ExternalSyntheticLambda2(rLottieDrawable2));
         }
-        int i = C45572.f1747x9047a843[state.ordinal()];
+        int i = C44722.f1738x9047a843[state.ordinal()];
         if (i == 1) {
-            setContentDescription(LocaleController.getString("AccDescrVoiceMessage", C3558R.string.AccDescrVoiceMessage));
+            setContentDescription(LocaleController.getString("AccDescrVoiceMessage", C3473R.string.AccDescrVoiceMessage));
         } else if (i != 2) {
         } else {
-            setContentDescription(LocaleController.getString("AccDescrVideoMessage", C3558R.string.AccDescrVideoMessage));
+            setContentDescription(LocaleController.getString("AccDescrVideoMessage", C3473R.string.AccDescrVideoMessage));
         }
     }
 
@@ -87,21 +87,21 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView$2 */
-    /* loaded from: classes6.dex */
-    public static /* synthetic */ class C45572 {
+    /* loaded from: classes7.dex */
+    public static /* synthetic */ class C44722 {
 
         /* renamed from: $SwitchMap$org$telegram$ui$Components$ChatActivityEnterViewAnimatedIconView$State */
-        static final /* synthetic */ int[] f1747x9047a843;
+        static final /* synthetic */ int[] f1738x9047a843;
 
         static {
             int[] iArr = new int[State.values().length];
-            f1747x9047a843 = iArr;
+            f1738x9047a843 = iArr;
             try {
                 iArr[State.VOICE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1747x9047a843[State.VIDEO.ordinal()] = 2;
+                f1738x9047a843[State.VIDEO.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
         }
@@ -139,7 +139,7 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* renamed from: org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView$TransitState */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TransitState {
         private static final /* synthetic */ TransitState[] $VALUES;
         public static final TransitState GIF_TO_KEYBOARD;
@@ -169,33 +169,33 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
         static {
             State state = State.VOICE;
             State state2 = State.VIDEO;
-            TransitState transitState = new TransitState("VOICE_TO_VIDEO", 0, state, state2, C3558R.raw.voice_to_video);
+            TransitState transitState = new TransitState("VOICE_TO_VIDEO", 0, state, state2, C3473R.raw.voice_to_video);
             VOICE_TO_VIDEO = transitState;
             State state3 = State.STICKER;
             State state4 = State.KEYBOARD;
-            TransitState transitState2 = new TransitState("STICKER_TO_KEYBOARD", 1, state3, state4, C3558R.raw.sticker_to_keyboard);
+            TransitState transitState2 = new TransitState("STICKER_TO_KEYBOARD", 1, state3, state4, C3473R.raw.sticker_to_keyboard);
             STICKER_TO_KEYBOARD = transitState2;
             State state5 = State.SMILE;
-            TransitState transitState3 = new TransitState("SMILE_TO_KEYBOARD", 2, state5, state4, C3558R.raw.smile_to_keyboard);
+            TransitState transitState3 = new TransitState("SMILE_TO_KEYBOARD", 2, state5, state4, C3473R.raw.smile_to_keyboard);
             SMILE_TO_KEYBOARD = transitState3;
-            TransitState transitState4 = new TransitState("VIDEO_TO_VOICE", 3, state2, state, C3558R.raw.video_to_voice);
+            TransitState transitState4 = new TransitState("VIDEO_TO_VOICE", 3, state2, state, C3473R.raw.video_to_voice);
             VIDEO_TO_VOICE = transitState4;
-            TransitState transitState5 = new TransitState("KEYBOARD_TO_STICKER", 4, state4, state3, C3558R.raw.keyboard_to_sticker);
+            TransitState transitState5 = new TransitState("KEYBOARD_TO_STICKER", 4, state4, state3, C3473R.raw.keyboard_to_sticker);
             KEYBOARD_TO_STICKER = transitState5;
             State state6 = State.GIF;
-            TransitState transitState6 = new TransitState("KEYBOARD_TO_GIF", 5, state4, state6, C3558R.raw.keyboard_to_gif);
+            TransitState transitState6 = new TransitState("KEYBOARD_TO_GIF", 5, state4, state6, C3473R.raw.keyboard_to_gif);
             KEYBOARD_TO_GIF = transitState6;
-            TransitState transitState7 = new TransitState("KEYBOARD_TO_SMILE", 6, state4, state5, C3558R.raw.keyboard_to_smile);
+            TransitState transitState7 = new TransitState("KEYBOARD_TO_SMILE", 6, state4, state5, C3473R.raw.keyboard_to_smile);
             KEYBOARD_TO_SMILE = transitState7;
-            TransitState transitState8 = new TransitState("GIF_TO_KEYBOARD", 7, state6, state4, C3558R.raw.gif_to_keyboard);
+            TransitState transitState8 = new TransitState("GIF_TO_KEYBOARD", 7, state6, state4, C3473R.raw.gif_to_keyboard);
             GIF_TO_KEYBOARD = transitState8;
-            TransitState transitState9 = new TransitState("GIF_TO_SMILE", 8, state6, state5, C3558R.raw.gif_to_smile);
+            TransitState transitState9 = new TransitState("GIF_TO_SMILE", 8, state6, state5, C3473R.raw.gif_to_smile);
             GIF_TO_SMILE = transitState9;
-            TransitState transitState10 = new TransitState("SMILE_TO_GIF", 9, state5, state6, C3558R.raw.smile_to_gif);
+            TransitState transitState10 = new TransitState("SMILE_TO_GIF", 9, state5, state6, C3473R.raw.smile_to_gif);
             SMILE_TO_GIF = transitState10;
-            TransitState transitState11 = new TransitState("SMILE_TO_STICKER", 10, state5, state3, C3558R.raw.smile_to_sticker);
+            TransitState transitState11 = new TransitState("SMILE_TO_STICKER", 10, state5, state3, C3473R.raw.smile_to_sticker);
             SMILE_TO_STICKER = transitState11;
-            TransitState transitState12 = new TransitState("STICKER_TO_SMILE", 11, state3, state5, C3558R.raw.sticker_to_smile);
+            TransitState transitState12 = new TransitState("STICKER_TO_SMILE", 11, state3, state5, C3473R.raw.sticker_to_smile);
             STICKER_TO_SMILE = transitState12;
             $VALUES = new TransitState[]{transitState, transitState2, transitState3, transitState4, transitState5, transitState6, transitState7, transitState8, transitState9, transitState10, transitState11, transitState12};
         }

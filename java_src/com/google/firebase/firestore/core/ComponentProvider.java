@@ -10,7 +10,7 @@ import com.google.firebase.firestore.remote.ConnectivityMonitor;
 import com.google.firebase.firestore.remote.Datastore;
 import com.google.firebase.firestore.remote.RemoteStore;
 import com.google.firebase.firestore.util.AsyncQueue;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ComponentProvider {
     private ConnectivityMonitor connectivityMonitor;
     private EventManager eventManager;
@@ -37,7 +37,7 @@ public abstract class ComponentProvider {
 
     protected abstract SyncEngine createSyncEngine(Configuration configuration);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Configuration {
         private final AsyncQueue asyncQueue;
         private final Context context;

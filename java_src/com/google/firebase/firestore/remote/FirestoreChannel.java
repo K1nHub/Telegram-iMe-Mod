@@ -14,7 +14,7 @@ import io.grpc.ForwardingClientCall;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirestoreChannel {
     private static final Metadata.Key<String> RESOURCE_PREFIX_HEADER;
     private static final Metadata.Key<String> X_GOOG_API_CLIENT_HEADER;

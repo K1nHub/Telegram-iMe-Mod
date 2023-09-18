@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.p027db.model.hidden_chats;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: HiddenChatsDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.hidden_chats.HiddenChatsDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HiddenChatsDb {
     private final long dialogId;
     private final long userId;

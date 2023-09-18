@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.orbitmvi.orbit.Container;
 import org.orbitmvi.orbit.internal.repeatonsubscription.SubscribedCounter;
 /* compiled from: ContainerContext.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ContainerContext<S, SE> {
     private final Function0<S> getState;
     private final Function2<SE, Continuation<? super Unit>, Object> postSideEffect;

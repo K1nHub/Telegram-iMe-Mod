@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RemoteModelManager {
     private final Map<Class<? extends RemoteModel>, Provider<Object>> zza = new HashMap();
 
@@ -19,7 +19,7 @@ public class RemoteModelManager {
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RemoteModelManagerRegistration {
         private final Class<? extends RemoteModel> zza;
         private final Provider<Object> zzb;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CardRequirementsCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CardRequirements extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CardRequirements> CREATOR = new zzg();
     @SafeParcelable.Field(m797id = 1)
@@ -23,7 +23,7 @@ public final class CardRequirements extends AbstractSafeParcelable {
     int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzf zzfVar) {
         }

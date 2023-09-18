@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.Status;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzbh extends zzu {
     final /* synthetic */ zzbq zza;
 

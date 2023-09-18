@@ -8,7 +8,7 @@ import org.bouncycastle.pqc.crypto.lms.LMSKeyParameters;
 import org.bouncycastle.pqc.crypto.util.PublicKeyFactory;
 import org.bouncycastle.pqc.crypto.util.SubjectPublicKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCLMSPublicKey implements PublicKey, Key {
     private transient LMSKeyParameters keyParams;
 

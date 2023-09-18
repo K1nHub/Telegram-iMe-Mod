@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @ShowFirstParty
 @SafeParcelable.Class(creator = "GetSaveInstrumentDetailsResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzq> CREATOR = new zzr();
     @SafeParcelable.Field(m797id = 1)

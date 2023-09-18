@@ -15,7 +15,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationResultCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocationResult extends AbstractSafeParcelable implements ReflectedParcelable {
     @SafeParcelable.Field(defaultValueUnchecked = "LocationResult.DEFAULT_LOCATIONS", getter = "getLocations", m797id = 1)
     private final List zzb;

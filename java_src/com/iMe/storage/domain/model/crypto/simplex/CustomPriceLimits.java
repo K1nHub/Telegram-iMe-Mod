@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.simplex;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: CustomPriceLimits.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CustomPriceLimits {
     private final float maxCryptoAmount;
     private final float maxFiatAmount;

@@ -1,10 +1,10 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_reportReaction extends TLObject {
     public static int constructor = 1631726152;
 
     /* renamed from: id */
-    public int f1643id;
+    public int f1634id;
     public TLRPC$InputPeer peer;
     public TLRPC$InputUser user_id;
 
@@ -17,7 +17,7 @@ public class TLRPC$TL_messages_reportReaction extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1643id);
+        abstractSerializedData.writeInt32(this.f1634id);
         this.user_id.serializeToStream(abstractSerializedData);
     }
 }

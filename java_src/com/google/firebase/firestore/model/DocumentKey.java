@@ -5,7 +5,7 @@ import com.google.firebase.firestore.util.Assert;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentKey implements Comparable<DocumentKey> {
     private static final Comparator<DocumentKey> COMPARATOR;
     private static final ImmutableSortedSet<DocumentKey> EMPTY_KEY_SET;

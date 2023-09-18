@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$InputFile extends TLObject {
 
     /* renamed from: id */
-    public long f1549id;
+    public long f1540id;
     public String md5_checksum;
     public String name;
     public int parts;

@@ -3,7 +3,7 @@ package com.google.common.collect;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Multimap<K, V> {
     Map<K, Collection<V>> asMap();
 

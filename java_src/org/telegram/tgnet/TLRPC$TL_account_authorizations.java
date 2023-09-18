@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_authorizations extends TLObject {
     public static int constructor = 1275039392;
     public int authorization_ttl_days;

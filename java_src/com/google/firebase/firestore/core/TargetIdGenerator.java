@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.util.Assert;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TargetIdGenerator {
     private int generatorId;
     private int nextId;

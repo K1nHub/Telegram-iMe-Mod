@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChatView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.chat.ChatView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ChatView extends BaseView, AppUpdateRequiredView, BinancePayProcessView {
     @AddToEndSingle
     void onLanguagesLoaded(List<TranslationLanguageUiModel> list);

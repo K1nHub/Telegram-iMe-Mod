@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SharedPrefsHelper {
     private static String WEB_VIEW_SHOWN_DIALOG_FORMAT = "confirm_shown_%d_%d";
     private static SharedPreferences webViewBotsPrefs;

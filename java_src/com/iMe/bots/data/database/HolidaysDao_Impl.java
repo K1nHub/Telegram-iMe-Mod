@@ -10,7 +10,7 @@ import com.iMe.bots.data.model.database.HolidaysDbModel;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HolidaysDao_Impl extends HolidaysDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<HolidaysDbModel> __insertionAdapterOfHolidaysDbModel;

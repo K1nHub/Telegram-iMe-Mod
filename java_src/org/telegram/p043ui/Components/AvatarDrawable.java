@@ -19,7 +19,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserObject;
@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$ChatInvite;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.AvatarDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AvatarDrawable extends Drawable {
     private int alpha;
     private float archivedAvatarProgress;
@@ -108,7 +108,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$User tLRPC$User, boolean z) {
         this();
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1694id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1685id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -116,7 +116,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$Chat tLRPC$Chat, boolean z) {
         this();
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1531id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1522id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -150,7 +150,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$User tLRPC$User) {
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1694id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1685id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -242,7 +242,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$Chat tLRPC$Chat) {
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1531id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1522id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -409,12 +409,12 @@ public class AvatarDrawable extends Drawable {
             canvas.restore();
         } else if (i2 != 0) {
             if (i2 == 101) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3558R.C3560drawable.fork_templates_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3473R.C3475drawable.fork_templates_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }
             } else if (i2 == 100) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3558R.C3560drawable.fork_filter_icon_lock_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3473R.C3475drawable.fork_filter_icon_lock_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }

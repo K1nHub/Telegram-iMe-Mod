@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.SlopSwipeRefreshLayout;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletHomeCryptoBinding implements ViewBinding {
     public final RecyclerView recycleWalletHomeCryptoDashboard;
     private final SlopSwipeRefreshLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletHomeCryptoBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletHomeCryptoBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_home_crypto, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_home_crypto, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletHomeCryptoBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletHomeCryptoBinding bind(View view) {
-        int i = C3558R.C3561id.recycle_wallet_home_crypto_dashboard;
+        int i = C3473R.C3476id.recycle_wallet_home_crypto_dashboard;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletHomeCryptoBinding((SlopSwipeRefreshLayout) view, recyclerView);

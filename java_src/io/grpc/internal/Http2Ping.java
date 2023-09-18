@@ -8,7 +8,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Http2Ping {
     private static final Logger log = Logger.getLogger(Http2Ping.class.getName());
     private Map<ClientTransport.PingCallback, Executor> callbacks = new LinkedHashMap();

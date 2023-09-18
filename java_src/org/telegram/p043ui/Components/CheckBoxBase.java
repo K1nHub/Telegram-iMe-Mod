@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CheckBoxBase */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CheckBoxBase {
     private static Paint eraser;
     private static Paint forbidPaint;
@@ -52,7 +52,7 @@ public class CheckBoxBase {
     private int checkColorKey = Theme.key_checkboxCheck;
 
     /* renamed from: org.telegram.ui.Components.CheckBoxBase$ProgressDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ProgressDelegate {
         void setProgress(float f);
     }

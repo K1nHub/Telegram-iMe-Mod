@@ -4,14 +4,14 @@ import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.io.File;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LogFileManager {
     private static final NoopLogStore NOOP_LOG_STORE = new NoopLogStore();
     private final Context context;
     private FileLogStore currentLog;
     private final DirectoryProvider directoryProvider;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DirectoryProvider {
         File getLogFileDir();
     }
@@ -65,7 +65,7 @@ public class LogFileManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NoopLogStore implements FileLogStore {
         @Override // com.google.firebase.crashlytics.internal.log.FileLogStore
         public void closeLogFile() {

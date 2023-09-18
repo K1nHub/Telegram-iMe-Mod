@@ -3,7 +3,7 @@ package com.google.firebase.firestore.remote;
 import com.google.firebase.database.collection.ImmutableSortedSet;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.protobuf.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TargetChange {
     private final ImmutableSortedSet<DocumentKey> addedDocuments;
     private final boolean current;

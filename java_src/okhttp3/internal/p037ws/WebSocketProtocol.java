@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okio.Buffer;
 /* compiled from: WebSocketProtocol.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketProtocol */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WebSocketProtocol {
     public static final WebSocketProtocol INSTANCE = new WebSocketProtocol();
 

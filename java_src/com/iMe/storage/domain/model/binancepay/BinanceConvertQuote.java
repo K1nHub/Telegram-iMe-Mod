@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.binancepay;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceConvertQuote.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceConvertQuote {
     private final double inputAmount;
     private final String inputToken;

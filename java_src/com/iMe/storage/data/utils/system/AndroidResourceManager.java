@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: AndroidResourceManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AndroidResourceManager implements ResourceManager {
     private Configuration config;
     private Context context;

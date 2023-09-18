@@ -1,5 +1,5 @@
 package org.solovyev.android.checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class SameThreadExecutor implements CancellableExecutor {
     public static final SameThreadExecutor INSTANCE = new SameThreadExecutor();
 

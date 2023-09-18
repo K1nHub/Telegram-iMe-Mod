@@ -16,7 +16,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.Paint.PersistColorPalette;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintColorsListView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintColorsListView extends RecyclerListView {
     private static Paint checkerboardPaint = new Paint(1);
     private static Paint checkerboardPaintWhite = new Paint(1);
@@ -162,7 +162,7 @@ public class PaintColorsListView extends RecyclerListView {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintColorsListView$ColorView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private final class ColorView extends View {
         private int mColor;
         private float selectProgress;

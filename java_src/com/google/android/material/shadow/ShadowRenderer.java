@@ -11,7 +11,7 @@ import android.graphics.Region;
 import android.graphics.Shader;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ShadowRenderer {
     private final Paint cornerShadowPaint;
     private final Paint edgeShadowPaint;

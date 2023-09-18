@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AlbumsDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.cloud.AlbumsDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AlbumsDao implements BaseDao<CloudAlbumDb> {
     public abstract void deleteAllAlbumsByUserId(long j);
 

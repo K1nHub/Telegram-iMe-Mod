@@ -7,7 +7,7 @@ import java.util.Set;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.SharedConfig;
 /* renamed from: org.telegram.ui.Components.Reactions.HwEmojis */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HwEmojis {
     private static Boolean isWeakDevice;
     private static Runnable task;

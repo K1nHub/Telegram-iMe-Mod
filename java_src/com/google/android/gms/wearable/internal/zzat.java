@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.wearable.ChannelApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzat extends zzu {
     private final String zza;
     private ChannelApi.ChannelListener zzb;

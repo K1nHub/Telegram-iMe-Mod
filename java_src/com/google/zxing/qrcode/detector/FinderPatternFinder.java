@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FinderPatternFinder {
     private static final EstimatedModuleComparator moduleComparator = new EstimatedModuleComparator();
     private boolean hasSkipped;
@@ -564,7 +564,7 @@ public class FinderPatternFinder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class EstimatedModuleComparator implements Comparator<FinderPattern>, Serializable {
         private EstimatedModuleComparator() {
         }

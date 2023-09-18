@@ -13,13 +13,13 @@ import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@19.0.2 */
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppMeasurementSdk {
     private final zzee zza;
 
     /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@19.0.2 */
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ConditionalUserProperty {
         @KeepForSdk
         public static final String ACTIVE = "active";
@@ -59,7 +59,7 @@ public class AppMeasurementSdk {
     /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@19.0.2 */
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface EventInterceptor extends zzgv {
         @Override // com.google.android.gms.measurement.internal.zzgv
         @ShowFirstParty
@@ -70,7 +70,7 @@ public class AppMeasurementSdk {
     /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@19.0.2 */
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnEventListener extends zzgw {
         @Override // com.google.android.gms.measurement.internal.zzgw
         @ShowFirstParty

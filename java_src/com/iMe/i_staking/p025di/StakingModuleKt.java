@@ -37,7 +37,7 @@ import org.koin.dsl.ModuleDSLKt;
 import retrofit2.Retrofit;
 /* compiled from: StakingModule.kt */
 /* renamed from: com.iMe.i_staking.di.StakingModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingModuleKt {
     private static final StringQualifier STAKING_RETROFIT = QualifierKt.named("STAKING_RETROFIT");
     private static final StringQualifier STAKING_CLIENT = QualifierKt.named("STAKING_CLIENT");
@@ -58,7 +58,7 @@ public final class StakingModuleKt {
             List emptyList6;
             Intrinsics.checkNotNullParameter(module, "$this$module");
             StringQualifier staking_retrofit = StakingModuleKt.getSTAKING_RETROFIT();
-            C15821 c15821 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.1
+            C15781 c15781 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final Retrofit invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -70,14 +70,14 @@ public final class StakingModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Retrofit.class), staking_retrofit, c15821, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Retrofit.class), staking_retrofit, c15781, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
             StringQualifier staking_client = StakingModuleKt.getSTAKING_CLIENT();
-            C15832 c15832 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.2
+            C15792 c15792 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final OkHttpClient invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -87,13 +87,13 @@ public final class StakingModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(OkHttpClient.class), staking_client, c15832, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(OkHttpClient.class), staking_client, c15792, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C15843 c15843 = new Function2<Scope, ParametersHolder, StakingApi>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.3
+            C15803 c15803 = new Function2<Scope, ParametersHolder, StakingApi>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -105,13 +105,13 @@ public final class StakingModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(StakingApi.class), null, c15843, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(StakingApi.class), null, c15803, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C15854 c15854 = new Function2<Scope, ParametersHolder, StakingDataSource>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.4
+            C15814 c15814 = new Function2<Scope, ParametersHolder, StakingDataSource>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -121,13 +121,13 @@ public final class StakingModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(StakingDataSource.class), null, c15854, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(StakingDataSource.class), null, c15814, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C15865 c15865 = new Function2<Scope, ParametersHolder, StakingRepository>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.5
+            C15825 c15825 = new Function2<Scope, ParametersHolder, StakingRepository>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -137,13 +137,13 @@ public final class StakingModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(StakingRepository.class), null, c15865, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(StakingRepository.class), null, c15825, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
-            C15876 c15876 = new Function2<Scope, ParametersHolder, StakingInteractor>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.6
+            C15836 c15836 = new Function2<Scope, ParametersHolder, StakingInteractor>() { // from class: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -153,7 +153,7 @@ public final class StakingModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, c15876, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, c15836, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);

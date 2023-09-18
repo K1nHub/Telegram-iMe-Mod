@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import com.google.common.base.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TransportTracer {
     private static final Factory DEFAULT_FACTORY = new Factory(TimeProvider.SYSTEM_TIME_PROVIDER);
     private FlowControlReader flowControlWindowReader;
@@ -13,7 +13,7 @@ public final class TransportTracer {
     private long streamsSucceeded;
     private final TimeProvider timeProvider;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface FlowControlReader {
     }
 
@@ -61,7 +61,7 @@ public final class TransportTracer {
         this.flowControlWindowReader = (FlowControlReader) Preconditions.checkNotNull(flowControlReader);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Factory {
         private final TimeProvider timeProvider;
 

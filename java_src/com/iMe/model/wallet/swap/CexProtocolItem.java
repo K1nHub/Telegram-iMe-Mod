@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.wallet.swap.CentralizedExchangesInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CexProtocolItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CexProtocolItem extends NoChildNode {
     private final CentralizedExchangesInfo info;
     private final boolean isEnabled;

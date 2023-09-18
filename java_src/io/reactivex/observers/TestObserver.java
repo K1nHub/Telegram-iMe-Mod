@@ -7,15 +7,15 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.QueueDisposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implements Observer<T>, Disposable, MaybeObserver<T>, SingleObserver<T> {
     private final Observer<? super T> downstream;
 
     /* renamed from: qd */
-    private QueueDisposable<T> f574qd;
+    private QueueDisposable<T> f565qd;
     private final AtomicReference<Disposable> upstream;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     enum EmptyObserver implements Observer<Object> {
         INSTANCE;
 
@@ -59,7 +59,7 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
             int i = this.initialFusionMode;
             if (i != 0 && (disposable instanceof QueueDisposable)) {
                 QueueDisposable<T> queueDisposable = (QueueDisposable) disposable;
-                this.f574qd = queueDisposable;
+                this.f565qd = queueDisposable;
                 int requestFusion = queueDisposable.requestFusion(i);
                 this.establishedFusionMode = requestFusion;
                 if (requestFusion == 1) {
@@ -67,7 +67,7 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
                     Thread.currentThread();
                     while (true) {
                         try {
-                            T poll = this.f574qd.poll();
+                            T poll = this.f565qd.poll();
                             if (poll != null) {
                                 this.values.add(poll);
                             } else {
@@ -105,14 +105,14 @@ public class TestObserver<T> extends BaseTestConsumer<T, TestObserver<T>> implem
         }
         while (true) {
             try {
-                T poll = this.f574qd.poll();
+                T poll = this.f565qd.poll();
                 if (poll == null) {
                     return;
                 }
                 this.values.add(poll);
             } catch (Throwable th) {
                 this.errors.add(th);
-                this.f574qd.dispose();
+                this.f565qd.dispose();
                 return;
             }
         }

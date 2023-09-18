@@ -13,7 +13,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadioButton;
 /* renamed from: org.telegram.ui.Cells.LanguageCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LanguageCell extends FrameLayout {
     private LocaleController.LocaleInfo currentLocale;
     private int marginEndDp;

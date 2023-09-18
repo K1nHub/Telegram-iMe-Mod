@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationPushText.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NotificationPushText {
     private String action;
     private final String linkedObject;

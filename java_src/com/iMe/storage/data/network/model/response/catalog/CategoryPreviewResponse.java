@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.catalog;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryPreviewResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoryPreviewResponse {
     private final CatalogCategoryResponse category;
     private final List<CampaignResponse> items;

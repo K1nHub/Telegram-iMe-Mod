@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LoyaltyPointsBalanceCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyPointsBalance> CREATOR = new zzi();
     @SafeParcelable.Field(m797id = 2)
@@ -25,7 +25,7 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     int zzf;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzh zzhVar) {
         }
@@ -65,7 +65,7 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Type {
         public static final int DOUBLE = 2;
         public static final int INT = 0;

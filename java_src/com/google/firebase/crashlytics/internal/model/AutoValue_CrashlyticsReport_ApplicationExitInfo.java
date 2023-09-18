@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_CrashlyticsReport_ApplicationExitInfo extends CrashlyticsReport.ApplicationExitInfo {
     private final int importance;
     private final int pid;
@@ -99,7 +99,7 @@ final class AutoValue_CrashlyticsReport_ApplicationExitInfo extends CrashlyticsR
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends CrashlyticsReport.ApplicationExitInfo.Builder {
         private Integer importance;
         private Integer pid;

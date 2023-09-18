@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.catalog;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChatType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ChatType {
     CHANNEL,
     GROUP;
@@ -11,7 +11,7 @@ public enum ChatType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: ChatType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

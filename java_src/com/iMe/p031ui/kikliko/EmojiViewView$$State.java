@@ -7,7 +7,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 /* renamed from: com.iMe.ui.kikliko.EmojiViewView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class EmojiViewView$$State extends MvpViewState<EmojiViewView> implements EmojiViewView {
     @Override // com.iMe.p031ui.kikliko.EmojiViewView
     public void onKiklikoTagsLoaded(List<TagResponse> list) {
@@ -37,7 +37,7 @@ public class EmojiViewView$$State extends MvpViewState<EmojiViewView> implements
 
     /* compiled from: EmojiViewView$$State.java */
     /* renamed from: com.iMe.ui.kikliko.EmojiViewView$$State$OnKiklikoTagsLoadedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnKiklikoTagsLoadedCommand extends ViewCommand<EmojiViewView> {
         public final List<TagResponse> tags;
 
@@ -54,7 +54,7 @@ public class EmojiViewView$$State extends MvpViewState<EmojiViewView> implements
 
     /* compiled from: EmojiViewView$$State.java */
     /* renamed from: com.iMe.ui.kikliko.EmojiViewView$$State$OnKiklikoSearchResultsLoadedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnKiklikoSearchResultsLoadedCommand extends ViewCommand<EmojiViewView> {
         public final boolean byTag;
         public final String page;

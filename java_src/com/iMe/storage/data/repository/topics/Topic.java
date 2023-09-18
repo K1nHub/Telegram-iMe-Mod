@@ -20,7 +20,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ANIMALS uses exter
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: Topic.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Topic {
     private static final /* synthetic */ Topic[] $VALUES;
     public static final Topic ADULTHOOD;
@@ -288,7 +288,7 @@ public final class Topic {
     }
 
     /* compiled from: Topic.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

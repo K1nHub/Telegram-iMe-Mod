@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ASN1Enumerated extends ASN1Primitive {
     private static ASN1Enumerated[] cache = new ASN1Enumerated[12];
     private final byte[] bytes;

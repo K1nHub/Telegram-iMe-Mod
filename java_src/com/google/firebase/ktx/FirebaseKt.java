@@ -3,7 +3,7 @@ package com.google.firebase.ktx;
 import com.google.firebase.FirebaseApp;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Firebase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseKt {
     public static final FirebaseApp getApp(Firebase app) {
         Intrinsics.checkParameterIsNotNull(app, "$this$app");

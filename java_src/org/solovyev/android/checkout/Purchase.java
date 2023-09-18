@@ -2,7 +2,7 @@ package org.solovyev.android.checkout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Purchase {
     public final String data;
     public final String orderId;
@@ -36,7 +36,7 @@ public final class Purchase {
         return "Purchase{state=" + this.state + ", time=" + this.time + ", sku='" + this.sku + "'}";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum State {
         PURCHASED(0),
         CANCELLED(1),
@@ -45,10 +45,10 @@ public final class Purchase {
         
 
         /* renamed from: id */
-        public final int f1450id;
+        public final int f1441id;
 
         State(int i) {
-            this.f1450id = i;
+            this.f1441id = i;
         }
 
         static State valueOf(int i) {

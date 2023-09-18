@@ -5,7 +5,7 @@ import com.google.firebase.firestore.model.MutableDocument;
 import com.google.firebase.firestore.model.SnapshotVersion;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteEvent {
     private final Map<DocumentKey, MutableDocument> documentUpdates;
     private final Set<DocumentKey> resolvedLimboDocuments;

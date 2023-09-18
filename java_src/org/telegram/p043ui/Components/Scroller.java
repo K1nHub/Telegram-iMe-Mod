@@ -6,7 +6,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.Scroller */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Scroller {
     private static float sViscousFluidNormalize;
     private static float sViscousFluidScale;

@@ -8,7 +8,7 @@ import p033j$.util.function.ToDoubleFunction;
 import p033j$.util.function.ToIntFunction;
 import p033j$.util.function.ToLongFunction;
 /* compiled from: Comparisons.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ReverseOrderComparator implements Comparator<Comparable<? super Object>>, p033j$.util.Comparator {
     public static final ReverseOrderComparator INSTANCE = new ReverseOrderComparator();
 

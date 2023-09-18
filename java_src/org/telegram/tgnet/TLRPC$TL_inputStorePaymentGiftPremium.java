@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_inputStorePaymentGiftPremium extends TLRPC$InputStorePaymentPurpose {
     public static int constructor = 1634697192;
     public long amount;

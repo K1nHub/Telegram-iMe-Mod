@@ -7,7 +7,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LoggingConnectionCallbacks implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
     public void onConnected(@RecentlyNonNull Bundle bundle) {

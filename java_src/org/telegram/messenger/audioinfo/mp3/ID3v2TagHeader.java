@@ -5,7 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import org.telegram.messenger.audioinfo.util.PositionInputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ID3v2TagHeader {
     private boolean compression;
     private int footerSize;

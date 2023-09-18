@@ -24,7 +24,7 @@ import com.google.firebase.installations.FirebaseInstallationsApi;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseCrashlytics {
     final CrashlyticsCore core;
 

@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.InfiniteProgress */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class InfiniteProgress {
     private RectF cicleRect = new RectF();
     private float currentCircleLength;

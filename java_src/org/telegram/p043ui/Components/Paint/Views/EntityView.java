@@ -27,7 +27,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.Point;
 import org.telegram.p043ui.Components.Rect;
 /* renamed from: org.telegram.ui.Components.Paint.Views.EntityView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EntityView extends FrameLayout {
     private static final List<Integer> STICKY_ANGLES = Arrays.asList(-90, 0, 90, 180);
     private float angle;
@@ -80,15 +80,15 @@ public class EntityView extends FrameLayout {
     private UUID uuid;
 
     /* renamed from: xy */
-    private final float[] f1798xy;
+    private final float[] f1789xy;
     private final float[] xy2;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.EntityView$EntityViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface EntityViewDelegate {
 
         /* renamed from: org.telegram.ui.Components.Paint.Views.EntityView$EntityViewDelegate$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$onEntityDragEnd(EntityViewDelegate entityViewDelegate, boolean z) {
             }
@@ -206,7 +206,7 @@ public class EntityView extends FrameLayout {
                 EntityView.this.updateStickyY();
             }
         };
-        this.f1798xy = new float[2];
+        this.f1789xy = new float[2];
         this.xy2 = new float[2];
         this.cxy = new float[2];
         this.scale = 1.0f;
@@ -303,8 +303,8 @@ public class EntityView extends FrameLayout {
             }
             EntityViewDelegate entityViewDelegate5 = this.delegate;
             if (entityViewDelegate5 != null) {
-                entityViewDelegate5.onEntityDraggedTop(this.position.f1816y - ((((float) getHeight()) / 2.0f) * scaleX) < ((float) AndroidUtilities.m72dp(66)));
-                this.delegate.onEntityDraggedBottom(this.position.f1816y + ((((float) getHeight()) / 2.0f) * scaleX) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.m72dp(114))));
+                entityViewDelegate5.onEntityDraggedTop(this.position.f1807y - ((((float) getHeight()) / 2.0f) * scaleX) < ((float) AndroidUtilities.m72dp(66)));
+                this.delegate.onEntityDraggedBottom(this.position.f1807y + ((((float) getHeight()) / 2.0f) * scaleX) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.m72dp(114))));
             }
             updateTrash(!z && MathUtils.distance(f5, f6, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.m72dp(76))) < ((float) AndroidUtilities.m72dp(32)));
             this.bounce.setPressed(false);
@@ -382,7 +382,7 @@ public class EntityView extends FrameLayout {
         if (!this.delegate.allowInteraction(this)) {
             return false;
         }
-        this.delegate.getTransformedTouch(motionEvent.getRawX(), motionEvent.getRawY(), this.f1798xy);
+        this.delegate.getTransformedTouch(motionEvent.getRawX(), motionEvent.getRawY(), this.f1789xy);
         boolean z2 = motionEvent.getPointerCount() > 1;
         if (z2) {
             if (Build.VERSION.SDK_INT >= 29) {
@@ -393,19 +393,19 @@ public class EntityView extends FrameLayout {
         }
         if (z2) {
             float[] fArr = this.cxy;
-            float[] fArr2 = this.f1798xy;
+            float[] fArr2 = this.f1789xy;
             float f = fArr2[0];
             float[] fArr3 = this.xy2;
             fArr[0] = (f + fArr3[0]) / 2.0f;
             fArr[1] = (fArr2[1] + fArr3[1]) / 2.0f;
         } else {
             float[] fArr4 = this.cxy;
-            float[] fArr5 = this.f1798xy;
+            float[] fArr5 = this.f1789xy;
             fArr4[0] = fArr5[0];
             fArr4[1] = fArr5[1];
         }
         if (this.lastIsMultitouch != z2) {
-            float[] fArr6 = this.f1798xy;
+            float[] fArr6 = this.f1789xy;
             this.previousLocationX = fArr6[0];
             this.previousLocationY = fArr6[1];
             float[] fArr7 = this.xy2;
@@ -426,7 +426,7 @@ public class EntityView extends FrameLayout {
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 0) {
             this.hadMultitouch = false;
-            float[] fArr10 = this.f1798xy;
+            float[] fArr10 = this.f1789xy;
             this.previousLocationX = fArr10[0];
             this.previousLocationY = fArr10[1];
             this.previousLocationCX = f2;
@@ -443,7 +443,7 @@ public class EntityView extends FrameLayout {
         } else {
             if (actionMasked != 1) {
                 if (actionMasked == 2) {
-                    float[] fArr11 = this.f1798xy;
+                    float[] fArr11 = this.f1789xy;
                     float f4 = fArr11[0];
                     float f5 = fArr11[1];
                     float[] fArr12 = this.xy2;
@@ -582,7 +582,7 @@ public class EntityView extends FrameLayout {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x012e, code lost:
-        if (java.lang.Math.abs((r9.position.f1816y + (((height() / 2.0f) - getStickyPaddingBottom()) * getScaleY())) - (r10.getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.m73dp(64.0f))) <= org.telegram.messenger.AndroidUtilities.m73dp(12.0f)) goto L21;
+        if (java.lang.Math.abs((r9.position.f1807y + (((height() / 2.0f) - getStickyPaddingBottom()) * getScaleY())) - (r10.getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.m73dp(64.0f))) <= org.telegram.messenger.AndroidUtilities.m73dp(12.0f)) goto L21;
      */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00ae  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00bf  */
@@ -610,7 +610,7 @@ public class EntityView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionX() {
         float measuredWidth;
-        float f = this.position.f1815x;
+        float f = this.position.f1806x;
         if (getParent() != null) {
             View view = (View) getParent();
             int i = this.stickyX;
@@ -633,7 +633,7 @@ public class EntityView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionY() {
         float measuredHeight;
-        float f = this.position.f1816y;
+        float f = this.position.f1807y;
         if (getParent() != null) {
             View view = (View) getParent();
             int i = this.stickyY;
@@ -913,7 +913,7 @@ public class EntityView extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.EntityView$SelectionView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class SelectionView extends FrameLayout {
         private int currentHandle;
         protected Paint dotPaint;
@@ -950,8 +950,8 @@ public class EntityView extends FrameLayout {
         protected void updatePosition() {
             Rect selectionBounds = EntityView.this.getSelectionBounds();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
-            layoutParams.leftMargin = (int) selectionBounds.f1856x;
-            layoutParams.topMargin = (int) selectionBounds.f1857y;
+            layoutParams.leftMargin = (int) selectionBounds.f1847x;
+            layoutParams.topMargin = (int) selectionBounds.f1848y;
             layoutParams.width = (int) selectionBounds.width;
             layoutParams.height = (int) selectionBounds.height;
             setLayoutParams(layoutParams);

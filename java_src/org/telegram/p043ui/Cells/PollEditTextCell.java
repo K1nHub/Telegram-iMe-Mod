@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -28,7 +28,7 @@ import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.EditTextCaption;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PollEditTextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PollEditTextCell extends FrameLayout {
     private boolean alwaysShowText2;
     private CheckBox2 checkBox;
@@ -160,7 +160,7 @@ public class PollEditTextCell extends FrameLayout {
             this.moveImageView = imageView;
             imageView.setFocusable(false);
             this.moveImageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.moveImageView.setImageResource(C3558R.C3560drawable.poll_reorder);
+            this.moveImageView.setImageResource(C3473R.C3475drawable.poll_reorder);
             ImageView imageView2 = this.moveImageView;
             int i = Theme.key_windowBackgroundWhiteGrayIcon;
             imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
@@ -170,10 +170,10 @@ public class PollEditTextCell extends FrameLayout {
             imageView3.setFocusable(false);
             this.deleteImageView.setScaleType(ImageView.ScaleType.CENTER);
             this.deleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector)));
-            this.deleteImageView.setImageResource(C3558R.C3560drawable.poll_remove);
+            this.deleteImageView.setImageResource(C3473R.C3475drawable.poll_remove);
             this.deleteImageView.setOnClickListener(onClickListener);
             this.deleteImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
-            this.deleteImageView.setContentDescription(LocaleController.getString("Delete", C3558R.string.Delete));
+            this.deleteImageView.setContentDescription(LocaleController.getString("Delete", C3473R.string.Delete));
             ImageView imageView4 = this.deleteImageView;
             boolean z3 = LocaleController.isRTL;
             addView(imageView4, LayoutHelper.createFrame(48, 50, (z3 ? 3 : 5) | 48, z3 ? 3 : 0, 0, z3 ? 0 : 3, 0));
@@ -187,7 +187,7 @@ public class PollEditTextCell extends FrameLayout {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
             checkBox2.setColor(-1, i, Theme.key_checkboxCheck);
-            this.checkBox.setContentDescription(LocaleController.getString("AccDescrQuizCorrectAnswer", C3558R.string.AccDescrQuizCorrectAnswer));
+            this.checkBox.setContentDescription(LocaleController.getString("AccDescrQuizCorrectAnswer", C3473R.string.AccDescrQuizCorrectAnswer));
             this.checkBox.setDrawUnchecked(true);
             this.checkBox.setChecked(true, false);
             this.checkBox.setAlpha(BitmapDescriptorFactory.HUE_RED);

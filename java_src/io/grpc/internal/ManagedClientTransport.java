@@ -1,10 +1,10 @@
 package io.grpc.internal;
 
 import io.grpc.Status;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ManagedClientTransport extends ClientTransport {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Listener {
         void transportInUse(boolean z);
 

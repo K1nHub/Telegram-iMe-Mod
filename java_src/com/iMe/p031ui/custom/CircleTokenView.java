@@ -7,7 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CircleTokenView.kt */
 /* renamed from: com.iMe.ui.custom.CircleTokenView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CircleTokenView extends AppCompatImageView {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public CircleTokenView(Context context, AttributeSet attributeSet) {

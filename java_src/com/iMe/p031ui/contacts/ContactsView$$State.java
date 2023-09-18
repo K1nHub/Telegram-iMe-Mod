@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.contacts.ContactsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ContactsView$$State extends MvpViewState<ContactsView> implements ContactsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -114,7 +114,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$OpenActionModeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenActionModeCommand extends ViewCommand<ContactsView> {
         OpenActionModeCommand(ContactsView$$State contactsView$$State) {
             super("openActionMode", AddToEndSingleStrategy.class);
@@ -128,7 +128,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$CloseActionModeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CloseActionModeCommand extends ViewCommand<ContactsView> {
         CloseActionModeCommand(ContactsView$$State contactsView$$State) {
             super("closeActionMode", AddToEndSingleStrategy.class);
@@ -142,7 +142,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$ClearSelectedContactsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ClearSelectedContactsCommand extends ViewCommand<ContactsView> {
         ClearSelectedContactsCommand(ContactsView$$State contactsView$$State) {
             super("clearSelectedContacts", AddToEndSingleStrategy.class);
@@ -156,7 +156,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$OnSelectedQtyChangeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSelectedQtyChangeCommand extends ViewCommand<ContactsView> {
         public final int newQty;
 
@@ -173,7 +173,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<ContactsView> {
         public final String text;
 
@@ -190,7 +190,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<ContactsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -211,7 +211,7 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
 
     /* compiled from: ContactsView$$State.java */
     /* renamed from: com.iMe.ui.contacts.ContactsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<ContactsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

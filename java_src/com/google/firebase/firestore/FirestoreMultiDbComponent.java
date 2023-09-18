@@ -10,7 +10,7 @@ import com.google.firebase.inject.Deferred;
 import java.util.HashMap;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirestoreMultiDbComponent implements FirebaseAppLifecycleListener, FirebaseFirestore.InstanceRegistry {
     private final FirebaseApp app;
     private final Deferred<InternalAuthProvider> authProvider;

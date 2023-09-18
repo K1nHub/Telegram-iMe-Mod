@@ -18,17 +18,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Components.Premium.CarouselView;
 /* renamed from: org.telegram.ui.Components.Premium.CarouselView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CarouselView extends View implements PagerHeaderView {
     boolean autoPlayEnabled;
     ValueAnimator autoScrollAnimation;
     private Runnable autoScrollRunnable;
 
     /* renamed from: cX */
-    int f1817cX;
+    int f1808cX;
 
     /* renamed from: cY */
-    int f1818cY;
+    int f1809cY;
     Comparator<DrawingObject> comparator;
     private final ArrayList<? extends DrawingObject> drawingObjects;
     private final ArrayList<? extends DrawingObject> drawingObjectsSorted;
@@ -43,15 +43,15 @@ public class CarouselView extends View implements PagerHeaderView {
     boolean scrolled;
 
     /* renamed from: org.telegram.ui.Components.Premium.CarouselView$DrawingObject */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class DrawingObject {
         public double angle;
 
         /* renamed from: x */
-        public float f1819x;
+        public float f1810x;
 
         /* renamed from: y */
-        public float f1820y;
+        public float f1811y;
         float yRelative;
 
         public void draw(Canvas canvas, float f, float f2, float f3) {
@@ -93,7 +93,7 @@ public class CarouselView extends View implements PagerHeaderView {
                     CarouselView.this.lambda$scrollToInternal$2(f2, f, valueAnimator2);
                 }
             });
-            this.autoScrollAnimation.addListener(new C52383(f));
+            this.autoScrollAnimation.addListener(new C51533(f));
             this.autoScrollAnimation.setInterpolator(new OvershootInterpolator());
             this.autoScrollAnimation.setDuration(600L);
             this.autoScrollAnimation.start();
@@ -109,11 +109,11 @@ public class CarouselView extends View implements PagerHeaderView {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.CarouselView$3 */
-    /* loaded from: classes6.dex */
-    public class C52383 extends AnimatorListenerAdapter {
+    /* loaded from: classes7.dex */
+    public class C51533 extends AnimatorListenerAdapter {
         final /* synthetic */ float val$scrollTo;
 
-        C52383(float f) {
+        C51533(float f) {
             this.val$scrollTo = f;
         }
 
@@ -126,7 +126,7 @@ public class CarouselView extends View implements PagerHeaderView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.CarouselView$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CarouselView.C52383.this.lambda$onAnimationEnd$0();
+                    CarouselView.C51533.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -155,8 +155,8 @@ public class CarouselView extends View implements PagerHeaderView {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f1817cX = getMeasuredWidth() >> 1;
-        this.f1818cY = getMeasuredHeight() >> 1;
+        this.f1808cX = getMeasuredWidth() >> 1;
+        this.f1809cY = getMeasuredHeight() >> 1;
     }
 
     @Override // android.view.View
@@ -218,15 +218,15 @@ public class CarouselView extends View implements PagerHeaderView {
             double d = this.offsetAngle + (i * size);
             drawingObject.angle = d;
             double cos = drawingObject.angle - (Math.cos(Math.toRadians(d)) * 30.0d);
-            drawingObject.f1819x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1817cX;
+            drawingObject.f1810x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1808cX;
             float sin = (float) Math.sin(Math.toRadians(cos));
             drawingObject.yRelative = sin;
-            drawingObject.f1820y = (sin * f6) + this.f1818cY;
+            drawingObject.f1811y = (sin * f6) + this.f1809cY;
         }
         Collections.sort(this.drawingObjectsSorted, this.comparator);
         for (int i2 = 0; i2 < this.drawingObjectsSorted.size(); i2++) {
             DrawingObject drawingObject2 = this.drawingObjectsSorted.get(i2);
-            drawingObject2.draw(canvas, drawingObject2.f1819x, drawingObject2.f1820y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
+            drawingObject2.draw(canvas, drawingObject2.f1810x, drawingObject2.f1811y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
         }
         invalidate();
     }

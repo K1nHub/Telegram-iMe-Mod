@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: WalletInformationMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletInformationMappingKt {
     public static final CryptoWalletsInfo mapToDomain(CryptoWalletsInfoResponse cryptoWalletsInfoResponse) {
         int collectionSizeOrDefault;

@@ -22,7 +22,7 @@ import io.reactivex.functions.Action;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletSessionRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletSessionRepositoryImpl implements WalletSessionRepository {
     private final AuthManager authManager;
     private final ApiErrorHandler errorHandler;

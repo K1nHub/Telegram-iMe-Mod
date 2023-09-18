@@ -23,7 +23,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: MetadataInterceptor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MetadataInterceptor implements Interceptor, KoinComponent {
     public static final Companion Companion = new Companion(null);
     private final Lazy binancePayManager$delegate;
@@ -158,7 +158,7 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
     }
 
     /* compiled from: MetadataInterceptor.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

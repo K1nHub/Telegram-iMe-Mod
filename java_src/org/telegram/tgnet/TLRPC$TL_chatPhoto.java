@@ -4,7 +4,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_chatPhoto extends TLRPC$ChatPhoto {
     public static int constructor = 476978193;
 

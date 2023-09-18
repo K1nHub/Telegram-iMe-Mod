@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxInfo {
     private final int capacity;
     private final CryptoBoxChat chat;

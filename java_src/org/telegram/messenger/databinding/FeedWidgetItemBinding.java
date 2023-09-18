@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class FeedWidgetItemBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class FeedWidgetItemBinding implements ViewBinding {
     }
 
     public static FeedWidgetItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.feed_widget_item, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.feed_widget_item, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class FeedWidgetItemBinding implements ViewBinding {
     }
 
     public static FeedWidgetItemBinding bind(View view) {
-        int i = C3558R.C3561id.feed_widget_item_image;
+        int i = C3473R.C3476id.feed_widget_item_image;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3558R.C3561id.feed_widget_item_text;
+            i = C3473R.C3476id.feed_widget_item_text;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 LinearLayout linearLayout = (LinearLayout) view;

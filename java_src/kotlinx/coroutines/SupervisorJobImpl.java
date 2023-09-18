@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: Supervisor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class SupervisorJobImpl extends JobImpl {
     @Override // kotlinx.coroutines.JobSupport
     public boolean childCancelled(Throwable th) {

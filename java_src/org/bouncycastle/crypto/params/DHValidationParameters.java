@@ -1,7 +1,7 @@
 package org.bouncycastle.crypto.params;
 
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DHValidationParameters {
     private int counter;
     private byte[] seed;

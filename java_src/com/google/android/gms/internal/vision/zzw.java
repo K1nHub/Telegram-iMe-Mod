@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzw {
     public static Bitmap zza(Bitmap bitmap, zzs zzsVar) {
         int i;

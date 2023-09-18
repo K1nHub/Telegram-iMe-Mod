@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 47
+    .line 54
     check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$1;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$1;->$this_with:Lcom/iMe/model/cryptobox/CryptoBoxItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getChatAvatarUrl()Ljava/lang/String;
@@ -89,7 +89,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 49
+    .line 56
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$1;->$this_with:Lcom/iMe/model/cryptobox/CryptoBoxItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getChatAvatarUrl()Ljava/lang/String;
@@ -113,17 +113,17 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 51
+    .line 58
     invoke-virtual {p1, v0}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 52
+    .line 59
     new-instance v1, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     iget-object v2, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$1;->$this_with:Lcom/iMe/model/cryptobox/CryptoBoxItem;
 
-    .line 53
+    .line 60
     invoke-virtual {v2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getChatId()J
 
     move-result-wide v3
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v3, v4, v2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 52
+    .line 59
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :goto_1

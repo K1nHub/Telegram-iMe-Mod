@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Splitter {
     private final int limit;
     private final boolean omitEmptyStrings;
@@ -12,7 +12,7 @@ public final class Splitter {
     private final CharMatcher trimmer;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Strategy {
         Iterator<String> iterator(Splitter splitter, CharSequence charSequence);
     }
@@ -77,7 +77,7 @@ public final class Splitter {
         return Collections.unmodifiableList(arrayList);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static abstract class SplittingIterator extends AbstractIterator<String> {
         int limit;
         int offset = 0;

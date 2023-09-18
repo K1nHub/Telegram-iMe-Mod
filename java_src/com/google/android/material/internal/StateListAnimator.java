@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.util.StateSet;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StateListAnimator {
     private final ArrayList<Tuple> tuples = new ArrayList<>();
     private Tuple lastMatch = null;
@@ -77,7 +77,7 @@ public final class StateListAnimator {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Tuple {
         final ValueAnimator animator;
         final int[] specs;

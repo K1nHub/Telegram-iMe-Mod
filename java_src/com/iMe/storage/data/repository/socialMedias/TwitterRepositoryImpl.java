@@ -2,20 +2,16 @@ package com.iMe.storage.data.repository.socialMedias;
 
 import com.iMe.storage.data.mapper.twitter.TweetInfoMapperKt;
 import com.iMe.storage.data.mapper.twitter.TwitterProfileInfoMapperKt;
-import com.iMe.storage.data.mapper.twitter.TwitterRefreshTokenDataMapperKt;
 import com.iMe.storage.data.mapper.twitter.TwitterUserInfoMapperKt;
 import com.iMe.storage.data.network.api.own.TwitterApi;
 import com.iMe.storage.data.network.handlers.ErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.iMe.storage.data.network.model.request.twitter.ChangeTwitterConnectionStatusRequest;
 import com.iMe.storage.data.network.model.request.twitter.TwitterFeedRequest;
 import com.iMe.storage.data.network.model.request.twitter.TwitterInviteRequest;
-import com.iMe.storage.data.network.model.request.twitter.TwitterRefreshTokenRequest;
 import com.iMe.storage.data.network.model.request.twitter.TwitterSearchByUsernameRequest;
 import com.iMe.storage.data.network.model.request.twitter.TwitterUserByUsernameRequest;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
-import com.iMe.storage.data.network.model.response.twitter.RefreshTokenResponse;
 import com.iMe.storage.data.network.model.response.twitter.TwitterFeedResponse;
 import com.iMe.storage.data.network.model.response.twitter.TwitterProfileResponse;
 import com.iMe.storage.data.network.model.response.twitter.TwitterUserResponse;
@@ -25,7 +21,6 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.twitter.TweetInfo;
 import com.iMe.storage.domain.model.twitter.TwitterAccountData;
 import com.iMe.storage.domain.model.twitter.TwitterProfileInfo;
-import com.iMe.storage.domain.model.twitter.TwitterRefreshTokenData;
 import com.iMe.storage.domain.model.twitter.TwitterUserInfo;
 import com.iMe.storage.domain.repository.socialMedia.TwitterRepository;
 import com.iMe.storage.domain.storage.TwitterPreferenceHelper;
@@ -36,7 +31,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterRepositoryImpl implements TwitterRepository {
     private final ApiErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -52,81 +47,6 @@ public final class TwitterRepositoryImpl implements TwitterRepository {
         this.firebaseErrorHandler = firebaseErrorHandler;
         this.twitterApi = twitterApi;
         this.twitterPreferenceHelper = twitterPreferenceHelper;
-    }
-
-    @Override // com.iMe.storage.domain.repository.socialMedia.TwitterRepository
-    public Observable<Result<TwitterRefreshTokenData>> getRefreshToken(long j) {
-        TwitterAccountData twitterAccountDataById = getTwitterAccountDataById(j);
-        String refreshToken = twitterAccountDataById != null ? twitterAccountDataById.getRefreshToken() : null;
-        if (refreshToken == null) {
-            refreshToken = "";
-        }
-        Observable<ApiBaseResponse<RefreshTokenResponse>> refreshToken2 = this.twitterApi.getRefreshToken(new TwitterRefreshTokenRequest(refreshToken));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = refreshToken2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<RefreshTokenResponse>, Result<? extends TwitterRefreshTokenData>>() { // from class: com.iMe.storage.data.repository.socialMedias.TwitterRepositoryImpl$getRefreshToken$$inlined$mapSuccess$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final Result<TwitterRefreshTokenData> invoke(ApiBaseResponse<RefreshTokenResponse> response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(TwitterRefreshTokenDataMapperKt.mapToDomain(response.getPayload()));
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<TwitterRefreshTokenData>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends TwitterRefreshTokenData>>() { // from class: com.iMe.storage.data.repository.socialMedias.TwitterRepositoryImpl$getRefreshToken$$inlined$handleError$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final Result<TwitterRefreshTokenData> invoke(Throwable it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
-        return onErrorReturn;
-    }
-
-    @Override // com.iMe.storage.domain.repository.socialMedia.TwitterRepository
-    public Observable<Result<Boolean>> acceptConnection(long j, long j2) {
-        Observable<ApiBaseResponse<Object>> acceptConnection = this.twitterApi.acceptConnection(new ChangeTwitterConnectionStatusRequest(String.valueOf(j), String.valueOf(j2)));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = acceptConnection.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.socialMedias.TwitterRepositoryImpl$acceptConnection$$inlined$mapSuccess$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.socialMedias.TwitterRepositoryImpl$acceptConnection$$inlined$handleError$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final Result<Boolean> invoke(Throwable it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
-        return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.socialMedia.TwitterRepository

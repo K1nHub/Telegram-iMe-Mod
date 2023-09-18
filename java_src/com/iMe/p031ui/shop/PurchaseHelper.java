@@ -33,7 +33,7 @@ import org.solovyev.android.checkout.Sku;
 import org.solovyev.android.checkout.UiCheckout;
 /* compiled from: PurchaseHelper.kt */
 /* renamed from: com.iMe.ui.shop.PurchaseHelper */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PurchaseHelper {
     public static final Companion Companion = new Companion(null);
     private static PurchaseHelper INSTANCE;
@@ -60,7 +60,7 @@ public final class PurchaseHelper {
 
     /* compiled from: PurchaseHelper.kt */
     /* renamed from: com.iMe.ui.shop.PurchaseHelper$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -228,7 +228,7 @@ public final class PurchaseHelper {
                     String str3 = purchase.sku;
                     Intrinsics.checkNotNullExpressionValue(str3, "purchase.sku");
                     long j = purchase.time;
-                    int i = purchase.state.f1450id;
+                    int i = purchase.state.f1441id;
                     String str4 = purchase.token;
                     Intrinsics.checkNotNullExpressionValue(str4, "purchase.token");
                     list3.add(new ShopProduct(price, price2, true, new ShopProduct.Receipt(str, str2, str3, j, i, str4)));
@@ -333,12 +333,12 @@ public final class PurchaseHelper {
         List<Sku> skus = product.getSkus();
         Intrinsics.checkNotNullExpressionValue(skus, "inAppProduct.skus");
         for (Sku sku : skus) {
-            String str = sku.f1451id.code;
+            String str = sku.f1442id.code;
             Intrinsics.checkNotNullExpressionValue(str, "it.id.code");
             String str2 = sku.price;
             Intrinsics.checkNotNullExpressionValue(str2, "it.price");
             boolean isPurchased = product.isPurchased(sku);
-            String str3 = sku.f1451id.code;
+            String str3 = sku.f1442id.code;
             Intrinsics.checkNotNullExpressionValue(str3, "it.id.code");
             List<Purchase> purchases = product.getPurchases();
             Intrinsics.checkNotNullExpressionValue(purchases, "inAppProduct.purchases");
@@ -395,7 +395,7 @@ public final class PurchaseHelper {
 
     /* compiled from: PurchaseHelper.kt */
     /* renamed from: com.iMe.ui.shop.PurchaseHelper$Callback */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class Callback implements RequestListener<Purchase> {
         private final Single<Purchase> single;
         private final PublishSubject<Purchase> subject;
@@ -448,7 +448,7 @@ public final class PurchaseHelper {
             String str4 = purchase.sku;
             Intrinsics.checkNotNullExpressionValue(str4, "it.sku");
             long j = purchase.time;
-            int i = purchase.state.f1450id;
+            int i = purchase.state.f1441id;
             String str5 = purchase.token;
             Intrinsics.checkNotNullExpressionValue(str5, "it.token");
             return new ShopProduct.Receipt(str2, str3, str4, j, i, str5);

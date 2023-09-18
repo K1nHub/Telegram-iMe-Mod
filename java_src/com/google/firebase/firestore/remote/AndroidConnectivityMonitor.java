@@ -20,7 +20,7 @@ import com.google.firebase.firestore.util.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AndroidConnectivityMonitor implements ConnectivityMonitor {
     private final List<Consumer<ConnectivityMonitor.NetworkStatus>> callbacks = new ArrayList();
     private final ConnectivityManager connectivityManager;
@@ -140,7 +140,7 @@ public final class AndroidConnectivityMonitor implements ConnectivityMonitor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class DefaultNetworkCallback extends ConnectivityManager.NetworkCallback {
         private DefaultNetworkCallback() {
         }
@@ -157,7 +157,7 @@ public final class AndroidConnectivityMonitor implements ConnectivityMonitor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class NetworkReceiver extends BroadcastReceiver {
         private boolean wasConnected;
 

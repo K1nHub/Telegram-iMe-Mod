@@ -18,13 +18,13 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AsyncQueue {
     private final ArrayList<TimerId> timerIdsToSkip = new ArrayList<>();
     private final ArrayList<DelayedTask> delayedTasks = new ArrayList<>();
     private final SynchronizedShutdownAwareExecutor executor = new SynchronizedShutdownAwareExecutor();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum TimerId {
         ALL,
         LISTEN_STREAM_IDLE,
@@ -38,7 +38,7 @@ public class AsyncQueue {
         INDEX_BACKFILL
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class DelayedTask {
         private ScheduledFuture scheduledFuture;
         private final Runnable task;
@@ -83,13 +83,13 @@ public class AsyncQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SynchronizedShutdownAwareExecutor implements Executor {
         private final ScheduledThreadPoolExecutor internalExecutor;
         private boolean isShuttingDown;
         private final Thread thread;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private class DelayedStartFactory implements Runnable, ThreadFactory {
             private Runnable delegate;
             private final CountDownLatch latch;

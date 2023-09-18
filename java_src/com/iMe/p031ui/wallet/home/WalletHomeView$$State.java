@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implements WalletHomeView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -114,7 +114,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$LoadTabsInfoCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class LoadTabsInfoCommand extends ViewCommand<WalletHomeView> {
         LoadTabsInfoCommand(WalletHomeView$$State walletHomeView$$State) {
             super("loadTabsInfo", AddToEndSingleStrategy.class);
@@ -128,7 +128,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$LoadBalancesCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class LoadBalancesCommand extends ViewCommand<WalletHomeView> {
         LoadBalancesCommand(WalletHomeView$$State walletHomeView$$State) {
             super("loadBalances", AddToEndSingleStrategy.class);
@@ -142,7 +142,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$OnTabSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnTabSelectedCommand extends ViewCommand<WalletHomeView> {
         public final int position;
 
@@ -159,7 +159,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$OnSetupNavigationRouterCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSetupNavigationRouterCommand extends ViewCommand<WalletHomeView> {
         OnSetupNavigationRouterCommand(WalletHomeView$$State walletHomeView$$State) {
             super("onSetupNavigationRouter", AddToEndSingleStrategy.class);
@@ -173,7 +173,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletHomeView> {
         public final String text;
 
@@ -190,7 +190,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletHomeView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -211,7 +211,7 @@ public class WalletHomeView$$State extends MvpViewState<WalletHomeView> implemen
 
     /* compiled from: WalletHomeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomeView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletHomeView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

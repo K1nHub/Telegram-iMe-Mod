@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_textFixed extends TLRPC$RichText {
     public static int constructor = 1816074681;
     public TLRPC$RichText text;

@@ -1,5 +1,5 @@
 package com.iMe.common;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdFabric$RequestCode {
     public static final int FILE_SAVING_DIRECTORY = 1073741823;
     public static final int FILE_SAVING_WRITE_STORAGE_PERMISSION;

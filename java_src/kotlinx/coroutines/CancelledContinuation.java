@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CancelledContinuation extends CompletedExceptionally {
     private static final /* synthetic */ AtomicIntegerFieldUpdater _resumed$FU = AtomicIntegerFieldUpdater.newUpdater(CancelledContinuation.class, "_resumed");
     private volatile /* synthetic */ int _resumed;

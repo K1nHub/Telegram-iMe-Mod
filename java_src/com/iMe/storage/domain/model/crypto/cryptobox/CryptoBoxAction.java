@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxAction.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxAction {
     private final String boxId;
     private final BigDecimal feeAmount;

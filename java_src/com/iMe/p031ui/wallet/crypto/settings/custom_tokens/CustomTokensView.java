@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CustomTokensView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CustomTokensView extends BaseView, LoadMoreView<BaseNode> {
     void openTokenManagementScreen(TokenManagementFragment.ScreenType screenType);
 

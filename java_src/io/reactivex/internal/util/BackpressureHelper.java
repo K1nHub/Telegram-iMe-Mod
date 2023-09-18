@@ -2,7 +2,7 @@ package io.reactivex.internal.util;
 
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BackpressureHelper {
     public static long addCap(long j, long j2) {
         long j3 = j + j2;

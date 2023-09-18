@@ -8,7 +8,7 @@ import io.reactivex.functions.Function;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RemoteConfigApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteConfigApi {
     private final FirebaseRemoteConfig remoteConfig;
 
@@ -55,7 +55,7 @@ public final class RemoteConfigApi {
 
     private final Single<Boolean> fetchAndActivate() {
         Task<Boolean> fetchAndActivate = this.remoteConfig.fetchAndActivate();
-        Intrinsics.checkNotNullExpressionValue(fetchAndActivate, "remoteConfig\n           …      .fetchAndActivate()");
+        Intrinsics.checkNotNullExpressionValue(fetchAndActivate, "remoteConfig\n            .fetchAndActivate()");
         return FirebaseExtKt.asSingleTask(fetchAndActivate);
     }
 }

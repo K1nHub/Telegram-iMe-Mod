@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JvmOkio.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SocketAsyncTimeout extends AsyncTimeout {
     private final Socket socket;
 

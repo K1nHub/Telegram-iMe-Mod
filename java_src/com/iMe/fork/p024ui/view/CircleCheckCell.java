@@ -21,7 +21,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: CircleCheckCell.kt */
 /* renamed from: com.iMe.fork.ui.view.CircleCheckCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CircleCheckCell extends FrameLayout {
     private final Lazy checkBox$delegate;
     private final Lazy circleView$delegate;
@@ -216,7 +216,7 @@ public abstract class CircleCheckCell extends FrameLayout {
 
     /* compiled from: CircleCheckCell.kt */
     /* renamed from: com.iMe.fork.ui.view.CircleCheckCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

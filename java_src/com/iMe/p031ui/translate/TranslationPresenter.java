@@ -40,7 +40,7 @@ import timber.log.Timber;
 /* compiled from: TranslationPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.translate.TranslationPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TranslationPresenter extends BasePresenter<TranslationView> {
     private final TranslationArgs args;
     private final Lazy currentLanguage$delegate;
@@ -102,12 +102,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<TranslationLanguage>> result) {
-                m1413invoke(result);
+                m1411invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1413invoke(Result<? extends List<TranslationLanguage>> it) {
+            public final void m1411invoke(Result<? extends List<TranslationLanguage>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 String currentLanguage;
@@ -171,7 +171,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -206,12 +206,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                    m1414invoke(result);
+                    m1412invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1414invoke(Result<? extends Translation> it) {
+                public final void m1412invoke(Result<? extends Translation> it) {
                     ResourceManager resourceManager;
                     TranslationLanguageUiModel translationLanguageUiModel;
                     TranslationLanguageUiModel translationLanguageUiModel2;
@@ -242,19 +242,19 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
                             ((TranslationView) TranslationPresenter.this.getViewState()).showAppUpdateDialog();
                             return;
                         }
-                        if (status == FirebaseFunctionsErrorHandler.ErrorStatus.TRANSLATION_UNSUPPORTED_LANGUAGE || status == ApiErrorHandler.ErrorStatus.RATE_LIMIT) {
-                            String str = text;
-                            translationLanguageUiModel = TranslationPresenter.this.sourceLanguage;
-                            String displayLanguage2 = translationLanguageUiModel.getDisplayLanguage();
-                            translationLanguageUiModel2 = TranslationPresenter.this.targetLanguage;
-                            ((TranslationView) TranslationPresenter.this.getViewState()).showTranslation(str, displayLanguage2, translationLanguageUiModel2.getDisplayLanguage());
-                            resourceManager2 = TranslationPresenter.this.resourceManager;
-                            ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
+                        if (!(status == FirebaseFunctionsErrorHandler.ErrorStatus.TRANSLATION_UNSUPPORTED_LANGUAGE || status == ApiErrorHandler.ErrorStatus.RATE_LIMIT)) {
+                            resourceManager = TranslationPresenter.this.resourceManager;
+                            ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                            ((TranslationView) TranslationPresenter.this.getViewState()).finishScreen();
                             return;
                         }
-                        resourceManager = TranslationPresenter.this.resourceManager;
-                        ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager);
-                        ((TranslationView) TranslationPresenter.this.getViewState()).finishScreen();
+                        String str = text;
+                        translationLanguageUiModel = TranslationPresenter.this.sourceLanguage;
+                        String displayLanguage2 = translationLanguageUiModel.getDisplayLanguage();
+                        translationLanguageUiModel2 = TranslationPresenter.this.targetLanguage;
+                        ((TranslationView) TranslationPresenter.this.getViewState()).showTranslation(str, displayLanguage2, translationLanguageUiModel2.getDisplayLanguage());
+                        resourceManager2 = TranslationPresenter.this.resourceManager;
+                        ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
                     } else if (result instanceof Result.Loading) {
                         ((TranslationView) TranslationPresenter.this.getViewState()).onLoadingState(text, z);
                     }
@@ -284,7 +284,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
                     Intrinsics.checkNotNullExpressionValue(error, "error");
                 }
             }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
         }
@@ -321,12 +321,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                m1415invoke(result);
+                m1413invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1415invoke(Result<? extends Translation> it) {
+            public final void m1413invoke(Result<? extends Translation> it) {
                 ResourceManager resourceManager;
                 TranslationLanguageUiModel translationLanguageUiModel;
                 TranslationLanguageUiModel translationLanguageUiModel2;
@@ -356,19 +356,19 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
                     if (status != FirebaseFunctionsErrorHandler.ErrorStatus.TRANSLATION_UNSUPPORTED_LANGUAGE && status != ApiErrorHandler.ErrorStatus.RATE_LIMIT) {
                         z2 = false;
                     }
-                    if (z2) {
-                        String str = text;
-                        translationLanguageUiModel = TranslationPresenter.this.sourceLanguage;
-                        String displayLanguage2 = translationLanguageUiModel.getDisplayLanguage();
-                        translationLanguageUiModel2 = TranslationPresenter.this.targetLanguage;
-                        ((TranslationView) TranslationPresenter.this.getViewState()).showTranslation(str, displayLanguage2, translationLanguageUiModel2.getDisplayLanguage());
-                        resourceManager2 = TranslationPresenter.this.resourceManager;
-                        ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
+                    if (!z2) {
+                        resourceManager = TranslationPresenter.this.resourceManager;
+                        ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager);
+                        ((TranslationView) TranslationPresenter.this.getViewState()).finishScreen();
                         return;
                     }
-                    resourceManager = TranslationPresenter.this.resourceManager;
-                    ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager);
-                    ((TranslationView) TranslationPresenter.this.getViewState()).finishScreen();
+                    String str = text;
+                    translationLanguageUiModel = TranslationPresenter.this.sourceLanguage;
+                    String displayLanguage2 = translationLanguageUiModel.getDisplayLanguage();
+                    translationLanguageUiModel2 = TranslationPresenter.this.targetLanguage;
+                    ((TranslationView) TranslationPresenter.this.getViewState()).showTranslation(str, displayLanguage2, translationLanguageUiModel2.getDisplayLanguage());
+                    resourceManager2 = TranslationPresenter.this.resourceManager;
+                    ((TranslationView) TranslationPresenter.this.getViewState()).showErrorToast(error, resourceManager2);
                 }
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.translate.TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$2
@@ -396,7 +396,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

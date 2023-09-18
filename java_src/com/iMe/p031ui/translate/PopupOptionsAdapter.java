@@ -8,11 +8,11 @@ import android.widget.ArrayAdapter;
 import androidx.appcompat.widget.AppCompatTextView;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PopupOptionsAdapter.kt */
 /* renamed from: com.iMe.ui.translate.PopupOptionsAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PopupOptionsAdapter extends ArrayAdapter<String> {
     private final Context mContext;
     private final List<String> options;
@@ -24,7 +24,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PopupOptionsAdapter(Context mContext, List<String> options) {
-        super(mContext, C3558R.layout.fork_item_adapter_popup_option, options);
+        super(mContext, C3473R.layout.fork_item_adapter_popup_option, options);
         Intrinsics.checkNotNullParameter(mContext, "mContext");
         Intrinsics.checkNotNullParameter(options, "options");
         this.mContext = mContext;
@@ -33,7 +33,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
 
     /* compiled from: PopupOptionsAdapter.kt */
     /* renamed from: com.iMe.ui.translate.PopupOptionsAdapter$ViewHolder */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ViewHolder {
         private final AppCompatTextView title;
         private final View view;
@@ -41,7 +41,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
         public ViewHolder(View view) {
             Intrinsics.checkNotNullParameter(view, "view");
             this.view = view;
-            View findViewById = view.findViewById(C3558R.C3561id.text_title);
+            View findViewById = view.findViewById(C3473R.C3476id.text_title);
             Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.text_title)");
             this.title = (AppCompatTextView) findViewById;
         }
@@ -56,7 +56,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
         ViewHolder viewHolder;
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (view == null) {
-            view = LayoutInflater.from(this.mContext).inflate(C3558R.layout.fork_item_adapter_popup_option, (ViewGroup) null, true);
+            view = LayoutInflater.from(this.mContext).inflate(C3473R.layout.fork_item_adapter_popup_option, (ViewGroup) null, true);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         } else {

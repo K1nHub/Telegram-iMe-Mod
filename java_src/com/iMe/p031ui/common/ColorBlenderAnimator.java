@@ -7,7 +7,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimationProperties;
 /* compiled from: ColorBlenderAnimator.kt */
 /* renamed from: com.iMe.ui.common.ColorBlenderAnimator */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ColorBlenderAnimator extends AnimationProperties.FloatProperty<View> {
     private float animationValue;
     private final int fromColorKey;

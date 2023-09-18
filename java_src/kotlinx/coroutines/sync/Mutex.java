@@ -3,7 +3,7 @@ package kotlinx.coroutines.sync;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 /* compiled from: Mutex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Mutex {
     Object lock(Object obj, Continuation<? super Unit> continuation);
 

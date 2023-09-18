@@ -14,7 +14,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> implements TwitterSearchView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -201,7 +201,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowInviteConfirmationDialogCommand extends ViewCommand<TwitterSearchView> {
         public final DialogModel dialogModel;
         public final long twitterUserId;
@@ -219,7 +219,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnUserSelectedCommand extends ViewCommand<TwitterSearchView> {
         public final String address;
         public final TwitterUserItem twitterUserItem;
@@ -237,7 +237,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderItemsCommand extends ViewCommand<TwitterSearchView> {
         public final List<BaseNode> items;
 
@@ -253,7 +253,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<TwitterSearchView> {
         public final String text;
 
@@ -269,7 +269,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TwitterSearchView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -289,7 +289,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TwitterSearchView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -307,7 +307,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<TwitterSearchView> {
         OnLoadMoreCompleteCommand(TwitterSearchView$$State twitterSearchView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -320,7 +320,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<TwitterSearchView> {
         OnLoadMoreErrorCommand(TwitterSearchView$$State twitterSearchView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -333,7 +333,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnRecipientSelectedCommand extends ViewCommand<TwitterSearchView> {
         public final String address;
 
@@ -355,7 +355,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequestPermissionDialogCommand extends ViewCommand<TwitterSearchView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -375,7 +375,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorDialogCommand extends ViewCommand<TwitterSearchView> {
         public final String buttonText;
         public final String description;
@@ -395,7 +395,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequestPermissionSuccessDialogCommand extends ViewCommand<TwitterSearchView> {
         public final Callbacks$Callback action;
         public final String message;
@@ -415,7 +415,7 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     }
 
     /* compiled from: TwitterSearchView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenChatScreenCommand extends ViewCommand<TwitterSearchView> {
         public final long userId;
 

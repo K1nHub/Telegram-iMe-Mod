@@ -17,7 +17,7 @@ import kotlinx.coroutines.DispatchedTask;
 import kotlinx.coroutines.EventLoop;
 import kotlinx.coroutines.ThreadLocalEventLoop;
 /* compiled from: DispatchedContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DispatchedContinuation<T> extends DispatchedTask<T> implements CoroutineStackFrame, Continuation<T> {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _reusableCancellableContinuation$FU = AtomicReferenceFieldUpdater.newUpdater(DispatchedContinuation.class, Object.class, "_reusableCancellableContinuation");
     private volatile /* synthetic */ Object _reusableCancellableContinuation;
@@ -99,7 +99,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         if (this.dispatcher.isDispatchNeeded(context)) {
             this._state = state$default;
             this.resumeMode = 0;
-            this.dispatcher.mo1690dispatch(context, this);
+            this.dispatcher.mo1688dispatch(context, this);
             return;
         }
         DebugKt.getASSERTIONS_ENABLED();

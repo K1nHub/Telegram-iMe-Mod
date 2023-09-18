@@ -17,7 +17,7 @@ import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 import kotlinx.coroutines.internal.ThreadContextKt;
 /* compiled from: Undispatched.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class UndispatchedKt {
     public static final <T> void startCoroutineUndispatched(Function1<? super Continuation<? super T>, ? extends Object> function1, Continuation<? super T> continuation) {
         Object coroutine_suspended;
@@ -30,11 +30,11 @@ public final class UndispatchedKt {
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (invoke != coroutine_suspended) {
                 Result.Companion companion = Result.Companion;
-                probeCoroutineCreated.resumeWith(Result.m1660constructorimpl(invoke));
+                probeCoroutineCreated.resumeWith(Result.m1658constructorimpl(invoke));
             }
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(th)));
         }
     }
 
@@ -49,11 +49,11 @@ public final class UndispatchedKt {
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (invoke != coroutine_suspended) {
                 Result.Companion companion = Result.Companion;
-                probeCoroutineCreated.resumeWith(Result.m1660constructorimpl(invoke));
+                probeCoroutineCreated.resumeWith(Result.m1658constructorimpl(invoke));
             }
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(th)));
         }
     }
 

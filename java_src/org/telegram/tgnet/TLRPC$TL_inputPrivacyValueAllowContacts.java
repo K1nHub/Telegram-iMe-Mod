@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_inputPrivacyValueAllowContacts extends TLRPC$InputPrivacyRule {
     public static int constructor = 218751099;
 

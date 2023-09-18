@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$GroupCall extends TLObject {
     public long access_hash;
     public boolean can_change_join_muted;
@@ -8,7 +8,7 @@ public abstract class TLRPC$GroupCall extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1546id;
+    public long f1537id;
     public boolean join_date_asc;
     public boolean join_muted;
     public boolean listeners_hidden;

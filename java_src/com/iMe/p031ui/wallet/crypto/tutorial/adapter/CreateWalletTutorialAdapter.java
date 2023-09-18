@@ -17,7 +17,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: CreateWalletTutorialAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.adapter.CreateWalletTutorialAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CreateWalletTutorialAdapter extends PagerAdapter {
     private final Context context;
     private List<TutorialPage> items;
@@ -58,7 +58,7 @@ public final class CreateWalletTutorialAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup collection, int i) {
         Intrinsics.checkNotNullParameter(collection, "collection");
         ForkItemAdapterWalletEthTutorialBinding inflate = ForkItemAdapterWalletEthTutorialBinding.inflate(LayoutInflater.from(this.context), collection, false);
-        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.f…text), collection, false)");
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(\n            Lay…          false\n        )");
         TutorialPage tutorialPage = this.items.get(i);
         inflate.textTitle.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         inflate.textDescription.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));

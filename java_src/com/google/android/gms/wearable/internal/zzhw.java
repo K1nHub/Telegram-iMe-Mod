@@ -4,7 +4,7 @@ import com.google.android.gms.common.api.internal.BaseImplementation;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzhw extends zzhn {
     public zzhw(BaseImplementation.ResultHolder resultHolder) {
         super(resultHolder);

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$account_ResetPasswordResult extends TLObject {
     public static TLRPC$account_ResetPasswordResult TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$account_ResetPasswordResult tLRPC$TL_account_resetPasswordFailedWait;

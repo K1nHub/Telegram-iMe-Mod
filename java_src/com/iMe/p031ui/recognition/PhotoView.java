@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: PhotoView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.recognition.PhotoView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface PhotoView extends BaseView, AppUpdateRequiredView {
     void showPhotoObjectsDialog(String str);
 

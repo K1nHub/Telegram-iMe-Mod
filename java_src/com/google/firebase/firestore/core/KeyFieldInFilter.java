@@ -8,7 +8,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firestore.p021v1.Value;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class KeyFieldInFilter extends FieldFilter {
     private final List<DocumentKey> keys;
 

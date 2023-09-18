@@ -5,7 +5,7 @@ import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Sets.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SetsKt___SetsKt extends SetsKt__SetsKt {
     public static <T> Set<T> minus(Set<? extends T> set, T t) {
         int mapCapacity;

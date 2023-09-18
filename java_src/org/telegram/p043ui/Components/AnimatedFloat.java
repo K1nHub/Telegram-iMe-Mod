@@ -7,7 +7,7 @@ import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.AnimatedFloat */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedFloat {
     private boolean firstSet;
     private Runnable invalidate;

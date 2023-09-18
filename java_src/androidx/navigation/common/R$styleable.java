@@ -1,6 +1,6 @@
 package androidx.navigation.common;
 
-import com.iMe.android.web.R;
+import com.iMe.android.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int NavAction_android_id = 0;

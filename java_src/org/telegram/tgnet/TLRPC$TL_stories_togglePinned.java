@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stories_togglePinned extends TLObject {
     public static int constructor = 1365256516;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1679id = new ArrayList<>();
+    public ArrayList<Integer> f1670id = new ArrayList<>();
     public boolean pinned;
 
     @Override // org.telegram.tgnet.TLObject
@@ -23,10 +23,10 @@ public class TLRPC$TL_stories_togglePinned extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1679id.size();
+        int size = this.f1670id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1679id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1670id.get(i).intValue());
         }
         abstractSerializedData.writeBool(this.pinned);
     }

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: ShopItemMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ShopItemMapper {
     private final BotTagsMapper tagsMapper = new BotTagsMapper();
 
@@ -85,7 +85,7 @@ public final class ShopItemMapper {
     }
 
     /* compiled from: ShopItemMapper.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

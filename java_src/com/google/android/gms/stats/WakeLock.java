@@ -22,7 +22,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WakeLock {
     private static ScheduledExecutorService zzn;
     private static volatile zza zzo = new com.google.android.gms.stats.zza();
@@ -40,7 +40,7 @@ public class WakeLock {
     private int zzl;
     private AtomicInteger zzm;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface zza {
     }
 

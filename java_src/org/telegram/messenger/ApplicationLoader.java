@@ -45,7 +45,7 @@ import org.telegram.p043ui.LauncherIconController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ApplicationLoader extends Application implements BillingProvider {
     public static volatile Context applicationContext = null;
     public static volatile Handler applicationHandler = null;

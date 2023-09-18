@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CancelArgs implements TransactionArgs {
     private final String networkId;
 
@@ -22,7 +22,7 @@ public abstract class CancelArgs implements TransactionArgs {
     }
 
     /* compiled from: CancelArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ethereum extends CancelArgs {
         private final String networkId;
         private final String oldTxHash;

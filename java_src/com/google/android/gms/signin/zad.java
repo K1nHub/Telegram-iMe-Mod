@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ShowFirstParty;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zad {
     public static final Api.ClientKey zaa;
     @ShowFirstParty

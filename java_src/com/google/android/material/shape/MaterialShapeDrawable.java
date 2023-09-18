@@ -31,7 +31,7 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.ShapeAppearancePathProvider;
 import com.google.android.material.shape.ShapePath;
 import java.util.BitSet;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable, Shapeable {
     private static final String TAG = MaterialShapeDrawable.class.getSimpleName();
     private static final Paint clearPaint = new Paint(1);
@@ -657,7 +657,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class MaterialShapeDrawableState extends Drawable.ConstantState {
         public int alpha;
         public ColorFilter colorFilter;

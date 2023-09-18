@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Stories.recorder;
 /* renamed from: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda33 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final /* synthetic */ class StoryRecorder$$ExternalSyntheticLambda33 implements Runnable {
     public final /* synthetic */ StoryRecorder f$0;
 
@@ -10,6 +10,6 @@ public final /* synthetic */ class StoryRecorder$$ExternalSyntheticLambda33 impl
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f$0.onOpenDone();
+        StoryRecorder.m4270$r8$lambda$dC8CMzvV5iHUKDO9DsCbuongjM(this.f$0);
     }
 }

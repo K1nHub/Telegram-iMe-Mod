@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: WrapContentViewPager.kt */
 /* renamed from: com.iMe.ui.custom.WrapContentViewPager */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WrapContentViewPager extends ViewPager {
     private boolean dataChangedFlag;
     private DataSetObserver dataSetObserver;

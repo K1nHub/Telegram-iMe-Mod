@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
@@ -57,7 +57,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.RecyclerListView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RecyclerListView extends RecyclerView {
     private static int[] attributes;
     private static boolean gotAttributes;
@@ -148,29 +148,29 @@ public class RecyclerListView extends RecyclerView {
     boolean useRelativePositions;
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$IntReturnCallback */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface IntReturnCallback {
         int run();
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$OnInterceptTouchListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnInterceptTouchListener {
         boolean onInterceptTouchEvent(MotionEvent motionEvent);
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemClickListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnItemClickListener {
         void onItemClick(View view, int i);
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemClickListenerExtended */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnItemClickListenerExtended {
 
         /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemClickListenerExtended$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static boolean $default$hasDoubleTap(OnItemClickListenerExtended onItemClickListenerExtended, View view, int i) {
                 return false;
@@ -188,17 +188,17 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemLongClickListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnItemLongClickListener {
         boolean onItemClick(View view, int i);
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemLongClickListenerExtended */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnItemLongClickListenerExtended {
 
         /* renamed from: org.telegram.ui.Components.RecyclerListView$OnItemLongClickListenerExtended$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$onLongClickRelease(OnItemLongClickListenerExtended onItemLongClickListenerExtended) {
             }
@@ -215,7 +215,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$SelectionAdapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class SelectionAdapter extends RecyclerView.Adapter {
         public int getSelectionBottomPadding(View view) {
             return 0;
@@ -225,7 +225,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$ViewBindingSelectionAdapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class ViewBindingSelectionAdapter<T extends ViewBinding> extends RecyclerView.Adapter<ViewBindingAdapterHolder<T>> {
         public int getSelectionBottomPadding(View view) {
             return 0;
@@ -233,7 +233,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$onMultiSelectionChanged */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface onMultiSelectionChanged {
         boolean canSelect(int i);
 
@@ -292,7 +292,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$FastScrollAdapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class FastScrollAdapter extends SelectionAdapter {
         public boolean fastScrollIsVisible(RecyclerListView recyclerListView) {
             return true;
@@ -321,7 +321,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$SectionsAdapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class SectionsAdapter extends FastScrollAdapter {
         private int count;
         private ArrayList<Integer> hashes = new ArrayList<>();
@@ -515,7 +515,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$Holder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Holder extends RecyclerView.ViewHolder {
         public Holder(View view) {
             super(view);
@@ -523,7 +523,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$FastScroll */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class FastScroll extends View {
         private int activeColor;
         private Path arrowPath;
@@ -607,7 +607,7 @@ public class RecyclerListView extends RecyclerView {
                 Paint paint = this.paint2;
                 int i2 = Theme.key_windowBackgroundWhite;
                 paint.setColor(Theme.getColor(i2, RecyclerListView.this.resourcesProvider));
-                Drawable mutate = ContextCompat.getDrawable(context, C3558R.C3560drawable.calendar_date).mutate();
+                Drawable mutate = ContextCompat.getDrawable(context, C3473R.C3475drawable.calendar_date).mutate();
                 this.fastScrollBackgroundDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i2, RecyclerListView.this.resourcesProvider), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
             }
@@ -618,7 +618,7 @@ public class RecyclerListView extends RecyclerView {
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3558R.C3560drawable.fast_scroll_shadow);
+            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3473R.C3475drawable.fast_scroll_shadow);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -827,7 +827,7 @@ public class RecyclerListView extends RecyclerView {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.RecyclerListView$RecyclerListViewItemClickListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class RecyclerListViewItemClickListener implements RecyclerView.OnItemTouchListener {
         @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
         public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
@@ -2555,15 +2555,15 @@ public class RecyclerListView extends RecyclerView {
     }
 
     /* renamed from: org.telegram.ui.Components.RecyclerListView$FoucsableOnTouchListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class FoucsableOnTouchListener implements View.OnTouchListener {
         private boolean onFocus;
 
         /* renamed from: x */
-        private float f1858x;
+        private float f1849x;
 
         /* renamed from: y */
-        private float f1859y;
+        private float f1850y;
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -2572,14 +2572,14 @@ public class RecyclerListView extends RecyclerView {
                 return false;
             }
             if (motionEvent.getAction() == 0) {
-                this.f1858x = motionEvent.getX();
-                this.f1859y = motionEvent.getY();
+                this.f1849x = motionEvent.getX();
+                this.f1850y = motionEvent.getY();
                 this.onFocus = true;
                 parent.requestDisallowInterceptTouchEvent(true);
             }
             if (motionEvent.getAction() == 2) {
-                float x = this.f1858x - motionEvent.getX();
-                float y = this.f1859y - motionEvent.getY();
+                float x = this.f1849x - motionEvent.getX();
+                float y = this.f1850y - motionEvent.getY();
                 float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
                 if (this.onFocus && Math.sqrt((x * x) + (y * y)) > scaledTouchSlop) {
                     this.onFocus = false;

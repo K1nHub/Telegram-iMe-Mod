@@ -1,7 +1,7 @@
 package org.solovyev.android.checkout;
 
 import org.solovyev.android.checkout.Cache;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 enum RequestType {
     BILLING_SUPPORTED("supported", 86400000),
     GET_PURCHASES("purchases", 1200000),

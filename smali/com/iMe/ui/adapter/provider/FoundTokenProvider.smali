@@ -251,9 +251,10 @@
 
     move-result-object v5
 
-    .line 48
+    .line 49
     sget v7, Lorg/telegram/messenger/R$id;->divider_horizontal:I
 
+    .line 50
     iget-boolean v9, v0, Lcom/iMe/ui/adapter/provider/FoundTokenProvider;->isLastItemDividerVisible:Z
 
     if-nez v9, :cond_0
@@ -273,12 +274,13 @@
     :cond_0
     move v4, v8
 
+    .line 48
     :cond_1
     invoke-static {v5, v7, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 49
+    .line 52
     new-instance v4, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$1;
 
     invoke-direct {v4, v2}, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$1;-><init>(Lcom/iMe/model/wallet/home/FoundTokenItem;)V
@@ -287,7 +289,7 @@
 
     move-result-object v1
 
-    .line 53
+    .line 61
     new-instance v2, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$2;
 
     invoke-direct {v2, v0}, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$2;-><init>(Lcom/iMe/ui/adapter/provider/FoundTokenProvider;)V
@@ -329,7 +331,7 @@
 
     invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 72
     sget v2, Lorg/telegram/messenger/R$id;->text_name:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/FoundTokenItem;->getName()Ljava/lang/String;
@@ -340,7 +342,7 @@
 
     move-result-object v0
 
-    .line 64
+    .line 73
     sget v2, Lorg/telegram/messenger/R$id;->text_ticker:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/FoundTokenItem;->getTicker()Ljava/lang/String;
@@ -351,7 +353,7 @@
 
     move-result-object v4
 
-    .line 65
+    .line 74
     sget v5, Lorg/telegram/messenger/R$id;->image_token_icon:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/FoundTokenItem;->getTokenLogoUrl()Ljava/lang/String;
@@ -370,7 +372,7 @@
 
     move-result-object v11
 
-    .line 66
+    .line 75
     sget v12, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/FoundTokenItem;->getNetworkLogoUrl()Ljava/lang/String;
@@ -389,7 +391,7 @@
 
     move-result-object v0
 
-    .line 67
+    .line 76
     sget v2, Lorg/telegram/messenger/R$id;->view_switch:I
 
     new-instance v3, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$3;

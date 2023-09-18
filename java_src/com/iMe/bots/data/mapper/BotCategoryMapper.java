@@ -7,7 +7,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotCategoryMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotCategoryMapper {
     static {
         new Companion(null);
@@ -31,7 +31,7 @@ public final class BotCategoryMapper {
     }
 
     /* compiled from: BotCategoryMapper.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

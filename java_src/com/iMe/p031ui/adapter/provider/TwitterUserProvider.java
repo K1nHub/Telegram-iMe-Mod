@@ -10,14 +10,14 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Cells.UserCell;
 /* compiled from: TwitterUserProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterUserProvider */
 /* loaded from: classes.dex */
 public final class TwitterUserProvider extends BaseNodeProvider<TwitterUserItem> {
     private final int itemViewType = IdFabric$ViewTypes.TWITTER_USER;
-    private final int layoutId = C3558R.layout.fork_recycle_item_twitter_user;
+    private final int layoutId = C3473R.layout.fork_recycle_item_twitter_user;
     private UserCell userCell;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -43,7 +43,7 @@ public final class TwitterUserProvider extends BaseNodeProvider<TwitterUserItem>
     public void convert(BaseViewHolder helper, final TwitterUserItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.frame_container;
+        int i = C3473R.C3476id.frame_container;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRippleBackground(helper, i, true), i, new Function1<FrameLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.TwitterUserProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -1,7 +1,7 @@
 package kotlinx.coroutines.internal;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LockFreeLinkedList.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Removed {
     public final LockFreeLinkedListNode ref;
 

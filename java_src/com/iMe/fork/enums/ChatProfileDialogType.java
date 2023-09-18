@@ -9,10 +9,10 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ChatProfileDialogType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ChatProfileDialogType {
     CHAT,
     GROUP,
@@ -22,7 +22,7 @@ public enum ChatProfileDialogType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: ChatProfileDialogType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -59,19 +59,19 @@ public enum ChatProfileDialogType {
     public final String getTitle() {
         int i = WhenMappings.$EnumSwitchMapping$0[ordinal()];
         if (i == 1) {
-            String internalString = LocaleController.getInternalString(C3558R.string.multi_panel_settings_section_header_chats);
+            String internalString = LocaleController.getInternalString(C3473R.string.multi_panel_settings_section_header_chats);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ngs_section_header_chats)");
             return internalString;
         } else if (i == 2) {
-            String internalString2 = LocaleController.getInternalString(C3558R.string.multi_panel_settings_section_header_groups);
+            String internalString2 = LocaleController.getInternalString(C3473R.string.multi_panel_settings_section_header_groups);
             Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…gs_section_header_groups)");
             return internalString2;
         } else if (i == 3) {
-            String internalString3 = LocaleController.getInternalString(C3558R.string.multi_panel_settings_section_header_channels);
+            String internalString3 = LocaleController.getInternalString(C3473R.string.multi_panel_settings_section_header_channels);
             Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…_section_header_channels)");
             return internalString3;
         } else if (i == 4) {
-            String internalString4 = LocaleController.getInternalString(C3558R.string.multi_panel_settings_section_header_bots);
+            String internalString4 = LocaleController.getInternalString(C3473R.string.multi_panel_settings_section_header_bots);
             Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…ings_section_header_bots)");
             return internalString4;
         } else {
@@ -80,7 +80,7 @@ public enum ChatProfileDialogType {
     }
 
     /* compiled from: ChatProfileDialogType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

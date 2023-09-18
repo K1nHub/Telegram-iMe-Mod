@@ -6,7 +6,7 @@ import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MapsJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MapsKt__MapsJVMKt extends MapsKt__MapWithDefaultKt {
     public static int mapCapacity(int i) {
         if (i < 0) {

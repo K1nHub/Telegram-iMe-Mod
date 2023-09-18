@@ -3,7 +3,7 @@ package okhttp3.internal.concurrent;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Task.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Task {
     private final boolean cancelable;
     private final String name;

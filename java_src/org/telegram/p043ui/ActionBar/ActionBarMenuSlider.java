@@ -32,7 +32,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -46,7 +46,7 @@ import org.telegram.p043ui.Components.MotionBackgroundDrawable;
 import org.telegram.p043ui.Components.SeekBarAccessibilityDelegate;
 import org.telegram.p043ui.Components.SpeedIconDrawable;
 /* renamed from: org.telegram.ui.ActionBar.ActionBarMenuSlider */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ActionBarMenuSlider extends FrameLayout {
     private boolean backgroundDark;
     private Paint backgroundPaint;
@@ -396,7 +396,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         int[] iArr = this.location;
         float f = iArr[0] / AndroidUtilities.displaySize.x;
         float measuredWidth = (iArr[0] + getMeasuredWidth()) / AndroidUtilities.displaySize.x;
-        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3626ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
+        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3541ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
         int width = (int) (f * bitmap.getWidth());
         int width2 = (int) (measuredWidth * bitmap.getWidth());
         int height = (int) (currentActionBarHeight * bitmap.getHeight());
@@ -479,7 +479,7 @@ public class ActionBarMenuSlider extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarMenuSlider$SpeedSlider */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class SpeedSlider extends ActionBarMenuSlider {
         private final SeekBarAccessibilityDelegate seekBarAccessibilityDelegate;
 
@@ -521,7 +521,7 @@ public class ActionBarMenuSlider extends FrameLayout {
 
                 @Override // org.telegram.p043ui.Components.SeekBarAccessibilityDelegate
                 public CharSequence getContentDescription(View view) {
-                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3558R.string.AccDescrSpeedSlider);
+                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3473R.string.AccDescrSpeedSlider);
                 }
             };
             this.seekBarAccessibilityDelegate = floatSeekBarAccessibilityDelegate;

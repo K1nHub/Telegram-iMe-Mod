@@ -10,7 +10,7 @@ import com.google.android.gms.wearable.ChannelApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "ChannelEventParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbf> CREATOR = new zzbg();
     @SafeParcelable.Field(m797id = 2)

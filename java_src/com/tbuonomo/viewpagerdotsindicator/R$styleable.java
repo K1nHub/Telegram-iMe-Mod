@@ -1,7 +1,7 @@
 package com.tbuonomo.viewpagerdotsindicator;
 
-import com.iMe.android.web.R;
-/* loaded from: classes4.dex */
+import com.iMe.android.R;
+/* loaded from: classes6.dex */
 public final class R$styleable {
     public static final int DotsIndicator_dotsColor = 1;
     public static final int DotsIndicator_dotsCornerRadius = 2;

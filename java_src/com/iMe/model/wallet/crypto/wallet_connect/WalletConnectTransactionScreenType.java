@@ -4,9 +4,9 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletConnectTransactionScreenType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletConnectTransactionScreenType {
     private final int buttonTextResId;
     private final long requestId;
@@ -41,7 +41,7 @@ public abstract class WalletConnectTransactionScreenType {
     }
 
     /* compiled from: WalletConnectTransactionScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Send extends WalletConnectTransactionScreenType {
         private final long requestId;
         private final WalletConnectSessionItem sessionItem;
@@ -114,7 +114,7 @@ public abstract class WalletConnectTransactionScreenType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Send(long j, WalletConnectSessionItem sessionItem, WalletConnectProcessedTransaction transaction) {
-            super(j, sessionItem, transaction, C3558R.string.wallet_connect_transaction_button_sign_and_send, null);
+            super(j, sessionItem, transaction, C3473R.string.wallet_connect_transaction_button_sign_and_send, null);
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
             Intrinsics.checkNotNullParameter(transaction, "transaction");
             this.requestId = j;
@@ -124,7 +124,7 @@ public abstract class WalletConnectTransactionScreenType {
     }
 
     /* compiled from: WalletConnectTransactionScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Sign extends WalletConnectTransactionScreenType {
         private final long requestId;
         private final WalletConnectSessionItem sessionItem;
@@ -197,7 +197,7 @@ public abstract class WalletConnectTransactionScreenType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Sign(long j, WalletConnectSessionItem sessionItem, WalletConnectProcessedTransaction transaction) {
-            super(j, sessionItem, transaction, C3558R.string.wallet_connect_transaction_button_sign, null);
+            super(j, sessionItem, transaction, C3473R.string.wallet_connect_transaction_button_sign, null);
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
             Intrinsics.checkNotNullParameter(transaction, "transaction");
             this.requestId = j;

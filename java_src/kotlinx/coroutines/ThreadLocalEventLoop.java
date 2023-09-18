@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: EventLoop.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ThreadLocalEventLoop {
     public static final ThreadLocalEventLoop INSTANCE = new ThreadLocalEventLoop();
     private static final ThreadLocal<EventLoop> ref = new ThreadLocal<>();

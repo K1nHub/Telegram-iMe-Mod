@@ -19,7 +19,7 @@ import java.util.Set;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializable {
     private static final Object NOT_FOUND = new Object();
     transient int[] entries;
@@ -355,7 +355,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
         return -1;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private abstract class Itr<T> implements Iterator<T>, p033j$.util.Iterator {
         int currentIndex;
         int expectedMetadata;
@@ -430,7 +430,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class KeySetView extends AbstractSet<K> {
         KeySetView() {
         }
@@ -494,7 +494,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class EntrySetView extends AbstractSet<Map.Entry<K, V>> {
         EntrySetView() {
         }
@@ -568,7 +568,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class MapEntry extends AbstractMapEntry<K, V> {
         private final K key;
         private int lastKnownIndex;
@@ -660,7 +660,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ValuesView extends AbstractCollection<V> {
         ValuesView() {
         }

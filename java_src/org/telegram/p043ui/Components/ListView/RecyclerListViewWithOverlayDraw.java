@@ -5,12 +5,12 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.ListView.RecyclerListViewWithOverlayDraw */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RecyclerListViewWithOverlayDraw extends RecyclerListView {
     boolean invalidated;
 
     /* renamed from: org.telegram.ui.Components.ListView.RecyclerListViewWithOverlayDraw$OverlayView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OverlayView {
         float getX();
 

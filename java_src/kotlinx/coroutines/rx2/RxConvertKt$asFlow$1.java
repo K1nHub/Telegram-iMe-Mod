@@ -20,7 +20,7 @@ import kotlinx.coroutines.channels.SendChannel;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: RxConvert.kt */
 @DebugMetadata(m102c = "kotlinx.coroutines.rx2.RxConvertKt$asFlow$1", m101f = "RxConvert.kt", m100l = {95}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ObservableSource<T> $this_asFlow;
     private /* synthetic */ Object L$0;

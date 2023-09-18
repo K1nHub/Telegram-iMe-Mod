@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ContextExt.kt */
 /* renamed from: com.iMe.ui.shop.util.ContextExtKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ContextExtKt {
     public static final int color(Context context, int i) {
         Intrinsics.checkNotNullParameter(context, "<this>");

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.CoinType;
 /* compiled from: BlockchainType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum BlockchainType {
     EVM("ETHEREUM_VM", R$drawable.fork_ic_evm_logo, R$string.wallet_crypto_blockchains_evm_title, R$string.wallet_crypto_blockchains_evm_subtitle, CoinType.ETHEREUM),
     TRON("TRON_VM", R$drawable.fork_ic_tron_logo, R$string.wallet_crypto_blockchains_tron_title, R$string.wallet_crypto_blockchains_tron_subtitle, CoinType.TRON),
@@ -58,8 +58,12 @@ public enum BlockchainType {
         return Companion.getBip39PhraseBasedBlockchains().contains(this);
     }
 
+    public final boolean isTON() {
+        return this == TON;
+    }
+
     /* compiled from: BlockchainType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

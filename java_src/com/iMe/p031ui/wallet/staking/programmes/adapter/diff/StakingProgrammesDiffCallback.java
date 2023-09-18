@@ -10,7 +10,7 @@ import com.iMe.model.wallet.home.HeaderItemWithRightButton;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingProgrammesDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.staking.programmes.adapter.diff.StakingProgrammesDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StakingProgrammesDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

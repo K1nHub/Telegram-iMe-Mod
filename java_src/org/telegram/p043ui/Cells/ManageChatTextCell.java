@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Cells.ManageChatTextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ManageChatTextCell extends FrameLayout {
     private boolean divider;
     private int dividerColor;

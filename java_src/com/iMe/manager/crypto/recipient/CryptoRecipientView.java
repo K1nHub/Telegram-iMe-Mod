@@ -6,7 +6,7 @@ import com.iMe.p031ui.base.mvp.base.BaseView;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CryptoRecipientView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CryptoRecipientView extends BaseView {
     void onRecipientSelected(String str, String str2, boolean z);
 

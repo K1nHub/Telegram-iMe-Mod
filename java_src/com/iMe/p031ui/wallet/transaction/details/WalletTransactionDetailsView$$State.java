@@ -14,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTransactionDetailsView> implements WalletTransactionDetailsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -197,7 +197,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String amount;
         public final String category;
@@ -238,7 +238,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$SetupTransactionActionsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupTransactionActionsCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final List<ActionItem> actionItems;
         public final List<? extends Function0<Unit>> actionsListeners;
@@ -257,7 +257,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ActionCopyToClipboardCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ActionCopyToClipboardCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String text;
 
@@ -274,7 +274,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OpenProfileScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenProfileScreenCommand extends ViewCommand<WalletTransactionDetailsView> {
 
         /* renamed from: id */
@@ -293,7 +293,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OpenUrlCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenUrlCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String url;
 
@@ -310,7 +310,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShareTransactionInfoCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShareTransactionInfoCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String transactionInfo;
 
@@ -327,7 +327,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShowConfirmCancelDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmCancelDialogCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final Function0<Unit> action;
         public final DialogModel dialogModel;
@@ -346,7 +346,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmBoostDialogCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final Function0<Unit> action;
         public final DialogModel dialogModel;
@@ -365,7 +365,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OnSuccessCancelTransactionCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessCancelTransactionCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String txHash;
 
@@ -382,7 +382,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OnSuccessBoostTransactionCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessBoostTransactionCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String txHash;
 
@@ -399,7 +399,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final String text;
 
@@ -416,7 +416,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletTransactionDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -437,7 +437,7 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletTransactionDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

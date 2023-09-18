@@ -34,7 +34,7 @@ import kotlin.collections.SetsKt__SetsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.SharedConfig;
 /* compiled from: TelegramPreferenceKeys.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TelegramPreferenceKeys {
     public static final TelegramPreferenceKeys INSTANCE = new TelegramPreferenceKeys();
 
@@ -47,7 +47,7 @@ public final class TelegramPreferenceKeys {
     }
 
     /* compiled from: TelegramPreferenceKeys.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Global {
         static {
             new Global();
@@ -321,7 +321,7 @@ public final class TelegramPreferenceKeys {
         }
 
         /* compiled from: TelegramPreferenceKeys.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Default {
             static {
                 new Default();
@@ -613,7 +613,7 @@ public final class TelegramPreferenceKeys {
     }
 
     /* compiled from: TelegramPreferenceKeys.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class User {
         static {
             new User();
@@ -941,7 +941,7 @@ public final class TelegramPreferenceKeys {
         }
 
         /* compiled from: TelegramPreferenceKeys.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Default {
             static {
                 new Default();

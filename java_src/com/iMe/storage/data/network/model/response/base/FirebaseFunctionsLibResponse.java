@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.base;
 import com.google.gson.annotations.SerializedName;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FirebaseFunctionsLibResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseFunctionsLibResponse<T> {
     @SerializedName("result")
     private final ApiBaseResponse<T> result;

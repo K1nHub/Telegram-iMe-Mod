@@ -5,7 +5,7 @@ import com.google.firestore.p021v1.MapValue;
 import com.google.firestore.p021v1.Value;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ObjectValue implements Cloneable {
     private Map<String, Object> overlayMap;
     private Value partialValue;

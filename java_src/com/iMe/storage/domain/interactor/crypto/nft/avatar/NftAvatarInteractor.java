@@ -8,7 +8,7 @@ import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftAvatarInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftAvatarInteractor {
     private final NftAvatarRepository nftAvatarRepository;
     private final SchedulersProvider schedulersProvider;

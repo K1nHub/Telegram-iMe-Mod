@@ -1,5 +1,5 @@
 package net.lingala.zip4j.model;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Zip64EndCentralDirRecord {
     private int noOfThisDisk;
     private long offsetStartCenDirWRTStartDiskNo;

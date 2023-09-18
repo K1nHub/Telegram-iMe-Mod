@@ -14,14 +14,14 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Values {
     public static final Value NAN_VALUE = Value.newBuilder().setDoubleValue(Double.NaN).build();
     public static final Value NULL_VALUE = Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.model.Values$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10201 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firestore$v1$Value$ValueTypeCase;
 

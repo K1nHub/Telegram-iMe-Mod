@@ -5,9 +5,9 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletSettingsItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletSettingsItem {
     private final Integer description;
     private final int icon;
@@ -36,7 +36,7 @@ public abstract class WalletSettingsItem {
     }
 
     /* compiled from: WalletSettingsItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Main {
         public static final Main INSTANCE = new Main();
 
@@ -44,32 +44,32 @@ public abstract class WalletSettingsItem {
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class CryptoAccount extends WalletSettingsItem {
             public static final CryptoAccount INSTANCE = new CryptoAccount();
 
             private CryptoAccount() {
-                super(C3558R.C3560drawable.msg_openprofile, C3558R.string.wallet_settings_eth_account_title, null, null);
+                super(C3473R.C3475drawable.msg_openprofile, C3473R.string.wallet_settings_eth_account_title, null, null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Interface extends WalletSettingsItem {
             public static final Interface INSTANCE = new Interface();
 
             private Interface() {
-                super(C3558R.C3560drawable.fork_interface_settings, C3558R.string.wallet_settings_interface_title, null, null);
+                super(C3473R.C3475drawable.fork_interface_settings, C3473R.string.wallet_settings_interface_title, null, null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Help extends WalletSettingsItem {
             public static final Help INSTANCE = new Help();
 
             private Help() {
-                super(C3558R.C3560drawable.msg_help, C3558R.string.wallet_settings_help_title, null, null);
+                super(C3473R.C3475drawable.msg_help, C3473R.string.wallet_settings_help_title, null, null);
             }
         }
 
@@ -87,7 +87,7 @@ public abstract class WalletSettingsItem {
     }
 
     /* compiled from: WalletSettingsItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class CryptoAccount {
         public static final CryptoAccount INSTANCE = new CryptoAccount();
 
@@ -95,52 +95,52 @@ public abstract class WalletSettingsItem {
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Blockchains extends WalletSettingsItem {
             public static final Blockchains INSTANCE = new Blockchains();
 
             private Blockchains() {
-                super(C3558R.C3560drawable.fork_ic_blockchain, C3558R.string.wallet_crypto_blockchains_title, Integer.valueOf(C3558R.string.wallet_crypto_blockchains_item_description), null);
+                super(C3473R.C3475drawable.fork_ic_blockchain, C3473R.string.wallet_crypto_blockchains_title, Integer.valueOf(C3473R.string.wallet_crypto_blockchains_item_description), null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Privacy extends WalletSettingsItem {
             public static final Privacy INSTANCE = new Privacy();
 
             private Privacy() {
-                super(C3558R.C3560drawable.fork_ic_crypto_privacy, C3558R.string.wallet_crypto_privacy_toolbar_title, Integer.valueOf(C3558R.string.wallet_crypto_privacy_item_description), null);
+                super(C3473R.C3475drawable.fork_ic_crypto_privacy, C3473R.string.wallet_crypto_privacy_toolbar_title, Integer.valueOf(C3473R.string.wallet_crypto_privacy_item_description), null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class WalletConnect extends WalletSettingsItem {
             public static final WalletConnect INSTANCE = new WalletConnect();
 
             private WalletConnect() {
-                super(C3558R.C3560drawable.fork_ic_wallet_connect, C3558R.string.wallet_connect_title, Integer.valueOf(C3558R.string.wallet_connect_subtitle), null);
+                super(C3473R.C3475drawable.fork_ic_wallet_connect, C3473R.string.wallet_connect_title, Integer.valueOf(C3473R.string.wallet_connect_subtitle), null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class CustomTokens extends WalletSettingsItem {
             public static final CustomTokens INSTANCE = new CustomTokens();
 
             private CustomTokens() {
-                super(C3558R.C3560drawable.fork_ic_custom_tokens, C3558R.string.wallet_custom_tokens_title, Integer.valueOf(C3558R.string.wallet_custom_tokens_subtitle), null);
+                super(C3473R.C3475drawable.fork_ic_custom_tokens, C3473R.string.wallet_custom_tokens_title, Integer.valueOf(C3473R.string.wallet_custom_tokens_subtitle), null);
             }
         }
 
         /* compiled from: WalletSettingsItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class PinCode extends WalletSettingsItem {
             public static final PinCode INSTANCE = new PinCode();
 
             private PinCode() {
-                super(C3558R.C3560drawable.fork_filter_icon_lock, C3558R.string.wallet_settings_pin_code_title, Integer.valueOf(C3558R.string.wallet_settings_pin_code_subtitle), null);
+                super(C3473R.C3475drawable.fork_filter_icon_lock, C3473R.string.wallet_settings_pin_code_title, Integer.valueOf(C3473R.string.wallet_settings_pin_code_subtitle), null);
             }
         }
 

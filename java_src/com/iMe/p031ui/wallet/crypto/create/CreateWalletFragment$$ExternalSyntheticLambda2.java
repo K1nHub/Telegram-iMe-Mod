@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.crypto.create;
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$$ExternalSyntheticLambda2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final /* synthetic */ class CreateWalletFragment$$ExternalSyntheticLambda2 implements Runnable {
     public final /* synthetic */ CreateWalletFragment f$0;
 

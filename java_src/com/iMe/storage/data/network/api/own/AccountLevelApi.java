@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 /* compiled from: AccountLevelApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface AccountLevelApi {
     @POST("users/changeRankVisibility")
     Observable<ApiBaseResponse<GetAccountLevelVisibilityResponse>> changeLevelVisibility(@Body ChangeRankVisibilityRequest changeRankVisibilityRequest);

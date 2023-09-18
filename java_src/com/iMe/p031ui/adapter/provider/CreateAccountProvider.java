@@ -10,14 +10,14 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CreateAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CreateAccountProvider */
 /* loaded from: classes.dex */
 public final class CreateAccountProvider extends BaseNodeProvider<AccountItem.Create> {
     private final int itemViewType = IdFabric$ViewTypes.CREATE_ACCOUNT;
-    private final int layoutId = C3558R.layout.fork_recycle_item_wallet_dashboard_account_empty;
+    private final int layoutId = C3473R.layout.fork_recycle_item_wallet_dashboard_account_empty;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -38,7 +38,7 @@ public final class CreateAccountProvider extends BaseNodeProvider<AccountItem.Cr
     public void convert(BaseViewHolder helper, final AccountItem.Create item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3558R.C3561id.card_empty_account, Theme.key_windowBackgroundWhite), C3558R.C3561id.frame_root, 1.0f), C3558R.C3561id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CreateAccountProvider$convert$1
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3473R.C3476id.card_empty_account, Theme.key_windowBackgroundWhite), C3473R.C3476id.frame_root, 1.0f), C3473R.C3476id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CreateAccountProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -62,7 +62,7 @@ public final class CreateAccountProvider extends BaseNodeProvider<AccountItem.Cr
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(helper, C3558R.C3561id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CreateAccountProvider$convert$2
+        BaseQuickAdapterExtKt.applyForView(helper, C3473R.C3476id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CreateAccountProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

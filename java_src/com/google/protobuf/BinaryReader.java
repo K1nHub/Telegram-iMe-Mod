@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class BinaryReader implements Reader {
     /* synthetic */ BinaryReader(C11921 c11921) {
         this();
@@ -23,7 +23,7 @@ abstract class BinaryReader implements Reader {
     private BinaryReader() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class SafeHeapReader extends BinaryReader {
         private final byte[] buffer;
         private final boolean bufferIsImmutable;
@@ -1417,7 +1417,7 @@ abstract class BinaryReader implements Reader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.BinaryReader$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C11921 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 

@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingCalculatorProgrammesView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingCalculatorProgrammesView extends BaseView, LoadMoreView<BaseNode> {
     void onStakingSelected(StakingDetailsItem stakingDetailsItem);
 

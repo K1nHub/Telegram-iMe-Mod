@@ -10,7 +10,7 @@ import com.google.android.gms.wallet.PaymentCardRecognitionIntentResponse;
 import com.google.android.gms.wallet.PaymentData;
 import com.google.android.gms.wallet.zzau;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzt extends zzb implements zzu {
     public zzt() {
         super("com.google.android.gms.wallet.internal.IWalletServiceCallbacks");

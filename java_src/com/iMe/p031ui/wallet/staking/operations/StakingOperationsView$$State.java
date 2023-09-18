@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingOperationsView$$State extends MvpViewState<StakingOperationsView> implements StakingOperationsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -116,7 +116,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$OnTabSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnTabSelectedCommand extends ViewCommand<StakingOperationsView> {
         public final int position;
 
@@ -133,7 +133,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$OnSetupNavigationRouterCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSetupNavigationRouterCommand extends ViewCommand<StakingOperationsView> {
         OnSetupNavigationRouterCommand(StakingOperationsView$$State stakingOperationsView$$State) {
             super("onSetupNavigationRouter", AddToEndSingleStrategy.class);
@@ -147,7 +147,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingOperationsView> {
         public final String text;
 
@@ -164,7 +164,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingOperationsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -185,7 +185,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingOperationsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -204,7 +204,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<StakingOperationsView> {
         public final NetworkItem networkItem;
 
@@ -221,7 +221,7 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
 
     /* compiled from: StakingOperationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<StakingOperationsView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

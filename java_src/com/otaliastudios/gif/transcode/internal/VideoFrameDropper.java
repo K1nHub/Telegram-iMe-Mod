@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.transcode.internal;
 
 import com.otaliastudios.gif.internal.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class VideoFrameDropper {
     private static final Logger LOG = new Logger(VideoFrameDropper.class.getSimpleName());
 
@@ -14,7 +14,7 @@ public abstract class VideoFrameDropper {
         return new Dropper1(i, i2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class Dropper1 extends VideoFrameDropper {
         private int mFrameCount;
         private double mFrameRateReciprocalSum;

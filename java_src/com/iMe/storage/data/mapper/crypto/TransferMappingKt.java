@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransferMappingKt {
     public static final CryptoTransferMetadata mapToDomain(CryptoTransferDataResponse cryptoTransferDataResponse) {
         TransactionParams mapToDomain;

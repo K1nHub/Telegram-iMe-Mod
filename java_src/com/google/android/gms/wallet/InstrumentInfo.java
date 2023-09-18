@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "InstrumentInfoCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class InstrumentInfo extends AbstractSafeParcelable {
     public static final int CARD_CLASS_CREDIT = 1;
     public static final int CARD_CLASS_DEBIT = 2;
@@ -26,7 +26,7 @@ public final class InstrumentInfo extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface CardClass {
     }
 

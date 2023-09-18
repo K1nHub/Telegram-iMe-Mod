@@ -1,7 +1,7 @@
 package com.google.firebase.database.collection;
 
 import com.google.firebase.database.collection.LLRBNode;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LLRBRedValueNode<K, V> extends LLRBValueNode<K, V> {
     @Override // com.google.firebase.database.collection.LLRBNode
     public boolean isRed() {

@@ -7,7 +7,7 @@ import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: Maps.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class EmptyMap implements Map, Serializable, KMappedMarker {
     public static final EmptyMap INSTANCE = new EmptyMap();
 

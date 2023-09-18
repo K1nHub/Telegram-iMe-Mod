@@ -6,7 +6,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.FloatSeekBarAccessibilityDelegate */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class FloatSeekBarAccessibilityDelegate extends SeekBarAccessibilityDelegate {
     private final boolean setPercentsEnabled;
 

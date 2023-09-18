@@ -8,7 +8,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import java.util.zip.ZipException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GzipInflatingBuffer implements Closeable {
     private long expectedGzipTrailerIsize;
     private int gzipHeaderFlag;
@@ -27,7 +27,7 @@ public class GzipInflatingBuffer implements Closeable {
     private boolean isStalled = true;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum State {
         HEADER,
         HEADER_EXTRA_LEN,
@@ -54,12 +54,12 @@ public class GzipInflatingBuffer implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class GzipMetadataReader {
         private GzipMetadataReader() {
         }
 
-        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C27951 c27951) {
+        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C27111 c27111) {
             this();
         }
 
@@ -214,7 +214,7 @@ public class GzipInflatingBuffer implements Closeable {
             if (r2 == 0) goto L77
             int r4 = r9 - r3
             if (r4 <= 0) goto L77
-            int[] r2 = io.grpc.internal.GzipInflatingBuffer.C27951.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State
+            int[] r2 = io.grpc.internal.GzipInflatingBuffer.C27111.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State
             io.grpc.internal.GzipInflatingBuffer$State r5 = r6.state
             int r5 = r5.ordinal()
             r2 = r2[r5]
@@ -298,8 +298,8 @@ public class GzipInflatingBuffer implements Closeable {
     }
 
     /* renamed from: io.grpc.internal.GzipInflatingBuffer$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C27951 {
+    /* loaded from: classes6.dex */
+    static /* synthetic */ class C27111 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$internal$GzipInflatingBuffer$State;
 
         static {

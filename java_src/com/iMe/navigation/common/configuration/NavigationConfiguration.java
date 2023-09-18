@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NavigationConfiguration.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NavigationConfiguration<T extends NavigationTab<?>> {
     private final List<T> tabs;
     private final NavigationViewConfiguration viewConfiguration;
@@ -50,7 +50,7 @@ public final class NavigationConfiguration<T extends NavigationTab<?>> {
     }
 
     /* compiled from: NavigationConfiguration.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

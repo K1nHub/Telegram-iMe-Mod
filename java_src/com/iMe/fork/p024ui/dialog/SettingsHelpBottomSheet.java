@@ -19,7 +19,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -29,7 +29,7 @@ import org.telegram.p043ui.Components.AlertsCreator;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SettingsHelpBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SettingsHelpBottomSheet extends BottomSheet {
     private final BaseFragment fragment;
     private final List<Pair<String, Function0<Unit>>> items;
@@ -37,7 +37,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
     /* compiled from: SettingsHelpBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$ScreenType */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ScreenType {
         COMMON_SETTINGS,
         WALLET_SETTINGS
@@ -71,7 +71,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         });
         this.rootView$delegate = lazy;
         Pair[] pairArr = new Pair[8];
-        pairArr[0] = TuplesKt.m103to(LocaleController.getInternalString(C3558R.string.settings_help_alert_support_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$1
+        pairArr[0] = TuplesKt.m103to(LocaleController.getInternalString(C3473R.string.settings_help_alert_support_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -88,7 +88,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
                 Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/imemessenger");
             }
         });
-        pairArr[1] = TuplesKt.m103to(LocaleController.getInternalString(C3558R.string.settings_help_alert_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$2
+        pairArr[1] = TuplesKt.m103to(LocaleController.getInternalString(C3473R.string.settings_help_alert_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -105,7 +105,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
                 Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/ime_ai");
             }
         });
-        pairArr[2] = TuplesKt.m103to(LocaleController.getInternalString(C3558R.string.settings_help_alert_lime_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$3
+        pairArr[2] = TuplesKt.m103to(LocaleController.getInternalString(C3473R.string.settings_help_alert_lime_group_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -122,7 +122,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
                 Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), "https://t.me/imelime");
             }
         });
-        pairArr[3] = TuplesKt.m103to(LocaleController.getInternalString(C3558R.string.settings_help_alert_channel_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$4
+        pairArr[3] = TuplesKt.m103to(LocaleController.getInternalString(C3473R.string.settings_help_alert_channel_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$4
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -136,10 +136,10 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3558R.string.settings_help_alert_channel_username));
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3473R.string.settings_help_alert_channel_username));
             }
         });
-        pairArr[4] = TuplesKt.m103to(LocaleController.getInternalString(C3558R.string.settings_help_alert_faq_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$5
+        pairArr[4] = TuplesKt.m103to(LocaleController.getInternalString(C3473R.string.settings_help_alert_faq_item_title), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$5
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -153,10 +153,10 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3558R.string.settings_help_alert_faq_url));
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3473R.string.settings_help_alert_faq_url));
             }
         });
-        pairArr[5] = TuplesKt.m103to(LocaleController.getString("PrivacyPolicy", C3558R.string.PrivacyPolicy), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$6
+        pairArr[5] = TuplesKt.m103to(LocaleController.getString("PrivacyPolicy", C3473R.string.PrivacyPolicy), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$6
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -170,11 +170,11 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3558R.string.PrivacyPolicyUrl));
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getInternalString(C3473R.string.PrivacyPolicyUrl));
             }
         });
         ScreenType screenType2 = ScreenType.COMMON_SETTINGS;
-        pairArr[6] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("AskAQuestion", C3558R.string.AskAQuestion), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$7
+        pairArr[6] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("AskAQuestion", C3473R.string.AskAQuestion), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$7
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -197,7 +197,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
                 baseFragment.showDialog(AlertsCreator.createSupportAlert(baseFragment2, baseFragment3.getResourceProvider()));
             }
         }) : null;
-        pairArr[7] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("TelegramFeatures", C3558R.string.TelegramFeatures), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$8
+        pairArr[7] = screenType == screenType2 ? TuplesKt.m103to(LocaleController.getString("TelegramFeatures", C3473R.string.TelegramFeatures), new Function0<Unit>() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$8
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -211,14 +211,14 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getString("TelegramFeaturesUrl", C3558R.string.TelegramFeaturesUrl));
+                Browser.openUrl(SettingsHelpBottomSheet.this.getContext(), LocaleController.getString("TelegramFeaturesUrl", C3473R.string.TelegramFeaturesUrl));
             }
         }) : null;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) pairArr);
         this.items = listOfNotNull;
         setApplyBottomPadding(false);
         setCustomView(getRootView());
-        setTitle(LocaleController.getString("SettingsHelp", C3558R.string.SettingsHelp), true);
+        setTitle(LocaleController.getString("SettingsHelp", C3473R.string.SettingsHelp), true);
     }
 
     private final ScrollView getRootView() {
@@ -304,9 +304,9 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
     public final AlertDialog createSocialNetworkAlert(final DrawerSocialNetwork drawerSocialNetwork) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getInternalString(drawerSocialNetwork.getTitleResId()));
-        String string = LocaleController.getString("Open", C3558R.string.Open);
+        String string = LocaleController.getString("Open", C3473R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
-        String string2 = LocaleController.getString("CopyLink", C3558R.string.CopyLink);
+        String string2 = LocaleController.getString("CopyLink", C3473R.string.CopyLink);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"CopyLink\", R.string.CopyLink)");
         builder.setItems(new CharSequence[]{string, string2}, new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -326,7 +326,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         } else if (i != 1) {
         } else {
             AndroidUtilities.addToClipboard(socialNetwork.url());
-            String string = LocaleController.getString("LinkCopied", C3558R.string.LinkCopied);
+            String string = LocaleController.getString("LinkCopied", C3473R.string.LinkCopied);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
             ContextExtKt.toast(string);
         }
@@ -334,7 +334,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
 
     /* compiled from: SettingsHelpBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

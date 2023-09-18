@@ -19,14 +19,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Charts.data.ChartData;
 import org.telegram.p043ui.Components.CombinedDrawable;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadialProgressView;
 /* renamed from: org.telegram.ui.Charts.view_data.LegendSignatureView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LegendSignatureView extends FrameLayout {
     Drawable backgroundDrawable;
     public boolean canGoZoom;
@@ -83,7 +83,7 @@ public class LegendSignatureView extends FrameLayout {
         this.hourTime.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         ImageView imageView = new ImageView(context);
         this.chevron = imageView;
-        imageView.setImageResource(C3558R.C3560drawable.ic_chevron_right_black_18dp);
+        imageView.setImageResource(C3473R.C3475drawable.ic_chevron_right_black_18dp);
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressView = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.m72dp(12));
@@ -106,7 +106,7 @@ public class LegendSignatureView extends FrameLayout {
         int i2 = Theme.key_statisticChartChevronColor;
         imageView.setColorFilter(Theme.getColor(i2));
         this.progressView.setProgressColor(Theme.getColor(i2));
-        this.shadowDrawable = getContext().getResources().getDrawable(C3558R.C3560drawable.stats_tooltip).mutate();
+        this.shadowDrawable = getContext().getResources().getDrawable(C3473R.C3475drawable.stats_tooltip).mutate();
         this.backgroundDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(4), Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector), -16777216);
         CombinedDrawable combinedDrawable = new CombinedDrawable(this.shadowDrawable, this.backgroundDrawable, AndroidUtilities.m72dp(3), AndroidUtilities.m72dp(3));
         combinedDrawable.setFullsize(true);
@@ -146,7 +146,7 @@ public class LegendSignatureView extends FrameLayout {
         int i2 = 0;
         for (int i3 = 0; i3 < length; i3++) {
             if (arrayList.get(i3).enabled) {
-                i2 += arrayList.get(i3).line.f1730y[i];
+                i2 += arrayList.get(i3).line.f1721y[i];
             }
         }
         for (int i4 = 0; i4 < length; i4++) {
@@ -159,7 +159,7 @@ public class LegendSignatureView extends FrameLayout {
                     holder.root.requestLayout();
                 }
                 holder.root.setVisibility(0);
-                holder.value.setText(formatWholeNumber(line.f1730y[i]));
+                holder.value.setText(formatWholeNumber(line.f1721y[i]));
                 holder.signature.setText(line.name);
                 int i5 = line.colorKey;
                 if (i5 >= 0 && Theme.hasThemeKey(i5)) {
@@ -173,7 +173,7 @@ public class LegendSignatureView extends FrameLayout {
                 if (this.showPercentage && (textView = holder.percentage) != null) {
                     textView.setVisibility(0);
                     holder.percentage.setTextColor(Theme.getColor(i6));
-                    float f = arrayList.get(i4).line.f1730y[i] / i2;
+                    float f = arrayList.get(i4).line.f1721y[i] / i2;
                     if (f < 0.1f && f != BitmapDescriptorFactory.HUE_RED) {
                         holder.percentage.setText(String.format(Locale.ENGLISH, "%.1f%s", Float.valueOf(f * 100.0f), "%"));
                     } else {
@@ -245,7 +245,7 @@ public class LegendSignatureView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Charts.view_data.LegendSignatureView$Holder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class Holder {
         TextView percentage;
         final LinearLayout root;

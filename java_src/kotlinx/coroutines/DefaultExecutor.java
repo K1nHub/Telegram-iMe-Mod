@@ -6,7 +6,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlinx.coroutines.EventLoopImplBase;
 /* compiled from: DefaultExecutor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DefaultExecutor extends EventLoopImplBase implements Runnable {
     public static final DefaultExecutor INSTANCE;
     private static final long KEEP_ALIVE_NANOS;

@@ -23,7 +23,7 @@ import timber.log.Timber;
 /* compiled from: PhotoViewerPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.recognition.PhotoViewerPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
     private final GoogleServicesInteractor googleServicesInteractor;
     private final ResourceManager resourceManager;
@@ -57,12 +57,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1386invoke(result);
+                m1384invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1386invoke(Result<? extends String> it) {
+            public final void m1384invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -107,7 +107,7 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -129,12 +129,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends RecognizedImageModel>> result) {
-                m1385invoke(result);
+                m1383invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1385invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
+            public final void m1383invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends RecognizedImageModel>> result = it;
@@ -175,7 +175,7 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 }

@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SetTokenVisibilityRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SetTokenVisibilityRequest {
     private final boolean isVisible;
     private final TokenRequest token;

@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Stories.recorder.ToggleButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ToggleButton extends View {
     private Bitmap activeBitmap;
     private final Paint activeBitmapPaint;

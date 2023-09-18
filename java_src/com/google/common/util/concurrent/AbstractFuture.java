@@ -24,7 +24,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractFuture<V> extends InternalFutureFailureAccess implements ListenableFuture<V> {
     private static final AtomicHelper ATOMIC_HELPER;
     static final boolean GENERATE_CANCELLATION_CAUSES;
@@ -35,7 +35,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     private volatile Waiter waiters;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Trusted<V> extends ListenableFuture<V> {
     }
 
@@ -79,7 +79,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class TrustedFuture<V> extends AbstractFuture<V> implements Trusted<V> {
         @Override // com.google.common.util.concurrent.AbstractFuture, java.util.concurrent.Future
         public final V get() throws InterruptedException, ExecutionException {
@@ -113,7 +113,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Waiter {
         static final Waiter TOMBSTONE = new Waiter(false);
         volatile Waiter next;
@@ -166,7 +166,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Listener {
         static final Listener TOMBSTONE = new Listener();
         final Executor executor;
@@ -185,7 +185,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Failure {
         static final Failure FALLBACK_INSTANCE = new Failure(new Throwable("Failure occurred while trying to finish a future.") { // from class: com.google.common.util.concurrent.AbstractFuture.Failure.1
             @Override // java.lang.Throwable
@@ -201,7 +201,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Cancellation {
         static final Cancellation CAUSELESS_CANCELLED;
         static final Cancellation CAUSELESS_INTERRUPTED;
@@ -225,7 +225,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SetFuture<V> implements Runnable {
         final ListenableFuture<? extends V> future;
         final AbstractFuture<V> owner;
@@ -809,7 +809,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class AtomicHelper {
         abstract boolean casListeners(AbstractFuture<?> abstractFuture, Listener listener, Listener listener2);
 
@@ -829,7 +829,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class UnsafeAtomicHelper extends AtomicHelper {
         static final long LISTENERS_OFFSET;
         static final Unsafe UNSAFE;
@@ -929,7 +929,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class SafeAtomicHelper extends AtomicHelper {
         final AtomicReferenceFieldUpdater<AbstractFuture, Listener> listenersUpdater;
         final AtomicReferenceFieldUpdater<AbstractFuture, Object> valueUpdater;
@@ -982,7 +982,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class SynchronizedHelper extends AtomicHelper {
         private SynchronizedHelper() {
             super();

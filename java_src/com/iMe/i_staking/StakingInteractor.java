@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingInteractor {
     private final SchedulersProvider schedulersProvider;
     private final StakingRepository stakingRepository;

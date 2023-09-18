@@ -11,7 +11,7 @@ import android.util.Log;
 import androidx.collection.SimpleArrayMap;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MotionSpec {
     private final SimpleArrayMap<String, MotionTiming> timings = new SimpleArrayMap<>();
     private final SimpleArrayMap<String, PropertyValuesHolder[]> propertyValues = new SimpleArrayMap<>();

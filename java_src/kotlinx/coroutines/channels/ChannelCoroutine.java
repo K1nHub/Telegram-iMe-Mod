@@ -10,7 +10,7 @@ import kotlinx.coroutines.AbstractCoroutine;
 import kotlinx.coroutines.JobCancellationException;
 import kotlinx.coroutines.JobSupport;
 /* compiled from: ChannelCoroutine.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Channel<E> {
     private final Channel<E> _channel;
 
@@ -36,10 +36,10 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: receiveCatching-JP2dKIU */
-    public Object mo1672receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
-        Object mo1672receiveCatchingJP2dKIU = this._channel.mo1672receiveCatchingJP2dKIU(continuation);
+    public Object mo1670receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
+        Object mo1670receiveCatchingJP2dKIU = this._channel.mo1670receiveCatchingJP2dKIU(continuation);
         IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return mo1672receiveCatchingJP2dKIU;
+        return mo1670receiveCatchingJP2dKIU;
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
@@ -49,8 +49,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo1673trySendJP2dKIU(E e) {
-        return this._channel.mo1673trySendJP2dKIU(e);
+    public Object mo1671trySendJP2dKIU(E e) {
+        return this._channel.mo1671trySendJP2dKIU(e);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.p043ui.ActionBar.ThemeColors;
 /* renamed from: org.telegram.ui.Charts.data.ChartData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChartData {
     public String[] daysLookup;
     public ArrayList<Line> lines = new ArrayList<>();
@@ -26,7 +26,7 @@ public class ChartData {
     protected long timeStep;
 
     /* renamed from: x */
-    public long[] f1728x;
+    public long[] f1719x;
     public float[] xPercentage;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -40,24 +40,24 @@ public class ChartData {
             JSONArray jSONArray2 = jSONArray.getJSONArray(i);
             if (jSONArray2.getString(0).equals("x")) {
                 int length = jSONArray2.length() - 1;
-                this.f1728x = new long[length];
+                this.f1719x = new long[length];
                 int i2 = 0;
                 while (i2 < length) {
                     int i3 = i2 + 1;
-                    this.f1728x[i2] = jSONArray2.getLong(i3);
+                    this.f1719x[i2] = jSONArray2.getLong(i3);
                     i2 = i3;
                 }
             } else {
                 Line line = new Line(this);
                 this.lines.add(line);
                 int length2 = jSONArray2.length() - 1;
-                line.f1729id = jSONArray2.getString(0);
-                line.f1730y = new int[length2];
+                line.f1720id = jSONArray2.getString(0);
+                line.f1721y = new int[length2];
                 int i4 = 0;
                 while (i4 < length2) {
                     int i5 = i4 + 1;
-                    line.f1730y[i4] = jSONArray2.getInt(i5);
-                    int[] iArr = line.f1730y;
+                    line.f1721y[i4] = jSONArray2.getInt(i5);
+                    int[] iArr = line.f1721y;
                     if (iArr[i4] > line.maxValue) {
                         line.maxValue = iArr[i4];
                     }
@@ -67,7 +67,7 @@ public class ChartData {
                     i4 = i5;
                 }
             }
-            long[] jArr = this.f1728x;
+            long[] jArr = this.f1719x;
             if (jArr.length > 1) {
                 this.timeStep = jArr[1] - jArr[0];
             } else {
@@ -81,7 +81,7 @@ public class ChartData {
         for (int i6 = 0; i6 < this.lines.size(); i6++) {
             Line line2 = this.lines.get(i6);
             if (optJSONObject != null) {
-                Matcher matcher = compile.matcher(optJSONObject.getString(line2.f1729id));
+                Matcher matcher = compile.matcher(optJSONObject.getString(line2.f1720id));
                 if (matcher.matches()) {
                     if (!TextUtils.isEmpty(matcher.group(1))) {
                         line2.colorKey = ThemeColors.stringKeyToInt("statisticChartLine_" + matcher.group(1).toLowerCase());
@@ -92,7 +92,7 @@ public class ChartData {
                 }
             }
             if (optJSONObject2 != null) {
-                line2.name = optJSONObject2.getString(line2.f1729id);
+                line2.name = optJSONObject2.getString(line2.f1720id);
             }
         }
     }
@@ -100,7 +100,7 @@ public class ChartData {
     /* JADX INFO: Access modifiers changed from: protected */
     public void measure() {
         SimpleDateFormat simpleDateFormat;
-        long[] jArr = this.f1728x;
+        long[] jArr = this.f1719x;
         int length = jArr.length;
         if (length == 0) {
             return;
@@ -113,7 +113,7 @@ public class ChartData {
             fArr[0] = 1.0f;
         } else {
             for (int i = 0; i < length; i++) {
-                this.xPercentage[i] = ((float) (this.f1728x[i] - j)) / ((float) (j2 - j));
+                this.xPercentage[i] = ((float) (this.f1719x[i] - j)) / ((float) (j2 - j));
             }
         }
         for (int i2 = 0; i2 < this.lines.size(); i2++) {
@@ -123,7 +123,7 @@ public class ChartData {
             if (this.lines.get(i2).minValue < this.minValue) {
                 this.minValue = this.lines.get(i2).minValue;
             }
-            this.lines.get(i2).segmentTree = new SegmentTree(this.lines.get(i2).f1730y);
+            this.lines.get(i2).segmentTree = new SegmentTree(this.lines.get(i2).f1721y);
         }
         long j3 = this.timeStep;
         this.daysLookup = new String[((int) ((j2 - j) / j3)) + 10];
@@ -145,7 +145,7 @@ public class ChartData {
                 }
                 i3++;
             } else {
-                long[] jArr2 = this.f1728x;
+                long[] jArr2 = this.f1719x;
                 this.oneDayPercentage = ((float) this.timeStep) / ((float) (jArr2[jArr2.length - 1] - jArr2[0]));
                 return;
             }
@@ -154,7 +154,7 @@ public class ChartData {
 
     public String getDayString(int i) {
         String[] strArr = this.daysLookup;
-        long[] jArr = this.f1728x;
+        long[] jArr = this.f1719x;
         return strArr[(int) ((jArr[i] - jArr[0]) / this.timeStep)];
     }
 
@@ -227,17 +227,17 @@ public class ChartData {
     }
 
     /* renamed from: org.telegram.ui.Charts.data.ChartData$Line */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class Line {
         public int colorKey;
 
         /* renamed from: id */
-        public String f1729id;
+        public String f1720id;
         public String name;
         public SegmentTree segmentTree;
 
         /* renamed from: y */
-        public int[] f1730y;
+        public int[] f1721y;
         public int maxValue = 0;
         public int minValue = Integer.MAX_VALUE;
         public int color = -16777216;

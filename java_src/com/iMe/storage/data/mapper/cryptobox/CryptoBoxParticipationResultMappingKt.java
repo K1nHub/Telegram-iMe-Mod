@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.cryptobox.CryptoBoxPar
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxParticipationResult;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxParticipationResultMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxParticipationResultMappingKt {
     public static final CryptoBoxParticipationResult mapToDomain(CryptoBoxParticipationResultResponse cryptoBoxParticipationResultResponse) {
         Intrinsics.checkNotNullParameter(cryptoBoxParticipationResultResponse, "<this>");

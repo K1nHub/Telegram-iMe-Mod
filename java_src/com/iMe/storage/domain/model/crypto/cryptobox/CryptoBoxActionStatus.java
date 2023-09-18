@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxActionStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum CryptoBoxActionStatus {
     PENDING(R$string.status_pending),
     CONFIRMED(R$string.status_ok),
@@ -26,7 +26,7 @@ public enum CryptoBoxActionStatus {
     }
 
     /* compiled from: CryptoBoxActionStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

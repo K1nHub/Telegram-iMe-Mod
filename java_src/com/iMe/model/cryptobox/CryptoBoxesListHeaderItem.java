@@ -3,7 +3,7 @@ package com.iMe.model.cryptobox;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxesListHeaderItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxesListHeaderItem extends NoChildNode {
     private final String title;
 

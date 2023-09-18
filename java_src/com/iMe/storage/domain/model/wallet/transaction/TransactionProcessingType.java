@@ -4,13 +4,14 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionProcessingType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TransactionProcessingType {
     SIMPLEX(R$string.processing_type_simplex),
     ETHEREUM(R$string.processing_type_eth),
     UNISWAP_V2(R$string.processing_type_uniswap_v2),
     UNISWAP_V3(R$string.processing_type_uniswap_v3),
     ONEINCH(R$string.processing_type_1inch),
+    ONEINCH_FUSION(R$string.processing_type_1inch_fusion),
     SYMBIOSIS(R$string.processing_type_symbiosis),
     PANCAKESWAP_V2(R$string.processing_type_pancakeswap_v2),
     BINANCE_SMART_CHAIN(R$string.processing_type_bsc),
@@ -33,7 +34,7 @@ public enum TransactionProcessingType {
     }
 
     /* compiled from: TransactionProcessingType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.BitcoinUnspentO
 import com.iMe.storage.domain.model.crypto.send.BitcoinUnspentOutput;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BitcoinUnspentOutputMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BitcoinUnspentOutputMapperKt {
     public static final BitcoinUnspentOutput mapToDomain(BitcoinUnspentOutputResponse bitcoinUnspentOutputResponse) {
         Intrinsics.checkNotNullParameter(bitcoinUnspentOutputResponse, "<this>");

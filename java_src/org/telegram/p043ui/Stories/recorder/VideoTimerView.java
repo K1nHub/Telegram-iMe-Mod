@@ -14,7 +14,7 @@ import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.AnimatedTextView;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Stories.recorder.VideoTimerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoTimerView extends View {
     private Paint backgroundPaint;
     private Paint recordPaint;

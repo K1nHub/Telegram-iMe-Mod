@@ -4,7 +4,7 @@ import com.iMe.storage.data.manager.common.EnvironmentManager;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppConfiguration$Wallet {
     static {
         new AppConfiguration$Wallet();

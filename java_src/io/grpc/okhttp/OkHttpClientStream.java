@@ -20,14 +20,14 @@ import io.perfmark.Tag;
 import java.util.List;
 import okio.Buffer;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class OkHttpClientStream extends AbstractClientStream {
     private static final Buffer EMPTY_BUFFER = new Buffer();
     private final Attributes attributes;
     private String authority;
 
     /* renamed from: id */
-    private volatile int f530id;
+    private volatile int f521id;
     private final MethodDescriptor<?, ?> method;
     private Object outboundFlowState;
     private final Sink sink;
@@ -39,7 +39,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     /* JADX INFO: Access modifiers changed from: package-private */
     public OkHttpClientStream(MethodDescriptor<?, ?> methodDescriptor, Metadata metadata, ExceptionHandlingFrameWriter exceptionHandlingFrameWriter, OkHttpClientTransport okHttpClientTransport, OutboundFlowController outboundFlowController, Object obj, int i, int i2, String str, String str2, StatsTraceContext statsTraceContext, TransportTracer transportTracer, CallOptions callOptions, boolean z) {
         super(new OkHttpWritableBufferAllocator(), statsTraceContext, transportTracer, metadata, callOptions, z && methodDescriptor.isSafe());
-        this.f530id = -1;
+        this.f521id = -1;
         this.sink = new Sink();
         this.useGet = false;
         this.statsTraceCtx = (StatsTraceContext) Preconditions.checkNotNull(statsTraceContext, "statsTraceCtx");
@@ -68,7 +68,7 @@ public class OkHttpClientStream extends AbstractClientStream {
 
     /* renamed from: id */
     public int m700id() {
-        return this.f530id;
+        return this.f521id;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -87,7 +87,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class Sink implements AbstractClientStream.Sink {
         Sink() {
         }
@@ -158,7 +158,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class TransportState extends Http2ClientStreamTransportState {
         private boolean canStart;
         private boolean cancelSent;
@@ -193,15 +193,15 @@ public class OkHttpClientStream extends AbstractClientStream {
         }
 
         public void start(int i) {
-            Preconditions.checkState(OkHttpClientStream.this.f530id == -1, "the stream has been started with id %s", i);
-            OkHttpClientStream.this.f530id = i;
+            Preconditions.checkState(OkHttpClientStream.this.f521id == -1, "the stream has been started with id %s", i);
+            OkHttpClientStream.this.f521id = i;
             OkHttpClientStream.this.state.onStreamAllocated();
             if (this.canStart) {
-                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f530id, 0, this.requestHeaders);
+                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f521id, 0, this.requestHeaders);
                 OkHttpClientStream.this.statsTraceCtx.clientOutboundHeaders();
                 this.requestHeaders = null;
                 if (this.pendingData.size() > 0) {
-                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f530id, this.pendingData, this.flushPendingData);
+                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f521id, this.pendingData, this.flushPendingData);
                 }
                 this.canStart = false;
             }

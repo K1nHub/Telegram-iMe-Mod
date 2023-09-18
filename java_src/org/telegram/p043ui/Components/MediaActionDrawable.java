@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.MediaActionDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MediaActionDrawable extends Drawable {
     private float animatedDownloadProgress;
     private boolean animatingTransition;
@@ -51,7 +51,7 @@ public class MediaActionDrawable extends Drawable {
     private float transitionProgress = 1.0f;
 
     /* renamed from: org.telegram.ui.Components.MediaActionDrawable$MediaActionDrawableDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface MediaActionDrawableDelegate {
         void invalidate();
     }

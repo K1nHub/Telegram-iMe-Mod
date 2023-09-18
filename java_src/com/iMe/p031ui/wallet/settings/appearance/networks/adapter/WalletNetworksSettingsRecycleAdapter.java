@@ -10,11 +10,11 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletNetworksSettingsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.networks.adapter.WalletNetworksSettingsRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletNetworksSettingsRecycleAdapter extends BaseQuickAdapter<NetworkSettingsItem, BaseViewHolder> {
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, NetworkSettingsItem networkSettingsItem, List list) {
@@ -22,7 +22,7 @@ public final class WalletNetworksSettingsRecycleAdapter extends BaseQuickAdapter
     }
 
     public WalletNetworksSettingsRecycleAdapter() {
-        super(C3558R.layout.fork_recycle_item_wallet_networks_settings, null, 2, null);
+        super(C3473R.layout.fork_recycle_item_wallet_networks_settings, null, 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -30,7 +30,7 @@ public final class WalletNetworksSettingsRecycleAdapter extends BaseQuickAdapter
     public void convert(BaseViewHolder holder, final NetworkSettingsItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.view_network_cell;
+        int i = C3473R.C3476id.view_network_cell;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite), i, new Function1<ImageTextCheckCell, Unit>() { // from class: com.iMe.ui.wallet.settings.appearance.networks.adapter.WalletNetworksSettingsRecycleAdapter$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -59,7 +59,7 @@ public final class WalletNetworksSettingsRecycleAdapter extends BaseQuickAdapter
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(holder, C3558R.C3561id.view_network_cell, new Function1<ImageTextCheckCell, Unit>() { // from class: com.iMe.ui.wallet.settings.appearance.networks.adapter.WalletNetworksSettingsRecycleAdapter$convert$2
+        BaseQuickAdapterExtKt.applyForView(holder, C3473R.C3476id.view_network_cell, new Function1<ImageTextCheckCell, Unit>() { // from class: com.iMe.ui.wallet.settings.appearance.networks.adapter.WalletNetworksSettingsRecycleAdapter$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

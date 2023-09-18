@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* renamed from: org.telegram.ui.Components.SimpleThemeDescription */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SimpleThemeDescription {
     public static ThemeDescription createThemeDescription(ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate, int i) {
         return new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i);

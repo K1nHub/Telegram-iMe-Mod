@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> extends AbstractObservableWithUpstream<TLeft, R> {
     final Function<? super TLeft, ? extends ObservableSource<TLeftEnd>> leftEnd;
     final ObservableSource<? extends TRight> other;
@@ -26,7 +26,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
     final Function<? super TRight, ? extends ObservableSource<TRightEnd>> rightEnd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface JoinSupport {
         void innerClose(boolean z, LeftRightEndObserver leftRightEndObserver);
 
@@ -59,7 +59,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         this.other.subscribe(leftRightObserver2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class GroupJoinDisposable<TLeft, TRight, TLeftEnd, TRightEnd, R> extends AtomicInteger implements Disposable, JoinSupport {
         volatile boolean cancelled;
         final Observer<? super R> downstream;
@@ -270,7 +270,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class LeftRightObserver extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         final boolean isLeft;
         final JoinSupport parent;
@@ -313,7 +313,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class LeftRightEndObserver extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         final int index;
         final boolean isLeft;

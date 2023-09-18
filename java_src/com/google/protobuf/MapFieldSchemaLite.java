@@ -2,7 +2,7 @@ package com.google.protobuf;
 
 import com.google.protobuf.MapEntryLite;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class MapFieldSchemaLite implements MapFieldSchema {
     @Override // com.google.protobuf.MapFieldSchema
     public Map<?, ?> forMutableMapData(Object obj) {

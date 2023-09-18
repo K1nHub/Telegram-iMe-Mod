@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.ClipRoundedDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ClipRoundedDrawable extends Drawable {
     private Drawable.Callback callback;
     private Drawable drawable;

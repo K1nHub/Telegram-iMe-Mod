@@ -17,10 +17,10 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GestureDetectorCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPhoneKeyboardView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CustomPhoneKeyboardView extends ViewGroup {
     private ImageView backButton;
     private Runnable detectLongClick;
@@ -148,7 +148,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             }
         };
         this.backButton = imageView;
-        imageView.setImageResource(C3558R.C3560drawable.msg_clear_input);
+        imageView.setImageResource(C3473R.C3475drawable.msg_clear_input);
         this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.backButton.setBackground(getButtonDrawable());
         int m72dp = AndroidUtilities.m72dp(11);
@@ -299,7 +299,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
     }
 
     /* renamed from: org.telegram.ui.Components.CustomPhoneKeyboardView$NumberButtonView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static final class NumberButtonView extends View {
         private String mNumber;
         private String mSymbols;

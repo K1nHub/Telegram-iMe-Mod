@@ -42,7 +42,7 @@ import kotlin.jvm.functions.Function9;
 import kotlin.reflect.KClass;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: ClassReference.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ClassReference implements KClass<Object>, ClassBasedDeclarationContainer {
     public static final Companion Companion = new Companion(null);
     private static final Map<Class<? extends Function<?>>, Integer> FUNCTION_CLASSES;
@@ -85,7 +85,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     }
 
     /* compiled from: ClassReference.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

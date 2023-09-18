@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.wallet.transaction.TransactionType;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperation.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingOperation {
     private final StakingOperationCost amount;
     private final TokenDetailed approvedToken;
@@ -28,7 +28,7 @@ public final class StakingOperation {
     private final StakingOperationType type;
 
     /* compiled from: StakingOperation.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;

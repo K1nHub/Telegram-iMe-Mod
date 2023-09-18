@@ -11,19 +11,16 @@ import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
-import java.util.HashMap;
-import kotlin.TuplesKt;
 import kotlin.Unit;
-import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletRootPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.common.WalletRootPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -37,7 +34,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
         this.cryptoAccessManager = cryptoAccessManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.rxEventBus = rxEventBus;
-        this.selectedTabId = C3558R.C3561id.wallet_root_bottom_navigation_home;
+        this.selectedTabId = C3473R.C3476id.wallet_root_bottom_navigation_home;
     }
 
     public final void selectTab(int i) {
@@ -51,18 +48,17 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         listenEvents();
-        setupNavigation();
-        selectTab(C3558R.C3561id.wallet_root_bottom_navigation_home);
+        selectTab(C3473R.C3476id.wallet_root_bottom_navigation_home);
     }
 
     private final boolean isDefaultTabSelected() {
-        return this.selectedTabId == C3558R.C3561id.wallet_root_bottom_navigation_home;
+        return this.selectedTabId == C3473R.C3476id.wallet_root_bottom_navigation_home;
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.common.WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -70,21 +66,20 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1431invoke(rxEvent);
+                m1424invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1431invoke(RxEvent it) {
+            public final void m1424invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, DomainRxEvents.AllWalletsReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {
-                    WalletRootPresenter.this.setupNavigation();
                     WalletRootPresenter.this.updateWalletConnectItemVisibility();
                     return;
                 }
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.BinanceOpenAuthScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SelectWalletCryptoTab.INSTANCE)) {
-                    WalletRootPresenter.this.selectTab(C3558R.C3561id.wallet_root_bottom_navigation_home);
+                    WalletRootPresenter.this.selectTab(C3473R.C3476id.wallet_root_bottom_navigation_home);
                 } else if (Intrinsics.areEqual(rxEvent, DomainRxEvents.NetworkUpdated.INSTANCE)) {
                     WalletRootPresenter.this.updateWalletConnectItemVisibility();
                 }
@@ -113,20 +108,11 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateWalletConnectItemVisibility() {
         ((WalletRootView) getViewState()).showWalletConnectItem(isDefaultTabSelected() && this.cryptoPreferenceHelper.getCurrentBlockchainType() == BlockchainType.EVM && this.cryptoAccessManager.isCurrentBlockchainWalletCreated());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void setupNavigation() {
-        HashMap<Integer, Boolean> hashMapOf;
-        Integer valueOf = Integer.valueOf(C3558R.C3561id.wallet_root_bottom_navigation_home);
-        Boolean bool = Boolean.TRUE;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m103to(valueOf, bool), TuplesKt.m103to(Integer.valueOf(C3558R.C3561id.wallet_root_bottom_navigation_exchange), Boolean.valueOf(this.cryptoAccessManager.isAnyWalletCreated())), TuplesKt.m103to(Integer.valueOf(C3558R.C3561id.wallet_root_bottom_navigation_settings), bool));
-        ((WalletRootView) getViewState()).setupNavigationTabsEnabled(hashMapOf);
     }
 }

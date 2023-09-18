@@ -7,7 +7,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum AccountLevel {
     ZERO(R$color.account_level_zero, R$string.wallet_account_level_zero_description, 0),
     BASE(R$color.account_level_base, R$string.wallet_account_level_base_description, 1),
@@ -22,7 +22,7 @@ public enum AccountLevel {
     private final int minThreshold;
 
     /* compiled from: AccountLevel.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -64,7 +64,7 @@ public enum AccountLevel {
     }
 
     /* compiled from: AccountLevel.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

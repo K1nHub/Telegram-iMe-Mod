@@ -25,7 +25,7 @@ import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -37,7 +37,7 @@ import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.tgnet.TLRPC$BotInfo;
 import org.telegram.tgnet.TLRPC$TL_botCommand;
 /* renamed from: org.telegram.ui.Components.BotCommandsMenuView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BotCommandsMenuView extends View {
     final MenuDrawable backDrawable;
     Drawable backgroundDrawable;
@@ -63,7 +63,7 @@ public class BotCommandsMenuView extends View {
     public void setTemplatesMode(boolean z, final ChatActivity chatActivity) {
         this.isTemplatesMode = z;
         if (z) {
-            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3558R.C3560drawable.fork_templates);
+            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3473R.C3475drawable.fork_templates);
             setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.BotCommandsMenuView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
@@ -108,7 +108,7 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3558R.raw.bot_webview_sheet_to_cross;
+        int i = C3473R.raw.bot_webview_sheet_to_cross;
         this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m72dp(20), AndroidUtilities.m72dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
@@ -123,7 +123,7 @@ public class BotCommandsMenuView extends View {
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3558R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3473R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -135,7 +135,7 @@ public class BotCommandsMenuView extends View {
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m72dp(16), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3558R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3473R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -215,7 +215,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3558R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3473R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);
@@ -241,7 +241,7 @@ public class BotCommandsMenuView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.BotCommandsMenuView$BotCommandsAdapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class BotCommandsAdapter extends RecyclerListView.SelectionAdapter {
         private int headerRow;
         private int rowCount;
@@ -253,7 +253,7 @@ public class BotCommandsMenuView extends View {
         ArrayList<String> newResultHelp = new ArrayList<>();
 
         /* renamed from: org.telegram.ui.Components.BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface TemplatesDelegate {
             void didPressGoToMessage(int i);
 
@@ -385,7 +385,7 @@ public class BotCommandsMenuView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.BotCommandsMenuView$BotCommandView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class BotCommandView extends LinearLayout {
         TextView command;
         String commandStr;

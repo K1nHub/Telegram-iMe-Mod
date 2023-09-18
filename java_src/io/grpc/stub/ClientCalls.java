@@ -2,11 +2,11 @@ package io.grpc.stub;
 
 import io.grpc.CallOptions;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ClientCalls {
     static final CallOptions.Key<StubType> STUB_TYPE_OPTION;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     enum StubType {
         BLOCKING,
         FUTURE,

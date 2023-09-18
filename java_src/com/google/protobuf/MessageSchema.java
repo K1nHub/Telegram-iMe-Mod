@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Objects;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessageSchema<T> implements Schema<T> {
     private static final int[] EMPTY_INT_ARRAY = new int[0];
     private static final Unsafe UNSAFE = UnsafeUtil.getUnsafe();
@@ -2020,7 +2020,7 @@ public final class MessageSchema<T> implements Schema<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.MessageSchema$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C12061 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 

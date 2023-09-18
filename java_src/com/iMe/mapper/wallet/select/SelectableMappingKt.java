@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectableMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SelectableMappingKt {
     public static final TokenDetailed mapToDetailedToken(BinanceTokenInfo binanceTokenInfo) {
         Intrinsics.checkNotNullParameter(binanceTokenInfo, "<this>");

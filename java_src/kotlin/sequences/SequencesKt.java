@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SequencesKt extends SequencesKt___SequencesKt {
     public static /* bridge */ /* synthetic */ <T> Iterable<T> asIterable(Sequence<? extends T> sequence) {
         return SequencesKt___SequencesKt.asIterable(sequence);

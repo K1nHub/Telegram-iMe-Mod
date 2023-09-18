@@ -3,7 +3,7 @@ package wallet.core.java;
 import com.google.protobuf.MessageLite;
 import com.google.protobuf.Parser;
 import wallet.core.jni.CoinType;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnySigner {
     public static native byte[] nativePlan(byte[] data, int coin);
 

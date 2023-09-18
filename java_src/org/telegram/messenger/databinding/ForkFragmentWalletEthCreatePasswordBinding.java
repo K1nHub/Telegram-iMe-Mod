@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletEthCreatePasswordBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkFragmentWalletEthCreatePasswordBinding implements ViewBin
     }
 
     public static ForkFragmentWalletEthCreatePasswordBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_eth_create_password, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_eth_create_password, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,16 +35,16 @@ public final class ForkFragmentWalletEthCreatePasswordBinding implements ViewBin
     }
 
     public static ForkFragmentWalletEthCreatePasswordBinding bind(View view) {
-        int i = C3558R.C3561id.edit_password;
+        int i = C3473R.C3476id.edit_password;
         EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) ViewBindings.findChildViewById(view, i);
         if (editTextBoldCursor != null) {
-            i = C3558R.C3561id.text_description;
+            i = C3473R.C3476id.text_description;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3558R.C3561id.text_title;
+                i = C3473R.C3476id.text_title;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3558R.C3561id.text_validation_error;
+                    i = C3473R.C3476id.text_validation_error;
                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView3 != null) {
                         return new ForkFragmentWalletEthCreatePasswordBinding((LinearLayout) view, editTextBoldCursor, appCompatTextView, appCompatTextView2, appCompatTextView3);

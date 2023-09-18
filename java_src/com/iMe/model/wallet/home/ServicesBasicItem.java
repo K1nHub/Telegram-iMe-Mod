@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ServicesBasicItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ServicesBasicItem extends NoChildNode {
     private final ServicesCategory category;
     private final int icon;

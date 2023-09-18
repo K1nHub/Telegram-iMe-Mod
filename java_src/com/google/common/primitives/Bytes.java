@@ -1,5 +1,5 @@
 package com.google.common.primitives;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Bytes {
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0023, code lost:
         r0 = r0 + 1;

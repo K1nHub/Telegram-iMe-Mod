@@ -13,14 +13,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CombinedDrawable;
 /* renamed from: org.telegram.ui.Stories.recorder.AlbumButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AlbumButton extends View {
     private StaticLayout countLayout;
     private float countLayoutLeft;
@@ -56,7 +56,7 @@ public class AlbumButton extends View {
         this.title = "" + ((Object) charSequence);
         this.subtitle = "" + i;
         imageReceiver.setRoundRadius(AndroidUtilities.m72dp(4));
-        Drawable mutate = context.getResources().getDrawable(C3558R.C3560drawable.msg_media_gallery).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3473R.C3475drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
         CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m72dp(6), -13750737), mutate);
         combinedDrawable.setFullsize(false);

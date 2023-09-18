@@ -13,14 +13,14 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: HeaderWithNetworkSwitcherProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.HeaderWithNetworkSwitcherProvider */
 /* loaded from: classes.dex */
 public final class HeaderWithNetworkSwitcherProvider extends BaseNodeProvider<HeaderItemWithNetworkSwitcher> {
     private final int itemViewType = IdFabric$ViewTypes.HEADER_CELL_WITH_NETWORK;
-    private final int layoutId = C3558R.layout.fork_recycle_item_wallet_dashboard_header_with_network_switcher;
+    private final int layoutId = C3473R.layout.fork_recycle_item_wallet_dashboard_header_with_network_switcher;
     private Callbacks$Callback onNetworkViewLayoutAction;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -50,9 +50,9 @@ public final class HeaderWithNetworkSwitcherProvider extends BaseNodeProvider<He
     public void convert(BaseViewHolder helper, final HeaderItemWithNetworkSwitcher item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.text_wallet_header;
+        int i = C3473R.C3476id.text_wallet_header;
         BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2), i).setText(i, item.getTitle());
-        int i2 = C3558R.C3561id.network_type_view;
+        int i2 = C3473R.C3476id.network_type_view;
         BaseQuickAdapterExtKt.applyForView(text.setVisible(i2, item.isNetworkSwitcherVisible()), i2, new Function1<NetworkTypeView, Unit>() { // from class: com.iMe.ui.adapter.provider.HeaderWithNetworkSwitcherProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -97,8 +97,8 @@ public final class HeaderWithNetworkSwitcherProvider extends BaseNodeProvider<He
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseViewHolder text = helper.setText(C3558R.C3561id.text_wallet_header, item.getTitle());
-        int i = C3558R.C3561id.network_type_view;
+        BaseViewHolder text = helper.setText(C3473R.C3476id.text_wallet_header, item.getTitle());
+        int i = C3473R.C3476id.network_type_view;
         BaseQuickAdapterExtKt.applyForView(text.setVisible(i, item.isNetworkSwitcherVisible()), i, new Function1<NetworkTypeView, Unit>() { // from class: com.iMe.ui.adapter.provider.HeaderWithNetworkSwitcherProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {

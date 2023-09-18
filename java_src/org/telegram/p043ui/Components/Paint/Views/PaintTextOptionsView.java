@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -27,7 +27,7 @@ import org.telegram.p043ui.Components.Paint.PaintTypeface;
 import org.telegram.p043ui.Components.RLottieDrawable;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintTextOptionsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final List<AlignFramePair> ALIGN_PAIRS = Arrays.asList(new AlignFramePair(0, 1, 20, 0), new AlignFramePair(0, 2, 20, 40), new AlignFramePair(1, 0, 0, 20), new AlignFramePair(1, 2, 60, 40), new AlignFramePair(2, 0, 40, 20), new AlignFramePair(2, 1, 40, 60));
     private RLottieImageView alignView;
@@ -43,10 +43,10 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
     private TypefaceCell typefaceCell;
 
     /* renamed from: x */
-    private int f1801x;
+    private int f1792x;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$Delegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Delegate {
         void onColorPickerSelected();
 
@@ -77,7 +77,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.colorClickableView, LayoutHelper.createFrame(24, 24, 48, 0, 0, 16, 0));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.alignView = rLottieImageView;
-        rLottieImageView.setAnimation(C3558R.raw.photo_text_allign, 24, 24);
+        rLottieImageView.setAnimation(C3473R.raw.photo_text_allign, 24, 24);
         RLottieDrawable animatedDrawable = this.alignView.getAnimatedDrawable();
         animatedDrawable.setPlayInDirectionOfCustomEndFrame(true);
         animatedDrawable.setCustomEndFrame(20);
@@ -93,7 +93,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.alignView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.outlineView = imageView;
-        imageView.setImageResource(C3558R.C3560drawable.msg_text_outlined);
+        imageView.setImageResource(C3473R.C3475drawable.msg_text_outlined);
         this.outlineView.setPadding(AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1), AndroidUtilities.m72dp(1));
         this.outlineView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -104,7 +104,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.outlineView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView2 = new ImageView(context);
         this.plusView = imageView2;
-        imageView2.setImageResource(C3558R.C3560drawable.msg_add);
+        imageView2.setImageResource(C3473R.C3475drawable.msg_add);
         this.plusView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.plusView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.plusView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda0
@@ -154,7 +154,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.f1801x = getPaddingLeft();
+        this.f1792x = getPaddingLeft();
         layoutChild(this.colorClickableView);
         layoutChild(this.alignView);
         layoutChild(this.outlineView);
@@ -165,10 +165,10 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
     private void layoutChild(View view) {
         if (view.getVisibility() != 8) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-            int i = this.f1801x + layoutParams.leftMargin;
-            this.f1801x = i;
-            view.layout(i, (getMeasuredHeight() - layoutParams.height) / 2, this.f1801x + layoutParams.width, (getMeasuredHeight() + layoutParams.height) / 2);
-            this.f1801x += layoutParams.width + layoutParams.rightMargin;
+            int i = this.f1792x + layoutParams.leftMargin;
+            this.f1792x = i;
+            view.layout(i, (getMeasuredHeight() - layoutParams.height) / 2, this.f1792x + layoutParams.width, (getMeasuredHeight() + layoutParams.height) / 2);
+            this.f1792x += layoutParams.width + layoutParams.rightMargin;
         }
     }
 
@@ -205,7 +205,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
 
     public void animatePlusToIcon(int i) {
         if (i == 0) {
-            i = C3558R.C3560drawable.msg_add;
+            i = C3473R.C3475drawable.msg_add;
         }
         if (this.plusIcon != i) {
             ImageView imageView = this.plusView;
@@ -229,13 +229,13 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         }
         this.outlineType = i;
         if (i == 1) {
-            i2 = C3558R.C3560drawable.msg_photo_text_framed2;
+            i2 = C3473R.C3475drawable.msg_photo_text_framed2;
         } else if (i == 2) {
-            i2 = C3558R.C3560drawable.msg_photo_text_framed3;
+            i2 = C3473R.C3475drawable.msg_photo_text_framed3;
         } else if (i != 3) {
-            i2 = C3558R.C3560drawable.msg_photo_text_framed;
+            i2 = C3473R.C3475drawable.msg_photo_text_framed;
         } else {
-            i2 = C3558R.C3560drawable.msg_photo_text_regular;
+            i2 = C3473R.C3475drawable.msg_photo_text_regular;
         }
         if (z) {
             AndroidUtilities.updateImageViewImageAnimated(this.outlineView, i2);
@@ -314,7 +314,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$TypefaceCell */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class TypefaceCell extends TextView {
         private Drawable expandDrawable;
         private boolean isCurrent;
@@ -355,7 +355,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
                 setBackground(Theme.AdaptiveRipple.rect(-14145495));
             }
             if (this.isCurrent && this.expandDrawable == null) {
-                Drawable drawable = ContextCompat.getDrawable(getContext(), C3558R.C3560drawable.photo_expand);
+                Drawable drawable = ContextCompat.getDrawable(getContext(), C3473R.C3475drawable.photo_expand);
                 this.expandDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             }
@@ -370,7 +370,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$AlignFramePair */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class AlignFramePair {
         private final int fromAlign;
         private final int fromFrame;

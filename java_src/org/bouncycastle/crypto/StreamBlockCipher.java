@@ -1,5 +1,5 @@
 package org.bouncycastle.crypto;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class StreamBlockCipher implements BlockCipher, StreamCipher {
     private final BlockCipher cipher;
 

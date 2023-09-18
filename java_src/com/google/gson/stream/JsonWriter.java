@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class JsonWriter implements Closeable, Flushable {
     private static final String[] HTML_SAFE_REPLACEMENT_CHARS;
     private String deferredName;

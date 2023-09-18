@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.wallet;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensSearchRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokensSearchRequest {
     private final String cursor;
     private final String networkType;

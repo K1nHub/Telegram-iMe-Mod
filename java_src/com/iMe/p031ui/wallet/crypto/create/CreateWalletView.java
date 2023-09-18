@@ -9,11 +9,14 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CreateWalletView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CreateWalletView extends BaseView {
     void addNewWallet(Wallet wallet2, String str);
 
     void createNewWallet(Wallet wallet2, String str);
+
+    @AddToEndSingle
+    void fillEditTexts(List<String> list);
 
     void generateAndOpenPdf(String str, List<String> list);
 

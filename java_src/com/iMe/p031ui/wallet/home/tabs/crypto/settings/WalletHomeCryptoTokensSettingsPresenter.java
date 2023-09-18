@@ -59,12 +59,12 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletHomeCryptoTokensSettingsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter<WalletHomeCryptoTokensSettingsView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private String cursor;
@@ -232,12 +232,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1565invoke(result);
+                    m1556invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1565invoke(Result<? extends Boolean> it) {
+                public final void m1556invoke(Result<? extends Boolean> it) {
                     List list;
                     ResourceManager resourceManager;
                     RxEventBus rxEventBus;
@@ -327,7 +327,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                     Intrinsics.checkNotNullExpressionValue(error, "error");
                 }
             }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
@@ -393,12 +393,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1561invoke(result);
+                m1552invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1561invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1552invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -443,7 +443,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -494,7 +494,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
             this.tokenVisibilitySubject.onNext(foundTokenItem);
             return;
         }
-        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3558R.string.token_search_coin));
+        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3473R.string.token_search_coin));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -612,12 +612,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> result) {
-                m1560invoke(result);
+                m1551invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1560invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
+            public final void m1551invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
                 ResourceManager resourceManager;
                 CryptoPreferenceHelper cryptoPreferenceHelper;
                 List mutableList;
@@ -681,7 +681,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -695,7 +695,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.TokensSettingsChanged, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -703,12 +703,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1562invoke(tokensSettingsChanged);
+                m1553invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1562invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1553invoke(DomainRxEvents.TokensSettingsChanged it) {
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.TokensSettingsChanged tokensSettingsChanged = it;
@@ -753,7 +753,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -824,12 +824,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1563invoke(result);
+                m1554invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1563invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1554invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -865,7 +865,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -911,7 +911,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 return subscribeToTokenVisibilitySwitch$lambda$26;
             }
         }).debounce(200L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo717io());
-        final C2486xee15b4fa c2486xee15b4fa = new C2486xee15b4fa(this);
+        final C2469xee15b4fa c2469xee15b4fa = new C2469xee15b4fa(this);
         Observable flatMap = observeOn2.flatMap(new Function() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -930,12 +930,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> pair) {
-                m1564invoke(pair);
+                m1555invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1564invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
+            public final void m1555invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
                 ResourceManager resourceManager;
                 List<BaseNode> list;
                 FoundTokenItem copy;
@@ -989,7 +989,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -1100,7 +1100,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
     /* compiled from: WalletHomeCryptoTokensSettingsPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Property;
 import java.util.WeakHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DrawableAlphaProperty extends Property<Drawable, Integer> {
     public static final Property<Drawable, Integer> DRAWABLE_ALPHA_COMPAT = new DrawableAlphaProperty();
     private final WeakHashMap<Drawable, Integer> alphaCache;

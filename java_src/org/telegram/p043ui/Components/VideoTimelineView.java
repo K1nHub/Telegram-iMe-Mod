@@ -22,11 +22,11 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.VideoTimelineView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoTimelineView extends View {
     private static final Object sync = new Object();
     private final Paint backgroundGrayPaint;
@@ -60,7 +60,7 @@ public class VideoTimelineView extends View {
     private long videoLength;
 
     /* renamed from: org.telegram.ui.Components.VideoTimelineView$VideoTimelineViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VideoTimelineViewDelegate {
         void didStartDragging();
 
@@ -539,11 +539,11 @@ public class VideoTimelineView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.VideoTimelineView$TimeHintView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TimeHintView extends View {
 
         /* renamed from: cx */
-        private float f1882cx;
+        private float f1873cx;
         private long lastTime;
         private float scale;
         private boolean show;
@@ -558,7 +558,7 @@ public class VideoTimelineView extends View {
             this.tooltipPaint = textPaint;
             this.lastTime = -1L;
             textPaint.setTextSize(AndroidUtilities.m72dp(14));
-            this.tooltipBackgroundArrow = ContextCompat.getDrawable(context, C3558R.C3560drawable.tooltip_arrow);
+            this.tooltipBackgroundArrow = ContextCompat.getDrawable(context, C3473R.C3475drawable.tooltip_arrow);
             this.tooltipBackground = Theme.createRoundRectDrawable(AndroidUtilities.m72dp(5), Theme.getColor(Theme.key_chat_gifSaveHintBackground));
             updateColors();
             setTime(0);
@@ -612,8 +612,8 @@ public class VideoTimelineView extends View {
             int i = (int) ((f5 > 0.5f ? 1.0f : f5 / 0.5f) * 255.0f);
             canvas.save();
             float f6 = this.scale;
-            canvas.scale(f6, f6, this.f1882cx, getMeasuredHeight());
-            canvas.translate(this.f1882cx - (this.tooltipLayout.getWidth() / 2.0f), BitmapDescriptorFactory.HUE_RED);
+            canvas.scale(f6, f6, this.f1873cx, getMeasuredHeight());
+            canvas.translate(this.f1873cx - (this.tooltipLayout.getWidth() / 2.0f), BitmapDescriptorFactory.HUE_RED);
             this.tooltipBackground.setBounds(-AndroidUtilities.m72dp(8), 0, this.tooltipLayout.getWidth() + AndroidUtilities.m72dp(8), (int) (this.tooltipLayout.getHeight() + AndroidUtilities.dpf2(4.0f)));
             this.tooltipBackgroundArrow.setBounds((this.tooltipLayout.getWidth() / 2) - (this.tooltipBackgroundArrow.getIntrinsicWidth() / 2), (int) (this.tooltipLayout.getHeight() + AndroidUtilities.dpf2(4.0f)), (this.tooltipLayout.getWidth() / 2) + (this.tooltipBackgroundArrow.getIntrinsicWidth() / 2), ((int) (this.tooltipLayout.getHeight() + AndroidUtilities.dpf2(4.0f))) + this.tooltipBackgroundArrow.getIntrinsicHeight());
             this.tooltipBackgroundArrow.setAlpha(i);
@@ -635,7 +635,7 @@ public class VideoTimelineView extends View {
         }
 
         public void setCx(float f) {
-            this.f1882cx = f;
+            this.f1873cx = f;
             invalidate();
         }
 

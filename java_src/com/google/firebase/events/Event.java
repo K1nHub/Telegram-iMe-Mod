@@ -1,5 +1,5 @@
 package com.google.firebase.events;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Event<T> {
     private final T payload;
     private final Class<T> type;

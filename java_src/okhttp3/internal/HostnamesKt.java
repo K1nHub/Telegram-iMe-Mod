@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import okio.Buffer;
 /* compiled from: hostnames.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HostnamesKt {
     /* JADX WARN: Removed duplicated region for block: B:11:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x006d A[RETURN] */
@@ -67,24 +67,24 @@ public final class HostnamesKt {
         L6d:
             return r3
         L6e:
-            java.lang.String r5 = java.net.IDN.toASCII(r5)     // Catch: java.lang.IllegalArgumentException -> La5
+            java.lang.String r5 = java.net.IDN.toASCII(r5)     // Catch: java.lang.IllegalArgumentException -> La4
             java.lang.String r0 = "IDN.toASCII(host)"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La5
-            java.util.Locale r0 = java.util.Locale.US     // Catch: java.lang.IllegalArgumentException -> La5
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La4
+            java.util.Locale r0 = java.util.Locale.US     // Catch: java.lang.IllegalArgumentException -> La4
             java.lang.String r2 = "Locale.US"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r2)     // Catch: java.lang.IllegalArgumentException -> La5
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r2)     // Catch: java.lang.IllegalArgumentException -> La4
             if (r5 == 0) goto L9c
-            java.lang.String r5 = r5.toLowerCase(r0)     // Catch: java.lang.IllegalArgumentException -> La5
+            java.lang.String r5 = r5.toLowerCase(r0)     // Catch: java.lang.IllegalArgumentException -> La4
             java.lang.String r0 = "(this as java.lang.String).toLowerCase(locale)"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La5
-            int r0 = r5.length()     // Catch: java.lang.IllegalArgumentException -> La5
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La4
+            int r0 = r5.length()     // Catch: java.lang.IllegalArgumentException -> La4
             if (r0 != 0) goto L90
             r1 = r4
         L90:
             if (r1 == 0) goto L93
             return r3
         L93:
-            boolean r0 = containsInvalidHostnameAsciiCodes(r5)     // Catch: java.lang.IllegalArgumentException -> La5
+            boolean r0 = containsInvalidHostnameAsciiCodes(r5)     // Catch: java.lang.IllegalArgumentException -> La4
             if (r0 == 0) goto L9a
             goto L9b
         L9a:
@@ -92,11 +92,11 @@ public final class HostnamesKt {
         L9b:
             return r3
         L9c:
-            java.lang.NullPointerException r5 = new java.lang.NullPointerException     // Catch: java.lang.IllegalArgumentException -> La5
+            java.lang.NullPointerException r5 = new java.lang.NullPointerException     // Catch: java.lang.IllegalArgumentException -> La4
             java.lang.String r0 = "null cannot be cast to non-null type java.lang.String"
-            r5.<init>(r0)     // Catch: java.lang.IllegalArgumentException -> La5
-            throw r5     // Catch: java.lang.IllegalArgumentException -> La5
-        La5:
+            r5.<init>(r0)     // Catch: java.lang.IllegalArgumentException -> La4
+            throw r5     // Catch: java.lang.IllegalArgumentException -> La4
+        La4:
             return r3
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.HostnamesKt.toCanonicalHost(java.lang.String):java.lang.String");

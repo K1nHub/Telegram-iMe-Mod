@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DebugMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ModuleNameRetriever {
     private static Cache cache;
     public static final ModuleNameRetriever INSTANCE = new ModuleNameRetriever();
@@ -13,7 +13,7 @@ public final class ModuleNameRetriever {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: DebugMetadata.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Cache {
         public final Method getDescriptorMethod;
         public final Method getModuleMethod;

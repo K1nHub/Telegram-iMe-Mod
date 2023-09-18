@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$Document extends TLObject {
     public long access_hash;
     public int date;
@@ -13,10 +13,10 @@ public abstract class TLRPC$Document extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1539id;
+    public long f1530id;
 
     /* renamed from: iv */
-    public byte[] f1540iv;
+    public byte[] f1531iv;
     public byte[] key;
     public String localPath;
     public String mime_type;
@@ -43,7 +43,7 @@ public abstract class TLRPC$Document extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.file_reference = abstractSerializedData2.readByteArray(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -91,7 +91,7 @@ public abstract class TLRPC$Document extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeByteArray(this.file_reference);
                         abstractSerializedData2.writeInt32(this.date);
@@ -121,7 +121,7 @@ public abstract class TLRPC$Document extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -135,7 +135,7 @@ public abstract class TLRPC$Document extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -153,7 +153,7 @@ public abstract class TLRPC$Document extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.mime_type = abstractSerializedData2.readString(z2);
@@ -180,7 +180,7 @@ public abstract class TLRPC$Document extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeString(this.mime_type);
@@ -203,7 +203,7 @@ public abstract class TLRPC$Document extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.file_reference = abstractSerializedData2.readByteArray(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -221,7 +221,7 @@ public abstract class TLRPC$Document extends TLObject {
                             int i2 = 0;
                             while (i2 < readInt322) {
                                 int i3 = i2;
-                                TLRPC$PhotoSize TLdeserialize = TLRPC$PhotoSize.TLdeserialize(0L, this.f1539id, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
+                                TLRPC$PhotoSize TLdeserialize = TLRPC$PhotoSize.TLdeserialize(0L, this.f1530id, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                                 if (TLdeserialize == null) {
                                     return;
                                 }
@@ -239,7 +239,7 @@ public abstract class TLRPC$Document extends TLObject {
                             }
                             int readInt324 = abstractSerializedData2.readInt32(z2);
                             for (int i4 = 0; i4 < readInt324; i4++) {
-                                TLRPC$VideoSize TLdeserialize2 = TLRPC$VideoSize.TLdeserialize(0L, this.f1539id, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
+                                TLRPC$VideoSize TLdeserialize2 = TLRPC$VideoSize.TLdeserialize(0L, this.f1530id, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                                 if (TLdeserialize2 == null) {
                                     return;
                                 }
@@ -268,7 +268,7 @@ public abstract class TLRPC$Document extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeByteArray(this.file_reference);
                         abstractSerializedData2.writeInt32(this.date);
@@ -309,7 +309,7 @@ public abstract class TLRPC$Document extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.user_id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -319,13 +319,13 @@ public abstract class TLRPC$Document extends TLObject {
                         this.thumbs.add(TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2));
                         this.dc_id = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1540iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1531iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32((int) this.user_id);
                         abstractSerializedData2.writeInt32(this.date);
@@ -335,7 +335,7 @@ public abstract class TLRPC$Document extends TLObject {
                         this.thumbs.get(0).serializeToStream(abstractSerializedData2);
                         abstractSerializedData2.writeInt32(this.dc_id);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1540iv);
+                        abstractSerializedData2.writeByteArray(this.f1531iv);
                     }
                 };
                 break;
@@ -348,7 +348,7 @@ public abstract class TLRPC$Document extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1539id = abstractSerializedData2.readInt64(z2);
+                        this.f1530id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.file_reference = abstractSerializedData2.readByteArray(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
@@ -376,7 +376,7 @@ public abstract class TLRPC$Document extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1539id);
+                        abstractSerializedData2.writeInt64(this.f1530id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeByteArray(this.file_reference);
                         abstractSerializedData2.writeInt32(this.date);

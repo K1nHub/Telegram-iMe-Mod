@@ -2,7 +2,7 @@ package io.grpc.okhttp;
 
 import io.grpc.InternalServiceProviders;
 import io.grpc.ManagedChannelProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OkHttpChannelProvider extends ManagedChannelProvider {
     public static final /* synthetic */ int $r8$clinit = 0;
 

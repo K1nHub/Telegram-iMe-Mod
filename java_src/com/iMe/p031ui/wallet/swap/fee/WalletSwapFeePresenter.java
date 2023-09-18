@@ -31,15 +31,14 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletSwapFeePresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeePresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeView> {
     private final SwapFeeScreenArgs args;
     private final Lazy deadlineOptions$delegate;
@@ -57,10 +56,6 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
     private final Lazy slipOptionsTitles$delegate;
     private final SwapInteractor swapInteractor;
 
-    static {
-        new Companion(null);
-    }
-
     public WalletSwapFeePresenter(SwapFeeScreenArgs args, SwapInteractor swapInteractor, SchedulersProvider schedulersProvider, ResourceManager resourceManager) {
         Lazy lazy;
         Lazy lazy2;
@@ -76,10 +71,6 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         this.swapInteractor = swapInteractor;
         this.schedulersProvider = schedulersProvider;
         this.resourceManager = resourceManager;
-        this.metadata = args.getMetadata();
-        this.selectedFee = args.getSelectedFee();
-        this.selectedDeadline = args.getSelectedDeadline();
-        this.selectedSlip = args.getSelectedSlippage();
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<TransactionSpeedLevel[]>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeePresenter$feesOptions$2
             @Override // kotlin.jvm.functions.Function0
             public final TransactionSpeedLevel[] invoke() {
@@ -143,9 +134,37 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
             }
         });
         this.slipOptionsTitles$delegate = lazy6;
+        this.metadata = args.getMetadata();
+        this.selectedFee = args.getSelectedFee();
+        this.selectedDeadline = args.getSelectedDeadline();
+        this.selectedSlip = args.getSelectedSlippage();
         PublishSubject<SwapSlippage> create = PublishSubject.create();
         Intrinsics.checkNotNullExpressionValue(create, "create()");
         this.slipChangeEvent = create;
+    }
+
+    public final TransactionSpeedLevel[] getFeesOptions() {
+        return (TransactionSpeedLevel[]) this.feesOptions$delegate.getValue();
+    }
+
+    public final String[] getFeesOptionsTitles() {
+        return (String[]) this.feesOptionsTitles$delegate.getValue();
+    }
+
+    public final SwapDeadline[] getDeadlineOptions() {
+        return (SwapDeadline[]) this.deadlineOptions$delegate.getValue();
+    }
+
+    public final String[] getDeadlineOptionsTitles() {
+        return (String[]) this.deadlineOptionsTitles$delegate.getValue();
+    }
+
+    public final SwapSlippage[] getSlipOptions() {
+        return (SwapSlippage[]) this.slipOptions$delegate.getValue();
+    }
+
+    public final String[] getSlipOptionsTitles() {
+        return (String[]) this.slipOptionsTitles$delegate.getValue();
     }
 
     public final CryptoSwapMetadata getMetadata() {
@@ -179,30 +198,6 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         this.selectedSlip = swapSlippage;
     }
 
-    public final TransactionSpeedLevel[] getFeesOptions() {
-        return (TransactionSpeedLevel[]) this.feesOptions$delegate.getValue();
-    }
-
-    public final String[] getFeesOptionsTitles() {
-        return (String[]) this.feesOptionsTitles$delegate.getValue();
-    }
-
-    public final SwapDeadline[] getDeadlineOptions() {
-        return (SwapDeadline[]) this.deadlineOptions$delegate.getValue();
-    }
-
-    public final String[] getDeadlineOptionsTitles() {
-        return (String[]) this.deadlineOptionsTitles$delegate.getValue();
-    }
-
-    public final SwapSlippage[] getSlipOptions() {
-        return (SwapSlippage[]) this.slipOptions$delegate.getValue();
-    }
-
-    public final String[] getSlipOptionsTitles() {
-        return (String[]) this.slipOptionsTitles$delegate.getValue();
-    }
-
     public final void selectFee(int i) {
         TransactionSpeedLevel transactionSpeedLevel = getFeesOptions()[i];
         this.selectedFee = new GasPriceItem(transactionSpeedLevel, this.metadata.getFeeToken(), this.metadata.getTransactionParams().getFeeByLevel(transactionSpeedLevel));
@@ -228,7 +223,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
     }
 
     private final void subscribeToChangeEvents() {
-        Observable<SwapSlippage> distinctUntilChanged = this.slipChangeEvent.debounce(250L, TimeUnit.MILLISECONDS).distinctUntilChanged();
+        Observable<SwapSlippage> distinctUntilChanged = this.slipChangeEvent.debounce(300L, TimeUnit.MILLISECONDS).distinctUntilChanged();
         final Function1<SwapSlippage, ObservableSource<? extends Result<? extends CryptoSwapMetadata>>> function1 = new Function1<SwapSlippage, ObservableSource<? extends Result<? extends CryptoSwapMetadata>>>() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeePresenter$subscribeToChangeEvents$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -254,7 +249,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
                 swapFeeScreenArgs4 = WalletSwapFeePresenter.this.args;
                 String bigDecimal = swapFeeScreenArgs4.getMetadata().getAmountIn().toString();
                 Intrinsics.checkNotNullExpressionValue(bigDecimal, "args.metadata.amountIn.toString()");
-                Observable<Result<CryptoSwapMetadata>> quoteToSwap = swapInteractor.getQuoteToSwap(protocol, indexedToken, indexedToken2, bigDecimal, TradeType.EXACT_INPUT, slippage.getPercent());
+                Observable<Result<CryptoSwapMetadata>> quoteToSwap = swapInteractor.getQuoteToSwap(protocol, indexedToken, indexedToken2, bigDecimal, TradeType.EXACT_INPUT, Float.valueOf(slippage.getPercent()));
                 T viewState = WalletSwapFeePresenter.this.getViewState();
                 Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
                 return RxExtKt.withLoadingDialog$default((Observable) quoteToSwap, (BaseView) viewState, false, 2, (Object) null);
@@ -276,12 +271,12 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoSwapMetadata> result) {
-                m1605invoke(result);
+                m1596invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1605invoke(Result<? extends CryptoSwapMetadata> it) {
+            public final void m1596invoke(Result<? extends CryptoSwapMetadata> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoSwapMetadata> result = it;
@@ -321,7 +316,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -346,7 +341,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapDeadline[] deadlineOptions = getDeadlineOptions();
         ArrayList arrayList = new ArrayList(deadlineOptions.length);
         for (SwapDeadline swapDeadline : deadlineOptions) {
-            arrayList.add(this.resourceManager.getString(C3558R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
+            arrayList.add(this.resourceManager.getString(C3473R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
         }
         return (String[]) arrayList.toArray(new String[0]);
     }
@@ -356,20 +351,8 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapSlippage[] slipOptions = getSlipOptions();
         ArrayList arrayList = new ArrayList(slipOptions.length);
         for (SwapSlippage swapSlippage : slipOptions) {
-            arrayList.add(this.resourceManager.getString(C3558R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
+            arrayList.add(this.resourceManager.getString(C3473R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
         }
         return (String[]) arrayList.toArray(new String[0]);
-    }
-
-    /* compiled from: WalletSwapFeePresenter.kt */
-    /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeePresenter$Companion */
-    /* loaded from: classes4.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
     }
 }

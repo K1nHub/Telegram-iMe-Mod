@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlaylistModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PlaylistModel {
     private final long dialogId;
     private final ArrayList<Integer> messageIds;

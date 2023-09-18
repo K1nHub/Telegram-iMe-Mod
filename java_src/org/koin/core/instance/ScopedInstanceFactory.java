@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: ScopedInstanceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ScopedInstanceFactory<T> extends InstanceFactory<T> {
     private HashMap<String, T> values;
 
@@ -46,7 +46,7 @@ public final class ScopedInstanceFactory<T> extends InstanceFactory<T> {
         if (!Intrinsics.areEqual(context.getScope().getScopeQualifier(), getBeanDefinition().getScopeQualifier())) {
             throw new IllegalStateException(("Wrong Scope: trying to open instance for " + context.getScope().getId() + " in " + getBeanDefinition()).toString());
         }
-        KoinPlatformTools.INSTANCE.m1698synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.ScopedInstanceFactory$get$1
+        KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.ScopedInstanceFactory$get$1
             final /* synthetic */ ScopedInstanceFactory<T> this$0;
 
             /* JADX INFO: Access modifiers changed from: package-private */

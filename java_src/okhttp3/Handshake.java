@@ -17,7 +17,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.Util;
 /* compiled from: Handshake.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Handshake {
     public static final Companion Companion = new Companion(null);
     private final CipherSuite cipherSuite;
@@ -128,7 +128,7 @@ public final class Handshake {
     }
 
     /* compiled from: Handshake.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -7,7 +7,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Charts.ChartPickerDelegate;
 /* renamed from: org.telegram.ui.Charts.ChartPickerDelegate */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChartPickerDelegate {
     public boolean disabled;
     ValueAnimator moveToAnimator;
@@ -27,7 +27,7 @@ public class ChartPickerDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Charts.ChartPickerDelegate$Listener */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void invalidate();
 
@@ -75,11 +75,11 @@ public class ChartPickerDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class CapturesData {
 
         /* renamed from: a */
-        ValueAnimator f1727a;
+        ValueAnimator f1718a;
         public float aValue = BitmapDescriptorFactory.HUE_RED;
         public int capturedX;
         public float end;
@@ -94,16 +94,16 @@ public class ChartPickerDelegate {
 
         public void captured() {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
-            this.f1727a = ofFloat;
+            this.f1718a = ofFloat;
             ofFloat.setDuration(600L);
-            this.f1727a.setInterpolator(BaseChartView.INTERPOLATOR);
-            this.f1727a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
+            this.f1718a.setInterpolator(BaseChartView.INTERPOLATOR);
+            this.f1718a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ChartPickerDelegate.CapturesData.this.lambda$captured$0(valueAnimator);
                 }
             });
-            this.f1727a.start();
+            this.f1718a.start();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -113,7 +113,7 @@ public class ChartPickerDelegate {
         }
 
         public void uncapture() {
-            ValueAnimator valueAnimator = this.f1727a;
+            ValueAnimator valueAnimator = this.f1718a;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }

@@ -13,7 +13,7 @@
     <string name="FwdMessagesToSavedMessages">Сообщения пересланы в **Облако**.</string>
     <string name="InvLinkToSavedMessages">Ссылка-приглашение отправлена в **Облако**.</string>
     <string name="InviteFriendsHelp">Выберите контакты, чтобы пригласить их в iMe</string>
-    <string name="InviteText2">Привет, я общаюсь с вами через iMe - это клиент Telegram с расширенной функциональностью. Скачайте iMe и общайтесь с пользователями Telegram в новом формате! %1$s</string>
+    <string name="InviteText2">Привет, я общаюсь с вами через iMe - это клиент Telegram с расширенным функционалом. Скачайте iMe и общайтесь с пользователями Telegram в новом формате! %1$s</string>
     <string name="InviteToTelegram">ПРИГЛАСИТЬ В iMe</string>
     <string name="MessagesPinned_few">%1$d сообщения закреплено</string>
     <string name="MessagesPinned_many">%1$d сообщений закреплено</string>
@@ -91,27 +91,8 @@
     <string name="already_removing">Другой процесс удаления уже запущен, повторите попытку позже</string>
     <string name="app_name">Responses</string>
     <string name="app_restart_error">Мы не смогли открыть приложение. Попробуйте сделать это самостоятельно.</string>
-    <string name="app_update_dialog_description">Обновите приложение, чтобы использовать данную функциональность</string>
+    <string name="app_update_dialog_description">Обновите приложение, чтобы использовать данный функционал</string>
     <string name="app_update_not_found">Установлена последняя версия приложения</string>
-    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Распространение отключено</string>
-    <string name="appcenter_distribute_download_progress_number_format">%1$d из %2$d МБ</string>
-    <string name="appcenter_distribute_downloading_mandatory_update">Скачивается обновление</string>
-    <string name="appcenter_distribute_install">Установить</string>
-    <string name="appcenter_distribute_install_ready_message">Обновление %1$s %2$s (%3$d) скачано и готово к установке.</string>
-    <string name="appcenter_distribute_install_ready_title">Обновление для приложения скачано</string>
-    <string name="appcenter_distribute_notification_category">Обновления приложения</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_message">В целях безопасности на вашем устройстве настроен запрет на установку приложений, полученных из неизвестных источников.</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_settings">Настройки</string>
-    <string name="appcenter_distribute_update_dialog_download">Скачать</string>
-    <string name="appcenter_distribute_update_dialog_message_mandatory">Вышло обязательное обновление. Вам необходимо обновиться до %1$s %2$s (%3$d).</string>
-    <string name="appcenter_distribute_update_dialog_message_optional">Обновление %1$s %2$s (%3$d) доступно для скачивания и установки.</string>
-    <string name="appcenter_distribute_update_dialog_postpone">Спросить завтра</string>
-    <string name="appcenter_distribute_update_dialog_title">Доступно обновление</string>
-    <string name="appcenter_distribute_update_dialog_view_release_notes">Просмотреть заметки о выпуске</string>
-    <string name="appcenter_distribute_update_failed_dialog_ignore">Игнорировать</string>
-    <string name="appcenter_distribute_update_failed_dialog_message">Эта версия была либо загружена, либо загружена с помощью браузера в частном режиме.</string>
-    <string name="appcenter_distribute_update_failed_dialog_reinstall">Переустановить приложение</string>
-    <string name="appcenter_distribute_update_failed_dialog_title">Обновления в приложении отключены</string>
     <string name="archive_content_is_hidden">Контент скрыт</string>
     <string name="archive_empty_subtitle">Здесь хранятся чаты, отправленные вами в архив</string>
     <string name="archive_empty_title">Архив пуст</string>
@@ -127,6 +108,7 @@
 Вы соглашаетесь с *Пользовательским Соглашением iMe*
 
 Мы оставляем за собой право обновлять данное Пользовательское Соглашение в будущем."</string>
+    <string name="auth_success">Авторизация успешно завершена</string>
     <string name="auto_open_forwarding_options">Автооткрытие опций пересылки</string>
     <string name="auto_open_forwarding_options_alert_message">Включить автооткрытие опций пересылки?</string>
     <string name="auto_open_forwarding_options_hint">"Вы всегда можете изменить это в 
@@ -587,7 +569,7 @@ Approval will be given for this smart contract:
     <string name="cryptobox_create_success_title">Успех</string>
     <string name="cryptobox_create_title">Создать новый Криптобокс</string>
     <string name="cryptobox_create_user_not_owner">Пожалуйста, добавьте бота в список админов для корректной работы Криптобоксов</string>
-    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Пожалуйста, выдайте права админа для @iMeWalletBot для корректной работы Криптобоксов</string>
+    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Пожалуйста, выдайте права админа для @iMe_Official_Bot для корректной работы Криптобоксов</string>
     <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_title">Требуются права админа</string>
     <string name="cryptobox_details_balance">Баланс</string>
     <string name="cryptobox_details_chat">Название чата</string>
@@ -601,6 +583,7 @@ Approval will be given for this smart contract:
     <string name="cryptobox_participation_chat_unavailable">Чат недоступен</string>
     <string name="cryptobox_participation_info_activate">Чтобы получить Криптобокс, вам нужно иметь активированный кошелек</string>
     <string name="cryptobox_participation_info_create">Для получения Криптобокса вам нужно создать или импортировать кошелек</string>
+    <string name="cryptobox_participation_info_forwarded">Криптобокс можно получить только в чате, в котором он был создан</string>
     <string name="cryptobox_participation_info_subscribe">Чтобы получить Криптобокс, вам нужно быть подписаным на %s</string>
     <string name="cryptobox_participation_success_description">Заявка на участие создана</string>
     <string name="cryptobox_participation_success_title">Успех</string>
@@ -758,6 +741,7 @@ Approval will be given for this smart contract:
     <string name="folder_tabs_remember_last_filter_tab_item_title">Запоминать вкладку</string>
     <string name="folder_tabs_settings_folders_first">Слева от вкладок сортировки</string>
     <string name="folder_tabs_settings_header">Настройки вкладок</string>
+    <string name="folder_tabs_settings_hide_folder_undo_messages">Папка скрыта из списка, ваши чаты не затронуты.</string>
     <string name="folder_tabs_settings_hide_folders">Скрыть папки</string>
     <string name="folder_tabs_sorting_settings">Вкладки по типу</string>
     <string name="folder_tabs_sorting_settings_item_title">Cортировка чатов</string>
@@ -1463,6 +1447,7 @@ Approval will be given for this smart contract:
     <string name="topic_create_discard_title">Создать топик?</string>
     <string name="topic_edit">Изменить топик</string>
     <string name="topic_edit_discard_message">Вы изменили настройки топика. Применить изменения?</string>
+    <string name="topic_hide_undo_messages">Топик скрыт из списка, ваши чаты не затронуты.</string>
     <string name="topic_main_chats">Основные чаты</string>
     <string name="topic_name_hint">Имя топика</string>
     <string name="topic_new">Новый топик</string>
@@ -1655,8 +1640,8 @@ Approval will be given for this smart contract:
     <string name="wallet_backup_ready">Готов!</string>
     <string name="wallet_backup_ready_info">Все настроено. Теперь у вас есть кошелек, который контролируете только вы - напрямую, без посредников и банкиров.</string>
     <string name="wallet_backup_scan_qr">Скан QR</string>
-    <string name="wallet_backup_secret_words">24 Секретных Слова</string>
-    <string name="wallet_backup_secret_words_info">"Запишите эти 24 слова в правильном порядке и храните их в надежном месте. 
+    <string name="wallet_backup_secret_words">Секретные Слова</string>
+    <string name="wallet_backup_secret_words_info">"Запишите эти слова в правильном порядке и храните их в надежном месте. 
 
 Используйте эти секретные слова для восстановления доступа к вашему кошельку, в случае утери пароля или девайса."</string>
     <string name="wallet_backup_secret_words_pdf">Сохранить как PDF</string>
@@ -1675,7 +1660,7 @@ Approval will be given for this smart contract:
     <string name="wallet_backup_test_time_alert_title">Неправильные слова</string>
     <string name="wallet_backup_test_time_info" formatted="false">"Теперь давайте проверим правильно ли вы записали ваши секретные слова.
 
-Пожалуйста введите слова **%d**, **%d** and **%d** ниже:"</string>
+Пожалуйста введите слова **%d**, **%d** и **%d** ниже:"</string>
     <string name="wallet_backup_test_time_title">Время для теста!</string>
     <string name="wallet_backup_view">Посмотреть Мой Кошелек</string>
     <string name="wallet_banner_slide_ascendeex_description">Глобальная платформа для криптоторговли</string>
@@ -1735,7 +1720,7 @@ Approval will be given for this smart contract:
     <string name="wallet_binance_pay_login_description">Свяжите свои аккаунты Binance и ID Telegram для получения и отправки переводов между пользователями через iMe.</string>
     <string name="wallet_binance_pay_login_positive_button">Начать</string>
     <string name="wallet_binance_pay_login_title">Создать</string>
-    <string name="wallet_binance_pay_not_activated_dialog_description">Чтобы воспользоваться данной функциональностью, пожалуйста, активируйте вкладку Binance внутри кошелька</string>
+    <string name="wallet_binance_pay_not_activated_dialog_description">Чтобы воспользоваться данным функционалом, пожалуйста, активируйте вкладку Binance внутри кошелька</string>
     <string name="wallet_binance_pay_not_activated_dialog_title">Binance не активирован</string>
     <string name="wallet_binance_pay_request_paid_success_dialog_description">Вы успешно оплатили запрос %1$s %2$s от пользователя ID %3$s.</string>
     <string name="wallet_binance_pay_request_paid_success_dialog_title">Успешная оплата</string>
@@ -1924,7 +1909,7 @@ Approval will be given for this smart contract:
     <string name="wallet_crypto_privacy_who_can_ask_section_title">Кто видит мой публичный адрес?</string>
     <string name="wallet_crypto_privacy_who_can_see_account_rank_section_description">Вы можете показать свой уровень LIME другим пользователям, который будет отображаться в вашем профиле.</string>
     <string name="wallet_crypto_privacy_who_can_see_account_rank_section_title">Кто видит мой уровень LIME?</string>
-    <string name="wallet_crypto_wallet_not_created_dialog_description">Чтобы использовать эту функциональность, пожалуйста, создайте криптокошелек</string>
+    <string name="wallet_crypto_wallet_not_created_dialog_description">Чтобы использовать этот функционал, пожалуйста, создайте криптокошелек</string>
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Создать</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Криптокошелек не создан</string>
     <string name="wallet_custom_tokens_empty_description">Вы можете найти токены или добавить их вручную</string>
@@ -2141,8 +2126,9 @@ iMe Wallet."</string>
     <string name="wallet_swap_process_confirm_approve_alert_action">Одобрение</string>
     <string name="wallet_swap_process_confirm_approve_alert_description">Вы действительно хотите совершить одобрение %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Подтверждение одобрения</string>
+    <string name="wallet_swap_process_confirm_binance_swap_alert_description">Вы уверены, что хотите сделать обмен **%1$s %2$s** на **%3$s %4$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Обмен</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Вы действительно хотите совершить обмен %1$s %2$s на %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Вы уверены, что хотите совершить обмен **%1$s %2$s** на **%3$s %4$s** с комиссией **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Подтверждение обмена</string>
     <string name="wallet_swap_process_description">Вы можете обменивать токены друг с другом через смарт-контракты, используя децентрализованную биржу Uniswap для сетей Ethereum и Polygon</string>
     <string name="wallet_swap_process_diff_tokens_validation">Пожалуйста, выберите разные отдаваемые и получаемые токены</string>
@@ -2154,6 +2140,9 @@ iMe Wallet."</string>
     <string name="wallet_swap_process_from_title">Я отдаю</string>
     <string name="wallet_swap_process_give_token_amount_validation">Пожалуйста, введите действительную отдаваемую сумму</string>
     <string name="wallet_swap_process_give_token_validation">Пожалуйста, выберите отдаваемый токен</string>
+    <string name="wallet_swap_process_insufficient_funds">Недостаточно средств</string>
+    <string name="wallet_swap_process_low_amount">Маленькая сумма</string>
+    <string name="wallet_swap_process_max">Макс:</string>
     <string name="wallet_swap_process_my_balance">Мой баланс: %1$s</string>
     <string name="wallet_swap_process_receive_token_amount_validation">Пожалуйста, выберите получаемый токен</string>
     <string name="wallet_swap_process_select_placeholder">Выбрать монету</string>
@@ -2166,7 +2155,7 @@ iMe Wallet."</string>
     <string name="wallet_swap_process_what_is_approve">Что такое одобрение токена?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">Одобрение - это разовая транзакция для токенов, необходимая до начала обмена. Этой операцией вы даете разрешение на обмен вашего токена по DEX протоколу с использованием смарт-контрактов. Поскольку эта операция происходит в блокчейне, будет удержана плата за Газ. Повторно одобрять текущий токен не потребуется.</string>
     <string name="wallet_swap_protocols_1inch_description">DEX агрегатор с лучшими ценами</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Вы можете обменивать токены друг с другом через смарт-контракты, используя DEX агрегатор по лучшим ценам для сетей Ethereum, BNB Chain, Polygon</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Вы можете обменивать токены друг с другом через смарт-контракты, используя DEX агрегатор по лучшим ценам для сетей Ethereum, BNB Chain, Polygon и Fantom</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Мост</string>
     <string name="wallet_swap_protocols_header_title">Децентрализованные биржи</string>
     <string name="wallet_swap_protocols_pancake_swap_description">DEX протокол на базе BNB Chain</string>
@@ -2267,6 +2256,7 @@ iMe Wallet."</string>
     <string name="wallet_transaction_details_transaction_hash_title">Хеш</string>
     <string name="wallet_transactions_header">Транзакции</string>
     <string name="wallet_transactions_toolbar_title">Транзакции</string>
+    <string name="wallet_transactions_type_1inch_fusion_title">Обмен через 1inch Fusion</string>
     <string name="wallet_transactions_type_1inch_title">Обмен через 1inch</string>
     <string name="wallet_transactions_type_approve_title">Одобрение токена %1$s</string>
     <string name="wallet_transactions_type_cancel_title">Отмена транзакции</string>

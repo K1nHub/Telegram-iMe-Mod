@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_botResults_layer153 extends TLRPC$messages_BotResults {
     public static int constructor = -1803769784;
 

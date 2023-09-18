@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StatisticDiagramModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StatisticDiagramModel {
     private final String diagramName;
     private final List<DiagramItem> values;
@@ -69,7 +69,7 @@ public final class StatisticDiagramModel {
     }
 
     /* compiled from: StatisticDiagramModel.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DiagramItem {
         private final int colorKey;
         private final String name;

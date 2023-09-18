@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.wearable.Channel;
 import com.google.android.gms.wearable.ChannelApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzhe implements ChannelApi.ChannelListener {
     private final String zza;
     private final ChannelApi.ChannelListener zzb;

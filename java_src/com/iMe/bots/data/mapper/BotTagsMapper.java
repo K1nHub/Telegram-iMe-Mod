@@ -5,7 +5,7 @@ import com.iMe.bots.domain.model.SmartTag;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotTagsMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotTagsMapper {
     static {
         new Companion(null);
@@ -29,7 +29,7 @@ public final class BotTagsMapper {
     }
 
     /* compiled from: BotTagsMapper.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

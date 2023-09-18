@@ -1,5 +1,5 @@
 package com.google.firebase.firestore;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SnapshotMetadata {
     private final boolean hasPendingWrites;
     private final boolean isFromCache;

@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components.Forum;
 import org.telegram.p043ui.Cells.ChatMessageCell;
 import org.telegram.p043ui.Components.AnimatedEmojiSpan;
 /* renamed from: org.telegram.ui.Components.Forum.MessageTopicButton$$ExternalSyntheticLambda0 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final /* synthetic */ class MessageTopicButton$$ExternalSyntheticLambda0 implements AnimatedEmojiSpan.InvalidateHolder {
     public final /* synthetic */ ChatMessageCell f$0;
 

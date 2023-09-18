@@ -9,7 +9,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadialProgressView;
 /* renamed from: org.telegram.ui.Cells.ChatLoadingCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChatLoadingCell extends FrameLayout {
     private FrameLayout frameLayout;
     private RadialProgressView progressBar;

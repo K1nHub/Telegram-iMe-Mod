@@ -25,7 +25,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.UserConfig;
 /* renamed from: org.telegram.ui.ActionBar.AdjustPanLayoutHelper */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AdjustPanLayoutHelper {
     public static boolean USE_ANDROID11_INSET_ANIMATOR = false;
     public static final Interpolator keyboardInterpolator = ChatListItemAnimator.DEFAULT_INTERPOLATOR;
@@ -53,7 +53,7 @@ public class AdjustPanLayoutHelper {
     long startAfter;
 
     /* renamed from: to */
-    float f1708to;
+    float f1699to;
     private boolean useInsetsAnimator;
     private boolean usingInsetAnimator;
     ArrayList<View> viewsToHeightSet;
@@ -174,7 +174,7 @@ public class AdjustPanLayoutHelper {
             r6 = 1065353216(0x3f800000, float:1.0)
             r5.onPanTranslationUpdate(r1, r6, r8)
             r5.from = r7
-            r5.f1708to = r4
+            r5.f1699to = r4
             r5.inverse = r3
             goto L74
         L5b:
@@ -189,7 +189,7 @@ public class AdjustPanLayoutHelper {
             int r6 = r5.previousStartOffset
             int r6 = -r6
             float r6 = (float) r6
-            r5.f1708to = r6
+            r5.f1699to = r6
             r5.from = r1
             r5.inverse = r2
         L74:
@@ -208,7 +208,7 @@ public class AdjustPanLayoutHelper {
         if (this.inverse) {
             f = 1.0f - f;
         }
-        float f2 = (int) ((this.from * f) + (this.f1708to * (1.0f - f)));
+        float f2 = (int) ((this.from * f) + (this.f1699to * (1.0f - f)));
         this.parent.setTranslationY(f2);
         onPanTranslationUpdate(-f2, f, this.isKeyboardVisible);
     }

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BERFactory {
     static final BERSequence EMPTY_SEQUENCE = new BERSequence();
 

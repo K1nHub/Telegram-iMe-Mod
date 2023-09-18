@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimpleTextWatcher.kt */
 /* renamed from: com.iMe.ui.common.SimpleTextWatcher */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SimpleTextWatcher implements TextWatcher {
     @Override // android.text.TextWatcher
     public void afterTextChanged(Editable s) {

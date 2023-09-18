@@ -10,7 +10,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.RoundVideoPlayingDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RoundVideoPlayingDrawable extends Drawable {
     public float colorProgress;
     private View parentView;

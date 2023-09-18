@@ -1,5 +1,5 @@
 package com.google.firebase.remoteconfig;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseRemoteConfigServerException extends FirebaseRemoteConfigException {
     private final int httpStatusCode;
 

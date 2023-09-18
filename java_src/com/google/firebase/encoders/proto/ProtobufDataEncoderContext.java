@@ -15,7 +15,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final Map<Class<?>, ObjectEncoder<?>> objectEncoders;
@@ -141,7 +141,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10061 {
 
         /* renamed from: $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding */

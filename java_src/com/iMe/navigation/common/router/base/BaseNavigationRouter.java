@@ -15,7 +15,7 @@ import java.util.Map;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseNavigationRouter.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseNavigationRouter<T extends MvpFragment> implements NavigationRouter<T> {
     private T currentActiveFragment;
     private final HashMap<Integer, T> fragmentsStack = new HashMap<>();
@@ -39,7 +39,7 @@ public abstract class BaseNavigationRouter<T extends MvpFragment> implements Nav
             T currentScreen = getCurrentScreen();
             Intrinsics.checkNotNull(currentScreen);
             View fragmentView2 = currentScreen.getFragmentView();
-            Intrinsics.checkNotNullExpressionValue(fragmentView2, "run {\n                sh…ragmentView\n            }");
+            Intrinsics.checkNotNullExpressionValue(fragmentView2, "run {\n            show(f…!!.fragmentView\n        }");
             return fragmentView2;
         }
         return fragmentView;

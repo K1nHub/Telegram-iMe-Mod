@@ -2,14 +2,14 @@ package org.bouncycastle.pqc.crypto.xmss;
 
 import org.bouncycastle.pqc.crypto.xmss.XMSSAddress;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class OTSHashAddress extends XMSSAddress {
     private final int chainAddress;
     private final int hashAddress;
     private final int otsAddress;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder extends XMSSAddress.Builder<Builder> {
         private int chainAddress;
         private int hashAddress;

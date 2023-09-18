@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_getInlineBotResults;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
 /* renamed from: org.telegram.ui.Adapters.BaseLocationAdapter */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseLocationAdapter extends RecyclerListView.SelectionAdapter {
     private int currentRequestNum;
     private BaseLocationAdapterDelegate delegate;
@@ -49,7 +49,7 @@ public abstract class BaseLocationAdapter extends RecyclerListView.SelectionAdap
     private int currentAccount = UserConfig.selectedAccount;
 
     /* renamed from: org.telegram.ui.Adapters.BaseLocationAdapter$BaseLocationAdapterDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface BaseLocationAdapterDelegate {
         void didLoadSearchResult(ArrayList<TLRPC$TL_messageMediaVenue> arrayList);
     }
@@ -311,7 +311,7 @@ public abstract class BaseLocationAdapter extends RecyclerListView.SelectionAdap
                         tLRPC$TL_messageMediaVenue.venue_id = tLRPC$TL_botInlineMessageMediaVenue.venue_id;
                         tLRPC$TL_messageMediaVenue.provider = tLRPC$TL_botInlineMessageMediaVenue.provider;
                         tLRPC$TL_messageMediaVenue.query_id = tLRPC$messages_BotResults.query_id;
-                        tLRPC$TL_messageMediaVenue.result_id = tLRPC$BotInlineResult.f1529id;
+                        tLRPC$TL_messageMediaVenue.result_id = tLRPC$BotInlineResult.f1520id;
                         this.places.add(tLRPC$TL_messageMediaVenue);
                     }
                 }

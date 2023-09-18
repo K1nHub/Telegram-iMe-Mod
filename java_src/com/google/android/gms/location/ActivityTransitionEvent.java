@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionEventCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityTransitionEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionEvent> CREATOR = new zzf();
     @SafeParcelable.Field(getter = "getActivityType", m797id = 1)

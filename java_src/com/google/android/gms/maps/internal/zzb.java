@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzb extends com.google.android.gms.internal.maps.zza implements ICameraUpdateFactoryDelegate {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzb(IBinder iBinder) {

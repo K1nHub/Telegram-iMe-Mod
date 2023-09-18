@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterFeedResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MediaInfo {
     @SerializedName(SessionDescription.ATTR_TYPE)
     private final String type;

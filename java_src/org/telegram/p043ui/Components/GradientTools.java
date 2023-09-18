@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Components.GradientTools */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GradientTools {
     int color1;
     int color2;

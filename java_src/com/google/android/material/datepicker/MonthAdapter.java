@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.Collection;
 import java.util.Iterator;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MonthAdapter extends BaseAdapter {
     static final int MAXIMUM_WEEKS = UtcDates.getUtcCalendar().getMaximum(4);
     final CalendarConstraints calendarConstraints;

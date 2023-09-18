@@ -14,15 +14,15 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.PhotoCropActivity;
 /* renamed from: org.telegram.ui.PhotoCropActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoCropActivity extends BaseFragment {
     private String bitmapKey;
     private PhotoEditActivityDelegate delegate;
@@ -33,7 +33,7 @@ public class PhotoCropActivity extends BaseFragment {
     private PhotoCropView view;
 
     /* renamed from: org.telegram.ui.PhotoCropActivity$PhotoEditActivityDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface PhotoEditActivityDelegate {
         void didFinishEdit(Bitmap bitmap);
     }
@@ -45,7 +45,7 @@ public class PhotoCropActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.PhotoCropActivity$PhotoCropView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class PhotoCropView extends FrameLayout {
         int bitmapHeight;
         int bitmapWidth;
@@ -295,11 +295,11 @@ public class PhotoCropActivity extends BaseFragment {
         this.actionBar.setItemsBackgroundColor(-12763843, false);
         this.actionBar.setTitleColor(-1);
         this.actionBar.setItemsColor(-1, false);
-        this.actionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("CropImage", C3558R.string.CropImage));
-        this.actionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("CropImage", C3473R.string.CropImage));
+        this.actionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     PhotoCropActivity.this.finishFragment();
@@ -316,7 +316,7 @@ public class PhotoCropActivity extends BaseFragment {
                 }
             }
         });
-        this.actionBar.createMenu().addItemWithWidth(1, C3558R.C3560drawable.ic_ab_done, AndroidUtilities.m72dp(56), LocaleController.getString("Done", C3558R.string.Done));
+        this.actionBar.createMenu().addItemWithWidth(1, C3473R.C3475drawable.ic_ab_done, AndroidUtilities.m72dp(56), LocaleController.getString("Done", C3473R.string.Done));
         PhotoCropView photoCropView = new PhotoCropView(context);
         this.view = photoCropView;
         this.fragmentView = photoCropView;

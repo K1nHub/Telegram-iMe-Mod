@@ -13,7 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NameResolverRegistry {
     private static NameResolverRegistry instance;
     private static final Logger logger = Logger.getLogger(NameResolverRegistry.class.getName());
@@ -79,7 +79,7 @@ public final class NameResolverRegistry {
         return Collections.unmodifiableList(arrayList);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class NameResolverFactory extends NameResolver.Factory {
         private NameResolverFactory() {
         }
@@ -102,7 +102,7 @@ public final class NameResolverRegistry {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class NameResolverPriorityAccessor implements ServiceProviders.PriorityAccessor<NameResolverProvider> {
         private NameResolverPriorityAccessor() {
         }

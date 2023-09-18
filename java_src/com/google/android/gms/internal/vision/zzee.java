@@ -7,7 +7,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzee<E> extends zzeb<E> implements List<E>, RandomAccess {
     private static final zzez<Object> zza = new zzed(zzep.zza, 0);
 

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: WalletCreationBaseFragment.kt */
 /* renamed from: com.iMe.ui.base.wallet_creation.WalletCreationBaseFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment {
     private final boolean shouldOpenCreationSuccess = true;
 
@@ -32,7 +32,7 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
     private final void listenGlobalRxEvents() {
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents, Unit>() { // from class: com.iMe.ui.base.wallet_creation.WalletCreationBaseFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -40,12 +40,12 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents domainRxEvents) {
-                m1351invoke(domainRxEvents);
+                m1349invoke(domainRxEvents);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1351invoke(DomainRxEvents it) {
+            public final void m1349invoke(DomainRxEvents it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents domainRxEvents = it;
                 if (domainRxEvents instanceof DomainRxEvents.WalletCreated ? true : domainRxEvents instanceof DomainRxEvents.WalletRestored) {
@@ -77,7 +77,7 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         autoDispose(subscribe);
     }
 

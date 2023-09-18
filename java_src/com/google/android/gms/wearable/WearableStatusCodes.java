@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WearableStatusCodes extends CommonStatusCodes {
     public static final int ACCOUNT_KEY_CREATION_FAILED = 4010;
     public static final int ASSET_UNAVAILABLE = 4005;

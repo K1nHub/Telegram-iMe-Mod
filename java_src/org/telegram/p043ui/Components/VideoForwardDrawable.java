@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.VideoForwardDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoForwardDrawable extends Drawable {
     private static final int[] playPath = {10, 7, 26, 16, 10, 25};
     private boolean animating;
@@ -31,7 +31,7 @@ public class VideoForwardDrawable extends Drawable {
     private float playScaleFactor = 1.0f;
 
     /* renamed from: org.telegram.ui.Components.VideoForwardDrawable$VideoForwardDrawableDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VideoForwardDrawableDelegate {
         void invalidate();
 

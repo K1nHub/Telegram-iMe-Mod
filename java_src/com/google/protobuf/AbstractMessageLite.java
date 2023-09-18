@@ -11,7 +11,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractMessageLite<MessageType extends AbstractMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> implements MessageLite {
     protected int memoizedHashCode = 0;
 
@@ -99,7 +99,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         Builder.addAll((Iterable) iterable, (List) list);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder<MessageType extends AbstractMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> implements MessageLite.Builder {
         public abstract BuilderType clone();
 
@@ -186,7 +186,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class LimitedInputStream extends FilterInputStream {
             private int limit;
 

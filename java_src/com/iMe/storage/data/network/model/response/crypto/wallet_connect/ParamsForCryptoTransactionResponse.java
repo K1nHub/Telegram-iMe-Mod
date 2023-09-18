@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionPara
 import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ParamsForCryptoTransactionResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ParamsForCryptoTransactionResponse {
     private final String data;
     private final TokenDetailedResponse feeToken;

@@ -7,7 +7,7 @@ import com.google.firebase.appindexing.FirebaseAppIndexingInvalidArgumentExcepti
 import com.google.firebase.appindexing.FirebaseAppIndexingTooManyArgumentsException;
 import com.google.firebase.appindexing.zza;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzaf {
     public static FirebaseAppIndexingException zza(Status status, String str) {
         Preconditions.checkNotNull(status);

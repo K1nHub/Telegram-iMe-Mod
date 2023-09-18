@@ -3,7 +3,7 @@ package org.webrtc;
 import com.google.android.exoplayer2.C0479C;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class JniHelper {
     JniHelper() {
     }

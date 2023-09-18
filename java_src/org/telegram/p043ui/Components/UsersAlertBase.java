@@ -29,7 +29,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.p043ui.ActionBar.BottomSheet;
@@ -41,7 +41,7 @@ import org.telegram.p043ui.Components.AnimationProperties;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.Components.UsersAlertBase;
 /* renamed from: org.telegram.ui.Components.UsersAlertBase */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class UsersAlertBase extends BottomSheet {
     private int backgroundColor;
     private float colorProgress;
@@ -117,7 +117,7 @@ public class UsersAlertBase extends BottomSheet {
         updateColorKeys();
         setDimBehindAlpha(75);
         this.currentAccount = i;
-        this.shadowDrawable = context.getResources().getDrawable(C3558R.C3560drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3473R.C3475drawable.sheet_shadow_round).mutate();
         ContainerView createContainerView = createContainerView(context);
         this.containerView = createContainerView;
         createContainerView.setWillNotDraw(false);
@@ -138,8 +138,8 @@ public class UsersAlertBase extends BottomSheet {
         StickerEmptyView stickerEmptyView = new StickerEmptyView(context, this.flickerLoadingView, 1);
         this.emptyView = stickerEmptyView;
         stickerEmptyView.addView(this.flickerLoadingView, 0, LayoutHelper.createFrame(-1, -1, 0, 0, 2, 0, 0));
-        this.emptyView.title.setText(LocaleController.getString("NoResult", C3558R.string.NoResult));
-        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3558R.string.SearchEmptyViewFilteredSubtitle2));
+        this.emptyView.title.setText(LocaleController.getString("NoResult", C3473R.string.NoResult));
+        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3473R.string.SearchEmptyViewFilteredSubtitle2));
         this.emptyView.setVisibility(8);
         this.emptyView.setAnimateLayoutChange(true);
         this.emptyView.showProgress(true, false);
@@ -215,7 +215,7 @@ public class UsersAlertBase extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: org.telegram.ui.Components.UsersAlertBase$SearchField */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class SearchField extends FrameLayout {
         private final ImageView clearSearchImageView;
         private final CloseProgressDrawable2 progressDrawable;
@@ -232,7 +232,7 @@ public class UsersAlertBase extends BottomSheet {
             ImageView imageView = new ImageView(context);
             this.searchIconImageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3558R.C3560drawable.smiles_inputsearch);
+            imageView.setImageResource(C3473R.C3475drawable.smiles_inputsearch);
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(UsersAlertBase.this.keySearchPlaceholder, ((BottomSheet) UsersAlertBase.this).resourcesProvider), PorterDuff.Mode.MULTIPLY));
             addView(imageView, LayoutHelper.createFrame(36, 36, 51, 16, 11, 0, 0));
             ImageView imageView2 = new ImageView(context);
@@ -280,7 +280,7 @@ public class UsersAlertBase extends BottomSheet {
             this.searchEditText.setLines(1);
             this.searchEditText.setSingleLine(true);
             this.searchEditText.setImeOptions(268435459);
-            this.searchEditText.setHint(LocaleController.getString("VoipGroupSearchMembers", C3558R.string.VoipGroupSearchMembers));
+            this.searchEditText.setHint(LocaleController.getString("VoipGroupSearchMembers", C3473R.string.VoipGroupSearchMembers));
             this.searchEditText.setCursorColor(Theme.getColor(UsersAlertBase.this.keySearchText));
             this.searchEditText.setCursorSize(AndroidUtilities.m72dp(20));
             this.searchEditText.setCursorWidth(1.5f);
@@ -525,7 +525,7 @@ public class UsersAlertBase extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: org.telegram.ui.Components.UsersAlertBase$ContainerView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ContainerView extends FrameLayout {
         private boolean ignoreLayout;
         float snapToTopOffset;

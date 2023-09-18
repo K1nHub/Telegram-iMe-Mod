@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Iterators {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <T> UnmodifiableIterator<T> emptyIterator() {
@@ -18,7 +18,7 @@ public final class Iterators {
         return (UnmodifiableListIterator<T>) ArrayItr.EMPTY;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private enum EmptyModifiableIterator implements Iterator<Object>, p033j$.util.Iterator {
         INSTANCE;
 
@@ -223,7 +223,7 @@ public final class Iterators {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ArrayItr<T> extends AbstractIndexedListIterator<T> {
         static final UnmodifiableListIterator<Object> EMPTY = new ArrayItr(new Object[0], 0, 0, 0);
         private final T[] array;

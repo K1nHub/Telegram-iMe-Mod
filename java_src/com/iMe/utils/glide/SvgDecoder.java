@@ -11,7 +11,7 @@ import java.io.InputStream;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: SvgDecoder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SvgDecoder implements ResourceDecoder<InputStream, SVG> {
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean handles(InputStream source, Options options) {

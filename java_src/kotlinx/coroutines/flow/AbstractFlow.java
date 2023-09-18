@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 /* compiled from: Flow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractFlow<T> implements Flow<T> {
     public abstract Object collectSafely(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation);
 

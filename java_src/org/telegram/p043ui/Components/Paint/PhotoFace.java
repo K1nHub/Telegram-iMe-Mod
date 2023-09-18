@@ -7,7 +7,7 @@ import com.google.android.gms.vision.face.Landmark;
 import org.telegram.p043ui.Components.Point;
 import org.telegram.p043ui.Components.Size;
 /* renamed from: org.telegram.ui.Components.Paint.PhotoFace */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoFace {
     private float angle;
     private Point chinPoint;
@@ -37,32 +37,32 @@ public class PhotoFace {
             }
         }
         if (point != null && point2 != null) {
-            if (point.f1815x < point2.f1815x) {
+            if (point.f1806x < point2.f1806x) {
                 Point point5 = point2;
                 point2 = point;
                 point = point5;
             }
-            this.eyesCenterPoint = new Point((point.f1815x * 0.5f) + (point2.f1815x * 0.5f), (point.f1816y * 0.5f) + (point2.f1816y * 0.5f));
-            this.eyesDistance = (float) Math.hypot(point2.f1815x - point.f1815x, point2.f1816y - point.f1816y);
-            this.angle = (float) Math.toDegrees(Math.atan2(point2.f1816y - point.f1816y, point2.f1815x - point.f1815x) + 3.141592653589793d);
+            this.eyesCenterPoint = new Point((point.f1806x * 0.5f) + (point2.f1806x * 0.5f), (point.f1807y * 0.5f) + (point2.f1807y * 0.5f));
+            this.eyesDistance = (float) Math.hypot(point2.f1806x - point.f1806x, point2.f1807y - point.f1807y);
+            this.angle = (float) Math.toDegrees(Math.atan2(point2.f1807y - point.f1807y, point2.f1806x - point.f1806x) + 3.141592653589793d);
             float f = this.eyesDistance;
             this.width = 2.35f * f;
             float f2 = f * 0.8f;
             double radians = (float) Math.toRadians(degrees - 90.0f);
-            this.foreheadPoint = new Point(this.eyesCenterPoint.f1815x + (((float) Math.cos(radians)) * f2), this.eyesCenterPoint.f1816y + (f2 * ((float) Math.sin(radians))));
+            this.foreheadPoint = new Point(this.eyesCenterPoint.f1806x + (((float) Math.cos(radians)) * f2), this.eyesCenterPoint.f1807y + (f2 * ((float) Math.sin(radians))));
         }
         if (point3 == null || point4 == null) {
             return;
         }
-        if (point3.f1815x < point4.f1815x) {
+        if (point3.f1806x < point4.f1806x) {
             Point point6 = point4;
             point4 = point3;
             point3 = point6;
         }
-        this.mouthPoint = new Point((point3.f1815x * 0.5f) + (point4.f1815x * 0.5f), (point3.f1816y * 0.5f) + (point4.f1816y * 0.5f));
+        this.mouthPoint = new Point((point3.f1806x * 0.5f) + (point4.f1806x * 0.5f), (point3.f1807y * 0.5f) + (point4.f1807y * 0.5f));
         float f3 = this.eyesDistance * 0.7f;
         double radians2 = (float) Math.toRadians(this.angle + 90.0f);
-        this.chinPoint = new Point(this.mouthPoint.f1815x + (((float) Math.cos(radians2)) * f3), this.mouthPoint.f1816y + (f3 * ((float) Math.sin(radians2))));
+        this.chinPoint = new Point(this.mouthPoint.f1806x + (((float) Math.cos(radians2)) * f3), this.mouthPoint.f1807y + (f3 * ((float) Math.sin(radians2))));
     }
 
     public boolean isSufficient() {

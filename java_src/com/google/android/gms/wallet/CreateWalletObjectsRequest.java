@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CreateWalletObjectsRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CreateWalletObjectsRequest> CREATOR = new zzi();
     public static final int REQUEST_IMMEDIATE_SAVE = 1;
@@ -26,7 +26,7 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
     int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzh zzhVar) {
         }
@@ -60,7 +60,7 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface CreateMode {
     }
 

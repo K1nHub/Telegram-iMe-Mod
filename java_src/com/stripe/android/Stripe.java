@@ -14,7 +14,7 @@ import com.stripe.android.net.RequestOptions;
 import com.stripe.android.net.StripeApiHandler;
 import com.stripe.android.util.StripeNetworkUtils;
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Stripe {
     private String defaultPublishableKey;
     TokenCreator tokenCreator = new TokenCreator() { // from class: com.stripe.android.Stripe.1
@@ -41,7 +41,7 @@ public class Stripe {
     };
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface TokenCreator {
         void create(Card card, String str, Executor executor, TokenCallback tokenCallback);
     }
@@ -128,7 +128,7 @@ public class Stripe {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResponseWrapper {
         final Exception error;
         final Token token;

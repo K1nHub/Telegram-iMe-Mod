@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "SleepClassifyEventCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SleepClassifyEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SleepClassifyEvent> CREATOR = new zzaf();
     @SafeParcelable.Field(getter = "getTimestampSec", m797id = 1)

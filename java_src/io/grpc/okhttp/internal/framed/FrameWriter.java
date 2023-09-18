@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.List;
 import okio.Buffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface FrameWriter extends Closeable {
     void ackSettings(Settings settings) throws IOException;
 

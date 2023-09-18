@@ -47,7 +47,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import wallet.core.jni.Mnemonic;
 /* compiled from: CryptoWalletInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoWalletInteractor {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoLocalWalletRepository cryptoLocalWalletRepository;

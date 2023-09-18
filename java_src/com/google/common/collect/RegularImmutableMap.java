@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RegularImmutableMap<K, V> extends ImmutableMap<K, V> {
     static final ImmutableMap<Object, Object> EMPTY = new RegularImmutableMap(null, new Object[0], 0);
     final transient Object[] alternatingKeysAndValues;
@@ -273,7 +273,7 @@ public final class RegularImmutableMap<K, V> extends ImmutableMap<K, V> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class EntrySet<K, V> extends ImmutableSet<Map.Entry<K, V>> {
         private final transient Object[] alternatingKeysAndValues;
         private final transient int keyOffset;
@@ -352,7 +352,7 @@ public final class RegularImmutableMap<K, V> extends ImmutableMap<K, V> {
         return new KeySet(this, new KeysOrValuesAsList(this.alternatingKeysAndValues, 0, this.size));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class KeysOrValuesAsList extends ImmutableList<Object> {
         private final transient Object[] alternatingKeysAndValues;
         private final transient int offset;
@@ -384,7 +384,7 @@ public final class RegularImmutableMap<K, V> extends ImmutableMap<K, V> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class KeySet<K> extends ImmutableSet<K> {
         private final transient ImmutableList<K> list;
         private final transient ImmutableMap<K, ?> map;

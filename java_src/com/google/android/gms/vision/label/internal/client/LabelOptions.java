@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Reserved({1})
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LabelOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelOptions> CREATOR = new zzh();
     @SafeParcelable.Field(m797id = 2)

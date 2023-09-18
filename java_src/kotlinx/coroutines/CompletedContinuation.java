@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancellableContinuationImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class CompletedContinuation {
     public final Throwable cancelCause;
     public final CancelHandler cancelHandler;

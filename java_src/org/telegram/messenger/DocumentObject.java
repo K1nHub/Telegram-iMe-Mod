@@ -16,10 +16,10 @@ import org.telegram.tgnet.TLRPC$TL_photoPathSize;
 import org.telegram.tgnet.TLRPC$TL_wallPaper;
 import org.telegram.tgnet.TLRPC$ThemeSettings;
 import org.telegram.tgnet.TLRPC$WallPaper;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DocumentObject {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ThemeDocument extends TLRPC$TL_document {
         public Theme.ThemeAccent accent;
         public Theme.ThemeInfo baseTheme;
@@ -35,7 +35,7 @@ public class DocumentObject {
             if (tLRPC$WallPaper instanceof TLRPC$TL_wallPaper) {
                 TLRPC$Document tLRPC$Document = ((TLRPC$TL_wallPaper) tLRPC$WallPaper).document;
                 this.wallpaper = tLRPC$Document;
-                this.f1539id = tLRPC$Document.f1539id;
+                this.f1530id = tLRPC$Document.f1530id;
                 this.access_hash = tLRPC$Document.access_hash;
                 this.file_reference = tLRPC$Document.file_reference;
                 this.user_id = tLRPC$Document.user_id;
@@ -47,11 +47,11 @@ public class DocumentObject {
                 this.version = tLRPC$Document.version;
                 this.dc_id = tLRPC$Document.dc_id;
                 this.key = tLRPC$Document.key;
-                this.f1540iv = tLRPC$Document.f1540iv;
+                this.f1531iv = tLRPC$Document.f1531iv;
                 this.attributes = tLRPC$Document.attributes;
                 return;
             }
-            this.f1539id = -2147483648L;
+            this.f1530id = -2147483648L;
             this.dc_id = Integer.MIN_VALUE;
         }
     }
@@ -66,8 +66,8 @@ public class DocumentObject {
             if (tLRPC$PhotoSize instanceof TLRPC$TL_photoPathSize) {
                 tLRPC$TL_photoPathSize = (TLRPC$TL_photoPathSize) tLRPC$PhotoSize;
             } else {
-                i2 = tLRPC$PhotoSize.f1563w;
-                i3 = tLRPC$PhotoSize.f1562h;
+                i2 = tLRPC$PhotoSize.f1554w;
+                i3 = tLRPC$PhotoSize.f1553h;
             }
             if (tLRPC$TL_photoPathSize != null && i2 != 0 && i3 != 0) {
                 SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tLRPC$TL_photoPathSize.svgPath, i2, i3);
@@ -147,8 +147,8 @@ public class DocumentObject {
                     }
                     i5++;
                 }
-                int i6 = tLRPC$DocumentAttribute.f1542w;
-                int i7 = tLRPC$DocumentAttribute.f1541h;
+                int i6 = tLRPC$DocumentAttribute.f1533w;
+                int i7 = tLRPC$DocumentAttribute.f1532h;
                 i2 = i6;
                 i3 = i7;
                 if (i2 != 0 && i3 != 0 && (svgDrawable = SvgHelper.getDrawableByPath(((TLRPC$TL_photoPathSize) tLRPC$PhotoSize).svgPath, (int) (i2 * f2), (int) (i3 * f2))) != null) {

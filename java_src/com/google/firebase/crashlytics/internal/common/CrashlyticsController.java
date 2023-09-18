@@ -34,7 +34,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsController {
     static final FilenameFilter APP_EXCEPTION_MARKER_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda0
         @Override // java.io.FilenameFilter
@@ -190,7 +190,7 @@ public class CrashlyticsController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.crashlytics.internal.common.CrashlyticsController$4 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class C09534 implements SuccessContinuation<Boolean, Void> {
         final /* synthetic */ Task val$appSettingsDataTask;
 

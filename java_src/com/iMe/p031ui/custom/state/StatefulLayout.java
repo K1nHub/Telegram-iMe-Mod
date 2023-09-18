@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 /* compiled from: StatefulLayout.kt */
 /* renamed from: com.iMe.ui.custom.state.StatefulLayout */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StatefulLayout extends FrameLayout {
     private boolean mDirtyFlag;
     private boolean mInitialized;
@@ -28,14 +28,14 @@ public class StatefulLayout extends FrameLayout {
 
     /* compiled from: StatefulLayout.kt */
     /* renamed from: com.iMe.ui.custom.state.StatefulLayout$OnStateChangeListener */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnStateChangeListener {
         void onStateChange(String str);
     }
 
     /* compiled from: StatefulLayout.kt */
     /* renamed from: com.iMe.ui.custom.state.StatefulLayout$StateController */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StateController {
     }
 
@@ -192,7 +192,7 @@ public class StatefulLayout extends FrameLayout {
 
     /* compiled from: StatefulLayout.kt */
     /* renamed from: com.iMe.ui.custom.state.StatefulLayout$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

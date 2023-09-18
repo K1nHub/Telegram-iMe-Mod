@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RLottieImageView;
@@ -39,7 +39,7 @@ public final class CryptoBoxesHeaderProvider extends BaseNodeProvider<CryptoBoxe
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CRYPTOBOXES_HEADER;
-        this.layoutId = C3558R.layout.fork_recycle_item_cryptoboxes_header;
+        this.layoutId = C3473R.layout.fork_recycle_item_cryptoboxes_header;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesHeaderProvider$buttonCornerRadius$2
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -69,11 +69,11 @@ public final class CryptoBoxesHeaderProvider extends BaseNodeProvider<CryptoBoxe
     public void convert(BaseViewHolder helper, CryptoBoxesHeaderItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3558R.C3561id.linear_root, Theme.key_windowBackgroundWhite);
-        int i = C3558R.C3561id.text_description;
+        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3473R.C3476id.linear_root, Theme.key_windowBackgroundWhite);
+        int i = C3473R.C3476id.text_description;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, Theme.key_windowBackgroundWhiteBlackText);
-        int i2 = C3558R.C3561id.text_new_cryptobox;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_featuredStickers_buttonText), i2).setText(i, this.resourceManager.getString(C3558R.string.cryptoboxes_description)).setText(i2, this.resourceManager.getString(C3558R.string.cryptoboxes_create_new)), C3558R.C3561id.image_header, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesHeaderProvider$convert$1
+        int i2 = C3473R.C3476id.text_new_cryptobox;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_featuredStickers_buttonText), i2).setText(i, this.resourceManager.getString(C3473R.string.cryptoboxes_description)).setText(i2, this.resourceManager.getString(C3473R.string.cryptoboxes_create_new)), C3473R.C3476id.image_header, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesHeaderProvider$convert$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RLottieImageView rLottieImageView) {
                 invoke2(rLottieImageView);
@@ -84,10 +84,10 @@ public final class CryptoBoxesHeaderProvider extends BaseNodeProvider<CryptoBoxe
             public final void invoke2(RLottieImageView applyForView) {
                 Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
                 applyForView.setAutoRepeat(true);
-                applyForView.setAnimation(C3558R.raw.fork_cryptoboxes, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                applyForView.setAnimation(C3473R.raw.fork_cryptoboxes, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
                 applyForView.playAnimation();
             }
-        }), C3558R.C3561id.button_new_cryptobox, new Function1<FrameLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesHeaderProvider$convert$2
+        }), C3473R.C3476id.button_new_cryptobox, new Function1<FrameLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesHeaderProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

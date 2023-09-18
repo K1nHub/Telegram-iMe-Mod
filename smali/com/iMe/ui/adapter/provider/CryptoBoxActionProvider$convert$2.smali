@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxActionProvider$convert$2;->this$0:Lcom/iMe/ui/adapter/provider/CryptoBoxActionProvider;
 
-    .line 48
+    .line 49
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -84,9 +84,10 @@
 
     move-result-object v2
 
+    .line 48
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 49
+    .line 50
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/CryptoBoxActionProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/CryptoBoxActionProvider;)F
 
     move-result v1

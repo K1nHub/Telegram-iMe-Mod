@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt__JobKt;
 /* compiled from: PresenterScope.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PresenterScopeKt {
     public static final CoroutineScope getPresenterScope(MvpPresenter<?> presenterScope) {
         CompletableJob Job$default;

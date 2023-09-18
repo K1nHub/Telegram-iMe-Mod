@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.StreetViewSource;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StreetViewPanoramaOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaOptions> CREATOR = new zzap();
     @SafeParcelable.Field(getter = "getStreetViewPanoramaCamera", m797id = 2)

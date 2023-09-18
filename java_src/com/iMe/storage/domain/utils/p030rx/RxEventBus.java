@@ -5,7 +5,7 @@ import io.reactivex.subjects.PublishSubject;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RxEventBus.kt */
 /* renamed from: com.iMe.storage.domain.utils.rx.RxEventBus */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RxEventBus {
     private final PublishSubject<Object> publisher;
     private final SchedulersProvider schedulersProvider;

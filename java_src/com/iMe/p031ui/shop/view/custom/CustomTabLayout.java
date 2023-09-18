@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CustomTabLayout.kt */
 /* renamed from: com.iMe.ui.shop.view.custom.CustomTabLayout */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CustomTabLayout extends TabLayout {
     static {
         new Companion(null);
@@ -68,7 +68,7 @@ public final class CustomTabLayout extends TabLayout {
 
     /* compiled from: CustomTabLayout.kt */
     /* renamed from: com.iMe.ui.shop.view.custom.CustomTabLayout$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

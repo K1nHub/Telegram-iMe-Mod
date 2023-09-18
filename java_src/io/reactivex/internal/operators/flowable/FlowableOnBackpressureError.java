@@ -9,7 +9,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FlowableOnBackpressureError<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableOnBackpressureError(Flowable<T> flowable) {
         super(flowable);
@@ -20,7 +20,7 @@ public final class FlowableOnBackpressureError<T> extends AbstractFlowableWithUp
         this.source.subscribe((FlowableSubscriber) new BackpressureErrorSubscriber(subscriber));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BackpressureErrorSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super T> downstream;

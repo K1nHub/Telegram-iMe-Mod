@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import java.util.concurrent.atomic.AtomicLong;
 /* compiled from: Debug.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DebugKt {
     private static final boolean ASSERTIONS_ENABLED = false;
     private static final AtomicLong COROUTINE_ID;

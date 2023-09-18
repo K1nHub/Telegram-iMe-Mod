@@ -8,7 +8,7 @@ import java.nio.FloatBuffer;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: GlRect.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GlRect extends Gl2dDrawable {
     @Deprecated
     private static final float[] FULL_RECTANGLE_COORDS;
@@ -24,7 +24,7 @@ public class GlRect extends Gl2dDrawable {
     }
 
     /* compiled from: GlRect.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -7,7 +7,7 @@ import android.view.TextureView;
 import org.telegram.p043ui.Components.FilterGLThread;
 import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* renamed from: org.telegram.ui.Components.VideoEditTextureView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoEditTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     private VideoPlayer currentVideoPlayer;
     private VideoEditTextureViewDelegate delegate;
@@ -18,7 +18,7 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
     private Rect viewRect;
 
     /* renamed from: org.telegram.ui.Components.VideoEditTextureView$VideoEditTextureViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VideoEditTextureViewDelegate {
         void onEGLThreadAvailable(FilterGLThread filterGLThread);
     }
@@ -149,17 +149,17 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
 
     public void setViewRect(float f, float f2, float f3, float f4) {
         Rect rect = this.viewRect;
-        rect.f1856x = f;
-        rect.f1857y = f2;
+        rect.f1847x = f;
+        rect.f1848y = f2;
         rect.width = f3;
         rect.height = f4;
     }
 
     public boolean containsPoint(float f, float f2) {
         Rect rect = this.viewRect;
-        float f3 = rect.f1856x;
+        float f3 = rect.f1847x;
         if (f >= f3 && f <= f3 + rect.width) {
-            float f4 = rect.f1857y;
+            float f4 = rect.f1848y;
             if (f2 >= f4 && f2 <= f4 + rect.height) {
                 return true;
             }

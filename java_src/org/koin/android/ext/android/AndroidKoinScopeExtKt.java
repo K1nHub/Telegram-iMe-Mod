@@ -8,7 +8,7 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.context.GlobalContext;
 import org.koin.core.scope.Scope;
 /* compiled from: AndroidKoinScopeExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidKoinScopeExtKt {
     public static final Scope getKoinScope(ComponentCallbacks componentCallbacks) {
         Intrinsics.checkNotNullParameter(componentCallbacks, "<this>");

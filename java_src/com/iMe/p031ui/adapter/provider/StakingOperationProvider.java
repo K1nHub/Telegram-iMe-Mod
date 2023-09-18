@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider */
@@ -34,7 +34,7 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.STAKING_OPERATION;
-        this.layoutId = C3558R.layout.fork_recycle_item_wallet_transaction;
+        this.layoutId = C3473R.layout.fork_recycle_item_wallet_transaction;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.StakingOperationProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -46,7 +46,7 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
             public final Float invoke() {
                 ResourceManager resourceManager2;
                 resourceManager2 = StakingOperationProvider.this.resourceManager;
-                return Float.valueOf(resourceManager2.getDimens(C3558R.dimen.icon_size_default) / 2);
+                return Float.valueOf(resourceManager2.getDimens(C3473R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -71,21 +71,21 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
     public void convert(BaseViewHolder helper, final StakingOperationItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, C3558R.C3561id.linear_root, false);
-        int i = C3558R.C3561id.text_date;
+        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, C3473R.C3476id.linear_root, false);
+        int i = C3473R.C3476id.text_date;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i, Theme.key_chats_date);
-        int i2 = C3558R.C3561id.text_amount;
+        int i2 = C3473R.C3476id.text_amount;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_chats_name);
-        int i3 = C3558R.C3561id.text_status;
+        int i3 = C3473R.C3476id.text_status;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i3, item.getStatusColor());
-        int i4 = C3558R.C3561id.text_transaction_type_title;
+        int i4 = C3473R.C3476id.text_transaction_type_title;
         BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i4, Theme.key_chats_message);
-        int i5 = C3558R.C3561id.view_divider;
+        int i5 = C3473R.C3476id.view_divider;
         BaseNodeAdapter<StakingOperationItem> adapter = getAdapter();
         Intrinsics.checkNotNull(adapter);
         BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(themedTextColor4, i5, !RecycleViewExtKt.isLastItem(helper, adapter));
-        int i6 = C3558R.C3561id.image_staking_icon;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.loadImage$default(visibleElseGone.setVisible(i6, item.isBadgeVisible()).setImageResource(C3558R.C3561id.image_transaction_type_icon, item.getIcon()), i6, item.getToken().getAvatarUrl(), null, false, 12, null), i2).setText(i3, item.getStatusText(this.resourceManager)).setText(i2, item.getAmount(this.resourceManager)).setText(i4, item.getTransactionTitle(this.resourceManager)), i, new Function1<TimeWithClockView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingOperationProvider$convert$1
+        int i6 = C3473R.C3476id.image_staking_icon;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.loadImage$default(visibleElseGone.setVisible(i6, item.isBadgeVisible()).setImageResource(C3473R.C3476id.image_transaction_type_icon, item.getIcon()), i6, item.getToken().getAvatarUrl(), null, false, 12, null), i2).setText(i3, item.getStatusText(this.resourceManager)).setText(i2, item.getAmount(this.resourceManager)).setText(i4, item.getTransactionTitle(this.resourceManager)), i, new Function1<TimeWithClockView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingOperationProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

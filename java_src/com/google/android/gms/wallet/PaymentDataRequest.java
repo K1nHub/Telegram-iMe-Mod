@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentDataRequestCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PaymentDataRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentDataRequest> CREATOR = new zzac();
     @SafeParcelable.Field(m797id = 1)
@@ -39,7 +39,7 @@ public final class PaymentDataRequest extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzab zzabVar) {
         }

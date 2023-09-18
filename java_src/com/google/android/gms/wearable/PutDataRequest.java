@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 @VisibleForTesting
 @SafeParcelable.Class(creator = "PutDataRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PutDataRequest extends AbstractSafeParcelable {
     public static final String WEAR_URI_SCHEME = "wear";
     @SafeParcelable.Field(getter = "getUri", m797id = 2)

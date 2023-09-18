@@ -3,7 +3,7 @@ package kotlinx.coroutines.internal;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlinx.coroutines.DebugKt;
 /* compiled from: Atomic.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AtomicOp<T> extends OpDescriptor {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _consensus$FU = AtomicReferenceFieldUpdater.newUpdater(AtomicOp.class, Object.class, "_consensus");
     private volatile /* synthetic */ Object _consensus = AtomicKt.NO_DECISION;

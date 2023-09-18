@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ArrayDecoders {
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Registers {
         public final ExtensionRegistryLite extensionRegistry;
         public int int1;
@@ -864,7 +864,7 @@ public final class ArrayDecoders {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.ArrayDecoders$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C11911 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 

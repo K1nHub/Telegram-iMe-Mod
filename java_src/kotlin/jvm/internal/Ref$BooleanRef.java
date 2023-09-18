@@ -1,7 +1,7 @@
 package kotlin.jvm.internal;
 
 import java.io.Serializable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Ref$BooleanRef implements Serializable {
     public boolean element;
 

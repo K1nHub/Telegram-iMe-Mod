@@ -1,5 +1,5 @@
 package kotlin.text;
 /* compiled from: _StringsJvm.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class StringsKt___StringsJvmKt extends StringsKt__StringsKt {
 }

@@ -12,7 +12,7 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.PhotoFilterView;
 /* renamed from: org.telegram.ui.Components.PhotoFilterCurvesControl */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoFilterCurvesControl extends View {
     private int activeSegment;
     private Rect actualArea;
@@ -28,7 +28,7 @@ public class PhotoFilterCurvesControl extends View {
     private TextPaint textPaint;
 
     /* renamed from: org.telegram.ui.Components.PhotoFilterCurvesControl$PhotoFilterCurvesControlDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PhotoFilterCurvesControlDelegate {
         void valueChanged();
     }
@@ -64,8 +64,8 @@ public class PhotoFilterCurvesControl extends View {
 
     public void setActualArea(float f, float f2, float f3, float f4) {
         Rect rect = this.actualArea;
-        rect.f1856x = f;
-        rect.f1857y = f2;
+        rect.f1847x = f;
+        rect.f1848y = f2;
         rect.width = f3;
         rect.height = f4;
     }
@@ -119,14 +119,14 @@ public class PhotoFilterCurvesControl extends View {
             float r2 = r8.getY()
             r7.lastY = r2
             org.telegram.ui.Components.Rect r4 = r7.actualArea
-            float r5 = r4.f1856x
+            float r5 = r4.f1847x
             int r6 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
             if (r6 < 0) goto L61
             float r6 = r4.width
             float r5 = r5 + r6
             int r0 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
             if (r0 > 0) goto L61
-            float r0 = r4.f1857y
+            float r0 = r4.f1848y
             int r5 = (r2 > r0 ? 1 : (r2 == r0 ? 0 : -1))
             if (r5 < 0) goto L61
             float r4 = r4.height
@@ -201,7 +201,7 @@ public class PhotoFilterCurvesControl extends View {
             return;
         }
         Rect rect = this.actualArea;
-        this.activeSegment = (int) Math.floor(((f - rect.f1856x) / (rect.width / 5.0f)) + 1.0f);
+        this.activeSegment = (int) Math.floor(((f - rect.f1847x) / (rect.width / 5.0f)) + 1.0f);
     }
 
     private void unselectSegments() {
@@ -217,14 +217,14 @@ public class PhotoFilterCurvesControl extends View {
         float f = this.actualArea.width / 5.0f;
         for (int i = 0; i < 4; i++) {
             Rect rect = this.actualArea;
-            float f2 = rect.f1856x;
+            float f2 = rect.f1847x;
             float f3 = i * f;
-            float f4 = rect.f1857y;
+            float f4 = rect.f1848y;
             canvas.drawLine(f2 + f + f3, f4, f2 + f + f3, f4 + rect.height, this.paint);
         }
         Rect rect2 = this.actualArea;
-        float f5 = rect2.f1856x;
-        float f6 = rect2.f1857y;
+        float f5 = rect2.f1847x;
+        float f6 = rect2.f1848y;
         canvas.drawLine(f5, f6 + rect2.height, f5 + rect2.width, f6, this.paintDash);
         PhotoFilterView.CurvesValue curvesValue = null;
         int i2 = this.curveValue.activeType;
@@ -256,7 +256,7 @@ public class PhotoFilterCurvesControl extends View {
             }
             float measureText = this.textPaint.measureText(format);
             Rect rect3 = this.actualArea;
-            canvas.drawText(format, rect3.f1856x + ((f - measureText) / 2.0f) + (i3 * f), (rect3.f1857y + rect3.height) - AndroidUtilities.m72dp(4), this.textPaint);
+            canvas.drawText(format, rect3.f1847x + ((f - measureText) / 2.0f) + (i3 * f), (rect3.f1848y + rect3.height) - AndroidUtilities.m72dp(4), this.textPaint);
             i3++;
         }
         float[] interpolateCurve = curvesValue.interpolateCurve();
@@ -267,12 +267,12 @@ public class PhotoFilterCurvesControl extends View {
                 Path path = this.path;
                 Rect rect4 = this.actualArea;
                 int i5 = i4 * 2;
-                path.moveTo(rect4.f1856x + (interpolateCurve[i5] * rect4.width), rect4.f1857y + ((1.0f - interpolateCurve[i5 + 1]) * rect4.height));
+                path.moveTo(rect4.f1847x + (interpolateCurve[i5] * rect4.width), rect4.f1848y + ((1.0f - interpolateCurve[i5 + 1]) * rect4.height));
             } else {
                 Path path2 = this.path;
                 Rect rect5 = this.actualArea;
                 int i6 = i4 * 2;
-                path2.lineTo(rect5.f1856x + (interpolateCurve[i6] * rect5.width), rect5.f1857y + ((1.0f - interpolateCurve[i6 + 1]) * rect5.height));
+                path2.lineTo(rect5.f1847x + (interpolateCurve[i6] * rect5.width), rect5.f1848y + ((1.0f - interpolateCurve[i6 + 1]) * rect5.height));
             }
         }
         canvas.drawPath(this.path, this.paintCurve);

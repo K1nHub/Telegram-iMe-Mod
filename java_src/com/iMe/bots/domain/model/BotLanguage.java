@@ -3,7 +3,7 @@ package com.iMe.bots.domain.model;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotLanguage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum BotLanguage {
     RU("ru"),
     EN("eng");
@@ -20,7 +20,7 @@ public enum BotLanguage {
     }
 
     /* compiled from: BotLanguage.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

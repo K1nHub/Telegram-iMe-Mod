@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.internal.ClientStreamListener;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FailingClientStream extends NoopClientStream {
     private final Status error;
     private final ClientStreamListener.RpcProgress rpcProgress;

@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.wearable.MessageApi;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfj extends zzu {
     private MessageApi.MessageListener zza;
     private ListenerHolder zzb;

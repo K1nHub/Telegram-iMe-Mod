@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzaf extends zzx {
     static final zzx zza = new zzaf(null, new Object[0], 0);
     final transient Object[] zzb;

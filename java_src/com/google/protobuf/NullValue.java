@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.protobuf.Internal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum NullValue implements Internal.EnumLite {
     NULL_VALUE(0),
     UNRECOGNIZED(-1);
@@ -43,7 +43,7 @@ public enum NullValue implements Internal.EnumLite {
         return NullValueVerifier.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class NullValueVerifier implements Internal.EnumVerifier {
         static final Internal.EnumVerifier INSTANCE = new NullValueVerifier();
 

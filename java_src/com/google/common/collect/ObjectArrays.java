@@ -1,5 +1,5 @@
 package com.google.common.collect;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ObjectArrays {
     public static <T> T[] newArray(T[] tArr, int i) {
         return (T[]) Platform.newArray(tArr, i);

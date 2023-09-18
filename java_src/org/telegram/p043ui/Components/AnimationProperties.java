@@ -9,7 +9,7 @@ import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import org.telegram.p043ui.Cells.DialogCell;
 import org.telegram.p043ui.PhotoViewer;
 /* renamed from: org.telegram.ui.Components.AnimationProperties */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimationProperties {
     public static final Property<ClippingImageView, Float> CLIPPING_IMAGE_VIEW_PROGRESS;
     public static final Property<DialogCell, Float> CLIP_DIALOG_CELL_PROGRESS;
@@ -99,7 +99,7 @@ public class AnimationProperties {
     }
 
     /* renamed from: org.telegram.ui.Components.AnimationProperties$FloatProperty */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class FloatProperty<T> extends Property<T, Float> {
         public abstract void setValue(T t, float f);
 
@@ -120,7 +120,7 @@ public class AnimationProperties {
     }
 
     /* renamed from: org.telegram.ui.Components.AnimationProperties$IntProperty */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class IntProperty<T> extends Property<T, Integer> {
         public abstract void setValue(T t, int i);
 

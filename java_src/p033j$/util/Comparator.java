@@ -47,32 +47,32 @@ public interface Comparator<T> {
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, Function function, java.util.Comparator comparator2) {
             Objects.requireNonNull(function);
             Objects.requireNonNull(comparator2);
-            return EL.m650a(comparator, new C2921c(comparator2, function));
+            return EL.m650a(comparator, new C2837c(comparator2, function));
         }
 
         /* renamed from: a */
         public static java.util.Comparator m651a() {
-            return EnumC2952e.INSTANCE;
+            return EnumC2868e.INSTANCE;
         }
 
         public static <T, U extends Comparable<? super U>> java.util.Comparator<T> comparing(Function<? super T, ? extends U> function) {
             Objects.requireNonNull(function);
-            return new C2951d(function);
+            return new C2867d(function);
         }
 
         public static <T> java.util.Comparator<T> comparingDouble(ToDoubleFunction<? super T> toDoubleFunction) {
             Objects.requireNonNull(toDoubleFunction);
-            return new C2951d(toDoubleFunction);
+            return new C2867d(toDoubleFunction);
         }
 
         public static <T> java.util.Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
             Objects.requireNonNull(toIntFunction);
-            return new C2951d(toIntFunction);
+            return new C2867d(toIntFunction);
         }
 
         public static <T> java.util.Comparator<T> comparingLong(ToLongFunction<? super T> toLongFunction) {
             Objects.requireNonNull(toLongFunction);
-            return new C2951d(toLongFunction);
+            return new C2867d(toLongFunction);
         }
 
         public static <T extends Comparable<? super T>> java.util.Comparator<T> reverseOrder() {
@@ -81,7 +81,7 @@ public interface Comparator<T> {
 
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, java.util.Comparator comparator2) {
             Objects.requireNonNull(comparator2);
-            return new C2921c(comparator, comparator2);
+            return new C2837c(comparator, comparator2);
         }
     }
 }

@@ -11,7 +11,7 @@ import okio.Sink;
 import okio.Source;
 /* compiled from: FileSystem.kt */
 /* renamed from: okhttp3.internal.io.FileSystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface FileSystem {
     public static final FileSystem SYSTEM;
 
@@ -33,7 +33,7 @@ public interface FileSystem {
 
     /* compiled from: FileSystem.kt */
     /* renamed from: okhttp3.internal.io.FileSystem$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -44,7 +44,7 @@ public interface FileSystem {
 
         /* compiled from: FileSystem.kt */
         /* renamed from: okhttp3.internal.io.FileSystem$Companion$SystemFileSystem */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private static final class SystemFileSystem implements FileSystem {
             public String toString() {
                 return "FileSystem.SYSTEM";

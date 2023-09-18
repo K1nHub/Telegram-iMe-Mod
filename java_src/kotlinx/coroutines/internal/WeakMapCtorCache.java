@@ -4,7 +4,7 @@ import java.util.WeakHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import kotlin.jvm.functions.Function1;
 /* compiled from: ExceptionsConstructor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class WeakMapCtorCache extends CtorCache {
     public static final WeakMapCtorCache INSTANCE = new WeakMapCtorCache();
     private static final ReentrantReadWriteLock cacheLock = new ReentrantReadWriteLock();

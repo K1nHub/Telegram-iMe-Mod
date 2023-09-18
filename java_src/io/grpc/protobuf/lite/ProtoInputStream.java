@@ -9,7 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ProtoInputStream extends InputStream implements Drainable, KnownLength {
     private MessageLite message;
     private final Parser<?> parser;

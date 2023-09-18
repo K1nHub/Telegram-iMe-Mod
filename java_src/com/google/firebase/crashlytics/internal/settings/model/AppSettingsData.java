@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.settings.model;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppSettingsData {
     public AppSettingsData(String str, String str2, String str3, String str4, String str5, String str6, boolean z, int i, int i2) {
     }

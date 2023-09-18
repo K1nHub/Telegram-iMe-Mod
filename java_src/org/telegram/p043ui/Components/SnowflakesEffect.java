@@ -13,7 +13,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.SnowflakesEffect */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SnowflakesEffect {
     private int color;
     private long lastAnimationTime;
@@ -28,7 +28,7 @@ public class SnowflakesEffect {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.SnowflakesEffect$Particle */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class Particle {
         float alpha;
         float currentTime;
@@ -38,16 +38,16 @@ public class SnowflakesEffect {
         float velocity;
 
         /* renamed from: vx */
-        float f1868vx;
+        float f1859vx;
 
         /* renamed from: vy */
-        float f1869vy;
+        float f1860vy;
 
         /* renamed from: x */
-        float f1870x;
+        float f1861x;
 
         /* renamed from: y */
-        float f1871y;
+        float f1862y;
 
         private Particle() {
         }
@@ -55,7 +55,7 @@ public class SnowflakesEffect {
         public void draw(Canvas canvas) {
             if (this.type == 0) {
                 SnowflakesEffect.this.particlePaint.setAlpha((int) (this.alpha * 255.0f));
-                canvas.drawPoint(this.f1870x, this.f1871y, SnowflakesEffect.this.particlePaint);
+                canvas.drawPoint(this.f1861x, this.f1862y, SnowflakesEffect.this.particlePaint);
                 return;
             }
             float f = -1.5707964f;
@@ -92,9 +92,9 @@ public class SnowflakesEffect {
             SnowflakesEffect.this.bitmapPaint.setAlpha((int) (this.alpha * 255.0f));
             canvas.save();
             float f6 = this.scale;
-            canvas.scale(f6, f6, this.f1870x, this.f1871y);
+            canvas.scale(f6, f6, this.f1861x, this.f1862y);
             SnowflakesEffect snowflakesEffect2 = SnowflakesEffect.this;
-            canvas.drawBitmap(snowflakesEffect2.particleBitmap, this.f1870x, this.f1871y, snowflakesEffect2.bitmapPaint);
+            canvas.drawBitmap(snowflakesEffect2.particleBitmap, this.f1861x, this.f1862y, snowflakesEffect2.bitmapPaint);
             canvas.restore();
         }
     }
@@ -157,12 +157,12 @@ public class SnowflakesEffect {
                 } else if (f2 - f < 2000.0f) {
                     particle.alpha = AndroidUtilities.decelerateInterpolator.getInterpolation((f2 - f) / 2000.0f);
                 }
-                float f3 = particle.f1870x;
-                float f4 = particle.f1868vx;
+                float f3 = particle.f1861x;
+                float f4 = particle.f1859vx;
                 float f5 = particle.velocity;
                 float f6 = (float) j;
-                particle.f1870x = f3 + (((f4 * f5) * f6) / 500.0f);
-                particle.f1871y += ((particle.f1869vy * f5) * f6) / 500.0f;
+                particle.f1861x = f3 + (((f4 * f5) * f6) / 500.0f);
+                particle.f1862y += ((particle.f1860vy * f5) * f6) / 500.0f;
                 particle.currentTime += f6;
             }
             i++;
@@ -196,10 +196,10 @@ public class SnowflakesEffect {
                     } else {
                         particle = new Particle();
                     }
-                    particle.f1870x = nextFloat;
-                    particle.f1871y = nextFloat2;
-                    particle.f1868vx = cos;
-                    particle.f1869vy = sin;
+                    particle.f1861x = nextFloat;
+                    particle.f1862y = nextFloat2;
+                    particle.f1859vx = cos;
+                    particle.f1860vy = sin;
                     particle.alpha = BitmapDescriptorFactory.HUE_RED;
                     particle.currentTime = BitmapDescriptorFactory.HUE_RED;
                     particle.scale = Utilities.random.nextFloat() * 1.2f;

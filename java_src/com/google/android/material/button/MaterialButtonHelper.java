@@ -21,7 +21,7 @@ import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialButtonHelper {
     private static final boolean IS_LOLLIPOP;
     private ColorStateList backgroundTint;

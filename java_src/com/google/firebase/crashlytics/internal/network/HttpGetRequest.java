@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class HttpGetRequest {
     private final Map<String, String> headers = new HashMap();
     private final Map<String, String> queryParams;

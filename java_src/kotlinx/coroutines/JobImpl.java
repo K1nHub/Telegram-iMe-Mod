@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class JobImpl extends JobSupport implements CompletableJob {
     private final boolean handlesException;
 

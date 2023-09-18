@@ -13,7 +13,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableSwitchMapSingle<T, R> extends Observable<R> {
     final boolean delayErrors;
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
@@ -33,7 +33,7 @@ public final class ObservableSwitchMapSingle<T, R> extends Observable<R> {
         this.source.subscribe(new SwitchMapSingleMainObserver(observer, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class SwitchMapSingleMainObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         static final SwitchMapSingleObserver<Object> INNER_DISPOSED = new SwitchMapSingleObserver<>(null);
         volatile boolean cancelled;
@@ -176,7 +176,7 @@ public final class ObservableSwitchMapSingle<T, R> extends Observable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class SwitchMapSingleObserver<R> extends AtomicReference<Disposable> implements SingleObserver<R> {
             volatile R item;
             final SwitchMapSingleMainObserver<?, R> parent;

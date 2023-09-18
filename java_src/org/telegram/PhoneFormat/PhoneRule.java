@@ -1,5 +1,5 @@
 package org.telegram.PhoneFormat;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PhoneRule {
     public int flag12;
     public String format;

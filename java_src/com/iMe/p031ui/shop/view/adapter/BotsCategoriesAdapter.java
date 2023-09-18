@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: BotsCategoriesAdapter.kt */
 /* renamed from: com.iMe.ui.shop.view.adapter.BotsCategoriesAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsCategoriesAdapter extends RecyclerListView.SelectionAdapter {
     private List<Object> content = new ArrayList();
     private final int currentAccount;

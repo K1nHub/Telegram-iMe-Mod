@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.SendingFileDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SendingFileDrawable extends StatusDrawable {
     Paint currentPaint;
     private float progress;

@@ -21,7 +21,7 @@ import javax.crypto.spec.OAEPParameterSpec;
 import javax.crypto.spec.PSource;
 import org.telegram.messenger.support.fingerprint.FingerprintManagerCompat;
 import timber.log.Timber;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
     private static Cipher cipher;

@@ -10,7 +10,7 @@ import com.iMe.model.cryptobox.CryptoBoxesListHeaderItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxesDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.adapter.diff.CryptoBoxesDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoBoxesDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

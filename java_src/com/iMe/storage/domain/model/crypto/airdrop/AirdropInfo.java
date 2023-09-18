@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.airdrop;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AirdropInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AirdropInfo {
     public /* synthetic */ AirdropInfo(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -13,7 +13,7 @@ public abstract class AirdropInfo {
     }
 
     /* compiled from: AirdropInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ready extends AirdropInfo {
         private final String requestId;
         private final int tokenValue;
@@ -78,7 +78,7 @@ public abstract class AirdropInfo {
     }
 
     /* compiled from: AirdropInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NotReady extends AirdropInfo {
         public static final NotReady INSTANCE = new NotReady();
 

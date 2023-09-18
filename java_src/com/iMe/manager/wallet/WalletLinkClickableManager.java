@@ -19,9 +19,9 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletLinkClickableManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletLinkClickableManager {
     private final CryptoAccessManager accessManager;
     private final ClickableItem clickableItem;
@@ -31,7 +31,7 @@ public final class WalletLinkClickableManager {
     private WalletLinkClickableView viewState;
 
     /* compiled from: WalletLinkClickableManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -151,7 +151,7 @@ public final class WalletLinkClickableManager {
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
         Pair[] pairArr = new Pair[2];
-        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m103to(this.resourceManager.getString(C3558R.string.wallet_user_id_dialog_go_to_profile_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$1
+        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m103to(this.resourceManager.getString(C3473R.string.wallet_user_id_dialog_go_to_profile_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -169,7 +169,7 @@ public final class WalletLinkClickableManager {
                 return null;
             }
         }) : null;
-        pairArr[1] = TuplesKt.m103to(this.resourceManager.getString(C3558R.string.wallet_user_id_dialog_copy_id_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$2
+        pairArr[1] = TuplesKt.m103to(this.resourceManager.getString(C3473R.string.wallet_user_id_dialog_copy_id_action), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getUserIdAlertOptions$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -205,7 +205,7 @@ public final class WalletLinkClickableManager {
         List filterNotNull;
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(TuplesKt.m103to(this.resourceManager.getString(C3558R.string.wallet_token_details_action_copy_address), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getAddressAlertOptions$1
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(TuplesKt.m103to(this.resourceManager.getString(C3473R.string.wallet_token_details_action_copy_address), new Function0<Unit>() { // from class: com.iMe.manager.wallet.WalletLinkClickableManager$getAddressAlertOptions$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

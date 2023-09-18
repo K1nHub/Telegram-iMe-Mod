@@ -2,7 +2,7 @@ package com.iMe.model.multireply;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MessageLinkModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessageLinkModel {
     private final int messageId;
     private final String messageLink;

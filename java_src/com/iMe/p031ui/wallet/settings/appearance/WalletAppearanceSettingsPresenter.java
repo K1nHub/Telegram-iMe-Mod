@@ -15,7 +15,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletAppearanceSettingsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletAppearanceSettingsPresenter extends BasePresenter<WalletAppearanceSettingsView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;

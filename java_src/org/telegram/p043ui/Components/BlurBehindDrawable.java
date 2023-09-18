@@ -15,7 +15,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ChatActivity;
 import org.telegram.p043ui.Components.BlurBehindDrawable;
 /* renamed from: org.telegram.ui.Components.BlurBehindDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BlurBehindDrawable {
     private Bitmap[] backgroundBitmap;
     private Canvas[] backgroundBitmapCanvas;
@@ -369,7 +369,7 @@ public class BlurBehindDrawable {
     }
 
     /* renamed from: org.telegram.ui.Components.BlurBehindDrawable$BlurBackgroundTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class BlurBackgroundTask implements Runnable {
         boolean canceled;
         int height;

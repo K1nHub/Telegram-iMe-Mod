@@ -7,7 +7,7 @@ import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.tabs.TabLayout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TabIndicatorInterpolator {
     static RectF calculateTabViewContentBounds(TabLayout.TabView tabView, int i) {
         int contentWidth = tabView.getContentWidth();

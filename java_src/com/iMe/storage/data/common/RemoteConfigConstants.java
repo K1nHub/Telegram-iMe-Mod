@@ -4,7 +4,7 @@ import java.util.Map;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 /* compiled from: RemoteConfigConstants.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteConfigConstants {
     public static final RemoteConfigConstants INSTANCE = new RemoteConfigConstants();
     private static final Map<String, Object> defaultValues;

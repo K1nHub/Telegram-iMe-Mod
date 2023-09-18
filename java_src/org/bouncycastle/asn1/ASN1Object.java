@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import org.bouncycastle.util.Encodable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ASN1Object implements ASN1Encodable, Encodable {
     public void encodeTo(OutputStream outputStream) throws IOException {
         ASN1OutputStream.create(outputStream).writeObject(this);

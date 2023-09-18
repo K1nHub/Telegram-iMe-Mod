@@ -27,12 +27,12 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.voip.AcceptDeclineView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AcceptDeclineView extends View {
     private Paint acceptCirclePaint;
     private FabBackgroundDrawable acceptDrawable;
@@ -70,7 +70,7 @@ public class AcceptDeclineView extends View {
     float touchSlop;
 
     /* renamed from: org.telegram.ui.Components.voip.AcceptDeclineView$Listener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Listener {
         void onAccept();
 
@@ -102,21 +102,21 @@ public class AcceptDeclineView extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(AndroidUtilities.m72dp(11));
         textPaint.setColor(-1);
-        String string = LocaleController.getString("AcceptCall", C3558R.string.AcceptCall);
-        String string2 = LocaleController.getString("DeclineCall", C3558R.string.DeclineCall);
-        String string3 = LocaleController.getString("RetryCall", C3558R.string.RetryCall);
+        String string = LocaleController.getString("AcceptCall", C3473R.string.AcceptCall);
+        String string2 = LocaleController.getString("DeclineCall", C3473R.string.DeclineCall);
+        String string3 = LocaleController.getString("RetryCall", C3473R.string.RetryCall);
         this.acceptLayout = new StaticLayout(string, textPaint, (int) textPaint.measureText(string), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         this.declineLayout = new StaticLayout(string2, textPaint, (int) textPaint.measureText(string2), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         this.retryLayout = new StaticLayout(string3, textPaint, (int) textPaint.measureText(string3), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
-        this.callDrawable = ContextCompat.getDrawable(context, C3558R.C3560drawable.calls_decline).mutate();
-        Drawable mutate = ContextCompat.getDrawable(context, C3558R.C3560drawable.ic_close_white).mutate();
+        this.callDrawable = ContextCompat.getDrawable(context, C3473R.C3475drawable.calls_decline).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3473R.C3475drawable.ic_close_white).mutate();
         this.cancelDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         this.acceptCirclePaint.setColor(1061534797);
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m72dp(52), 0, ColorUtils.setAlphaComponent(-1, 76));
         this.rippleDrawable = createSimpleSelectorCircleDrawable;
         createSimpleSelectorCircleDrawable.setCallback(this);
-        this.arrowDrawable = ContextCompat.getDrawable(context, C3558R.C3560drawable.call_arrow_right);
+        this.arrowDrawable = ContextCompat.getDrawable(context, C3473R.C3475drawable.call_arrow_right);
     }
 
     @Override // android.view.View
@@ -413,7 +413,7 @@ public class AcceptDeclineView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.voip.AcceptDeclineView$AcceptDeclineAccessibilityNodeProvider */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class AcceptDeclineAccessibilityNodeProvider extends AccessibilityNodeProvider {
         private final AccessibilityManager accessibilityManager;
         private final View hostView;

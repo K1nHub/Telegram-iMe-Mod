@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.pin;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreatePinCodeRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreatePinCodeRequest {
     private final String password;
     private final String pinCode;

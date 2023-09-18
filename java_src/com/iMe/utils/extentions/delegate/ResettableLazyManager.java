@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ResettableLazyDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ResettableLazyManager {
     private final LinkedList<Resettable> managedDelegates = new LinkedList<>();
 

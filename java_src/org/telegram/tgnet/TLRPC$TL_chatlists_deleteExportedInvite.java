@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_chatlists_deleteExportedInvite extends TLObject {
     public static int constructor = 1906072670;
     public TLRPC$TL_inputChatlistDialogFilter chatlist;

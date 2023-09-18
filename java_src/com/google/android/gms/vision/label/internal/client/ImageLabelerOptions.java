@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.Locale;
 @SafeParcelable.Class(creator = "ImageLabelerOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ImageLabelerOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ImageLabelerOptions> CREATOR = new zzg();
     @SafeParcelable.Field(m797id = 2)

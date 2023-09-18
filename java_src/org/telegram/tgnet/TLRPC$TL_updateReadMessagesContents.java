@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateReadMessagesContents extends TLRPC$Update {
     public static int constructor = 1757493555;
     public ArrayList<Integer> messages = new ArrayList<>();

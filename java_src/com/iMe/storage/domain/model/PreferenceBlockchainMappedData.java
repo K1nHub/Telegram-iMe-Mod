@@ -9,7 +9,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PreferenceBlockchainMappedData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PreferenceBlockchainMappedData<V> {
     private final Gson gson;
     private final Function0<String> preferenceKeyGetter;

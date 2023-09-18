@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import okio.Buffer;
 /* compiled from: utf8.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Utf8Kt {
     public static final boolean isProbablyUtf8(Buffer isProbablyUtf8) {
         long coerceAtMost;

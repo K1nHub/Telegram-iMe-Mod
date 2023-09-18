@@ -14,13 +14,13 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.C0479C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.ChatMessageCell;
 import org.telegram.p043ui.Components.ChecksHintView;
 /* renamed from: org.telegram.ui.Components.ChecksHintView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ChecksHintView extends FrameLayout {
     private AnimatorSet animatorSet;
     private ImageView arrowImageView;
@@ -56,18 +56,18 @@ public class ChecksHintView extends FrameLayout {
             this.textView[i].setPivotX(BitmapDescriptorFactory.HUE_RED);
             frameLayout.addView(this.textView[i], LayoutHelper.createFrame(-2, -2, 51, 32, i == 0 ? 2 : 26, 10, 0));
             if (i == 0) {
-                this.imageView[i].setAnimation(C3558R.raw.ticks_single, 24, 24);
-                this.textView[i].setText(LocaleController.getString("HintSent", C3558R.string.HintSent));
+                this.imageView[i].setAnimation(C3473R.raw.ticks_single, 24, 24);
+                this.textView[i].setText(LocaleController.getString("HintSent", C3473R.string.HintSent));
             } else {
-                this.imageView[i].setAnimation(C3558R.raw.ticks_double, 24, 24);
-                this.textView[i].setText(LocaleController.getString("HintRead", C3558R.string.HintRead));
+                this.imageView[i].setAnimation(C3473R.raw.ticks_double, 24, 24);
+                this.textView[i].setText(LocaleController.getString("HintRead", C3473R.string.HintRead));
             }
             this.imageView[i].playAnimation();
             i++;
         }
         ImageView imageView = new ImageView(context);
         this.arrowImageView = imageView;
-        imageView.setImageResource(C3558R.C3560drawable.tooltip_arrow);
+        imageView.setImageResource(C3473R.C3475drawable.tooltip_arrow);
         this.arrowImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_gifSaveHintBackground), PorterDuff.Mode.MULTIPLY));
         addView(this.arrowImageView, LayoutHelper.createFrame(14, 6, 83, 0, 0, 0, 0));
     }
@@ -138,7 +138,7 @@ public class ChecksHintView extends FrameLayout {
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.animatorSet = animatorSet2;
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this, View.SCALE_X, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this, View.SCALE_Y, BitmapDescriptorFactory.HUE_RED, 1.0f));
-            this.animatorSet.addListener(new C47491());
+            this.animatorSet.addListener(new C46641());
             this.animatorSet.setDuration(180L);
             this.animatorSet.start();
             while (i3 < 2) {
@@ -158,9 +158,9 @@ public class ChecksHintView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ChecksHintView$1 */
-    /* loaded from: classes6.dex */
-    public class C47491 extends AnimatorListenerAdapter {
-        C47491() {
+    /* loaded from: classes7.dex */
+    public class C46641 extends AnimatorListenerAdapter {
+        C46641() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -169,7 +169,7 @@ public class ChecksHintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(ChecksHintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.ChecksHintView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChecksHintView.C47491.this.lambda$onAnimationEnd$0();
+                    ChecksHintView.C46641.this.lambda$onAnimationEnd$0();
                 }
             }, C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         }

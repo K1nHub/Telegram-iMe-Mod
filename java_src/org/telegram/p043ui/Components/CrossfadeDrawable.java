@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.CrossfadeDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CrossfadeDrawable extends Drawable {
     private final Drawable bottomDrawable;
     float globalAlpha = 255.0f;

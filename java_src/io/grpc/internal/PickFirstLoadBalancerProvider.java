@@ -4,7 +4,7 @@ import io.grpc.LoadBalancer;
 import io.grpc.LoadBalancerProvider;
 import io.grpc.NameResolver;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PickFirstLoadBalancerProvider extends LoadBalancerProvider {
     public static final /* synthetic */ int $r8$clinit = 0;
 

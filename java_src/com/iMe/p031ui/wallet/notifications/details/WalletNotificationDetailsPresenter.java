@@ -14,7 +14,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletNotificationDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletNotificationDetailsPresenter extends BasePresenter<WalletNotificationDetailsView> {
     private final /* synthetic */ WalletLinkClickableManager $$delegate_0;
     private final CryptoAccessManager accessManager;

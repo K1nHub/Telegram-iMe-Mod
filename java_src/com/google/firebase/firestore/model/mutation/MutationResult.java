@@ -4,7 +4,7 @@ import com.google.firebase.firestore.model.SnapshotVersion;
 import com.google.firebase.firestore.util.Preconditions;
 import com.google.firestore.p021v1.Value;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MutationResult {
     private final List<Value> transformResults;
     private final SnapshotVersion version;

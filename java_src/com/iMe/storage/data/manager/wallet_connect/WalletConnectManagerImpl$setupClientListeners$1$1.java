@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lambda implements Function2<Integer, String, Unit> {
     final /* synthetic */ WCSessionStoreItem $sessionStoreItem;
     final /* synthetic */ WalletConnectManagerImpl this$0;

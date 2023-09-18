@@ -11,7 +11,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: KoinJavaComponent.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KoinJavaComponent {
     public static final KoinJavaComponent INSTANCE = new KoinJavaComponent();
 

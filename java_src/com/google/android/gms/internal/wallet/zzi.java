@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "GetBuyFlowInitializationTokenResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzi extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzi> CREATOR = new zzj();
     @SafeParcelable.Field(m797id = 2)

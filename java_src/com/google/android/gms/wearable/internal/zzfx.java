@@ -9,7 +9,7 @@ import com.google.android.gms.wearable.MessageEvent;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "MessageEventParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfx extends AbstractSafeParcelable implements MessageEvent {
     public static final Parcelable.Creator<zzfx> CREATOR = new zzfy();
     @SafeParcelable.Field(getter = "getRequestId", m797id = 2)

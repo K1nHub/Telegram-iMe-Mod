@@ -10,7 +10,7 @@ import java.security.Signature;
 import java.security.SignatureException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class Security {
     public static boolean verifyPurchase(String str, String str2, String str3) {
         if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {

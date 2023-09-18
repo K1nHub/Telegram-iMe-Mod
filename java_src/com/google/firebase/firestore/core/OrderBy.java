@@ -5,12 +5,12 @@ import com.google.firebase.firestore.model.FieldPath;
 import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class OrderBy {
     private final Direction direction;
     final FieldPath field;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Direction {
         ASCENDING(1),
         DESCENDING(-1);

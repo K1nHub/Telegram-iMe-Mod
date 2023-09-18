@@ -12,7 +12,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentDataCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PaymentData extends AbstractSafeParcelable implements AutoResolvableResult {
     public static final Parcelable.Creator<PaymentData> CREATOR = new zzaa();
     @SafeParcelable.Field(m797id = 1)

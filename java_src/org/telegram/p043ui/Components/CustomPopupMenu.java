@@ -7,11 +7,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPopupMenu */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class CustomPopupMenu {
     boolean isShowing;
     ActionBarPopupWindow.ActionBarPopupWindowLayout popupLayout;
@@ -22,7 +22,7 @@ public abstract class CustomPopupMenu {
     protected abstract void onDismissed();
 
     public CustomPopupMenu(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, C3558R.C3560drawable.popup_fixed_alert2, resourcesProvider, z ? 1 : 0);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, C3473R.C3475drawable.popup_fixed_alert2, resourcesProvider, z ? 1 : 0);
         this.popupLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setAnimationEnabled(false);
         this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.CustomPopupMenu$$ExternalSyntheticLambda0
@@ -44,7 +44,7 @@ public abstract class CustomPopupMenu {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.popupLayout, -2, -2);
         this.popupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setAnimationEnabled(false);
-        this.popupWindow.setAnimationStyle(C3558R.style.PopupContextAnimation2);
+        this.popupWindow.setAnimationStyle(C3473R.style.PopupContextAnimation2);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
         this.popupWindow.setInputMethodMode(2);

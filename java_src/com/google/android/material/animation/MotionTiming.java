@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MotionTiming {
     private long delay;
     private long duration;

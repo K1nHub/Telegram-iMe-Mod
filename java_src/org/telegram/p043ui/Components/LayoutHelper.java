@@ -12,7 +12,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.LayoutHelper */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LayoutHelper {
     public static AppBarLayout.LayoutParams createAppBar(int i, int i2) {
         return new AppBarLayout.LayoutParams(getSize(i), getSize(i2));

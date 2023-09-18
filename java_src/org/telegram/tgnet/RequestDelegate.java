@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface RequestDelegate {
     void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error);
 }

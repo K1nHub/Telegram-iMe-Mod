@@ -36,7 +36,7 @@ import org.telegram.p043ui.Components.EmptyStubSpan;
 import org.telegram.p043ui.Components.StaticLayoutEx;
 import org.telegram.p043ui.Components.spoilers.SpoilerEffect;
 /* renamed from: org.telegram.ui.ActionBar.SimpleTextView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SimpleTextView extends View {
     private boolean attachedToWindow;
     private boolean buildFullLayout;

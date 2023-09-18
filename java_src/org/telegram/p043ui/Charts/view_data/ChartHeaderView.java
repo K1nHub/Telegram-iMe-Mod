@@ -13,13 +13,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Charts.BaseChartView;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Charts.view_data.ChartHeaderView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChartHeaderView extends FrameLayout {
     public TextView back;
     private TextView dates;
@@ -64,8 +64,8 @@ public class ChartHeaderView extends FrameLayout {
         addView(this.datesTmp, LayoutHelper.createFrame(-2, -2, 8388629, 16, 0, 16, 0));
         this.datesTmp.setVisibility(8);
         this.back.setVisibility(8);
-        this.back.setText(LocaleController.getString("ZoomOut", C3558R.string.ZoomOut));
-        Drawable drawable = ContextCompat.getDrawable(getContext(), C3558R.C3560drawable.msg_zoomout_stats);
+        this.back.setText(LocaleController.getString("ZoomOut", C3473R.string.ZoomOut));
+        Drawable drawable = ContextCompat.getDrawable(getContext(), C3473R.C3475drawable.msg_zoomout_stats);
         this.zoomIcon = drawable;
         this.back.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         this.back.setCompoundDrawablePadding(AndroidUtilities.m72dp(4));

@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelInterpreter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelInterpreter implements Closeable {
     private static Map<zznw<FirebaseModelOptions>, FirebaseModelInterpreter> zzatg = new HashMap();
     private final zznr zzaxd;

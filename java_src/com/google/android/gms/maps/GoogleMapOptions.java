@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "GoogleMapOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GoogleMapOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleMapOptions> CREATOR = new zzab();
     private static final Integer zza = Integer.valueOf(Color.argb(255, 236, 233, 225));

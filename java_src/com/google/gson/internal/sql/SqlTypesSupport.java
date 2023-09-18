@@ -4,7 +4,7 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.bind.DefaultDateTypeAdapter;
 import java.sql.Timestamp;
 import java.util.Date;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SqlTypesSupport {
     public static final DefaultDateTypeAdapter.DateType<? extends Date> DATE_DATE_TYPE;
     public static final TypeAdapterFactory DATE_FACTORY;

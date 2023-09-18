@@ -4,7 +4,7 @@ import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 /* renamed from: com.google.firestore.v1.ExistenceFilter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter, Builder> implements MessageLiteOrBuilder {
     public static final int COUNT_FIELD_NUMBER = 2;
     private static final ExistenceFilter DEFAULT_INSTANCE;
@@ -25,7 +25,7 @@ public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter,
     }
 
     /* renamed from: com.google.firestore.v1.ExistenceFilter$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ExistenceFilter, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10631 c10631) {
             this();
@@ -37,7 +37,7 @@ public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter,
     }
 
     /* renamed from: com.google.firestore.v1.ExistenceFilter$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10631 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

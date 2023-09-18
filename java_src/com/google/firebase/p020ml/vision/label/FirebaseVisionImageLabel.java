@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.vision.label.ImageLabel;
 import com.google.firebase.p020ml.vision.automl.internal.zzf;
 /* renamed from: com.google.firebase.ml.vision.label.FirebaseVisionImageLabel */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionImageLabel {
     private final String entityId;
     private final String text;

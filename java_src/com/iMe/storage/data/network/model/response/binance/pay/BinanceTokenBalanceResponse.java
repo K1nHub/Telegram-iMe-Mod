@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.binance.pay;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayGetBalancesResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceTokenBalanceResponse {
     private final String assetCode;
     private final String assetName;
@@ -158,7 +158,7 @@ public final class BinanceTokenBalanceResponse {
     }
 
     /* compiled from: BinancePayGetBalancesResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Balance {
         private final String btcValuation;
         private final String fiatValuation;

@@ -12,7 +12,7 @@ import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
 import org.bouncycastle.pqc.math.linearalgebra.GF2mField;
 import org.bouncycastle.pqc.math.linearalgebra.Permutation;
 import org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class McEliecePrivateKey extends ASN1Object {
     private byte[] encField;
     private byte[] encGp;
@@ -21,14 +21,14 @@ public class McEliecePrivateKey extends ASN1Object {
     private byte[] encSInv;
 
     /* renamed from: k */
-    private int f1395k;
+    private int f1386k;
 
     /* renamed from: n */
-    private int f1396n;
+    private int f1387n;
 
     public McEliecePrivateKey(int i, int i2, GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM, Permutation permutation, Permutation permutation2, GF2Matrix gF2Matrix) {
-        this.f1396n = i;
-        this.f1395k = i2;
+        this.f1387n = i;
+        this.f1386k = i2;
         this.encField = gF2mField.getEncoded();
         this.encGp = polynomialGF2mSmallM.getEncoded();
         this.encSInv = gF2Matrix.getEncoded();
@@ -37,8 +37,8 @@ public class McEliecePrivateKey extends ASN1Object {
     }
 
     private McEliecePrivateKey(ASN1Sequence aSN1Sequence) {
-        this.f1396n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).intValueExact();
-        this.f1395k = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).intValueExact();
+        this.f1387n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).intValueExact();
+        this.f1386k = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).intValueExact();
         this.encField = ((ASN1OctetString) aSN1Sequence.getObjectAt(2)).getOctets();
         this.encGp = ((ASN1OctetString) aSN1Sequence.getObjectAt(3)).getOctets();
         this.encP1 = ((ASN1OctetString) aSN1Sequence.getObjectAt(4)).getOctets();
@@ -65,11 +65,11 @@ public class McEliecePrivateKey extends ASN1Object {
     }
 
     public int getK() {
-        return this.f1395k;
+        return this.f1386k;
     }
 
     public int getN() {
-        return this.f1396n;
+        return this.f1387n;
     }
 
     public Permutation getP1() {
@@ -87,8 +87,8 @@ public class McEliecePrivateKey extends ASN1Object {
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
         ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
-        aSN1EncodableVector.add(new ASN1Integer(this.f1396n));
-        aSN1EncodableVector.add(new ASN1Integer(this.f1395k));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1387n));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1386k));
         aSN1EncodableVector.add(new DEROctetString(this.encField));
         aSN1EncodableVector.add(new DEROctetString(this.encGp));
         aSN1EncodableVector.add(new DEROctetString(this.encP1));

@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletHomeServicesView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletHomeServicesView extends BaseView {
     @AddToEndSingle
     void firstScreenInitWithItems(List<BaseNode> list);

@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.data.DataHolder;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzey extends com.google.android.gms.internal.wearable.zza implements zzfa {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzey(IBinder iBinder) {

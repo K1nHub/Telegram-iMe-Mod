@@ -19,7 +19,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.Charsets;
 import okio.internal.BufferKt;
 /* compiled from: Buffer.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Buffer implements BufferedSource, BufferedSink, Cloneable, ByteChannel {
     public Segment head;
     private long size;
@@ -1031,7 +1031,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
     }
 
     /* compiled from: Buffer.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class UnsafeCursor implements Closeable {
         public Buffer buffer;
         public byte[] data;

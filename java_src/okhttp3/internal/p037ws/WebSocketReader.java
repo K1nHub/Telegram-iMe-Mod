@@ -12,7 +12,7 @@ import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: WebSocketReader.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketReader */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WebSocketReader implements Closeable {
     private boolean closed;
     private final Buffer controlFrameBuffer;
@@ -33,7 +33,7 @@ public final class WebSocketReader implements Closeable {
 
     /* compiled from: WebSocketReader.kt */
     /* renamed from: okhttp3.internal.ws.WebSocketReader$FrameCallback */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface FrameCallback {
         void onReadClose(int i, String str);
 

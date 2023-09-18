@@ -7,11 +7,11 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.appindexing.builders.IndexableBuilder;
 import com.google.firebase.appindexing.internal.zzc;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Action {
 
     /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final Bundle zza = new Bundle();
         private final String zzb;

@@ -17,7 +17,7 @@ import org.telegram.p043ui.Cells.HeaderCell;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HeaderCellWithNetwork.kt */
 /* renamed from: com.iMe.fork.ui.view.HeaderCellWithNetwork */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HeaderCellWithNetwork extends FrameLayout {
     private final HeaderCell headerCell;
     private final Lazy networkTypeView$delegate;

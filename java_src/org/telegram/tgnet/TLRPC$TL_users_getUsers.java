@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_users_getUsers extends TLObject {
     public static int constructor = 227648840;
 
     /* renamed from: id */
-    public ArrayList<TLRPC$InputUser> f1690id = new ArrayList<>();
+    public ArrayList<TLRPC$InputUser> f1681id = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -26,10 +26,10 @@ public class TLRPC$TL_users_getUsers extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1690id.size();
+        int size = this.f1681id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            this.f1690id.get(i).serializeToStream(abstractSerializedData);
+            this.f1681id.get(i).serializeToStream(abstractSerializedData);
         }
     }
 }

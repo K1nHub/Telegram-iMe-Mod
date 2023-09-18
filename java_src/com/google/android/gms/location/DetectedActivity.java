@@ -12,7 +12,7 @@ import java.util.Comparator;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "DetectedActivityCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DetectedActivity extends AbstractSafeParcelable {
     public static final int IN_VEHICLE = 0;
     public static final int ON_BICYCLE = 1;

@@ -6,13 +6,13 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.observers.DeferredScalarDisposable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MaybeToObservable<T> extends Observable<T> {
     public static <T> MaybeObserver<T> create(Observer<? super T> observer) {
         return new MaybeToObservableObserver(observer);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MaybeToObservableObserver<T> extends DeferredScalarDisposable<T> implements MaybeObserver<T> {
         Disposable upstream;
 

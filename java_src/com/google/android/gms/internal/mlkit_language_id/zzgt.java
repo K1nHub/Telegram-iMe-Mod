@@ -6,7 +6,7 @@ import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [FieldDescriptorType] */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgt<FieldDescriptorType> extends zzgq<FieldDescriptorType, Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzgt(int i) {

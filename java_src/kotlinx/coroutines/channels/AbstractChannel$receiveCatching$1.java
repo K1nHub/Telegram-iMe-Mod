@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AbstractChannel.kt */
 @DebugMetadata(m102c = "kotlinx.coroutines.channels.AbstractChannel", m101f = "AbstractChannel.kt", m100l = {633}, m99m = "receiveCatching-JP2dKIU")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AbstractChannel$receiveCatching$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;
@@ -25,8 +25,8 @@ public final class AbstractChannel$receiveCatching$1 extends ContinuationImpl {
         Object coroutine_suspended;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        Object mo1672receiveCatchingJP2dKIU = this.this$0.mo1672receiveCatchingJP2dKIU(this);
+        Object mo1670receiveCatchingJP2dKIU = this.this$0.mo1670receiveCatchingJP2dKIU(this);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return mo1672receiveCatchingJP2dKIU == coroutine_suspended ? mo1672receiveCatchingJP2dKIU : ChannelResult.m1674boximpl(mo1672receiveCatchingJP2dKIU);
+        return mo1670receiveCatchingJP2dKIU == coroutine_suspended ? mo1670receiveCatchingJP2dKIU : ChannelResult.m1672boximpl(mo1670receiveCatchingJP2dKIU);
     }
 }

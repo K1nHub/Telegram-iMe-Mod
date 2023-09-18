@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlinx.coroutines.DebugKt;
 /* compiled from: LockFreeTaskQueue.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class LockFreeTaskQueueCore<E> {
     public static final Companion Companion = new Companion(null);
     public static final Symbol REMOVE_FROZEN = new Symbol("REMOVE_FROZEN");
@@ -79,7 +79,7 @@ public final class LockFreeTaskQueueCore<E> {
     }
 
     /* compiled from: LockFreeTaskQueue.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Placeholder {
         public final int index;
 
@@ -89,7 +89,7 @@ public final class LockFreeTaskQueueCore<E> {
     }
 
     /* compiled from: LockFreeTaskQueue.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

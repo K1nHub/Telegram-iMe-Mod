@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "VisibleRegionCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class VisibleRegion extends AbstractSafeParcelable {
     public static final Parcelable.Creator<VisibleRegion> CREATOR = new zzad();
     @SafeParcelable.Field(m797id = 4)

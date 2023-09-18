@@ -1,7 +1,7 @@
 package me.zhanghai.android.materialratingbar.internal;
 
 import android.graphics.PorterDuff;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DrawableCompat {
     public static PorterDuff.Mode parseTintMode(int i, PorterDuff.Mode mode) {
         if (i != 3) {

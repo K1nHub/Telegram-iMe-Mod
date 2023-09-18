@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.GetTokenResult;
 /* compiled from: com.google.firebase:firebase-auth-interop@@20.0.0 */
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface InternalAuthProvider {
     @KeepForSdk
     void addIdTokenListener(IdTokenListener idTokenListener);

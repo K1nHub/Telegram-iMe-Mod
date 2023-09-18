@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: BackupWordSwitcherMvpView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherMvpView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BackupWordSwitcherMvpView extends MvpView {
     void setupBackupWords(List<String> list);
 

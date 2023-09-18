@@ -2,7 +2,7 @@ package io.reactivex.internal.functions;
 
 import io.reactivex.functions.BiPredicate;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObjectHelper {
     static final BiPredicate<Object, Object> EQUALS = new BiObjectPredicate();
 
@@ -48,7 +48,7 @@ public final class ObjectHelper {
         throw new IllegalArgumentException(str + " > 0 required but it was " + j);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BiObjectPredicate implements BiPredicate<Object, Object> {
         BiObjectPredicate() {
         }

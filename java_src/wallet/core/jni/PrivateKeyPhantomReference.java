@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: PrivateKey.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class PrivateKeyPhantomReference extends PhantomReference<PrivateKey> {
     private long nativeHandle;
     private static Set<PrivateKeyPhantomReference> references = new HashSet();

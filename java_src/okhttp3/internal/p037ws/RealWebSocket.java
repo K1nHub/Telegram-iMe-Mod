@@ -37,7 +37,7 @@ import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: RealWebSocket.kt */
 /* renamed from: okhttp3.internal.ws.RealWebSocket */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCallback {
     private static final List<Protocol> ONLY_HTTP1;
     private boolean awaitingPong;
@@ -375,11 +375,11 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00fc A[Catch: all -> 0x01b2, TRY_ENTER, TryCatch #2 {all -> 0x01b2, blocks: (B:30:0x00fc, B:32:0x0107, B:35:0x0111, B:36:0x0121, B:38:0x0130, B:43:0x0135, B:44:0x013d, B:45:0x013e, B:48:0x0144, B:37:0x0122), top: B:88:0x00fa }] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0107 A[Catch: all -> 0x01b2, TryCatch #2 {all -> 0x01b2, blocks: (B:30:0x00fc, B:32:0x0107, B:35:0x0111, B:36:0x0121, B:38:0x0130, B:43:0x0135, B:44:0x013d, B:45:0x013e, B:48:0x0144, B:37:0x0122), top: B:88:0x00fa }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00fb A[Catch: all -> 0x01af, TRY_ENTER, TryCatch #4 {all -> 0x01af, blocks: (B:30:0x00fb, B:32:0x0106, B:35:0x0110, B:36:0x0120, B:38:0x012f, B:43:0x0134, B:44:0x013b, B:45:0x013c, B:48:0x0142, B:37:0x0121), top: B:91:0x00f9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0106 A[Catch: all -> 0x01af, TryCatch #4 {all -> 0x01af, blocks: (B:30:0x00fb, B:32:0x0106, B:35:0x0110, B:36:0x0120, B:38:0x012f, B:43:0x0134, B:44:0x013b, B:45:0x013c, B:48:0x0142, B:37:0x0121), top: B:91:0x00f9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0189  */
     /* JADX WARN: Type inference failed for: r1v10, types: [okhttp3.internal.ws.WebSocketWriter, java.lang.Object] */
     /* JADX WARN: Type inference failed for: r1v13, types: [kotlin.jvm.internal.Ref$ObjectRef] */
     /* JADX WARN: Type inference failed for: r1v2 */
@@ -400,7 +400,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
     */
     public final boolean writeOneFrame$okhttp() throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 472
+            Method dump skipped, instructions count: 469
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.p037ws.RealWebSocket.writeOneFrame$okhttp():boolean");
@@ -463,7 +463,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     /* compiled from: RealWebSocket.kt */
     /* renamed from: okhttp3.internal.ws.RealWebSocket$Message */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Message {
         private final ByteString data;
         private final int formatOpcode;
@@ -485,7 +485,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     /* compiled from: RealWebSocket.kt */
     /* renamed from: okhttp3.internal.ws.RealWebSocket$Close */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Close {
         private final long cancelAfterCloseMillis;
         private final int code;
@@ -531,7 +531,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     /* compiled from: RealWebSocket.kt */
     /* renamed from: okhttp3.internal.ws.RealWebSocket$Streams */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Streams implements Closeable {
         private final boolean client;
         private final BufferedSink sink;
@@ -560,7 +560,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     /* compiled from: RealWebSocket.kt */
     /* renamed from: okhttp3.internal.ws.RealWebSocket$WriterTask */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class WriterTask extends Task {
         public WriterTask() {
             super(RealWebSocket.this.name + " writer", false, 2, null);
@@ -579,7 +579,7 @@ public final class RealWebSocket implements WebSocket, WebSocketReader.FrameCall
 
     /* compiled from: RealWebSocket.kt */
     /* renamed from: okhttp3.internal.ws.RealWebSocket$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -10,7 +10,7 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StripeSSLSocketFactory extends SSLSocketFactory {
     private static final String TLSv11Proto = "TLSv1.1";
     private static final String TLSv12Proto = "TLSv1.2";

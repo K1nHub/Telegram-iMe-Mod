@@ -2,9 +2,9 @@ package com.iMe.model.wallet.settings;
 
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: InterfaceSettingItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class InterfaceSettingItem extends NoChildNode {
     private final int description;
     private final int icon;
@@ -33,17 +33,17 @@ public abstract class InterfaceSettingItem extends NoChildNode {
     }
 
     /* compiled from: InterfaceSettingItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Networks extends InterfaceSettingItem {
         public static final Networks INSTANCE = new Networks();
 
         private Networks() {
-            super(C3558R.C3560drawable.fork_ic_network, C3558R.string.networks_settings_title, C3558R.string.networks_settings_subtitle, null);
+            super(C3473R.C3475drawable.fork_ic_network, C3473R.string.networks_settings_title, C3473R.string.networks_settings_subtitle, null);
         }
     }
 
     /* compiled from: InterfaceSettingItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class SwitchableOption extends InterfaceSettingItem {
         private final int description;
         private final int icon;
@@ -82,7 +82,7 @@ public abstract class InterfaceSettingItem extends NoChildNode {
         }
 
         /* compiled from: InterfaceSettingItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Banners extends SwitchableOption {
             private final boolean isEnabled;
 
@@ -92,13 +92,13 @@ public abstract class InterfaceSettingItem extends NoChildNode {
             }
 
             public Banners(boolean z) {
-                super(z, C3558R.C3560drawable.msg_sticker, C3558R.string.wallet_settings_interface_banners, C3558R.string.wallet_settings_interface_banners_description, null);
+                super(z, C3473R.C3475drawable.msg_sticker, C3473R.string.wallet_settings_interface_banners, C3473R.string.wallet_settings_interface_banners_description, null);
                 this.isEnabled = z;
             }
         }
 
         /* compiled from: InterfaceSettingItem.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Quotations extends SwitchableOption {
             private final boolean isEnabled;
 
@@ -108,7 +108,7 @@ public abstract class InterfaceSettingItem extends NoChildNode {
             }
 
             public Quotations(boolean z) {
-                super(z, C3558R.C3560drawable.fork_ic_quotation_26, C3558R.string.wallet_settings_interface_quotations, C3558R.string.wallet_settings_interface_quotations_description, null);
+                super(z, C3473R.C3475drawable.fork_ic_quotation_26, C3473R.string.wallet_settings_interface_quotations, C3473R.string.wallet_settings_interface_quotations_description, null);
                 this.isEnabled = z;
             }
         }

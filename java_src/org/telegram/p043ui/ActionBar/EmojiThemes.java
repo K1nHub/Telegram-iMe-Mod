@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_theme;
 import org.telegram.tgnet.TLRPC$WallPaper;
 /* renamed from: org.telegram.ui.ActionBar.EmojiThemes */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EmojiThemes {
     private static final int[] previewColorKeys = {Theme.key_chat_inBubble, Theme.key_chat_outBubble, Theme.key_featuredStickers_addButton, Theme.key_chat_wallpaper, Theme.key_chat_wallpaper_gradient_to1, Theme.key_chat_wallpaper_gradient_to2, Theme.key_chat_wallpaper_gradient_to3, Theme.key_chat_wallpaper_gradient_rotation};
     public String emoji;
@@ -229,7 +229,7 @@ public class EmojiThemes {
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(theme);
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
             if (themeAccent != null) {
-                themeInfo2.setCurrentAccentId(themeAccent.f1710id);
+                themeInfo2.setCurrentAccentId(themeAccent.f1701id);
             }
             themeInfo = themeInfo2;
         } else {
@@ -286,7 +286,7 @@ public class EmojiThemes {
             TLRPC$TL_theme tlTheme = getTlTheme(i2);
             Theme.ThemeInfo themeInfo2 = new Theme.ThemeInfo(Theme.getTheme(Theme.getBaseThemeKey(tlTheme.settings.get(settingsIndex))));
             themeAccent = themeInfo2.createNewAccent(tlTheme, i, true, settingsIndex);
-            themeInfo2.setCurrentAccentId(themeAccent.f1710id);
+            themeInfo2.setCurrentAccentId(themeAccent.f1701id);
             themeInfo = themeInfo2;
         } else {
             SparseArray<Theme.ThemeAccent> sparseArray = themeInfo.themeAccentsMap;
@@ -333,7 +333,7 @@ public class EmojiThemes {
     public void loadWallpaper(int i, ResultCallback<Pair<Long, Bitmap>> resultCallback) {
         TLRPC$WallPaper wallpaper = getWallpaper(i);
         if (wallpaper != null) {
-            loadWallpaperImage(getTlTheme(i).f1682id, wallpaper, resultCallback);
+            loadWallpaperImage(getTlTheme(i).f1673id, wallpaper, resultCallback);
         } else if (resultCallback != null) {
             resultCallback.onComplete(null);
         }
@@ -409,7 +409,7 @@ public class EmojiThemes {
             }
             return;
         }
-        final long j = getTlTheme(i).f1682id;
+        final long j = getTlTheme(i).f1673id;
         Bitmap wallpaperThumbBitmap = ChatThemeController.getWallpaperThumbBitmap(j);
         final File wallpaperThumbFile = getWallpaperThumbFile(j);
         if (wallpaperThumbBitmap == null && wallpaperThumbFile.exists() && wallpaperThumbFile.length() > 0) {
@@ -586,7 +586,7 @@ public class EmojiThemes {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.EmojiThemes$ThemeItem */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ThemeItem {
         public int accentId = -1;
         public SparseIntArray currentPreviewColors;

@@ -13,7 +13,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.EditTextSettingsCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EditTextSettingsCell extends FrameLayout {
     private boolean needDivider;
     private EditTextBoldCursor textView;

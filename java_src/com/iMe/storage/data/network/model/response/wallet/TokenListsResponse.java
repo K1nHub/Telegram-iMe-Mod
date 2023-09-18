@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenListsResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenListsResponse {
     private final List<TokenListResponse> tokenLists;
     private final int verifiedSize;

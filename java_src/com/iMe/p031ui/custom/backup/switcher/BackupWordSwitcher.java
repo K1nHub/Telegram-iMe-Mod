@@ -34,12 +34,12 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComponent, BackupWordSwitcherMvpView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(BackupWordSwitcher.class, "presenter", "getPresenter()Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcherPresenter;", 0))};
     private ForkContentWordSwitcherBinding binding;
@@ -206,7 +206,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
 
     @Override // com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3558R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3473R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     @Override // com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView

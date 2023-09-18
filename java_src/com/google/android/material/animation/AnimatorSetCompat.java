@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AnimatorSetCompat {
     public static void playTogether(AnimatorSet animatorSet, List<Animator> list) {
         int size = list.size();

@@ -5,7 +5,7 @@ import drinkless.org.ton.TonApi;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: TonControllerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class TonControllerImpl$client$2 extends Lambda implements Function0<Client> {
     public static final TonControllerImpl$client$2 INSTANCE = new TonControllerImpl$client$2();
 

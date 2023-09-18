@@ -10,7 +10,7 @@ import org.telegram.messenger.databinding.ForkContentBackupNumberWordBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: NumberBackupWordWrapper.kt */
 /* renamed from: com.iMe.ui.custom.backup.NumberBackupWordWrapper */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NumberBackupWordWrapper extends FrameLayout {
     private ForkContentBackupNumberWordBinding binding;
 

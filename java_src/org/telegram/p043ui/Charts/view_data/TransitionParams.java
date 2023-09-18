@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Charts.view_data;
 /* renamed from: org.telegram.ui.Charts.view_data.TransitionParams */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TransitionParams {
     public float[] angle;
     public float[] endX;
@@ -8,10 +8,10 @@ public class TransitionParams {
     public boolean needScaleY = true;
 
     /* renamed from: pX */
-    public float f1731pX;
+    public float f1722pX;
 
     /* renamed from: pY */
-    public float f1732pY;
+    public float f1723pY;
     public float pickerEndOut;
     public float pickerStartOut;
     public float progress;

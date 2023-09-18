@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.simplex;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BuyingCryptoQuote.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BuyingCryptoQuote {
     private final float cryptoMoneyAmount;
     private final float fiatMoneyAmount;
@@ -80,7 +80,7 @@ public final class BuyingCryptoQuote {
     }
 
     /* compiled from: BuyingCryptoQuote.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

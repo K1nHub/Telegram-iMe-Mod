@@ -6,7 +6,7 @@ import android.text.Layout;
 import android.text.Spanned;
 import android.text.style.LeadingMarginSpan;
 /* renamed from: org.telegram.ui.Components.BulletSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BulletSpan implements LeadingMarginSpan {
     private final int mBulletRadius;
     private final int mColor;

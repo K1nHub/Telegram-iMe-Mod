@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletInformationMetadata.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoWalletInformationMetadata {
     private final long lastUpdateMillis;
     private final CryptoWalletsInfo walletInfo;

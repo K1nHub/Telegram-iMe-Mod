@@ -4,7 +4,7 @@ import java.util.AbstractMap;
 import java.util.Map;
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzeu<K, V> extends zzee<Map.Entry<K, V>> {
     private final /* synthetic */ zzer zza;
 

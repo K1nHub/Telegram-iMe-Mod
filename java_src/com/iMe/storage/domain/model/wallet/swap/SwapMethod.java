@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.EthereumAbi;
 import wallet.core.jni.EthereumAbiFunction;
 /* compiled from: SwapMethod.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SwapMethod {
     EXACT_TOKENS_FOR_TOKENS("swapExactTokensForTokens"),
     EXACT_ETH_FOR_TOKENS("swapExactETHForTokens"),
@@ -21,7 +21,7 @@ public enum SwapMethod {
     private final String methodName;
 
     /* compiled from: SwapMethod.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -29,34 +29,30 @@ public enum SwapMethod {
         static {
             int[] iArr = new int[SwapProtocol.values().length];
             try {
-                iArr[SwapProtocol.UNISWAP_V3.ordinal()] = 1;
+                iArr[SwapProtocol.ONEINCH.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[SwapProtocol.ONEINCH.ordinal()] = 2;
+                iArr[SwapProtocol.SYMBIOSIS.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
-            }
-            try {
-                iArr[SwapProtocol.SYMBIOSIS.ordinal()] = 3;
-            } catch (NoSuchFieldError unused3) {
             }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[SwapMethod.values().length];
             try {
                 iArr2[SwapMethod.EXACT_TOKENS_FOR_TOKENS.ordinal()] = 1;
-            } catch (NoSuchFieldError unused4) {
+            } catch (NoSuchFieldError unused3) {
             }
             try {
                 iArr2[SwapMethod.EXACT_TOKENS_FOR_ETH.ordinal()] = 2;
-            } catch (NoSuchFieldError unused5) {
+            } catch (NoSuchFieldError unused4) {
             }
             try {
                 iArr2[SwapMethod.EXACT_ETH_FOR_TOKENS.ordinal()] = 3;
-            } catch (NoSuchFieldError unused6) {
+            } catch (NoSuchFieldError unused5) {
             }
             try {
                 iArr2[SwapMethod.UNKNOWN.ordinal()] = 4;
-            } catch (NoSuchFieldError unused7) {
+            } catch (NoSuchFieldError unused6) {
             }
             $EnumSwitchMapping$1 = iArr2;
         }
@@ -102,8 +98,8 @@ public enum SwapMethod {
         } else {
             if (i == 4) {
                 int i2 = WhenMappings.$EnumSwitchMapping$0[args.getSwapProtocol().ordinal()];
-                if (i2 == 1 || i2 == 2 || i2 == 3) {
-                    return CryptoExtKt.hexToByteString(args.getData());
+                if (i2 == 1 || i2 == 2) {
+                    return CryptoExtKt.hexToByteString(args.getCallData());
                 }
                 throw new IllegalStateException(UNSUPPORTED_SWAP_METHOD);
             }
@@ -112,7 +108,7 @@ public enum SwapMethod {
     }
 
     /* compiled from: SwapMethod.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

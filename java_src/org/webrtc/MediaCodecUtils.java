@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class MediaCodecUtils {
     static final String EXYNOS_PREFIX = "OMX.Exynos.";
     static final String EXYNOS_PREFIX_C2 = "c2.exynos.";
@@ -85,8 +85,8 @@ class MediaCodecUtils {
     }
 
     /* renamed from: org.webrtc.MediaCodecUtils$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C73461 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72611 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -117,7 +117,7 @@ class MediaCodecUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z) {
-        int i = C73461.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        int i = C72611.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
         if (i == 1 || i == 2 || i == 3 || i == 4) {
             return new HashMap();
         }

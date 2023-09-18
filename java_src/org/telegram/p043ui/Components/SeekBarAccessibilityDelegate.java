@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: org.telegram.ui.Components.SeekBarAccessibilityDelegate */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class SeekBarAccessibilityDelegate extends View.AccessibilityDelegate {
     private static final CharSequence SEEK_BAR_CLASS_NAME = SeekBar.class.getName();
     private final Map<View, Runnable> accessibilityEventRunnables = new HashMap(4);

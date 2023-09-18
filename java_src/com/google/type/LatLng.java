@@ -3,7 +3,7 @@ package com.google.type;
 import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implements MessageLiteOrBuilder {
     private static final LatLng DEFAULT_INSTANCE;
     public static final int LATITUDE_FIELD_NUMBER = 1;
@@ -23,7 +23,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
         return this.longitude_;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<LatLng, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C12231 c12231) {
             this();
@@ -35,7 +35,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
     }
 
     /* renamed from: com.google.type.LatLng$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C12231 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

@@ -1,5 +1,5 @@
 package org.solovyev.android.checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class EmptyRequestListener<R> implements RequestListener<R> {
     @Override // org.solovyev.android.checkout.RequestListener
     public void onError(int i, Exception exc) {

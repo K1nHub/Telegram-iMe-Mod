@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.ProgressView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ProgressView {
     public int height;
     public int width;

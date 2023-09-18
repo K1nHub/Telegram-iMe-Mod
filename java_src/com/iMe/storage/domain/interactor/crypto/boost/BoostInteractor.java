@@ -10,7 +10,7 @@ import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BoostInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BoostInteractor {
     private final BoostRepository boostRepository;
     private final SchedulersProvider schedulersProvider;

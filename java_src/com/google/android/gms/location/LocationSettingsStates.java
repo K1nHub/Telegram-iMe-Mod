@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsStatesCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocationSettingsStates extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsStates> CREATOR = new zzab();
     @SafeParcelable.Field(getter = "isGpsUsable", m797id = 1)

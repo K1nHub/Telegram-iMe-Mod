@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.Components.TextStyleSpan;
 /* renamed from: org.telegram.ui.Components.URLSpanBrowser */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class URLSpanBrowser extends URLSpan {
     private TextStyleSpan.TextStyleRun style;
 

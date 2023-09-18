@@ -6,7 +6,7 @@ import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class ForwardingManagedChannel extends ManagedChannel {
     private final ManagedChannel delegate;
 

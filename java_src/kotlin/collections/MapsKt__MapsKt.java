@@ -9,7 +9,7 @@ import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Maps.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
     public static <K, V> Map<K, V> emptyMap() {
         EmptyMap emptyMap = EmptyMap.INSTANCE;

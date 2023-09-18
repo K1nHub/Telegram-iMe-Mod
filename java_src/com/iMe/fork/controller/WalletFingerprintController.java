@@ -11,7 +11,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: WalletFingerprintController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletFingerprintController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, WalletFingerprintController> accountInstances = new ConcurrentHashMap<>(5);
@@ -63,7 +63,7 @@ public final class WalletFingerprintController extends BaseController {
     }
 
     /* compiled from: WalletFingerprintController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -112,7 +112,7 @@ public final class WalletFingerprintController extends BaseController {
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…r(accountIndex)\n        }");
             return (WalletFingerprintController) computeIfAbsent;
         }
     }

@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.Job;
 /* compiled from: Share.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ReadonlyStateFlow<T> implements StateFlow<T>, Flow {
     private final /* synthetic */ StateFlow<T> $$delegate_0;
     private final Job job;

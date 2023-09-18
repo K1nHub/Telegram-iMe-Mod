@@ -5,7 +5,7 @@ import io.reactivex.internal.functions.Functions;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class AbstractDirectTask extends AtomicReference<Future<?>> implements Disposable {
     protected static final FutureTask<Void> DISPOSED;
     protected static final FutureTask<Void> FINISHED;

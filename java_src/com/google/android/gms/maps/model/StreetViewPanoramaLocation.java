@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaLocationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreetViewPanoramaLocation extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaLocation> CREATOR = new zzr();
     @SafeParcelable.Field(m797id = 2)

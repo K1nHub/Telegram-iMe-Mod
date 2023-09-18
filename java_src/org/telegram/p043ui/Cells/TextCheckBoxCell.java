@@ -14,7 +14,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.TextCheckBoxCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextCheckBoxCell extends FrameLayout {
     private CheckBoxSquare checkBox;
     private boolean needDivider;

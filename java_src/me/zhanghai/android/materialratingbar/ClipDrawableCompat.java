@@ -6,7 +6,7 @@ import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ClipDrawableCompat extends ClipDrawable implements TintableDrawable {
     private static final String TAG = ClipDrawableCompat.class.getSimpleName();
     private DummyConstantState mConstantState;
@@ -61,7 +61,7 @@ public class ClipDrawableCompat extends ClipDrawable implements TintableDrawable
         return this.mConstantState;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class DummyConstantState extends Drawable.ConstantState {
         @Override // android.graphics.drawable.Drawable.ConstantState
         public int getChangingConfigurations() {

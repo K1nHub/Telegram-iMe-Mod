@@ -5,7 +5,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import org.telegram.messenger.audioinfo.util.PositionInputStream;
 import org.telegram.messenger.audioinfo.util.RangeInputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MP4Box<I extends PositionInputStream> {
     private MP4Atom child;
     protected final DataInput data;

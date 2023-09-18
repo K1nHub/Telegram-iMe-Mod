@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_pageBlockVideo extends TLRPC$PageBlock {
     public static int constructor = 2089805750;
     public boolean autoplay;

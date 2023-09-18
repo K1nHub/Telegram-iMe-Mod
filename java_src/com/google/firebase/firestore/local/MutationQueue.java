@@ -6,7 +6,7 @@ import com.google.firebase.firestore.model.mutation.MutationBatch;
 import com.google.protobuf.ByteString;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface MutationQueue {
     void acknowledgeBatch(MutationBatch mutationBatch, ByteString byteString);
 

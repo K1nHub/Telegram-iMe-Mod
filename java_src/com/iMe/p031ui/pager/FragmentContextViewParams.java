@@ -1,7 +1,7 @@
 package com.iMe.p031ui.pager;
 /* compiled from: FragmentContextViewParams.kt */
 /* renamed from: com.iMe.ui.pager.FragmentContextViewParams */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FragmentContextViewParams {
     private final boolean enabled;
     private final boolean supportsCalls;

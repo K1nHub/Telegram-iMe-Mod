@@ -1,7 +1,7 @@
 package com.google.firebase.firestore;
 
 import com.google.firebase.firestore.util.Util;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GeoPoint implements Comparable<GeoPoint> {
     private final double latitude;
     private final double longitude;

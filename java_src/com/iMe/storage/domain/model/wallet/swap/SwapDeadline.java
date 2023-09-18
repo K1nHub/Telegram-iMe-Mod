@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.swap;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: SwapDeadline.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SwapDeadline {
     MINUTES_5(5),
     MINUTES_10(10),
@@ -27,7 +27,7 @@ public enum SwapDeadline {
     }
 
     /* compiled from: SwapDeadline.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

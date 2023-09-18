@@ -8,7 +8,7 @@ import com.google.android.gms.internal.mlkit_language_id.zzy;
 import com.google.firebase.components.Component;
 import com.google.firebase.components.Dependency;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzcr implements zzcv.zzb {
     private final ClearcutLogger zzc;
     private static final GmsLogger zzb = new GmsLogger("ClearcutTransport", "");

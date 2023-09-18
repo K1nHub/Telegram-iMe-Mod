@@ -12,7 +12,7 @@ import io.reactivex.observers.SerializedObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableDebounce<T, U> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super T, ? extends ObservableSource<U>> debounceSelector;
 
@@ -27,7 +27,7 @@ public final class ObservableDebounce<T, U> extends AbstractObservableWithUpstre
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DebounceObserver<T, U> implements Observer<T>, Disposable {
         final Function<? super T, ? extends ObservableSource<U>> debounceSelector;
         final AtomicReference<Disposable> debouncer = new AtomicReference<>();
@@ -110,7 +110,7 @@ public final class ObservableDebounce<T, U> extends AbstractObservableWithUpstre
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         static final class DebounceInnerObserver<T, U> extends DisposableObserver<U> {
             boolean done;
             final long index;

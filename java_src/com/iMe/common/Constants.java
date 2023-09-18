@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.LocaleController;
 /* compiled from: Constants.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Constants {
     public static final Constants INSTANCE = new Constants();
     private static final SimpleDateFormat dateDotsFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
@@ -35,7 +35,7 @@ public final class Constants {
     }
 
     /* compiled from: Constants.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Telegram {
         public static final Telegram INSTANCE = new Telegram();
 

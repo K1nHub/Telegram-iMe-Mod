@@ -29,20 +29,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 22
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 28
+    .line 24
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->itemViewType:I
 
-    .line 29
+    .line 25
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_custom_token:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->layoutId:I
 
-    .line 31
+    .line 27
     new-instance v0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider$networkIconCornerSize$2;
 
     invoke-direct {v0, p1}, Lcom/iMe/ui/adapter/provider/CustomTokenProvider$networkIconCornerSize$2;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
@@ -59,7 +59,7 @@
 .method public static final synthetic access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/CustomTokenProvider;)F
     .locals 0
 
-    .line 24
+    .line 20
     invoke-direct {p0}, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->getNetworkIconCornerSize()F
 
     move-result p0
@@ -70,7 +70,7 @@
 .method private final getNetworkIconCornerSize()F
     .locals 1
 
-    .line 31
+    .line 27
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -103,7 +103,7 @@
 
     invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 32
     sget v1, Lorg/telegram/messenger/R$id;->constraint_root:I
 
     const/4 v3, 0x1
@@ -112,7 +112,7 @@
 
     move-result-object v0
 
-    .line 37
+    .line 33
     sget v1, Lorg/telegram/messenger/R$id;->text_name:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    .line 38
+    .line 34
     sget v4, Lorg/telegram/messenger/R$id;->text_address:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -130,7 +130,7 @@
 
     move-result-object v6
 
-    .line 39
+    .line 35
     sget v7, Lorg/telegram/messenger/R$id;->image_token_icon:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->getAvatarUrl()Ljava/lang/String;
@@ -149,9 +149,10 @@
 
     move-result-object v13
 
-    .line 40
+    .line 37
     sget v0, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
+    .line 38
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->getNetworkId()Ljava/lang/String;
 
     move-result-object v5
@@ -174,11 +175,12 @@
 
     move v14, v0
 
+    .line 36
     invoke-static/range {v13 .. v19}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v5
 
-    .line 41
+    .line 40
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->getName()Ljava/lang/String;
 
     move-result-object v6
@@ -187,7 +189,7 @@
 
     move-result-object v1
 
-    .line 42
+    .line 41
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->getAddress()Ljava/lang/String;
 
     move-result-object v5
@@ -204,7 +206,7 @@
 
     move-result-object v1
 
-    .line 43
+    .line 42
     sget v3, Lorg/telegram/messenger/R$id;->text_ticker:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->getTicker()Ljava/lang/String;
@@ -215,7 +217,7 @@
 
     move-result-object v1
 
-    .line 44
+    .line 43
     new-instance v2, Lcom/iMe/ui/adapter/provider/CustomTokenProvider$convert$1;
 
     move-object/from16 v3, p0
@@ -279,7 +281,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 24
+    .line 20
     check-cast p2, Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/TokenItem;)V
@@ -290,7 +292,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 24
+    .line 20
     check-cast p2, Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/util/List;)V
@@ -301,7 +303,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 28
+    .line 24
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->itemViewType:I
 
     return v0
@@ -310,7 +312,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 29
+    .line 25
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;->layoutId:I
 
     return v0

@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @SafeParcelable.Class(creator = "UserAttributeParcelCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzkv extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzkv> CREATOR = new zzkw();
     @SafeParcelable.Field(m797id = 1)

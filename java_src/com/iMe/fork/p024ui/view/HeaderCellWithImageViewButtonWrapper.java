@@ -17,7 +17,7 @@ import org.telegram.p043ui.Cells.HeaderCell;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HeaderCellWithImageViewButtonWrapper.kt */
 /* renamed from: com.iMe.fork.ui.view.HeaderCellWithImageViewButtonWrapper */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
     private final HeaderCell headerCell;
     private final Lazy imageView$delegate;

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: IntrinsicsJvm.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class IntrinsicsKt__IntrinsicsJvmKt {
     public static <T> Continuation<Unit> createCoroutineUnintercepted(final Function1<? super Continuation<? super T>, ? extends Object> function1, Continuation<? super T> completion) {
         Intrinsics.checkNotNullParameter(function1, "<this>");

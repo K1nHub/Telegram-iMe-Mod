@@ -5,7 +5,7 @@ import com.google.firebase.firestore.core.Target;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.model.SnapshotVersion;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TargetCache {
     void addMatchingKeys(ImmutableSortedSet<DocumentKey> immutableSortedSet, int i);
 

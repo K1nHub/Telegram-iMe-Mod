@@ -16,12 +16,12 @@ import android.graphics.drawable.Drawable;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Premium.PremiumGradient */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PremiumGradient {
     private static PremiumGradient instance;
     private int lastStarColor;
@@ -45,10 +45,10 @@ public class PremiumGradient {
         this.mainGradient = premiumGradientTools;
         this.mainGradientPaint = premiumGradientTools.paint;
         Context context = ApplicationLoader.applicationContext;
-        int i = C3558R.C3560drawable.msg_premium_liststar;
+        int i = C3473R.C3475drawable.msg_premium_liststar;
         this.premiumStarDrawableMini = ContextCompat.getDrawable(context, i).mutate();
-        this.premiumStarMenuDrawable = createGradientDrawable(ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3558R.C3560drawable.msg_settings_premium));
-        this.premiumStarMenuDrawable2 = createGradientDrawable(ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3558R.C3560drawable.msg_premium_normal));
+        this.premiumStarMenuDrawable = createGradientDrawable(ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3473R.C3475drawable.msg_settings_premium));
+        this.premiumStarMenuDrawable2 = createGradientDrawable(ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3473R.C3475drawable.msg_premium_normal));
         this.premiumStarColoredDrawable = ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate();
         premiumGradientTools.chekColors();
         checkIconColors();
@@ -105,7 +105,7 @@ public class PremiumGradient {
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.PremiumGradient$InternalDrawable */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class InternalDrawable extends BitmapDrawable {
         public int[] colors;
         Drawable originDrawable;
@@ -139,7 +139,7 @@ public class PremiumGradient {
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.PremiumGradient$PremiumGradientTools */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class PremiumGradientTools {
         final int colorKey1;
         final int colorKey2;
@@ -149,10 +149,10 @@ public class PremiumGradient {
         final int[] colors;
 
         /* renamed from: cx */
-        public float f1829cx;
+        public float f1820cx;
 
         /* renamed from: cy */
-        public float f1830cy;
+        public float f1821cy;
         public boolean exactly;
         Matrix matrix;
         public final Paint paint;
@@ -160,16 +160,16 @@ public class PremiumGradient {
         Shader shader;
 
         /* renamed from: x1 */
-        public float f1831x1;
+        public float f1822x1;
 
         /* renamed from: x2 */
-        public float f1832x2;
+        public float f1823x2;
 
         /* renamed from: y1 */
-        public float f1833y1;
+        public float f1824y1;
 
         /* renamed from: y2 */
-        public float f1834y2;
+        public float f1825y2;
 
         public PremiumGradientTools(int i, int i2, int i3, int i4) {
             this(i, i2, i3, i4, -1);
@@ -180,15 +180,15 @@ public class PremiumGradient {
         }
 
         public PremiumGradientTools(int i, int i2, int i3, int i4, int i5, Theme.ResourcesProvider resourcesProvider) {
-            this.f1829cx = 0.5f;
-            this.f1830cy = 0.5f;
+            this.f1820cx = 0.5f;
+            this.f1821cy = 0.5f;
             this.matrix = new Matrix();
             this.paint = new Paint(1);
             this.colors = new int[5];
-            this.f1831x1 = BitmapDescriptorFactory.HUE_RED;
-            this.f1833y1 = 1.0f;
-            this.f1832x2 = 1.5f;
-            this.f1834y2 = BitmapDescriptorFactory.HUE_RED;
+            this.f1822x1 = BitmapDescriptorFactory.HUE_RED;
+            this.f1824y1 = 1.0f;
+            this.f1823x2 = 1.5f;
+            this.f1825y2 = BitmapDescriptorFactory.HUE_RED;
             this.resourcesProvider = resourcesProvider;
             this.colorKey1 = i;
             this.colorKey2 = i2;
@@ -201,7 +201,7 @@ public class PremiumGradient {
             chekColors();
             if (this.exactly) {
                 this.matrix.reset();
-                this.matrix.postScale((i3 - i) / 100.0f, (i4 - i2) / 100.0f, this.f1829cx * 100.0f, this.f1830cy * 100.0f);
+                this.matrix.postScale((i3 - i) / 100.0f, (i4 - i2) / 100.0f, this.f1820cx * 100.0f, this.f1821cy * 100.0f);
                 this.matrix.postTranslate(f, f2);
                 this.shader.setLocalMatrix(this.matrix);
                 return;
@@ -235,31 +235,31 @@ public class PremiumGradient {
             iArr[3] = color4;
             iArr[4] = color5;
             if (color3 == 0) {
-                float f = this.f1831x1 * 100.0f;
-                float f2 = this.f1833y1 * 100.0f;
-                float f3 = this.f1832x2 * 100.0f;
-                float f4 = this.f1834y2 * 100.0f;
+                float f = this.f1822x1 * 100.0f;
+                float f2 = this.f1824y1 * 100.0f;
+                float f3 = this.f1823x2 * 100.0f;
+                float f4 = this.f1825y2 * 100.0f;
                 int[] iArr2 = this.colors;
                 this.shader = new LinearGradient(f, f2, f3, f4, new int[]{iArr2[0], iArr2[1]}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP);
             } else if (color4 == 0) {
-                float f5 = this.f1831x1 * 100.0f;
-                float f6 = this.f1833y1 * 100.0f;
-                float f7 = this.f1832x2 * 100.0f;
-                float f8 = this.f1834y2 * 100.0f;
+                float f5 = this.f1822x1 * 100.0f;
+                float f6 = this.f1824y1 * 100.0f;
+                float f7 = this.f1823x2 * 100.0f;
+                float f8 = this.f1825y2 * 100.0f;
                 int[] iArr3 = this.colors;
                 this.shader = new LinearGradient(f5, f6, f7, f8, new int[]{iArr3[0], iArr3[1], iArr3[2]}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
             } else if (color5 == 0) {
-                float f9 = this.f1831x1 * 100.0f;
-                float f10 = this.f1833y1 * 100.0f;
-                float f11 = this.f1832x2 * 100.0f;
-                float f12 = this.f1834y2 * 100.0f;
+                float f9 = this.f1822x1 * 100.0f;
+                float f10 = this.f1824y1 * 100.0f;
+                float f11 = this.f1823x2 * 100.0f;
+                float f12 = this.f1825y2 * 100.0f;
                 int[] iArr4 = this.colors;
                 this.shader = new LinearGradient(f9, f10, f11, f12, new int[]{iArr4[0], iArr4[1], iArr4[2], iArr4[3]}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
             } else {
-                float f13 = this.f1831x1 * 100.0f;
-                float f14 = this.f1833y1 * 100.0f;
-                float f15 = this.f1832x2 * 100.0f;
-                float f16 = this.f1834y2 * 100.0f;
+                float f13 = this.f1822x1 * 100.0f;
+                float f14 = this.f1824y1 * 100.0f;
+                float f15 = this.f1823x2 * 100.0f;
+                float f16 = this.f1825y2 * 100.0f;
                 int[] iArr5 = this.colors;
                 this.shader = new LinearGradient(f13, f14, f15, f16, new int[]{iArr5[0], iArr5[1], iArr5[2], iArr5[3], iArr5[4]}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
             }

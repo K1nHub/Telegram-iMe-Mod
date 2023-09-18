@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 /* renamed from: org.telegram.ui.Components.ReorderingHintDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ReorderingHintDrawable extends Drawable {
     private final RectDrawable primaryRectDrawable;
     private float scaleX;
@@ -178,7 +178,7 @@ public class ReorderingHintDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: org.telegram.ui.Components.ReorderingHintDrawable$RectDrawable */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class RectDrawable extends Drawable {
         private final RectF tempRect = new RectF();
         private final Paint paint = new Paint(1);

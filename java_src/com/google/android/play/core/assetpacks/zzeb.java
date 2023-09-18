@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzeb {
     private static final com.google.android.play.core.internal.zzag zza = new com.google.android.play.core.internal.zzag("PackMetadataManager");
     private final zzbh zzb;

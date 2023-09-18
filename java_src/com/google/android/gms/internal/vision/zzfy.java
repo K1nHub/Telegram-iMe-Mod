@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfy implements Parcelable.Creator<zzfz> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zzfz[] newArray(int i) {

@@ -3,7 +3,7 @@ package com.google.firebase.analytics.connector.internal;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzg {
     private final AnalyticsConnector.AnalyticsConnectorListener zza;
     private final AppMeasurementSdk zzb;

@@ -15,7 +15,7 @@ import org.orbitmvi.orbit.idling.IdlingResource;
 import org.orbitmvi.orbit.idling.NoopIdlingResource;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* compiled from: Container.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Container<STATE, SIDE_EFFECT> {
     Flow<SIDE_EFFECT> getSideEffectFlow();
 
@@ -24,7 +24,7 @@ public interface Container<STATE, SIDE_EFFECT> {
     Object orbit(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation);
 
     /* compiled from: Container.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Settings {
         private final CoroutineExceptionHandler exceptionHandler;
         private final IdlingResource idlingRegistry;

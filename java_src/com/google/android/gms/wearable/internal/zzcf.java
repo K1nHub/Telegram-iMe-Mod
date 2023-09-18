@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "ConsentResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzcf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzcf> CREATOR = new zzcg();
     @SafeParcelable.Field(m797id = 1)

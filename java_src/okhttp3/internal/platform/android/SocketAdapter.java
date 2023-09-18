@@ -4,7 +4,7 @@ import java.util.List;
 import javax.net.ssl.SSLSocket;
 import okhttp3.Protocol;
 /* compiled from: SocketAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface SocketAdapter {
     void configureTlsExtensions(SSLSocket sSLSocket, String str, List<? extends Protocol> list);
 

@@ -1,5 +1,5 @@
 package org.telegram.messenger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SecureDocumentKey {
     public byte[] file_iv;
     public byte[] file_key;

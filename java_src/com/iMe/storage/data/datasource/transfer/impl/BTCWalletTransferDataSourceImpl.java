@@ -40,7 +40,7 @@ import wallet.core.jni.BitcoinScript;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.proto.Bitcoin;
 /* compiled from: BTCWalletTransferDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BTCWalletTransferDataSourceImpl implements WalletTransferDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;
@@ -149,7 +149,7 @@ public final class BTCWalletTransferDataSourceImpl implements WalletTransferData
         String address = bTCWallet.getAddress();
         CoinType coinType = CoinType.BITCOIN;
         byte[] data = BitcoinScript.lockScriptForAddress(address, coinType).data();
-        Intrinsics.checkNotNullExpressionValue(data, "lockScriptForAddress(wal… CoinType.BITCOIN).data()");
+        Intrinsics.checkNotNullExpressionValue(data, "lockScriptForAddress(wal…COIN)\n            .data()");
         ByteString byteString2 = CryptoExtKt.toByteString(data);
         TransferArgs.BTC btc = (TransferArgs.BTC) args;
         Bitcoin.SigningInput.Builder coinType2 = Bitcoin.SigningInput.newBuilder().setAmount(btc.getConvertedAmount().longValue()).setHashType(BitcoinScript.hashTypeForCoin(coinType)).setToAddress(btc.getRecipientAddress()).setChangeAddress(btc.getChangeAddress()).setByteFee(btc.getByteFee().longValue()).setCoinType(coinType.value());

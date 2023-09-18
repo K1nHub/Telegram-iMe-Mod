@@ -2,19 +2,17 @@ package com.iMe.feature.socialMedias;
 
 import com.iMe.feature.profile.ProfileData;
 import com.iMe.feature.profile.ProfileRepository;
-import com.iMe.model.twitter.SocialAuthResult;
 import com.iMe.storage.data.network.interceptor.MetadataInterceptor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.wallet.SessionTokens;
 import com.iMe.storage.domain.repository.wallet.WalletSessionRepository;
-import com.jakewharton.rxrelay2.PublishRelay;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialUseCase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialUseCase {
     private final ProfileRepository profileRepository;
     private final SocialRepository socialRepository;
@@ -70,10 +68,6 @@ public final class SocialUseCase {
         return (ObservableSource) tmp0.invoke(obj);
     }
 
-    public final PublishRelay<SocialAuthResult> listenSocialChanges() {
-        return this.socialRepository.listenSocialChanges();
-    }
-
     public final Observable<Result<Boolean>> logout(SocialNetwork socialNetwork) {
         Intrinsics.checkNotNullParameter(socialNetwork, "socialNetwork");
         return this.socialRepository.logoutSocial(this.profileRepository.getCurrentProfile(), socialNetwork);
@@ -108,7 +102,7 @@ public final class SocialUseCase {
                 return startSocialAuth$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "fun startSocialAuth(soci… profileId, socialType) }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "fun startSocialAuth(\n   … profileId, socialType) }");
         return flatMap;
     }
 
@@ -157,7 +151,7 @@ public final class SocialUseCase {
             result = success;
         }
         Observable<Result<SocialDomain>> just = Observable.just(result);
-        Intrinsics.checkNotNullExpressionValue(just, "just(result.data?.copy(h…)?.toSuccess() ?: result)");
+        Intrinsics.checkNotNullExpressionValue(just, "just(\n            result…ess() ?: result\n        )");
         return just;
     }
 }

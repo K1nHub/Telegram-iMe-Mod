@@ -2,7 +2,7 @@ package com.iMe.bots.data.model.database;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecentDbModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecentDbModel {
     private final String botId;
     private final int counter;

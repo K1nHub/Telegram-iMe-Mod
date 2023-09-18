@@ -7,7 +7,7 @@ import java.util.Arrays;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 @UsedByNative("language_id_jni.cc")
 /* renamed from: com.google.mlkit.nl.languageid.IdentifiedLanguage */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IdentifiedLanguage {
     private final String zza;
     private final float zzb;

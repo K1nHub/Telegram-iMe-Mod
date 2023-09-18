@@ -20,7 +20,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 /* renamed from: org.telegram.ui.Cells.TextInfoPrivacyCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextInfoPrivacyCell extends FrameLayout {
     private int bottomPadding;
     private int fixedSize;

@@ -13,7 +13,7 @@ import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: SocialAuthResultMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialAuthResultMapperKt {
     public static final SocialAuthResult toAuthResult(Uri uri) {
         int collectionSizeOrDefault;
@@ -37,18 +37,16 @@ public final class SocialAuthResultMapperKt {
             linkedHashMap.put(obj, queryParameter);
         }
         String lastPathSegment = uri.getLastPathSegment();
-        if (!Intrinsics.areEqual(lastPathSegment, SocialAuthStatus.FAIL.getStatus())) {
-            if (Intrinsics.areEqual(lastPathSegment, SocialAuthStatus.SUCCESS.getStatus())) {
-                Gson globalGson = GsonExtKt.getGlobalGson();
-                failure = (SocialAuthResult) globalGson.fromJson(globalGson.toJson(linkedHashMap), new TypeToken<SocialAuthResult.Success>() { // from class: com.iMe.feature.socialMedias.auth.SocialAuthResultMapperKt$toAuthResult$$inlined$toDataClass$default$2
-                }.getType());
-            } else {
-                failure = new SocialAuthResult.Failure("ProcessAuthResult failed");
-            }
-        } else {
-            Gson globalGson2 = GsonExtKt.getGlobalGson();
-            failure = (SocialAuthResult) globalGson2.fromJson(globalGson2.toJson(linkedHashMap), new TypeToken<SocialAuthResult.Failure>() { // from class: com.iMe.feature.socialMedias.auth.SocialAuthResultMapperKt$toAuthResult$$inlined$toDataClass$default$1
+        if (Intrinsics.areEqual(lastPathSegment, SocialAuthStatus.FAIL.getStatus())) {
+            Gson globalGson = GsonExtKt.getGlobalGson();
+            failure = (SocialAuthResult) globalGson.fromJson(globalGson.toJson(linkedHashMap), new TypeToken<SocialAuthResult.Failure>() { // from class: com.iMe.feature.socialMedias.auth.SocialAuthResultMapperKt$toAuthResult$$inlined$toDataClass$default$1
             }.getType());
+        } else if (Intrinsics.areEqual(lastPathSegment, SocialAuthStatus.SUCCESS.getStatus())) {
+            Gson globalGson2 = GsonExtKt.getGlobalGson();
+            failure = (SocialAuthResult) globalGson2.fromJson(globalGson2.toJson(linkedHashMap), new TypeToken<SocialAuthResult.Success>() { // from class: com.iMe.feature.socialMedias.auth.SocialAuthResultMapperKt$toAuthResult$$inlined$toDataClass$default$2
+            }.getType());
+        } else {
+            failure = new SocialAuthResult.Failure("ProcessAuthResult failed");
         }
         if (failure instanceof SocialAuthResult.Success) {
             SocialAuthResult.Success success = (SocialAuthResult.Success) failure;

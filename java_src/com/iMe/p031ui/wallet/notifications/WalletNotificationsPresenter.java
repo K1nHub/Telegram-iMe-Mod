@@ -24,12 +24,12 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletNotificationsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletNotificationsPresenter extends BasePresenter<WalletNotificationsView> {
     private final ResourceManager resourceManager;
     private final SchedulersProvider schedulersProvider;
@@ -74,12 +74,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1573invoke(result);
+                m1564invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1573invoke(Result<? extends Boolean> it) {
+            public final void m1564invoke(Result<? extends Boolean> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -97,7 +97,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                         ((WalletNotificationsView) this.getViewState()).onEmptyState();
                         return;
                     }
-                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3558R.string.wallet_notifications_success_mark_all_notification_as_read));
+                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3473R.string.wallet_notifications_success_mark_all_notification_as_read));
                     ((WalletNotificationsView) this.getViewState()).onLoadedNotifications(mutableList);
                 } else if (result instanceof Result.Error) {
                     ((WalletNotificationsView) this.getViewState()).showErrorToast((Result.Error) result, this.getResourceManager());
@@ -128,7 +128,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -144,12 +144,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1571invoke(result);
+                m1562invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1571invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1562invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -197,7 +197,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -228,12 +228,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1572invoke(result);
+                m1563invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1572invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1563invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -292,7 +292,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -319,12 +319,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1574invoke(result);
+                m1565invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1574invoke(Result<? extends Boolean> it) {
+            public final void m1565invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if (result instanceof Result.Error) {
@@ -356,7 +356,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 }

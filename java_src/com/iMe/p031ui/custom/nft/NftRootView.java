@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftRootView.kt */
 /* renamed from: com.iMe.ui.custom.nft.NftRootView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftRootView extends FrameLayout {
     private NftToken nftToken;
 

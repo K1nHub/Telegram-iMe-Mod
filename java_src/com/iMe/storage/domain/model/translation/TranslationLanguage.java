@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.translation;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TranslationLanguage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TranslationLanguage {
     private final String languageCode;
 

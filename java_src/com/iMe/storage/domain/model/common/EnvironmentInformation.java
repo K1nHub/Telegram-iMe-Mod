@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: EnvironmentInformation.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EnvironmentInformation {
     public static final Companion Companion = new Companion(null);
     private static final Lazy<List<EnvironmentInformation>> availableEnvironments$delegate = LazyKt.lazy(new Function0<List<? extends EnvironmentInformation>>() { // from class: com.iMe.storage.domain.model.common.EnvironmentInformation$Companion$availableEnvironments$2
@@ -142,7 +142,7 @@ public abstract class EnvironmentInformation {
     }
 
     /* compiled from: EnvironmentInformation.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Production extends EnvironmentInformation {
         public static final Production INSTANCE = new Production();
 
@@ -152,7 +152,7 @@ public abstract class EnvironmentInformation {
     }
 
     /* compiled from: EnvironmentInformation.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Stage extends EnvironmentInformation {
         public static final Stage INSTANCE = new Stage();
 
@@ -162,7 +162,7 @@ public abstract class EnvironmentInformation {
     }
 
     /* compiled from: EnvironmentInformation.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Development extends EnvironmentInformation {
         public static final Development INSTANCE = new Development();
 
@@ -172,7 +172,7 @@ public abstract class EnvironmentInformation {
     }
 
     /* compiled from: EnvironmentInformation.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

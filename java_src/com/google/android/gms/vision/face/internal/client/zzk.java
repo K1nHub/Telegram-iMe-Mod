@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzk extends com.google.android.gms.internal.vision.zzb implements zzi {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzk(IBinder iBinder) {

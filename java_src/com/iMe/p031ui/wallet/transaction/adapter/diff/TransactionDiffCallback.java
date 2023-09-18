@@ -10,7 +10,7 @@ import com.iMe.model.wallet.transaction.TransactionItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.adapter.diff.TransactionDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TransactionDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public Object getChangePayload(BaseNode oldItem, BaseNode newItem) {

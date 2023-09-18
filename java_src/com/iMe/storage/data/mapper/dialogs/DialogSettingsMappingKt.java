@@ -4,7 +4,7 @@ import com.iMe.storage.data.locale.p027db.model.translation.DialogTranslationSet
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogSettingsMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogSettingsMappingKt {
     public static final DialogTranslationSettings mapToDomain(DialogTranslationSettingsDb dialogTranslationSettingsDb) {
         Intrinsics.checkNotNullParameter(dialogTranslationSettingsDb, "<this>");

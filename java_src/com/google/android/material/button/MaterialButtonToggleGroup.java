@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.TreeMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialButtonToggleGroup extends LinearLayout {
     private int checkedId;
     private final CheckedStateTracker checkedStateTracker;
@@ -42,7 +42,7 @@ public class MaterialButtonToggleGroup extends LinearLayout {
     private static final String LOG_TAG = MaterialButtonToggleGroup.class.getSimpleName();
     private static final int DEF_STYLE_RES = R$style.Widget_MaterialComponents_MaterialButtonToggleGroup;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnButtonCheckedListener {
         void onButtonChecked(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z);
     }
@@ -452,7 +452,7 @@ public class MaterialButtonToggleGroup extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CheckedStateTracker implements MaterialButton.OnCheckedChangeListener {
         private CheckedStateTracker() {
         }
@@ -473,7 +473,7 @@ public class MaterialButtonToggleGroup extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class PressedStateTracker implements MaterialButton.OnPressedChangeListener {
         private PressedStateTracker() {
         }
@@ -485,7 +485,7 @@ public class MaterialButtonToggleGroup extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CornerData {
         private static final CornerSize noCorner = new AbsoluteCornerSize(BitmapDescriptorFactory.HUE_RED);
         CornerSize bottomLeft;

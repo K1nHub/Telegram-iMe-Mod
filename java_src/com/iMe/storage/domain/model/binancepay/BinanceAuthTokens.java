@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.binancepay;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceAuthTokens.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceAuthTokens {
     private final String accessToken;
     private final long accessTokenExpiresIn;

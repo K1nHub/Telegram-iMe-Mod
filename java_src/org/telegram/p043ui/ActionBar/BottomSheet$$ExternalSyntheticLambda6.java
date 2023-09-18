@@ -1,6 +1,6 @@
 package org.telegram.p043ui.ActionBar;
 /* renamed from: org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda6 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class BottomSheet$$ExternalSyntheticLambda6 implements Runnable {
     public final /* synthetic */ BottomSheet f$0;
 

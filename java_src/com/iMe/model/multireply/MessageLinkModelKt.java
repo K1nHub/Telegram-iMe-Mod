@@ -3,7 +3,7 @@ package com.iMe.model.multireply;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: MessageLinkModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessageLinkModelKt {
     public static final String getMessageLinkWithNewMessageId(MessageLinkModel messageLinkModel, int i) {
         String replace$default;

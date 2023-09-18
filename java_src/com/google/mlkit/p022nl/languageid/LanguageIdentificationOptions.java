@@ -6,7 +6,7 @@ import com.google.android.gms.internal.mlkit_language_id.zzy;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* renamed from: com.google.mlkit.nl.languageid.LanguageIdentificationOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LanguageIdentificationOptions {
     static final LanguageIdentificationOptions zza = new Builder().build();
     private final Float zzb;
@@ -27,7 +27,7 @@ public class LanguageIdentificationOptions {
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     /* renamed from: com.google.mlkit.nl.languageid.LanguageIdentificationOptions$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private Float zza;
         private Executor zzb;

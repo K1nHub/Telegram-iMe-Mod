@@ -1,10 +1,10 @@
 package com.google.firebase.installations;
 
 import com.google.firebase.FirebaseException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseInstallationsException extends FirebaseException {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Status {
         BAD_CONFIG,
         UNAVAILABLE,

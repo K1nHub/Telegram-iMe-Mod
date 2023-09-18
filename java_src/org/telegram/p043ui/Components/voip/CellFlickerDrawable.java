@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 /* renamed from: org.telegram.ui.Components.voip.CellFlickerDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CellFlickerDrawable {
     public float animationSpeedScale;
     public boolean drawFrame;
@@ -188,7 +188,7 @@ public class CellFlickerDrawable {
     }
 
     /* renamed from: org.telegram.ui.Components.voip.CellFlickerDrawable$DrawableInterface */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class DrawableInterface extends Drawable {
         public float radius;
         SvgHelper.SvgDrawable svgDrawable;

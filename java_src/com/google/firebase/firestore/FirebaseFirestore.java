@@ -16,7 +16,7 @@ import com.google.firebase.firestore.remote.GrpcMetadataProvider;
 import com.google.firebase.firestore.util.AsyncQueue;
 import com.google.firebase.firestore.util.Preconditions;
 import com.google.firebase.inject.Deferred;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseFirestore {
     private final AsyncQueue asyncQueue;
     private volatile FirestoreClient client;
@@ -27,7 +27,7 @@ public class FirebaseFirestore {
     private final String persistenceKey;
     private FirebaseFirestoreSettings settings;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface InstanceRegistry {
     }
 

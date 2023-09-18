@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.GasPriceRespons
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionParamsResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectTransactionParamsResponse {
     private final long chainId;
     private final GasPriceResponse fast;

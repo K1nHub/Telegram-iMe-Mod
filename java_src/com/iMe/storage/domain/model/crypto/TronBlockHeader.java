@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TronBlockHeader.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TronBlockHeader {
     private final long number;
     private final String parentHash;

@@ -2,7 +2,7 @@ package com.iMe.model.common;
 
 import com.iMe.storage.domain.utils.system.ResourceManager;
 /* compiled from: DialogChooseItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DialogChooseItem {
     String getTitle(ResourceManager resourceManager);
 

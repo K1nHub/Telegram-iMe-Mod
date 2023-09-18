@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.catalog.CatalogLanguageRespon
 import com.iMe.storage.domain.model.catalog.CatalogLanguage;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelLanguageMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelLanguageMappingKt {
     public static final CatalogLanguage mapToDomain(CatalogLanguageResponse catalogLanguageResponse) {
         Intrinsics.checkNotNullParameter(catalogLanguageResponse, "<this>");

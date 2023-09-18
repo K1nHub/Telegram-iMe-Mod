@@ -10,7 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GlideOptions extends RequestOptions {
     @Override // com.bumptech.glide.request.BaseRequestOptions
     public /* bridge */ /* synthetic */ RequestOptions apply(BaseRequestOptions baseRequestOptions) {

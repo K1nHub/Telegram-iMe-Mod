@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.C0479C;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringNumberConversions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumberConversionsJVMKt {
     public static Integer toIntOrNull(String str) {
         Intrinsics.checkNotNullParameter(str, "<this>");

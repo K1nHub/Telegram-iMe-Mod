@@ -5,7 +5,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 /* renamed from: com.google.firestore.v1.Precondition */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Precondition extends GeneratedMessageLite<Precondition, Builder> implements MessageLiteOrBuilder {
     private static final Precondition DEFAULT_INSTANCE;
     public static final int EXISTS_FIELD_NUMBER = 1;
@@ -18,7 +18,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
     }
 
     /* renamed from: com.google.firestore.v1.Precondition$ConditionTypeCase */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ConditionTypeCase {
         EXISTS(1),
         UPDATE_TIME(2),
@@ -89,7 +89,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
     }
 
     /* renamed from: com.google.firestore.v1.Precondition$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Precondition, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10681 c10681) {
             this();
@@ -113,7 +113,7 @@ public final class Precondition extends GeneratedMessageLite<Precondition, Build
     }
 
     /* renamed from: com.google.firestore.v1.Precondition$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10681 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

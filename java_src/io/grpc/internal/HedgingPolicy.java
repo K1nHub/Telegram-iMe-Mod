@@ -8,14 +8,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HedgingPolicy {
     static final HedgingPolicy DEFAULT = new HedgingPolicy(1, 0, Collections.emptySet());
     final long hedgingDelayNanos;
     final int maxAttempts;
     final Set<Status.Code> nonFatalStatusCodes;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     interface Provider {
         HedgingPolicy get();
     }

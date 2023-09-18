@@ -7,7 +7,7 @@ import com.google.firebase.firestore.model.MutableDocument;
 import com.google.firebase.firestore.model.SnapshotVersion;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface RemoteDocumentCache {
     void add(MutableDocument mutableDocument, SnapshotVersion snapshotVersion);
 

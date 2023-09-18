@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SmartContentMapper.kt */
 /* renamed from: com.iMe.ui.smartpanel.mapper.SmartContentMapper */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SmartContentMapper {
     public final List<SmartBotTab> mapToTabs(List<SmartBotResponse> list, boolean z) {
         ArrayList arrayList = new ArrayList();

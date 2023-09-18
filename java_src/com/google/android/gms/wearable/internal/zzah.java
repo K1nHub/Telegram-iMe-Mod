@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.Asserts;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.wearable.CapabilityApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzah implements CapabilityApi {
     @Override // com.google.android.gms.wearable.CapabilityApi
     public final PendingResult<Status> addCapabilityListener(GoogleApiClient googleApiClient, CapabilityApi.CapabilityListener capabilityListener, String str) {

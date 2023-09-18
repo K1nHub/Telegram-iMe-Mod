@@ -2,14 +2,14 @@ package com.google.android.gms.maps;
 
 import android.content.Context;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MapsInitializer {
     private static final String zza = "MapsInitializer";
     private static boolean zzb = false;
     private static Renderer zzc = Renderer.LEGACY;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Renderer {
         LEGACY,
         LATEST

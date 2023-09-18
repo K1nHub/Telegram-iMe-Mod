@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.ArrayList;
 import java.util.List;
 @SafeParcelable.Class(creator = "ShortDynamicLinkImplCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShortDynamicLinkImpl> CREATOR = new ShortDynamicLinkImplCreator();
     @SafeParcelable.Field(getter = "getPreviewLink", m797id = 2)
@@ -43,7 +43,7 @@ public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Class(creator = "WarningImplCreator")
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WarningImpl extends AbstractSafeParcelable {
         public static final Parcelable.Creator<WarningImpl> CREATOR = new WarningImplCreator();
         @SafeParcelable.Field(getter = "getMessage", m797id = 2)

@@ -1,5 +1,5 @@
 package com.iMe.common;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdFabric$Menu {
     public static final int ADD_TOKEN;
     public static final int ADMIN_CATEGORIES_FILTER;
@@ -72,7 +72,6 @@ public class IdFabric$Menu {
     public static final int QUOTE = -1073741824;
     public static final int REACTIONS;
     public static final int RECEIVE;
-    public static final int REJECT;
     public static final int REPORT;
     public static final int RESET;
     public static final int RESET_TWITTER;
@@ -150,7 +149,6 @@ public class IdFabric$Menu {
         RESET = i13;
         int i15 = i14 + 1;
         f340id = i15;
-        REJECT = i14;
         int i16 = i15 + 1;
         f340id = i16;
         RECEIVE = i15;

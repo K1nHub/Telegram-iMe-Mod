@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
 /* renamed from: com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class C0985xfe724d07 extends CrashlyticsReport.Session.Event.Application.Execution.BinaryImage {
     private final long baseAddress;
     private final String name;
@@ -72,7 +72,7 @@ final class C0985xfe724d07 extends CrashlyticsReport.Session.Event.Application.E
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.Builder {
         private Long baseAddress;
         private String name;

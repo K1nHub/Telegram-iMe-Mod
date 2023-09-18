@@ -11,7 +11,7 @@ import com.google.android.gms.vision.Frame;
 import com.google.firebase.p020ml.vision.common.FirebaseVisionImageMetadata;
 import java.nio.ByteBuffer;
 /* renamed from: com.google.firebase.ml.vision.common.FirebaseVisionImage */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionImage {
     private volatile Bitmap zzbav;
     private volatile ByteBuffer zzbaw;

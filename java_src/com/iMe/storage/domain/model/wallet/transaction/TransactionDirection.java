@@ -17,7 +17,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OUT uses external 
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: TransactionDirection.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransactionDirection {
     private static final /* synthetic */ TransactionDirection[] $VALUES;
     public static final Companion Companion;
@@ -67,7 +67,7 @@ public final class TransactionDirection {
     }
 
     /* compiled from: TransactionDirection.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

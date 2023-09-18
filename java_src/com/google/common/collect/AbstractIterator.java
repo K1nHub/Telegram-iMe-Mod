@@ -2,13 +2,13 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractIterator<T> extends UnmodifiableIterator<T> {
     private T next;
     private State state = State.NOT_READY;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum State {
         READY,
         NOT_READY,
@@ -26,7 +26,7 @@ public abstract class AbstractIterator<T> extends UnmodifiableIterator<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.collect.AbstractIterator$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C09001 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$collect$AbstractIterator$State;
 

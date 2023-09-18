@@ -5,7 +5,7 @@ import com.iMe.model.catalog.CampaignItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelsDiffCallback.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.adapter.diff.ChannelsDiffCallback */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelsDiffCallback extends DiffUtil.ItemCallback<CampaignItem> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(CampaignItem oldItem, CampaignItem newItem) {

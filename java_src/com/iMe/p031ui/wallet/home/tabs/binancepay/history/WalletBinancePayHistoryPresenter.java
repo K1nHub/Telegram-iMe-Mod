@@ -37,7 +37,7 @@ import timber.log.Timber;
 /* compiled from: WalletBinancePayHistoryPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletBinancePayHistoryPresenter extends BasePresenter<WalletBinancePayHistoryView> {
     private final BinanceInternalInteractor binanceInternalInteractor;
     private final BinancePayProcessManager binancePayProcessManager;
@@ -102,12 +102,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1544invoke(result);
+                m1535invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1544invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1535invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List<BaseNode> mapTransactionsToGroups;
@@ -164,7 +164,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -186,12 +186,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1543invoke(result);
+                m1534invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1543invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1534invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List mapTransactionsToGroups;
@@ -236,7 +236,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -275,7 +275,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -283,12 +283,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1542invoke(rxEvent);
+                m1533invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1542invoke(RxEvent it) {
+            public final void m1533invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateWalletScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE)) {
@@ -320,7 +320,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

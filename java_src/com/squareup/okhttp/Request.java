@@ -1,7 +1,7 @@
 package com.squareup.okhttp;
 
 import com.squareup.okhttp.Headers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Request {
     private final Headers headers;
     private final String method;
@@ -40,7 +40,7 @@ public final class Request {
         return sb.toString();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private RequestBody body;
         private Object tag;

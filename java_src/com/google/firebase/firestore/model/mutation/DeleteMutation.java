@@ -4,7 +4,7 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.model.MutableDocument;
 import com.google.firebase.firestore.util.Assert;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DeleteMutation extends Mutation {
     public DeleteMutation(DocumentKey documentKey, Precondition precondition) {
         super(documentKey, precondition);

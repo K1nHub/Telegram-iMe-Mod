@@ -1,10 +1,11 @@
 package com.iMe.p031ui.wallet.home.tabs.binancepay.receive;
 
 import com.iMe.fork.utils.Callbacks$Callback;
-import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.fork.utils.Callbacks$Callback2;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -13,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletReceiveBinancePayView> implements WalletReceiveBinancePayView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -26,14 +27,14 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
     }
 
     @Override // com.iMe.p031ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView
-    public void showSelectTokenDialog(WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
-        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, screenType, str, z, callbacks$Callback1);
+    public void showSelectTokenDialog(SelectTokenScreenType selectTokenScreenType, String str, boolean z, Callbacks$Callback2<TokenDetailed, FiatValue> callbacks$Callback2) {
+        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, selectTokenScreenType, str, z, callbacks$Callback2);
         this.viewCommands.beforeApply(showSelectTokenDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showSelectTokenDialog(screenType, str, z, callbacks$Callback1);
+            view.showSelectTokenDialog(selectTokenScreenType, str, z, callbacks$Callback2);
         }
         this.viewCommands.afterApply(showSelectTokenDialogCommand);
     }
@@ -131,19 +132,19 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$ShowSelectTokenDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSelectTokenDialogCommand extends ViewCommand<WalletReceiveBinancePayView> {
-        public final Callbacks$Callback1<TokenDetailed> action;
+        public final Callbacks$Callback2<TokenDetailed, FiatValue> action;
         public final String networkId;
         public final boolean onlyPositiveBalance;
-        public final WalletSelectTokenFragment.ScreenType selectTokensScreenType;
+        public final SelectTokenScreenType selectTokensScreenType;
 
-        ShowSelectTokenDialogCommand(WalletReceiveBinancePayView$$State walletReceiveBinancePayView$$State, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
+        ShowSelectTokenDialogCommand(WalletReceiveBinancePayView$$State walletReceiveBinancePayView$$State, SelectTokenScreenType selectTokenScreenType, String str, boolean z, Callbacks$Callback2<TokenDetailed, FiatValue> callbacks$Callback2) {
             super("showSelectTokenDialog", AddToEndSingleStrategy.class);
-            this.selectTokensScreenType = screenType;
+            this.selectTokensScreenType = selectTokenScreenType;
             this.networkId = str;
             this.onlyPositiveBalance = z;
-            this.action = callbacks$Callback1;
+            this.action = callbacks$Callback2;
         }
 
         @Override // moxy.viewstate.ViewCommand
@@ -154,7 +155,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$UpdateSelectedUserCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateSelectedUserCommand extends ViewCommand<WalletReceiveBinancePayView> {
         UpdateSelectedUserCommand(WalletReceiveBinancePayView$$State walletReceiveBinancePayView$$State) {
             super("updateSelectedUser", AddToEndSingleStrategy.class);
@@ -168,7 +169,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$UpdateSelectedTokenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateSelectedTokenCommand extends ViewCommand<WalletReceiveBinancePayView> {
         UpdateSelectedTokenCommand(WalletReceiveBinancePayView$$State walletReceiveBinancePayView$$State) {
             super("updateSelectedToken", AddToEndSingleStrategy.class);
@@ -182,7 +183,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$OpenChatScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenChatScreenCommand extends ViewCommand<WalletReceiveBinancePayView> {
         public final long userId;
 
@@ -199,7 +200,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$ShowCreatedCollectionSuccessDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowCreatedCollectionSuccessDialogCommand extends ViewCommand<WalletReceiveBinancePayView> {
         public final Callbacks$Callback action;
         public final String buttonText;
@@ -222,7 +223,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletReceiveBinancePayView> {
         public final String text;
 
@@ -239,7 +240,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletReceiveBinancePayView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -260,7 +261,7 @@ public class WalletReceiveBinancePayView$$State extends MvpViewState<WalletRecei
 
     /* compiled from: WalletReceiveBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletReceiveBinancePayView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

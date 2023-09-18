@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Charts.view_data;
 /* renamed from: org.telegram.ui.Charts.view_data.ChartBottomSignatureData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChartBottomSignatureData {
     public int alpha;
     public int fixedAlpha = 255;

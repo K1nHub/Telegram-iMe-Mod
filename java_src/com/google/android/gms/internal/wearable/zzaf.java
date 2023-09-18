@@ -3,7 +3,7 @@ package com.google.android.gms.internal.wearable;
 import com.google.android.gms.internal.wearable.zzaf;
 import com.google.android.gms.internal.wearable.zzag;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzaf<MessageType extends zzag<MessageType, BuilderType>, BuilderType extends zzaf<MessageType, BuilderType>> implements zzdb {
     @Override // 
     /* renamed from: zzo */

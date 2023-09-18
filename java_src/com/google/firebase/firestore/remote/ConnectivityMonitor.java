@@ -1,10 +1,10 @@
 package com.google.firebase.firestore.remote;
 
 import com.google.firebase.firestore.util.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ConnectivityMonitor {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum NetworkStatus {
         UNREACHABLE,
         REACHABLE

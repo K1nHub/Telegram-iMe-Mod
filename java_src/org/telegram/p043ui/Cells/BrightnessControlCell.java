@@ -10,12 +10,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.SeekBarView;
 /* renamed from: org.telegram.ui.Cells.BrightnessControlCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BrightnessControlCell extends FrameLayout {
     private ImageView leftImageView;
     Theme.ResourcesProvider resourcesProvider;
@@ -73,13 +73,13 @@ public class BrightnessControlCell extends FrameLayout {
         this.rightImageView = imageView2;
         addView(imageView2, LayoutHelper.createFrame(24, 24, 53, 0, 12, 17, 0));
         if (i == 0) {
-            this.leftImageView.setImageResource(C3558R.C3560drawable.msg_brightness_low);
-            this.rightImageView.setImageResource(C3558R.C3560drawable.msg_brightness_high);
+            this.leftImageView.setImageResource(C3473R.C3475drawable.msg_brightness_low);
+            this.rightImageView.setImageResource(C3473R.C3475drawable.msg_brightness_high);
             this.size = 48;
             return;
         }
-        this.leftImageView.setImageResource(C3558R.C3560drawable.msg_brightness_high);
-        this.rightImageView.setImageResource(C3558R.C3560drawable.msg_brightness_low);
+        this.leftImageView.setImageResource(C3473R.C3475drawable.msg_brightness_high);
+        this.rightImageView.setImageResource(C3473R.C3475drawable.msg_brightness_low);
         this.size = 43;
     }
 

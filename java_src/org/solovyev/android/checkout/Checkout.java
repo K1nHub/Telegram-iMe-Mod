@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import org.solovyev.android.checkout.Billing;
 import org.solovyev.android.checkout.Inventory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Checkout {
     protected final Billing mBilling;
     private Billing.Requests mRequests;
@@ -15,7 +15,7 @@ public class Checkout {
     private final OnLoadExecutor mOnLoadExecutor = new OnLoadExecutor();
     private State mState = State.INITIAL;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class EmptyListener implements Listener {
         @Override // org.solovyev.android.checkout.Checkout.Listener
         public void onReady(BillingRequests billingRequests) {
@@ -26,7 +26,7 @@ public class Checkout {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Listener {
         void onReady(BillingRequests billingRequests);
 
@@ -34,7 +34,7 @@ public class Checkout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum State {
         INITIAL,
         STARTED,
@@ -136,7 +136,7 @@ public class Checkout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class OnLoadExecutor implements Executor {
         private OnLoadExecutor() {
         }

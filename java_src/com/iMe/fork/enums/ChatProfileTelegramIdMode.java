@@ -3,10 +3,10 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ChatProfileTelegramIdMode.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ChatProfileTelegramIdMode {
     TELEGRAM_API,
     BOT_API,
@@ -15,7 +15,7 @@ public enum ChatProfileTelegramIdMode {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: ChatProfileTelegramIdMode.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -48,15 +48,15 @@ public enum ChatProfileTelegramIdMode {
     public final String getTitle() {
         int i = WhenMappings.$EnumSwitchMapping$0[ordinal()];
         if (i == 1) {
-            String internalString = LocaleController.getInternalString(C3558R.string.settings_tools_chat_profile_id_telegram_telegram_api);
+            String internalString = LocaleController.getInternalString(C3473R.string.settings_tools_chat_profile_id_telegram_telegram_api);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…id_telegram_telegram_api)");
             return internalString;
         } else if (i == 2) {
-            String internalString2 = LocaleController.getInternalString(C3558R.string.settings_tools_chat_profile_id_telegram_bot_api);
+            String internalString2 = LocaleController.getInternalString(C3473R.string.settings_tools_chat_profile_id_telegram_bot_api);
             Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…file_id_telegram_bot_api)");
             return internalString2;
         } else if (i == 3) {
-            String string = LocaleController.getString("Disable", C3558R.string.Disable);
+            String string = LocaleController.getString("Disable", C3473R.string.Disable);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Disable\", R.string.Disable)");
             return string;
         } else {
@@ -65,7 +65,7 @@ public enum ChatProfileTelegramIdMode {
     }
 
     /* compiled from: ChatProfileTelegramIdMode.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

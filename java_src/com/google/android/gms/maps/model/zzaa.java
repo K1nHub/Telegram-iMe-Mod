@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import com.google.android.gms.internal.maps.zzam;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzaa implements TileProvider {
     final /* synthetic */ TileOverlayOptions zza;
     private final zzam zzb;

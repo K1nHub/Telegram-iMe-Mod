@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import me.grantland.widget.AutofitHelper;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AutofitTextView extends TextView implements AutofitHelper.OnTextSizeChangeListener {
     private AutofitHelper mHelper;
 

@@ -8,7 +8,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> implements WalletSwapFeeView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -74,7 +74,7 @@ public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> im
 
     /* compiled from: WalletSwapFeeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeView$$State$OnFeeReselectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnFeeReselectedCommand extends ViewCommand<WalletSwapFeeView> {
         OnFeeReselectedCommand(WalletSwapFeeView$$State walletSwapFeeView$$State) {
             super("onFeeReselected", OneExecutionStateStrategy.class);
@@ -88,7 +88,7 @@ public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> im
 
     /* compiled from: WalletSwapFeeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSwapFeeView> {
         public final String text;
 
@@ -105,7 +105,7 @@ public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> im
 
     /* compiled from: WalletSwapFeeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSwapFeeView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -126,7 +126,7 @@ public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> im
 
     /* compiled from: WalletSwapFeeView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSwapFeeView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

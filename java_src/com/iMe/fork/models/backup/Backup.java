@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: Backup.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Backup {
     private final List<Long> albums;
     private final String allChatsTabFab;

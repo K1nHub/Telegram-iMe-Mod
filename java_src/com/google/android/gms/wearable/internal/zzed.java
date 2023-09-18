@@ -10,7 +10,7 @@ import com.google.android.gms.wearable.ConnectionConfiguration;
 @SafeParcelable.Class(creator = "GetConfigResponseCreator")
 @SafeParcelable.Reserved({1})
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzed extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzed> CREATOR = new zzee();
     @SafeParcelable.Field(m797id = 2)

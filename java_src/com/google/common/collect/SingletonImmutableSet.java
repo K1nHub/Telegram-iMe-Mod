@@ -2,7 +2,7 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SingletonImmutableSet<E> extends ImmutableSet<E> {
     final transient E element;
 

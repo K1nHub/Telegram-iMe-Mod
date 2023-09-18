@@ -4,7 +4,7 @@ import java.util.Iterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzei implements Iterator, p033j$.util.Iterator {
     final Iterator zza;
     final /* synthetic */ zzej zzb;

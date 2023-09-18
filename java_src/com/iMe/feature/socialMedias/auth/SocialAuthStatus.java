@@ -1,6 +1,6 @@
 package com.iMe.feature.socialMedias.auth;
 /* compiled from: SocialAuthResultMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 enum SocialAuthStatus {
     FAIL("fail"),
     SUCCESS("success"),

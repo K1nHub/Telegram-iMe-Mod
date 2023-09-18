@@ -1,7 +1,7 @@
 package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum DELETE uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -16,7 +16,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum DELETE uses extern
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: ParticipantsActionType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ParticipantsActionType {
     private static final /* synthetic */ ParticipantsActionType[] $VALUES;
     public static final Companion Companion;
@@ -59,11 +59,11 @@ public final class ParticipantsActionType {
     }
 
     static {
-        int i = C3558R.string.profile_group_filter_confirm_remove_message;
-        int i2 = C3558R.string.Delete;
+        int i = C3473R.string.profile_group_filter_confirm_remove_message;
+        int i2 = C3473R.string.Delete;
         DELETE = new ParticipantsActionType("DELETE", 0, i, "Delete", i2);
-        UNBLOCK = new ParticipantsActionType("UNBLOCK", 1, C3558R.string.profile_group_filter_confirm_unban_message, "Delete", i2);
-        ParticipantsActionType participantsActionType = new ParticipantsActionType("RETURN", 2, C3558R.string.profile_group_filter_confirm_return_message, "UserRestrictionsInviteUsers", C3558R.string.UserRestrictionsInviteUsers);
+        UNBLOCK = new ParticipantsActionType("UNBLOCK", 1, C3473R.string.profile_group_filter_confirm_unban_message, "Delete", i2);
+        ParticipantsActionType participantsActionType = new ParticipantsActionType("RETURN", 2, C3473R.string.profile_group_filter_confirm_return_message, "UserRestrictionsInviteUsers", C3473R.string.UserRestrictionsInviteUsers);
         RETURN = participantsActionType;
         $VALUES = $values();
         Companion = new Companion(null);
@@ -71,7 +71,7 @@ public final class ParticipantsActionType {
     }
 
     /* compiled from: ParticipantsActionType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

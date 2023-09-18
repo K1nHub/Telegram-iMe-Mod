@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: TonControllerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TonControllerImpl implements TonController {
     private final Lazy client$delegate;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -68,7 +68,7 @@ public final class TonControllerImpl implements TonController {
                 return isValidWalletAddress$lambda$0;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(UnpackAccoun…s()\n                    }");
+        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(UnpackAccoun…toSuccess()\n            }");
         return map;
     }
 
@@ -96,7 +96,7 @@ public final class TonControllerImpl implements TonController {
                 return createWallet$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun createWalle…          }\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun createWalle…)\n            }\n        }");
         return flatMap;
     }
 
@@ -119,7 +119,7 @@ public final class TonControllerImpl implements TonController {
                 return importWallet$lambda$2;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun importWalle…          }\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun importWalle…)\n            }\n        }");
         return flatMap;
     }
 
@@ -212,7 +212,7 @@ public final class TonControllerImpl implements TonController {
             com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2 r2 = new com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
             r2.<init>()
             io.reactivex.Observable r1 = r1.flatMap(r2)
-            java.lang.String r2 = "sendRequest(signRequest)…      }\n                }"
+            java.lang.String r2 = "sendRequest(signRequest)…          }\n            }"
             kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r2)
             return r1
         */
@@ -228,7 +228,7 @@ public final class TonControllerImpl implements TonController {
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f516id)).subscribeOn(this$0.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
+        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f507id)).subscribeOn(this$0.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Result sendTransaction$lambda$5$lambda$4;
@@ -243,7 +243,7 @@ public final class TonControllerImpl implements TonController {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(signResult, "$signResult");
         Intrinsics.checkNotNullParameter(sendResult, "sendResult");
-        if (sendResult instanceof TonApi.C2723Ok) {
+        if (sendResult instanceof TonApi.C2639Ok) {
             return Result.Companion.success(Boolean.TRUE);
         }
         return this$0.getTonApiErrorResult(signResult);
@@ -257,7 +257,7 @@ public final class TonControllerImpl implements TonController {
                 TonControllerImpl.sendRequest$lambda$7(TonControllerImpl.this, function, observableEmitter);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(create, "create { emitter ->\n    …   }, null)\n            }");
+        Intrinsics.checkNotNullExpressionValue(create, "create { emitter ->\n    …       }, null)\n        }");
         return create;
     }
 
@@ -379,7 +379,7 @@ public final class TonControllerImpl implements TonController {
                 return initTonLibObservable$lambda$11;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(Init(options…      }\n                }");
+        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(Init(options…          }\n            }");
         return map;
     }
 
@@ -415,7 +415,7 @@ public final class TonControllerImpl implements TonController {
                 return processInputKey$lambda$12;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(GetAccountAd…      }\n                }");
+        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(GetAccountAd…          }\n            }");
         return map;
     }
 

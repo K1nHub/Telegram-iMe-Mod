@@ -27,13 +27,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FingerprintController;
 import timber.log.Timber;
 /* compiled from: EnterWalletPinPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -87,12 +87,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                    m1457invoke(result);
+                    m1448invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1457invoke(Result<? extends String> it) {
+                public final void m1448invoke(Result<? extends String> it) {
                     CryptoPreferenceHelper cryptoPreferenceHelper;
                     ResourceManager resourceManager;
                     CryptoPreferenceHelper cryptoPreferenceHelper2;
@@ -144,7 +144,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
                     Intrinsics.checkNotNullExpressionValue(error, "error");
                 }
             }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
@@ -169,7 +169,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
             ((EnterWalletPinView) getViewState()).openRestoreWalletScreen(this.cryptoAccessManager.getLastLoggedInAddress(this.cryptoPreferenceHelper.getCurrentBlockchainType()));
         } else if (i != 1) {
         } else {
-            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3558R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3558R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
+            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3473R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3473R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
         }
     }
 
@@ -187,12 +187,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1456invoke(result);
+                m1447invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1456invoke(Result<? extends Boolean> it) {
+            public final void m1447invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -228,7 +228,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -271,7 +271,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
     /* compiled from: EnterWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

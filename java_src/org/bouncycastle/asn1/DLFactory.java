@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DLFactory {
     static final ASN1Sequence EMPTY_SEQUENCE = new DLSequence();
     static final ASN1Set EMPTY_SET = new DLSet();

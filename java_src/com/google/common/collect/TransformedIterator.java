@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import java.util.Iterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class TransformedIterator<F, T> implements Iterator<T>, p033j$.util.Iterator {
     final Iterator<? extends F> backingIterator;
 

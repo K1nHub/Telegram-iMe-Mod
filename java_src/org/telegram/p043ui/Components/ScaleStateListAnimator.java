@@ -7,7 +7,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 /* renamed from: org.telegram.ui.Components.ScaleStateListAnimator */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ScaleStateListAnimator {
     public static void apply(View view) {
         apply(view, 0.1f, 1.5f);

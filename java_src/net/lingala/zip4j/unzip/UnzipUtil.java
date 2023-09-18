@@ -5,7 +5,7 @@ import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
 import net.lingala.zip4j.model.UnzipParameters;
 import net.lingala.zip4j.util.Zip4jUtil;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class UnzipUtil {
     public static void applyFileAttributes(FileHeader fileHeader, File file, UnzipParameters unzipParameters) throws ZipException {
         if (fileHeader == null) {

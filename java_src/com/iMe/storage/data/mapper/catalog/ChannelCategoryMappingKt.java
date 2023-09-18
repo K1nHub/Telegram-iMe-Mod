@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.catalog.CatalogCategory;
 import com.iMe.storage.domain.model.catalog.CategoryWithCounter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelCategoryMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelCategoryMappingKt {
     public static final CatalogCategory mapToDomain(CatalogCategoryResponse catalogCategoryResponse) {
         Intrinsics.checkNotNullParameter(catalogCategoryResponse, "<this>");

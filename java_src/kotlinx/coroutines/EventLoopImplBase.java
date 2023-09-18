@@ -10,7 +10,7 @@ import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.ThreadSafeHeap;
 import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 /* compiled from: EventLoop.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class EventLoopImplBase extends EventLoopImplPlatform implements Delay {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _queue$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_queue");
     private static final /* synthetic */ AtomicReferenceFieldUpdater _delayed$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed");
@@ -19,7 +19,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     private volatile /* synthetic */ int _isCompleted = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean isCompleted() {
         return this._isCompleted;
     }
@@ -90,7 +90,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1691scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo1689scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         long delayToNanos = EventLoop_commonKt.delayToNanos(j);
         if (delayToNanos < 4611686018427387903L) {
             AbstractTimeSourceKt.getTimeSource();
@@ -167,7 +167,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 
@@ -262,7 +262,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     /* compiled from: EventLoop.common.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class DelayedTask implements Runnable, Comparable<DelayedTask>, DisposableHandle, ThreadSafeHeapNode {
         private volatile Object _heap;
         private int index = -1;
@@ -371,7 +371,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     /* compiled from: EventLoop.common.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class DelayedResumeTask extends DelayedTask {
         private final CancellableContinuation<Unit> cont;
 
@@ -393,7 +393,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     /* compiled from: EventLoop.common.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DelayedTaskQueue extends ThreadSafeHeap<DelayedTask> {
         public long timeNow;
 

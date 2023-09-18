@@ -4,7 +4,7 @@ import java.util.concurrent.CancellationException;
 import kotlin.coroutines.CoroutineContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Job.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final /* synthetic */ class JobKt__JobKt {
     public static final CompletableJob Job(Job job) {
         return new JobImpl(job);

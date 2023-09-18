@@ -12,14 +12,14 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionParams.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TransactionParams {
     private final GasPriceInfo fastest;
     private final GasPriceInfo low;
     private final GasPriceInfo medium;
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -68,7 +68,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ether extends TransactionParams {
         private final long chainId;
         private final GasPriceInfo fastest;
@@ -180,7 +180,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Tron extends TransactionParams {
         private final TronBlockHeader blockHeader;
         private final String contractAddress;
@@ -263,7 +263,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ton extends TransactionParams {
         private final GasPriceInfo medium;
         private final int walletSeqno;
@@ -329,7 +329,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Bitcoin extends TransactionParams {
         private final String changeAddress;
         private final GasPriceInfo fastest;

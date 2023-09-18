@@ -14,14 +14,14 @@ import android.widget.PopupWindow;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.EmojiColorPickerWindow */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EmojiColorPickerWindow extends PopupWindow {
     private static final ViewTreeObserver.OnScrollChangedListener NOP = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.Components.EmojiColorPickerWindow$$ExternalSyntheticLambda1
         @Override // android.view.ViewTreeObserver.OnScrollChangedListener
@@ -135,7 +135,7 @@ public class EmojiColorPickerWindow extends PopupWindow {
     }
 
     /* renamed from: org.telegram.ui.Components.EmojiColorPickerWindow$EmojiColorPickerView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class EmojiColorPickerView extends View {
         private Drawable arrowDrawable;
         private int arrowX;
@@ -175,8 +175,8 @@ public class EmojiColorPickerWindow extends PopupWindow {
             this.touchY = -1;
             this.both = true;
             this.resourcesProvider = resourcesProvider;
-            this.backgroundDrawable = getResources().getDrawable(C3558R.C3560drawable.stickers_back_all);
-            this.arrowDrawable = getResources().getDrawable(C3558R.C3560drawable.stickers_back_arrow);
+            this.backgroundDrawable = getResources().getDrawable(C3473R.C3475drawable.stickers_back_all);
+            this.arrowDrawable = getResources().getDrawable(C3473R.C3475drawable.stickers_back_arrow);
             updateColors();
         }
 

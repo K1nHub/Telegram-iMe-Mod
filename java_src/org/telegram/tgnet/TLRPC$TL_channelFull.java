@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0479C;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
     public static int constructor = -231385849;
 
@@ -24,7 +24,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.antispam = (readInt322 & 2) != 0;
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
-        this.f1532id = abstractSerializedData.readInt64(z);
+        this.f1523id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -176,7 +176,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i12 = this.translations_disabled ? i11 | 8 : i11 & (-9);
         this.flags2 = i12;
         abstractSerializedData.writeInt32(i12);
-        abstractSerializedData.writeInt64(this.f1532id);
+        abstractSerializedData.writeInt64(this.f1523id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);

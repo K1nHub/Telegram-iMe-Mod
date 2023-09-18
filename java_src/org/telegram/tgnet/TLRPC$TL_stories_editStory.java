@@ -1,14 +1,14 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stories_editStory extends TLObject {
     public static int constructor = -1447486748;
     public String caption;
     public int flags;
 
     /* renamed from: id */
-    public int f1672id;
+    public int f1663id;
     public TLRPC$InputMedia media;
     public ArrayList<TLRPC$MediaArea> media_areas = new ArrayList<>();
     public ArrayList<TLRPC$MessageEntity> entities = new ArrayList<>();
@@ -23,7 +23,7 @@ public class TLRPC$TL_stories_editStory extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
-        abstractSerializedData.writeInt32(this.f1672id);
+        abstractSerializedData.writeInt32(this.f1663id);
         if ((this.flags & 1) != 0) {
             this.media.serializeToStream(abstractSerializedData);
         }

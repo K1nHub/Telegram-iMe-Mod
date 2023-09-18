@@ -2,7 +2,7 @@ package com.iMe.i_staking.request;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: StakingIdRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingIdRequest {
     private final long stakingId;
 

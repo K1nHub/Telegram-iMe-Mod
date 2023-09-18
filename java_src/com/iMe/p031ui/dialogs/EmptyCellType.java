@@ -1,7 +1,7 @@
 package com.iMe.p031ui.dialogs;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ARCHIVE_ALBUMS uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -17,7 +17,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ARCHIVE_ALBUMS use
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: EmptyCellType.kt */
 /* renamed from: com.iMe.ui.dialogs.EmptyCellType */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EmptyCellType {
     private static final /* synthetic */ EmptyCellType[] $VALUES;
     public static final EmptyCellType ALBUMS;
@@ -57,26 +57,26 @@ public final class EmptyCellType {
         return this.iconResId;
     }
 
-    public final int getSubtitleResId() {
-        return this.subtitleResId;
-    }
-
     public final int getTitleResId() {
         return this.titleResId;
     }
 
+    public final int getSubtitleResId() {
+        return this.subtitleResId;
+    }
+
     static {
-        int i = C3558R.raw.filter_no_chats;
-        int i2 = C3558R.string.cloud_albums_empty_title;
-        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3558R.string.cloud_albums_empty_subtitle_archibe);
-        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3558R.string.archive_empty_title, C3558R.string.archive_empty_subtitle);
-        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3558R.string.cloud_albums_empty_subtitle);
-        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3558R.string.music_albums_empty_title, C3558R.string.music_albums_empty_subtitle);
-        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3558R.string.music_channels_empty_title, C3558R.string.music_channels_empty_subtitle);
-        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3558R.string.music_bots_empty_title, C3558R.string.music_bots_empty_subtitle);
-        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3558R.string.music_device_empty_title, C3558R.string.music_device_empty_subtitle);
-        DRAFTS = new EmptyCellType("DRAFTS", 7, i, C3558R.string.chat_drafts_empty, C3558R.string.chat_drafts_empty_subtitle);
-        HIDDEN_CHATS = new EmptyCellType("HIDDEN_CHATS", 8, i, C3558R.string.hidden_chats_empty, C3558R.string.hidden_chats_empty_title);
+        int i = C3473R.raw.filter_no_chats;
+        int i2 = C3473R.string.cloud_albums_empty_title;
+        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3473R.string.cloud_albums_empty_subtitle_archibe);
+        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3473R.string.archive_empty_title, C3473R.string.archive_empty_subtitle);
+        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3473R.string.cloud_albums_empty_subtitle);
+        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3473R.string.music_albums_empty_title, C3473R.string.music_albums_empty_subtitle);
+        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3473R.string.music_channels_empty_title, C3473R.string.music_channels_empty_subtitle);
+        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3473R.string.music_bots_empty_title, C3473R.string.music_bots_empty_subtitle);
+        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3473R.string.music_device_empty_title, C3473R.string.music_device_empty_subtitle);
+        DRAFTS = new EmptyCellType("DRAFTS", 7, i, C3473R.string.chat_drafts_empty, C3473R.string.chat_drafts_empty_subtitle);
+        HIDDEN_CHATS = new EmptyCellType("HIDDEN_CHATS", 8, i, C3473R.string.hidden_chats_empty, C3473R.string.hidden_chats_empty_title);
         $VALUES = $values();
         Companion = new Companion(null);
     }
@@ -88,7 +88,7 @@ public final class EmptyCellType {
 
     /* compiled from: EmptyCellType.kt */
     /* renamed from: com.iMe.ui.dialogs.EmptyCellType$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

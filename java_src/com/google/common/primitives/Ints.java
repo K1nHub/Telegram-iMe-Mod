@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Ints extends IntsMethodsForWeb {
     public static int compare(int i, int i2) {
         if (i < i2) {
@@ -87,7 +87,7 @@ public final class Ints extends IntsMethodsForWeb {
         return new IntArrayAsList(iArr);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class IntArrayAsList extends AbstractList<Integer> implements RandomAccess, Serializable {
         final int[] array;
         final int end;

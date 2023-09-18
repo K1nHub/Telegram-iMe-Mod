@@ -30,12 +30,12 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: TokenFamilyPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
     private final List<FoundTokenItem> foundTokens;
     private final ResourceManager resourceManager;
@@ -81,7 +81,7 @@ public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
         subscribeToTokenVisibilitySwitch();
         TokenFamilyView tokenFamilyView = (TokenFamilyView) getViewState();
         FoundTokenItem foundTokenItem = (FoundTokenItem) CollectionsKt.firstOrNull(this.tokens);
-        String string = foundTokenItem != null ? this.resourceManager.getString(C3558R.string.wallet_token_family_title, foundTokenItem.getName(), foundTokenItem.getTicker()) : null;
+        String string = foundTokenItem != null ? this.resourceManager.getString(C3473R.string.wallet_token_family_title, foundTokenItem.getName(), foundTokenItem.getTicker()) : null;
         if (string == null) {
             string = "";
         }
@@ -151,12 +151,12 @@ public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> pair) {
-                m1568invoke(pair);
+                m1559invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1568invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
+            public final void m1559invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
                 ResourceManager resourceManager;
                 List<FoundTokenItem> list;
                 int collectionSizeOrDefault;
@@ -211,7 +211,7 @@ public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

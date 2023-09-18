@@ -1,7 +1,7 @@
 package com.google.android.play.core.assetpacks;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbm extends AssetPackLocation {
     private final int zza;
     private final String zzb;

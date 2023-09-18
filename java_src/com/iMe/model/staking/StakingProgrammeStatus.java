@@ -1,6 +1,6 @@
 package com.iMe.model.staking;
 
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum SHORT_OF_FUNDS uses external variables
@@ -16,15 +16,15 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum SHORT_OF_FUNDS use
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: StakingProgrammeStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingProgrammeStatus {
     private static final /* synthetic */ StakingProgrammeStatus[] $VALUES;
     public static final StakingProgrammeStatus CLOSED;
     public static final StakingProgrammeStatus SHORT_OF_FUNDS;
     private final int colorKey;
     private final int textResId;
-    public static final StakingProgrammeStatus ACTIVE = new StakingProgrammeStatus("ACTIVE", 0, C3558R.string.staking_details_status_active, Theme.key_chat_inGreenCall);
-    public static final StakingProgrammeStatus WITHDRAWAL_AVAILABLE = new StakingProgrammeStatus("WITHDRAWAL_AVAILABLE", 1, C3558R.string.staking_details_status_withdrawal_available, Theme.key_windowBackgroundWhiteBlueText);
+    public static final StakingProgrammeStatus ACTIVE = new StakingProgrammeStatus("ACTIVE", 0, C3473R.string.staking_details_status_active, Theme.key_chat_inGreenCall);
+    public static final StakingProgrammeStatus WITHDRAWAL_AVAILABLE = new StakingProgrammeStatus("WITHDRAWAL_AVAILABLE", 1, C3473R.string.staking_details_status_withdrawal_available, Theme.key_windowBackgroundWhiteBlueText);
 
     private static final /* synthetic */ StakingProgrammeStatus[] $values() {
         return new StakingProgrammeStatus[]{ACTIVE, WITHDRAWAL_AVAILABLE, SHORT_OF_FUNDS, CLOSED};
@@ -52,10 +52,10 @@ public final class StakingProgrammeStatus {
     }
 
     static {
-        int i = C3558R.string.staking_details_status_short_of_funds;
+        int i = C3473R.string.staking_details_status_short_of_funds;
         int i2 = Theme.key_text_RedRegular;
         SHORT_OF_FUNDS = new StakingProgrammeStatus("SHORT_OF_FUNDS", 2, i, i2);
-        CLOSED = new StakingProgrammeStatus("CLOSED", 3, C3558R.string.staking_details_status_finished, i2);
+        CLOSED = new StakingProgrammeStatus("CLOSED", 3, C3473R.string.staking_details_status_finished, i2);
         $VALUES = $values();
     }
 }

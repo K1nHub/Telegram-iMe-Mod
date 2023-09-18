@@ -6,7 +6,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Rescheduler {
     private boolean enabled;
     private long runAtNanos;
@@ -51,7 +51,7 @@ public final class Rescheduler {
         this.wakeUp = null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class FutureRunnable implements Runnable {
         private FutureRunnable() {
         }
@@ -62,7 +62,7 @@ public final class Rescheduler {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class ChannelFutureRunnable implements Runnable {
         private ChannelFutureRunnable() {
         }

@@ -20,7 +20,7 @@ import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final int bufferSize;
     final boolean delayErrors;
@@ -43,7 +43,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
         this.source.subscribe(new MergeObserver(observer, this.mapper, this.delayErrors, this.maxConcurrency, this.bufferSize));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MergeObserver<T, U> extends AtomicInteger implements Disposable, Observer<T> {
         final int bufferSize;
         volatile boolean cancelled;
@@ -340,18 +340,18 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class InnerObserver<T, U> extends AtomicReference<Disposable> implements Observer<U> {
         volatile boolean done;
         int fusionMode;
 
         /* renamed from: id */
-        final long f552id;
+        final long f543id;
         final MergeObserver<T, U> parent;
         volatile SimpleQueue<U> queue;
 
         InnerObserver(MergeObserver<T, U> mergeObserver, long j) {
-            this.f552id = j;
+            this.f543id = j;
             this.parent = mergeObserver;
         }
 

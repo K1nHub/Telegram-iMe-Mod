@@ -8,7 +8,7 @@ import androidx.annotation.RecentlyNullable;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Frame {
     public static final int ROTATION_0 = 0;
     public static final int ROTATION_180 = 2;
@@ -25,7 +25,7 @@ public class Frame {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final Frame zza = new Frame();
 
@@ -120,7 +120,7 @@ public class Frame {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Metadata {
         private int zza;
         private int zzb;
@@ -179,7 +179,7 @@ public class Frame {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class zza {
         private final Image.Plane[] zza;
 

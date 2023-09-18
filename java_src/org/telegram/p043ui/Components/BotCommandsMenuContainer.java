@@ -18,10 +18,10 @@ import androidx.core.view.NestedScrollingParent;
 import androidx.core.view.NestedScrollingParentHelper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BotCommandsMenuContainer */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BotCommandsMenuContainer extends FrameLayout implements NestedScrollingParent {
     Paint backgroundPaint;
     private ObjectAnimator currentAnimation;
@@ -54,7 +54,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         this.topBackground = new Paint(1);
         this.dismissed = true;
         this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
-        this.shadowDrawable = context.getResources().getDrawable(C3558R.C3560drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3473R.C3475drawable.sheet_shadow_round).mutate();
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.BotCommandsMenuContainer.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View

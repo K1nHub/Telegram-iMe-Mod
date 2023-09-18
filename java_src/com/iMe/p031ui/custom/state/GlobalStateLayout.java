@@ -25,13 +25,13 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: GlobalStateLayout.kt */
 /* renamed from: com.iMe.ui.custom.state.GlobalStateLayout */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlobalStateLayout extends StatefulLayout implements KoinComponent {
     private Function0<Unit> emptyButtonClickListener;
     private final Lazy resourceManager$delegate;
@@ -207,16 +207,16 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     }
 
     private final View configureProgressState(View view) {
-        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3558R.C3561id.image_state_animation);
+        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3473R.C3476id.image_state_animation);
         int i = Theme.key_chats_actionBackground;
         rLottieImageView.setLayerColor("Shape Layer 1", ViewExtKt.withAlpha(Theme.getColor(i), 55));
         rLottieImageView.setLayerColor("Shape Layer 2", Theme.getColor(i));
-        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3558R.C3561id.text_state_title);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3473R.C3476id.text_state_title);
         if (appCompatTextView != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView, "findViewById<AppCompatTe…w>(R.id.text_state_title)");
             ViewExtKt.gone$default(appCompatTextView, false, 1, null);
         }
-        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3558R.C3561id.text_state_description);
+        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3473R.C3476id.text_state_description);
         if (appCompatTextView2 != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "findViewById<AppCompatTe…d.text_state_description)");
             ViewExtKt.gone$default(appCompatTextView2, false, 1, null);
@@ -225,20 +225,20 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     }
 
     private final View getStateView(final GlobalState globalState) {
-        View inflate = LayoutInflater.from(getContext()).inflate(C3558R.layout.fork_content_global_state_layout, (ViewGroup) null);
-        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3558R.C3561id.image_state_animation);
+        View inflate = LayoutInflater.from(getContext()).inflate(C3473R.layout.fork_content_global_state_layout, (ViewGroup) null);
+        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3473R.C3476id.image_state_animation);
         rLottieImageView.setAutoRepeat(true);
         rLottieImageView.setAnimation(globalState.getIcon(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3558R.C3561id.text_state_title);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3473R.C3476id.text_state_title);
         if (appCompatTextView != null) {
             appCompatTextView.setText(getResourceManager().getString(globalState.getTitle()));
         }
-        AppCompatTextView appCompatTextView2 = (AppCompatTextView) inflate.findViewById(C3558R.C3561id.text_state_description);
+        AppCompatTextView appCompatTextView2 = (AppCompatTextView) inflate.findViewById(C3473R.C3476id.text_state_description);
         if (appCompatTextView2 != null) {
             appCompatTextView2.setText(getResourceManager().getString(globalState.getDescription()));
         }
-        AppCompatButton getStateView$lambda$5$lambda$4 = (AppCompatButton) inflate.findViewById(C3558R.C3561id.button_retry);
-        getStateView$lambda$5$lambda$4.setText(getResourceManager().getString(Intrinsics.areEqual(globalState, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState, GlobalState.Empty.CustomTokens.INSTANCE) ? C3558R.string.token_search_empty_result_add_token : C3558R.string.common_retry));
+        AppCompatButton getStateView$lambda$5$lambda$4 = (AppCompatButton) inflate.findViewById(C3473R.C3476id.button_retry);
+        getStateView$lambda$5$lambda$4.setText(getResourceManager().getString(Intrinsics.areEqual(globalState, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState, GlobalState.Empty.CustomTokens.INSTANCE) ? C3473R.string.token_search_empty_result_add_token : C3473R.string.common_retry));
         Intrinsics.checkNotNullExpressionValue(getStateView$lambda$5$lambda$4, "getStateView$lambda$5$lambda$4");
         ViewExtKt.safeThrottledClick$default(getStateView$lambda$5$lambda$4, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.custom.state.GlobalStateLayout$getStateView$1$2$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -273,18 +273,18 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     }
 
     private final void setupColors(View view) {
-        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3558R.C3561id.text_state_title);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3473R.C3476id.text_state_title);
         if (appCompatTextView != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView, "findViewById<AppCompatTe…w>(R.id.text_state_title)");
             appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             ViewExtKt.withMediumTypeface(appCompatTextView);
         }
-        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3558R.C3561id.text_state_description);
+        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3473R.C3476id.text_state_description);
         if (appCompatTextView2 != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "findViewById<AppCompatTe…d.text_state_description)");
             appCompatTextView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray2));
         }
-        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3558R.C3561id.button_retry);
+        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3473R.C3476id.button_retry);
         if (appCompatButton != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatButton, "findViewById<AppCompatButton>(R.id.button_retry)");
             ViewExtKt.setRippleBackground$default(appCompatButton, false, 1, null);
@@ -295,7 +295,7 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void startAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3558R.C3561id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3473R.C3476id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.playAnimation();
@@ -304,14 +304,14 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void stopAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3558R.C3561id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3473R.C3476id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.stopAnimation();
     }
 
     private final View hideActionButton(View view) {
-        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3558R.C3561id.button_retry);
+        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3473R.C3476id.button_retry);
         if (appCompatButton != null) {
             ViewExtKt.gone$default(appCompatButton, false, 1, null);
         }
@@ -320,7 +320,7 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
 
     /* compiled from: GlobalStateLayout.kt */
     /* renamed from: com.iMe.ui.custom.state.GlobalStateLayout$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

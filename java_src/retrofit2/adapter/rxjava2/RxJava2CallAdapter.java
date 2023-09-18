@@ -3,7 +3,7 @@ package retrofit2.adapter.rxjava2;
 import io.reactivex.Scheduler;
 import java.lang.reflect.Type;
 import retrofit2.CallAdapter;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 final class RxJava2CallAdapter<R> implements CallAdapter<R, Object> {
     private final boolean isAsync;
     private final boolean isBody;

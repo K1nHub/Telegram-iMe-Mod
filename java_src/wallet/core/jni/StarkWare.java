@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StarkWare {
     private byte[] bytes;
 

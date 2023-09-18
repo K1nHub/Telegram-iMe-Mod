@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FeeUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FeeUiMappingKt {
     public static final List<GasPriceItem> mapToUiFees(TransactionParams transactionParams, TokenDetailed feeToken) {
         List listOfNotNull;

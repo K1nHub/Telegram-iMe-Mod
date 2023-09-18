@@ -1,5 +1,5 @@
 package org.bouncycastle.util;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Pack {
     public static int bigEndianToInt(byte[] bArr, int i) {
         int i2 = i + 1;

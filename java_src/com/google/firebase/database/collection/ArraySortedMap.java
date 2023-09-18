@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
     private final Comparator<K> comparator;
     private final K[] keys;
@@ -123,7 +123,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.database.collection.ArraySortedMap$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class C10001 implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
         int currentPos;
         final /* synthetic */ int val$pos;

@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: ReactionView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.reaction.ReactionView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ReactionView extends BaseView {
     void messageCreated();
 

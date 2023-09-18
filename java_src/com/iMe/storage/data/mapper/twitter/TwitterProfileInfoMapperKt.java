@@ -5,7 +5,7 @@ import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.twitter.TwitterProfileInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterProfileInfoMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterProfileInfoMapperKt {
     public static final TwitterProfileInfo mapToDomain(TwitterProfileResponse twitterProfileResponse) {
         Intrinsics.checkNotNullParameter(twitterProfileResponse, "<this>");

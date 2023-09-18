@@ -8,12 +8,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PersistedInstallation {
     private final File dataFile;
     private final FirebaseApp firebaseApp;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum RegistrationStatus {
         ATTEMPT_MIGRATION,
         NOT_GENERATED,

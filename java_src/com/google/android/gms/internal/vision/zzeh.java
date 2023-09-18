@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Map;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzeh<K, V> extends zzdn<K, V> implements Serializable {
     private final transient zzef<K, ? extends zzeb<V>> zza;
     private final transient int zzb;

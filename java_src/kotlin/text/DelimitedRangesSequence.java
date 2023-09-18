@@ -8,7 +8,7 @@ import kotlin.ranges.IntRange;
 import kotlin.sequences.Sequence;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Strings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelimitedRangesSequence implements Sequence<IntRange> {
     private final Function2<CharSequence, Integer, Pair<Integer, Integer>> getNextMatch;
     private final CharSequence input;

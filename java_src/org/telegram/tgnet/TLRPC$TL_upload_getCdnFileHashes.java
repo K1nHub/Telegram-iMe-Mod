@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_upload_getCdnFileHashes extends TLObject {
     public static int constructor = -1847836879;
     public byte[] file_token;

@@ -1,10 +1,72 @@
 !!brut.androlib.apk.ApkInfo
-apkFileName: ime_android_10_0_5.apk
+apkFileName: iMe+10.0.7.apk
 doNotCompress:
 - resources.arsc
+- META-INF/androidx.activity_activity-ktx.version
+- META-INF/androidx.activity_activity.version
+- META-INF/androidx.annotation_annotation-experimental.version
+- META-INF/androidx.appcompat_appcompat-resources.version
+- META-INF/androidx.appcompat_appcompat.version
+- META-INF/androidx.cardview_cardview.version
+- META-INF/androidx.coordinatorlayout_coordinatorlayout.version
+- META-INF/androidx.core_core-ktx.version
+- META-INF/androidx.core_core.version
+- META-INF/androidx.cursoradapter_cursoradapter.version
+- META-INF/androidx.customview_customview.version
+- META-INF/androidx.databinding_viewbinding.version
+- META-INF/androidx.documentfile_documentfile.version
+- META-INF/androidx.drawerlayout_drawerlayout.version
+- META-INF/androidx.dynamicanimation_dynamicanimation.version
+- META-INF/androidx.emoji2_emoji2-views-helper.version
+- META-INF/androidx.emoji2_emoji2.version
+- META-INF/androidx.exifinterface_exifinterface.version
+- META-INF/androidx.fragment_fragment-ktx.version
+- META-INF/androidx.fragment_fragment.version
+- META-INF/androidx.interpolator_interpolator.version
+- META-INF/androidx.legacy_legacy-support-core-utils.version
+- META-INF/androidx.lifecycle_lifecycle-extensions.version
+- META-INF/androidx.loader_loader.version
+- META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version
+- META-INF/androidx.navigation_navigation-common-ktx.version
+- META-INF/androidx.navigation_navigation-common.version
+- META-INF/androidx.navigation_navigation-fragment-ktx.version
+- META-INF/androidx.navigation_navigation-fragment.version
+- META-INF/androidx.navigation_navigation-runtime-ktx.version
+- META-INF/androidx.navigation_navigation-runtime.version
+- META-INF/androidx.navigation_navigation-ui-ktx.version
+- META-INF/androidx.navigation_navigation-ui.version
+- META-INF/androidx.palette_palette-ktx.version
+- META-INF/androidx.palette_palette.version
+- META-INF/androidx.print_print.version
+- META-INF/androidx.profileinstaller_profileinstaller.version
+- META-INF/androidx.room_room-runtime.version
+- META-INF/androidx.room_room-rxjava2.version
+- META-INF/androidx.savedstate_savedstate-ktx.version
+- META-INF/androidx.savedstate_savedstate.version
+- META-INF/androidx.sharetarget_sharetarget.version
+- META-INF/androidx.slidingpanelayout_slidingpanelayout.version
+- META-INF/androidx.sqlite_sqlite-framework.version
+- META-INF/androidx.sqlite_sqlite-ktx.version
+- META-INF/androidx.sqlite_sqlite.version
+- META-INF/androidx.startup_startup-runtime.version
+- META-INF/androidx.swiperefreshlayout_swiperefreshlayout.version
+- META-INF/androidx.tracing_tracing.version
+- META-INF/androidx.transition_transition.version
+- META-INF/androidx.vectordrawable_vectordrawable-animated.version
+- META-INF/androidx.vectordrawable_vectordrawable.version
+- META-INF/androidx.versionedparcelable_versionedparcelable.version
+- META-INF/androidx.viewpager2_viewpager2.version
+- META-INF/androidx.viewpager_viewpager.version
+- META-INF/androidx.window_window.version
+- META-INF/com.google.android.material_material.version
+- META-INF/kotlinx_coroutines_android.version
+- META-INF/kotlinx_coroutines_core.version
+- META-INF/kotlinx_coroutines_reactive.version
+- META-INF/kotlinx_coroutines_rx2.version
+- META-INF/services/io.grpc.ManagedChannelProvider
+- META-INF/services/io.grpc.NameResolverProvider
 - png
 - jpg
-- assets/dexopt/baseline.prof
 - assets/bots/assistant/intents_cl/intent_1/intent_1_model.tflite
 - assets/bots/assistant/intents_cl/intent_10/intent_10_model.tflite
 - assets/bots/assistant/intents_cl/intent_100/intent_100_model.tflite
@@ -126,6 +188,7 @@ doNotCompress:
 - assets/bots/assistant/intents_cl/intent_99/intent_99_model.tflite
 - assets/bots/assistant/main_cl/assistant_model.tflite
 - assets/bots/assistant_eng/main_cl/assistant_eng_model.tflite
+- assets/dexopt/baseline.prof
 - wav
 - mp3
 isFrameworkApk: false
@@ -140,7 +203,7 @@ sharedLibrary: false
 sparseResources: true
 unknownFiles:
   DebugProbesKt.bin: '8'
-  androidsupportmultidexversion.txt: '8'
+  androidsupportmultidexversion.txt: '0'
   billing.properties: '8'
   builddef.lst: '8'
   common.properties: '8'
@@ -206,7 +269,8 @@ unknownFiles:
   transport-api.properties: '8'
   transport-backend-cct.properties: '8'
   transport-runtime.properties: '8'
-  version.txt: '8'
+  version.txt: '0'
+  stamp-cert-sha256: '8'
   com/google/android/search/verification/client/R.java: '8'
   fabric/com.stripe.stripe-android.properties: '8'
   google/protobuf/any.proto: '8'
@@ -220,7 +284,7 @@ unknownFiles:
   google/protobuf/type.proto: '8'
   google/protobuf/wrappers.proto: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
-  okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: '0'
   org/apache/commons/codec/language/dmrules.txt: '8'
   org/apache/commons/codec/language/bm/ash_approx_any.txt: '8'
   org/apache/commons/codec/language/bm/ash_approx_common.txt: '8'
@@ -357,5 +421,5 @@ usesFramework:
   tag: null
 version: 2.8.1
 versionInfo:
-  versionCode: '1000509'
-  versionName: 10.0.5
+  versionCode: '1000702'
+  versionName: 10.0.7

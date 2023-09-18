@@ -24,7 +24,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.android.AndroidChannelBuilder;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GrpcCallProvider {
     private static Supplier<ManagedChannelBuilder<?>> overrideChannelBuilderSupplier;
     private final AsyncQueue asyncQueue;

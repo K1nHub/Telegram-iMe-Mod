@@ -20,7 +20,7 @@ import java.util.Map;
 @ShowFirstParty
 @KeepForSdk
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppMeasurement {
     @ShowFirstParty
     @KeepForSdk
@@ -37,7 +37,7 @@ public class AppMeasurement {
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface EventInterceptor extends zzgv {
         @Override // com.google.android.gms.measurement.internal.zzgv
         @ShowFirstParty
@@ -48,7 +48,7 @@ public class AppMeasurement {
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnEventListener extends zzgw {
         @Override // com.google.android.gms.measurement.internal.zzgw
         @ShowFirstParty
@@ -328,7 +328,7 @@ public class AppMeasurement {
     /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ConditionalUserProperty {
         @ShowFirstParty
         @Keep

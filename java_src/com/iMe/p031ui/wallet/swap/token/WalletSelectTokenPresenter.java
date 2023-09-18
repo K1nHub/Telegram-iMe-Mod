@@ -1,10 +1,10 @@
 package com.iMe.p031ui.wallet.swap.token;
 
 import com.iMe.mapper.wallet.select.SelectableMappingKt;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.model.wallet.select.SelectableTokenItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.interactor.binancepay.BinanceInternalInteractor;
 import com.iMe.storage.domain.interactor.crypto.swap.SwapInteractor;
@@ -13,9 +13,11 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.BinanceTokenBalanceInfo;
 import com.iMe.storage.domain.model.common.CursoredData;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailedWithRate;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.utils.extentions.TokenExtKt;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
@@ -25,25 +27,31 @@ import com.iMe.utils.extentions.p032rx.SchedulersExtKt;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.subjects.PublishSubject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
 import p033j$.util.Collection$EL;
@@ -52,7 +60,7 @@ import timber.log.Timber;
 /* compiled from: WalletSelectTokenPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelectTokenView> {
     private final BinanceInternalInteractor binanceInternalInteractor;
     private String cursor;
@@ -63,19 +71,20 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     private final PublishSubject<String> querySubject;
     private final ResourceManager resourceManager;
     private final SchedulersProvider schedulersProvider;
-    private final WalletSelectTokenFragment.ScreenType screenType;
+    private final SelectTokenScreenType screenType;
     private final TokenDetailed selectedToken;
     private final Lazy swapDirection$delegate;
     private final SwapInteractor swapInteractor;
     private final List<SelectableTokenItem> swapItems;
     private final Lazy swapProtocol$delegate;
+    private final Map<String, FiatValue> tokensRates;
     private final WalletInteractor walletInteractor;
 
     static {
         new Companion(null);
     }
 
-    public WalletSelectTokenPresenter(WalletSelectTokenFragment.ScreenType screenType, TokenDetailed tokenDetailed, String networkId, boolean z, BinanceInternalInteractor binanceInternalInteractor, ResourceManager resourceManager, SchedulersProvider schedulersProvider, SwapInteractor swapInteractor, WalletInteractor walletInteractor) {
+    public WalletSelectTokenPresenter(SelectTokenScreenType screenType, TokenDetailed tokenDetailed, String networkId, boolean z, BinanceInternalInteractor binanceInternalInteractor, ResourceManager resourceManager, SchedulersProvider schedulersProvider, SwapInteractor swapInteractor, WalletInteractor walletInteractor) {
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
@@ -104,11 +113,11 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final SwapProtocol invoke() {
-                WalletSelectTokenFragment.ScreenType screenType2;
+                SelectTokenScreenType selectTokenScreenType;
                 SwapProtocol swapProtocol;
-                screenType2 = WalletSelectTokenPresenter.this.screenType;
-                WalletSelectTokenFragment.ScreenType.Swap swap = screenType2 instanceof WalletSelectTokenFragment.ScreenType.Swap ? (WalletSelectTokenFragment.ScreenType.Swap) screenType2 : null;
-                return (swap == null || (swapProtocol = swap.getSwapProtocol()) == null) ? SwapProtocol.ONEINCH : swapProtocol;
+                selectTokenScreenType = WalletSelectTokenPresenter.this.screenType;
+                SelectTokenScreenType.Swap swap = selectTokenScreenType instanceof SelectTokenScreenType.Swap ? (SelectTokenScreenType.Swap) selectTokenScreenType : null;
+                return (swap == null || (swapProtocol = swap.getSwapProtocol()) == null) ? SwapProtocol.ONEINCH_FUSION : swapProtocol;
             }
         });
         this.swapProtocol$delegate = lazy;
@@ -121,10 +130,10 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final TransactionDirection invoke() {
-                WalletSelectTokenFragment.ScreenType screenType2;
+                SelectTokenScreenType selectTokenScreenType;
                 TransactionDirection swapDirection;
-                screenType2 = WalletSelectTokenPresenter.this.screenType;
-                WalletSelectTokenFragment.ScreenType.Swap swap = screenType2 instanceof WalletSelectTokenFragment.ScreenType.Swap ? (WalletSelectTokenFragment.ScreenType.Swap) screenType2 : null;
+                selectTokenScreenType = WalletSelectTokenPresenter.this.screenType;
+                SelectTokenScreenType.Swap swap = selectTokenScreenType instanceof SelectTokenScreenType.Swap ? (SelectTokenScreenType.Swap) selectTokenScreenType : null;
                 return (swap == null || (swapDirection = swap.getSwapDirection()) == null) ? TransactionDirection.OUT : swapDirection;
             }
         });
@@ -138,9 +147,9 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final TokenDetailed invoke() {
-                WalletSelectTokenFragment.ScreenType screenType2;
-                screenType2 = WalletSelectTokenPresenter.this.screenType;
-                WalletSelectTokenFragment.ScreenType.Swap swap = screenType2 instanceof WalletSelectTokenFragment.ScreenType.Swap ? (WalletSelectTokenFragment.ScreenType.Swap) screenType2 : null;
+                SelectTokenScreenType selectTokenScreenType;
+                selectTokenScreenType = WalletSelectTokenPresenter.this.screenType;
+                SelectTokenScreenType.Swap swap = selectTokenScreenType instanceof SelectTokenScreenType.Swap ? (SelectTokenScreenType.Swap) selectTokenScreenType : null;
                 if (swap != null) {
                     return swap.getIgnoredToken();
                 }
@@ -148,6 +157,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
             }
         });
         this.ignoredToken$delegate = lazy3;
+        this.tokensRates = new LinkedHashMap();
         this.swapItems = new ArrayList();
         PublishSubject<String> create = PublishSubject.create();
         Intrinsics.checkNotNullExpressionValue(create, "create()");
@@ -170,15 +180,28 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
     public final void onQueryUpdate(String newQuery) {
         CharSequence trim;
+        boolean isBlank;
         Intrinsics.checkNotNullParameter(newQuery, "newQuery");
+        if (this.query.length() == 0) {
+            isBlank = StringsKt__StringsJVMKt.isBlank(newQuery);
+            if (isBlank) {
+                return;
+            }
+        }
         PublishSubject<String> publishSubject = this.querySubject;
         trim = StringsKt__StringsKt.trim(newQuery);
         publishSubject.onNext(trim.toString());
     }
 
+    public final void onItemClick(TokenDetailed token) {
+        Intrinsics.checkNotNullParameter(token, "token");
+        ((WalletSelectTokenView) getViewState()).onTokenSelected(token, this.tokensRates.get(token.getAddress()));
+    }
+
     public final void reloadSearchResults() {
         this.cursor = "";
         this.swapItems.clear();
+        this.tokensRates.clear();
         searchByQuery(true);
     }
 
@@ -207,16 +230,16 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1626invoke(result);
+                m1622invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1626invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1622invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {
-                    WalletSelectTokenPresenter.this.onSwapTokensSuccess((List) ((Result.Success) result).getData(), z2);
+                    WalletSelectTokenPresenter.this.onSwapTokensLoadSuccess((List) ((Result.Success) result).getData(), z2);
                 } else if (result instanceof Result.Loading) {
                     if (z) {
                         ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onLoadingState();
@@ -256,7 +279,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -267,12 +290,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     }
 
     private final void loadBalances() {
-        WalletSelectTokenFragment.ScreenType screenType = this.screenType;
-        if (screenType instanceof WalletSelectTokenFragment.ScreenType.Send) {
+        SelectTokenScreenType selectTokenScreenType = this.screenType;
+        if (selectTokenScreenType instanceof SelectTokenScreenType.Send) {
             loadInternalBalances();
-        } else if (screenType instanceof WalletSelectTokenFragment.ScreenType.Binance) {
-            loadBinanceBalances(((WalletSelectTokenFragment.ScreenType.Binance) screenType).getTokens());
-        } else if (screenType instanceof WalletSelectTokenFragment.ScreenType.Swap) {
+        } else if (selectTokenScreenType instanceof SelectTokenScreenType.Binance) {
+            loadBinanceBalances(((SelectTokenScreenType.Binance) selectTokenScreenType).getTokens());
+        } else if (selectTokenScreenType instanceof SelectTokenScreenType.Swap) {
             searchByQuery(true);
         }
     }
@@ -289,12 +312,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> result) {
-                m1624invoke(result);
+                m1620invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1624invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
+            public final void m1620invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
                 ResourceManager resourceManager;
                 Result.Success success;
                 List<SelectableTokenItem> withExcludedSelectedToken;
@@ -378,7 +401,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -393,12 +416,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenBalance>> result) {
-                m1625invoke(result);
+                m1621invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1625invoke(Result<? extends List<? extends TokenBalance>> it) {
+            public final void m1621invoke(Result<? extends List<? extends TokenBalance>> it) {
                 ResourceManager resourceManager;
                 List<SelectableTokenItem> withExcludedSelectedToken;
                 boolean z;
@@ -458,13 +481,36 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui()).observeOn(this.schedulersProvider.mo717io());
-        final Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>> function1 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$subscribeToQueryChanges$1
+        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui());
+        final Function1<String, Unit> function1 = new Function1<String, Unit>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$subscribeToQueryChanges$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(String str) {
+                invoke2(str);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(String str) {
+                ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onLoadMoreComplete();
+            }
+        };
+        Observable<String> observeOn2 = observeOn.doOnNext(new Consumer() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                WalletSelectTokenPresenter.subscribeToQueryChanges$lambda$9(Function1.this, obj);
+            }
+        }).observeOn(this.schedulersProvider.mo717io());
+        final Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -483,12 +529,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 return searchObservable;
             }
         };
-        Observable<R> switchMap = observeOn.switchMap(new Function() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$$ExternalSyntheticLambda0
+        Observable<R> switchMap = observeOn2.switchMap(new Function() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource subscribeToQueryChanges$lambda$9;
-                subscribeToQueryChanges$lambda$9 = WalletSelectTokenPresenter.subscribeToQueryChanges$lambda$9(Function1.this, obj);
-                return subscribeToQueryChanges$lambda$9;
+                ObservableSource subscribeToQueryChanges$lambda$10;
+                subscribeToQueryChanges$lambda$10 = WalletSelectTokenPresenter.subscribeToQueryChanges$lambda$10(Function1.this, obj);
+                return subscribeToQueryChanges$lambda$10;
             }
         });
         Intrinsics.checkNotNullExpressionValue(switchMap, "private fun subscribeToQ…     .autoDispose()\n    }");
@@ -499,16 +545,16 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1627invoke(result);
+                m1623invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1627invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1623invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {
-                    WalletSelectTokenPresenter.this.onSwapTokensSuccess((List) ((Result.Success) result).getData(), false);
+                    WalletSelectTokenPresenter.this.onSwapTokensLoadSuccess((List) ((Result.Success) result).getData(), false);
                 } else if (result instanceof Result.Loading) {
                     ((WalletSelectTokenView) WalletSelectTokenPresenter.this.getViewState()).onLoadingState();
                 } else if (result instanceof Result.Error) {
@@ -544,11 +590,16 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public static final ObservableSource subscribeToQueryChanges$lambda$9(Function1 tmp0, Object obj) {
+    public static final void subscribeToQueryChanges$lambda$9(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    public static final ObservableSource subscribeToQueryChanges$lambda$10(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (ObservableSource) tmp0.invoke(obj);
     }
@@ -562,18 +613,22 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
         String str2 = this.query;
         String str3 = str2.length() == 0 ? null : str2;
         String str4 = this.cursor;
-        Observable<R> flatMap = swapInteractor.getAvailableTokensToSwap(swapProtocol, swapDirection, str, str3, str4.length() == 0 ? null : str4, z ? 20 : null).flatMap(new Function(new Function1<Result<? extends CursoredData<TokenDetailed>>, ObservableSource<? extends Result<? extends List<? extends TokenBalance>>>>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$getSearchObservable$$inlined$flatMapSuccess$1
+        Observable<R> flatMap = swapInteractor.getAvailableTokensToSwap(swapProtocol, swapDirection, str, str3, str4.length() == 0 ? null : str4, z ? 20 : null).flatMap(new Function(new Function1<Result<? extends CursoredData<TokenDetailedWithRate>>, ObservableSource<? extends Result<? extends List<? extends TokenBalance>>>>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$getSearchObservable$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final ObservableSource<? extends Result<? extends List<? extends TokenBalance>>> invoke(Result<? extends CursoredData<TokenDetailed>> result) {
+            public final ObservableSource<? extends Result<? extends List<? extends TokenBalance>>> invoke(Result<? extends CursoredData<TokenDetailedWithRate>> result) {
                 WalletInteractor walletInteractor;
                 int collectionSizeOrDefault;
                 String str5;
+                Map map;
                 int collectionSizeOrDefault2;
+                int collectionSizeOrDefault3;
+                TokenBalance copy;
+                List emptyList;
                 Intrinsics.checkNotNullParameter(result, "result");
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
@@ -584,35 +639,49 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                     return Observable.empty();
                 }
                 WalletSelectTokenPresenter walletSelectTokenPresenter = WalletSelectTokenPresenter.this;
-                CursoredData<TokenDetailed> data = result.getData();
+                CursoredData<TokenDetailedWithRate> data = result.getData();
                 String cursor = data != null ? data.getCursor() : null;
                 if (cursor == null) {
                     cursor = "";
                 }
                 walletSelectTokenPresenter.cursor = cursor;
-                CursoredData<TokenDetailed> data2 = result.getData();
-                List<TokenDetailed> data3 = data2 != null ? data2.getData() : null;
+                CursoredData<TokenDetailedWithRate> data2 = result.getData();
+                List<TokenDetailedWithRate> data3 = data2 != null ? data2.getData() : null;
                 if (data3 == null) {
                     data3 = CollectionsKt__CollectionsKt.emptyList();
                 }
-                if (z) {
-                    collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
-                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault2);
-                    for (TokenDetailed tokenDetailed : data3) {
-                        arrayList.add(TokenBalance.Companion.createEmptyBalanceFor(tokenDetailed));
-                    }
-                    Observable just = Observable.just(Result.Companion.success(arrayList));
+                if (data3.isEmpty()) {
+                    emptyList = CollectionsKt__CollectionsKt.emptyList();
+                    Observable just = Observable.just(Result.Companion.success(emptyList));
                     Intrinsics.checkNotNullExpressionValue(just, "just(this)");
                     return just;
+                } else if (!z) {
+                    walletInteractor = WalletSelectTokenPresenter.this.walletInteractor;
+                    collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
+                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+                    for (TokenDetailedWithRate tokenDetailedWithRate : data3) {
+                        arrayList.add(TokenExtKt.toIndexedToken(tokenDetailedWithRate.getToken()));
+                    }
+                    str5 = WalletSelectTokenPresenter.this.networkId;
+                    return walletInteractor.getTokensBalances(arrayList, true, str5);
+                } else {
+                    map = WalletSelectTokenPresenter.this.tokensRates;
+                    collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
+                    ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
+                    for (TokenDetailedWithRate tokenDetailedWithRate2 : data3) {
+                        arrayList2.add(TuplesKt.m103to(tokenDetailedWithRate2.getToken().getAddress(), tokenDetailedWithRate2.getRateToFiat()));
+                    }
+                    MapsKt__MapsKt.putAll(map, arrayList2);
+                    collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
+                    ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault3);
+                    for (TokenDetailedWithRate tokenDetailedWithRate3 : data3) {
+                        copy = r7.copy((r16 & 1) != 0 ? r7.total : 0.0d, (r16 & 2) != 0 ? r7.totalInFiat : null, (r16 & 4) != 0 ? r7.rateToFiat : tokenDetailedWithRate3.getRateToFiat(), (r16 & 8) != 0 ? r7.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? TokenBalance.Companion.createEmptyBalanceFor(tokenDetailedWithRate3.getToken()).token : null);
+                        arrayList3.add(copy);
+                    }
+                    Observable just2 = Observable.just(Result.Companion.success(arrayList3));
+                    Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                    return just2;
                 }
-                walletInteractor = WalletSelectTokenPresenter.this.walletInteractor;
-                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
-                ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
-                for (TokenDetailed tokenDetailed2 : data3) {
-                    arrayList2.add(TokenExtKt.toIndexedToken(tokenDetailed2));
-                }
-                str5 = WalletSelectTokenPresenter.this.networkId;
-                return walletInteractor.getTokensBalances(arrayList2, true, str5);
             }
         }) { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
@@ -678,11 +747,13 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
         return startWith;
     }
 
-    public final void onSwapTokensSuccess(List<SelectableTokenItem> list, boolean z) {
+    public final void onSwapTokensLoadSuccess(List<SelectableTokenItem> list, boolean z) {
         List mutableList;
+        List<SelectableTokenItem> mutableList2;
+        List mutableList3;
         if (!list.isEmpty()) {
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) list);
-            final Function1<SelectableTokenItem, Boolean> function1 = new Function1<SelectableTokenItem, Boolean>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$onSwapTokensSuccess$filteredItems$1$1
+            final Function1<SelectableTokenItem, Boolean> function1 = new Function1<SelectableTokenItem, Boolean>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$onSwapTokensLoadSuccess$filteredItems$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -697,7 +768,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                     return Boolean.valueOf(Intrinsics.areEqual(token, ignoredToken));
                 }
             };
-            Collection$EL.removeIf(mutableList, new Predicate() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$$ExternalSyntheticLambda1
+            Collection$EL.removeIf(mutableList, new Predicate() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$$ExternalSyntheticLambda2
                 @Override // p033j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
                     return Predicate.CC.$default$and(this, predicate);
@@ -716,16 +787,18 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
                 @Override // p033j$.util.function.Predicate
                 public final boolean test(Object obj) {
-                    boolean onSwapTokensSuccess$lambda$19$lambda$18;
-                    onSwapTokensSuccess$lambda$19$lambda$18 = WalletSelectTokenPresenter.onSwapTokensSuccess$lambda$19$lambda$18(Function1.this, obj);
-                    return onSwapTokensSuccess$lambda$19$lambda$18;
+                    boolean onSwapTokensLoadSuccess$lambda$21$lambda$20;
+                    onSwapTokensLoadSuccess$lambda$21$lambda$20 = WalletSelectTokenPresenter.onSwapTokensLoadSuccess$lambda$21$lambda$20(Function1.this, obj);
+                    return onSwapTokensLoadSuccess$lambda$21$lambda$20;
                 }
             });
             this.swapItems.addAll(mutableList);
             if (z) {
-                ((WalletSelectTokenView) getViewState()).onLoadMoreItems(this.swapItems);
+                mutableList3 = CollectionsKt___CollectionsKt.toMutableList((Collection) this.swapItems);
+                ((WalletSelectTokenView) getViewState()).onLoadMoreItems(mutableList3);
             } else {
-                ((WalletSelectTokenView) getViewState()).renderItems(this.swapItems);
+                mutableList2 = CollectionsKt___CollectionsKt.toMutableList((Collection) this.swapItems);
+                ((WalletSelectTokenView) getViewState()).renderItems(mutableList2);
             }
         } else if (!z) {
             ((WalletSelectTokenView) getViewState()).onEmptyState();
@@ -735,14 +808,14 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
         }
     }
 
-    public static final boolean onSwapTokensSuccess$lambda$19$lambda$18(Function1 tmp0, Object obj) {
+    public static final boolean onSwapTokensLoadSuccess$lambda$21$lambda$20(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return ((Boolean) tmp0.invoke(obj)).booleanValue();
     }
 
     /* compiled from: WalletSelectTokenPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -754,7 +827,8 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
     public final List<SelectableTokenItem> withExcludedSelectedToken(List<SelectableTokenItem> list) {
         List sortedWith;
-        List<SelectableTokenItem> sortedWith2;
+        List sortedWith2;
+        List<SelectableTokenItem> mutableList;
         ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
             String address = ((SelectableTokenItem) obj).getToken().getAddress();
@@ -781,6 +855,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 return compareValues;
             }
         });
-        return sortedWith2;
+        mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) sortedWith2);
+        return mutableList;
     }
 }

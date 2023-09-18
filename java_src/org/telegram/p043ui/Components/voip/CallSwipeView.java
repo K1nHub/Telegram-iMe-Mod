@@ -13,7 +13,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.voip.CallSwipeView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CallSwipeView extends View {
     private boolean animatingArrows;
     private Path arrow;
@@ -29,7 +29,7 @@ public class CallSwipeView extends View {
     private View viewToDrag;
 
     /* renamed from: org.telegram.ui.Components.voip.CallSwipeView$Listener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Listener {
         void onDragCancel();
 
@@ -156,7 +156,7 @@ public class CallSwipeView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.voip.CallSwipeView$ArrowAnimWrapper */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class ArrowAnimWrapper {
         private int index;
         final /* synthetic */ CallSwipeView this$0;

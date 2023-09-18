@@ -4,7 +4,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LanguageViewModel.kt */
 /* renamed from: com.iMe.ui.languages.LanguageViewModel */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LanguageViewModel {
     private boolean checked;
 

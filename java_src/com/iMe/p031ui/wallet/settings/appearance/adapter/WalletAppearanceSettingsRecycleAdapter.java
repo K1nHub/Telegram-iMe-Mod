@@ -11,18 +11,18 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.Switch;
 /* compiled from: WalletAppearanceSettingsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.adapter.WalletAppearanceSettingsRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletAppearanceSettingsRecycleAdapter extends BaseQuickAdapter<InterfaceSettingItem, BaseViewHolder> {
     private final ResourceManager resourceManager;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletAppearanceSettingsRecycleAdapter(ResourceManager resourceManager) {
-        super(C3558R.layout.fork_recycle_item_wallet_appearance_settings, null, 2, null);
+        super(C3473R.layout.fork_recycle_item_wallet_appearance_settings, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -32,14 +32,14 @@ public final class WalletAppearanceSettingsRecycleAdapter extends BaseQuickAdapt
     public void convert(BaseViewHolder holder, final InterfaceSettingItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.linear_root;
+        int i = C3473R.C3476id.linear_root;
         BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3558R.C3561id.text_setting_description;
+        int i2 = C3473R.C3476id.text_setting_description;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i2, Theme.key_windowBackgroundWhiteGrayText2);
-        int i3 = C3558R.C3561id.text_setting_title;
+        int i3 = C3473R.C3476id.text_setting_title;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_windowBackgroundWhiteBlackText);
-        int i4 = C3558R.C3561id.image_icon;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, i4, Theme.key_windowBackgroundWhiteGrayIcon).setImageResource(i4, item.getIcon()), C3558R.C3561id.view_divider, !RecycleViewExtKt.isLastItem(holder, this)).setText(i3, this.resourceManager.getString(item.getTitle())).setText(i2, this.resourceManager.getString(item.getDescription())), C3558R.C3561id.view_switch, new Function1<Switch, Unit>() { // from class: com.iMe.ui.wallet.settings.appearance.adapter.WalletAppearanceSettingsRecycleAdapter$convert$1
+        int i4 = C3473R.C3476id.image_icon;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, i4, Theme.key_windowBackgroundWhiteGrayIcon).setImageResource(i4, item.getIcon()), C3473R.C3476id.view_divider, !RecycleViewExtKt.isLastItem(holder, this)).setText(i3, this.resourceManager.getString(item.getTitle())).setText(i2, this.resourceManager.getString(item.getDescription())), C3473R.C3476id.view_switch, new Function1<Switch, Unit>() { // from class: com.iMe.ui.wallet.settings.appearance.adapter.WalletAppearanceSettingsRecycleAdapter$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -73,7 +73,7 @@ public final class WalletAppearanceSettingsRecycleAdapter extends BaseQuickAdapt
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setOnItemClick(View v, int i) {
         Intrinsics.checkNotNullParameter(v, "v");
-        Switch r0 = (Switch) v.findViewById(C3558R.C3561id.view_switch);
+        Switch r0 = (Switch) v.findViewById(C3473R.C3476id.view_switch);
         r0.setChecked(!r0.isChecked(), true);
         super.setOnItemClick(v, i);
     }

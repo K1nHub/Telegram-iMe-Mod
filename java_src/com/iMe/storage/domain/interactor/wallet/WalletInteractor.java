@@ -36,7 +36,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletInteractor {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final SchedulersProvider schedulersProvider;
@@ -363,7 +363,7 @@ public final class WalletInteractor {
     }
 
     /* compiled from: WalletInteractor.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -15,7 +15,7 @@ import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableRepeatWhen<T> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super Observable<Object>, ? extends ObservableSource<?>> handler;
 
@@ -39,7 +39,7 @@ public final class ObservableRepeatWhen<T> extends AbstractObservableWithUpstrea
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class RepeatWhenObserver<T> extends AtomicInteger implements Observer<T>, Disposable {
         volatile boolean active;
         final Observer<? super T> downstream;
@@ -118,7 +118,7 @@ public final class ObservableRepeatWhen<T> extends AbstractObservableWithUpstrea
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         final class InnerRepeatObserver extends AtomicReference<Disposable> implements Observer<Object> {
             InnerRepeatObserver() {
             }

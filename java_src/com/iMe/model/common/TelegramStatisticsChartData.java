@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
 /* compiled from: TelegramStatisticsChartData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TelegramStatisticsChartData {
     public static final Companion Companion = new Companion(null);
     private final Colors colors;
@@ -248,7 +248,7 @@ public final class TelegramStatisticsChartData {
     }
 
     /* compiled from: TelegramStatisticsChartData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Colors {
 
         /* renamed from: y0 */
@@ -296,7 +296,7 @@ public final class TelegramStatisticsChartData {
     }
 
     /* compiled from: TelegramStatisticsChartData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Names {
 
         /* renamed from: y0 */
@@ -344,7 +344,7 @@ public final class TelegramStatisticsChartData {
     }
 
     /* compiled from: TelegramStatisticsChartData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Subchart {
         private final List<Long> defaultZoom;
         private final boolean show;
@@ -415,7 +415,7 @@ public final class TelegramStatisticsChartData {
     }
 
     /* compiled from: TelegramStatisticsChartData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Types {
 
         /* renamed from: x */
@@ -484,7 +484,7 @@ public final class TelegramStatisticsChartData {
     }
 
     /* compiled from: TelegramStatisticsChartData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

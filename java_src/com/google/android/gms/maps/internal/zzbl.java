@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzbl extends com.google.android.gms.internal.maps.zzb implements zzbm {
     public zzbl() {
         super("com.google.android.gms.maps.internal.IOnStreetViewPanoramaChangeListener");

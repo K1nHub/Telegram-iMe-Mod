@@ -6,7 +6,7 @@ import com.google.firestore.p021v1.ArrayValue;
 import com.google.firestore.p021v1.Value;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ArrayTransformOperation implements TransformOperation {
     private final List<Value> elements;
 
@@ -51,7 +51,7 @@ public abstract class ArrayTransformOperation implements TransformOperation {
         return ArrayValue.newBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Union extends ArrayTransformOperation {
         public Union(List<Value> list) {
             super(list);
@@ -69,7 +69,7 @@ public abstract class ArrayTransformOperation implements TransformOperation {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Remove extends ArrayTransformOperation {
         public Remove(List<Value> list) {
             super(list);

@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.SlideChooseView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SlideChooseView extends View {
     private final SeekBarAccessibilityDelegate accessibilityDelegate;
     private Callback callback;
@@ -42,11 +42,11 @@ public class SlideChooseView extends View {
     private float yTouchDown;
 
     /* renamed from: org.telegram.ui.Components.SlideChooseView$Callback */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Callback {
 
         /* renamed from: org.telegram.ui.Components.SlideChooseView$Callback$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$onTouchEnd(Callback callback) {
             }

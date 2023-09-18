@@ -1,7 +1,7 @@
 package me.zhanghai.android.materialratingbar;
 
-import com.iMe.android.web.R;
-/* loaded from: classes4.dex */
+import com.iMe.android.R;
+/* loaded from: classes6.dex */
 public final class R$styleable {
     public static final int[] MaterialRatingBar = {R.attr.mrb_fillBackgroundStars, R.attr.mrb_indeterminateTint, R.attr.mrb_indeterminateTintMode, R.attr.mrb_progressBackgroundTint, R.attr.mrb_progressBackgroundTintMode, R.attr.mrb_progressTint, R.attr.mrb_progressTintMode, R.attr.mrb_secondaryProgressTint, R.attr.mrb_secondaryProgressTintMode};
     public static final int MaterialRatingBar_mrb_fillBackgroundStars = 0;

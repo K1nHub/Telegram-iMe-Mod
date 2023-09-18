@@ -7,20 +7,20 @@ import java.io.InputStream;
 import java.util.Arrays;
 import org.bouncycastle.util.Encodable;
 import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class LMOtsSignature implements Encodable {
 
     /* renamed from: C */
-    private final byte[] f1408C;
+    private final byte[] f1399C;
     private final LMOtsParameters type;
 
     /* renamed from: y */
-    private final byte[] f1409y;
+    private final byte[] f1400y;
 
     public LMOtsSignature(LMOtsParameters lMOtsParameters, byte[] bArr, byte[] bArr2) {
         this.type = lMOtsParameters;
-        this.f1408C = bArr;
-        this.f1409y = bArr2;
+        this.f1399C = bArr;
+        this.f1400y = bArr2;
     }
 
     public static LMOtsSignature getInstance(Object obj) throws IOException {
@@ -72,8 +72,8 @@ class LMOtsSignature implements Encodable {
         LMOtsSignature lMOtsSignature = (LMOtsSignature) obj;
         LMOtsParameters lMOtsParameters = this.type;
         if (lMOtsParameters == null ? lMOtsSignature.type == null : lMOtsParameters.equals(lMOtsSignature.type)) {
-            if (Arrays.equals(this.f1408C, lMOtsSignature.f1408C)) {
-                return Arrays.equals(this.f1409y, lMOtsSignature.f1409y);
+            if (Arrays.equals(this.f1399C, lMOtsSignature.f1399C)) {
+                return Arrays.equals(this.f1400y, lMOtsSignature.f1400y);
             }
             return false;
         }
@@ -82,11 +82,11 @@ class LMOtsSignature implements Encodable {
 
     @Override // org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(this.type.getType()).bytes(this.f1408C).bytes(this.f1409y).build();
+        return Composer.compose().u32str(this.type.getType()).bytes(this.f1399C).bytes(this.f1400y).build();
     }
 
     public int hashCode() {
         LMOtsParameters lMOtsParameters = this.type;
-        return ((((lMOtsParameters != null ? lMOtsParameters.hashCode() : 0) * 31) + Arrays.hashCode(this.f1408C)) * 31) + Arrays.hashCode(this.f1409y);
+        return ((((lMOtsParameters != null ? lMOtsParameters.hashCode() : 0) * 31) + Arrays.hashCode(this.f1399C)) * 31) + Arrays.hashCode(this.f1400y);
     }
 }

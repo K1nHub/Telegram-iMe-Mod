@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import org.solovyev.android.checkout.Cache;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class MapCache implements Cache {
     private final Map<Cache.Key, Cache.Entry> mMap = new HashMap();
 

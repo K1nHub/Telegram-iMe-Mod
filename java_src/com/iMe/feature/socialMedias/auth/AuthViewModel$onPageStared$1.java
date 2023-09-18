@@ -15,7 +15,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
 @DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1", m101f = "AuthViewModel.kt", m100l = {42}, m99m = "invokeSuspend")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AuthViewModel$onPageStared$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
@@ -44,7 +44,7 @@ public final class AuthViewModel$onPageStared$1 extends SuspendLambda implements
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C14831 c14831 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1.1
+            C14791 c14791 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public final AuthState invoke(SimpleContext<AuthState> reduce) {
                     Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
@@ -52,7 +52,7 @@ public final class AuthViewModel$onPageStared$1 extends SuspendLambda implements
                 }
             };
             this.label = 1;
-            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14831, this) == coroutine_suspended) {
+            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14791, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

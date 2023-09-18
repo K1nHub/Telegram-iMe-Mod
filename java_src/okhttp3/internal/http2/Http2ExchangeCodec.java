@@ -24,7 +24,7 @@ import okhttp3.internal.http.StatusLine;
 import okio.Sink;
 import okio.Source;
 /* compiled from: Http2ExchangeCodec.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Http2ExchangeCodec implements ExchangeCodec {
     public static final Companion Companion = new Companion(null);
     private static final List<String> HTTP_2_SKIPPED_REQUEST_HEADERS = Util.immutableListOf("connection", "host", "keep-alive", "proxy-connection", "te", "transfer-encoding", "encoding", "upgrade", ":method", ":path", ":scheme", ":authority");
@@ -134,7 +134,7 @@ public final class Http2ExchangeCodec implements ExchangeCodec {
     }
 
     /* compiled from: Http2ExchangeCodec.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -11,7 +11,7 @@ import com.otaliastudios.gif.internal.Logger;
 import com.otaliastudios.opengl.draw.GlRect;
 import com.otaliastudios.opengl.program.GlTextureProgram;
 import com.otaliastudios.opengl.texture.GlTexture;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class VideoDecoderOutput {
     private static final Logger LOG = new Logger(VideoDecoderOutput.class.getSimpleName());
     private GlRect mDrawable;

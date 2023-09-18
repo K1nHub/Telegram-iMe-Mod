@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelCountryResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelCountryResponse {
     private final String code;
 

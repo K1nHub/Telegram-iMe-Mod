@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_pageBlockChannel extends TLRPC$PageBlock {
     public static int constructor = -283684427;
     public TLRPC$Chat channel;

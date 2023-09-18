@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServicesView> implements WalletHomeServicesView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -116,7 +116,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$OpenStakingScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenStakingScreenCommand extends ViewCommand<WalletHomeServicesView> {
         OpenStakingScreenCommand(WalletHomeServicesView$$State walletHomeServicesView$$State) {
             super("openStakingScreen", OneExecutionStateStrategy.class);
@@ -130,7 +130,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$OpenCryptoBoxesScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCryptoBoxesScreenCommand extends ViewCommand<WalletHomeServicesView> {
         OpenCryptoBoxesScreenCommand(WalletHomeServicesView$$State walletHomeServicesView$$State) {
             super("openCryptoBoxesScreen", OneExecutionStateStrategy.class);
@@ -144,7 +144,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$ShowRequiredWalletCreatedDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRequiredWalletCreatedDialogCommand extends ViewCommand<WalletHomeServicesView> {
         ShowRequiredWalletCreatedDialogCommand(WalletHomeServicesView$$State walletHomeServicesView$$State) {
             super("showRequiredWalletCreatedDialog", OneExecutionStateStrategy.class);
@@ -158,7 +158,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$FirstScreenInitWithItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class FirstScreenInitWithItemsCommand extends ViewCommand<WalletHomeServicesView> {
         public final List<BaseNode> dashboardUiItems;
 
@@ -175,7 +175,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletHomeServicesView> {
         public final String text;
 
@@ -192,7 +192,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletHomeServicesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -213,7 +213,7 @@ public class WalletHomeServicesView$$State extends MvpViewState<WalletHomeServic
 
     /* compiled from: WalletHomeServicesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletHomeServicesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

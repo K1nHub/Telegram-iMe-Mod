@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.vision.label.ImageLabeler$$ExternalSyntheticThrowNSME0;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza extends com.google.android.gms.internal.vision.zza implements INativeImageLabeler {
     zza(IBinder iBinder) {
         super(iBinder, "com.google.android.gms.vision.label.internal.client.INativeImageLabeler");

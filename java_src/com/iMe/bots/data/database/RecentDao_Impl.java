@@ -10,7 +10,7 @@ import com.iMe.bots.data.model.database.RecentDbModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecentDao_Impl extends RecentDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<RecentDbModel> __insertionAdapterOfRecentDbModel;

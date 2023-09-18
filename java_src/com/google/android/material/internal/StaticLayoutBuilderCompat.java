@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import androidx.core.util.Preconditions;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Constructor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class StaticLayoutBuilderCompat {
     static final int DEFAULT_HYPHENATION_FREQUENCY;
     private static Constructor<StaticLayout> constructor;
@@ -152,7 +152,7 @@ final class StaticLayoutBuilderCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class StaticLayoutBuilderCompatException extends Exception {
         StaticLayoutBuilderCompatException(Throwable th) {
             super("Error thrown initializing StaticLayout " + th.getMessage(), th);

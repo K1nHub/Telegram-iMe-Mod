@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 52
+    .line 58
     check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->invoke(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 60
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -85,20 +85,20 @@
 
     const/4 v2, 0x4
 
-    .line 54
+    .line 61
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->setInitialPrefetchItemCount(I)V
 
-    .line 55
+    .line 62
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/BannerProvider;->access$getBannerScrollState$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Landroid/os/Parcelable;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->restoreScrollState(Landroidx/recyclerview/widget/LinearLayoutManager;Landroid/os/Parcelable;)V
 
-    .line 53
+    .line 59
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 57
+    .line 64
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
@@ -109,37 +109,38 @@
 
     iget-object v2, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
-    .line 58
+    .line 65
     invoke-virtual {v1}, Lcom/iMe/model/wallet/home/BannerItem;->getItems()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setNewInstance(Ljava/util/List;)V
 
-    .line 59
+    .line 66
     invoke-static {v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 60
+    .line 67
     invoke-virtual {v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannerOnItemClickListener()Lcom/chad/library/adapter/base/listener/OnItemClickListener;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 57
+    .line 64
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 62
+    .line 70
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->access$getBannerSnapHelper$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Landroidx/recyclerview/widget/PagerSnapHelper;
 
     move-result-object v2
 
+    .line 71
     new-instance v4, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1$3;
 
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
@@ -154,9 +155,10 @@
 
     move-object v1, p1
 
+    .line 69
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->attachSnapHelperWithListener$default(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/SnapHelper;Lcom/iMe/utils/listeners/SnapOnScrollListener$Behavior;Lcom/iMe/utils/listeners/OnSnapPositionChangeListener;ILjava/lang/Object;)V
 
-    .line 67
+    .line 76
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->preventScrollByParent(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void

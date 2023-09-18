@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzeg {
     protected static final AtomicReference<String[]> zza = new AtomicReference<>();
     protected static final AtomicReference<String[]> zzb = new AtomicReference<>();

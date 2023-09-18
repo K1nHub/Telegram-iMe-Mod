@@ -23,7 +23,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: RecentChatsBar.kt */
 /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecentChatsBar extends FrameLayout {
     private final int currentAccount;
     private final List<HistoryDialogModel> data;
@@ -33,7 +33,7 @@ public final class RecentChatsBar extends FrameLayout {
 
     /* compiled from: RecentChatsBar.kt */
     /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar$Delegate */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Delegate {
         void onLongClickRelease();
 
@@ -192,7 +192,7 @@ public final class RecentChatsBar extends FrameLayout {
 
     /* compiled from: RecentChatsBar.kt */
     /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar$ListAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {

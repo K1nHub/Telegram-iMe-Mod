@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
@@ -41,7 +41,7 @@ import org.telegram.p043ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.LauncherIconController;
 /* renamed from: org.telegram.ui.Cells.AppIconsSelectorCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AppIconsSelectorCell extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private List<LauncherIconController.LauncherIcon> availableIcons;
     private LinearLayoutManager linearLayoutManager;
@@ -198,7 +198,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Cells.AppIconsSelectorCell$IconHolderView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class IconHolderView extends LinearLayout {
         private Paint fillPaint;
         private AdaptiveIconImageView iconView;
@@ -286,7 +286,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.titleView.getLayoutParams();
             if (launcherIcon.premium && !UserConfig.hasPremiumOnAccounts()) {
                 SpannableString spannableString = new SpannableString("d " + LocaleController.getString(launcherIcon.title));
-                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3558R.C3560drawable.msg_mini_premiumlock);
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3473R.C3475drawable.msg_mini_premiumlock);
                 coloredImageSpan.setTopOffset(1);
                 coloredImageSpan.setSize(AndroidUtilities.m72dp(13));
                 spannableString.setSpan(coloredImageSpan, 0, 1, 33);
@@ -301,7 +301,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
     }
 
     /* renamed from: org.telegram.ui.Cells.AppIconsSelectorCell$AdaptiveIconImageView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class AdaptiveIconImageView extends ImageView {
         private int backgroundOuterPadding;
         private Drawable foreground;

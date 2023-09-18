@@ -4,7 +4,7 @@ import com.otaliastudios.opengl.core.EglCore;
 import com.otaliastudios.opengl.internal.EglKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EglSurface.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class EglNativeSurface {
     private EglCore eglCore;
     private com.otaliastudios.opengl.internal.EglSurface eglSurface;

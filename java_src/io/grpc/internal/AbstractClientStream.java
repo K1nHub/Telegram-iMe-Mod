@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractClientStream extends AbstractStream implements ClientStream, MessageFramer.Sink {
     private static final Logger log = Logger.getLogger(AbstractClientStream.class.getName());
     private final Framer framer;
@@ -27,7 +27,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
     private final TransportTracer transportTracer;
     private boolean useGet;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     protected interface Sink {
         void cancel(Status status);
 
@@ -142,7 +142,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class TransportState extends AbstractStream.TransportState {
         private DecompressorRegistry decompressorRegistry;
         private boolean deframerClosed;
@@ -364,7 +364,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class GetFramer implements Framer {
         private boolean closed;
         private Metadata headers;

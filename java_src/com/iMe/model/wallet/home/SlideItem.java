@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.common.IdFabric$ViewTypes;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SlideItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SlideItem {
     private final int itemType;
     private final BannerSlide slide;

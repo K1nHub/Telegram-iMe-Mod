@@ -7,9 +7,9 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletCreationType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletCreationType {
     private final int buttonTextResId;
     private final int iconResId;
@@ -34,7 +34,7 @@ public abstract class WalletCreationType {
     }
 
     /* compiled from: WalletCreationType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Initial extends WalletCreationType {
         public static final Companion Companion = new Companion(null);
         private final int buttonTextResId;
@@ -79,27 +79,27 @@ public abstract class WalletCreationType {
         }
 
         /* compiled from: WalletCreationType.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Create extends Initial {
             public static final Create INSTANCE = new Create();
 
             private Create() {
-                super(C3558R.C3560drawable.fork_ic_wallet_create, C3558R.string.wallet_dashboard_create_eth_wallet, C3558R.string.wallet_creation_intro_title_create, 0, null);
+                super(C3473R.C3475drawable.fork_ic_wallet_create, C3473R.string.wallet_dashboard_create_eth_wallet, C3473R.string.wallet_creation_intro_title_create, 0, null);
             }
         }
 
         /* compiled from: WalletCreationType.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Import extends Initial {
             public static final Import INSTANCE = new Import();
 
             private Import() {
-                super(C3558R.C3560drawable.fork_ic_wallet_import, C3558R.string.wallet_dashboard_import_eth_wallet, C3558R.string.wallet_creation_intro_title_import, 1, null);
+                super(C3473R.C3475drawable.fork_ic_wallet_import, C3473R.string.wallet_dashboard_import_eth_wallet, C3473R.string.wallet_creation_intro_title_import, 1, null);
             }
         }
 
         /* compiled from: WalletCreationType.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -122,13 +122,13 @@ public abstract class WalletCreationType {
     }
 
     /* compiled from: WalletCreationType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Activate extends WalletCreationType {
         private final BlockchainType blockchainType;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Activate(BlockchainType blockchainType) {
-            super(C3558R.C3560drawable.fork_ic_wallet_create, C3558R.string.wallet_dashboard_activate_wallet, null);
+            super(C3473R.C3475drawable.fork_ic_wallet_create, C3473R.string.wallet_dashboard_activate_wallet, null);
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             this.blockchainType = blockchainType;
         }

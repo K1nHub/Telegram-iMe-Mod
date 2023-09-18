@@ -3,7 +3,7 @@ package com.iMe.model.common;
 import com.iMe.p031ui.base.mvp.MvpFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NavigationTab.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class NavigationTab<T extends MvpFragment> {
     private final T fragment;
 

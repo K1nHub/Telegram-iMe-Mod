@@ -5,7 +5,7 @@ import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBottomNavigationTab.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFragment> {
     private final WalletTabFragment fragment;
 

@@ -2,7 +2,7 @@ package com.google.firebase.firestore.local;
 
 import com.google.firebase.firestore.model.ResourcePath;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface IndexManager {
     void addToCollectionParentIndex(ResourcePath resourcePath);
 

@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class QueueFileLogStore implements FileLogStore {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private QueueFile logFile;
@@ -16,7 +16,7 @@ class QueueFileLogStore implements FileLogStore {
     private final File workingFile;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogBytes {
         public final byte[] bytes;
         public final int offset;

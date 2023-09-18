@@ -58,7 +58,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import net.lingala.zip4j.core.ZipFile;
 /* compiled from: AiBotsManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AiBotsManager {
     public static final Companion Companion = new Companion(null);
     private static volatile AiBotsManager INSTANCE;
@@ -78,25 +78,25 @@ public final class AiBotsManager {
     private final ShopItemMapper shopItemMapper;
 
     /* compiled from: AiBotsManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface AppInstalledCallback {
         void onSuccess();
     }
 
     /* compiled from: AiBotsManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BotsListChangedCallback {
         void onSuccess();
     }
 
     /* compiled from: AiBotsManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FirebaseSnapshotCallback {
         void onSuccess();
     }
 
     /* compiled from: AiBotsManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface SmartReplierCallback {
         void onError(Throwable th);
 
@@ -139,7 +139,7 @@ public final class AiBotsManager {
     }
 
     /* compiled from: AiBotsManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

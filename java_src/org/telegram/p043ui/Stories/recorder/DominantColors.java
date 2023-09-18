@@ -5,7 +5,7 @@ import android.graphics.Color;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Stories.recorder.DominantColors */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DominantColors {
     private static float[] tempHsv;
 

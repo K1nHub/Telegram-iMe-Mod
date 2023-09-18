@@ -3,7 +3,7 @@ package com.iMe.bots.domain.model;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ShopProduct.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ShopProduct {
     private final boolean isPurchased;
     private final String price;
@@ -102,7 +102,7 @@ public final class ShopProduct {
     }
 
     /* compiled from: ShopProduct.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Receipt {
         private final String orderId;
         private final String packageName;

@@ -30,7 +30,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Components.MotionBackgroundDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MotionBackgroundDrawable extends Drawable {
     private static boolean errorWhileGenerateLegacyBitmap;
     private static float legacyBitmapScale;

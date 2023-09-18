@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HistoryDialogDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.HistoryDialogDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class HistoryDialogDao implements BaseDao<HistoryDialogDb> {
     public abstract void clearRecentChatHistory(boolean z);
 

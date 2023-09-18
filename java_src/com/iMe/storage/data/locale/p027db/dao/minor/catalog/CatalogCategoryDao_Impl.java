@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.catalog.CatalogCategoryDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogCategoryDao_Impl extends CatalogCategoryDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<CatalogCategoryDb> __insertionAdapterOfCatalogCategoryDb;

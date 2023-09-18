@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Timeout.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Timeout {
     public static final Timeout NONE;
     private long deadlineNanoTime;
@@ -63,7 +63,7 @@ public class Timeout {
     }
 
     /* compiled from: Timeout.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

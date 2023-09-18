@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RefCountFlow.kt */
 @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.repeatonsubscription.RefCountFlow", m101f = "RefCountFlow.kt", m100l = {13, 14, 16, 16}, m99m = "collect")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RefCountFlow$collect$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.Flow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RefCountFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RefCountFlow<T> implements Flow<T> {
     private final SubscribedCounter subscribedCounter;
     private final Flow<T> upStream;

@@ -8,8 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ContactsWidgetLayout4Binding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ContactsWidgetLayout4Binding implements ViewBinding {
     }
 
     public static ContactsWidgetLayout4Binding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.contacts_widget_layout_4, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.contacts_widget_layout_4, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ContactsWidgetLayout4Binding implements ViewBinding {
     }
 
     public static ContactsWidgetLayout4Binding bind(View view) {
-        int i = C3558R.C3561id.empty_view;
+        int i = C3473R.C3476id.empty_view;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3558R.C3561id.list_view;
+            i = C3473R.C3476id.list_view;
             ListView listView = (ListView) ViewBindings.findChildViewById(view, i);
             if (listView != null) {
                 return new ContactsWidgetLayout4Binding((LinearLayout) view, textView, listView);

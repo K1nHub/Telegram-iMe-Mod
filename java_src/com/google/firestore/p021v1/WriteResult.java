@@ -6,7 +6,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 /* renamed from: com.google.firestore.v1.WriteResult */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WriteResult extends GeneratedMessageLite<WriteResult, Builder> implements MessageLiteOrBuilder {
     private static final WriteResult DEFAULT_INSTANCE;
     private static volatile Parser<WriteResult> PARSER = null;
@@ -32,7 +32,7 @@ public final class WriteResult extends GeneratedMessageLite<WriteResult, Builder
     }
 
     /* renamed from: com.google.firestore.v1.WriteResult$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteResult, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10811 c10811) {
             this();
@@ -44,7 +44,7 @@ public final class WriteResult extends GeneratedMessageLite<WriteResult, Builder
     }
 
     /* renamed from: com.google.firestore.v1.WriteResult$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10811 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

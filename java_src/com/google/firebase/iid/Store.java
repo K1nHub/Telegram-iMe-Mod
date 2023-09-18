@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class Store {
     final Context context;
     final SharedPreferences store;
     private final Map<String, Long> subtypeCreationTimes = new ArrayMap();
 
     /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class Token {
         private static final long REFRESH_PERIOD_MILLIS = TimeUnit.DAYS.toMillis(7);
         final String appVersion;

@@ -13,7 +13,7 @@ import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: NeurobotsStoreActivity.kt */
 /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$createView$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem.ActionBarMenuItemSearchListener {
     final /* synthetic */ NeurobotsStoreActivity this$0;
 

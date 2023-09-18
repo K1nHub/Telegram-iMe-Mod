@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: AppUpdateRequiredView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.base.mvp.AppUpdateRequiredView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface AppUpdateRequiredView extends BaseView {
     void showAppUpdateDialog();
 }

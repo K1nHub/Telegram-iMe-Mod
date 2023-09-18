@@ -5,7 +5,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Supplier;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MemoryPersistence extends Persistence {
     private ReferenceDelegate referenceDelegate;
     private boolean started;

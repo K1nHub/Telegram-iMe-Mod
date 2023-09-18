@@ -3,23 +3,23 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSocialNetwork.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum DrawerSocialNetwork {
-    TELEGRAM(C3558R.C3560drawable.fork_drawer_social_telegram, C3558R.string.drawer_social_network_telegram),
-    TWITTER(C3558R.C3560drawable.fork_drawer_social_twitter, C3558R.string.drawer_social_network_twitter),
-    YOUTUBE(C3558R.C3560drawable.fork_drawer_social_youtube, C3558R.string.drawer_social_network_youtube),
-    APP_STORE(C3558R.C3560drawable.fork_drawer_social_app_store, C3558R.string.drawer_social_network_app_store),
-    GOOGLE_PLAY(C3558R.C3560drawable.fork_drawer_social_google_play, C3558R.string.drawer_social_network_google_play),
-    SITE(C3558R.C3560drawable.fork_drawer_social_site, C3558R.string.drawer_social_network_site);
+    TELEGRAM(C3473R.C3475drawable.fork_drawer_social_telegram, C3473R.string.drawer_social_network_telegram),
+    TWITTER(C3473R.C3475drawable.fork_drawer_social_twitter, C3473R.string.drawer_social_network_twitter),
+    YOUTUBE(C3473R.C3475drawable.fork_drawer_social_youtube, C3473R.string.drawer_social_network_youtube),
+    APP_STORE(C3473R.C3475drawable.fork_drawer_social_app_store, C3473R.string.drawer_social_network_app_store),
+    GOOGLE_PLAY(C3473R.C3475drawable.fork_drawer_social_google_play, C3473R.string.drawer_social_network_google_play),
+    SITE(C3473R.C3475drawable.fork_drawer_social_site, C3473R.string.drawer_social_network_site);
     
     private final int iconResId;
     private final int titleResId;
 
     /* compiled from: DrawerSocialNetwork.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -69,7 +69,7 @@ public enum DrawerSocialNetwork {
     public final String url() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3558R.string.settings_help_alert_channel_username);
+                String internalString = LocaleController.getInternalString(C3473R.string.settings_help_alert_channel_username);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…p_alert_channel_username)");
                 return internalString;
             case 2:

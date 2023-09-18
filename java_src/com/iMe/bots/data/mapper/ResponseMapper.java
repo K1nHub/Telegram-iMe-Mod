@@ -12,7 +12,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ResponseMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ResponseMapper {
     private final String frequentAnswersTitle;
     private final Map<String, Integer> holidays;

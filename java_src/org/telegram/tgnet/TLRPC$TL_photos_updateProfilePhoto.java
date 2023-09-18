@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
     public static int constructor = 166207545;
     public TLRPC$InputUser bot;
@@ -7,7 +7,7 @@ public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public TLRPC$InputPhoto f1667id;
+    public TLRPC$InputPhoto f1658id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -23,6 +23,6 @@ public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
         if ((this.flags & 2) != 0) {
             this.bot.serializeToStream(abstractSerializedData);
         }
-        this.f1667id.serializeToStream(abstractSerializedData);
+        this.f1658id.serializeToStream(abstractSerializedData);
     }
 }

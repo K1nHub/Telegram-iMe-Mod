@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import org.tensorflow.lite.Interpreter;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class NativeInterpreterWrapper implements AutoCloseable {
     private long errorHandle;
     private Tensor[] inputTensors;

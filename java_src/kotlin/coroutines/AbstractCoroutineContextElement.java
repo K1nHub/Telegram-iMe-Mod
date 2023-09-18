@@ -4,7 +4,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CoroutineContextImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractCoroutineContextElement implements CoroutineContext.Element {
     private final CoroutineContext.Key<?> key;
 

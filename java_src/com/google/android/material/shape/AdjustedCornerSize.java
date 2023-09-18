@@ -3,7 +3,7 @@ package com.google.android.material.shape;
 import android.graphics.RectF;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AdjustedCornerSize implements CornerSize {
     private final float adjustment;
     private final CornerSize other;

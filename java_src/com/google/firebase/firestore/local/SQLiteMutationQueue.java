@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SQLiteMutationQueue implements MutationQueue {
 
     /* renamed from: db */
@@ -307,7 +307,7 @@ public final class SQLiteMutationQueue implements MutationQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlobAccumulator implements Consumer<Cursor> {
         private final ArrayList<ByteString> chunks = new ArrayList<>();
         private boolean more = true;

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.firebase.dynamiclinks.internal.ShortDynamicLinkImpl;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WarningImplCreator implements Parcelable.Creator<ShortDynamicLinkImpl.WarningImpl> {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // android.os.Parcelable.Creator

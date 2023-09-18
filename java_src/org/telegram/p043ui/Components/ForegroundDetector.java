@@ -10,7 +10,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 /* renamed from: org.telegram.ui.Components.ForegroundDetector */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ForegroundDetector implements Application.ActivityLifecycleCallbacks {
     private static ForegroundDetector Instance;
     private int refs;
@@ -19,7 +19,7 @@ public class ForegroundDetector implements Application.ActivityLifecycleCallback
     private CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
 
     /* renamed from: org.telegram.ui.Components.ForegroundDetector$Listener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Listener {
         void onBecameBackground();
 

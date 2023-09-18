@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletNetworksSettingsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletNetworksSettingsView extends BaseView {
     void renderEmptySearchResults();
 

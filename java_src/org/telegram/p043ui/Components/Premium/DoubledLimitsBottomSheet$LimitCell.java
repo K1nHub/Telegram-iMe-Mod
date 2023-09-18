@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Components.Premium.DoubledLimitsBottomSheet$LimitCell */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class DoubledLimitsBottomSheet$LimitCell extends LinearLayout {
     LimitPreviewView previewView;
     TextView subtitle;

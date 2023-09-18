@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.R$id;
 import com.google.android.material.R$layout;
 import com.google.android.material.datepicker.MaterialCalendar;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final CalendarConstraints calendarConstraints;
     private final Context context;
@@ -42,7 +42,7 @@ class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
         setHasStableIds(true);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         final MaterialCalendarGridView monthGrid;
         final TextView monthTitle;

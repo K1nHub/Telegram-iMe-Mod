@@ -16,7 +16,7 @@ import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import java.util.List;
 /* compiled from: CryptoPreferenceHelper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     public static final Keys Keys = Keys.$$INSTANCE;
 
@@ -174,7 +174,7 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     /* compiled from: CryptoPreferenceHelper.kt */
     /* renamed from: com.iMe.storage.domain.storage.CryptoPreferenceHelper$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         static {
             Keys keys = CryptoPreferenceHelper.Keys;
@@ -192,7 +192,7 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     }
 
     /* compiled from: CryptoPreferenceHelper.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Keys {
         static final /* synthetic */ Keys $$INSTANCE = new Keys();
         private static final String KEY_AIRDROP_METADATA = "airdrop_metadata_" + AirdropVersion.VERSION_1.getValue();

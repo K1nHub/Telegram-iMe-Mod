@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintTypeface {
     public static final List<PaintTypeface> BUILT_IN_FONTS;
     public static final PaintTypeface COURIER_NEW_BOLD;
@@ -143,13 +143,13 @@ public class PaintTypeface {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface$LazyTypeface */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static class LazyTypeface {
         private final LazyTypefaceLoader loader;
         private Typeface typeface;
 
         /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface$LazyTypeface$LazyTypefaceLoader */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface LazyTypefaceLoader {
             Typeface load();
         }
@@ -292,7 +292,7 @@ public class PaintTypeface {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface$Family */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Family {
         ArrayList<FontData> fonts = new ArrayList<>();
 
@@ -328,7 +328,7 @@ public class PaintTypeface {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface$FontData */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class FontData {
         String family;
         Font font;
@@ -347,7 +347,7 @@ public class PaintTypeface {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface$NameRecord */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class NameRecord {
         final int encodingID;
         final int nameID;

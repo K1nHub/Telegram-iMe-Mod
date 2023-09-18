@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzcv {
     public static final Component<?> zza = Component.builder(zzcv.class).add(Dependency.required(Context.class)).add(Dependency.required(SharedPrefManager.class)).add(Dependency.required(zzb.class)).factory(zzcy.zza).build();
     private static List<String> zzb = null;
@@ -36,13 +36,13 @@ public final class zzcv {
     private final Task<String> zzg = MLTaskExecutor.getInstance().scheduleCallable(zzcu.zza);
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface zza {
         zzy.zzad.zza zza();
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface zzb {
         void zza(zzy.zzad zzadVar);
     }

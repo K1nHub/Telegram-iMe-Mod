@@ -15,7 +15,7 @@ import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.Arrays;
 import java.util.List;
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RemoteConfigRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {

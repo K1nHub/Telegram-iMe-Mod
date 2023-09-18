@@ -14,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ProfileView$$State extends MvpViewState<ProfileView> implements ProfileView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -143,19 +143,6 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
         this.viewCommands.afterApply(showResetConfirmationDialogCommand);
     }
 
-    @Override // com.iMe.feature.profile.ProfileView
-    public void showLinkConfirmationDialog(DialogModel dialogModel, long j) {
-        ShowLinkConfirmationDialogCommand showLinkConfirmationDialogCommand = new ShowLinkConfirmationDialogCommand(this, dialogModel, j);
-        this.viewCommands.beforeApply(showLinkConfirmationDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showLinkConfirmationDialog(dialogModel, j);
-        }
-        this.viewCommands.afterApply(showLinkConfirmationDialogCommand);
-    }
-
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public void showToast(String str) {
         ShowToastCommand showToastCommand = new ShowToastCommand(this, str);
@@ -196,7 +183,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnFilteredMembersCommand extends ViewCommand<ProfileView> {
         public final ArrayList<TLRPC$ChatParticipant> members;
 
@@ -212,7 +199,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowUserAccountLevelCommand extends ViewCommand<ProfileView> {
         public final AccountLevelInformation level;
 
@@ -228,7 +215,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowNeedAuthorizeDialogCommand extends ViewCommand<ProfileView> {
         public final DialogModel dialogModel;
 
@@ -244,7 +231,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class UpdateSocialCellCommand extends ViewCommand<ProfileView> {
         UpdateSocialCellCommand(ProfileView$$State profileView$$State) {
             super("updateSocialCell", OneExecutionStateStrategy.class);
@@ -257,7 +244,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenSocialAuthScreenCommand extends ViewCommand<ProfileView> {
         public final SocialAuthDomain socialAuthDomain;
 
@@ -273,7 +260,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenSocialWebCommand extends ViewCommand<ProfileView> {
         public final SocialNetwork socialNetwork;
 
@@ -289,7 +276,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowBeforeConnectMessageCommand extends ViewCommand<ProfileView> {
         public final DialogModel prepareBeforeDialogModel;
         public final SocialNetwork socialNetwork;
@@ -307,7 +294,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenTwitterScreenCommand extends ViewCommand<ProfileView> {
         public final SocialNetwork network;
         public final long telegramProfileId;
@@ -325,7 +312,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowResetConfirmationDialogCommand extends ViewCommand<ProfileView> {
         public final DialogModel dialogModel;
         public final SocialNetwork socialNetwork;
@@ -343,25 +330,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
-    public class ShowLinkConfirmationDialogCommand extends ViewCommand<ProfileView> {
-        public final DialogModel dialogModel;
-        public final long socialId;
-
-        ShowLinkConfirmationDialogCommand(ProfileView$$State profileView$$State, DialogModel dialogModel, long j) {
-            super("showLinkConfirmationDialog", OneExecutionStateStrategy.class);
-            this.dialogModel = dialogModel;
-            this.socialId = j;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(ProfileView profileView) {
-            profileView.showLinkConfirmationDialog(this.dialogModel, this.socialId);
-        }
-    }
-
-    /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<ProfileView> {
         public final String text;
 
@@ -377,7 +346,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<ProfileView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -397,7 +366,7 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
     }
 
     /* compiled from: ProfileView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<ProfileView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

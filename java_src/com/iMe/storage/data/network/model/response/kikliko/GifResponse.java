@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.kikliko;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GifResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GifResponse {
     private final GifFileResponse file;
     private final String slug;

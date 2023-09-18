@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.XiaomiUtilities;
@@ -45,7 +45,7 @@ import org.telegram.p043ui.ActionBar.FloatingToolbar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedTextView;
 /* renamed from: org.telegram.ui.Components.EditTextBoldCursor */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EditTextBoldCursor extends EditTextEffects {
     private static Class editorClass;
     private static Method getVerticalOffsetMethod;
@@ -146,7 +146,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.EditTextBoldCursor$ActionModeCallback2Wrapper */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ActionModeCallback2Wrapper extends ActionMode.Callback2 {
         private final ActionMode.Callback mWrapped;
 
@@ -383,7 +383,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3558R.C3560drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3473R.C3475drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
@@ -468,7 +468,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3558R.C3560drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3473R.C3475drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;

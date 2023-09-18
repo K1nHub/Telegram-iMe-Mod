@@ -117,7 +117,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 39
     sget p3, Lorg/telegram/messenger/R$id;->text_date:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetsDateItem;->getDate()Ljava/lang/String;

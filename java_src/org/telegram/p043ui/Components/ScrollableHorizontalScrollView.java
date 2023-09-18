@@ -14,7 +14,7 @@ import org.telegram.p043ui.Components.EmojiTabsStrip;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EmojiTabsStrip.java */
 /* renamed from: org.telegram.ui.Components.ScrollableHorizontalScrollView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ScrollableHorizontalScrollView extends HorizontalScrollView {
     public LinearLayout contentView;
     private ValueAnimator scrollAnimator;

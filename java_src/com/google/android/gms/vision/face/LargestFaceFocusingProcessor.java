@@ -6,14 +6,14 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.FocusingProcessor;
 import com.google.android.gms.vision.Tracker;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LargestFaceFocusingProcessor extends FocusingProcessor<Face> {
     public LargestFaceFocusingProcessor(@RecentlyNonNull Detector<Face> detector, @RecentlyNonNull Tracker<Face> tracker) {
         super(detector, tracker);
     }
 
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private LargestFaceFocusingProcessor zza;
 

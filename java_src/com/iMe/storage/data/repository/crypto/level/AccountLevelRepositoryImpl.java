@@ -21,7 +21,7 @@ import java.util.HashMap;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevelRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AccountLevelRepositoryImpl implements AccountLevelRepository {
     private final AccountLevelApi accountLevelApi;
     private final HashMap<Long, AccountLevel> cachedUserAccountLevel;
@@ -135,7 +135,7 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
         }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         Observable<Result<Boolean>> concat = Observable.concat(empty, onErrorReturn);
-        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …rorHandler)\n            )");
+        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n            if (…r(errorHandler)\n        )");
         return concat;
     }
 
@@ -151,7 +151,7 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
             empty = Observable.empty();
         }
         Observable<Result<AccountLevel>> concat = Observable.concat(empty, getAccountLevelRemote(j));
-        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …ote(userId)\n            )");
+        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n            if (…lRemote(userId)\n        )");
         return concat;
     }
 

@@ -4,10 +4,10 @@ import android.util.SparseArray;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseFirestoreException extends FirebaseException {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Code {
         OK(0),
         CANCELLED(1),

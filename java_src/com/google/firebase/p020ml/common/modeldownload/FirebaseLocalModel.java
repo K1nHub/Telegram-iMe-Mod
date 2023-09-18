@@ -7,7 +7,7 @@ import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.internal.firebase_ml.zzor;
 import com.google.android.gms.internal.firebase_ml.zzuu;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseLocalModel */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseLocalModel {
     private final String zzauc;
     private final String zzawg;
@@ -34,7 +34,7 @@ public class FirebaseLocalModel {
     }
 
     /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseLocalModel$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final String zzauc;
         private String zzawg = null;

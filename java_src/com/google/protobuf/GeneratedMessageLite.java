@@ -16,13 +16,13 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.Map;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite<MessageType, BuilderType> {
     private static Map<Object, GeneratedMessageLite<?, ?>> defaultInstanceMap = new ConcurrentHashMap();
     protected UnknownFieldSetLite unknownFields = UnknownFieldSetLite.getDefaultInstance();
     protected int memoizedSerializedSize = -1;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum MethodToInvoke {
         GET_MEMOIZED_IS_INITIALIZED,
         SET_MEMOIZED_IS_INITIALIZED,
@@ -196,7 +196,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         this.unknownFields = UnknownFieldSetLite.mutableCopyOf(this.unknownFields, unknownFieldSetLite);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite.Builder<MessageType, BuilderType> {
         private final MessageType defaultInstance;
         protected MessageType instance;
@@ -323,7 +323,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ExtendableMessage<MessageType extends ExtendableMessage<MessageType, BuilderType>, BuilderType> extends GeneratedMessageLite<MessageType, BuilderType> implements MessageLiteOrBuilder {
         protected FieldSet<ExtensionDescriptor> extensions = FieldSet.emptySet();
 
@@ -359,7 +359,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return new GeneratedExtension<>(containingtype, Collections.emptyList(), messageLite, new ExtensionDescriptor(enumLiteMap, i, fieldType, true, z), cls);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ExtensionDescriptor implements FieldSet.FieldDescriptorLite<ExtensionDescriptor> {
         final Internal.EnumLiteMap<?> enumTypeMap;
         final boolean isPacked;
@@ -442,7 +442,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GeneratedExtension<ContainingType extends MessageLite, Type> extends ExtensionLite<ContainingType, Type> {
         final ContainingType containingTypeDefaultInstance;
         final Type defaultValue;
@@ -564,7 +564,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return protobufList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     protected static class DefaultInstanceBasedParser<T extends GeneratedMessageLite<T, ?>> extends AbstractParser<T> {
         private final T defaultInstance;
 

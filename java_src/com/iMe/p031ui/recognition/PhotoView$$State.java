@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.recognition.PhotoView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -114,7 +114,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowTranslateDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowTranslateDialogCommand extends ViewCommand<PhotoView> {
         public final String textToTranslate;
 
@@ -131,7 +131,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowPhotoTextDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowPhotoTextDialogCommand extends ViewCommand<PhotoView> {
         public final String recognizedText;
 
@@ -148,7 +148,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowPhotoObjectsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowPhotoObjectsDialogCommand extends ViewCommand<PhotoView> {
         public final String recognizedInfo;
 
@@ -165,7 +165,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<PhotoView> {
         public final String text;
 
@@ -182,7 +182,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<PhotoView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -203,7 +203,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<PhotoView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -222,7 +222,7 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
 
     /* compiled from: PhotoView$$State.java */
     /* renamed from: com.iMe.ui.recognition.PhotoView$$State$ShowAppUpdateDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowAppUpdateDialogCommand extends ViewCommand<PhotoView> {
         ShowAppUpdateDialogCommand(PhotoView$$State photoView$$State) {
             super("showAppUpdateDialog", OneExecutionStateStrategy.class);

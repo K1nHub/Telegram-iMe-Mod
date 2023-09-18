@@ -31,7 +31,7 @@ import timber.log.Timber;
 /* compiled from: StakingCalculatorProgrammesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StakingCalculatorProgrammesPresenter extends BasePresenter<StakingCalculatorProgrammesView> {
     private final List<BaseNode> items;
     private Long lastItemId;
@@ -74,12 +74,12 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingProgrammes> result) {
-                m1588invoke(result);
+                m1579invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1588invoke(Result<? extends StakingProgrammes> it) {
+            public final void m1579invoke(Result<? extends StakingProgrammes> it) {
                 List list;
                 List list2;
                 List<BaseNode> list3;
@@ -142,7 +142,7 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

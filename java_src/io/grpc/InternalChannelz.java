@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InternalChannelz {
     private final ConcurrentMap<Long, InternalInstrumented<Object>> otherSockets;
     private final ConcurrentNavigableMap<Long, InternalInstrumented<Object>> rootChannels;
@@ -63,14 +63,14 @@ public final class InternalChannelz {
         map.remove(Long.valueOf(m704id(t)));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Security {
         public Security(Tls tls) {
             Tls tls2 = (Tls) Preconditions.checkNotNull(tls);
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Tls {
         public Tls(SSLSession sSLSession) {
             sSLSession.getCipherSuite();

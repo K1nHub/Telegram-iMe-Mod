@@ -5,13 +5,13 @@ import javax.net.ssl.SSLSocket;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Protocol;
 /* compiled from: DeferredSocketAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DeferredSocketAdapter implements SocketAdapter {
     private SocketAdapter delegate;
     private final Factory socketAdapterFactory;
 
     /* compiled from: DeferredSocketAdapter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Factory {
         SocketAdapter create(SSLSocket sSLSocket);
 

@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: AuthScreen.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class AuthScreen$onCreate$1 extends AdaptedFunctionReference implements Function2<AuthState, Continuation<? super Unit>, Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AuthScreen$onCreate$1(Object obj) {

@@ -12,7 +12,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "GeofencingRequestCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GeofencingRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GeofencingRequest> CREATOR = new zzn();
     public static final int INITIAL_TRIGGER_DWELL = 4;
@@ -29,7 +29,7 @@ public class GeofencingRequest extends AbstractSafeParcelable {
     private final String zzd;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final List zza = new ArrayList();
         @InitialTrigger
@@ -66,7 +66,7 @@ public class GeofencingRequest extends AbstractSafeParcelable {
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface InitialTrigger {
     }
 

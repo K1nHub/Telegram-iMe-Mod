@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.mlkit_language_id;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzq {
     private static final zzt zza;
     private static final int zzb;
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class zza extends zzt {
         zza() {
         }

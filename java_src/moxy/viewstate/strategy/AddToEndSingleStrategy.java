@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import moxy.MvpView;
 import moxy.viewstate.ViewCommand;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AddToEndSingleStrategy implements StateStrategy {
     @Override // moxy.viewstate.strategy.StateStrategy
     public <View extends MvpView> void afterApply(List<ViewCommand<View>> list, ViewCommand<View> viewCommand) {

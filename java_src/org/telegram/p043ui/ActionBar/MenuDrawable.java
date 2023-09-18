@@ -10,9 +10,9 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* renamed from: org.telegram.ui.ActionBar.MenuDrawable */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MenuDrawable extends Drawable {
     public static int TYPE_DEFAULT = 0;
     public static int TYPE_UDPATE_AVAILABLE = 1;
@@ -54,7 +54,7 @@ public class MenuDrawable extends Drawable {
 
     public void setUpdateAppItem(Context context, boolean z) {
         this.isUpdateAppItem = z;
-        this.updateAppDrawable = z ? ContextCompat.getDrawable(context, C3558R.C3560drawable.msg_download) : null;
+        this.updateAppDrawable = z ? ContextCompat.getDrawable(context, C3473R.C3475drawable.msg_download) : null;
     }
 
     public MenuDrawable() {

@@ -8,9 +8,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.RLottieImageView;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkContentGlobalStateLayoutBinding implements ViewBinding {
     private final NestedScrollView rootView;
 
@@ -28,7 +28,7 @@ public final class ForkContentGlobalStateLayoutBinding implements ViewBinding {
     }
 
     public static ForkContentGlobalStateLayoutBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_global_state_layout, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_global_state_layout, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,16 +36,16 @@ public final class ForkContentGlobalStateLayoutBinding implements ViewBinding {
     }
 
     public static ForkContentGlobalStateLayoutBinding bind(View view) {
-        int i = C3558R.C3561id.button_retry;
+        int i = C3473R.C3476id.button_retry;
         AppCompatButton appCompatButton = (AppCompatButton) ViewBindings.findChildViewById(view, i);
         if (appCompatButton != null) {
-            i = C3558R.C3561id.image_state_animation;
+            i = C3473R.C3476id.image_state_animation;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
-                i = C3558R.C3561id.text_state_description;
+                i = C3473R.C3476id.text_state_description;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3558R.C3561id.text_state_title;
+                    i = C3473R.C3476id.text_state_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkContentGlobalStateLayoutBinding((NestedScrollView) view, appCompatButton, rLottieImageView, appCompatTextView, appCompatTextView2);

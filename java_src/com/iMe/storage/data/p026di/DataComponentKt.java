@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import org.koin.core.module.Module;
 /* compiled from: DataComponent.kt */
 /* renamed from: com.iMe.storage.data.di.DataComponentKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataComponentKt {
     private static List<Module> dataModules;
 

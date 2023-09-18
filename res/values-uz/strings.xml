@@ -1231,8 +1231,8 @@ Hamyonni faollashtirgandan so'ng, siz tarjimon, matnli ovoz, rasmlardan matn va 
     <string name="wallet_backup_ready">Tayyor!</string>
     <string name="wallet_backup_ready_info">"Hammasi sozlangan. Endi sizda faqat o'zingiz nazorat qiladigan hamyon bor — to'g'ridan-to'g'ri, vositachilar va bankirlarsiz."</string>
     <string name="wallet_backup_scan_qr">QR skanerlash</string>
-    <string name="wallet_backup_secret_words">"24 ta maxfiy so'zlar"</string>
-    <string name="wallet_backup_secret_words_info">"Ushbu 24 ta so'zni to'g'ri tartibda yozing va ularni xavfsiz joyda saqlang.
+    <string name="wallet_backup_secret_words">"Yashirin So'zlar"</string>
+    <string name="wallet_backup_secret_words_info">"Ushbu ta so'zni to'g'ri tartibda yozing va ularni xavfsiz joyda saqlang.
 
 Parol yoki qurilmangizni yo'qotib qo'ysangiz, hamyoningizga kirishni tiklash uchun ushbu maxfiy so'zlardan foydalaning."</string>
     <string name="wallet_backup_secret_words_pdf">PDF sifatida saqlash</string>
@@ -1662,7 +1662,7 @@ O'zingizning hamyoningiz, shaxsiy kalitlaringiz va hisoblaringizda mablag'larga 
     <string name="wallet_swap_process_confirm_approve_alert_description">Haqiqatan ham %1$s tasdiqlashni xohlaysizmi?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Confirmation tasdiqlash</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Almashish</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Siz %1$s %2$s dan %3$s %4$s ga almashtirishni xohlaysizmi?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Haqiqatan ham **%1$s %2$s** dan **%3$s %4$s** ga **%5$s %6$s** to‘lovi bilan almashtirmoqchimisiz?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Almashtirishni tasdiqlash</string>
     <string name="wallet_swap_process_description">Siz Ethereum va Polygon tarmoqlari uchun Uniswap markazlashtirilmagan almashinuvidan foydalangan holda aqlli shartnomalar orqali tokenlarni bir-biringiz bilan almashishingiz mumkin</string>
     <string name="wallet_swap_process_diff_tokens_validation">Iltimos, qabul qilingan va berilgan har xil tokenlarni tanlang</string>
@@ -1686,7 +1686,7 @@ O'zingizning hamyoningiz, shaxsiy kalitlaringiz va hisoblaringizda mablag'larga 
     <string name="wallet_swap_process_what_is_approve">Tokenni tasdiqlash nima?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">"Tasdiqlash — bu almashinuv boshlanishidan oldin talab qilinadigan tokenlar uchun bir martalik bitim. Ushbu operatsiyani bajarish bilan siz DEX protokoli yordamida tokeningizni aqlli shartnomalar yordamida almashtirishga ruxsat berasiz. Ushbu operatsiya blokcheynda amalga oshirilganligi sababli, gaz to'lovi ushlab qolinadi. Joriy tokenni qayta tasdiqlashingiz shart emas."</string>
     <string name="wallet_swap_protocols_1inch_description">Eng yaxshi narxlarga ega DEX agregatori</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Siz Ethereum, BNB Chain, Polygon tarmoqlari uchun eng yaxshi narxlarda DEX agregatoridan foydalangan holda aqlli shartnomalar orqali tokenlarni bir-biringiz bilan almashishingiz mumkin</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Siz Ethereum, BNB Chain, Fantom, Polygon tarmoqlari uchun eng yaxshi narxlarda DEX agregatoridan foydalangan holda aqlli shartnomalar orqali tokenlarni bir-biringiz bilan almashishingiz mumkin</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">"Ko'prik"</string>
     <string name="wallet_swap_protocols_header_title">Markazlashtirilmagan almashinuvlar</string>
     <string name="wallet_swap_protocols_pancake_swap_description">BNB zanjiriga asoslangan DEX protokoli</string>

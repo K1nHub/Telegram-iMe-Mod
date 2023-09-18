@@ -1,5 +1,5 @@
 package com.google.firebase.components;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class InvalidRegistrarException extends RuntimeException {
     public InvalidRegistrarException(String str) {
         super(str);

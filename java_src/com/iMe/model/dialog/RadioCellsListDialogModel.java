@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RadioCellsListDialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RadioCellsListDialogModel {
     private final List<Pair<String, Boolean>> items;
     private final String negativeButtonText;

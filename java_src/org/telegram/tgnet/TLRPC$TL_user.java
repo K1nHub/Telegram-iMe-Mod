@@ -3,7 +3,7 @@ package org.telegram.tgnet;
 import com.google.android.exoplayer2.C0479C;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_user extends TLRPC$User {
     public static int constructor = -1414139616;
 
@@ -35,7 +35,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.close_friend = (readInt322 & 4) != 0;
         this.stories_hidden = (readInt322 & 8) != 0;
         this.stories_unavailable = (readInt322 & 16) != 0;
-        this.f1694id = abstractSerializedData.readInt64(z);
+        this.f1685id = abstractSerializedData.readInt64(z);
         if ((this.flags & 1) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -164,7 +164,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         int i22 = this.stories_unavailable ? i21 | 16 : i21 & (-17);
         this.flags2 = i22;
         abstractSerializedData.writeInt32(i22);
-        abstractSerializedData.writeInt64(this.f1694id);
+        abstractSerializedData.writeInt64(this.f1685id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

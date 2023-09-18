@@ -1,7 +1,7 @@
 package net.lingala.zip4j.progress;
 
 import net.lingala.zip4j.exception.ZipException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ProgressMonitor {
     private boolean cancelAllTasks;
     private boolean pause;

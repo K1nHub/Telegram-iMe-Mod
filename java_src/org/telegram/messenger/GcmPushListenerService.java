@@ -8,7 +8,7 @@ import java.util.Map;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;
 import timber.log.Timber;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     private final Lazy<PushNotificationsManager> pushNotificationsManager = KoinJavaComponent.inject(PushNotificationsManager.class);
 

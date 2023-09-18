@@ -24,7 +24,7 @@ import io.reactivex.Observable;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TONWalletTransferDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TONWalletTransferDataSourceImpl implements WalletTransferDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;

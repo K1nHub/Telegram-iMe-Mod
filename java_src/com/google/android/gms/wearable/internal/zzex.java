@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.data.DataHolder;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zzex extends IInterface {
     void zzA(zzgo zzgoVar) throws RemoteException;
 

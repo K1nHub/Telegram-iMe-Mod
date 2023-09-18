@@ -1,5 +1,5 @@
 package com.google.firebase.firestore.auth;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class User {
     public static final User UNAUTHENTICATED = new User(null);
     private final String uid;

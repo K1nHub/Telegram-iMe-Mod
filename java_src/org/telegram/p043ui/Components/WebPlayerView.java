@@ -47,13 +47,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.Components.VideoPlayer;
 import org.telegram.p043ui.Components.WebPlayerView;
 /* renamed from: org.telegram.ui.Components.WebPlayerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerDelegate, AudioManager.OnAudioFocusChangeListener {
     private static int lastContainerId = 4001;
     private boolean allowInlineAnimation;
@@ -120,13 +120,13 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
     private static final Pattern playerIdPattern = Pattern.compile(".*?-([a-zA-Z0-9_-]+)(?:/watch_as3|/html5player(?:-new)?|(?:/[a-z]{2}_[A-Z]{2})?/base)?\\.([a-z]+)$");
 
     /* renamed from: org.telegram.ui.Components.WebPlayerView$CallJavaResultInterface */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface CallJavaResultInterface {
         void jsCallFinished(String str);
     }
 
     /* renamed from: org.telegram.ui.Components.WebPlayerView$WebPlayerViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface WebPlayerViewDelegate {
         boolean checkInlinePermissions();
 
@@ -172,7 +172,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$JSExtractor */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class JSExtractor {
         private String jsCode;
         ArrayList<String> codeLines = new ArrayList<>();
@@ -398,7 +398,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
     }
 
     /* renamed from: org.telegram.ui.Components.WebPlayerView$JavaScriptInterface */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class JavaScriptInterface {
         private final CallJavaResultInterface callJavaResultInterface;
 
@@ -438,7 +438,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$YoutubeVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class YoutubeVideoTask extends AsyncTask<Void, Void, String[]> {
         private CountDownLatch countDownLatch = new CountDownLatch(1);
         private String[] result = new String[2];
@@ -745,7 +745,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$VimeoVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class VimeoVideoTask extends AsyncTask<Void, Void, String> {
         private String[] results = new String[2];
         private String videoId;
@@ -805,7 +805,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$AparatVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class AparatVideoTask extends AsyncTask<Void, Void, String> {
         private String[] results = new String[2];
         private String videoId;
@@ -866,7 +866,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$TwitchClipVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class TwitchClipVideoTask extends AsyncTask<Void, Void, String> {
         private String currentUrl;
         private String[] results = new String[2];
@@ -918,7 +918,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$TwitchStreamVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class TwitchStreamVideoTask extends AsyncTask<Void, Void, String> {
         private String[] results = new String[2];
         private String videoId;
@@ -982,7 +982,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$CoubVideoTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class CoubVideoTask extends AsyncTask<Void, Void, String> {
         private String[] results = new String[4];
         private String videoId;
@@ -1041,7 +1041,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.WebPlayerView$ControlsView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ControlsView extends FrameLayout {
         private int bufferedPosition;
         private AnimatorSet currentAnimation;
@@ -1373,9 +1373,9 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: org.telegram.ui.Components.WebPlayerView$2$1 */
-            /* loaded from: classes6.dex */
-            public class ViewTreeObserver$OnPreDrawListenerC56861 implements ViewTreeObserver.OnPreDrawListener {
-                ViewTreeObserver$OnPreDrawListenerC56861() {
+            /* loaded from: classes7.dex */
+            public class ViewTreeObserver$OnPreDrawListenerC56011 implements ViewTreeObserver.OnPreDrawListener {
+                ViewTreeObserver$OnPreDrawListenerC56011() {
                 }
 
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -1392,7 +1392,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.WebPlayerView$2$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            WebPlayerView.TextureView$SurfaceTextureListenerC56852.ViewTreeObserver$OnPreDrawListenerC56861.this.lambda$onPreDraw$0();
+                            WebPlayerView.TextureView$SurfaceTextureListenerC56002.ViewTreeObserver$OnPreDrawListenerC56011.this.lambda$onPreDraw$0();
                         }
                     });
                     WebPlayerView.this.waitingForFirstTextureUpload = 0;
@@ -1408,7 +1408,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             @Override // android.view.TextureView.SurfaceTextureListener
             public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
                 if (WebPlayerView.this.waitingForFirstTextureUpload == 1) {
-                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC56861());
+                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC56011());
                     WebPlayerView.this.changedTextureView.invalidate();
                 }
             }
@@ -1578,7 +1578,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             ImageView imageView5 = new ImageView(context);
             this.shareButton = imageView5;
             imageView5.setScaleType(ImageView.ScaleType.CENTER);
-            this.shareButton.setImageResource(C3558R.C3560drawable.ic_share_video);
+            this.shareButton.setImageResource(C3473R.C3475drawable.ic_share_video);
             this.controlsView.addView(this.shareButton, LayoutHelper.createFrame(56, 48, 53));
             this.shareButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.WebPlayerView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -1863,14 +1863,14 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         AndroidUtilities.cancelRunOnUIThread(this.progressRunnable);
         if (!this.videoPlayer.isPlaying()) {
             if (this.isCompleted) {
-                this.playButton.setImageResource(this.isInline ? C3558R.C3560drawable.ic_againinline : C3558R.C3560drawable.ic_again);
+                this.playButton.setImageResource(this.isInline ? C3473R.C3475drawable.ic_againinline : C3473R.C3475drawable.ic_again);
                 return;
             } else {
-                this.playButton.setImageResource(this.isInline ? C3558R.C3560drawable.ic_playinline : C3558R.C3560drawable.ic_play);
+                this.playButton.setImageResource(this.isInline ? C3473R.C3475drawable.ic_playinline : C3473R.C3475drawable.ic_play);
                 return;
             }
         }
-        this.playButton.setImageResource(this.isInline ? C3558R.C3560drawable.ic_pauseinline : C3558R.C3560drawable.ic_pause);
+        this.playButton.setImageResource(this.isInline ? C3473R.C3475drawable.ic_pauseinline : C3473R.C3475drawable.ic_pause);
         AndroidUtilities.runOnUIThread(this.progressRunnable, 500L);
         checkAudioFocus();
     }
@@ -1921,11 +1921,11 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         }
         this.fullscreenButton.setVisibility(0);
         if (!this.inFullscreen) {
-            this.fullscreenButton.setImageResource(C3558R.C3560drawable.ic_gofullscreen);
+            this.fullscreenButton.setImageResource(C3473R.C3475drawable.ic_gofullscreen);
             this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 5));
             return;
         }
-        this.fullscreenButton.setImageResource(C3558R.C3560drawable.ic_outfullscreen);
+        this.fullscreenButton.setImageResource(C3473R.C3475drawable.ic_outfullscreen);
         this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 1));
     }
 
@@ -1952,7 +1952,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         if (imageView == null) {
             return;
         }
-        imageView.setImageResource(this.isInline ? C3558R.C3560drawable.ic_goinline : C3558R.C3560drawable.ic_outinline);
+        imageView.setImageResource(this.isInline ? C3473R.C3475drawable.ic_goinline : C3473R.C3475drawable.ic_outinline);
         this.inlineButton.setVisibility(this.videoPlayer.isPlayerPrepared() ? 0 : 8);
         if (this.isInline) {
             this.inlineButton.setLayoutParams(LayoutHelper.createFrame(40, 40, 53));

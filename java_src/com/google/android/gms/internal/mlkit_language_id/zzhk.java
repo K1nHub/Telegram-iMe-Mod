@@ -4,7 +4,7 @@ import java.util.Iterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzhk implements Iterator<String>, p033j$.util.Iterator {
     private Iterator<String> zza;
     private final /* synthetic */ zzhi zzb;

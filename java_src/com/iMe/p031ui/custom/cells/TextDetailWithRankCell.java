@@ -14,7 +14,7 @@ import org.telegram.p043ui.Cells.TextDetailCell;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TextDetailWithRankCell.kt */
 /* renamed from: com.iMe.ui.custom.cells.TextDetailWithRankCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TextDetailWithRankCell extends TextDetailCell {
     private final Lazy badgeView$delegate;
 
@@ -60,7 +60,7 @@ public final class TextDetailWithRankCell extends TextDetailCell {
 
     /* compiled from: TextDetailWithRankCell.kt */
     /* renamed from: com.iMe.ui.custom.cells.TextDetailWithRankCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

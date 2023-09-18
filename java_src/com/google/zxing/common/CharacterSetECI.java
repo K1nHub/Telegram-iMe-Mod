@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.C0479C;
 import com.google.zxing.FormatException;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum CharacterSetECI {
     Cp437(new int[]{0, 2}, new String[0]),
     ISO8859_1(new int[]{1, 3}, C0479C.ISO88591_NAME),

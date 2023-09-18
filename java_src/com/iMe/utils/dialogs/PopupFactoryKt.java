@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PopupFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PopupFactoryKt {
     public static /* synthetic */ ListPopupWindow createPopupWithOptions$default(View view, List list, Integer num, Integer num2, Function2 function2, int i, Object obj) {
         if ((i & 2) != 0) {

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateCryptoBoxPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$onChatSelected$1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda implements Function1<TLRPC$ChatFull, ObservableSource<? extends Boolean>> {
     final /* synthetic */ TLRPC$Chat $chat;
     final /* synthetic */ CreateCryptoBoxPresenter this$0;
@@ -69,7 +69,7 @@ public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda impl
         telegramApi = this.this$0.telegramApi;
         str = this.this$0.walletBotUsername;
         Observable<TLRPC$User> userInfoByUsername = telegramApi.getUserInfoByUsername(str);
-        final C23511 c23511 = new C23511(this.this$0, this.$chat);
+        final C23341 c23341 = new C23341(this.this$0, this.$chat);
         return userInfoByUsername.flatMap(new Function() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$onChatSelected$1$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -83,13 +83,13 @@ public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda impl
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CreateCryptoBoxPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$onChatSelected$1$1 */
-    /* loaded from: classes4.dex */
-    public static final class C23511 extends Lambda implements Function1<TLRPC$User, ObservableSource<? extends Boolean>> {
+    /* loaded from: classes6.dex */
+    public static final class C23341 extends Lambda implements Function1<TLRPC$User, ObservableSource<? extends Boolean>> {
         final /* synthetic */ TLRPC$Chat $chat;
         final /* synthetic */ CreateCryptoBoxPresenter this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23511(CreateCryptoBoxPresenter createCryptoBoxPresenter, TLRPC$Chat tLRPC$Chat) {
+        C23341(CreateCryptoBoxPresenter createCryptoBoxPresenter, TLRPC$Chat tLRPC$Chat) {
             super(1);
             this.this$0 = createCryptoBoxPresenter;
             this.$chat = tLRPC$Chat;
@@ -101,7 +101,7 @@ public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda impl
             Intrinsics.checkNotNullParameter(botUser, "botUser");
             telegramApi = this.this$0.telegramApi;
             Observable<TLRPC$ChannelParticipant> chatParticipant = telegramApi.getChatParticipant(this.$chat, botUser);
-            final C23521 c23521 = new Function1<Throwable, TLRPC$ChannelParticipant>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter.onChatSelected.1.1.1
+            final C23351 c23351 = new Function1<Throwable, TLRPC$ChannelParticipant>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter.onChatSelected.1.1.1
                 @Override // kotlin.jvm.functions.Function1
                 public final TLRPC$ChannelParticipant invoke(Throwable it) {
                     Intrinsics.checkNotNullParameter(it, "it");
@@ -112,11 +112,11 @@ public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda impl
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
                     TLRPC$ChannelParticipant invoke$lambda$0;
-                    invoke$lambda$0 = CreateCryptoBoxPresenter$onChatSelected$1.C23511.invoke$lambda$0(Function1.this, obj);
+                    invoke$lambda$0 = CreateCryptoBoxPresenter$onChatSelected$1.C23341.invoke$lambda$0(Function1.this, obj);
                     return invoke$lambda$0;
                 }
             });
-            final C23532 c23532 = new Function1<TLRPC$ChannelParticipant, Boolean>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter.onChatSelected.1.1.2
+            final C23362 c23362 = new Function1<TLRPC$ChannelParticipant, Boolean>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter.onChatSelected.1.1.2
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(TLRPC$ChannelParticipant it) {
                     Intrinsics.checkNotNullParameter(it, "it");
@@ -132,7 +132,7 @@ public final class CreateCryptoBoxPresenter$onChatSelected$1 extends Lambda impl
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
                     Boolean invoke$lambda$1;
-                    invoke$lambda$1 = CreateCryptoBoxPresenter$onChatSelected$1.C23511.invoke$lambda$1(Function1.this, obj);
+                    invoke$lambda$1 = CreateCryptoBoxPresenter$onChatSelected$1.C23341.invoke$lambda$1(Function1.this, obj);
                     return invoke$lambda$1;
                 }
             });

@@ -4,7 +4,7 @@ import com.otaliastudios.opengl.core.EglCore;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EglSurface.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class EglSurface extends EglNativeSurface {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EglSurface(EglCore eglCore, com.otaliastudios.opengl.internal.EglSurface eglSurface) {
@@ -14,7 +14,7 @@ public abstract class EglSurface extends EglNativeSurface {
     }
 
     /* compiled from: EglSurface.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

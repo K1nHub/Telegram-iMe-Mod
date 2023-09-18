@@ -17,7 +17,7 @@ import java.math.BigInteger;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CancelInteractor {
     private final CancelRepository cancelRepository;
     private final CryptoAccessManager cryptoAccessManager;
@@ -75,7 +75,7 @@ public final class CancelInteractor {
                 Observable<Result<String>> cancel = cancelRepository.cancel(new CancelArgs.Ethereum(str, str2, new TransferArgs.EVM(parseDouble, factor, address == null ? "" : address, chainId, nonce, price, limit, null)));
                 schedulersProvider = CancelInteractor.this.schedulersProvider;
                 Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo717io());
-                Intrinsics.checkNotNullExpressionValue(subscribeOn, "with(result.data!!) {\n  …                        }");
+                Intrinsics.checkNotNullExpressionValue(subscribeOn, "with(result.data!!) {\n  …r.io())\n                }");
                 return subscribeOn;
             }
         }));

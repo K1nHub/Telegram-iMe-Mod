@@ -4,7 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.SourceLocation;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class JoinPointImpl implements JoinPoint {
     Object _this;
     Object[] args;
@@ -12,7 +12,7 @@ public class JoinPointImpl implements JoinPoint {
     Object target;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class StaticPartImpl implements JoinPoint.StaticPart {
         String kind;
         Signature signature;

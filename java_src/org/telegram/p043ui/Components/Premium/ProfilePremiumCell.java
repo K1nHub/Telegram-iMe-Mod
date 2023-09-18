@@ -7,7 +7,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.TextCell;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
 /* renamed from: org.telegram.ui.Components.Premium.ProfilePremiumCell */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ProfilePremiumCell extends TextCell {
     StarParticlesView.Drawable drawable;
 

@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletAccountSettingsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletAccountSettingsView extends BaseView {
     void openBlockchainsScreen();
 

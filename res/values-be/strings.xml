@@ -1235,8 +1235,8 @@
     <string name="wallet_backup_ready">Гатовы ісці!</string>
     <string name="wallet_backup_ready_info">Усё настроена. Цяпер у вас ёсць кашалёк, які кантралюеце толькі вы - напрамую, без пасярэднікаў і банкіраў.</string>
     <string name="wallet_backup_scan_qr">Скан QR</string>
-    <string name="wallet_backup_secret_words">24 Сакрэтных Словы</string>
-    <string name="wallet_backup_secret_words_info">"Запішыце гэтыя 24 словы ў правільным парадку і захоўвайце іх у надзейным месцы.
+    <string name="wallet_backup_secret_words">Сакрэтныя Слова</string>
+    <string name="wallet_backup_secret_words_info">"Запішыце гэтыя слова ў правільным парадку і захоўвайце іх у надзейным месцы.
 
 Выкарыстоўвайце гэтыя сакрэтныя словы для аднаўлення доступу да вашага кашалька, у выпадку страты пароля ці дэвайса."</string>
     <string name="wallet_backup_secret_words_pdf">Захаваць як pdf</string>
@@ -1667,7 +1667,7 @@ iMe кашалёк."</string>
     <string name="wallet_swap_process_confirm_approve_alert_description">Вы сапраўды хочаце ўхваліць %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Пацверджанне адабрэння</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Абмен</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Вы сапраўды хочаце здзейсніць абмен %1$s %2$s на %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Вы ўпэўненыя, што жадаеце здзейсніць абмен **%1$s %2$s** на **%3$s %4$s** з камісіяй **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Пацверджанне абмену</string>
     <string name="wallet_swap_process_description">Вы можаце абменьваць токены сябар з сябрам праз смарт-кантракты, выкарыстоўваючы дэцэнтралізаваную біржу Uniswap для сетак Ethereum і Polygon</string>
     <string name="wallet_swap_process_diff_tokens_validation">Калі ласка, абярыце розныя што аддаюцца і атрымліваюцца токены</string>
@@ -1691,7 +1691,7 @@ iMe кашалёк."</string>
     <string name="wallet_swap_process_what_is_approve">Што такое адабрэнне токена?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">Адабрэнне - гэта разавая транзакцыя для токенаў, неабходная да пачатку абмену. Гэтай аперацыяй вы даяце дазвол на абмен вашага токена па DEX пратаколе з выкарыстаннем смарт-кантрактаў. Паколькі гэтая аперацыя адбываецца ў блокчэйне, будзе ўтрымана плата за Газ. Паўторна ўхваляць бягучы токен не запатрабуецца.</string>
     <string name="wallet_swap_protocols_1inch_description">DEX-агрэгатар з лепшымі коштамі</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Вы можаце абменьваць токены адзін з адным праз смарт-кантракты, выкарыстоўваючы DEX агрэгатар па лепшым цэнах для сетак Ethereum, BNB Chain, Polygon</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Вы можаце абменьваць токены адзін з адным праз смарт-кантракты, выкарыстоўваючы DEX агрэгатар па лепшым цэнах для сетак Ethereum, BNB Chain, Polygon, Fantom</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Мост</string>
     <string name="wallet_swap_protocols_header_title">Дэцэнтралізаваныя біржы</string>
     <string name="wallet_swap_protocols_pancake_swap_description">DEX пратакол на базе BNB Chain</string>

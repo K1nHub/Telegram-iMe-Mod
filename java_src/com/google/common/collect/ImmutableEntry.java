@@ -1,7 +1,7 @@
 package com.google.common.collect;
 
 import java.io.Serializable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class ImmutableEntry<K, V> extends AbstractMapEntry<K, V> implements Serializable {
     final K key;
     final V value;

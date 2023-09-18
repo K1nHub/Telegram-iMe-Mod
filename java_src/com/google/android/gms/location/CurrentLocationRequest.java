@@ -13,7 +13,7 @@ import com.google.android.gms.common.util.WorkSourceUtil;
 import com.google.android.gms.internal.location.zzdj;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "CurrentLocationRequestCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CurrentLocationRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CurrentLocationRequest> CREATOR = new zzj();
     @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getMaxUpdateAgeMillis", m797id = 1)
@@ -36,7 +36,7 @@ public final class CurrentLocationRequest extends AbstractSafeParcelable {
     private final com.google.android.gms.internal.location.zzd zzi;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long zza;
         private int zzb;

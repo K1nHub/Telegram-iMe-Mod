@@ -10,7 +10,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecipientView> implements WalletSendRecipientView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -128,7 +128,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$OnRecipientSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnRecipientSelectedCommand extends ViewCommand<WalletSendRecipientView> {
         public final String address;
 
@@ -151,7 +151,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowRequestPermissionDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRequestPermissionDialogCommand extends ViewCommand<WalletSendRecipientView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -172,7 +172,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowErrorDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorDialogCommand extends ViewCommand<WalletSendRecipientView> {
         public final String buttonText;
         public final String description;
@@ -193,7 +193,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowRequestPermissionSuccessDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRequestPermissionSuccessDialogCommand extends ViewCommand<WalletSendRecipientView> {
         public final Callbacks$Callback action;
         public final String message;
@@ -214,7 +214,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$OpenChatScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenChatScreenCommand extends ViewCommand<WalletSendRecipientView> {
         public final long userId;
 
@@ -231,7 +231,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSendRecipientView> {
         public final String text;
 
@@ -248,7 +248,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSendRecipientView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -269,7 +269,7 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
 
     /* compiled from: WalletSendRecipientView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSendRecipientView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

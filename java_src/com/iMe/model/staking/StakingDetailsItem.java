@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: StakingDetailsItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingDetailsItem implements Parcelable {
     public static final Parcelable.Creator<StakingDetailsItem> CREATOR = new Creator();
     private final StakingAnnualPercentageMode annualPercentageMode;
@@ -48,7 +48,7 @@ public final class StakingDetailsItem implements Parcelable {
     private final String website;
 
     /* compiled from: StakingDetailsItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Creator implements Parcelable.Creator<StakingDetailsItem> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

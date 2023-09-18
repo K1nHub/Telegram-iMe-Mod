@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import java.util.Map;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzbo extends AssetPackStates {
     private final long zza;
     private final Map<String, AssetPackState> zzb;

@@ -23,7 +23,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: DialogTypeTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogTypeTopicsBar extends FrameLayout {
     private DialogType currentDialogType;
     private final List<DialogType> data;
@@ -160,7 +160,7 @@ public final class DialogTypeTopicsBar extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: DialogTypeTopicsBar.kt */
     /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar$ListAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {

@@ -7,7 +7,7 @@ import io.reactivex.Flowable;
 import java.util.List;
 /* compiled from: WalletConnectSessionsDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.wallet.WalletConnectSessionsDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletConnectSessionsDao implements BaseDao<WalletConnectSessionDb> {
     public abstract Flowable<List<WalletConnectSessionDb>> getAllSessions(long j);
 

@@ -21,7 +21,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC$TL_document;
 import org.telegram.tgnet.TLRPC$TL_documentAttributeFilename;
 import org.telegram.tgnet.TLRPC$TL_documentAttributeVideo;
 /* renamed from: org.telegram.ui.Components.VideoSeekPreviewImage */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VideoSeekPreviewImage extends View {
     private Paint bitmapPaint;
     private RectF bitmapRect;
@@ -65,7 +65,7 @@ public class VideoSeekPreviewImage extends View {
     private Path ytPath;
 
     /* renamed from: org.telegram.ui.Components.VideoSeekPreviewImage$VideoSeekPreviewImageDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface VideoSeekPreviewImageDelegate {
         void onReady();
     }
@@ -81,7 +81,7 @@ public class VideoSeekPreviewImage extends View {
         this.matrix = new Matrix();
         this.ytPath = new Path();
         setVisibility(4);
-        this.frameDrawable = context.getResources().getDrawable(C3558R.C3560drawable.videopreview);
+        this.frameDrawable = context.getResources().getDrawable(C3473R.C3475drawable.videopreview);
         this.textPaint.setTextSize(AndroidUtilities.m72dp(13));
         this.textPaint.setColor(-1);
         this.delegate = videoSeekPreviewImageDelegate;
@@ -307,7 +307,7 @@ public class VideoSeekPreviewImage extends View {
             Object parentObject = FileLoader.getInstance(intValue).getParentObject(Utilities.parseInt((CharSequence) uri.getQueryParameter("rid")).intValue());
             TLRPC$TL_document tLRPC$TL_document = new TLRPC$TL_document();
             tLRPC$TL_document.access_hash = Utilities.parseLong(uri.getQueryParameter("hash")).longValue();
-            tLRPC$TL_document.f1539id = Utilities.parseLong(uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
+            tLRPC$TL_document.f1530id = Utilities.parseLong(uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
             tLRPC$TL_document.size = Utilities.parseLong(uri.getQueryParameter("size")).longValue();
             tLRPC$TL_document.dc_id = Utilities.parseInt((CharSequence) uri.getQueryParameter("dc")).intValue();
             tLRPC$TL_document.mime_type = uri.getQueryParameter("mime");
@@ -318,7 +318,7 @@ public class VideoSeekPreviewImage extends View {
             tLRPC$TL_document.attributes.add(new TLRPC$TL_documentAttributeVideo());
             if (FileLoader.getInstance(intValue).isLoadingFile(FileLoader.getAttachFileName(tLRPC$TL_document))) {
                 File directory = FileLoader.getDirectory(4);
-                absolutePath = new File(directory, tLRPC$TL_document.dc_id + "_" + tLRPC$TL_document.f1539id + ".temp").getAbsolutePath();
+                absolutePath = new File(directory, tLRPC$TL_document.dc_id + "_" + tLRPC$TL_document.f1530id + ".temp").getAbsolutePath();
             } else {
                 absolutePath = FileLoader.getInstance(intValue).getPathToAttach(tLRPC$TL_document, false).getAbsolutePath();
             }

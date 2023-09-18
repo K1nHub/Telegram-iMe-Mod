@@ -10,10 +10,10 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ProxyDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ProxyDrawable extends Drawable {
     private boolean connected;
     private float connectedAnimationProgress;
@@ -48,8 +48,8 @@ public class ProxyDrawable extends Drawable {
     }
 
     public ProxyDrawable(Context context) {
-        this.emptyDrawable = context.getResources().getDrawable(C3558R.C3560drawable.msg2_proxy_off).mutate();
-        this.fullDrawable = context.getResources().getDrawable(C3558R.C3560drawable.msg2_proxy_on).mutate();
+        this.emptyDrawable = context.getResources().getDrawable(C3473R.C3475drawable.msg2_proxy_off).mutate();
+        this.fullDrawable = context.getResources().getDrawable(C3473R.C3475drawable.msg2_proxy_on).mutate();
         this.outerPaint.setStyle(Paint.Style.STROKE);
         this.outerPaint.setStrokeWidth(AndroidUtilities.m73dp(1.66f));
         this.outerPaint.setStrokeCap(Paint.Cap.ROUND);

@@ -73,7 +73,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 /* compiled from: NetworkModule.kt */
 /* renamed from: com.iMe.storage.data.di.module.NetworkModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworkModuleKt {
     private static final StringQualifier LOGGING_INTERCEPTOR = QualifierKt.named("LOGGING_INTERCEPTOR");
     private static final StringQualifier METADATA_INTERCEPTOR = QualifierKt.named("METADATA_INTERCEPTOR");
@@ -136,7 +136,7 @@ public final class NetworkModuleKt {
             List emptyList40;
             List emptyList41;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C17131 c17131 = new Function2<Scope, ParametersHolder, Cache>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.1
+            C17091 c17091 = new Function2<Scope, ParametersHolder, Cache>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final Cache invoke(Scope single, ParametersHolder it) {
                     Cache createCache;
@@ -150,13 +150,13 @@ public final class NetworkModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Cache.class), null, c17131, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Cache.class), null, c17091, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C17242 c17242 = new Function2<Scope, ParametersHolder, Gson>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.2
+            C17202 c17202 = new Function2<Scope, ParametersHolder, Gson>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final Gson invoke(Scope single, ParametersHolder it) {
                     Gson createGson;
@@ -168,14 +168,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(Gson.class), null, c17242, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(Gson.class), null, c17202, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
             StringQualifier default_client = NetworkModuleKt.getDEFAULT_CLIENT();
-            C17353 c17353 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.3
+            C17313 c17313 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final OkHttpClient invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -185,14 +185,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(OkHttpClient.class), default_client, c17353, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(OkHttpClient.class), default_client, c17313, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
             StringQualifier server_client = NetworkModuleKt.getSERVER_CLIENT();
-            C17464 c17464 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.4
+            C17424 c17424 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final OkHttpClient invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -202,14 +202,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(OkHttpClient.class), server_client, c17464, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(OkHttpClient.class), server_client, c17424, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
             StringQualifier ton_config_client = NetworkModuleKt.getTON_CONFIG_CLIENT();
-            C17495 c17495 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.5
+            C17455 c17455 = new Function2<Scope, ParametersHolder, OkHttpClient>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final OkHttpClient invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -219,14 +219,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(OkHttpClient.class), ton_config_client, c17495, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(OkHttpClient.class), ton_config_client, c17455, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
             StringQualifier logging_interceptor = NetworkModuleKt.getLOGGING_INTERCEPTOR();
-            C17506 c17506 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.6
+            C17466 c17466 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final Interceptor invoke(Scope single, ParametersHolder it) {
                     LoggingInterceptor createLoggingInterceptor;
@@ -238,14 +238,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(Interceptor.class), logging_interceptor, c17506, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(Interceptor.class), logging_interceptor, c17466, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
             StringQualifier metadata_interceptor = NetworkModuleKt.getMETADATA_INTERCEPTOR();
-            C17517 c17517 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.7
+            C17477 c17477 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final Interceptor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -255,14 +255,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(Interceptor.class), metadata_interceptor, c17517, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(Interceptor.class), metadata_interceptor, c17477, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
             StringQualifier duration_analytic_interceptor = NetworkModuleKt.getDURATION_ANALYTIC_INTERCEPTOR();
-            C17528 c17528 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.8
+            C17488 c17488 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final Interceptor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -272,14 +272,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(Interceptor.class), duration_analytic_interceptor, c17528, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(Interceptor.class), duration_analytic_interceptor, c17488, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
             StringQualifier error_interceptor = NetworkModuleKt.getERROR_INTERCEPTOR();
-            C17539 c17539 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.9
+            C17499 c17499 = new Function2<Scope, ParametersHolder, Interceptor>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final Interceptor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -289,14 +289,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(Interceptor.class), error_interceptor, c17539, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(Interceptor.class), error_interceptor, c17499, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
             StringQualifier kikliko_retrofit = NetworkModuleKt.getKIKLIKO_RETROFIT();
-            C171410 c171410 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.10
+            C171010 c171010 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final Retrofit invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -306,14 +306,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(Retrofit.class), kikliko_retrofit, c171410, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(Retrofit.class), kikliko_retrofit, c171010, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
             StringQualifier google_retrofit = NetworkModuleKt.getGOOGLE_RETROFIT();
-            C171511 c171511 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.11
+            C171111 c171111 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final Retrofit invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -323,14 +323,14 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(Retrofit.class), google_retrofit, c171511, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(Retrofit.class), google_retrofit, c171111, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
             StringQualifier server_retrofit = NetworkModuleKt.getSERVER_RETROFIT();
-            C171612 c171612 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.12
+            C171212 c171212 = new Function2<Scope, ParametersHolder, Retrofit>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final Retrofit invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -340,13 +340,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(Retrofit.class), server_retrofit, c171612, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(Retrofit.class), server_retrofit, c171212, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);
             }
             new KoinDefinition(module, singleInstanceFactory12);
-            C171713 c171713 = new Function2<Scope, ParametersHolder, SwapApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.13
+            C171313 c171313 = new Function2<Scope, ParametersHolder, SwapApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final SwapApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -358,13 +358,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SwapApi.class), null, c171713, kind, emptyList13));
+            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SwapApi.class), null, c171313, kind, emptyList13));
             module.indexPrimaryType(singleInstanceFactory13);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory13);
             }
             new KoinDefinition(module, singleInstanceFactory13);
-            C171814 c171814 = new Function2<Scope, ParametersHolder, PinCodeApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.14
+            C171414 c171414 = new Function2<Scope, ParametersHolder, PinCodeApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final PinCodeApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -376,13 +376,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(PinCodeApi.class), null, c171814, kind, emptyList14));
+            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(PinCodeApi.class), null, c171414, kind, emptyList14));
             module.indexPrimaryType(singleInstanceFactory14);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory14);
             }
             new KoinDefinition(module, singleInstanceFactory14);
-            C171915 c171915 = new Function2<Scope, ParametersHolder, CryptoWalletApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.15
+            C171515 c171515 = new Function2<Scope, ParametersHolder, CryptoWalletApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.15
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoWalletApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -394,13 +394,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
             emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CryptoWalletApi.class), null, c171915, kind, emptyList15));
+            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CryptoWalletApi.class), null, c171515, kind, emptyList15));
             module.indexPrimaryType(singleInstanceFactory15);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory15);
             }
             new KoinDefinition(module, singleInstanceFactory15);
-            C172016 c172016 = new Function2<Scope, ParametersHolder, PermissionApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.16
+            C171616 c171616 = new Function2<Scope, ParametersHolder, PermissionApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.16
                 @Override // kotlin.jvm.functions.Function2
                 public final PermissionApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -412,13 +412,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
             emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(PermissionApi.class), null, c172016, kind, emptyList16));
+            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(PermissionApi.class), null, c171616, kind, emptyList16));
             module.indexPrimaryType(singleInstanceFactory16);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory16);
             }
             new KoinDefinition(module, singleInstanceFactory16);
-            C172117 c172117 = new Function2<Scope, ParametersHolder, SimplexApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.17
+            C171717 c171717 = new Function2<Scope, ParametersHolder, SimplexApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.17
                 @Override // kotlin.jvm.functions.Function2
                 public final SimplexApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -430,13 +430,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
             emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(SimplexApi.class), null, c172117, kind, emptyList17));
+            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(SimplexApi.class), null, c171717, kind, emptyList17));
             module.indexPrimaryType(singleInstanceFactory17);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory17);
             }
             new KoinDefinition(module, singleInstanceFactory17);
-            C172218 c172218 = new Function2<Scope, ParametersHolder, CancelApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.18
+            C171818 c171818 = new Function2<Scope, ParametersHolder, CancelApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.18
                 @Override // kotlin.jvm.functions.Function2
                 public final CancelApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -448,13 +448,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
             emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(CancelApi.class), null, c172218, kind, emptyList18));
+            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(CancelApi.class), null, c171818, kind, emptyList18));
             module.indexPrimaryType(singleInstanceFactory18);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory18);
             }
             new KoinDefinition(module, singleInstanceFactory18);
-            C172319 c172319 = new Function2<Scope, ParametersHolder, BoostApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.19
+            C171919 c171919 = new Function2<Scope, ParametersHolder, BoostApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.19
                 @Override // kotlin.jvm.functions.Function2
                 public final BoostApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -466,13 +466,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
             emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(BoostApi.class), null, c172319, kind, emptyList19));
+            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(BoostApi.class), null, c171919, kind, emptyList19));
             module.indexPrimaryType(singleInstanceFactory19);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory19);
             }
             new KoinDefinition(module, singleInstanceFactory19);
-            C172520 c172520 = new Function2<Scope, ParametersHolder, AccountLevelApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.20
+            C172120 c172120 = new Function2<Scope, ParametersHolder, AccountLevelApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.20
                 @Override // kotlin.jvm.functions.Function2
                 public final AccountLevelApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -484,13 +484,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
             emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(AccountLevelApi.class), null, c172520, kind, emptyList20));
+            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(AccountLevelApi.class), null, c172120, kind, emptyList20));
             module.indexPrimaryType(singleInstanceFactory20);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory20);
             }
             new KoinDefinition(module, singleInstanceFactory20);
-            C172621 c172621 = new Function2<Scope, ParametersHolder, BinanceInternalApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.21
+            C172221 c172221 = new Function2<Scope, ParametersHolder, BinanceInternalApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.21
                 @Override // kotlin.jvm.functions.Function2
                 public final BinanceInternalApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -502,13 +502,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
             emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(BinanceInternalApi.class), null, c172621, kind, emptyList21));
+            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(BinanceInternalApi.class), null, c172221, kind, emptyList21));
             module.indexPrimaryType(singleInstanceFactory21);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory21);
             }
             new KoinDefinition(module, singleInstanceFactory21);
-            C172722 c172722 = new Function2<Scope, ParametersHolder, DonationsApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.22
+            C172322 c172322 = new Function2<Scope, ParametersHolder, DonationsApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.22
                 @Override // kotlin.jvm.functions.Function2
                 public final DonationsApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -520,13 +520,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
             emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(DonationsApi.class), null, c172722, kind, emptyList22));
+            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(DonationsApi.class), null, c172322, kind, emptyList22));
             module.indexPrimaryType(singleInstanceFactory22);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory22);
             }
             new KoinDefinition(module, singleInstanceFactory22);
-            C172823 c172823 = new Function2<Scope, ParametersHolder, WalletApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.23
+            C172423 c172423 = new Function2<Scope, ParametersHolder, WalletApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.23
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -538,13 +538,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
             emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(WalletApi.class), null, c172823, kind, emptyList23));
+            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(WalletApi.class), null, c172423, kind, emptyList23));
             module.indexPrimaryType(singleInstanceFactory23);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory23);
             }
             new KoinDefinition(module, singleInstanceFactory23);
-            C172924 c172924 = new Function2<Scope, ParametersHolder, WalletConnectApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.24
+            C172524 c172524 = new Function2<Scope, ParametersHolder, WalletConnectApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.24
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -556,13 +556,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
             emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(WalletConnectApi.class), null, c172924, kind, emptyList24));
+            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(WalletConnectApi.class), null, c172524, kind, emptyList24));
             module.indexPrimaryType(singleInstanceFactory24);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory24);
             }
             new KoinDefinition(module, singleInstanceFactory24);
-            C173025 c173025 = new Function2<Scope, ParametersHolder, AirdropApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.25
+            C172625 c172625 = new Function2<Scope, ParametersHolder, AirdropApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.25
                 @Override // kotlin.jvm.functions.Function2
                 public final AirdropApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -574,13 +574,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
             emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(AirdropApi.class), null, c173025, kind, emptyList25));
+            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(AirdropApi.class), null, c172625, kind, emptyList25));
             module.indexPrimaryType(singleInstanceFactory25);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory25);
             }
             new KoinDefinition(module, singleInstanceFactory25);
-            C173126 c173126 = new Function2<Scope, ParametersHolder, NftAvatarApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.26
+            C172726 c172726 = new Function2<Scope, ParametersHolder, NftAvatarApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.26
                 @Override // kotlin.jvm.functions.Function2
                 public final NftAvatarApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -592,13 +592,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
             emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(NftAvatarApi.class), null, c173126, kind, emptyList26));
+            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(NftAvatarApi.class), null, c172726, kind, emptyList26));
             module.indexPrimaryType(singleInstanceFactory26);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory26);
             }
             new KoinDefinition(module, singleInstanceFactory26);
-            C173227 c173227 = new Function2<Scope, ParametersHolder, GoogleServicesApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.27
+            C172827 c172827 = new Function2<Scope, ParametersHolder, GoogleServicesApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.27
                 @Override // kotlin.jvm.functions.Function2
                 public final GoogleServicesApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -610,13 +610,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier27 = companion.getRootScopeQualifier();
             emptyList27 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory27 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(GoogleServicesApi.class), null, c173227, kind, emptyList27));
+            SingleInstanceFactory<?> singleInstanceFactory27 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(GoogleServicesApi.class), null, c172827, kind, emptyList27));
             module.indexPrimaryType(singleInstanceFactory27);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory27);
             }
             new KoinDefinition(module, singleInstanceFactory27);
-            C173328 c173328 = new Function2<Scope, ParametersHolder, PushNotificationApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.28
+            C172928 c172928 = new Function2<Scope, ParametersHolder, PushNotificationApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.28
                 @Override // kotlin.jvm.functions.Function2
                 public final PushNotificationApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -628,13 +628,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier28 = companion.getRootScopeQualifier();
             emptyList28 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory28 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(PushNotificationApi.class), null, c173328, kind, emptyList28));
+            SingleInstanceFactory<?> singleInstanceFactory28 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(PushNotificationApi.class), null, c172928, kind, emptyList28));
             module.indexPrimaryType(singleInstanceFactory28);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory28);
             }
             new KoinDefinition(module, singleInstanceFactory28);
-            C173429 c173429 = new Function2<Scope, ParametersHolder, ReactionApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.29
+            C173029 c173029 = new Function2<Scope, ParametersHolder, ReactionApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.29
                 @Override // kotlin.jvm.functions.Function2
                 public final ReactionApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -646,13 +646,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier29 = companion.getRootScopeQualifier();
             emptyList29 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory29 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(ReactionApi.class), null, c173429, kind, emptyList29));
+            SingleInstanceFactory<?> singleInstanceFactory29 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(ReactionApi.class), null, c173029, kind, emptyList29));
             module.indexPrimaryType(singleInstanceFactory29);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory29);
             }
             new KoinDefinition(module, singleInstanceFactory29);
-            C173630 c173630 = new Function2<Scope, ParametersHolder, RemoteConfigApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.30
+            C173230 c173230 = new Function2<Scope, ParametersHolder, RemoteConfigApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.30
                 @Override // kotlin.jvm.functions.Function2
                 public final RemoteConfigApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -662,13 +662,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier30 = companion.getRootScopeQualifier();
             emptyList30 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory30 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(RemoteConfigApi.class), null, c173630, kind, emptyList30));
+            SingleInstanceFactory<?> singleInstanceFactory30 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(RemoteConfigApi.class), null, c173230, kind, emptyList30));
             module.indexPrimaryType(singleInstanceFactory30);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory30);
             }
             new KoinDefinition(module, singleInstanceFactory30);
-            C173731 c173731 = new Function2<Scope, ParametersHolder, DynamicLinksApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.31
+            C173331 c173331 = new Function2<Scope, ParametersHolder, DynamicLinksApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.31
                 @Override // kotlin.jvm.functions.Function2
                 public final DynamicLinksApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -678,13 +678,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier31 = companion.getRootScopeQualifier();
             emptyList31 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory31 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(DynamicLinksApi.class), null, c173731, kind, emptyList31));
+            SingleInstanceFactory<?> singleInstanceFactory31 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(DynamicLinksApi.class), null, c173331, kind, emptyList31));
             module.indexPrimaryType(singleInstanceFactory31);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory31);
             }
             new KoinDefinition(module, singleInstanceFactory31);
-            C173832 c173832 = new Function2<Scope, ParametersHolder, KiklikoApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.32
+            C173432 c173432 = new Function2<Scope, ParametersHolder, KiklikoApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.32
                 @Override // kotlin.jvm.functions.Function2
                 public final KiklikoApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -696,13 +696,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier32 = companion.getRootScopeQualifier();
             emptyList32 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory32 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(KiklikoApi.class), null, c173832, kind, emptyList32));
+            SingleInstanceFactory<?> singleInstanceFactory32 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(KiklikoApi.class), null, c173432, kind, emptyList32));
             module.indexPrimaryType(singleInstanceFactory32);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory32);
             }
             new KoinDefinition(module, singleInstanceFactory32);
-            C173933 c173933 = new Function2<Scope, ParametersHolder, GoogleTranslationApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.33
+            C173533 c173533 = new Function2<Scope, ParametersHolder, GoogleTranslationApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.33
                 @Override // kotlin.jvm.functions.Function2
                 public final GoogleTranslationApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -714,13 +714,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier33 = companion.getRootScopeQualifier();
             emptyList33 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory33 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(GoogleTranslationApi.class), null, c173933, kind, emptyList33));
+            SingleInstanceFactory<?> singleInstanceFactory33 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(GoogleTranslationApi.class), null, c173533, kind, emptyList33));
             module.indexPrimaryType(singleInstanceFactory33);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory33);
             }
             new KoinDefinition(module, singleInstanceFactory33);
-            C174034 c174034 = new Function2<Scope, ParametersHolder, CatalogApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.34
+            C173634 c173634 = new Function2<Scope, ParametersHolder, CatalogApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.34
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -732,13 +732,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier34 = companion.getRootScopeQualifier();
             emptyList34 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory34 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(CatalogApi.class), null, c174034, kind, emptyList34));
+            SingleInstanceFactory<?> singleInstanceFactory34 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(CatalogApi.class), null, c173634, kind, emptyList34));
             module.indexPrimaryType(singleInstanceFactory34);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory34);
             }
             new KoinDefinition(module, singleInstanceFactory34);
-            C174135 c174135 = new Function2<Scope, ParametersHolder, TwitterApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.35
+            C173735 c173735 = new Function2<Scope, ParametersHolder, TwitterApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.35
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -750,13 +750,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier35 = companion.getRootScopeQualifier();
             emptyList35 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory35 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(TwitterApi.class), null, c174135, kind, emptyList35));
+            SingleInstanceFactory<?> singleInstanceFactory35 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(TwitterApi.class), null, c173735, kind, emptyList35));
             module.indexPrimaryType(singleInstanceFactory35);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory35);
             }
             new KoinDefinition(module, singleInstanceFactory35);
-            C174236 c174236 = new Function2<Scope, ParametersHolder, SocialApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.36
+            C173836 c173836 = new Function2<Scope, ParametersHolder, SocialApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.36
                 @Override // kotlin.jvm.functions.Function2
                 public final SocialApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -768,13 +768,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier36 = companion.getRootScopeQualifier();
             emptyList36 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory36 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(SocialApi.class), null, c174236, kind, emptyList36));
+            SingleInstanceFactory<?> singleInstanceFactory36 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(SocialApi.class), null, c173836, kind, emptyList36));
             module.indexPrimaryType(singleInstanceFactory36);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory36);
             }
             new KoinDefinition(module, singleInstanceFactory36);
-            C174337 c174337 = new Function2<Scope, ParametersHolder, CryptoBoxApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.37
+            C173937 c173937 = new Function2<Scope, ParametersHolder, CryptoBoxApi>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.37
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -786,13 +786,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier37 = companion.getRootScopeQualifier();
             emptyList37 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory37 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(CryptoBoxApi.class), null, c174337, kind, emptyList37));
+            SingleInstanceFactory<?> singleInstanceFactory37 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(CryptoBoxApi.class), null, c173937, kind, emptyList37));
             module.indexPrimaryType(singleInstanceFactory37);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory37);
             }
             new KoinDefinition(module, singleInstanceFactory37);
-            C174438 c174438 = new Function2<Scope, ParametersHolder, ApiErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.38
+            C174038 c174038 = new Function2<Scope, ParametersHolder, ApiErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.38
                 @Override // kotlin.jvm.functions.Function2
                 public final ApiErrorHandler invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -802,13 +802,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier38 = companion.getRootScopeQualifier();
             emptyList38 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory38 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, c174438, kind, emptyList38));
+            SingleInstanceFactory<?> singleInstanceFactory38 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, c174038, kind, emptyList38));
             module.indexPrimaryType(singleInstanceFactory38);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory38);
             }
             new KoinDefinition(module, singleInstanceFactory38);
-            C174539 c174539 = new Function2<Scope, ParametersHolder, GoogleServicesErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.39
+            C174139 c174139 = new Function2<Scope, ParametersHolder, GoogleServicesErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.39
                 @Override // kotlin.jvm.functions.Function2
                 public final GoogleServicesErrorHandler invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -818,13 +818,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier39 = companion.getRootScopeQualifier();
             emptyList39 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory39 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(GoogleServicesErrorHandler.class), null, c174539, kind, emptyList39));
+            SingleInstanceFactory<?> singleInstanceFactory39 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(GoogleServicesErrorHandler.class), null, c174139, kind, emptyList39));
             module.indexPrimaryType(singleInstanceFactory39);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory39);
             }
             new KoinDefinition(module, singleInstanceFactory39);
-            C174740 c174740 = new Function2<Scope, ParametersHolder, FirebaseFunctionsErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.40
+            C174340 c174340 = new Function2<Scope, ParametersHolder, FirebaseFunctionsErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.40
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseFunctionsErrorHandler invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -834,13 +834,13 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier40 = companion.getRootScopeQualifier();
             emptyList40 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory40 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, c174740, kind, emptyList40));
+            SingleInstanceFactory<?> singleInstanceFactory40 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, c174340, kind, emptyList40));
             module.indexPrimaryType(singleInstanceFactory40);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory40);
             }
             new KoinDefinition(module, singleInstanceFactory40);
-            C174841 c174841 = new Function2<Scope, ParametersHolder, DbErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.41
+            C174441 c174441 = new Function2<Scope, ParametersHolder, DbErrorHandler>() { // from class: com.iMe.storage.data.di.module.NetworkModuleKt$networkModule$1.41
                 @Override // kotlin.jvm.functions.Function2
                 public final DbErrorHandler invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -850,7 +850,7 @@ public final class NetworkModuleKt {
             };
             StringQualifier rootScopeQualifier41 = companion.getRootScopeQualifier();
             emptyList41 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory41 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(DbErrorHandler.class), null, c174841, kind, emptyList41));
+            SingleInstanceFactory<?> singleInstanceFactory41 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(DbErrorHandler.class), null, c174441, kind, emptyList41));
             module.indexPrimaryType(singleInstanceFactory41);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory41);
@@ -908,7 +908,7 @@ public final class NetworkModuleKt {
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(gson, "gson");
         Retrofit build = new Retrofit.Builder().baseUrl(url).client(okHttpClient).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).addConverterFactory(GsonConverterFactory.create(gson)).build();
-        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n              …\n                .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n        .baseU…e(gson))\n        .build()");
         return build;
     }
 
@@ -941,14 +941,14 @@ public final class NetworkModuleKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Gson createGson() {
         Gson create = new GsonBuilder().setPrettyPrinting().enableComplexMapKeySerialization().create();
-        Intrinsics.checkNotNullExpressionValue(create, "GsonBuilder()\n          …                .create()");
+        Intrinsics.checkNotNullExpressionValue(create, "GsonBuilder()\n        .s…ation()\n        .create()");
         return create;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LoggingInterceptor createLoggingInterceptor() {
         LoggingInterceptor build = new LoggingInterceptor.Builder().loggable(false).setLevel(Level.BASIC).log(4).request("Request").response("Response").build();
-        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n              …\n                .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n        .logga…sponse\")\n        .build()");
         return build;
     }
 }

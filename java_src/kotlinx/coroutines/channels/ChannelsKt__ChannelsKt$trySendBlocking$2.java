@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Channels.kt */
 @DebugMetadata(m102c = "kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$trySendBlocking$2", m101f = "Channels.kt", m100l = {39}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ChannelResult<? extends Unit>>, Object> {
     final /* synthetic */ E $element;
     final /* synthetic */ SendChannel<E> $this_trySendBlocking;
@@ -47,7 +47,7 @@ final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda imple
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended;
-        Object m1660constructorimpl;
+        Object m1658constructorimpl;
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -66,11 +66,11 @@ final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda imple
             } else {
                 ResultKt.throwOnFailure(obj);
             }
-            m1660constructorimpl = Result.m1660constructorimpl(Unit.INSTANCE);
+            m1658constructorimpl = Result.m1658constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1660constructorimpl = Result.m1660constructorimpl(ResultKt.createFailure(th));
+            m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th));
         }
-        return ChannelResult.m1674boximpl(Result.m1663isSuccessimpl(m1660constructorimpl) ? ChannelResult.Companion.m1685successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m1683closedJP2dKIU(Result.m1661exceptionOrNullimpl(m1660constructorimpl)));
+        return ChannelResult.m1672boximpl(Result.m1661isSuccessimpl(m1658constructorimpl) ? ChannelResult.Companion.m1683successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m1681closedJP2dKIU(Result.m1659exceptionOrNullimpl(m1658constructorimpl)));
     }
 }

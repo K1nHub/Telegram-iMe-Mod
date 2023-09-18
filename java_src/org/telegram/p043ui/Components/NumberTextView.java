@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.NumberTextView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class NumberTextView extends View {
     private boolean addNumber;
     private ObjectAnimator animator;
@@ -27,7 +27,7 @@ public class NumberTextView extends View {
     private float textWidth;
 
     /* renamed from: org.telegram.ui.Components.NumberTextView$OnTextWidthProgressChangedListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnTextWidthProgressChangedListener {
         void onTextWidthProgress(float f, float f2, float f3);
     }

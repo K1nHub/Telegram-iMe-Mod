@@ -3,7 +3,7 @@ package kotlinx.coroutines.scheduling;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.ExecutorCoroutineDispatcher;
 /* compiled from: Dispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SchedulerCoroutineDispatcher extends ExecutorCoroutineDispatcher {
     private final int corePoolSize;
     private CoroutineScheduler coroutineScheduler = createScheduler();
@@ -24,7 +24,7 @@ public class SchedulerCoroutineDispatcher extends ExecutorCoroutineDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         CoroutineScheduler.dispatch$default(this.coroutineScheduler, runnable, null, false, 6, null);
     }
 

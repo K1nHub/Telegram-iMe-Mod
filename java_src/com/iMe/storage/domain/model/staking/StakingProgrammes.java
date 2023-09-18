@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.staking;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingProgrammes.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingProgrammes {
     private final List<StakingMetadata> programmes;
     private final int total;

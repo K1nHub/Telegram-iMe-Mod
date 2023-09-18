@@ -3,13 +3,13 @@ package com.google.common.base;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Predicates {
     public static <T> Predicate<T> and(Predicate<? super T> predicate, Predicate<? super T> predicate2) {
         return new AndPredicate(asList((Predicate) Preconditions.checkNotNull(predicate), (Predicate) Preconditions.checkNotNull(predicate2)));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class AndPredicate<T> implements Predicate<T>, Serializable {
         private final List<? extends Predicate<? super T>> components;
 

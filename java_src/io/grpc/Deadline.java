@@ -2,7 +2,7 @@ package io.grpc;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Deadline implements Comparable<Deadline> {
     private static final long MAX_OFFSET;
     private static final long MIN_OFFSET;
@@ -12,7 +12,7 @@ public final class Deadline implements Comparable<Deadline> {
     private volatile boolean expired;
     private final Ticker ticker;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Ticker {
         public abstract long nanoTime();
     }
@@ -122,7 +122,7 @@ public final class Deadline implements Comparable<Deadline> {
         return false;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class SystemTicker extends Ticker {
         private SystemTicker() {
         }

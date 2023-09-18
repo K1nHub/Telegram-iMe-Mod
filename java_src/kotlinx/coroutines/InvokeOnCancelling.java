@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class InvokeOnCancelling extends JobCancellingNode {
     private static final /* synthetic */ AtomicIntegerFieldUpdater _invoked$FU = AtomicIntegerFieldUpdater.newUpdater(InvokeOnCancelling.class, "_invoked");
     private volatile /* synthetic */ int _invoked = 0;

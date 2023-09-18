@@ -4,7 +4,7 @@ import android.location.Location;
 import com.google.android.gms.location.Geofence;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GeofencingEvent {
     private final int zza;
     @Geofence.GeofenceTransition

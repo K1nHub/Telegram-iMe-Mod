@@ -8,7 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SlopSwipeRefreshLayout.kt */
 /* renamed from: com.iMe.ui.custom.SlopSwipeRefreshLayout */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SlopSwipeRefreshLayout extends SwipeRefreshLayout {
     private float mPrevX;
     private final int mTouchSlop;

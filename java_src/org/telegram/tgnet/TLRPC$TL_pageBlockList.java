@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_pageBlockList extends TLRPC$PageBlock {
     public static int constructor = -454524911;
     public ArrayList<TLRPC$PageListItem> items = new ArrayList<>();

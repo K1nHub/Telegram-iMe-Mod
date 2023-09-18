@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import java.util.ArrayList;
 import org.telegram.p043ui.Stories.recorder.StoryPrivacyBottomSheet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$StoryItem extends TLObject {
     public String attachPath;
     public String caption;
@@ -18,7 +18,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1566id;
+    public int f1557id;
     public boolean isPublic;
     public boolean justUploaded;
     public long lastUpdateTime;
@@ -67,7 +67,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
                         this.edited = (readInt32 & 2048) != 0;
                         this.contacts = (readInt32 & 4096) != 0;
                         this.selected_contacts = (readInt32 & 8192) != 0;
-                        this.f1566id = abstractSerializedData2.readInt32(z2);
+                        this.f1557id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.expire_date = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
@@ -133,7 +133,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
                         int i9 = this.selected_contacts ? i8 | 8192 : i8 & (-8193);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32(this.f1566id);
+                        abstractSerializedData2.writeInt32(this.f1557id);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32(this.expire_date);
                         if ((this.flags & 1) != 0) {

@@ -3,7 +3,7 @@ package com.google.android.material.shape;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import com.google.android.material.internal.ViewUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialShapeUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static CornerTreatment createCornerTreatment(int i) {

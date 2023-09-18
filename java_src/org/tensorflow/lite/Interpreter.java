@@ -5,11 +5,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Interpreter implements AutoCloseable {
     NativeInterpreterWrapper wrapper;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Options {
         int numThreads = -1;
         boolean useNNAPI = false;

@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class FourierTransform {
     protected static final int LINAVG = 1;
     protected static final int LOGAVG = 2;
@@ -200,7 +200,7 @@ public abstract class FourierTransform {
         inverse(fArr3);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class FFT extends FourierTransform {
         private float[] coslookup;
         private int[] reverse;

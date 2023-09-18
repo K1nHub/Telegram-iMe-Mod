@@ -3,7 +3,7 @@ package org.telegram.tgnet;
 import android.text.TextUtils;
 import com.google.android.exoplayer2.C0479C;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_message extends TLRPC$Message {
     public static int constructor = 940666592;
 
@@ -22,7 +22,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.pinned = (16777216 & readInt32) != 0;
         this.noforwards = (67108864 & readInt32) != 0;
         this.topic_start = (readInt32 & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1555id = abstractSerializedData.readInt32(z);
+        this.f1546id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -137,7 +137,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         int i11 = this.topic_start ? i10 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
         this.flags = i11;
         abstractSerializedData.writeInt32(i11);
-        abstractSerializedData.writeInt32(this.f1555id);
+        abstractSerializedData.writeInt32(this.f1546id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }

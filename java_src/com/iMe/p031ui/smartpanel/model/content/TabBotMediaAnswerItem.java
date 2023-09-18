@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
 /* compiled from: TabBotMediaAnswerItem.kt */
 /* renamed from: com.iMe.ui.smartpanel.model.content.TabBotMediaAnswerItem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TabBotMediaAnswerItem implements SmartPanelTabContent {
     public static final Companion Companion = new Companion(null);
     private final SmartPanelTabContent.Type contentType;
@@ -52,7 +52,7 @@ public final class TabBotMediaAnswerItem implements SmartPanelTabContent {
 
     /* compiled from: TabBotMediaAnswerItem.kt */
     /* renamed from: com.iMe.ui.smartpanel.model.content.TabBotMediaAnswerItem$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

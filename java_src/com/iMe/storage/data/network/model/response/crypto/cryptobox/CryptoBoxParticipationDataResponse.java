@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxParticipationStatus;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxParticipationDataResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxParticipationDataResponse {
     private final CryptoBoxParticipationStatus status;
     private final String transactionUrl;

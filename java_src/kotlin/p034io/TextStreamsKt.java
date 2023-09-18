@@ -6,7 +6,7 @@ import java.io.Writer;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ReadWrite.kt */
 /* renamed from: kotlin.io.TextStreamsKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TextStreamsKt {
     public static final String readText(Reader reader) {
         Intrinsics.checkNotNullParameter(reader, "<this>");

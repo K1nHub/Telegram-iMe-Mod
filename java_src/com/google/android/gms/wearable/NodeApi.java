@@ -6,19 +6,19 @@ import com.google.android.gms.common.api.Result;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface NodeApi {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GetConnectedNodesResult extends Result {
         List<Node> getNodes();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GetLocalNodeResult extends Result {
         Node getNode();
     }

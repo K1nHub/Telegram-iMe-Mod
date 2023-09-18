@@ -9,7 +9,7 @@ import okio.BufferedSink;
 import okio.ByteString;
 /* compiled from: WebSocketWriter.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketWriter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WebSocketWriter implements Closeable {
     private final boolean isClient;
     private final Buffer.UnsafeCursor maskCursor;

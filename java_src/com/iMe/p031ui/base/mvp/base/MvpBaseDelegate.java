@@ -20,7 +20,7 @@ import org.telegram.p043ui.ActionBar.AlertDialog;
 import timber.log.Timber;
 /* compiled from: MvpBaseDelegate.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.MvpBaseDelegate */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
     private MvpDelegate<T> mMvpDelegate;
     private final Lazy progressDialog$delegate;

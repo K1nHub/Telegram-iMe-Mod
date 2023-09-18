@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.protobuf.GeneratedMessageLite;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Any extends GeneratedMessageLite<Any, Builder> implements MessageLiteOrBuilder {
     private static final Any DEFAULT_INSTANCE;
     private static volatile Parser<Any> PARSER = null;
@@ -13,7 +13,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
     private Any() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Any, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C11901 c11901) {
             this();
@@ -25,7 +25,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
     }
 
     /* renamed from: com.google.protobuf.Any$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C11901 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

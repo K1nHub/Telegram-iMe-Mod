@@ -10,7 +10,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: InstanceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class InstanceFactory<T> {
     private final BeanDefinition<T> beanDefinition;
 
@@ -65,7 +65,7 @@ public abstract class InstanceFactory<T> {
     }
 
     /* compiled from: InstanceFactory.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

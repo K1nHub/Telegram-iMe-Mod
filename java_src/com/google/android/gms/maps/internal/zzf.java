@@ -6,7 +6,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.StreetViewPanoramaOptions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zzf extends IInterface {
     int zzd() throws RemoteException;
 

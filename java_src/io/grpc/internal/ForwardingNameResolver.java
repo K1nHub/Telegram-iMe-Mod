@@ -3,7 +3,7 @@ package io.grpc.internal;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import io.grpc.NameResolver;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class ForwardingNameResolver extends NameResolver {
     private final NameResolver delegate;
 

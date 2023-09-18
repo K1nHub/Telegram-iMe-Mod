@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ConnectivityStateManager {
     private ArrayList<Listener> listeners = new ArrayList<>();
     private volatile ConnectivityState state = ConnectivityState.IDLE;
@@ -51,7 +51,7 @@ public final class ConnectivityStateManager {
         throw new UnsupportedOperationException("Channel state API is not implemented");
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class Listener {
         final Runnable callback;
         final Executor executor;

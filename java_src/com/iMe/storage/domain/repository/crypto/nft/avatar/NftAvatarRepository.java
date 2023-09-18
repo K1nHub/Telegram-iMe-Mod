@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.nft.avatar.NftToken;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: NftAvatarRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface NftAvatarRepository {
     Observable<Result<List<NftToken>>> getNftAvatars(String str);
 }

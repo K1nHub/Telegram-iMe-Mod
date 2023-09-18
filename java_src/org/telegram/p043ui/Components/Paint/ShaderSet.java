@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: org.telegram.ui.Components.Paint.ShaderSet */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ShaderSet {
     private static final Map<String, Map<String, Object>> AVAILABLE_SHADERS = createMap();
 

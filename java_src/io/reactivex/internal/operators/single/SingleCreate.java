@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleCreate<T> extends Single<T> {
     final SingleOnSubscribe<T> source;
 
@@ -29,7 +29,7 @@ public final class SingleCreate<T> extends Single<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class Emitter<T> extends AtomicReference<Disposable> implements SingleEmitter<T>, Disposable {
         final SingleObserver<? super T> downstream;
 

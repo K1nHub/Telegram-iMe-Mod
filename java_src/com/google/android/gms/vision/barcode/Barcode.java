@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "BarcodeCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Barcode extends AbstractSafeParcelable {
     public static final int ALL_FORMATS = 0;
     public static final int AZTEC = 4096;
@@ -90,7 +90,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "AddressCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Address extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Address> CREATOR = new zza();
@@ -124,7 +124,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "CalendarDateTimeCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CalendarDateTime extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<CalendarDateTime> CREATOR = new zzd();
@@ -179,7 +179,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "CalendarEventCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CalendarEvent extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<CalendarEvent> CREATOR = new zzf();
@@ -236,7 +236,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "ContactInfoCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ContactInfo extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<ContactInfo> CREATOR = new zze();
@@ -293,7 +293,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "DriverLicenseCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DriverLicense extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<DriverLicense> CREATOR = new zzh();
@@ -385,7 +385,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "EmailCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Email extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Email> CREATOR = new zzg();
@@ -429,7 +429,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "GeoPointCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GeoPoint extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<GeoPoint> CREATOR = new zzj();
@@ -459,7 +459,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "PersonNameCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PersonName extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<PersonName> CREATOR = new zzi();
@@ -516,7 +516,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "PhoneCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Phone extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Phone> CREATOR = new zzl();
@@ -552,7 +552,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "SmsCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Sms extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Sms> CREATOR = new zzk();
@@ -584,7 +584,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "UrlBookmarkCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UrlBookmark extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<UrlBookmark> CREATOR = new zzn();
@@ -616,7 +616,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "WiFiCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WiFi extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<WiFi> CREATOR = new zzm();

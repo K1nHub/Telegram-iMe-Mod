@@ -14,7 +14,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FlipperManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FlipperManager {
     public static final FlipperManager INSTANCE = new FlipperManager();
     private static final Lazy networkFlipperPlugin$delegate;

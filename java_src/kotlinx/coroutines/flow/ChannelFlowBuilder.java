@@ -10,7 +10,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.flow.internal.ChannelFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ChannelFlowBuilder<T> extends ChannelFlow<T> {
     private final Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> block;
 

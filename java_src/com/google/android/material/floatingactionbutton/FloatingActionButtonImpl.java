@@ -38,7 +38,7 @@ import com.google.android.material.shape.Shapeable;
 import java.util.ArrayList;
 import java.util.Iterator;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FloatingActionButtonImpl {
     Drawable contentBackground;
     private Animator currentAnimator;
@@ -79,7 +79,7 @@ public class FloatingActionButtonImpl {
     private final Matrix tmpMatrix = new Matrix();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface InternalTransformationCallback {
         void onScaleChanged();
 
@@ -87,7 +87,7 @@ public class FloatingActionButtonImpl {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface InternalVisibilityChangedListener {
         void onHidden();
 
@@ -615,7 +615,7 @@ public class FloatingActionButtonImpl {
         return valueAnimator;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private abstract class ShadowAnimatorImpl extends AnimatorListenerAdapter implements ValueAnimator.AnimatorUpdateListener {
         private float shadowSizeEnd;
         private float shadowSizeStart;
@@ -646,7 +646,7 @@ public class FloatingActionButtonImpl {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class ResetElevationAnimation extends ShadowAnimatorImpl {
         ResetElevationAnimation() {
             super();
@@ -658,7 +658,7 @@ public class FloatingActionButtonImpl {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class ElevateToHoveredFocusedTranslationZAnimation extends ShadowAnimatorImpl {
         ElevateToHoveredFocusedTranslationZAnimation() {
             super();
@@ -671,7 +671,7 @@ public class FloatingActionButtonImpl {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class ElevateToPressedTranslationZAnimation extends ShadowAnimatorImpl {
         ElevateToPressedTranslationZAnimation() {
             super();
@@ -684,7 +684,7 @@ public class FloatingActionButtonImpl {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class DisabledElevationAnimation extends ShadowAnimatorImpl {
         @Override // com.google.android.material.floatingactionbutton.FloatingActionButtonImpl.ShadowAnimatorImpl
         protected float getTargetShadowSize() {

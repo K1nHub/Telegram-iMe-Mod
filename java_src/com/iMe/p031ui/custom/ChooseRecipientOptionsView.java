@@ -28,13 +28,13 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletChooseRecipientOptionsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChooseRecipientOptionsView.kt */
 /* renamed from: com.iMe.ui.custom.ChooseRecipientOptionsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChooseRecipientOptionsView extends FrameLayout implements KoinComponent {
     private final Lazy backgroundColor$delegate;
     private final Lazy backgroundPressedColor$delegate;
@@ -115,7 +115,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3558R.dimen.margin_half_small));
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3473R.dimen.margin_half_small));
             }
         });
         this.iconPadding$delegate = lazy3;
@@ -128,7 +128,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3558R.dimen.new_label_corner_radius));
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3473R.dimen.new_label_corner_radius));
             }
         });
         this.cornerSize$delegate = lazy4;
@@ -270,17 +270,17 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
     private final void setupViews() {
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
         TextView setupViews$lambda$10$lambda$7 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
-        setupViews$lambda$10$lambda$7.setText(LocaleController.getString("Contacts", C3558R.string.Contacts));
+        setupViews$lambda$10$lambda$7.setText(LocaleController.getString("Contacts", C3473R.string.Contacts));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$7, "setupViews$lambda$10$lambda$7");
-        setSizedStartIcon(setupViews$lambda$10$lambda$7, C3558R.C3560drawable.fork_drawer_social_telegram);
+        setSizedStartIcon(setupViews$lambda$10$lambda$7, C3473R.C3475drawable.fork_drawer_social_telegram);
         TextView setupViews$lambda$10$lambda$8 = forkContentWalletChooseRecipientOptionsBinding.textTwitter;
-        setupViews$lambda$10$lambda$8.setText(getResourceManager().getString(C3558R.string.drawer_social_network_twitter));
+        setupViews$lambda$10$lambda$8.setText(getResourceManager().getString(C3473R.string.drawer_social_network_twitter));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$8, "setupViews$lambda$10$lambda$8");
-        setSizedStartIcon(setupViews$lambda$10$lambda$8, C3558R.C3560drawable.fork_drawer_social_twitter);
+        setSizedStartIcon(setupViews$lambda$10$lambda$8, C3473R.C3475drawable.fork_drawer_social_twitter);
         TextView setupViews$lambda$10$lambda$9 = forkContentWalletChooseRecipientOptionsBinding.textQr;
-        setupViews$lambda$10$lambda$9.setText(getResourceManager().getString(C3558R.string.wallet_backup_secret_words_qr_title));
+        setupViews$lambda$10$lambda$9.setText(getResourceManager().getString(C3473R.string.wallet_backup_secret_words_qr_title));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$9, "setupViews$lambda$10$lambda$9");
-        setSizedStartIcon(setupViews$lambda$10$lambda$9, C3558R.C3560drawable.msg_qrcode);
+        setSizedStartIcon(setupViews$lambda$10$lambda$9, C3473R.C3475drawable.msg_qrcode);
     }
 
     private final void setSizedStartIcon(TextView textView, int i) {
@@ -301,7 +301,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
 
     /* compiled from: ChooseRecipientOptionsView.kt */
     /* renamed from: com.iMe.ui.custom.ChooseRecipientOptionsView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: CryptoBoxParticipationResultResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxParticipationResultResponse {
     private final long expectedDurationSec;
     private final boolean queued;

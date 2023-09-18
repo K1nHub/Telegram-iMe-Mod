@@ -2,14 +2,14 @@ package org.telegram.tgnet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_editMessage extends TLObject {
     public static int constructor = 1224152952;
     public ArrayList<TLRPC$MessageEntity> entities = new ArrayList<>();
     public int flags;
 
     /* renamed from: id */
-    public int f1625id;
+    public int f1616id;
     public TLRPC$InputMedia media;
     public String message;
     public boolean no_webpage;
@@ -29,7 +29,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
         this.flags = i;
         abstractSerializedData.writeInt32(i);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1625id);
+        abstractSerializedData.writeInt32(this.f1616id);
         if ((this.flags & 2048) != 0) {
             abstractSerializedData.writeString(this.message);
         }

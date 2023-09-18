@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 /* renamed from: org.bouncycastle.asn1.x9.X9ObjectIdentifiers */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface X9ObjectIdentifiers {
     public static final ASN1ObjectIdentifier ansi_X9_42;
     public static final ASN1ObjectIdentifier ansi_X9_62;

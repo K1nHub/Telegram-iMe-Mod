@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BlockingAnalyticsEventLogger implements AnalyticsEventReceiver, AnalyticsEventLogger {
     private final CrashlyticsOriginAnalyticsEventLogger baseAnalyticsEventLogger;
     private CountDownLatch eventLatch;

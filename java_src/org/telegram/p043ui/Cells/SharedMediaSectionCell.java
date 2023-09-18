@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Cells.SharedMediaSectionCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SharedMediaSectionCell extends FrameLayout {
     private TextView textView;
 

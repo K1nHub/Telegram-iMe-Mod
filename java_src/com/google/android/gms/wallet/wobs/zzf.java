@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.util.ArrayUtils;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzf implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {

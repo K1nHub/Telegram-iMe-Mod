@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import android.net.Uri;
 import androidx.collection.ArrayMap;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbj {
     private static final ArrayMap<String, Uri> zza = new ArrayMap<>();
 

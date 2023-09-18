@@ -28,7 +28,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: FirebaseModule.kt */
 /* renamed from: com.iMe.storage.data.di.module.FirebaseModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModuleKt {
     private static Module firebaseModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1
         @Override // kotlin.jvm.functions.Function1
@@ -44,7 +44,7 @@ public final class FirebaseModuleKt {
             List emptyList3;
             List emptyList4;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C16971 c16971 = new Function2<Scope, ParametersHolder, FirebaseDynamicLinks>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.1
+            C16931 c16931 = new Function2<Scope, ParametersHolder, FirebaseDynamicLinks>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseDynamicLinks invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -56,13 +56,13 @@ public final class FirebaseModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c16971, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c16931, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C16982 c16982 = new Function2<Scope, ParametersHolder, FirebaseRemoteConfig>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.2
+            C16942 c16942 = new Function2<Scope, ParametersHolder, FirebaseRemoteConfig>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseRemoteConfig invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -72,13 +72,13 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c16982, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c16942, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C16993 c16993 = new Function2<Scope, ParametersHolder, FirebaseAnalytics>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.3
+            C16953 c16953 = new Function2<Scope, ParametersHolder, FirebaseAnalytics>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseAnalytics invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -88,13 +88,13 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c16993, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c16953, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C17004 c17004 = new Function2<Scope, ParametersHolder, FirebaseApp>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.4
+            C16964 c16964 = new Function2<Scope, ParametersHolder, FirebaseApp>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseApp invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -104,7 +104,7 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c17004, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c16964, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -124,7 +124,7 @@ public final class FirebaseModuleKt {
         FirebaseRemoteConfigSettings.Builder builder = new FirebaseRemoteConfigSettings.Builder();
         RemoteConfigConstants remoteConfigConstants = RemoteConfigConstants.INSTANCE;
         FirebaseRemoteConfigSettings build = builder.setMinimumFetchIntervalInSeconds(remoteConfigConstants.getMinFetchInterval()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n              …\n                .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n            .s…l())\n            .build()");
         firebaseRemoteConfig.setDefaultsAsync(remoteConfigConstants.getDefaultValues());
         firebaseRemoteConfig.setConfigSettingsAsync(build);
         return firebaseRemoteConfig;

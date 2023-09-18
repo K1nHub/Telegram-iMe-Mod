@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTransaction.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BinanceTransaction {
     private final double amount;
     private final String asset;
@@ -87,7 +87,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Unsupported extends BinanceTransaction {
         private final String createdAt;
         private final BinanceTransactionDirection direction;
@@ -224,7 +224,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Pay extends BinanceTransaction {
         private final double amount;
         private final String asset;
@@ -423,7 +423,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Convert extends BinanceTransaction {
         private final double amount;
         private final String asset;

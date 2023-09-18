@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.List;
 import okio.BufferedSource;
 import okio.ByteString;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface FrameReader extends Closeable {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Handler {
         void ackSettings();
 

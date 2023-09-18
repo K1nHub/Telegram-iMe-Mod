@@ -1,6 +1,6 @@
 package androidx.constraintlayout.widget;
 
-import com.iMe.android.web.R;
+import com.iMe.android.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int ConstraintLayout_Layout_android_elevation = 22;

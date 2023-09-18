@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.CoroutineContext;
 /* compiled from: ThreadContextElement.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CopyableThreadContextElement<S> extends ThreadContextElement<S> {
     CopyableThreadContextElement<S> copyForChild();
 

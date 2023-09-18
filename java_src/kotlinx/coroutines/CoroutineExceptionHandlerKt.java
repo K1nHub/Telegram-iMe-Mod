@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.ExceptionsKt__ExceptionsKt;
 import kotlin.coroutines.CoroutineContext;
 /* compiled from: CoroutineExceptionHandler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CoroutineExceptionHandlerKt {
     public static final void handleCoroutineException(CoroutineContext coroutineContext, Throwable th) {
         try {

@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInfoResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxInfoResponse {
     private final int capacity;
     private final CryptoBoxChatResponse chat;

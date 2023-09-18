@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: CancelApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CancelApi {
     @POST("prepareCancelTx")
     Observable<ApiBaseResponse<CancelTransactionDataResponse>> getDataForCancelCryptoTransaction(@Body PrepareSpeedUpOrCancelTransactionRequest prepareSpeedUpOrCancelTransactionRequest);

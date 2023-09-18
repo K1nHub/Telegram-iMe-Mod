@@ -3,7 +3,7 @@ package com.google.common.collect;
 import java.util.Iterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class UnmodifiableIterator<E> implements Iterator<E>, p033j$.util.Iterator {
     @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

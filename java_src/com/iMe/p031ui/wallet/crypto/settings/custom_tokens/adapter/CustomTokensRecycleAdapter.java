@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CustomTokensRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.adapter.CustomTokensRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CustomTokensRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final GlobalStateProvider globalStateProvider;
 

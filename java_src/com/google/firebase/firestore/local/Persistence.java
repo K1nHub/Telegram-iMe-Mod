@@ -2,7 +2,7 @@ package com.google.firebase.firestore.local;
 
 import com.google.firebase.firestore.auth.User;
 import com.google.firebase.firestore.util.Supplier;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Persistence {
     public static boolean INDEXING_SUPPORT_ENABLED = false;
     static final String TAG = "Persistence";

@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 /* renamed from: org.telegram.ui.Components.Paint.Render */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Render {
     public static RectF RenderPath(Path path, RenderState renderState, boolean z) {
         renderState.baseWeight = path.getBaseWeight();
@@ -44,8 +44,8 @@ public class Render {
         double distanceTo = point.getDistanceTo(point2);
         Point substract = point2.substract(point);
         Point point3 = new Point(1.0d, 1.0d, 0.0d);
-        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1790y, substract.f1789x);
-        float f = (float) ((((renderState.baseWeight * point2.f1791z) * renderState.scale) * 1.0d) / renderState.viewportScale);
+        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1781y, substract.f1780x);
+        float f = (float) ((((renderState.baseWeight * point2.f1782z) * renderState.scale) * 1.0d) / renderState.viewportScale);
         double max = Math.max(1.0f, renderState.spacing * f);
         if (distanceTo > 0.0d) {
             point3 = substract.multiplyByScalar(1.0d / distanceTo);

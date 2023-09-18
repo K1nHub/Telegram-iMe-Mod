@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "RecordConsentByConsentResultResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zag extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zag> CREATOR = new zah();
     @SafeParcelable.Field(getter = "getGrantedScopes", m797id = 1)

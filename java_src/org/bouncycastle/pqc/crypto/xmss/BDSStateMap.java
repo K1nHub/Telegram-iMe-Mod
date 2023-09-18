@@ -6,7 +6,7 @@ import java.util.TreeMap;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
 import org.bouncycastle.util.Integers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BDSStateMap implements Serializable {
     private final Map<Integer, BDS> bdsState = new TreeMap();
     private transient long maxIndex;

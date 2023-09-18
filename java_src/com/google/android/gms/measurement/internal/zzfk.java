@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzfk implements com.google.android.gms.internal.measurement.zzr {
     final /* synthetic */ zzfm zza;
 

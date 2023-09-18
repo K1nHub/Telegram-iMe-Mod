@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: AnyAddress.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class AnyAddressPhantomReference extends PhantomReference<AnyAddress> {
     private long nativeHandle;
     private static Set<AnyAddressPhantomReference> references = new HashSet();

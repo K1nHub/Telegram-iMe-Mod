@@ -8,7 +8,7 @@ import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firestore.p021v1.Value;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Bound {
     private final boolean inclusive;
     private final List<Value> position;

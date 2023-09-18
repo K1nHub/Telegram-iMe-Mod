@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.regex.Pattern;
 import org.json.JSONException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ConfigGetParameterHandler {
     static final Pattern FALSE_REGEX;
     static final Pattern TRUE_REGEX;

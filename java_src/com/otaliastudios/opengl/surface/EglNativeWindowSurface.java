@@ -3,7 +3,7 @@ package com.otaliastudios.opengl.surface;
 import com.otaliastudios.opengl.core.EglCore;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EglWindowSurface.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class EglNativeWindowSurface extends EglSurface {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EglNativeWindowSurface(EglCore eglCore, com.otaliastudios.opengl.internal.EglSurface eglSurface) {

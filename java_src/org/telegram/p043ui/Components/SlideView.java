@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 /* renamed from: org.telegram.ui.Components.SlideView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SlideView extends LinearLayout {
     public String getHeaderName() {
         return "";

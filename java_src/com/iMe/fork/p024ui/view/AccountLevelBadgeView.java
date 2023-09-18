@@ -14,12 +14,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: AccountLevelBadgeView.kt */
 /* renamed from: com.iMe.fork.ui.view.AccountLevelBadgeView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AccountLevelBadgeView extends LinearLayout {
     private final Lazy iconView$delegate;
     private final Lazy nameTextView$delegate;
@@ -91,7 +91,7 @@ public final class AccountLevelBadgeView extends LinearLayout {
 
     public final void setAccountLevel(AccountLevel accountLevel) {
         Intrinsics.checkNotNullParameter(accountLevel, "accountLevel");
-        getIconView().setImageResource(C3558R.C3560drawable.fork_account_level_badge);
+        getIconView().setImageResource(C3473R.C3475drawable.fork_account_level_badge);
         getNameTextView().setText(accountLevel.name());
         setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m73dp(19.0f), ContextCompat.getColor(getContext(), accountLevel.getColorResId())));
     }
@@ -122,7 +122,7 @@ public final class AccountLevelBadgeView extends LinearLayout {
 
     /* compiled from: AccountLevelBadgeView.kt */
     /* renamed from: com.iMe.fork.ui.view.AccountLevelBadgeView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

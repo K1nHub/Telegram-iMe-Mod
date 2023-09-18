@@ -1,7 +1,7 @@
 package com.googlecode.mp4parser.util;
 
 import android.util.Log;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AndroidLogger extends Logger {
     String name;
 

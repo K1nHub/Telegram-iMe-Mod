@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.base;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ApiBaseResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ApiBaseResponse<T> {
     private final String code;
     private final String message;

@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: KClassExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KClassExtKt {
     private static final Map<KClass<?>, String> classNames = KoinPlatformTools.INSTANCE.safeHashMap();
 

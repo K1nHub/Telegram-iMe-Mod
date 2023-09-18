@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DisplayingBots.kt */
 /* renamed from: com.iMe.ui.shop.view.model.DisplayingBots */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DisplayingBots {
     private final List<ShopItem> items;
 

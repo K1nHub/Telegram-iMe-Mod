@@ -18,7 +18,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: ChatAttachAlertButtonCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertButtonCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChatAttachAlertButtonCell extends LinearLayout {
     private final CheckBoxSquare checkBox;
     private final RLottieImageView lottieImageView;

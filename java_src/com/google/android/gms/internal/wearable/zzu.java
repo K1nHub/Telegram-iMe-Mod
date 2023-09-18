@@ -2,7 +2,7 @@ package com.google.android.gms.internal.wearable;
 
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzu extends zzbv implements zzdd {
     private static final zzu zzb;
     private int zze;

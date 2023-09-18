@@ -2,7 +2,7 @@ package com.google.common.base;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Strings {
     public static String nullToEmpty(String str) {
         return Platform.nullToEmpty(str);

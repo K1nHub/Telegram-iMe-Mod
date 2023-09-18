@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Waves {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface CancelLeaseMessageOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -30,7 +30,7 @@ public final class Waves {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface LeaseMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -47,7 +47,7 @@ public final class Waves {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         CancelLeaseMessage getCancelLeaseMessage();
 
@@ -74,7 +74,7 @@ public final class Waves {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -89,7 +89,7 @@ public final class Waves {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransferMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -122,7 +122,7 @@ public final class Waves {
     private Waves() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransferMessage extends GeneratedMessageLite<TransferMessage, Builder> implements TransferMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         public static final int ASSET_FIELD_NUMBER = 2;
@@ -325,9 +325,9 @@ public final class Waves {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferMessage, Builder> implements TransferMessageOrBuilder {
-            /* synthetic */ Builder(C74551 c74551) {
+            /* synthetic */ Builder(C73701 c73701) {
                 this();
             }
 
@@ -473,7 +473,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74551.f1989xa1df5c61[method.ordinal()]) {
+            switch (C73701.f1980xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferMessage();
                 case 2:
@@ -519,47 +519,47 @@ public final class Waves {
     }
 
     /* renamed from: wallet.core.jni.proto.Waves$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74551 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73701 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1989xa1df5c61;
+        static final /* synthetic */ int[] f1980xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1989xa1df5c61 = iArr;
+            f1980xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1989xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1980xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class LeaseMessage extends GeneratedMessageLite<LeaseMessage, Builder> implements LeaseMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         private static final LeaseMessage DEFAULT_INSTANCE;
@@ -686,9 +686,9 @@ public final class Waves {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<LeaseMessage, Builder> implements LeaseMessageOrBuilder {
-            /* synthetic */ Builder(C74551 c74551) {
+            /* synthetic */ Builder(C73701 c73701) {
                 this();
             }
 
@@ -761,7 +761,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74551.f1989xa1df5c61[method.ordinal()]) {
+            switch (C73701.f1980xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new LeaseMessage();
                 case 2:
@@ -806,7 +806,7 @@ public final class Waves {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class CancelLeaseMessage extends GeneratedMessageLite<CancelLeaseMessage, Builder> implements CancelLeaseMessageOrBuilder {
         private static final CancelLeaseMessage DEFAULT_INSTANCE;
         public static final int FEE_FIELD_NUMBER = 2;
@@ -916,9 +916,9 @@ public final class Waves {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CancelLeaseMessage, Builder> implements CancelLeaseMessageOrBuilder {
-            /* synthetic */ Builder(C74551 c74551) {
+            /* synthetic */ Builder(C73701 c73701) {
                 this();
             }
 
@@ -974,7 +974,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74551.f1989xa1df5c61[method.ordinal()]) {
+            switch (C73701.f1980xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CancelLeaseMessage();
                 case 2:
@@ -1019,7 +1019,7 @@ public final class Waves {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int CANCEL_LEASE_MESSAGE_FIELD_NUMBER = 5;
         private static final SigningInput DEFAULT_INSTANCE;
@@ -1036,7 +1036,7 @@ public final class Waves {
         private SigningInput() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum MessageOneofCase {
             TRANSFER_MESSAGE(3),
             LEASE_MESSAGE(4),
@@ -1290,9 +1290,9 @@ public final class Waves {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74551 c74551) {
+            /* synthetic */ Builder(C73701 c73701) {
                 this();
             }
 
@@ -1450,7 +1450,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74551.f1989xa1df5c61[method.ordinal()]) {
+            switch (C73701.f1980xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1495,7 +1495,7 @@ public final class Waves {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int JSON_FIELD_NUMBER = 2;
@@ -1606,9 +1606,9 @@ public final class Waves {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74551 c74551) {
+            /* synthetic */ Builder(C73701 c73701) {
                 this();
             }
 
@@ -1664,7 +1664,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74551.f1989xa1df5c61[method.ordinal()]) {
+            switch (C73701.f1980xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

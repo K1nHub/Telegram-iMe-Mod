@@ -13,7 +13,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: AuthManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AuthManagerImpl implements AuthManager {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final TelegramGateway telegramGateway;
@@ -98,7 +98,7 @@ public final class AuthManagerImpl implements AuthManager {
     }
 
     /* compiled from: AuthManagerImpl.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

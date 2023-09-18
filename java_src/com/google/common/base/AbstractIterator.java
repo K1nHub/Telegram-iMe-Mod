@@ -4,13 +4,13 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class AbstractIterator<T> implements Iterator<T>, p033j$.util.Iterator {
     private T next;
     private State state = State.NOT_READY;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum State {
         READY,
         NOT_READY,
@@ -33,7 +33,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p033j$.util.Iterator 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.base.AbstractIterator$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C08911 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$base$AbstractIterator$State;
 

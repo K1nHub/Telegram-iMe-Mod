@@ -1,6 +1,6 @@
 package com.google.android.play.core.assetpacks;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AssetPackLocation {
     static {
         new zzbm(1, null, null);

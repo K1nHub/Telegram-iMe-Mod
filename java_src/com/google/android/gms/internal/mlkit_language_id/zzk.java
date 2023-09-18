@@ -7,7 +7,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzk<E> extends zzl<E> implements List<E>, RandomAccess {
     private static final zzr<Object> zza = new zzn(zzp.zza, 0);
 

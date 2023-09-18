@@ -23,7 +23,7 @@ import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.observables.ConnectableObservable;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RxJavaPlugins {
     static volatile Consumer<? super Throwable> errorHandler;
     static volatile boolean failNonBlockingScheduler;

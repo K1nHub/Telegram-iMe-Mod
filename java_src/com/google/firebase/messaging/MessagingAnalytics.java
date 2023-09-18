@@ -23,7 +23,7 @@ import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.messaging.reporting.MessagingClientEventExtension;
 import java.util.concurrent.ExecutionException;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MessagingAnalytics {
     static boolean deliveryMetricsExportToBigQueryEnabled() {
         ApplicationInfo applicationInfo;

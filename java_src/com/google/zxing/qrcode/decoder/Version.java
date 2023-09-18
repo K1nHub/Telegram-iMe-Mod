@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.zxing.FormatException;
 import com.google.zxing.common.BitMatrix;
 import org.telegram.messenger.ImageReceiver;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Version {
     private final int[] alignmentPatternCenters;
     private final ECBlocks[] ecBlocks;
@@ -118,7 +118,7 @@ public final class Version {
         return bitMatrix;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ECBlocks {
         private final ECB[] ecBlocks;
         private final int ecCodewordsPerBlock;
@@ -149,7 +149,7 @@ public final class Version {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ECB {
         private final int count;
         private final int dataCodewords;

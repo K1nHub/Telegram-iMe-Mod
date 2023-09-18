@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0479C;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_userFull extends TLRPC$UserFull {
     public static int constructor = 1340198022;
 
@@ -20,7 +20,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.translations_disabled = (8388608 & readInt32) != 0;
         this.stories_pinned_available = (67108864 & readInt32) != 0;
         this.blocked_my_stories_from = (readInt32 & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1695id = abstractSerializedData.readInt64(z);
+        this.f1686id = abstractSerializedData.readInt64(z);
         if ((this.flags & 2) != 0) {
             this.about = abstractSerializedData.readString(z);
         }
@@ -109,7 +109,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         int i10 = this.blocked_my_stories_from ? i9 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i9 & (-134217729);
         this.flags = i10;
         abstractSerializedData.writeInt32(i10);
-        abstractSerializedData.writeInt64(this.f1695id);
+        abstractSerializedData.writeInt64(this.f1686id);
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeString(this.about);
         }

@@ -2,7 +2,7 @@ package org.bouncycastle.jcajce.provider.symmetric.util;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ClassUtil {
     public static Class loadClass(Class cls, final String str) {
         try {

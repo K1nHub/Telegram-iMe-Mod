@@ -12,11 +12,11 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Maps {
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum EntryFunction implements Function<Map.Entry<?, ?>, Object> {
         KEY { // from class: com.google.common.collect.Maps.EntryFunction.1
             @Override // com.google.common.collect.Maps.EntryFunction, com.google.common.base.Function
@@ -91,7 +91,7 @@ public final class Maps {
         return new ImmutableEntry(k, v);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class ViewCachingAbstractMap<K, V> extends AbstractMap<K, V> {
         private transient Set<Map.Entry<K, V>> entrySet;
         private transient Collection<V> values;
@@ -201,7 +201,7 @@ public final class Maps {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class KeySet<K, V> extends Sets.ImprovedAbstractSet<K> {
         final Map<K, V> map;
 
@@ -232,7 +232,7 @@ public final class Maps {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Values<K, V> extends AbstractCollection<V> {
         final Map<K, V> map;
 
@@ -315,7 +315,7 @@ public final class Maps {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class EntrySet<K, V> extends Sets.ImprovedAbstractSet<Map.Entry<K, V>> {
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public abstract boolean contains(Object obj);

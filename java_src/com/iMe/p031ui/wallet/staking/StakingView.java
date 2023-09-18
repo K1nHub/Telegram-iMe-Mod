@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.staking.StakingView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingView extends BaseView, SwipeRefreshView {
     void onSetupNavigationRouter();
 

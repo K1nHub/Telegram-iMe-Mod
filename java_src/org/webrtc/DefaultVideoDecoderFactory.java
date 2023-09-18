@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 import org.webrtc.VideoDecoderFactory;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DefaultVideoDecoderFactory implements VideoDecoderFactory {
     private final VideoDecoderFactory hardwareVideoDecoderFactory;
     private final VideoDecoderFactory platformSoftwareVideoDecoderFactory;

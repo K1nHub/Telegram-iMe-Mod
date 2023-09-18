@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.wallet;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ManageAccessToMyDataRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ManageAccessToMyDataRequest {
     private final List<GivePermissionRequest> permissions;
     private final String targetUserId;
@@ -67,7 +67,7 @@ public final class ManageAccessToMyDataRequest {
     }
 
     /* compiled from: ManageAccessToMyDataRequest.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class GivePermissionRequest {
         private final String access;
         private final String action;

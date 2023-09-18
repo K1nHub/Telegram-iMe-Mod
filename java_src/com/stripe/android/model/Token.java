@@ -3,7 +3,7 @@ package com.stripe.android.model;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Date;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Token {
     public static final String TYPE_CARD = "card";
     private final Card mCard;
@@ -14,7 +14,7 @@ public class Token {
     private final boolean mUsed;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public @interface TokenType {
     }
 

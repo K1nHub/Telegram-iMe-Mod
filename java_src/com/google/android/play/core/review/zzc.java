@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzc extends ResultReceiver {
     final /* synthetic */ com.google.android.play.core.tasks.zzi zza;
 

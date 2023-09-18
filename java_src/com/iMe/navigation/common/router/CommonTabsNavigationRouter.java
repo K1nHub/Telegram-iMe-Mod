@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CommonTabsNavigationRouter.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavigationRouter<T> {
     private final boolean preloadAllTabs;
 

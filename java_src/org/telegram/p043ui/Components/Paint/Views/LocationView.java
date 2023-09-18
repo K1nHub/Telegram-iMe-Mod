@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$TL_messageMediaGeo;
 import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
 /* renamed from: org.telegram.ui.Components.Paint.Views.LocationView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LocationView extends EntityView {
     private int currentColor;
     private int currentType;
@@ -181,7 +181,7 @@ public class LocationView extends EntityView {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.LocationView$TextViewSelectionView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class TextViewSelectionView extends EntityView.SelectionView {
         private final Paint clearPaint;
         private Path path;

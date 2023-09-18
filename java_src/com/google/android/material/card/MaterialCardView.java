@@ -13,7 +13,7 @@ import androidx.cardview.widget.CardView;
 import com.google.android.material.R$attr;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialCardView extends CardView implements Checkable, Shapeable {
     private static final int[] CHECKABLE_STATE_SET = {16842911};
     private static final int[] CHECKED_STATE_SET = {16842912};
@@ -23,7 +23,7 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
     private boolean isParentCardViewDoneInitializing;
     private OnCheckedChangeListener onCheckedChangeListener;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnCheckedChangeListener {
         void onCheckedChanged(MaterialCardView materialCardView, boolean z);
     }

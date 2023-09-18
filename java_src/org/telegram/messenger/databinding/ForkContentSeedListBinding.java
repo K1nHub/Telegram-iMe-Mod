@@ -7,8 +7,8 @@ import android.widget.LinearLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkContentSeedListBinding implements ViewBinding {
     public final LinearLayout linearRoot;
     public final LinearLayout linearSeedFirstPart;
@@ -32,7 +32,7 @@ public final class ForkContentSeedListBinding implements ViewBinding {
     }
 
     public static ForkContentSeedListBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_seed_list, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_seed_list, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -40,13 +40,13 @@ public final class ForkContentSeedListBinding implements ViewBinding {
     }
 
     public static ForkContentSeedListBinding bind(View view) {
-        int i = C3558R.C3561id.linear_root;
+        int i = C3473R.C3476id.linear_root;
         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
         if (linearLayout != null) {
-            i = C3558R.C3561id.linear_seed_first_part;
+            i = C3473R.C3476id.linear_seed_first_part;
             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout2 != null) {
-                i = C3558R.C3561id.linear_seed_second_part;
+                i = C3473R.C3476id.linear_seed_second_part;
                 LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout3 != null) {
                     return new ForkContentSeedListBinding((NestedScrollView) view, linearLayout, linearLayout2, linearLayout3);

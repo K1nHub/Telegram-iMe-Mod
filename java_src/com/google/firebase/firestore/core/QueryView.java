@@ -1,5 +1,5 @@
 package com.google.firebase.firestore.core;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class QueryView {
     private final Query query;
     private final int targetId;

@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.CloseProgressDrawable2 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CloseProgressDrawable2 extends Drawable {
     private float angle;
     private boolean animating;

@@ -75,7 +75,7 @@ import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$TL_userStories;
 /* renamed from: org.telegram.ui.Stories.StoryViewer */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryViewer implements NotificationCenter.NotificationCenterDelegate {
     public static boolean animationInProgress;
     private static boolean isInSilentMode;
@@ -193,23 +193,23 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     LongSparseArray<CharSequence> replyDrafts = new LongSparseArray<>();
 
     /* renamed from: org.telegram.ui.Stories.StoryViewer$HolderClip */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface HolderClip {
         void clip(Canvas canvas, RectF rectF, float f, boolean z);
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryViewer$HolderDrawAbove */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface HolderDrawAbove {
         void draw(Canvas canvas, RectF rectF, float f, boolean z);
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryViewer$PlaceProvider */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PlaceProvider {
 
         /* renamed from: org.telegram.ui.Stories.StoryViewer$PlaceProvider$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$loadNext(PlaceProvider placeProvider, boolean z) {
             }
@@ -477,7 +477,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     return false;
                 }
             });
-            this.windowView = new C69992(context, lastFragment);
+            this.windowView = new C69142(context, lastFragment);
         }
         if (this.containerView == null) {
             this.containerView = new HwFrameLayout(context) { // from class: org.telegram.ui.Stories.StoryViewer.3
@@ -575,7 +575,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 }
             };
             this.storiesViewPager = hwStoriesViewPager;
-            hwStoriesViewPager.setDelegate(new C70055(storiesList, arrayList));
+            hwStoriesViewPager.setDelegate(new C69205(storiesList, arrayList));
             this.containerView.addView(this.storiesViewPager, LayoutHelper.createFrame(-1, -1, 1));
             this.aspectRatioFrameLayout = new AspectRatioFrameLayout(context);
             if (this.USE_SURFACE_VIEW) {
@@ -671,8 +671,8 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$2 */
-    /* loaded from: classes6.dex */
-    public class C69992 extends SizeNotifierFrameLayout {
+    /* loaded from: classes7.dex */
+    public class C69142 extends SizeNotifierFrameLayout {
         SparseArray<Float> lastX;
         final RectF outFromRectAvatar;
         final RectF outFromRectContainer;
@@ -685,7 +685,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         final /* synthetic */ BaseFragment val$fragment;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C69992(Context context, BaseFragment baseFragment) {
+        C69142(Context context, BaseFragment baseFragment) {
             super(context);
             this.val$fragment = baseFragment;
             this.path = new Path();
@@ -718,7 +718,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 Method dump skipped, instructions count: 1964
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoryViewer.C69992.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoryViewer.C69142.dispatchDraw(android.graphics.Canvas):void");
         }
 
         @Override // android.view.ViewGroup, android.view.ViewParent
@@ -749,7 +749,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         StoryViewer.this.swipeToDissmissBackAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                StoryViewer.C69992.this.lambda$dispatchTouchEvent$0(valueAnimator);
+                                StoryViewer.C69142.this.lambda$dispatchTouchEvent$0(valueAnimator);
                             }
                         });
                         StoryViewer.this.swipeToDissmissBackAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryViewer.2.1
@@ -877,7 +877,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     StoryViewer.this.delayedTapRunnable = new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C69992.this.lambda$onInterceptTouchEvent$1();
+                            StoryViewer.C69142.this.lambda$onInterceptTouchEvent$1();
                         }
                     };
                     AndroidUtilities.runOnUIThread(StoryViewer.this.delayedTapRunnable, 150L);
@@ -962,7 +962,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         StoryViewer.this.swipeToDissmissBackAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda1
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                StoryViewer.C69992.this.lambda$onTouchEvent$2(valueAnimator);
+                                StoryViewer.C69142.this.lambda$onTouchEvent$2(valueAnimator);
                             }
                         });
                         StoryViewer.this.swipeToDissmissBackAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryViewer.2.2
@@ -1056,7 +1056,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         return 0;
                     }
                     AndroidUtilities.getViewPositionInParent(currentPeerView.storyContainer, StoryViewer.this.windowView, this.position);
-                    return (int) (C69992.this.getMeasuredHeight() - (this.position[1] + currentPeerView.storyContainer.getMeasuredHeight()));
+                    return (int) (C69142.this.getMeasuredHeight() - (this.position[1] + currentPeerView.storyContainer.getMeasuredHeight()));
                 }
             });
             NotificationCenter.getInstance(StoryViewer.this.currentAccount).addObserver(StoryViewer.this, NotificationCenter.storiesListUpdated);
@@ -1086,12 +1086,12 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$5 */
-    /* loaded from: classes6.dex */
-    public class C70055 implements PeerStoriesView.Delegate {
+    /* loaded from: classes7.dex */
+    public class C69205 implements PeerStoriesView.Delegate {
         final /* synthetic */ ArrayList val$peerIds;
         final /* synthetic */ StoriesController.StoriesList val$storiesList;
 
-        C70055(StoriesController.StoriesList storiesList, ArrayList arrayList) {
+        C69205(StoriesController.StoriesList storiesList, ArrayList arrayList) {
             this.val$storiesList = storiesList;
             this.val$peerIds = arrayList;
         }
@@ -1133,7 +1133,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     storiesViewPager.onNextIdle(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$5$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C70055.this.lambda$switchToNextAndRemoveCurrentPeer$0(storiesList, arrayList);
+                            StoryViewer.C69205.this.lambda$switchToNextAndRemoveCurrentPeer$0(storiesList, arrayList);
                         }
                     });
                     return;
@@ -1152,7 +1152,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     StoryViewer.this.storiesViewPager.onNextIdle(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$5$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C70055.this.lambda$switchToNextAndRemoveCurrentPeer$1(arrayList2, indexOf2);
+                            StoryViewer.C69205.this.lambda$switchToNextAndRemoveCurrentPeer$1(arrayList2, indexOf2);
                         }
                     });
                     return;
@@ -1739,7 +1739,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             }
             PeerStoriesView currentPeerView = this.storiesViewPager.getCurrentPeerView();
             int selectedPosition = currentPeerView == null ? 0 : currentPeerView.getSelectedPosition();
-            int i = (currentPeerView == null || selectedPosition < 0 || selectedPosition >= currentPeerView.storyItems.size()) ? 0 : currentPeerView.storyItems.get(selectedPosition).f1566id;
+            int i = (currentPeerView == null || selectedPosition < 0 || selectedPosition >= currentPeerView.storyItems.size()) ? 0 : currentPeerView.storyItems.get(selectedPosition).f1557id;
             TLRPC$StoryItem tLRPC$StoryItem = (currentPeerView == null || selectedPosition < 0 || selectedPosition >= currentPeerView.storyItems.size()) ? null : currentPeerView.storyItems.get(selectedPosition);
             if (tLRPC$StoryItem == null && this.isSingleStory) {
                 tLRPC$StoryItem = this.singleStory;
@@ -2136,7 +2136,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             return;
         }
         this.containerView.enableHwAcceleration();
-        this.openCloseAnimator.addListener(new C699811());
+        this.openCloseAnimator.addListener(new C691311());
         this.openCloseAnimator.setDuration(400L);
         this.openCloseAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.openCloseAnimator.start();
@@ -2144,9 +2144,9 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$11 */
-    /* loaded from: classes6.dex */
-    public class C699811 extends AnimatorListenerAdapter {
-        C699811() {
+    /* loaded from: classes7.dex */
+    public class C691311 extends AnimatorListenerAdapter {
+        C691311() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -2180,7 +2180,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$11$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryViewer.C699811.this.lambda$onAnimationEnd$0();
+                        StoryViewer.C691311.this.lambda$onAnimationEnd$0();
                     }
                 });
             } catch (Exception unused) {
@@ -2477,7 +2477,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     ArrayList<TLRPC$StoryItem> arrayList = new ArrayList<>();
                     int i4 = 0;
                     while (i3 < this.storiesList.messageObjects.size()) {
-                        if (selectedStory != null && selectedStory.f1566id == this.storiesList.messageObjects.get(i3).storyItem.f1566id) {
+                        if (selectedStory != null && selectedStory.f1557id == this.storiesList.messageObjects.get(i3).storyItem.f1557id) {
                             i4 = i3;
                         }
                         arrayList.add(this.storiesList.messageObjects.get(i3).storyItem);
@@ -2518,7 +2518,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         if (j == 0 || tLRPC$StoryItem == null) {
             return;
         }
-        Log.m820d("kek", "saveDraft" + j + "_" + tLRPC$StoryItem.f1566id + " " + ((Object) charSequence));
+        Log.m820d("kek", "saveDraft" + j + "_" + tLRPC$StoryItem.f1557id + " " + ((Object) charSequence));
         this.replyDrafts.put(draftHash(j, tLRPC$StoryItem), charSequence);
     }
 
@@ -2526,7 +2526,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         if (j == 0 || tLRPC$StoryItem == null) {
             return "";
         }
-        Log.m820d("kek", "getDraft " + j + "_" + tLRPC$StoryItem.f1566id + " " + ((Object) this.replyDrafts.get(draftHash(j, tLRPC$StoryItem), "")));
+        Log.m820d("kek", "getDraft " + j + "_" + tLRPC$StoryItem.f1557id + " " + ((Object) this.replyDrafts.get(draftHash(j, tLRPC$StoryItem), "")));
         return this.replyDrafts.get(draftHash(j, tLRPC$StoryItem), "");
     }
 
@@ -2538,11 +2538,11 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     private long draftHash(long j, TLRPC$StoryItem tLRPC$StoryItem) {
-        return j + (j >> 16) + (tLRPC$StoryItem.f1566id << 16);
+        return j + (j >> 16) + (tLRPC$StoryItem.f1557id << 16);
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryViewer$TransitionViewHolder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TransitionViewHolder {
         public float alpha = 1.0f;
         public ImageReceiver avatarImage;
@@ -2578,7 +2578,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryViewer$VideoPlayerHolder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class VideoPlayerHolder extends VideoPlayerHolderBase {
         boolean logBuffering;
 
@@ -2636,7 +2636,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             if (currentPeerView == null || currentPeerView.currentStory.storyItem == null) {
                 return;
             }
-            FileLog.m70d("StoryViewer displayed story buffering dialogId=" + currentPeerView.getCurrentPeer() + " storyId=" + currentPeerView.currentStory.storyItem.f1566id);
+            FileLog.m70d("StoryViewer displayed story buffering dialogId=" + currentPeerView.getCurrentPeer() + " storyId=" + currentPeerView.currentStory.storyItem.f1557id);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2645,7 +2645,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             if (currentPeerView == null || currentPeerView.currentStory.storyItem == null) {
                 return;
             }
-            FileLog.m70d("StoryViewer displayed story playing dialogId=" + currentPeerView.getCurrentPeer() + " storyId=" + currentPeerView.currentStory.storyItem.f1566id);
+            FileLog.m70d("StoryViewer displayed story playing dialogId=" + currentPeerView.getCurrentPeer() + " storyId=" + currentPeerView.currentStory.storyItem.f1557id);
         }
     }
 }

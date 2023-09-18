@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 /* renamed from: org.telegram.ui.Components.Paint.RenderState */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RenderState {
     private int allocatedCount;
     public float alpha;

@@ -2,7 +2,7 @@ package com.google.firebase.firestore.auth;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.util.Listener;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CredentialsProvider {
     public abstract Task<String> getToken();
 

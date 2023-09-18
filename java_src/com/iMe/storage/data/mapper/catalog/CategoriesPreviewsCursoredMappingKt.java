@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoriesPreviewsCursoredMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoriesPreviewsCursoredMappingKt {
     public static final CategoriesPreviewsCursored mapToDomain(CategoriesPreviewsCursoredResponse categoriesPreviewsCursoredResponse) {
         int collectionSizeOrDefault;

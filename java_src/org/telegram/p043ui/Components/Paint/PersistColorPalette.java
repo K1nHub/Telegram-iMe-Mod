@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
 /* renamed from: org.telegram.ui.Components.Paint.PersistColorPalette */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PersistColorPalette {
     private static final List<Integer> DEFAULT_COLORS = Arrays.asList(-16777216, -1, -14837249, -16532268, -12994005, -417009, -365034, -1559228, -5091841, -2645892, -5475508, -7319252, -11325921, -8289919);
     private static final Integer DEFAULT_MARKER_COLOR = -16087809;

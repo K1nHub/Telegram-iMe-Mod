@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageLocation;
@@ -79,7 +79,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_hideChatJoinRequest;
 import org.telegram.tgnet.TLRPC$TL_updates;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Delegates.MemberRequestsDelegate */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener {
     private final long chatId;
     private final MemberRequestsController controller;
@@ -192,19 +192,19 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             this.emptyView = stickerEmptyView;
             TextView textView = stickerEmptyView.title;
             if (this.isChannel) {
-                i = C3558R.string.NoSubscribeRequests;
+                i = C3473R.string.NoSubscribeRequests;
                 str = "NoSubscribeRequests";
             } else {
-                i = C3558R.string.NoMemberRequests;
+                i = C3473R.string.NoMemberRequests;
                 str = "NoMemberRequests";
             }
             textView.setText(LocaleController.getString(str, i));
             LinkSpanDrawable.LinksTextView linksTextView = this.emptyView.subtitle;
             if (this.isChannel) {
-                i2 = C3558R.string.NoSubscribeRequestsDescription;
+                i2 = C3473R.string.NoSubscribeRequestsDescription;
                 str2 = "NoSubscribeRequestsDescription";
             } else {
-                i2 = C3558R.string.NoMemberRequestsDescription;
+                i2 = C3473R.string.NoMemberRequestsDescription;
                 str2 = "NoMemberRequestsDescription";
             }
             linksTextView.setText(LocaleController.getString(str2, i2));
@@ -221,8 +221,8 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             if (this.isShowLastItemDivider) {
                 stickerEmptyView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.fragment.getResourceProvider()));
             }
-            this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3558R.string.NoResult));
-            this.searchEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3558R.string.SearchEmptyViewFilteredSubtitle2));
+            this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3473R.string.NoResult));
+            this.searchEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3473R.string.SearchEmptyViewFilteredSubtitle2));
             this.searchEmptyView.setAnimateLayoutChange(true);
             this.searchEmptyView.setVisibility(8);
         }
@@ -284,7 +284,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             this.fragment.dismissCurrentDialog();
             Bundle bundle = new Bundle();
             ProfileActivity profileActivity = new ProfileActivity(bundle);
-            bundle.putLong("user_id", tLRPC$User.f1694id);
+            bundle.putLong("user_id", tLRPC$User.f1685id);
             bundle.putBoolean("removeFragmentOnChatOpen", false);
             this.fragment.presentFragment(profileActivity);
         } else if (this.previewDialog == null) {
@@ -449,7 +449,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
     private void onImportersLoaded(TLRPC$TL_messages_chatInviteImporters tLRPC$TL_messages_chatInviteImporters, String str, boolean z, boolean z2) {
         for (int i = 0; i < tLRPC$TL_messages_chatInviteImporters.users.size(); i++) {
             TLRPC$User tLRPC$User = tLRPC$TL_messages_chatInviteImporters.users.get(i);
-            this.users.put(tLRPC$User.f1694id, tLRPC$User);
+            this.users.put(tLRPC$User.f1685id, tLRPC$User);
         }
         if (z) {
             this.adapter.setItems(tLRPC$TL_messages_chatInviteImporters.importers);
@@ -571,7 +571,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         if (tLRPC$TL_error == null) {
             TLRPC$TL_updates tLRPC$TL_updates = (TLRPC$TL_updates) tLObject;
             if (!tLRPC$TL_updates.chats.isEmpty()) {
-                MessagesController.getInstance(this.currentAccount).loadFullChat(tLRPC$TL_updates.chats.get(0).f1531id, 0, true);
+                MessagesController.getInstance(this.currentAccount).loadFullChat(tLRPC$TL_updates.chats.get(0).f1522id, 0, true);
             }
             int i = 0;
             while (true) {
@@ -595,9 +595,9 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
                 multiLineLayout.imageView.setForUserOrChat(tLRPC$User, new AvatarDrawable(tLRPC$User));
                 String firstName = UserObject.getFirstName(tLRPC$User);
                 if (this.isChannel) {
-                    formatString = LocaleController.formatString("HasBeenAddedToChannel", C3558R.string.HasBeenAddedToChannel, firstName);
+                    formatString = LocaleController.formatString("HasBeenAddedToChannel", C3473R.string.HasBeenAddedToChannel, firstName);
                 } else {
-                    formatString = LocaleController.formatString("HasBeenAddedToGroup", C3558R.string.HasBeenAddedToGroup, firstName);
+                    formatString = LocaleController.formatString("HasBeenAddedToGroup", C3473R.string.HasBeenAddedToGroup, firstName);
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                 int indexOf = formatString.indexOf(firstName);
@@ -647,7 +647,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Delegates.MemberRequestsDelegate$Adapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class Adapter extends RecyclerListView.SelectionAdapter {
         private Adapter() {
         }
@@ -657,7 +657,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             MemberRequestCell memberRequestCell;
             if (i == 1) {
                 View view = new View(viewGroup.getContext());
-                view.setBackground(Theme.getThemedDrawableByKey(viewGroup.getContext(), C3558R.C3560drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                view.setBackground(Theme.getThemedDrawableByKey(viewGroup.getContext(), C3473R.C3475drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 memberRequestCell = view;
             } else if (i == 2) {
                 memberRequestCell = new View(this, viewGroup.getContext()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.1
@@ -791,7 +791,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class PreviewDialog extends Dialog {
         private float animationProgress;
         private ValueAnimator animator;
@@ -809,10 +809,10 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         private final ProfileGalleryView viewPager;
 
         public PreviewDialog(Context context, RecyclerListView recyclerListView, Theme.ResourcesProvider resourcesProvider, boolean z) {
-            super(context, C3558R.style.TransparentDialog2);
+            super(context, C3473R.style.TransparentDialog2);
             int i;
             String str;
-            Drawable mutate = getContext().getResources().getDrawable(C3558R.C3560drawable.popup_fixed_alert2).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3473R.C3475drawable.popup_fixed_alert2).mutate();
             this.pagerShadowDrawable = mutate;
             TextView textView = new TextView(getContext());
             this.nameText = textView;
@@ -964,13 +964,13 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             int i4 = Theme.key_dialogButtonSelector;
             actionBarMenuSubItem.setSelectorColor(Theme.getColor(i4, resourcesProvider));
             if (z) {
-                i = C3558R.string.AddToChannel;
+                i = C3473R.string.AddToChannel;
                 str = "AddToChannel";
             } else {
-                i = C3558R.string.AddToGroup;
+                i = C3473R.string.AddToGroup;
                 str = "AddToGroup";
             }
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i), C3558R.C3560drawable.msg_requests);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i), C3473R.C3475drawable.msg_requests);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -981,7 +981,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(context, false, false);
             actionBarMenuSubItem2.setColors(Theme.getColor(i2, resourcesProvider), Theme.getColor(i3, resourcesProvider));
             actionBarMenuSubItem2.setSelectorColor(Theme.getColor(i4, resourcesProvider));
-            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3558R.string.SendMessage), C3558R.C3560drawable.msg_msgbubble3);
+            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3473R.string.SendMessage), C3473R.C3475drawable.msg_msgbubble3);
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -992,7 +992,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
             ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(context, false, true);
             actionBarMenuSubItem3.setColors(Theme.getColor(Theme.key_text_RedBold, resourcesProvider), Theme.getColor(Theme.key_text_RedRegular, resourcesProvider));
             actionBarMenuSubItem3.setSelectorColor(Theme.getColor(i4, resourcesProvider));
-            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DismissRequest", C3558R.string.DismissRequest), C3558R.C3560drawable.msg_remove);
+            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DismissRequest", C3473R.string.DismissRequest), C3473R.C3475drawable.msg_remove);
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1035,7 +1035,7 @@ public class MemberRequestsDelegate implements MemberRequestCell.OnClickListener
         @Override // android.app.Dialog
         protected void onCreate(Bundle bundle) {
             super.onCreate(bundle);
-            getWindow().setWindowAnimations(C3558R.style.DialogNoAnimation);
+            getWindow().setWindowAnimations(C3473R.style.DialogNoAnimation);
             setContentView(this.contentView, new ViewGroup.LayoutParams(-1, -1));
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.width = -1;

@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.data.DataHolder;
 import com.google.android.gms.wearable.DataItemBuffer;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzcj extends zzu {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzcj(zzct zzctVar, GoogleApiClient googleApiClient) {

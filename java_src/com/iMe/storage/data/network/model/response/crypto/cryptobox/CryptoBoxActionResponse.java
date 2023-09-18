@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxActionType;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxActionResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxActionResponse {
     private final String boxId;
     private final BigDecimal feeAmount;

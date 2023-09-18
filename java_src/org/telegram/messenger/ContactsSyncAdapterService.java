@@ -10,12 +10,12 @@ import android.content.Intent;
 import android.content.SyncResult;
 import android.os.Bundle;
 import android.os.IBinder;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ContactsSyncAdapterService extends Service {
     private static SyncAdapterImpl sSyncAdapter;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class SyncAdapterImpl extends AbstractThreadedSyncAdapter {
         public SyncAdapterImpl(Context context) {
             super(context, true);

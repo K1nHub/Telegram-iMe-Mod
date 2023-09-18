@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_webPageAttributeStory extends TLRPC$WebPageAttribute {
 
     /* renamed from: id */
-    public int f1692id;
+    public int f1683id;
     public TLRPC$StoryItem storyItem;
     public long user_id;
 
@@ -11,7 +11,7 @@ public class TLRPC$TL_webPageAttributeStory extends TLRPC$WebPageAttribute {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.flags = abstractSerializedData.readInt32(z);
         this.user_id = abstractSerializedData.readInt64(z);
-        this.f1692id = abstractSerializedData.readInt32(z);
+        this.f1683id = abstractSerializedData.readInt32(z);
         if ((this.flags & 1) != 0) {
             this.storyItem = TLRPC$StoryItem.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -27,7 +27,7 @@ public class TLRPC$TL_webPageAttributeStory extends TLRPC$WebPageAttribute {
         abstractSerializedData.writeInt32(-1818605967);
         abstractSerializedData.writeInt32(this.flags);
         abstractSerializedData.writeInt64(this.user_id);
-        abstractSerializedData.writeInt32(this.f1692id);
+        abstractSerializedData.writeInt32(this.f1683id);
         if ((this.flags & 1) != 0) {
             this.storyItem.serializeToStream(abstractSerializedData);
         }

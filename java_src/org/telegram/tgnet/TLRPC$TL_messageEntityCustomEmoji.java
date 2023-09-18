@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messageEntityCustomEmoji extends TLRPC$MessageEntity {
     public static int constructor = -925956616;
     public TLRPC$Document document;

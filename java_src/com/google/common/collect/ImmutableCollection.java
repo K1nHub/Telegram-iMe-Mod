@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Collection;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ImmutableCollection<E> extends AbstractCollection<E> implements Serializable {
     private static final Object[] EMPTY_ARRAY = new Object[0];
 
@@ -104,7 +104,7 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
         return i;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder<E> {
         public abstract Builder<E> add(E e);
 
@@ -135,7 +135,7 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ArrayBasedBuilder<E> extends Builder<E> {
         Object[] contents;
         boolean forceCopy;

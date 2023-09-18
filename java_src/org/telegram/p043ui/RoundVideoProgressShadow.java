@@ -8,7 +8,7 @@ import android.graphics.Shader;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.RoundVideoProgressShadow */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RoundVideoProgressShadow {
     int lastSizesHash;
     RadialGradient radialGradient = new RadialGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, 100.0f, new int[]{0, 0, ColorUtils.setAlphaComponent(-16777216, 40)}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.7f, 1.0f}, Shader.TileMode.CLAMP);

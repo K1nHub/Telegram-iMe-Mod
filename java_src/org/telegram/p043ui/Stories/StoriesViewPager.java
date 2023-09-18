@@ -20,7 +20,7 @@ import org.telegram.p043ui.Stories.StoriesController;
 import org.telegram.p043ui.Stories.StoriesViewPager;
 import org.telegram.p043ui.Stories.StoryViewer;
 /* renamed from: org.telegram.ui.Stories.StoriesViewPager */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoriesViewPager extends ViewPager {
     int currentAccount;
     public int currentState;
@@ -248,7 +248,7 @@ public class StoriesViewPager extends ViewPager {
                 L90:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesViewPager.C69873.onPageScrolled(int, float, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesViewPager.C69023.onPageScrolled(int, float, int):void");
             }
 
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
@@ -544,7 +544,7 @@ public class StoriesViewPager extends ViewPager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Stories.StoriesViewPager$PageLayout */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class PageLayout extends FrameLayout {
         ArrayList<Integer> day;
         long dialogId;

@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.crypto.qtesla.QTESLASecurityCategory;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCqTESLAPrivateKey implements PrivateKey {
     private transient ASN1Set attributes;
     private transient QTESLAPrivateKeyParameters keyParams;

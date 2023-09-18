@@ -13,7 +13,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "CapCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Cap extends AbstractSafeParcelable {
     @SafeParcelable.Field(getter = "getType", m797id = 2)
     private final int zzb;

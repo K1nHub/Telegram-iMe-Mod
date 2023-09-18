@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.wearable.MessageApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzfh extends zzu {
     final /* synthetic */ MessageApi.MessageListener zza;
 

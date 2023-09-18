@@ -16,7 +16,7 @@ import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.Landmark;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzb extends zzt<zzh> {
     private final zzf zza;
 

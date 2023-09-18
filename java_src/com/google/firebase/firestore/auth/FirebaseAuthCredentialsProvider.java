@@ -12,7 +12,7 @@ import com.google.firebase.firestore.util.Listener;
 import com.google.firebase.firestore.util.Logger;
 import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseAuthCredentialsProvider extends CredentialsProvider {
     private Listener<User> changeListener;
     private boolean forceRefresh;

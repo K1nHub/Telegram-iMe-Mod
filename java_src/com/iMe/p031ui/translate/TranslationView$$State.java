@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.translate.TranslationView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TranslationView$$State extends MvpViewState<TranslationView> implements TranslationView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -164,7 +164,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ConfigureScreenWithCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ConfigureScreenWithCommand extends ViewCommand<TranslationView> {
         public final String sourceLanguage;
         public final String targetLanguage;
@@ -183,7 +183,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowTranslationCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTranslationCommand extends ViewCommand<TranslationView> {
         public final String sourceLanguage;
         public final String targetLanguage;
@@ -204,7 +204,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowLanguagesCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLanguagesCommand extends ViewCommand<TranslationView> {
         public final List<TranslationLanguageUiModel> languages;
         public final String selectedLanguageCode;
@@ -223,7 +223,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$OnLoadingStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadingStateCommand extends ViewCommand<TranslationView> {
         public final String loadingText;
         public final boolean onLanguageChanged;
@@ -242,7 +242,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$OpenReplyDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenReplyDialogCommand extends ViewCommand<TranslationView> {
         public final DialogTranslationSettings settings;
 
@@ -259,7 +259,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowSubtitleLanguageCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSubtitleLanguageCommand extends ViewCommand<TranslationView> {
         public final String sourceLanguage;
         public final String targetLanguage;
@@ -278,7 +278,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<TranslationView> {
         public final String text;
 
@@ -295,7 +295,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TranslationView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -316,7 +316,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TranslationView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -335,7 +335,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$FinishScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class FinishScreenCommand extends ViewCommand<TranslationView> {
         FinishScreenCommand(TranslationView$$State translationView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);
@@ -349,7 +349,7 @@ public class TranslationView$$State extends MvpViewState<TranslationView> implem
 
     /* compiled from: TranslationView$$State.java */
     /* renamed from: com.iMe.ui.translate.TranslationView$$State$ShowAppUpdateDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowAppUpdateDialogCommand extends ViewCommand<TranslationView> {
         ShowAppUpdateDialogCommand(TranslationView$$State translationView$$State) {
             super("showAppUpdateDialog", OneExecutionStateStrategy.class);

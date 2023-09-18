@@ -1,8 +1,8 @@
 package com.google.firebase.encoders.proto;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface Protobuf {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum IntEncoding {
         DEFAULT,
         SIGNED,

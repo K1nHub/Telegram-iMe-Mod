@@ -7,7 +7,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.Cursor */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Cursor extends GeneratedMessageLite<Cursor, Builder> implements MessageLiteOrBuilder {
     public static final int BEFORE_FIELD_NUMBER = 2;
     private static final Cursor DEFAULT_INSTANCE;
@@ -51,7 +51,7 @@ public final class Cursor extends GeneratedMessageLite<Cursor, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Cursor$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Cursor, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10551 c10551) {
             this();
@@ -75,7 +75,7 @@ public final class Cursor extends GeneratedMessageLite<Cursor, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Cursor$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10551 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

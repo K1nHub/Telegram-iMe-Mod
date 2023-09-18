@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Channel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface SendChannel<E> {
     boolean close(Throwable th);
 
@@ -15,10 +15,10 @@ public interface SendChannel<E> {
     Object send(E e, Continuation<? super Unit> continuation);
 
     /* renamed from: trySend-JP2dKIU */
-    Object mo1673trySendJP2dKIU(E e);
+    Object mo1671trySendJP2dKIU(E e);
 
     /* compiled from: Channel.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DefaultImpls {
         public static /* synthetic */ boolean close$default(SendChannel sendChannel, Throwable th, int i, Object obj) {
             if (obj == null) {

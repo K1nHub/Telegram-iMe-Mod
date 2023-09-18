@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -57,7 +57,7 @@ import org.telegram.tgnet.TLRPC$TL_storyViews;
 import org.telegram.tgnet.TLRPC$TL_userStories;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Stories.StoriesUtilities */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoriesUtilities {
     public static GradientTools closeFriendsGradientTools;
     public static GradientTools errorGradientTools;
@@ -428,7 +428,7 @@ public class StoriesUtilities {
                     } else if (unreadState2 == 1) {
                         paint7 = paint2;
                     }
-                } else if (stories.stories.get(i3).justUploaded || stories.stories.get(i3).f1566id > max) {
+                } else if (stories.stories.get(i3).justUploaded || stories.stories.get(i3).f1557id > max) {
                     paint5 = stories.stories.get(i3).close_friends ? paint3 : paint2;
                     float f6 = (i3 * f3) - 90.0f;
                     f = f6 + f5;
@@ -760,9 +760,9 @@ public class StoriesUtilities {
     public static CharSequence getUploadingStr(TextView textView, boolean z, boolean z2) {
         String string;
         if (z2) {
-            string = LocaleController.getString("StoryEditing", C3558R.string.StoryEditing);
+            string = LocaleController.getString("StoryEditing", C3473R.string.StoryEditing);
         } else {
-            string = LocaleController.getString("UploadingStory", C3558R.string.UploadingStory);
+            string = LocaleController.getString("UploadingStory", C3473R.string.UploadingStory);
         }
         if (string.indexOf("…") > 0) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -777,9 +777,9 @@ public class StoriesUtilities {
     public static void applyUploadingStr(SimpleTextView simpleTextView, boolean z, boolean z2) {
         String string;
         if (z2) {
-            string = LocaleController.getString("StoryEditing", C3558R.string.StoryEditing);
+            string = LocaleController.getString("StoryEditing", C3473R.string.StoryEditing);
         } else {
-            string = LocaleController.getString("UploadingStory", C3558R.string.UploadingStory);
+            string = LocaleController.getString("UploadingStory", C3473R.string.UploadingStory);
         }
         if (string.indexOf("…") > 0) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -793,13 +793,13 @@ public class StoriesUtilities {
     }
 
     public static CharSequence createExpiredStoryString() {
-        return createExpiredStoryString(false, "ExpiredStory", C3558R.string.ExpiredStory, new Object[0]);
+        return createExpiredStoryString(false, "ExpiredStory", C3473R.string.ExpiredStory, new Object[0]);
     }
 
     public static CharSequence createExpiredStoryString(boolean z, String str, int i, Object... objArr) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.formatString(str, i, objArr));
-        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3558R.C3560drawable.msg_mini_bomb);
+        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3473R.C3475drawable.msg_mini_bomb);
         if (z) {
             coloredImageSpan.setScale(0.8f);
         } else {
@@ -811,8 +811,8 @@ public class StoriesUtilities {
 
     public static CharSequence createReplyStoryString() {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.getString("Story", C3558R.string.Story));
-        spannableStringBuilder.setSpan(new ColoredImageSpan(C3558R.C3560drawable.msg_mini_replystory2), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.getString("Story", C3473R.string.Story));
+        spannableStringBuilder.setSpan(new ColoredImageSpan(C3473R.C3475drawable.msg_mini_replystory2), 0, 1, 0);
         return spannableStringBuilder;
     }
 
@@ -830,7 +830,7 @@ public class StoriesUtilities {
         TLRPC$StoryViews tLRPC$StoryViews = tLRPC$StoryItem.views;
         if (tLRPC$StoryViews.views_count == 0) {
             tLRPC$StoryViews.views_count = 1;
-            tLRPC$StoryViews.recent_viewers.add(Long.valueOf(tLRPC$User.f1694id));
+            tLRPC$StoryViews.recent_viewers.add(Long.valueOf(tLRPC$User.f1685id));
         }
     }
 
@@ -865,7 +865,7 @@ public class StoriesUtilities {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesUtilities$EnsureStoryFileLoadedObject */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class EnsureStoryFileLoadedObject {
         private boolean cancelled;
         long dialogId;
@@ -902,7 +902,7 @@ public class StoriesUtilities {
             if (i2 >= tLRPC$TL_userStories.stories.size()) {
                 tLRPC$StoryItem = null;
                 break;
-            } else if (tLRPC$TL_userStories.stories.get(i2).f1566id > i) {
+            } else if (tLRPC$TL_userStories.stories.get(i2).f1557id > i) {
                 tLRPC$StoryItem = tLRPC$TL_userStories.stories.get(i2);
                 break;
             } else {
@@ -1015,7 +1015,7 @@ public class StoriesUtilities {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesUtilities$AvatarStoryParams */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class AvatarStoryParams {
         public boolean allowLongress;
         public float alpha;
@@ -1238,7 +1238,7 @@ public class StoriesUtilities {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesUtilities$UserStoriesLoadOperation */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class UserStoriesLoadOperation {
         private int currentAccount;
         int reqId;

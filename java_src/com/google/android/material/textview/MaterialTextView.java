@@ -10,7 +10,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialTextView extends AppCompatTextView {
     public MaterialTextView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 16842884);

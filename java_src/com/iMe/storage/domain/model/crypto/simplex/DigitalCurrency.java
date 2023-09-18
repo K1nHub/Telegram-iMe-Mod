@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DigitalCurrency.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum DigitalCurrency implements Currency {
     ETH(R$string.currency_short_eth),
     USDT(R$string.currency_short_usdt),
@@ -34,7 +34,7 @@ public enum DigitalCurrency implements Currency {
     }
 
     /* compiled from: DigitalCurrency.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

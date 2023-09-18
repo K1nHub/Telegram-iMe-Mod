@@ -15,7 +15,7 @@ import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.OpDescriptor;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: Mutex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MutexImpl implements Mutex {
     static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(MutexImpl.class, Object.class, "_state");
     volatile /* synthetic */ Object _state;
@@ -151,7 +151,7 @@ public final class MutexImpl implements Mutex {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Mutex.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class LockedQueue extends LockFreeLinkedListHead {
         public volatile Object owner;
 
@@ -167,7 +167,7 @@ public final class MutexImpl implements Mutex {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Mutex.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public abstract class LockWaiter extends LockFreeLinkedListNode implements DisposableHandle {
         private static final /* synthetic */ AtomicIntegerFieldUpdater isTaken$FU = AtomicIntegerFieldUpdater.newUpdater(LockWaiter.class, "isTaken");
         private volatile /* synthetic */ int isTaken = 0;
@@ -187,13 +187,13 @@ public final class MutexImpl implements Mutex {
 
         @Override // kotlinx.coroutines.DisposableHandle
         public final void dispose() {
-            mo1689remove();
+            mo1687remove();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Mutex.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class LockCont extends LockWaiter {
         private final CancellableContinuation<Unit> cont;
 
@@ -243,7 +243,7 @@ public final class MutexImpl implements Mutex {
     }
 
     /* compiled from: Mutex.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class UnlockOp extends AtomicOp<MutexImpl> {
         public final LockedQueue queue;
 

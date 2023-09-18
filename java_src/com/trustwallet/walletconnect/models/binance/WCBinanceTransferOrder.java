@@ -3,11 +3,11 @@ package com.trustwallet.walletconnect.models.binance;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceTransferOrder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCBinanceTransferOrder extends WCBinanceOrder<Message> {
 
     /* compiled from: WCBinanceTransferOrder.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum MessageKey {
         INPUTS("inputs"),
         OUTPUTS("outputs");
@@ -24,7 +24,7 @@ public final class WCBinanceTransferOrder extends WCBinanceOrder<Message> {
     }
 
     /* compiled from: WCBinanceTransferOrder.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Message {
         private final List<Object> inputs;
         private final List<Object> outputs;

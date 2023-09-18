@@ -28,7 +28,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SessionReportingCoordinator {
     private final CrashlyticsReportDataCapture dataCapture;
     private final LogFileManager logFileManager;

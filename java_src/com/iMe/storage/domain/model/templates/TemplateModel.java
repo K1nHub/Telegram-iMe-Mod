@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.templates;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TemplateModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TemplateModel {
     private final long creationDate;
     private final long groupId;

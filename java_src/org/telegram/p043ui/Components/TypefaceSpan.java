@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TypefaceSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TypefaceSpan extends MetricAffectingSpan {
     private int color;
     private int colorKey;

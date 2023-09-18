@@ -14,7 +14,7 @@ import moxy.InjectViewState;
 /* compiled from: SecretWordsCountPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SecretWordsCountPresenter extends BasePresenter<SecretWordsCountView> {
     private final Lazy wordsCountItems$delegate;
 
@@ -53,7 +53,7 @@ public final class SecretWordsCountPresenter extends BasePresenter<SecretWordsCo
 
     /* compiled from: SecretWordsCountPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

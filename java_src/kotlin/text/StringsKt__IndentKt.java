@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Indent.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt__IndentKt extends StringsKt__AppendableKt {
     public static /* synthetic */ String trimMargin$default(String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {

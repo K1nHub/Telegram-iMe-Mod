@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.model;
 
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MutableDocument implements Document, Cloneable {
     private DocumentState documentState;
     private DocumentType documentType;
@@ -10,7 +10,7 @@ public final class MutableDocument implements Document, Cloneable {
     private SnapshotVersion version;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum DocumentState {
         HAS_LOCAL_MUTATIONS,
         HAS_COMMITTED_MUTATIONS,
@@ -18,7 +18,7 @@ public final class MutableDocument implements Document, Cloneable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum DocumentType {
         INVALID,
         FOUND_DOCUMENT,

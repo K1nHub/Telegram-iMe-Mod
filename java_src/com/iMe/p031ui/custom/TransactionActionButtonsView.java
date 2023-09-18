@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -15,17 +16,25 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+import org.koin.core.Koin;
+import org.koin.core.component.KoinComponent;
+import org.koin.core.component.KoinScopeComponent;
+import org.koin.core.parameter.ParametersHolder;
+import org.koin.core.qualifier.Qualifier;
+import org.koin.core.scope.Scope;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TransactionActionButtonsView.kt */
 /* renamed from: com.iMe.ui.custom.TransactionActionButtonsView */
-/* loaded from: classes3.dex */
-public final class TransactionActionButtonsView extends FrameLayout {
+/* loaded from: classes4.dex */
+public final class TransactionActionButtonsView extends FrameLayout implements KoinComponent {
     private ForkContentStakingTransactionActionsBinding binding;
     private final Lazy cornerRadius$delegate;
+    private final Lazy resourceManager$delegate;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public TransactionActionButtonsView(Context context) {
@@ -55,30 +64,66 @@ public final class TransactionActionButtonsView extends FrameLayout {
         this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
+    @Override // org.koin.core.component.KoinComponent
+    public Koin getKoin() {
+        return KoinComponent.DefaultImpls.getKoin(this);
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TransactionActionButtonsView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Lazy lazy;
+        Lazy lazy2;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$cornerRadius$2
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<ResourceManager>() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$special$$inlined$inject$default$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final ResourceManager invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), qualifier, function0);
+            }
+        });
+        this.resourceManager$delegate = lazy;
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<Integer>() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$cornerRadius$2
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
                 return Integer.valueOf(AndroidUtilities.m73dp(4.0f));
             }
         });
-        this.cornerRadius$delegate = lazy;
+        this.cornerRadius$delegate = lazy2;
         ForkContentStakingTransactionActionsBinding inflate = ForkContentStakingTransactionActionsBinding.inflate(LayoutInflater.from(context));
-        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(\n        LayoutI…later.from(context)\n    )");
         this.binding = inflate;
         setupView();
+    }
+
+    private final ResourceManager getResourceManager() {
+        return (ResourceManager) this.resourceManager$delegate.getValue();
     }
 
     private final int getCornerRadius() {
         return ((Number) this.cornerRadius$delegate.getValue()).intValue();
     }
 
-    public final void setupViewData(String actionText, boolean z, boolean z2, final Callbacks$Callback onActionClickAction, final Callbacks$Callback onConditionsClickAction, final Callbacks$Callback onApproveInfoClickAction) {
+    public final void performActionButtonClick() {
+        this.binding.buttonAction.performClick();
+    }
+
+    public final void setupViewData(String actionText, boolean z, boolean z2, boolean z3, final Callbacks$Callback onActionClickAction, final Callbacks$Callback onConditionsClickAction, final Callbacks$Callback onApproveInfoClickAction) {
         Intrinsics.checkNotNullParameter(actionText, "actionText");
         Intrinsics.checkNotNullParameter(onActionClickAction, "onActionClickAction");
         Intrinsics.checkNotNullParameter(onConditionsClickAction, "onConditionsClickAction");
@@ -105,9 +150,10 @@ public final class TransactionActionButtonsView extends FrameLayout {
                 Callbacks$Callback.this.invoke();
             }
         }, 1, null);
+        ViewExtKt.setEnabledWithAlpha(setupViewData$lambda$6$lambda$3, z);
         AppCompatTextView setupViewData$lambda$6$lambda$4 = forkContentStakingTransactionActionsBinding.buttonApproveInfo;
         Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$6$lambda$4, "setupViewData$lambda$6$lambda$4");
-        setupViewData$lambda$6$lambda$4.setVisibility(z2 ? 0 : 8);
+        setupViewData$lambda$6$lambda$4.setVisibility(z3 ? 0 : 8);
         ViewExtKt.safeThrottledClick$default(setupViewData$lambda$6$lambda$4, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$setupViewData$4$2$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -128,7 +174,7 @@ public final class TransactionActionButtonsView extends FrameLayout {
         }, 1, null);
         AppCompatTextView setupViewData$lambda$6$lambda$5 = forkContentStakingTransactionActionsBinding.buttonConditions;
         Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$6$lambda$5, "setupViewData$lambda$6$lambda$5");
-        setupViewData$lambda$6$lambda$5.setVisibility(z && !z2 ? 0 : 8);
+        setupViewData$lambda$6$lambda$5.setVisibility(z2 && !z3 ? 0 : 8);
         ViewExtKt.safeThrottledClick$default(setupViewData$lambda$6$lambda$5, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$setupViewData$4$3$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -167,9 +213,8 @@ public final class TransactionActionButtonsView extends FrameLayout {
     private final void setupView() {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
-        forkContentStakingTransactionActionsBinding.buttonAction.setForcedCustomHeight(36);
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3558R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3558R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(getResourceManager().getString(C3473R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(getResourceManager().getString(C3473R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

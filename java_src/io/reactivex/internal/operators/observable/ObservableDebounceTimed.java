@@ -10,7 +10,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;
     final long timeout;
@@ -29,7 +29,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DebounceTimedObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super T> downstream;
@@ -124,7 +124,7 @@ public final class ObservableDebounceTimed<T> extends AbstractObservableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
         final long idx;
         final AtomicBoolean once = new AtomicBoolean();

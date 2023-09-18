@@ -7,7 +7,7 @@ import android.hardware.SensorManager;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.WallpaperParallaxEffect */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class WallpaperParallaxEffect implements SensorEventListener {
     private Sensor accelerometer;
     private int bufferOffset;
@@ -16,12 +16,12 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     private SensorManager sensorManager;
 
     /* renamed from: wm */
-    private WindowManager f1884wm;
+    private WindowManager f1875wm;
     private float[] rollBuffer = new float[3];
     private float[] pitchBuffer = new float[3];
 
     /* renamed from: org.telegram.ui.Components.WallpaperParallaxEffect$Callback */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface Callback {
         void onOffsetsChanged(int i, int i2, float f);
     }
@@ -31,7 +31,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     }
 
     public WallpaperParallaxEffect(Context context) {
-        this.f1884wm = (WindowManager) context.getSystemService("window");
+        this.f1875wm = (WindowManager) context.getSystemService("window");
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.sensorManager = sensorManager;
         this.accelerometer = sensorManager.getDefaultSensor(1);

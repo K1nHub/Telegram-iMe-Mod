@@ -3,7 +3,7 @@ package com.iMe.model.twitter;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetsDateItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TweetsDateItem extends NoChildNode {
     private final String date;
 

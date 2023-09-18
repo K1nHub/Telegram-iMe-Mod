@@ -8,12 +8,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PhotoAttachPermissionCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoAttachPermissionCell extends FrameLayout {
     private ImageView imageView;
     private ImageView imageView2;
@@ -49,16 +49,16 @@ public class PhotoAttachPermissionCell extends FrameLayout {
 
     public void setType(int i) {
         if (i == 0) {
-            this.imageView.setImageResource(C3558R.C3560drawable.permissions_camera1);
-            this.imageView2.setImageResource(C3558R.C3560drawable.permissions_camera2);
-            this.textView.setText(LocaleController.getString("CameraPermissionText", C3558R.string.CameraPermissionText));
+            this.imageView.setImageResource(C3473R.C3475drawable.permissions_camera1);
+            this.imageView2.setImageResource(C3473R.C3475drawable.permissions_camera2);
+            this.textView.setText(LocaleController.getString("CameraPermissionText", C3473R.string.CameraPermissionText));
             this.imageView.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 5, 0, 0, 27));
             this.imageView2.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 5, 0, 0, 27));
             return;
         }
-        this.imageView.setImageResource(C3558R.C3560drawable.permissions_gallery1);
-        this.imageView2.setImageResource(C3558R.C3560drawable.permissions_gallery2);
-        this.textView.setText(LocaleController.getString("GalleryPermissionText", C3558R.string.GalleryPermissionText));
+        this.imageView.setImageResource(C3473R.C3475drawable.permissions_gallery1);
+        this.imageView2.setImageResource(C3473R.C3475drawable.permissions_gallery2);
+        this.textView.setText(LocaleController.getString("GalleryPermissionText", C3473R.string.GalleryPermissionText));
         this.imageView.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 0, 0, 2, 27));
         this.imageView2.setLayoutParams(LayoutHelper.createFrame(44, 44, 17, 0, 0, 2, 27));
     }

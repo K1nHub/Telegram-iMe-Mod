@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CollectionExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CollectionExtKt {
     public static final <T> boolean isSingletonList(List<? extends T> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");

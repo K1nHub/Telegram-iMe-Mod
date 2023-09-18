@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Objects;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Encodable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class XMSSMTPrivateKeyParameters extends XMSSMTKeyParameters implements Encodable {
     private volatile BDSStateMap bdsState;
     private volatile long index;
@@ -14,7 +14,7 @@ public final class XMSSMTPrivateKeyParameters extends XMSSMTKeyParameters implem
     private final byte[] secretKeyPRF;
     private final byte[] secretKeySeed;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private final XMSSMTParameters params;
         private long index = 0;

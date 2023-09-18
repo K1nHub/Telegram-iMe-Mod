@@ -9,7 +9,7 @@ import com.google.android.gms.wallet.IsReadyToPayRequest;
 import com.google.android.gms.wallet.PaymentCardRecognitionIntentRequest;
 import com.google.android.gms.wallet.PaymentDataRequest;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzs extends zza {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzs(IBinder iBinder) {

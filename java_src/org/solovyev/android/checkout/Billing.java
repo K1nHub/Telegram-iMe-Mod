@@ -19,7 +19,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import org.solovyev.android.checkout.Cache;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Billing {
     private static Logger sLogger;
     private static final EnumMap<State, List<State>> sPreviousStates;
@@ -38,7 +38,7 @@ public final class Billing {
     private IInAppBillingService mService;
     private State mState;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Configuration {
         Cache getCache();
 
@@ -52,7 +52,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ServiceConnector {
         boolean connect();
 
@@ -60,7 +60,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum State {
         INITIAL,
         CONNECTING,
@@ -244,7 +244,7 @@ public final class Billing {
             sb.append(this.mState);
             sb.append(" state");
             this.mState = state;
-            int i = C34587.$SwitchMap$org$solovyev$android$checkout$Billing$State[state.ordinal()];
+            int i = C33747.$SwitchMap$org$solovyev$android$checkout$Billing$State[state.ordinal()];
             if (i == 1) {
                 this.mPlayStoreBroadcastReceiver.removeListener(this.mPlayStoreListener);
             } else if (i == 2) {
@@ -371,7 +371,7 @@ public final class Billing {
                 @Override // org.solovyev.android.checkout.RequestListenerWrapper, org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Purchase purchase) {
                     Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
-                    super.onSuccess((C34576) purchase);
+                    super.onSuccess((C33736) purchase);
                 }
             };
         }
@@ -408,7 +408,7 @@ public final class Billing {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class DefaultConfiguration implements Configuration {
         @Override // org.solovyev.android.checkout.Billing.Configuration
         public Inventory getFallbackInventory(Checkout checkout, Executor executor) {
@@ -433,7 +433,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class StaticConfiguration implements Configuration {
         private final Configuration mOriginal;
         private final String mPublicKey;
@@ -472,7 +472,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class OnConnectedServiceRunnable implements RequestRunnable {
         private Request mRequest;
 
@@ -552,7 +552,7 @@ public final class Billing {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class RequestsBuilder {
         private Boolean mOnMainThread;
         private Object mTag;
@@ -584,7 +584,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Requests implements BillingRequests {
         private final boolean mOnMainThread;
         private final Object mTag;
@@ -631,7 +631,7 @@ public final class Billing {
             Billing.this.mPendingRequests.cancelAll(this.mTag);
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private final class GetAllPurchasesListener extends BaseAllPurchasesListener {
             GetAllPurchasesListener(Requests requests, GetPurchasesRequest getPurchasesRequest, RequestListener<Purchases> requestListener) {
                 super(getPurchasesRequest, requestListener);
@@ -644,7 +644,7 @@ public final class Billing {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private abstract class BaseAllPurchasesListener implements CancellableRequestListener<Purchases> {
             private final RequestListener<Purchases> mListener;
             private final List<Purchase> mPurchases = new ArrayList();
@@ -684,7 +684,7 @@ public final class Billing {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class CachingRequestListener<R> extends RequestListenerWrapper<R> {
         private final Request<R> mRequest;
 
@@ -701,7 +701,7 @@ public final class Billing {
             if (cacheKey != null) {
                 Billing.this.mCache.putIfNotExist(type.getCacheKey(cacheKey), new Cache.Entry(r, System.currentTimeMillis() + type.expiresIn));
             }
-            int i = C34587.$SwitchMap$org$solovyev$android$checkout$RequestType[type.ordinal()];
+            int i = C33747.$SwitchMap$org$solovyev$android$checkout$RequestType[type.ordinal()];
             if (i == 1 || i == 2 || i == 3) {
                 Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
             }
@@ -710,7 +710,7 @@ public final class Billing {
 
         @Override // org.solovyev.android.checkout.RequestListenerWrapper, org.solovyev.android.checkout.RequestListener
         public void onError(int i, Exception exc) {
-            int i2 = C34587.$SwitchMap$org$solovyev$android$checkout$RequestType[this.mRequest.getType().ordinal()];
+            int i2 = C33747.$SwitchMap$org$solovyev$android$checkout$RequestType[this.mRequest.getType().ordinal()];
             if (i2 == 1 || i2 == 2) {
                 if (i == 7) {
                     Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
@@ -724,8 +724,8 @@ public final class Billing {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.solovyev.android.checkout.Billing$7 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34587 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C33747 {
         static final /* synthetic */ int[] $SwitchMap$org$solovyev$android$checkout$Billing$State;
         static final /* synthetic */ int[] $SwitchMap$org$solovyev$android$checkout$RequestType;
 
@@ -761,7 +761,7 @@ public final class Billing {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class DefaultServiceConnector implements ServiceConnector {
         private final ServiceConnection mConnection;
 

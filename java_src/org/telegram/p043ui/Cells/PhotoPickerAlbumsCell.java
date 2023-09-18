@@ -12,13 +12,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.MediaController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BackupImageView;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PhotoPickerAlbumsCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoPickerAlbumsCell extends FrameLayout {
     private MediaController.AlbumEntry[] albumEntries;
     private AlbumView[] albumViews;
@@ -27,13 +27,13 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
     private PhotoPickerAlbumsCellDelegate delegate;
 
     /* renamed from: org.telegram.ui.Cells.PhotoPickerAlbumsCell$PhotoPickerAlbumsCellDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface PhotoPickerAlbumsCellDelegate {
         void didSelectAlbum(MediaController.AlbumEntry albumEntry);
     }
 
     /* renamed from: org.telegram.ui.Cells.PhotoPickerAlbumsCell$AlbumView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     private class AlbumView extends FrameLayout {
         private TextView countTextView;
         private BackupImageView imageView;
@@ -47,7 +47,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             addView(backupImageView, LayoutHelper.createFrame(-1, -1));
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
-            linearLayout.setBackgroundResource(C3558R.C3560drawable.album_shadow);
+            linearLayout.setBackgroundResource(C3473R.C3475drawable.album_shadow);
             addView(linearLayout, LayoutHelper.createFrame(-1, 60, 83));
             TextView textView = new TextView(context);
             this.nameTextView = textView;

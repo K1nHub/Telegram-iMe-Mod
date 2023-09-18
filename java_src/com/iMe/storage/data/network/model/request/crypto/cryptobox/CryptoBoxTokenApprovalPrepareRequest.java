@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTokenApprovalPrepareRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxTokenApprovalPrepareRequest {
     private final String network;
     private final String tokenAddress;

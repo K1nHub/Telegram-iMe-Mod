@@ -1,5 +1,5 @@
 package org.solovyev.android.checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BillingException extends Exception {
     private final int mResponse;
 

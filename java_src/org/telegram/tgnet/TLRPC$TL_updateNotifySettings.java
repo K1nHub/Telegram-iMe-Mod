@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateNotifySettings extends TLRPC$Update {
     public static int constructor = -1094555409;
     public TLRPC$PeerNotifySettings notify_settings;

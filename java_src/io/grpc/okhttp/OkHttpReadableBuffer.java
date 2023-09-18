@@ -3,7 +3,7 @@ package io.grpc.okhttp;
 import io.grpc.internal.AbstractReadableBuffer;
 import io.grpc.internal.ReadableBuffer;
 import okio.Buffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class OkHttpReadableBuffer extends AbstractReadableBuffer {
     private final Buffer buffer;
 

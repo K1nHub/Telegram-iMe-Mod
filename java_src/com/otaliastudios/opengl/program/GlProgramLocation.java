@@ -7,7 +7,7 @@ import kotlin.UInt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlProgramLocation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GlProgramLocation {
     public static final Companion Companion = new Companion(null);
     private final String name;
@@ -16,14 +16,14 @@ public final class GlProgramLocation {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: GlProgramLocation.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum Type {
         ATTRIB,
         UNIFORM
     }
 
     /* compiled from: GlProgramLocation.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -44,15 +44,15 @@ public final class GlProgramLocation {
         this.name = str;
         int i2 = WhenMappings.$EnumSwitchMapping$0[type.ordinal()];
         if (i2 == 1) {
-            glGetAttribLocation = GLES20.glGetAttribLocation(UInt.m1664constructorimpl(i), str);
+            glGetAttribLocation = GLES20.glGetAttribLocation(UInt.m1662constructorimpl(i), str);
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            glGetAttribLocation = GLES20.glGetUniformLocation(UInt.m1664constructorimpl(i), str);
+            glGetAttribLocation = GLES20.glGetUniformLocation(UInt.m1662constructorimpl(i), str);
         }
         this.value = glGetAttribLocation;
         Egloo.checkGlProgramLocation(glGetAttribLocation, str);
-        this.uvalue = UInt.m1664constructorimpl(glGetAttribLocation);
+        this.uvalue = UInt.m1662constructorimpl(glGetAttribLocation);
     }
 
     public final int getValue() {
@@ -60,12 +60,12 @@ public final class GlProgramLocation {
     }
 
     /* renamed from: getUvalue-pVg5ArA$library_release  reason: not valid java name */
-    public final int m1651getUvaluepVg5ArA$library_release() {
+    public final int m1649getUvaluepVg5ArA$library_release() {
         return this.uvalue;
     }
 
     /* compiled from: GlProgramLocation.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ShowFirstParty;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @ShowFirstParty
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza {
     private long zza = Long.MIN_VALUE;
 

@@ -10,7 +10,7 @@ import okio.InflaterSource;
 import okio.Source;
 /* compiled from: MessageInflater.kt */
 /* renamed from: okhttp3.internal.ws.MessageInflater */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MessageInflater implements Closeable {
     private final Buffer deflatedBytes;
     private final Inflater inflater;

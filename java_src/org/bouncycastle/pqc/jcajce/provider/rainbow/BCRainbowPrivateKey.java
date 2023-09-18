@@ -11,20 +11,20 @@ import org.bouncycastle.pqc.asn1.RainbowPrivateKey;
 import org.bouncycastle.pqc.crypto.rainbow.Layer;
 import org.bouncycastle.pqc.crypto.rainbow.util.RainbowUtil;
 import org.bouncycastle.pqc.jcajce.spec.RainbowPrivateKeySpec;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCRainbowPrivateKey implements PrivateKey {
     private short[][] A1inv;
     private short[][] A2inv;
 
     /* renamed from: b1 */
-    private short[] f1439b1;
+    private short[] f1430b1;
 
     /* renamed from: b2 */
-    private short[] f1440b2;
+    private short[] f1431b2;
     private Layer[] layers;
 
     /* renamed from: vi */
-    private int[] f1441vi;
+    private int[] f1432vi;
 
     public BCRainbowPrivateKey(RainbowPrivateKeySpec rainbowPrivateKeySpec) {
         this(rainbowPrivateKeySpec.getInvA1(), rainbowPrivateKeySpec.getB1(), rainbowPrivateKeySpec.getInvA2(), rainbowPrivateKeySpec.getB2(), rainbowPrivateKeySpec.getVi(), rainbowPrivateKeySpec.getLayers());
@@ -32,10 +32,10 @@ public class BCRainbowPrivateKey implements PrivateKey {
 
     public BCRainbowPrivateKey(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
         this.A1inv = sArr;
-        this.f1439b1 = sArr2;
+        this.f1430b1 = sArr2;
         this.A2inv = sArr3;
-        this.f1440b2 = sArr4;
-        this.f1441vi = iArr;
+        this.f1431b2 = sArr4;
+        this.f1432vi = iArr;
         this.layers = layerArr;
     }
 
@@ -44,7 +44,7 @@ public class BCRainbowPrivateKey implements PrivateKey {
             return false;
         }
         BCRainbowPrivateKey bCRainbowPrivateKey = (BCRainbowPrivateKey) obj;
-        boolean z = ((((RainbowUtil.equals(this.A1inv, bCRainbowPrivateKey.getInvA1())) && RainbowUtil.equals(this.A2inv, bCRainbowPrivateKey.getInvA2())) && RainbowUtil.equals(this.f1439b1, bCRainbowPrivateKey.getB1())) && RainbowUtil.equals(this.f1440b2, bCRainbowPrivateKey.getB2())) && Arrays.equals(this.f1441vi, bCRainbowPrivateKey.getVi());
+        boolean z = ((((RainbowUtil.equals(this.A1inv, bCRainbowPrivateKey.getInvA1())) && RainbowUtil.equals(this.A2inv, bCRainbowPrivateKey.getInvA2())) && RainbowUtil.equals(this.f1430b1, bCRainbowPrivateKey.getB1())) && RainbowUtil.equals(this.f1431b2, bCRainbowPrivateKey.getB2())) && Arrays.equals(this.f1432vi, bCRainbowPrivateKey.getVi());
         if (this.layers.length != bCRainbowPrivateKey.getLayers().length) {
             return false;
         }
@@ -60,17 +60,17 @@ public class BCRainbowPrivateKey implements PrivateKey {
     }
 
     public short[] getB1() {
-        return this.f1439b1;
+        return this.f1430b1;
     }
 
     public short[] getB2() {
-        return this.f1440b2;
+        return this.f1431b2;
     }
 
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.rainbow, DERNull.INSTANCE), new RainbowPrivateKey(this.A1inv, this.f1439b1, this.A2inv, this.f1440b2, this.f1441vi, this.layers)).getEncoded();
+            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.rainbow, DERNull.INSTANCE), new RainbowPrivateKey(this.A1inv, this.f1430b1, this.A2inv, this.f1431b2, this.f1432vi, this.layers)).getEncoded();
         } catch (IOException unused) {
             return null;
         }
@@ -94,11 +94,11 @@ public class BCRainbowPrivateKey implements PrivateKey {
     }
 
     public int[] getVi() {
-        return this.f1441vi;
+        return this.f1432vi;
     }
 
     public int hashCode() {
-        int length = (((((((((this.layers.length * 37) + org.bouncycastle.util.Arrays.hashCode(this.A1inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1439b1)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.A2inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1440b2)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1441vi);
+        int length = (((((((((this.layers.length * 37) + org.bouncycastle.util.Arrays.hashCode(this.A1inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1430b1)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.A2inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1431b2)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1432vi);
         for (int length2 = this.layers.length - 1; length2 >= 0; length2--) {
             length = (length * 37) + this.layers[length2].hashCode();
         }

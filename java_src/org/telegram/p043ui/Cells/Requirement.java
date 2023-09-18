@@ -1,7 +1,7 @@
 package org.telegram.p043ui.Cells;
 /* compiled from: RequestPeerRequirementsCell.java */
 /* renamed from: org.telegram.ui.Cells.Requirement */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 class Requirement {
     public int padding;
     public CharSequence text;

@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: RippleXAddress.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class RippleXAddressPhantomReference extends PhantomReference<RippleXAddress> {
     private long nativeHandle;
     private static Set<RippleXAddressPhantomReference> references = new HashSet();

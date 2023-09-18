@@ -5024,25 +5024,6 @@ Telegram 更新到最新版本。"</string>
     <string name="already_removing">已經開始處理另一項刪除程序，請稍後再試</string>
     <string name="app_restart_error">我們無法開啟應用程式。請您自己試試。</string>
     <string name="app_update_dialog_description">更新應用程式來使用此功能</string>
-    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">散發已停用</string>
-    <string name="appcenter_distribute_download_progress_number_format">%1$d MB (共 %2$d MB)</string>
-    <string name="appcenter_distribute_downloading_mandatory_update">正在下載更新</string>
-    <string name="appcenter_distribute_install">安裝</string>
-    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) 已下載並準備好安裝。</string>
-    <string name="appcenter_distribute_install_ready_title">應用程式更新已下載</string>
-    <string name="appcenter_distribute_notification_category">應用程式更新</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_message">基於安全性的考量，您的裝置已設定為封鎖從未知來源取得的應用程式安裝。</string>
-    <string name="appcenter_distribute_unknown_sources_dialog_settings">設定</string>
-    <string name="appcenter_distribute_update_dialog_download">下載</string>
-    <string name="appcenter_distribute_update_dialog_message_mandatory">此應用程式的開發人員要求您更新為 %1$s %2$s (%3$d)。</string>
-    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) 已可下載及安裝。</string>
-    <string name="appcenter_distribute_update_dialog_postpone">一天後詢問我</string>
-    <string name="appcenter_distribute_update_dialog_title">應用程式更新已可使用</string>
-    <string name="appcenter_distribute_update_dialog_view_release_notes">檢視版本資訊</string>
-    <string name="appcenter_distribute_update_failed_dialog_ignore">忽略</string>
-    <string name="appcenter_distribute_update_failed_dialog_message">此版本要麼是側面載入, 要麼是在專用模式下使用瀏覽器下載的。</string>
-    <string name="appcenter_distribute_update_failed_dialog_reinstall">重新安裝應用程式</string>
-    <string name="appcenter_distribute_update_failed_dialog_title">禁用應用程式更新</string>
     <string name="archive_content_is_hidden">內容已隱藏</string>
     <string name="archive_empty_subtitle">這裡顯示您封存的聊天室內容</string>
     <string name="archive_empty_title">沒有封存的內容</string>
@@ -6207,8 +6188,8 @@ iMe 不收取額外費用。"</string>
     <string name="wallet_backup_ready">準備好出發！</string>
     <string name="wallet_backup_ready_info">你都準備好了。 現在你有一個只有你自己控制的錢包——直接控制，沒有中間商或銀行家。</string>
     <string name="wallet_backup_scan_qr">掃描 QR 碼</string>
-    <string name="wallet_backup_secret_words">24個密語</string>
-    <string name="wallet_backup_secret_words_info">"按照正確的順序寫下這 24 個單詞，並將它們存放在一個秘密的地方。
+    <string name="wallet_backup_secret_words">個密語</string>
+    <string name="wallet_backup_secret_words_info">"按照正確的順序寫下這 個單詞，並將它們存放在一個秘密的地方。
 
 如果您丟失了密碼或設備，請使用這些密語來恢復對您錢包的訪問。"</string>
     <string name="wallet_backup_secret_words_pdf">另存為 PDF</string>
@@ -6595,7 +6576,7 @@ iMe 錢包。"</string>
     <string name="wallet_swap_process_confirm_approve_alert_description">您確定要授權 %1$s 嗎？</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">授權確認</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">交換</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">您確定要從 %1$s %2$s 交換至 %3$s %4$s 嗎？</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">确定要使用%1$s %2$s交换%3$s %4$s吗？</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">交換確認</string>
     <string name="wallet_swap_process_description">您可以使用乙太坊和 Polygon 網路的 Uniswap 去中心化交易透過智慧型合約互相交換權杖</string>
     <string name="wallet_swap_process_diff_tokens_validation">請選擇不同的接收與給予的代幣</string>
@@ -6619,7 +6600,7 @@ iMe 錢包。"</string>
     <string name="wallet_swap_process_what_is_approve">什麼是權杖授權？</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">授權是權杖的一次性交易，在交換之前需要。藉由此操作，您允許使用智慧型合約以 DEX 協定交換您的權杖。由於此操作發生在區塊鏈上，將扣除礦工費。您無需重新授權目前的權杖。</string>
     <string name="wallet_swap_protocols_1inch_description">價格最優惠的 DEX 聚合器</string>
-    <string name="wallet_swap_protocols_1inch_long_description">您可以使用 DEX 聚合器以乙太坊、BNB 鏈、Polygon 網路的最優惠價格透過智慧型合約交換權杖</string>
+    <string name="wallet_swap_protocols_1inch_long_description">您可以使用 DEX 聚合器以乙太坊、BNB 鏈、Fantom、Polygon 網路的最優惠價格透過智慧型合約交換權杖</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">橋接</string>
     <string name="wallet_swap_protocols_header_title">去中心化交易所</string>
     <string name="wallet_swap_protocols_pancake_swap_description">以 BNB 鏈為主的 DEX 協議</string>

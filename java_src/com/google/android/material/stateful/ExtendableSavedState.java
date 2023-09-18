@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.collection.SimpleArrayMap;
 import androidx.customview.view.AbsSavedState;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ExtendableSavedState extends AbsSavedState {
     public static final Parcelable.Creator<ExtendableSavedState> CREATOR = new Parcelable.ClassLoaderCreator<ExtendableSavedState>() { // from class: com.google.android.material.stateful.ExtendableSavedState.1
         /* JADX WARN: Can't rename method to resolve collision */

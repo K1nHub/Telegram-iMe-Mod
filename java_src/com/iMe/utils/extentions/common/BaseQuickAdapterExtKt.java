@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BaseQuickAdapterExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BaseQuickAdapterExtKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <T> BaseItemProvider<T> asItem(BaseItemProvider<?> baseItemProvider) {

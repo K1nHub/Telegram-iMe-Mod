@@ -5,7 +5,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: ProfileData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProfileData {
     private final long chatId;
     private final String dialogIdText;

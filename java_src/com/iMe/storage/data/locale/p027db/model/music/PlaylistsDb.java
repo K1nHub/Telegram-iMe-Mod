@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlaylistsDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.music.PlaylistsDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PlaylistsDb {
     private final long dialogId;
     private final List<Integer> messageIds;

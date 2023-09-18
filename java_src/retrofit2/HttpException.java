@@ -1,5 +1,5 @@
 package retrofit2;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HttpException extends RuntimeException {
     private final int code;
     private final String message;

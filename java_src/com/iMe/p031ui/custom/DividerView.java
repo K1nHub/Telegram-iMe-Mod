@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DividerView.kt */
 /* renamed from: com.iMe.ui.custom.DividerView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DividerView extends View {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public DividerView(Context context, AttributeSet attributeSet) {

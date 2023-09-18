@@ -15,7 +15,7 @@ import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterUsersRecycleAdapter.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterUsersRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final GlobalStateProvider globalStateProvider;
     private final TwitterInviteProvider twitterInviteProvider;

@@ -4,7 +4,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MacBasedPRF implements PRF {
     protected int hLen;
     protected Mac mac;

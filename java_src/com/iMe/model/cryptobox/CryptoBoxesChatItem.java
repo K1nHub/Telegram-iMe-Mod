@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CryptoBoxesChatItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxesChatItem extends NoChildNode {
     private final TLRPC$Chat chat;
 

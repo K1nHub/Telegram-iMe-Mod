@@ -28,7 +28,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -39,7 +39,7 @@ import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.Components.ReportAlert;
 /* compiled from: SelectIconBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SelectIconBottomSheet extends BottomSheet {
     private final Activity activity;
     private final FilterIcon currentFilterIcon;
@@ -53,7 +53,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     /* compiled from: SelectIconBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -164,7 +164,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             }
         });
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3558R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3473R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -234,7 +234,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3558R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3473R.string.Delete));
         return bottomSheetCell;
     }
 
@@ -275,7 +275,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     /* compiled from: SelectIconBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$GridAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class GridAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
@@ -325,7 +325,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SelectIconBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$IconView */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class IconView extends FrameLayout {
         private final Lazy checkBox$delegate;
         private final Lazy circleView$delegate;
@@ -445,7 +445,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     /* compiled from: SelectIconBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

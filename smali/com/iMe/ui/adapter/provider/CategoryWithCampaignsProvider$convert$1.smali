@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCategoryWithCampaignsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CategoryWithCampaignsProvider.kt\ncom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,91:1\n56#2,6:92\n*S KotlinDebug\n*F\n+ 1 CategoryWithCampaignsProvider.kt\ncom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1\n*L\n65#1:92,6\n*E\n"
+    value = "SMAP\nCategoryWithCampaignsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CategoryWithCampaignsProvider.kt\ncom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,104:1\n56#2,6:105\n*S KotlinDebug\n*F\n+ 1 CategoryWithCampaignsProvider.kt\ncom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1\n*L\n76#1:105,6\n*E\n"
 .end annotation
 
 
@@ -84,7 +84,7 @@
         }
     .end annotation
 
-    .line 65
+    .line 76
     invoke-interface {p0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object p0
@@ -109,11 +109,12 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 70
+    .line 81
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;->getOnChannelItemClick()Lkotlin/jvm/functions/Function1;
 
     move-result-object p0
 
+    .line 82
     invoke-virtual {p1, p3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -134,6 +135,7 @@
 
     return-void
 
+    .line 81
     :cond_1
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -151,7 +153,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
+    .line 88
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;->getOnLoadMoreChannels()Lkotlin/jvm/functions/Function1;
 
     move-result-object p0
@@ -178,7 +180,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 60
+    .line 70
     check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -195,7 +197,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 72
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -212,10 +214,10 @@
 
     const/4 v3, 0x4
 
-    .line 62
+    .line 73
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->setInitialPrefetchItemCount(I)V
 
-    .line 63
+    .line 74
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;->access$getChannelsRecyclersScrollStates$p(Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;)Ljava/util/Map;
 
     move-result-object v1
@@ -236,10 +238,10 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->restoreScrollState(Landroidx/recyclerview/widget/LinearLayoutManager;Landroid/os/Parcelable;)V
 
-    .line 61
+    .line 71
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 65
+    .line 76
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;
 
     .line 58
@@ -260,7 +262,7 @@
 
     move-result-object v0
 
-    .line 66
+    .line 77
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda$1(Lkotlin/Lazy;)Lcom/iMe/ui/catalog/tabs/all/adapter/CatalogAllChannelsRecycleAdapter;
 
     move-result-object v0
@@ -269,33 +271,33 @@
 
     iget-object v2, p0, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;
 
-    .line 67
+    .line 78
     invoke-virtual {v1}, Lcom/iMe/model/catalog/CategoryWithCampaignsItem;->getCampaigns()Ljava/util/List;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setNewInstance(Ljava/util/List;)V
 
-    .line 68
+    .line 79
     invoke-static {v2}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;->access$getChannelsDiffCallback$p(Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;)Lcom/iMe/ui/catalog/tabs/all/adapter/diff/ChannelsDiffCallback;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 69
+    .line 80
     new-instance v3, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, v2}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;)V
 
     invoke-virtual {v0, v3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 73
+    .line 86
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v3
 
-    .line 74
+    .line 87
     invoke-virtual {v1}, Lcom/iMe/model/catalog/CategoryWithCampaignsItem;->getCampaigns()Ljava/util/List;
 
     move-result-object v4
@@ -306,21 +308,21 @@
 
     invoke-virtual {v3, v4}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
 
-    .line 75
+    .line 88
     new-instance v4, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v4, v2, v1}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/iMe/model/catalog/CategoryWithCampaignsItem;)V
 
     invoke-virtual {v3, v4}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setOnLoadMoreListener(Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;)V
 
-    .line 76
+    .line 89
     new-instance v4, Lcom/iMe/ui/custom/HorizontalLoadMoreView;
 
     invoke-direct {v4}, Lcom/iMe/ui/custom/HorizontalLoadMoreView;-><init>()V
 
     invoke-virtual {v3, v4}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setLoadMoreView(Lcom/chad/library/adapter/base/loadmore/BaseLoadMoreView;)V
 
-    .line 77
+    .line 90
     invoke-virtual {v1}, Lcom/iMe/model/catalog/CategoryWithCampaignsItem;->isEndReached()Z
 
     move-result v4
@@ -329,16 +331,16 @@
 
     const/4 v4, 0x1
 
-    .line 78
+    .line 91
     invoke-virtual {v3, v4}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreEnd(Z)V
 
     goto :goto_0
 
-    .line 80
+    .line 93
     :cond_0
     invoke-virtual {v3}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreComplete()V
 
-    .line 83
+    .line 96
     :goto_0
     invoke-static {v2}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;->access$getChannelsAdapters$p(Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider;)Ljava/util/Map;
 
@@ -358,10 +360,10 @@
 
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 66
+    .line 77
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 85
+    .line 98
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->setHorizontalRecyclerInPagerScrollHelper(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void

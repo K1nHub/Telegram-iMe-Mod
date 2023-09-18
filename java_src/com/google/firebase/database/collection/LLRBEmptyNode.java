@@ -2,7 +2,7 @@ package com.google.firebase.database.collection;
 
 import com.google.firebase.database.collection.LLRBNode;
 import java.util.Comparator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LLRBEmptyNode<K, V> implements LLRBNode<K, V> {
     private static final LLRBEmptyNode INSTANCE = new LLRBEmptyNode();
 

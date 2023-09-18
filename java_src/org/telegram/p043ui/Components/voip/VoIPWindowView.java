@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.VoIPFragment;
 /* renamed from: org.telegram.ui.Components.voip.VoIPWindowView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VoIPWindowView extends FrameLayout {
     Activity activity;
     boolean finished;

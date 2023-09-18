@@ -1,6 +1,6 @@
 package kotlin.reflect;
 /* compiled from: KClass.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface KClass<T> extends KDeclarationContainer {
     String getSimpleName();
 

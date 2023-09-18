@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.protobuf.GeneratedMessageLite;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> implements MessageLiteOrBuilder {
     private static final Int32Value DEFAULT_INSTANCE;
     private static volatile Parser<Int32Value> PARSER = null;
@@ -24,7 +24,7 @@ public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> 
         return DEFAULT_INSTANCE.createBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Int32Value, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C12021 c12021) {
             this();
@@ -42,7 +42,7 @@ public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> 
     }
 
     /* renamed from: com.google.protobuf.Int32Value$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C12021 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

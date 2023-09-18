@@ -10,7 +10,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.p043ui.CountrySelectActivity;
 /* compiled from: TelegramTestAuthHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TelegramTestAuthHelper {
     public static final TelegramTestAuthHelper INSTANCE = new TelegramTestAuthHelper();
     private static int currentIteration;
@@ -50,7 +50,7 @@ public final class TelegramTestAuthHelper {
         random = RangesKt___RangesKt.random(new IntRange(1000, 9999), Random.Default);
         sb.append(random);
         String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(TELEGRAM_N…              .toString()");
+        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(TELEGRAM_N…Y\n            .toString()");
         repeat = StringsKt__StringsJVMKt.repeat(str, 5);
         return new TelegramTestPhoneNumber(repeat, sb2);
     }

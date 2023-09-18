@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Session {
     private final CrashlyticsReport.Session.Application app;
     private final boolean crashed;
@@ -128,7 +128,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends CrashlyticsReport.Session.Builder {
         private CrashlyticsReport.Session.Application app;
         private Boolean crashed;

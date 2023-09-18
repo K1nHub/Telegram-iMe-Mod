@@ -1,6 +1,6 @@
 package com.google.android.gms.maps.internal;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza {
     public static byte zza(Boolean bool) {
         if (bool != null) {

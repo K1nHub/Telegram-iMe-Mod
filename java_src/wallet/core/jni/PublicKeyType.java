@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum PublicKeyType {
     SECP256K1(0),
     SECP256K1EXTENDED(1),

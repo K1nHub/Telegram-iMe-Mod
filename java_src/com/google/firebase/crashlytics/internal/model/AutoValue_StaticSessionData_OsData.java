@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AutoValue_StaticSessionData_OsData extends StaticSessionData.OsData {
     private final boolean isRooted;
     private final String osCodeName;

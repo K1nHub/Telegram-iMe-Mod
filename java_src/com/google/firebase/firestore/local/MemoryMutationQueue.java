@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MemoryMutationQueue implements MutationQueue {
     private final MemoryPersistence persistence;
     private final List<MutationBatch> queue = new ArrayList();

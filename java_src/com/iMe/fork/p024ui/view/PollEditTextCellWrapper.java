@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.PollEditTextCell;
@@ -22,7 +22,7 @@ import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: PollEditTextCellWrapper.kt */
 /* renamed from: com.iMe.fork.ui.view.PollEditTextCellWrapper */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PollEditTextCellWrapper extends LinearLayout {
     private final Lazy arrowImageView$delegate;
     private final Lazy iconLayout$delegate;
@@ -212,7 +212,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3558R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3473R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -221,13 +221,13 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3558R.C3560drawable.arrow_more);
+        imageView.setImageResource(C3473R.C3475drawable.arrow_more);
         return imageView;
     }
 
     /* compiled from: PollEditTextCellWrapper.kt */
     /* renamed from: com.iMe.fork.ui.view.PollEditTextCellWrapper$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

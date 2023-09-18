@@ -1,7 +1,7 @@
 package com.google.firebase.encoders;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ValueEncoderContext {
     ValueEncoderContext add(String str) throws IOException;
 

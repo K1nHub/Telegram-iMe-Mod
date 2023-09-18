@@ -16,7 +16,7 @@ import wallet.core.jni.Derivation;
 import wallet.core.jni.HDWallet;
 import wallet.core.jni.SegwitAddress;
 /* compiled from: BTCBlockchainCryptoWalletManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BTCBlockchainCryptoWalletManagerImpl extends BlockchainCryptoWalletManager {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BTCBlockchainCryptoWalletManagerImpl(CryptoPreferenceHelper cryptoPreferenceHelper) {
@@ -26,7 +26,7 @@ public final class BTCBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
 
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<Wallet>> createWallet() {
-        Observable<Result<Wallet>> just = Observable.just(Result.Companion.success(new Wallet.BTC("", new HDWallet(256, ""))));
+        Observable<Result<Wallet>> just = Observable.just(Result.Companion.success(new Wallet.BTC("", new HDWallet(128, ""))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

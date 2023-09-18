@@ -32,7 +32,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -130,7 +130,7 @@ import org.telegram.tgnet.TLRPC$UserFull;
 import p033j$.util.Comparator;
 import p033j$.util.function.ToIntFunction;
 /* renamed from: org.telegram.ui.Stories.StoriesController */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoriesController {
     public static final Comparator<TLRPC$StoryItem> storiesComparator = Comparator.CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda17
         @Override // p033j$.util.function.ToIntFunction
@@ -515,7 +515,7 @@ public class StoriesController {
             MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(Collections.singletonList(user), null, false, true);
             MessagesController.getInstance(this.currentAccount).putUser(user, false);
             TLRPC$TL_contacts_toggleStoriesHidden tLRPC$TL_contacts_toggleStoriesHidden = new TLRPC$TL_contacts_toggleStoriesHidden();
-            tLRPC$TL_contacts_toggleStoriesHidden.f1584id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
+            tLRPC$TL_contacts_toggleStoriesHidden.f1575id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
             tLRPC$TL_contacts_toggleStoriesHidden.hidden = z;
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_contacts_toggleStoriesHidden, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda30
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -632,7 +632,7 @@ public class StoriesController {
             int i3 = 0;
             while (i3 < tLRPC$TL_userStories.stories.size()) {
                 if (tLRPC$TL_userStories.stories.get(i3) instanceof TLRPC$TL_storyItemDeleted) {
-                    NotificationsController.getInstance(this.currentAccount).processDeleteStory(tLRPC$TL_userStories.user_id, tLRPC$TL_userStories.stories.get(i3).f1566id);
+                    NotificationsController.getInstance(this.currentAccount).processDeleteStory(tLRPC$TL_userStories.user_id, tLRPC$TL_userStories.stories.get(i3).f1557id);
                     tLRPC$TL_userStories.stories.remove(i3);
                     i3--;
                 }
@@ -707,7 +707,7 @@ public class StoriesController {
         while (true) {
             if (i2 >= tLRPC$TL_userStories.stories.size()) {
                 break;
-            } else if (tLRPC$TL_userStories.stories.get(i2).f1566id > tLRPC$TL_userStories.max_read_id) {
+            } else if (tLRPC$TL_userStories.stories.get(i2).f1557id > tLRPC$TL_userStories.max_read_id) {
                 i = i2;
                 break;
             } else {
@@ -804,7 +804,7 @@ public class StoriesController {
         if (tLRPC$StoryItem == null || tLRPC$StoryItem.dialogId != getSelfUserId()) {
             return null;
         }
-        return this.editingStories.get(Integer.valueOf(tLRPC$StoryItem.f1566id));
+        return this.editingStories.get(Integer.valueOf(tLRPC$StoryItem.f1557id));
     }
 
     public UploadingStory getEditingStory() {
@@ -891,7 +891,7 @@ public class StoriesController {
     }
 
     private boolean isContactOrService(TLRPC$User tLRPC$User) {
-        return tLRPC$User != null && (tLRPC$User.contact || tLRPC$User.f1694id == MessagesController.getInstance(this.currentAccount).storiesChangelogUserId);
+        return tLRPC$User != null && (tLRPC$User.contact || tLRPC$User.f1685id == MessagesController.getInstance(this.currentAccount).storiesChangelogUserId);
     }
 
     private void applyToList(TLRPC$TL_userStories tLRPC$TL_userStories) {
@@ -1007,7 +1007,7 @@ public class StoriesController {
             while (true) {
                 if (i >= tLRPC$TL_userStories.stories.size()) {
                     break;
-                } else if (tLRPC$TL_userStories.stories.get(i).f1566id == tLRPC$StoryItem.f1566id) {
+                } else if (tLRPC$TL_userStories.stories.get(i).f1557id == tLRPC$StoryItem.f1557id) {
                     tLRPC$TL_userStories.stories.remove(i);
                     if (tLRPC$TL_userStories.stories.size() == 0) {
                         this.allStoriesMap.remove(getSelfUserId());
@@ -1020,14 +1020,14 @@ public class StoriesController {
             }
         }
         TLRPC$TL_stories_deleteStories tLRPC$TL_stories_deleteStories = new TLRPC$TL_stories_deleteStories();
-        tLRPC$TL_stories_deleteStories.f1671id.add(Integer.valueOf(tLRPC$StoryItem.f1566id));
+        tLRPC$TL_stories_deleteStories.f1662id.add(Integer.valueOf(tLRPC$StoryItem.f1557id));
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_deleteStories, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda23
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 StoriesController.this.lambda$deleteStory$13(tLObject, tLRPC$TL_error);
             }
         });
-        this.storiesStorage.deleteStory(getSelfUserId(), tLRPC$StoryItem.f1566id);
+        this.storiesStorage.deleteStory(getSelfUserId(), tLRPC$StoryItem.f1557id);
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
         MessagesController.getInstance(this.currentAccount).checkArchiveFolder();
         updateDeletedStoriesInLists(getSelfUserId(), Arrays.asList(tLRPC$StoryItem));
@@ -1054,7 +1054,7 @@ public class StoriesController {
                     while (true) {
                         if (i2 >= tLRPC$TL_userStories.stories.size()) {
                             break;
-                        } else if (tLRPC$TL_userStories.stories.get(i2).f1566id == tLRPC$StoryItem.f1566id) {
+                        } else if (tLRPC$TL_userStories.stories.get(i2).f1557id == tLRPC$StoryItem.f1557id) {
                             tLRPC$TL_userStories.stories.remove(i2);
                             if (tLRPC$TL_userStories.stories.isEmpty()) {
                                 this.allStoriesMap.remove(getSelfUserId());
@@ -1064,7 +1064,7 @@ public class StoriesController {
                         }
                     }
                 }
-                tLRPC$TL_stories_deleteStories.f1671id.add(Integer.valueOf(tLRPC$StoryItem.f1566id));
+                tLRPC$TL_stories_deleteStories.f1662id.add(Integer.valueOf(tLRPC$StoryItem.f1557id));
             }
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_deleteStories, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda22
@@ -1074,7 +1074,7 @@ public class StoriesController {
             }
         });
         updateDeletedStoriesInLists(getSelfUserId(), arrayList);
-        this.storiesStorage.deleteStories(getSelfUserId(), tLRPC$TL_stories_deleteStories.f1671id);
+        this.storiesStorage.deleteStories(getSelfUserId(), tLRPC$TL_stories_deleteStories.f1662id);
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
     }
 
@@ -1089,7 +1089,7 @@ public class StoriesController {
             TLRPC$StoryItem tLRPC$StoryItem = arrayList.get(i);
             if (!(tLRPC$StoryItem instanceof TLRPC$TL_storyItemDeleted)) {
                 tLRPC$StoryItem.pinned = z;
-                tLRPC$TL_stories_togglePinned.f1679id.add(Integer.valueOf(tLRPC$StoryItem.f1566id));
+                tLRPC$TL_stories_togglePinned.f1670id.add(Integer.valueOf(tLRPC$StoryItem.f1557id));
             }
         }
         FileLog.m70d("StoriesController updateStoriesPinned");
@@ -1133,7 +1133,7 @@ public class StoriesController {
         if (tLRPC$StoryItem == null) {
             str = "null";
         } else {
-            str = tLRPC$StoryItem.f1566id + "@" + tLRPC$StoryItem.dialogId;
+            str = tLRPC$StoryItem.f1557id + "@" + tLRPC$StoryItem.dialogId;
         }
         sb.append(str);
         FileLog.m70d(sb.toString());
@@ -1157,7 +1157,7 @@ public class StoriesController {
                 tLRPC$StoryItem.justUploaded = false;
             }
             int i = this.dialogIdToMaxReadId.get(j);
-            int max = Math.max(tLRPC$TL_userStories.max_read_id, Math.max(i, tLRPC$StoryItem.f1566id));
+            int max = Math.max(tLRPC$TL_userStories.max_read_id, Math.max(i, tLRPC$StoryItem.f1557id));
             NotificationsController.getInstance(this.currentAccount).processReadStories(j, max);
             tLRPC$TL_userStories.max_read_id = max;
             this.dialogIdToMaxReadId.put(j, max);
@@ -1167,7 +1167,7 @@ public class StoriesController {
                 }
                 TLRPC$TL_stories_readStories tLRPC$TL_stories_readStories = new TLRPC$TL_stories_readStories();
                 tLRPC$TL_stories_readStories.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
-                tLRPC$TL_stories_readStories.max_id = tLRPC$StoryItem.f1566id;
+                tLRPC$TL_stories_readStories.max_id = tLRPC$StoryItem.f1557id;
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_readStories, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda31
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -1209,7 +1209,7 @@ public class StoriesController {
         }
         if (j != UserConfig.getInstance(this.currentAccount).getClientUserId() || this.uploadingStories.isEmpty()) {
             for (int i = 0; i < tLRPC$TL_userStories.stories.size(); i++) {
-                if (tLRPC$TL_userStories.stories.get(i).f1566id > tLRPC$TL_userStories.max_read_id) {
+                if (tLRPC$TL_userStories.stories.get(i).f1557id > tLRPC$TL_userStories.max_read_id) {
                     return true;
                 }
             }
@@ -1235,7 +1235,7 @@ public class StoriesController {
             int max = Math.max(tLRPC$TL_userStories.max_read_id, this.dialogIdToMaxReadId.get(j, 0));
             boolean z = false;
             for (int i2 = 0; i2 < tLRPC$TL_userStories.stories.size(); i2++) {
-                if ((i == 0 || tLRPC$TL_userStories.stories.get(i2).f1566id == i) && tLRPC$TL_userStories.stories.get(i2).f1566id > max) {
+                if ((i == 0 || tLRPC$TL_userStories.stories.get(i2).f1557id == i) && tLRPC$TL_userStories.stories.get(i2).f1557id > max) {
                     if (tLRPC$TL_userStories.stories.get(i2).close_friends) {
                         return 2;
                     }
@@ -1293,13 +1293,13 @@ public class StoriesController {
                 if (arrayList == null) {
                     arrayList = new ArrayList<>();
                 }
-                arrayList.add(Integer.valueOf(tLRPC$TL_userStories.stories.get(i).f1566id));
+                arrayList.add(Integer.valueOf(tLRPC$TL_userStories.stories.get(i).f1557id));
             }
         }
         if (arrayList != null) {
             this.loadingAllStories.add(Long.valueOf(j2));
             TLRPC$TL_stories_getStoriesByID tLRPC$TL_stories_getStoriesByID = new TLRPC$TL_stories_getStoriesByID();
-            tLRPC$TL_stories_getStoriesByID.f1674id = arrayList;
+            tLRPC$TL_stories_getStoriesByID.f1665id = arrayList;
             tLRPC$TL_stories_getStoriesByID.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_getStoriesByID, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda27
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -1333,7 +1333,7 @@ public class StoriesController {
             TLRPC$TL_stories_stories tLRPC$TL_stories_stories = (TLRPC$TL_stories_stories) tLObject;
             for (int i = 0; i < tLRPC$TL_stories_stories.stories.size(); i++) {
                 for (int i2 = 0; i2 < tLRPC$TL_userStories.stories.size(); i2++) {
-                    if (tLRPC$TL_userStories.stories.get(i2).f1566id == tLRPC$TL_stories_stories.stories.get(i).f1566id) {
+                    if (tLRPC$TL_userStories.stories.get(i2).f1557id == tLRPC$TL_stories_stories.stories.get(i).f1557id) {
                         tLRPC$TL_userStories.stories.set(i2, tLRPC$TL_stories_stories.stories.get(i));
                         preloadStory(j2, tLRPC$TL_stories_stories.stories.get(i));
                     }
@@ -1360,7 +1360,7 @@ public class StoriesController {
         TLRPC$TL_userStories stories = getStories(j);
         if (stories != null) {
             for (int i2 = 0; i2 < stories.stories.size(); i2++) {
-                if (stories.stories.get(i2).f1566id == i && !(stories.stories.get(i2) instanceof TLRPC$TL_storyItemSkipped)) {
+                if (stories.stories.get(i2).f1557id == i && !(stories.stories.get(i2) instanceof TLRPC$TL_storyItemSkipped)) {
                     consumer.accept(stories.stories.get(i2));
                     return;
                 }
@@ -1373,19 +1373,19 @@ public class StoriesController {
             return;
         }
         TLRPC$TL_stories_getStoriesByID tLRPC$TL_stories_getStoriesByID = new TLRPC$TL_stories_getStoriesByID();
-        tLRPC$TL_stories_getStoriesByID.f1674id.add(Integer.valueOf(i));
+        tLRPC$TL_stories_getStoriesByID.f1665id.add(Integer.valueOf(i));
         tLRPC$TL_stories_getStoriesByID.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_getStoriesByID, new C69771(j2, consumer));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stories_getStoriesByID, new C68921(j2, consumer));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoriesController$1 */
-    /* loaded from: classes6.dex */
-    public class C69771 implements RequestDelegate {
+    /* loaded from: classes7.dex */
+    public class C68921 implements RequestDelegate {
         final /* synthetic */ Consumer val$consumer;
         final /* synthetic */ long val$hash;
 
-        C69771(long j, Consumer consumer) {
+        C68921(long j, Consumer consumer) {
             this.val$hash = j;
             this.val$consumer = consumer;
         }
@@ -1397,7 +1397,7 @@ public class StoriesController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoriesController.C69771.this.lambda$run$0(tLObject, j, consumer);
+                    StoriesController.C68921.this.lambda$run$0(tLObject, j, consumer);
                 }
             });
         }
@@ -1425,7 +1425,7 @@ public class StoriesController {
     public int getUnreadStoriesCount(long j) {
         TLRPC$TL_userStories tLRPC$TL_userStories = this.allStoriesMap.get(j);
         for (int i = 0; i < tLRPC$TL_userStories.stories.size(); i++) {
-            if (tLRPC$TL_userStories.max_read_id < tLRPC$TL_userStories.stories.get(i).f1566id) {
+            if (tLRPC$TL_userStories.max_read_id < tLRPC$TL_userStories.stories.get(i).f1557id) {
                 return tLRPC$TL_userStories.stories.size() - i;
             }
         }
@@ -1560,7 +1560,7 @@ public class StoriesController {
             return;
         }
         TLRPC$TL_stories_sendReaction tLRPC$TL_stories_sendReaction = new TLRPC$TL_stories_sendReaction();
-        tLRPC$TL_stories_sendReaction.story_id = tLRPC$StoryItem.f1566id;
+        tLRPC$TL_stories_sendReaction.story_id = tLRPC$StoryItem.f1557id;
         tLRPC$TL_stories_sendReaction.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(j);
         if (visibleReaction == null) {
             tLRPC$TL_stories_sendReaction.reaction = new TLRPC$TL_reactionEmpty();
@@ -1605,7 +1605,7 @@ public class StoriesController {
         TLRPC$TL_userStories tLRPC$TL_userStories = this.allStoriesMap.get(j);
         if (tLRPC$TL_userStories != null) {
             for (int i2 = 0; i2 < tLRPC$TL_userStories.stories.size(); i2++) {
-                if (tLRPC$TL_userStories.stories.get(i2).f1566id == i) {
+                if (tLRPC$TL_userStories.stories.get(i2).f1557id == i) {
                     return tLRPC$TL_userStories.stories.get(i2);
                 }
             }
@@ -1619,7 +1619,7 @@ public class StoriesController {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesController$UploadingStory */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class UploadingStory implements NotificationCenter.NotificationCenterDelegate {
         boolean canceled;
         float convertingProgress;
@@ -1692,7 +1692,7 @@ public class StoriesController {
                 });
             } else {
                 TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-                tLRPC$TL_message.f1555id = 1;
+                tLRPC$TL_message.f1546id = 1;
                 String absolutePath = StoryEntry.makeCacheFile(StoriesController.this.currentAccount, true).getAbsolutePath();
                 tLRPC$TL_message.attachPath = absolutePath;
                 this.path = absolutePath;
@@ -1843,7 +1843,7 @@ public class StoriesController {
                 if (str5 == null || !str4.equals(str5)) {
                     return;
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("StoryUploadError", C3558R.string.StoryUploadError));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("StoryUploadError", C3473R.string.StoryUploadError));
                 cleanup();
             } else if (i == NotificationCenter.fileUploadProgressChanged && ((String) objArr[0]).equals(this.path)) {
                 float min = Math.min(1.0f, ((float) ((Long) objArr[1]).longValue()) / ((float) ((Long) objArr[2]).longValue()));
@@ -1914,7 +1914,7 @@ public class StoriesController {
             if (this.edit) {
                 TLRPC$TL_stories_editStory tLRPC$TL_stories_editStory = new TLRPC$TL_stories_editStory();
                 StoryEntry storyEntry3 = this.entry;
-                tLRPC$TL_stories_editStory.f1672id = storyEntry3.editStoryId;
+                tLRPC$TL_stories_editStory.f1663id = storyEntry3.editStoryId;
                 if (tLRPC$InputMedia != null && storyEntry3.editedMedia) {
                     tLRPC$TL_stories_editStory.flags |= 1;
                     tLRPC$TL_stories_editStory.media = tLRPC$InputMedia;
@@ -2038,7 +2038,7 @@ public class StoriesController {
                         tLRPC$StoryItem2.attachPath = this.path;
                         tLRPC$StoryItem2.firstFramePath = this.firstFramePath;
                         tLRPC$StoryItem2.justUploaded = !this.edit;
-                        int i3 = tLRPC$StoryItem2.f1566id;
+                        int i3 = tLRPC$StoryItem2.f1557id;
                         if (tLRPC$StoryItem == null) {
                             tLRPC$StoryItem = tLRPC$StoryItem2;
                         } else {
@@ -2064,7 +2064,7 @@ public class StoriesController {
                             tLRPC$StoryItem.dialogId = UserConfig.getInstance(StoriesController.this.currentAccount).clientUserId;
                             tLRPC$StoryItem.attachPath = this.path;
                             tLRPC$StoryItem.firstFramePath = this.firstFramePath;
-                            tLRPC$StoryItem.f1566id = tLRPC$TL_updateStoryID.f1687id;
+                            tLRPC$StoryItem.f1557id = tLRPC$TL_updateStoryID.f1678id;
                             tLRPC$StoryItem.justUploaded = !this.edit;
                         }
                     }
@@ -2072,7 +2072,7 @@ public class StoriesController {
                 final long j = UserConfig.getInstance(StoriesController.this.currentAccount).clientUserId;
                 if (this.canceled) {
                     TLRPC$TL_stories_deleteStories tLRPC$TL_stories_deleteStories = new TLRPC$TL_stories_deleteStories();
-                    tLRPC$TL_stories_deleteStories.f1671id.add(Integer.valueOf(i));
+                    tLRPC$TL_stories_deleteStories.f1662id.add(Integer.valueOf(i));
                     ConnectionsManager.getInstance(StoriesController.this.currentAccount).sendRequest(tLRPC$TL_stories_deleteStories, new RequestDelegate() { // from class: org.telegram.ui.Stories.StoriesController$UploadingStory$$ExternalSyntheticLambda8
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -2246,7 +2246,7 @@ public class StoriesController {
                 if (i > 0) {
                     str = str + ", ";
                 }
-                str = str + list.get(i).f1566id + "@" + list.get(i).dialogId;
+                str = str + list.get(i).f1557id + "@" + list.get(i).dialogId;
             } catch (Exception unused) {
                 return "err";
             }
@@ -2266,7 +2266,7 @@ public class StoriesController {
                 if (i > 0) {
                     str = str + ", ";
                 }
-                str = list.get(i).storyItem == null ? str + "null" : str + tLRPC$StoryItem.f1566id + "@" + tLRPC$StoryItem.dialogId;
+                str = list.get(i).storyItem == null ? str + "null" : str + tLRPC$StoryItem.f1557id + "@" + tLRPC$StoryItem.dialogId;
             } catch (Exception unused) {
                 return "err";
             }
@@ -2307,7 +2307,7 @@ public class StoriesController {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesController$StoriesList */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class StoriesList {
         private static HashMap<Integer, Long> lastLoadTime;
         private final SortedSet<Integer> cachedObjects;
@@ -2334,7 +2334,7 @@ public class StoriesController {
         public final int type;
         public final long userId;
 
-        /* synthetic */ StoriesList(int i, long j, int i2, Utilities.Callback callback, C69771 c69771) {
+        /* synthetic */ StoriesList(int i, long j, int i2, Utilities.Callback callback, C68921 c68921) {
             this(i, j, i2, callback);
         }
 
@@ -2481,7 +2481,7 @@ public class StoriesController {
                     if (byteBufferValue != null) {
                         TLRPC$StoryItem TLdeserialize = TLRPC$StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
                         TLdeserialize.dialogId = this.userId;
-                        TLdeserialize.messageId = TLdeserialize.f1566id;
+                        TLdeserialize.messageId = TLdeserialize.f1557id;
                         MessageObject messageObject = new MessageObject(this.currentAccount, TLdeserialize);
                         Iterator<TLRPC$PrivacyRule> it = TLdeserialize.privacy.iterator();
                         while (it.hasNext()) {
@@ -2757,13 +2757,13 @@ public class StoriesController {
                 if (r6 != 0) goto Laf
                 long r8 = r10.userId     // Catch: java.lang.Throwable -> Lc3
                 r2.bindLong(r1, r8)     // Catch: java.lang.Throwable -> Lc3
-                int r3 = r3.f1566id     // Catch: java.lang.Throwable -> Lc3
+                int r3 = r3.f1557id     // Catch: java.lang.Throwable -> Lc3
                 r2.bindInteger(r7, r3)     // Catch: java.lang.Throwable -> Lc3
                 r3 = 3
                 r2.bindByteBuffer(r3, r4)     // Catch: java.lang.Throwable -> Lc3
                 goto Lb7
             Laf:
-                int r3 = r3.f1566id     // Catch: java.lang.Throwable -> Lc3
+                int r3 = r3.f1557id     // Catch: java.lang.Throwable -> Lc3
                 r2.bindInteger(r1, r3)     // Catch: java.lang.Throwable -> Lc3
                 r2.bindByteBuffer(r7, r4)     // Catch: java.lang.Throwable -> Lc3
             Lb7:
@@ -2951,16 +2951,16 @@ public class StoriesController {
             for (int i = 0; i < list.size(); i++) {
                 TLRPC$StoryItem tLRPC$StoryItem = list.get(i);
                 if (tLRPC$StoryItem != null) {
-                    if (this.loadedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1566id)) || this.cachedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1566id))) {
-                        this.loadedObjects.remove(Integer.valueOf(tLRPC$StoryItem.f1566id));
-                        this.cachedObjects.remove(Integer.valueOf(tLRPC$StoryItem.f1566id));
+                    if (this.loadedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1557id)) || this.cachedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1557id))) {
+                        this.loadedObjects.remove(Integer.valueOf(tLRPC$StoryItem.f1557id));
+                        this.cachedObjects.remove(Integer.valueOf(tLRPC$StoryItem.f1557id));
                         int i2 = this.totalCount;
                         if (i2 != -1) {
                             this.totalCount = i2 - 1;
                         }
                         z = true;
                     }
-                    removeObject(tLRPC$StoryItem.f1566id, true);
+                    removeObject(tLRPC$StoryItem.f1557id, true);
                 }
             }
             if (z) {
@@ -2979,30 +2979,30 @@ public class StoriesController {
             for (int i = 0; i < list.size(); i++) {
                 TLRPC$StoryItem tLRPC$StoryItem = list.get(i);
                 if (tLRPC$StoryItem != null) {
-                    boolean z2 = this.loadedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1566id)) || this.cachedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1566id));
+                    boolean z2 = this.loadedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1557id)) || this.cachedObjects.contains(Integer.valueOf(tLRPC$StoryItem.f1557id));
                     boolean z3 = this.type == 1 ? true : tLRPC$StoryItem.pinned;
                     if (tLRPC$StoryItem instanceof TLRPC$TL_storyItemDeleted) {
                         z3 = false;
                     }
                     if (z2 != z3) {
                         if (!z3) {
-                            FileLog.m70d("StoriesList remove story " + tLRPC$StoryItem.f1566id);
-                            removeObject(tLRPC$StoryItem.f1566id, true);
+                            FileLog.m70d("StoriesList remove story " + tLRPC$StoryItem.f1557id);
+                            removeObject(tLRPC$StoryItem.f1557id, true);
                             int i2 = this.totalCount;
                             if (i2 != -1) {
                                 this.totalCount = i2 - 1;
                             }
                         } else {
-                            FileLog.m70d("StoriesList put story " + tLRPC$StoryItem.f1566id);
+                            FileLog.m70d("StoriesList put story " + tLRPC$StoryItem.f1557id);
                             pushObject(toMessageObject(tLRPC$StoryItem), false);
                             int i3 = this.totalCount;
                             if (i3 != -1) {
                                 this.totalCount = i3 + 1;
                             }
                         }
-                    } else if (z2 && z3 && ((messageObject = this.messageObjectsMap.get(Integer.valueOf(tLRPC$StoryItem.f1566id))) == null || !equal(messageObject.storyItem, tLRPC$StoryItem))) {
-                        FileLog.m70d("StoriesList update story " + tLRPC$StoryItem.f1566id);
-                        this.messageObjectsMap.put(Integer.valueOf(tLRPC$StoryItem.f1566id), toMessageObject(tLRPC$StoryItem));
+                    } else if (z2 && z3 && ((messageObject = this.messageObjectsMap.get(Integer.valueOf(tLRPC$StoryItem.f1557id))) == null || !equal(messageObject.storyItem, tLRPC$StoryItem))) {
+                        FileLog.m70d("StoriesList update story " + tLRPC$StoryItem.f1557id);
+                        this.messageObjectsMap.put(Integer.valueOf(tLRPC$StoryItem.f1557id), toMessageObject(tLRPC$StoryItem));
                     }
                     z = true;
                 }
@@ -3025,14 +3025,14 @@ public class StoriesController {
                 return false;
             }
             if (tLRPC$StoryItem != tLRPC$StoryItem2) {
-                return tLRPC$StoryItem.f1566id == tLRPC$StoryItem2.f1566id && tLRPC$StoryItem.media == tLRPC$StoryItem2.media && TextUtils.equals(tLRPC$StoryItem.caption, tLRPC$StoryItem2.caption);
+                return tLRPC$StoryItem.f1557id == tLRPC$StoryItem2.f1557id && tLRPC$StoryItem.media == tLRPC$StoryItem2.media && TextUtils.equals(tLRPC$StoryItem.caption, tLRPC$StoryItem2.caption);
             }
             return true;
         }
 
         private MessageObject toMessageObject(TLRPC$StoryItem tLRPC$StoryItem) {
             tLRPC$StoryItem.dialogId = this.userId;
-            tLRPC$StoryItem.messageId = tLRPC$StoryItem.f1566id;
+            tLRPC$StoryItem.messageId = tLRPC$StoryItem.f1557id;
             MessageObject messageObject = new MessageObject(this.currentAccount, tLRPC$StoryItem);
             messageObject.generateThumbs(false);
             return messageObject;
@@ -3224,7 +3224,7 @@ public class StoriesController {
             TLRPC$InputPeer inputPeer = MessagesController.getInstance(this.currentAccount).getInputPeer(longValue);
             if (inputPeer != null && !(inputPeer instanceof TLRPC$TL_inputPeerEmpty)) {
                 this.blocklist.add(Long.valueOf(longValue));
-                tLRPC$TL_contacts_setBlocked.f1583id.add(inputPeer);
+                tLRPC$TL_contacts_setBlocked.f1574id.add(inputPeer);
             }
         }
         this.blocklistCount += this.blocklist.size();
@@ -3307,12 +3307,12 @@ public class StoriesController {
             if (z) {
                 TLRPC$TL_contacts_block tLRPC$TL_contacts_block = new TLRPC$TL_contacts_block();
                 tLRPC$TL_contacts_block.my_stories_from = true;
-                tLRPC$TL_contacts_block.f1580id = inputPeer;
+                tLRPC$TL_contacts_block.f1571id = inputPeer;
                 tLRPC$TL_contacts_unblock = tLRPC$TL_contacts_block;
             } else {
                 TLRPC$TL_contacts_unblock tLRPC$TL_contacts_unblock2 = new TLRPC$TL_contacts_unblock();
                 tLRPC$TL_contacts_unblock2.my_stories_from = true;
-                tLRPC$TL_contacts_unblock2.f1585id = inputPeer;
+                tLRPC$TL_contacts_unblock2.f1576id = inputPeer;
                 tLRPC$TL_contacts_unblock = tLRPC$TL_contacts_unblock2;
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_contacts_unblock, null);
@@ -3476,7 +3476,7 @@ public class StoriesController {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoriesController$StoryLimit */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class StoryLimit {
         public int type;
         public long until;

@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 /* renamed from: com.iMe.storage.data.locale.db.database.AppCacheDatabase_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppCacheDatabase_Impl extends AppCacheDatabase {
     private volatile AlbumsDao _albumsDao;
     private volatile CatalogCategoryDao _catalogCategoryDao;

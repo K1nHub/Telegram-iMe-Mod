@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.vision;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhw extends zzid {
     private final int zzc;
     private final int zzd;

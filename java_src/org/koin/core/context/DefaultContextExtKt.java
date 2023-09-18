@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.KoinApplication;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: DefaultContextExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DefaultContextExtKt {
     public static final KoinApplication startKoin(Function1<? super KoinApplication, Unit> appDeclaration) {
         Intrinsics.checkNotNullParameter(appDeclaration, "appDeclaration");

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzq extends zzl implements zzr {
     public zzq() {
         super("com.google.android.play.core.appupdate.protocol.IAppUpdateServiceCallback");

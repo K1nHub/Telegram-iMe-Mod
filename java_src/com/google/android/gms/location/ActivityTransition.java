@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityTransition extends AbstractSafeParcelable {
     public static final int ACTIVITY_TRANSITION_ENTER = 0;
     public static final int ACTIVITY_TRANSITION_EXIT = 1;
@@ -23,7 +23,7 @@ public class ActivityTransition extends AbstractSafeParcelable {
     private final int zzb;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private int zza = -1;
         private int zzb = -1;
@@ -48,7 +48,7 @@ public class ActivityTransition extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface SupportedActivityTransition {
     }
 

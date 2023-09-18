@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThreadFactoryBuilder {
     private String nameFormat = null;
     private Boolean daemon = null;

@@ -59,7 +59,7 @@ import okio.Sink;
 import okio.Source;
 import p033j$.util.DesugarTimeZone;
 /* compiled from: Util.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Util {
     public static final byte[] EMPTY_BYTE_ARRAY;
     public static final Headers EMPTY_HEADERS = Headers.Companion.m93of(new String[0]);

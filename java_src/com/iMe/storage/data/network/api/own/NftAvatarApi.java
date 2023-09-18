@@ -6,7 +6,7 @@ import io.reactivex.Observable;
 import java.util.List;
 import retrofit2.http.POST;
 /* compiled from: NftAvatarApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface NftAvatarApi {
     @POST("nftAvatars/listOwnAvatars")
     Observable<ApiBaseResponse<List<NftAvatarResponse>>> getNtfAvatars();

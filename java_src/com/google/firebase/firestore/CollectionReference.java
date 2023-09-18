@@ -2,7 +2,7 @@ package com.google.firebase.firestore;
 
 import com.google.firebase.firestore.model.ResourcePath;
 import com.google.firebase.firestore.util.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CollectionReference extends Query {
     /* JADX INFO: Access modifiers changed from: package-private */
     public CollectionReference(ResourcePath resourcePath, FirebaseFirestore firebaseFirestore) {

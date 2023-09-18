@@ -3,7 +3,7 @@ package com.google.firebase.firestore.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ResourcePath extends BasePath<ResourcePath> {
     public static final ResourcePath EMPTY = new ResourcePath(Collections.emptyList());
 

@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.channels.ReceiveChannel;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FlowKt {
     public static final <T> SharedFlow<T> asSharedFlow(MutableSharedFlow<T> mutableSharedFlow) {
         return FlowKt__ShareKt.asSharedFlow(mutableSharedFlow);

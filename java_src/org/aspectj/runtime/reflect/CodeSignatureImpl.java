@@ -1,5 +1,5 @@
 package org.aspectj.runtime.reflect;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class CodeSignatureImpl extends MemberSignatureImpl {
     Class[] exceptionTypes;
     Class[] parameterTypes;

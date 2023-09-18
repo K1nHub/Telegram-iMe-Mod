@@ -3,7 +3,7 @@ package org.bouncycastle.util.encoders;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class HexEncoder {
     protected final byte[] encodingTable = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102};
     protected final byte[] decodingTable = new byte[128];

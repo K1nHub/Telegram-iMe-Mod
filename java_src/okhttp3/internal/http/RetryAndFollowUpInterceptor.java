@@ -31,7 +31,7 @@ import okhttp3.internal.connection.RealConnection;
 import okhttp3.internal.connection.RouteException;
 import okhttp3.internal.http2.ConnectionShutdownException;
 /* compiled from: RetryAndFollowUpInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RetryAndFollowUpInterceptor implements Interceptor {
     private final OkHttpClient client;
 
@@ -237,7 +237,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
     }
 
     /* compiled from: RetryAndFollowUpInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

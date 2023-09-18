@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PresentersCounter {
     private Map<MvpPresenter<?>, Set<String>> connections = new HashMap();
     private Map<String, Set<MvpPresenter>> tags = new HashMap();

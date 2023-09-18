@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_payments_paymentResult extends TLRPC$payments_PaymentResult {
     public static int constructor = 1314881805;
     public TLRPC$Updates updates;

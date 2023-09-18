@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogLanguageDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.catalog.CatalogLanguageDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogLanguageDb {
 
     /* renamed from: id */

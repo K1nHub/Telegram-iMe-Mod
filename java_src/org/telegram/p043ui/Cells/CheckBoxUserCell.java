@@ -18,7 +18,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Switch;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Cells.CheckBoxUserCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CheckBoxUserCell extends FrameLayout {
     private static Drawable verifiedDrawable;
     private AvatarDrawable avatarDrawable;

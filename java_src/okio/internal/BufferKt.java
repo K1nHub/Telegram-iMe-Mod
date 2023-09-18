@@ -6,7 +6,7 @@ import okio.Options;
 import okio.Platform;
 import okio.Segment;
 /* compiled from: Buffer.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BufferKt {
     private static final byte[] HEX_DIGIT_BYTES = Platform.asUtf8ToByteArray("0123456789abcdef");
 

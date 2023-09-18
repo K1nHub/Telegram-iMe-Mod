@@ -8,7 +8,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNotificationDetailsView> implements WalletNotificationDetailsView {
     @Override // com.iMe.p031ui.wallet.notifications.details.WalletNotificationDetailsView
     public void setupScreenWithData(String str, String str2) {
@@ -77,7 +77,7 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
 
     /* compiled from: WalletNotificationDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletNotificationDetailsView> {
         public final String category;
         public final String date;
@@ -96,7 +96,7 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
 
     /* compiled from: WalletNotificationDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$ActionCopyToClipboardCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ActionCopyToClipboardCommand extends ViewCommand<WalletNotificationDetailsView> {
         public final String data;
 
@@ -113,7 +113,7 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
 
     /* compiled from: WalletNotificationDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$ActionOpenProfileScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ActionOpenProfileScreenCommand extends ViewCommand<WalletNotificationDetailsView> {
         public final long userId;
 
@@ -130,7 +130,7 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
 
     /* compiled from: WalletNotificationDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$ShowClickableTextDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowClickableTextDialogCommand extends ViewCommand<WalletNotificationDetailsView> {
         public final Function1<? super Integer, Unit> action;
         public final String[] items;
@@ -149,7 +149,7 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
 
     /* compiled from: WalletNotificationDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$SetupMessageClickableLinkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupMessageClickableLinkCommand extends ViewCommand<WalletNotificationDetailsView> {
         public final Function0<Unit> action;
         public final String clickableText;

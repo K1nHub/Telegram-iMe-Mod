@@ -20,12 +20,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletSendRecipientPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.actions.send.recipient.WalletSendRecipientPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSendRecipientPresenter extends BasePresenter<WalletSendRecipientView> {
     private final CryptoRecipientManager cryptoRecipientManager;
     private final CryptoWalletInteractor cryptoWalletInteractor;
@@ -98,12 +98,12 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1426invoke(result);
+                m1423invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1426invoke(Result<? extends String> it) {
+            public final void m1423invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -111,7 +111,7 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
                     Result.Success success = (Result.Success) result;
                     if (!(((CharSequence) success.getData()).length() > 0)) {
                         resourceManager = WalletSendRecipientPresenter.this.resourceManager;
-                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3558R.string.wallet_recipient_validation_address_error));
+                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3473R.string.wallet_recipient_validation_address_error));
                         return;
                     }
                     ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).onRecipientSelected("", (String) success.getData(), false);
@@ -141,6 +141,6 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 }

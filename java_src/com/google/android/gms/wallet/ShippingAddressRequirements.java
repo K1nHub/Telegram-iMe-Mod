@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "ShippingAddressRequirementsCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ShippingAddressRequirements extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShippingAddressRequirements> CREATOR = new zzam();
     @SafeParcelable.Field(m797id = 1)
     ArrayList zza;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzal zzalVar) {
         }

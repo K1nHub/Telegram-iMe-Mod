@@ -4,7 +4,7 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DrawableUtils {
     public static PorterDuffColorFilter updateTintFilter(Drawable drawable, ColorStateList colorStateList, PorterDuff.Mode mode) {
         if (colorStateList == null || mode == null) {

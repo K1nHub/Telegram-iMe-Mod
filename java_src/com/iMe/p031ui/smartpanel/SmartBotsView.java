@@ -33,7 +33,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkPanelViewBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -69,6 +69,10 @@ public final class SmartBotsView extends FrameLayout {
         void onTranslationYChanged(float f);
 
         void sendChosenGif(int i, long j, String str);
+    }
+
+    public final int getCurrentAccount() {
+        return this.currentAccount;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,10 +155,6 @@ public final class SmartBotsView extends FrameLayout {
         };
     }
 
-    public final int getCurrentAccount() {
-        return this.currentAccount;
-    }
-
     public final void setHeight(int i) {
         this.panelHeight = i;
         getLayoutParams().height = i;
@@ -235,15 +235,15 @@ public final class SmartBotsView extends FrameLayout {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             SmartBotTab smartBotTab = (SmartBotTab) obj;
-            View inflate = View.inflate(getContext(), C3558R.layout.fork_panel_custom_tab_header, null);
-            ImageView avatar = (ImageView) inflate.findViewById(C3558R.C3561id.avatar);
+            View inflate = View.inflate(getContext(), C3473R.layout.fork_panel_custom_tab_header, null);
+            ImageView avatar = (ImageView) inflate.findViewById(C3473R.C3476id.avatar);
             if (smartBotTab.getIconRes() != 0) {
                 avatar.setImageResource(smartBotTab.getIconRes());
             } else if (smartBotTab.getIconUrl().length() > 0) {
                 Intrinsics.checkNotNullExpressionValue(avatar, "avatar");
                 ImageViewExtKt.loadFrom$default(avatar, smartBotTab.getIconUrl(), null, false, 6, null);
             } else {
-                avatar.setImageResource(C3558R.C3560drawable.bot_avatar_any);
+                avatar.setImageResource(C3473R.C3475drawable.bot_avatar_any);
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
             if (tabAt != null) {
@@ -270,7 +270,7 @@ public final class SmartBotsView extends FrameLayout {
                 gradientDrawable.setStroke(AndroidUtilities.m73dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3558R.C3561id.avatar_bg);
+            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3473R.C3476id.avatar_bg);
             if (findViewById != null) {
                 findViewById.setBackground(gradientDrawable);
             }
@@ -299,15 +299,15 @@ public final class SmartBotsView extends FrameLayout {
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
             if (this.binding.viewpager.getCurrentItem() == i) {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3558R.C3560drawable.ic_bots_recent, Theme.getColor(Theme.key_chats_actionBackground));
-                Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…_chats_actionBackground))");
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3473R.C3475drawable.ic_bots_recent, Theme.getColor(Theme.key_chats_actionBackground));
+                Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(\n     …ground)\n                )");
                 gradientDrawable.setColor(Color.parseColor("#33cccccc"));
             } else {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3558R.C3560drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
-                Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…or.parseColor(\"#A8A8A8\"))");
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3473R.C3475drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
+                Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(\n     …8A8A8\")\n                )");
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3558R.C3561id.avatar)) == null) {
+            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3473R.C3476id.avatar)) == null) {
                 return;
             }
             imageView.setImageDrawable(themedDrawable);
@@ -377,7 +377,7 @@ public final class SmartBotsView extends FrameLayout {
         int i = Theme.key_chat_emojiPanelBackground;
         frameLayout.setBackgroundColor(Theme.getColor(i));
         Context context = getContext();
-        int i2 = C3558R.C3560drawable.fork_ic_bots_responses;
+        int i2 = C3473R.C3475drawable.fork_ic_bots_responses;
         int i3 = Theme.key_chat_emojiBottomPanelIcon;
         int color = Theme.getColor(i3);
         int i4 = Theme.key_chat_emojiPanelIconSelected;
@@ -385,7 +385,7 @@ public final class SmartBotsView extends FrameLayout {
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor(i3), false);
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor(i4), true);
         forkPanelViewBinding.imageTextResponses.setImageDrawable(createEmojiIconSelectorVectorDrawable);
-        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3558R.C3560drawable.smiles_tab_gif, Theme.getColor(i3), Theme.getColor(i4));
+        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3473R.C3475drawable.smiles_tab_gif, Theme.getColor(i3), Theme.getColor(i4));
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor(i3), false);
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor(i4), true);
         forkPanelViewBinding.imageGifResponses.setImageDrawable(createEmojiIconSelectorDrawable);

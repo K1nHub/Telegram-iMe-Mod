@@ -9,7 +9,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TransferArgs implements TransactionArgs {
     private final double amount;
     private final int decimals;
@@ -36,7 +36,7 @@ public abstract class TransferArgs implements TransactionArgs {
     }
 
     /* compiled from: TransferArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class EVM extends TransferArgs {
         private final double amount;
         private final long chainId;
@@ -161,7 +161,7 @@ public abstract class TransferArgs implements TransactionArgs {
     }
 
     /* compiled from: TransferArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TON extends TransferArgs {
         private final double amount;
         private final int decimals;
@@ -271,7 +271,7 @@ public abstract class TransferArgs implements TransactionArgs {
     }
 
     /* compiled from: TransferArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TRON extends TransferArgs {
         private final double amount;
         private final TronBlockHeader blockHeader;
@@ -374,7 +374,7 @@ public abstract class TransferArgs implements TransactionArgs {
     }
 
     /* compiled from: TransferArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BTC extends TransferArgs {
         private final double amount;
         private final BigInteger byteFee;

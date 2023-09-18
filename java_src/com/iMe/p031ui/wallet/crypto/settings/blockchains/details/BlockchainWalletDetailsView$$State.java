@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainWalletDetailsView> implements BlockchainWalletDetailsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -89,7 +89,7 @@ public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainW
 
     /* compiled from: BlockchainWalletDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<BlockchainWalletDetailsView> {
         public final String address;
         public final String createdDate;
@@ -114,7 +114,7 @@ public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainW
 
     /* compiled from: BlockchainWalletDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State$ShowResetWalletConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowResetWalletConfirmationDialogCommand extends ViewCommand<BlockchainWalletDetailsView> {
         public final DialogModel dialogModel;
 
@@ -131,7 +131,7 @@ public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainW
 
     /* compiled from: BlockchainWalletDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<BlockchainWalletDetailsView> {
         public final String text;
 
@@ -148,7 +148,7 @@ public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainW
 
     /* compiled from: BlockchainWalletDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<BlockchainWalletDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -169,7 +169,7 @@ public class BlockchainWalletDetailsView$$State extends MvpViewState<BlockchainW
 
     /* compiled from: BlockchainWalletDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<BlockchainWalletDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

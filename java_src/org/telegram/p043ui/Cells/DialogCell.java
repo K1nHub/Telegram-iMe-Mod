@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -106,7 +106,7 @@ import org.telegram.tgnet.TLRPC$UserStatus;
 import p033j$.util.Comparator;
 import p033j$.util.function.ToIntFunction;
 /* renamed from: org.telegram.ui.Cells.DialogCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DialogCell extends BaseCell implements StoriesListPlaceProvider.AvatarOverlaysView {
     private int animateFromStatusDrawableParams;
     private int animateToStatusDrawableParams;
@@ -345,7 +345,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     protected float xOffset;
 
     /* renamed from: org.telegram.ui.Cells.DialogCell$BounceInterpolator */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class BounceInterpolator implements Interpolator {
         @Override // android.animation.TimeInterpolator
         public float getInterpolation(float f) {
@@ -358,12 +358,12 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     }
 
     /* renamed from: org.telegram.ui.Cells.DialogCell$CustomDialog */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class CustomDialog {
         public int date;
 
         /* renamed from: id */
-        public int f1723id;
+        public int f1714id;
         public boolean isMedia;
         public String message;
         public boolean muted;
@@ -376,7 +376,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     }
 
     /* renamed from: org.telegram.ui.Cells.DialogCell$DialogCellDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface DialogCellDelegate {
         boolean canClickButtonInside();
 
@@ -480,7 +480,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             this.groupMessages = tLRPC$TL_forumTopic.groupedMessages;
         }
         TLRPC$TL_forumTopic tLRPC$TL_forumTopic2 = this.forumTopic;
-        if (tLRPC$TL_forumTopic2 != null && tLRPC$TL_forumTopic2.f1589id == 1 && (pullForegroundDrawable = this.archivedChatsDrawable) != null) {
+        if (tLRPC$TL_forumTopic2 != null && tLRPC$TL_forumTopic2.f1580id == 1 && (pullForegroundDrawable = this.archivedChatsDrawable) != null) {
             pullForegroundDrawable.setCell(this);
         }
         update(0, z2);
@@ -505,7 +505,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     }
 
     /* renamed from: org.telegram.ui.Cells.DialogCell$FixedWidthSpan */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class FixedWidthSpan extends ReplacementSpan {
         private int width;
 
@@ -624,7 +624,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     }
 
     public void setDialog(TLRPC$Dialog tLRPC$Dialog, int i, int i2, boolean z) {
-        if (this.currentDialogId != tLRPC$Dialog.f1537id) {
+        if (this.currentDialogId != tLRPC$Dialog.f1528id) {
             ValueAnimator valueAnimator = this.statusDrawableAnimator;
             if (valueAnimator != null) {
                 valueAnimator.removeAllListeners();
@@ -633,11 +633,11 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             this.statusDrawableAnimationInProgress = false;
             this.lastStatusDrawableParams = -1;
         }
-        this.currentDialogId = tLRPC$Dialog.f1537id;
+        this.currentDialogId = tLRPC$Dialog.f1528id;
         this.lastDialogChangedTime = System.currentTimeMillis();
         this.isDialogCell = true;
         if (tLRPC$Dialog instanceof TLRPC$TL_dialogFolder) {
-            this.currentDialogFolderId = ((TLRPC$TL_dialogFolder) tLRPC$Dialog).folder.f1588id;
+            this.currentDialogFolderId = ((TLRPC$TL_dialogFolder) tLRPC$Dialog).folder.f1579id;
             PullForegroundDrawable pullForegroundDrawable = this.archivedChatsDrawable;
             if (pullForegroundDrawable != null) {
                 pullForegroundDrawable.setCell(this);
@@ -670,7 +670,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
 
     private void checkOnline() {
         TLRPC$User user;
-        if (this.user != null && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.user.f1694id))) != null) {
+        if (this.user != null && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.user.f1685id))) != null) {
             this.user = user;
         }
         this.onlineProgress = isOnline() ? 1.0f : BitmapDescriptorFactory.HUE_RED;
@@ -680,7 +680,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         TLRPC$User tLRPC$User;
         if (!isForumCell() && (tLRPC$User = this.user) != null && !tLRPC$User.self) {
             TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-            if (tLRPC$UserStatus != null && tLRPC$UserStatus.expires <= 0 && MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(this.user.f1694id))) {
+            if (tLRPC$UserStatus != null && tLRPC$UserStatus.expires <= 0 && MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(this.user.f1685id))) {
                 return true;
             }
             TLRPC$UserStatus tLRPC$UserStatus2 = this.user.status;
@@ -960,15 +960,15 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         int size = dialogs.size();
         for (int i = 0; i < size; i++) {
             TLRPC$Dialog tLRPC$Dialog = dialogs.get(i);
-            if (!messagesController.isHiddenByUndo(tLRPC$Dialog.f1537id)) {
+            if (!messagesController.isHiddenByUndo(tLRPC$Dialog.f1528id)) {
                 TLRPC$Chat tLRPC$Chat = null;
-                if (DialogObject.isEncryptedDialog(tLRPC$Dialog.f1537id)) {
-                    TLRPC$EncryptedChat encryptedChat = messagesController.getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(tLRPC$Dialog.f1537id)));
+                if (DialogObject.isEncryptedDialog(tLRPC$Dialog.f1528id)) {
+                    TLRPC$EncryptedChat encryptedChat = messagesController.getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(tLRPC$Dialog.f1528id)));
                     tLRPC$User = encryptedChat != null ? messagesController.getUser(Long.valueOf(encryptedChat.user_id)) : null;
-                } else if (DialogObject.isUserDialog(tLRPC$Dialog.f1537id)) {
-                    tLRPC$User = messagesController.getUser(Long.valueOf(tLRPC$Dialog.f1537id));
+                } else if (DialogObject.isUserDialog(tLRPC$Dialog.f1528id)) {
+                    tLRPC$User = messagesController.getUser(Long.valueOf(tLRPC$Dialog.f1528id));
                 } else {
-                    tLRPC$Chat = messagesController.getChat(Long.valueOf(-tLRPC$Dialog.f1537id));
+                    tLRPC$Chat = messagesController.getChat(Long.valueOf(-tLRPC$Dialog.f1528id));
                     tLRPC$User = null;
                 }
                 if (tLRPC$Chat != null) {
@@ -976,7 +976,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 } else if (tLRPC$User == null) {
                     continue;
                 } else if (UserObject.isDeleted(tLRPC$User)) {
-                    replace = LocaleController.getString("HiddenName", C3558R.string.HiddenName);
+                    replace = LocaleController.getString("HiddenName", C3473R.string.HiddenName);
                 } else {
                     replace = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name).replace('\n', ' ');
                 }
@@ -1207,7 +1207,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         this.topMessageTopicStartIndex = 0;
         this.topMessageTopicEndIndex = 0;
         if (this.chat != null) {
-            ArrayList<TLRPC$TL_forumTopic> topics = MessagesController.getInstance(this.currentAccount).getTopicsController().getTopics(this.chat.f1531id);
+            ArrayList<TLRPC$TL_forumTopic> topics = MessagesController.getInstance(this.currentAccount).getTopicsController().getTopics(this.chat.f1522id);
             if (topics != null && !topics.isEmpty()) {
                 ArrayList arrayList = new ArrayList(topics);
                 Collections.sort(arrayList, Comparator.CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Cells.DialogCell$$ExternalSyntheticLambda6
@@ -1223,7 +1223,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 boolean z2 = true;
                 if (messageObject != null) {
                     i = MessageObject.getTopicId(messageObject.messageOwner, true);
-                    TLRPC$TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(this.chat.f1531id, i);
+                    TLRPC$TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(this.chat.f1522id, i);
                     if (findTopic != null) {
                         CharSequence topicSpannedName = ForumUtilities.getTopicSpannedName(findTopic, this.currentMessagePaint);
                         spannableStringBuilder.append(topicSpannedName);
@@ -1252,7 +1252,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                     i2 = 0;
                 }
                 for (int i3 = 0; i3 < Math.min(5, arrayList.size()); i3++) {
-                    if (((TLRPC$TL_forumTopic) arrayList.get(i3)).f1589id != i) {
+                    if (((TLRPC$TL_forumTopic) arrayList.get(i3)).f1580id != i) {
                         if (spannableStringBuilder.length() != 0) {
                             if (z2 && z) {
                                 spannableStringBuilder.append((CharSequence) " ");
@@ -1268,11 +1268,11 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                     spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM), 0, Theme.key_chats_name, null), 0, Math.min(spannableStringBuilder.length(), i2 + 2), 0);
                 }
                 return spannableStringBuilder;
-            } else if (MessagesController.getInstance(this.currentAccount).getTopicsController().endIsReached(this.chat.f1531id)) {
+            } else if (MessagesController.getInstance(this.currentAccount).getTopicsController().endIsReached(this.chat.f1522id)) {
                 return "no created topics";
             } else {
-                MessagesController.getInstance(this.currentAccount).getTopicsController().preloadTopics(this.chat.f1531id);
-                return LocaleController.getString("Loading", C3558R.string.Loading);
+                MessagesController.getInstance(this.currentAccount).getTopicsController().preloadTopics(this.chat.f1522id);
+                return LocaleController.getString("Loading", C3473R.string.Loading);
             }
         }
         return null;
@@ -1415,7 +1415,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             TLRPC$Dialog tLRPC$Dialog = (TLRPC$Dialog) arrayList.get(i);
             LongSparseArray<ArrayList<MessageObject>> longSparseArray = MessagesController.getInstance(this.currentAccount).dialogMessage;
             if (longSparseArray != null) {
-                ArrayList<MessageObject> arrayList2 = longSparseArray.get(tLRPC$Dialog.f1537id);
+                ArrayList<MessageObject> arrayList2 = longSparseArray.get(tLRPC$Dialog.f1528id);
                 MessageObject messageObject2 = (arrayList2 == null || arrayList2.isEmpty()) ? null : arrayList2.get(0);
                 if (messageObject2 != null && (messageObject == null || messageObject2.messageOwner.date > messageObject.messageOwner.date)) {
                     messageObject = messageObject2;
@@ -1485,7 +1485,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         if (tLRPC$TL_forumTopic == null) {
             return 0;
         }
-        return tLRPC$TL_forumTopic.f1589id;
+        return tLRPC$TL_forumTopic.f1580id;
     }
 
     @Override // android.view.View
@@ -1935,7 +1935,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     @Override // android.view.View
     public boolean performAccessibilityAction(int i, Bundle bundle) {
         DialogsActivity dialogsActivity;
-        if (i == C3558R.C3561id.acc_action_chat_preview && (dialogsActivity = this.parentFragment) != null) {
+        if (i == C3473R.C3476id.acc_action_chat_preview && (dialogsActivity = this.parentFragment) != null) {
             dialogsActivity.showChatPreview(this);
             return true;
         }
@@ -1951,7 +1951,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             accessibilityNodeInfo.addAction(16);
             accessibilityNodeInfo.addAction(32);
             if (!isFolderCell() && this.parentFragment != null && Build.VERSION.SDK_INT >= 21) {
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3558R.C3561id.acc_action_chat_preview, LocaleController.getString("AccActionChatPreview", C3558R.string.AccActionChatPreview)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3473R.C3476id.acc_action_chat_preview, LocaleController.getString("AccActionChatPreview", C3473R.string.AccActionChatPreview)));
             }
         }
         CheckBox2 checkBox2 = this.checkBox;
@@ -1971,15 +1971,15 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         StringBuilder sb = new StringBuilder();
         int i = this.currentDialogFolderId;
         if (i == 1 || i == 2) {
-            sb.append(i == 2 ? LocaleController.getInternalString(C3558R.string.hidden_chats_title) : LocaleController.getString("ArchivedChats", C3558R.string.ArchivedChats));
+            sb.append(i == 2 ? LocaleController.getInternalString(C3473R.string.hidden_chats_title) : LocaleController.getString("ArchivedChats", C3473R.string.ArchivedChats));
             sb.append(". ");
         } else {
             if (this.encryptedChat != null) {
-                sb.append(LocaleController.getString("AccDescrSecretChat", C3558R.string.AccDescrSecretChat));
+                sb.append(LocaleController.getString("AccDescrSecretChat", C3473R.string.AccDescrSecretChat));
                 sb.append(". ");
             }
             if (this.isTopic && this.forumTopic != null) {
-                sb.append(LocaleController.getString("AccDescrTopic", C3558R.string.AccDescrTopic));
+                sb.append(LocaleController.getString("AccDescrTopic", C3473R.string.AccDescrTopic));
                 sb.append(". ");
                 sb.append(this.forumTopic.title);
                 sb.append(". ");
@@ -1987,15 +1987,15 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 TLRPC$User tLRPC$User = this.user;
                 if (tLRPC$User != null) {
                     if (UserObject.isReplyUser(tLRPC$User)) {
-                        sb.append(LocaleController.getString("RepliesTitle", C3558R.string.RepliesTitle));
+                        sb.append(LocaleController.getString("RepliesTitle", C3473R.string.RepliesTitle));
                     } else {
                         if (this.user.bot) {
-                            sb.append(LocaleController.getString("Bot", C3558R.string.Bot));
+                            sb.append(LocaleController.getString("Bot", C3473R.string.Bot));
                             sb.append(". ");
                         }
                         TLRPC$User tLRPC$User2 = this.user;
                         if (tLRPC$User2.self) {
-                            sb.append(LocaleController.getString("SavedMessages", C3558R.string.SavedMessages));
+                            sb.append(LocaleController.getString("SavedMessages", C3473R.string.SavedMessages));
                         } else {
                             sb.append(ContactsController.formatName(tLRPC$User2.first_name, tLRPC$User2.last_name));
                         }
@@ -2005,9 +2005,9 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                     TLRPC$Chat tLRPC$Chat = this.chat;
                     if (tLRPC$Chat != null) {
                         if (tLRPC$Chat.broadcast) {
-                            sb.append(LocaleController.getString("AccDescrChannel", C3558R.string.AccDescrChannel));
+                            sb.append(LocaleController.getString("AccDescrChannel", C3473R.string.AccDescrChannel));
                         } else {
-                            sb.append(LocaleController.getString("AccDescrGroup", C3558R.string.AccDescrGroup));
+                            sb.append(LocaleController.getString("AccDescrGroup", C3473R.string.AccDescrGroup));
                         }
                         sb.append(". ");
                         sb.append(this.chat.title);
@@ -2017,15 +2017,15 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             }
         }
         if (this.drawVerified) {
-            sb.append(LocaleController.getString("AccDescrVerified", C3558R.string.AccDescrVerified));
+            sb.append(LocaleController.getString("AccDescrVerified", C3473R.string.AccDescrVerified));
             sb.append(". ");
         }
         if (this.dialogMuted) {
-            sb.append(LocaleController.getString("AccDescrNotificationsMuted", C3558R.string.AccDescrNotificationsMuted));
+            sb.append(LocaleController.getString("AccDescrNotificationsMuted", C3473R.string.AccDescrNotificationsMuted));
             sb.append(". ");
         }
         if (isOnline()) {
-            sb.append(LocaleController.getString("AccDescrUserOnline", C3558R.string.AccDescrUserOnline));
+            sb.append(LocaleController.getString("AccDescrUserOnline", C3473R.string.AccDescrUserOnline));
             sb.append(". ");
         }
         int i2 = this.unreadCount;
@@ -2039,7 +2039,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             sb.append(". ");
         }
         if (this.reactionMentionCount > 0) {
-            sb.append(LocaleController.getString("AccDescrMentionReaction", C3558R.string.AccDescrMentionReaction));
+            sb.append(LocaleController.getString("AccDescrMentionReaction", C3473R.string.AccDescrMentionReaction));
             sb.append(". ");
         }
         MessageObject messageObject = this.message;
@@ -2054,9 +2054,9 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         }
         String formatDateAudio = LocaleController.formatDateAudio(i4, true);
         if (this.message.isOut()) {
-            sb.append(LocaleController.formatString("AccDescrSentDate", C3558R.string.AccDescrSentDate, formatDateAudio));
+            sb.append(LocaleController.formatString("AccDescrSentDate", C3473R.string.AccDescrSentDate, formatDateAudio));
         } else {
-            sb.append(LocaleController.formatString("AccDescrReceivedDate", C3558R.string.AccDescrReceivedDate, formatDateAudio));
+            sb.append(LocaleController.formatString("AccDescrReceivedDate", C3473R.string.AccDescrReceivedDate, formatDateAudio));
         }
         sb.append(". ");
         if (this.chat != null && !this.message.isOut() && this.message.isFromUser() && this.message.messageOwner.action == null && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.message.messageOwner.from_id.user_id))) != null) {
@@ -2243,7 +2243,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-fromChatId));
         }
         if (this.message.isOutOwner()) {
-            return LocaleController.getString("FromYou", C3558R.string.FromYou);
+            return LocaleController.getString("FromYou", C3473R.string.FromYou);
         }
         MessageObject messageObject2 = this.message;
         if (messageObject2 != null && (tLRPC$Message2 = messageObject2.messageOwner) != null && (tLRPC$Message2.from_id instanceof TLRPC$TL_peerUser) && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.message.messageOwner.from_id.user_id))) != null) {
@@ -2255,7 +2255,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 return (chat == null || (str = chat.title) == null) ? "DELETED" : str.replace("\n", "");
             } else if (this.useForceThreeLines || SharedConfig.useThreeLinesLayout) {
                 if (UserObject.isDeleted(tLRPC$User)) {
-                    return LocaleController.getString("HiddenName", C3558R.string.HiddenName);
+                    return LocaleController.getString("HiddenName", C3473R.string.HiddenName);
                 }
                 return ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name).replace("\n", "");
             } else {
@@ -2507,7 +2507,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Cells.DialogCell$DialogUpdateHelper */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class DialogUpdateHelper {
         public long lastDrawnDialogId;
         public boolean lastDrawnDialogIsFolder;

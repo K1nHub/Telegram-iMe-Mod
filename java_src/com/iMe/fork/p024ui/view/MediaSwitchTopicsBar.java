@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: MediaSwitchTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.MediaSwitchTopicsBar */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MediaSwitchTopicsBar extends LinearLayout {
     private boolean currentMessagesContextMenu;
     private final Function1<Boolean, Unit> delegate;

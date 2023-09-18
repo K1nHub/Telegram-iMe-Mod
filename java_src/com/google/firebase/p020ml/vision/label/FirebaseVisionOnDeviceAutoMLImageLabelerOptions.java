@@ -2,7 +2,7 @@ package com.google.firebase.p020ml.vision.label;
 
 import com.google.android.gms.common.internal.Objects;
 /* renamed from: com.google.firebase.ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabelerOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionOnDeviceAutoMLImageLabelerOptions {
     private final String zzaxi;
     private final String zzaxj;

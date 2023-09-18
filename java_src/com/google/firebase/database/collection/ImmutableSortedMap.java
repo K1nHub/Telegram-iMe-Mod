@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ImmutableSortedMap<K, V> implements Iterable<Map.Entry<K, V>> {
     public abstract boolean containsKey(K k);
 
@@ -83,7 +83,7 @@ public abstract class ImmutableSortedMap<K, V> implements Iterable<Map.Entry<K, 
         return sb.toString();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private static final KeyTranslator IDENTITY_TRANSLATOR = new KeyTranslator() { // from class: com.google.firebase.database.collection.ImmutableSortedMap$Builder$$ExternalSyntheticLambda0
             @Override // com.google.firebase.database.collection.ImmutableSortedMap.Builder.KeyTranslator
@@ -94,7 +94,7 @@ public abstract class ImmutableSortedMap<K, V> implements Iterable<Map.Entry<K, 
             }
         };
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public interface KeyTranslator<C, D> {
             D translate(C c);
         }

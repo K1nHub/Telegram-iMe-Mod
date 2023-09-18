@@ -14,7 +14,7 @@ import com.google.firebase.firestore.util.Consumer;
 import com.google.protobuf.InvalidProtocolBufferException;
 import java.util.Iterator;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SQLiteTargetCache implements TargetCache {
 
     /* renamed from: db */
@@ -179,7 +179,7 @@ public final class SQLiteTargetCache implements TargetCache {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TargetDataHolder {
         TargetData targetData;
 
@@ -241,7 +241,7 @@ public final class SQLiteTargetCache implements TargetCache {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DocumentKeysHolder {
         ImmutableSortedSet<DocumentKey> keys;
 

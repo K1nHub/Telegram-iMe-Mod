@@ -2,7 +2,7 @@ package moxy.locators;
 
 import moxy.MvpProcessor;
 import moxy.PresenterBinder;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PresenterBinderLocator {
     private PresenterBinderLocator() {
     }

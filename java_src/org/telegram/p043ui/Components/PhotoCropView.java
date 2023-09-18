@@ -27,7 +27,7 @@ import org.telegram.p043ui.Components.Crop.CropRotationWheel;
 import org.telegram.p043ui.Components.Crop.CropTransform;
 import org.telegram.p043ui.Components.Crop.CropView;
 /* renamed from: org.telegram.ui.Components.PhotoCropView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoCropView extends FrameLayout {
     public final Property<PhotoCropView, Float> ANIMATION_VALUE;
     public final Property<PhotoCropView, Float> PROGRESS_VALUE;
@@ -48,7 +48,7 @@ public class PhotoCropView extends FrameLayout {
     public CropRotationWheel wheelView;
 
     /* renamed from: org.telegram.ui.Components.PhotoCropView$PhotoCropViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PhotoCropViewDelegate {
         int getVideoThumbX();
 

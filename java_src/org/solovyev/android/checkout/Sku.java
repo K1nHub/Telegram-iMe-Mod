@@ -3,18 +3,18 @@ package org.solovyev.android.checkout;
 import android.text.TextUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Sku {
 
     /* renamed from: id */
-    public final C3469Id f1451id;
+    public final C3385Id f1442id;
     private String mDisplayTitle;
     public final String price;
     public final String title;
 
     Sku(String str, String str2) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
-        this.f1451id = new C3469Id(str2, jSONObject.getString("productId"));
+        this.f1442id = new C3385Id(str2, jSONObject.getString("productId"));
         this.price = jSONObject.getString("price");
         Price.regularPriceFromJson(jSONObject);
         this.title = jSONObject.getString("title");
@@ -54,7 +54,7 @@ public final class Sku {
     }
 
     public String toString() {
-        return this.f1451id + "{" + getDisplayTitle() + ", " + this.price + "}";
+        return this.f1442id + "{" + getDisplayTitle() + ", " + this.price + "}";
     }
 
     public String getDisplayTitle() {
@@ -71,20 +71,20 @@ public final class Sku {
         if (obj == null || Sku.class != obj.getClass()) {
             return false;
         }
-        return this.f1451id.equals(((Sku) obj).f1451id);
+        return this.f1442id.equals(((Sku) obj).f1442id);
     }
 
     public int hashCode() {
-        return this.f1451id.hashCode();
+        return this.f1442id.hashCode();
     }
 
     /* renamed from: org.solovyev.android.checkout.Sku$Id */
-    /* loaded from: classes4.dex */
-    public static final class C3469Id {
+    /* loaded from: classes6.dex */
+    public static final class C3385Id {
         public final String code;
         public final String product;
 
-        public C3469Id(String str, String str2) {
+        public C3385Id(String str, String str2) {
             this.product = str;
             this.code = str2;
         }
@@ -97,12 +97,12 @@ public final class Sku {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || C3469Id.class != obj.getClass()) {
+            if (obj == null || C3385Id.class != obj.getClass()) {
                 return false;
             }
-            C3469Id c3469Id = (C3469Id) obj;
-            if (this.product.equals(c3469Id.product)) {
-                return this.code.equals(c3469Id.code);
+            C3385Id c3385Id = (C3385Id) obj;
+            if (this.product.equals(c3385Id.product)) {
+                return this.code.equals(c3385Id.code);
             }
             return false;
         }
@@ -112,7 +112,7 @@ public final class Sku {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Price {
         public static final Price EMPTY = new Price(0, "");
         public final long amount;

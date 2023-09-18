@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$StreamCallback> {
     private static final long BACKOFF_CLIENT_NETWORK_FAILURE_MAX_DELAY_MS;
     private static final long BACKOFF_INITIAL_DELAY_MS;
@@ -41,7 +41,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CloseGuardedRunner {
         private final long initialCloseCount;
 
@@ -60,7 +60,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class StreamObserver implements IncomingStreamObserver<RespT> {
         private final AbstractStream<ReqT, RespT, CallbackT>.CloseGuardedRunner dispatcher;
 
@@ -150,7 +150,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class IdleTimeoutRunnable implements Runnable {
         IdleTimeoutRunnable() {
         }
@@ -244,7 +244,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
 
     public void stop() {
         if (isStarted()) {
-            close(Stream$State.Initial, Status.f526OK);
+            close(Stream$State.Initial, Status.f517OK);
         }
     }
 
@@ -266,7 +266,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     /* JADX INFO: Access modifiers changed from: private */
     public void handleIdleCloseTimer() {
         if (isOpen()) {
-            close(Stream$State.Initial, Status.f526OK);
+            close(Stream$State.Initial, Status.f517OK);
         }
     }
 

@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProtocolsView> implements WalletSwapProtocolsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -117,7 +117,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowExchangesProvidersCommand extends ViewCommand<WalletSwapProtocolsView> {
         public final List<? extends BaseNode> providers;
 
@@ -134,7 +134,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$ShowRequiredVerifyDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRequiredVerifyDialogCommand extends ViewCommand<WalletSwapProtocolsView> {
         ShowRequiredVerifyDialogCommand(WalletSwapProtocolsView$$State walletSwapProtocolsView$$State) {
             super("showRequiredVerifyDialog", OneExecutionStateStrategy.class);
@@ -148,7 +148,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$OpenBinanceConvertScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenBinanceConvertScreenCommand extends ViewCommand<WalletSwapProtocolsView> {
         OpenBinanceConvertScreenCommand(WalletSwapProtocolsView$$State walletSwapProtocolsView$$State) {
             super("openBinanceConvertScreen", OneExecutionStateStrategy.class);
@@ -162,7 +162,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$OpenSwapScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenSwapScreenCommand extends ViewCommand<WalletSwapProtocolsView> {
         public final String forcedNetworkId;
         public final SwapProtocolInfo item;
@@ -181,7 +181,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSwapProtocolsView> {
         public final String text;
 
@@ -198,7 +198,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSwapProtocolsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -219,7 +219,7 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
 
     /* compiled from: WalletSwapProtocolsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSwapProtocolsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

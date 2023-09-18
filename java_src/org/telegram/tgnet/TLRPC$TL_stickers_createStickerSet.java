@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stickers_createStickerSet extends TLObject {
     public static int constructor = -1876841625;
     public boolean animated;

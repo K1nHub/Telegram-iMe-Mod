@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_chatlists_joinChatlistInvite extends TLObject {
     public static int constructor = -1498291302;
     public ArrayList<TLRPC$InputPeer> peers = new ArrayList<>();

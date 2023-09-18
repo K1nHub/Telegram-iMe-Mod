@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableFromIterable<T> extends Observable<T> {
     final Iterable<? extends T> source;
 
@@ -40,7 +40,7 @@ public final class ObservableFromIterable<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class FromIterableDisposable<T> extends BasicQueueDisposable<T> {
         boolean checkNext;
         volatile boolean disposed;
@@ -49,22 +49,22 @@ public final class ObservableFromIterable<T> extends Observable<T> {
         boolean fusionMode;
 
         /* renamed from: it */
-        final Iterator<? extends T> f553it;
+        final Iterator<? extends T> f544it;
 
         FromIterableDisposable(Observer<? super T> observer, Iterator<? extends T> it) {
             this.downstream = observer;
-            this.f553it = it;
+            this.f544it = it;
         }
 
         void run() {
             while (!isDisposed()) {
                 try {
-                    this.downstream.onNext(ObjectHelper.requireNonNull(this.f553it.next(), "The iterator returned a null value"));
+                    this.downstream.onNext(ObjectHelper.requireNonNull(this.f544it.next(), "The iterator returned a null value"));
                     if (isDisposed()) {
                         return;
                     }
                     try {
-                        if (!this.f553it.hasNext()) {
+                        if (!this.f544it.hasNext()) {
                             if (isDisposed()) {
                                 return;
                             }
@@ -99,14 +99,14 @@ public final class ObservableFromIterable<T> extends Observable<T> {
                 return null;
             }
             if (this.checkNext) {
-                if (!this.f553it.hasNext()) {
+                if (!this.f544it.hasNext()) {
                     this.done = true;
                     return null;
                 }
             } else {
                 this.checkNext = true;
             }
-            return (T) ObjectHelper.requireNonNull(this.f553it.next(), "The iterator returned a null value");
+            return (T) ObjectHelper.requireNonNull(this.f544it.next(), "The iterator returned a null value");
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue

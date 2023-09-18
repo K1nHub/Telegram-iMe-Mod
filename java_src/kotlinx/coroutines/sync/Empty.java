@@ -1,7 +1,7 @@
 package kotlinx.coroutines.sync;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Mutex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Empty {
     public final Object locked;
 

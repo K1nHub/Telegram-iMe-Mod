@@ -3,7 +3,7 @@ package org.webrtc;
 import android.media.MediaCodecInfo;
 import org.webrtc.EglBase;
 import org.webrtc.Predicate;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
     private static final Predicate<MediaCodecInfo> defaultAllowedPredicate = new Predicate<MediaCodecInfo>() { // from class: org.webrtc.HardwareVideoDecoderFactory.1
         @Override // org.webrtc.Predicate
@@ -135,7 +135,7 @@ public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
             L85:
                 return r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.webrtc.HardwareVideoDecoderFactory.C73401.test(android.media.MediaCodecInfo):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: org.webrtc.HardwareVideoDecoderFactory.C72551.test(android.media.MediaCodecInfo):boolean");
         }
     };
 

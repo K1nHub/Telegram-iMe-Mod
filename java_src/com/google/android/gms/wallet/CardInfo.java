@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CardInfoCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CardInfo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CardInfo> CREATOR = new zze();
     @SafeParcelable.Field(m797id = 1)

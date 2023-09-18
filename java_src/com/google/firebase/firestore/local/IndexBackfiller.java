@@ -3,7 +3,7 @@ package com.google.firebase.firestore.local;
 import com.google.firebase.firestore.local.IndexBackfiller;
 import com.google.firebase.firestore.util.AsyncQueue;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IndexBackfiller {
     private static final long INITIAL_BACKFILL_DELAY_MS = TimeUnit.SECONDS.toMillis(15);
     private static final long REGULAR_BACKFILL_DELAY_MS = TimeUnit.MINUTES.toMillis(1);
@@ -11,13 +11,13 @@ public class IndexBackfiller {
     public IndexBackfiller(SQLitePersistence sQLitePersistence) {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Results {
         Results(boolean z, int i, int i2) {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class BackfillScheduler implements Scheduler {
         private final AsyncQueue asyncQueue;
         private boolean hasRun = false;

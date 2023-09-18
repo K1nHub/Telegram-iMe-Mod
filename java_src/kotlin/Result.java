@@ -4,27 +4,27 @@ import java.io.Serializable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Result.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Result<T> implements Serializable {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1660constructorimpl(Object obj) {
+    public static <T> Object m1658constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m1663isSuccessimpl(Object obj) {
+    public static final boolean m1661isSuccessimpl(Object obj) {
         return !(obj instanceof Failure);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m1662isFailureimpl(Object obj) {
+    public static final boolean m1660isFailureimpl(Object obj) {
         return obj instanceof Failure;
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m1661exceptionOrNullimpl(Object obj) {
+    public static final Throwable m1659exceptionOrNullimpl(Object obj) {
         if (obj instanceof Failure) {
             return ((Failure) obj).exception;
         }
@@ -32,7 +32,7 @@ public final class Result<T> implements Serializable {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -43,7 +43,7 @@ public final class Result<T> implements Serializable {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Failure implements Serializable {
         public final Throwable exception;
 

@@ -2,7 +2,7 @@ package org.bouncycastle.asn1.nist;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface NISTObjectIdentifiers {
     public static final ASN1ObjectIdentifier aes;
     public static final ASN1ObjectIdentifier hashAlgs;

@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MusicActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.MusicActivity$musicCountComparator$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MusicActivity$musicCountComparator$2 extends Lambda implements Function0<Comparator<Long>> {
     final /* synthetic */ MusicActivity this$0;
 

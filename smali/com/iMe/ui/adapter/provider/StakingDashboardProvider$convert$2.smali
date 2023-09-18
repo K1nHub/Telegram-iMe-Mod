@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 41
+    .line 44
     check-cast p1, Lcom/iMe/ui/custom/StakingDashboardView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/StakingDashboardProvider$convert$2;->invoke(Lcom/iMe/ui/custom/StakingDashboardView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 45
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingDashboardProvider$convert$2;->$item:Lcom/iMe/model/staking/StakingDashboardItem;
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/StakingDashboardView;->setupItem(Lcom/iMe/model/staking/StakingDashboardItem;)V

@@ -8,7 +8,7 @@ import java.util.Objects;
 import kotlin.Result;
 import kotlin.ResultKt;
 /* compiled from: HandlerDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HandlerDispatcherKt {
     private static volatile Choreographer choreographer;
 
@@ -30,14 +30,14 @@ public final class HandlerDispatcherKt {
     }
 
     static {
-        Object m1660constructorimpl;
+        Object m1658constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m1660constructorimpl = Result.m1660constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
+            m1658constructorimpl = Result.m1658constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1660constructorimpl = Result.m1660constructorimpl(ResultKt.createFailure(th));
+            m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th));
         }
-        HandlerDispatcher handlerDispatcher = Result.m1662isFailureimpl(m1660constructorimpl) ? null : m1660constructorimpl;
+        HandlerDispatcher handlerDispatcher = Result.m1660isFailureimpl(m1658constructorimpl) ? null : m1658constructorimpl;
     }
 }

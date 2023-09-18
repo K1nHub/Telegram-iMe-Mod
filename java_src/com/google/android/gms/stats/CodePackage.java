@@ -3,7 +3,7 @@ package com.google.android.gms.stats;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface CodePackage {
     public static final String COMMON = "COMMON";
     public static final String DRIVE = "DRIVE";

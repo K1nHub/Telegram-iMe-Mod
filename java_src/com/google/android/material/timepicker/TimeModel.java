@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TimeModel implements Parcelable {
     public static final Parcelable.Creator<TimeModel> CREATOR = new Parcelable.Creator<TimeModel>() { // from class: com.google.android.material.timepicker.TimeModel.1
         /* JADX WARN: Can't rename method to resolve collision */

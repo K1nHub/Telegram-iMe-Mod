@@ -25,7 +25,7 @@ import io.reactivex.internal.operators.single.SingleSubscribeOn;
 import io.reactivex.internal.operators.single.SingleToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Single<T> implements SingleSource<T> {
     protected abstract void subscribeActual(SingleObserver<? super T> singleObserver);
 

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_upload_cdnFile extends TLRPC$upload_CdnFile {
     public static int constructor = -1449145777;
 

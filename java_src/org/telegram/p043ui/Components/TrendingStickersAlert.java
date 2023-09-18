@@ -25,7 +25,7 @@ import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 import org.telegram.p043ui.Components.TrendingStickersAlert;
 /* renamed from: org.telegram.ui.Components.TrendingStickersAlert */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TrendingStickersAlert extends BottomSheet {
     private final AlertContainerView alertContainerView;
     private final TrendingStickersLayout layout;
@@ -132,7 +132,7 @@ public class TrendingStickersAlert extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.TrendingStickersAlert$AlertContainerView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class AlertContainerView extends SizeNotifierFrameLayout {
         private boolean gluedToTop;
         private boolean ignoreLayout;

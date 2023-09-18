@@ -1,5 +1,5 @@
 package kotlinx.coroutines.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SystemPropsKt {
     public static final int getAVAILABLE_PROCESSORS() {
         return SystemPropsKt__SystemPropsKt.getAVAILABLE_PROCESSORS();

@@ -9,10 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BetterRatingView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BetterRatingView extends View {
     private Bitmap filledStar;
     private Bitmap hollowStar;
@@ -22,7 +22,7 @@ public class BetterRatingView extends View {
     private int selectedRating;
 
     /* renamed from: org.telegram.ui.Components.BetterRatingView$OnRatingChangeListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnRatingChangeListener {
         void onRatingChanged(int i);
     }
@@ -32,8 +32,8 @@ public class BetterRatingView extends View {
         this.paint = new Paint();
         this.numStars = 5;
         this.selectedRating = 0;
-        this.filledStar = BitmapFactory.decodeResource(getResources(), C3558R.C3560drawable.ic_rating_star_filled).extractAlpha();
-        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3558R.C3560drawable.ic_rating_star).extractAlpha();
+        this.filledStar = BitmapFactory.decodeResource(getResources(), C3473R.C3475drawable.ic_rating_star_filled).extractAlpha();
+        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3473R.C3475drawable.ic_rating_star).extractAlpha();
     }
 
     @Override // android.view.View

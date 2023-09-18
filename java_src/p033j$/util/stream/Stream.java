@@ -6,22 +6,22 @@ import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.Function;
-import p033j$.util.function.InterfaceC2955b;
-import p033j$.util.function.InterfaceC2966m;
-import p033j$.util.function.InterfaceC2978y;
+import p033j$.util.function.InterfaceC2871b;
+import p033j$.util.function.InterfaceC2882m;
+import p033j$.util.function.InterfaceC2894y;
 import p033j$.util.function.Predicate;
 import p033j$.util.function.ToDoubleFunction;
 import p033j$.util.function.ToIntFunction;
 import p033j$.util.function.ToLongFunction;
-import p033j$.wrappers.C3323I0;
+import p033j$.wrappers.C3239I0;
 /* renamed from: j$.util.stream.Stream */
 /* loaded from: classes2.dex */
-public interface Stream<T> extends InterfaceC3179g {
+public interface Stream<T> extends InterfaceC3095g {
     /* renamed from: B */
-    Object mo270B(Object obj, BiFunction biFunction, InterfaceC2955b interfaceC2955b);
+    Object mo270B(Object obj, BiFunction biFunction, InterfaceC2871b interfaceC2871b);
 
     /* renamed from: E */
-    InterfaceC3112U mo269E(Function function);
+    InterfaceC3028U mo269E(Function function);
 
     /* renamed from: T */
     Stream mo268T(Predicate predicate);
@@ -33,18 +33,18 @@ public interface Stream<T> extends InterfaceC3179g {
     boolean mo266W(Predicate predicate);
 
     /* renamed from: X */
-    InterfaceC3169e1 mo265X(Function function);
+    InterfaceC3085e1 mo265X(Function function);
 
     /* renamed from: a */
     boolean mo264a(Predicate predicate);
 
     /* renamed from: b0 */
-    Object mo263b0(C3323I0 c3323i0);
+    Object mo263b0(C3239I0 c3239i0);
 
     /* renamed from: c */
     IntStream mo262c(Function function);
 
-    @Override // p033j$.util.stream.InterfaceC3179g, java.lang.AutoCloseable
+    @Override // p033j$.util.stream.InterfaceC3095g, java.lang.AutoCloseable
     /* synthetic */ void close();
 
     long count();
@@ -64,16 +64,16 @@ public interface Stream<T> extends InterfaceC3179g {
     void forEach(Consumer<? super T> consumer);
 
     /* renamed from: g0 */
-    InterfaceC3169e1 mo259g0(ToLongFunction toLongFunction);
+    InterfaceC3085e1 mo259g0(ToLongFunction toLongFunction);
 
     /* renamed from: i */
-    Object mo258i(InterfaceC2978y interfaceC2978y, BiConsumer biConsumer, BiConsumer biConsumer2);
+    Object mo258i(InterfaceC2894y interfaceC2894y, BiConsumer biConsumer, BiConsumer biConsumer2);
 
     /* renamed from: j0 */
-    InterfaceC3112U mo257j0(ToDoubleFunction toDoubleFunction);
+    InterfaceC3028U mo257j0(ToDoubleFunction toDoubleFunction);
 
     /* renamed from: l */
-    Object[] mo256l(InterfaceC2966m interfaceC2966m);
+    Object[] mo256l(InterfaceC2882m interfaceC2882m);
 
     Stream limit(long j);
 
@@ -81,7 +81,7 @@ public interface Stream<T> extends InterfaceC3179g {
     IntStream mo255m(ToIntFunction toIntFunction);
 
     /* renamed from: m0 */
-    Object mo254m0(Object obj, InterfaceC2955b interfaceC2955b);
+    Object mo254m0(Object obj, InterfaceC2871b interfaceC2871b);
 
     Optional max(Comparator comparator);
 
@@ -100,7 +100,7 @@ public interface Stream<T> extends InterfaceC3179g {
     Stream sorted(Comparator comparator);
 
     /* renamed from: t */
-    Optional mo251t(InterfaceC2955b interfaceC2955b);
+    Optional mo251t(InterfaceC2871b interfaceC2871b);
 
     Object[] toArray();
 }

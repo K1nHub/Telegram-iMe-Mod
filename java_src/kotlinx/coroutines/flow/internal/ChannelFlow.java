@@ -20,7 +20,7 @@ import kotlinx.coroutines.channels.ReceiveChannel;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: ChannelFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ChannelFlow<T> implements Flow {
     public final int capacity;
     public final CoroutineContext context;

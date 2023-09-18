@@ -5,11 +5,11 @@ import org.solovyev.android.checkout.BaseInventory;
 import org.solovyev.android.checkout.Checkout;
 import org.solovyev.android.checkout.Inventory;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CheckoutInventory extends BaseInventory {
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class Worker implements Checkout.Listener, Runnable {
         private int mCount;
         private final Inventory.Products mProducts = new Inventory.Products();
@@ -64,7 +64,7 @@ public final class CheckoutInventory extends BaseInventory {
         }
 
         private void loadPurchases(BillingRequests billingRequests, final Inventory.Product product) {
-            billingRequests.getAllPurchases(product.f1449id, CheckoutInventory.this.synchronizedListener(new RequestListener<Purchases>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.1
+            billingRequests.getAllPurchases(product.f1440id, CheckoutInventory.this.synchronizedListener(new RequestListener<Purchases>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.1
                 @Override // org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Purchases purchases) {
                     product.setPurchases(purchases.list);
@@ -79,15 +79,15 @@ public final class CheckoutInventory extends BaseInventory {
         }
 
         private void loadSkus(BillingRequests billingRequests, final Inventory.Product product) {
-            List<String> skus = this.mTask.getRequest().getSkus(product.f1449id);
+            List<String> skus = this.mTask.getRequest().getSkus(product.f1440id);
             if (skus.isEmpty()) {
-                Billing.warning("There are no SKUs for \"" + product.f1449id + "\" product. No SKU information will be loaded");
+                Billing.warning("There are no SKUs for \"" + product.f1440id + "\" product. No SKU information will be loaded");
                 synchronized (CheckoutInventory.this.mLock) {
                     countDown();
                 }
                 return;
             }
-            billingRequests.getSkus(product.f1449id, skus, CheckoutInventory.this.synchronizedListener(new RequestListener<Skus>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.2
+            billingRequests.getSkus(product.f1440id, skus, CheckoutInventory.this.synchronizedListener(new RequestListener<Skus>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.2
                 @Override // org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Skus skus2) {
                     product.setSkus(skus2.list);

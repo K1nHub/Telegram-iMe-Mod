@@ -19,7 +19,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.Components.ColoredImageSpan;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
@@ -28,7 +28,7 @@ import org.telegram.p043ui.Stories.SelfStoryViewsView;
 import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$StoryViews;
 /* renamed from: org.telegram.ui.Stories.SelfStoriesPreviewView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class SelfStoriesPreviewView extends View {
     boolean checkScroll;
     int childPadding;
@@ -425,7 +425,7 @@ public abstract class SelfStoriesPreviewView extends View {
     }
 
     /* renamed from: org.telegram.ui.Stories.SelfStoriesPreviewView$ImageHolder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ImageHolder {
         StaticLayout layout;
         TextPaint paint = new TextPaint(1);
@@ -499,14 +499,14 @@ public abstract class SelfStoriesPreviewView extends View {
         int i = tLRPC$StoryViews == null ? 0 : tLRPC$StoryViews.views_count;
         if (i > 0) {
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new ColoredImageSpan(C3558R.C3560drawable.msg_views), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new ColoredImageSpan(C3473R.C3475drawable.msg_views), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) AndroidUtilities.formatWholeNumber(i, 0));
             if (tLRPC$StoryViews == null || tLRPC$StoryViews.reactions_count <= 0) {
                 return;
             }
             spannableStringBuilder.append((CharSequence) (z ? "\n" : "  "));
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new ColoredImageSpan(C3558R.C3560drawable.mini_like_filled), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new ColoredImageSpan(C3473R.C3475drawable.mini_like_filled), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) AndroidUtilities.formatWholeNumber(tLRPC$StoryViews.reactions_count, 0));
         }
     }

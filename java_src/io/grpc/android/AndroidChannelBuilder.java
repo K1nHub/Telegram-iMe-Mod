@@ -18,7 +18,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.okhttp.OkHttpChannelBuilder;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidChannelBuilder extends ForwardingChannelBuilder<AndroidChannelBuilder> {
     private Context context;
     private final ManagedChannelBuilder<?> delegateBuilder;
@@ -60,7 +60,7 @@ public final class AndroidChannelBuilder extends ForwardingChannelBuilder<Androi
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class AndroidChannel extends ManagedChannel {
         private final ConnectivityManager connectivityManager;
         private final Context context;
@@ -153,7 +153,7 @@ public final class AndroidChannelBuilder extends ForwardingChannelBuilder<Androi
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public class DefaultNetworkCallback extends ConnectivityManager.NetworkCallback {
             private boolean isConnected;
 
@@ -178,7 +178,7 @@ public final class AndroidChannelBuilder extends ForwardingChannelBuilder<Androi
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public class NetworkReceiver extends BroadcastReceiver {
             private boolean isConnected;
 

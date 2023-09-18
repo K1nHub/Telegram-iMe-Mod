@@ -12,11 +12,11 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletHomeServicesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletHomeServicesPresenter extends BasePresenter<WalletHomeServicesView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final ResourceManager resourceManager;
@@ -56,7 +56,7 @@ public final class WalletHomeServicesPresenter extends BasePresenter<WalletHomeS
 
     private final List<BaseNode> configureBalancesWithHeaders() {
         List<BaseNode> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new HeaderItem(this.resourceManager.getString(C3558R.string.wallet_internal_point_basic_services)), new ServicesBasicItem(ServicesCategory.CRYPTOBOXES, C3558R.C3560drawable.fork_ic_internal_point_cryptoboxes, C3558R.string.wallet_internal_point_cryptoboxes_title, C3558R.string.wallet_internal_point_cryptoboxes_subtitle), new ServicesBasicItem(ServicesCategory.STAKING, C3558R.C3560drawable.fork_ic_internal_point_staking, C3558R.string.wallet_internal_point_staking_title, C3558R.string.wallet_internal_point_staking_subtitle), new ServicesBasicItem(ServicesCategory.CHANNELS, C3558R.C3560drawable.fork_ic_internal_point_channels_catalog, C3558R.string.wallet_internal_point_channels_catalog_title, C3558R.string.wallet_internal_point_channels_catalog_subtitle), new ServicesBasicItem(ServicesCategory.NEUROBOTS, C3558R.C3560drawable.fork_ic_internal_point_neurobots_store, C3558R.string.wallet_internal_point_neurobots_store_title, C3558R.string.wallet_internal_point_neurobots_store_subtitle), new HeaderItem(this.resourceManager.getString(C3558R.string.wallet_internal_point_subscriptions)), new ServicesBasicItem(ServicesCategory.PREMIUM, C3558R.C3560drawable.fork_ic_internal_point_premium_account, C3558R.string.wallet_internal_point_premium_account_title, C3558R.string.wallet_internal_point_premium_account_subtitle), new ServicesBasicItem(ServicesCategory.ADS, C3558R.C3560drawable.fork_ic_internal_point_ads, C3558R.string.wallet_internal_point_ads_title, C3558R.string.wallet_internal_point_ads_subtitle));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new HeaderItem(this.resourceManager.getString(C3473R.string.wallet_internal_point_basic_services)), new ServicesBasicItem(ServicesCategory.CRYPTOBOXES, C3473R.C3475drawable.fork_ic_internal_point_cryptoboxes, C3473R.string.wallet_internal_point_cryptoboxes_title, C3473R.string.wallet_internal_point_cryptoboxes_subtitle), new ServicesBasicItem(ServicesCategory.STAKING, C3473R.C3475drawable.fork_ic_internal_point_staking, C3473R.string.wallet_internal_point_staking_title, C3473R.string.wallet_internal_point_staking_subtitle), new ServicesBasicItem(ServicesCategory.CHANNELS, C3473R.C3475drawable.fork_ic_internal_point_channels_catalog, C3473R.string.wallet_internal_point_channels_catalog_title, C3473R.string.wallet_internal_point_channels_catalog_subtitle), new ServicesBasicItem(ServicesCategory.NEUROBOTS, C3473R.C3475drawable.fork_ic_internal_point_neurobots_store, C3473R.string.wallet_internal_point_neurobots_store_title, C3473R.string.wallet_internal_point_neurobots_store_subtitle), new HeaderItem(this.resourceManager.getString(C3473R.string.wallet_internal_point_subscriptions)), new ServicesBasicItem(ServicesCategory.PREMIUM, C3473R.C3475drawable.fork_ic_internal_point_premium_account, C3473R.string.wallet_internal_point_premium_account_title, C3473R.string.wallet_internal_point_premium_account_subtitle), new ServicesBasicItem(ServicesCategory.ADS, C3473R.C3475drawable.fork_ic_internal_point_ads, C3473R.string.wallet_internal_point_ads_title, C3473R.string.wallet_internal_point_ads_subtitle));
         return mutableListOf;
     }
 }

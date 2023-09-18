@@ -2,7 +2,7 @@ package org.telegram.p043ui.Components;
 
 import android.view.animation.Interpolator;
 /* renamed from: org.telegram.ui.Components.Easings */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Easings {
     public static final Interpolator easeOutSine = new CubicBezierInterpolator(0.39d, 0.575d, 0.565d, 1.0d);
     public static final Interpolator easeInOutSine = new CubicBezierInterpolator(0.445d, 0.05d, 0.55d, 0.95d);

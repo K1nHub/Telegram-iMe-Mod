@@ -18,13 +18,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: MessageMoreActionsView.kt */
 /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessageMoreActionsView extends ActionBarMenuSubItem {
     private final Lazy gapItemHeight$delegate;
     private final List<SubMenuItem> items;
@@ -65,7 +65,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         });
         this.optionItemHeight$delegate = lazy2;
         setTextAndIcon(title, i);
-        setRightIcon(C3558R.C3560drawable.msg_arrowright);
+        setRightIcon(C3473R.C3475drawable.msg_arrowright);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +112,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: MessageMoreActionsView.kt */
     /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$SubMenuItemsAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class SubMenuItemsAdapter extends RecyclerListView.SelectionAdapter {
         public SubMenuItemsAdapter() {
         }
@@ -171,7 +171,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
 
     /* compiled from: MessageMoreActionsView.kt */
     /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$SubMenuItemView */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class SubMenuItemView extends ActionBarMenuSubItem {
         public SubMenuItemView(int i) {
             super(MessageMoreActionsView.this.getContext(), i == IdFabric$ViewTypes.SUB_ITEM_TOP, i == IdFabric$ViewTypes.SUB_ITEM_BOTTOM);
@@ -186,7 +186,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
 
     /* compiled from: MessageMoreActionsView.kt */
     /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$SubMenuItem */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class SubMenuItem {
         public /* synthetic */ SubMenuItem(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -197,7 +197,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
 
         /* compiled from: MessageMoreActionsView.kt */
         /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$SubMenuItem$Option */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Option extends SubMenuItem {
             private final int iconResId;
             private final String title;
@@ -240,7 +240,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
 
         /* compiled from: MessageMoreActionsView.kt */
         /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$SubMenuItem$Gap */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Gap extends SubMenuItem {
             public static final Gap INSTANCE = new Gap();
 
@@ -252,7 +252,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
 
     /* compiled from: MessageMoreActionsView.kt */
     /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

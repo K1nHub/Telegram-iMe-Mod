@@ -2,7 +2,7 @@ package com.google.firebase.appindexing.internal;
 
 import android.util.Log;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzw {
     public static int zza(String str) {
         if (zzb(3)) {

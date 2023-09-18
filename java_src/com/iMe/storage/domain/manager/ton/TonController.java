@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: TonController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TonController {
     Observable<Result<Wallet>> createWallet();
 

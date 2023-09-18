@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC$TL_inputStickerSetShortName;
 import org.telegram.tgnet.TLRPC$TL_messages_stickerSet;
 import org.telegram.tgnet.TLRPC$TL_stickerPack;
 /* renamed from: org.telegram.ui.Components.Paint.Views.LocationMarker */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LocationMarker extends View {
     private final RectF bounds;
     public final float density;
@@ -38,7 +38,7 @@ public class LocationMarker extends View {
     private boolean forceEmoji;
 
     /* renamed from: h */
-    private float f1799h;
+    private float f1790h;
     private boolean hasFlag;
     private final Drawable icon;
     private StaticLayout layout;
@@ -55,7 +55,7 @@ public class LocationMarker extends View {
     private float textScale;
 
     /* renamed from: w */
-    private float f1800w;
+    private float f1791w;
 
     public LocationMarker(Context context, float f) {
         super(context);
@@ -73,7 +73,7 @@ public class LocationMarker extends View {
         imageReceiver.setCrossfadeWithOldImage(true);
         this.padx = (int) (3.0f * f);
         this.pady = (int) (1.0f * f);
-        this.icon = context.getResources().getDrawable(C3558R.C3560drawable.map_pin3).mutate();
+        this.icon = context.getResources().getDrawable(C3473R.C3475drawable.map_pin3).mutate();
         textPaint.setTextSize(f * 24.0f);
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
     }
@@ -167,7 +167,7 @@ public class LocationMarker extends View {
                 if (tLRPC$TL_stickerPack.emoticon.contains(str) && !tLRPC$TL_stickerPack.documents.isEmpty()) {
                     long longValue = tLRPC$TL_stickerPack.documents.get(0).longValue();
                     for (int i2 = 0; i2 < tLRPC$TL_messages_stickerSet.documents.size(); i2++) {
-                        if (tLRPC$TL_messages_stickerSet.documents.get(i2).f1539id == longValue) {
+                        if (tLRPC$TL_messages_stickerSet.documents.get(i2).f1530id == longValue) {
                             return tLRPC$TL_messages_stickerSet.documents.get(i2);
                         }
                     }
@@ -262,8 +262,8 @@ public class LocationMarker extends View {
             }
             float f5 = f4 + f2 + 21.33f + 3.25f + rectF2.right;
             float f6 = this.density;
-            this.f1800w = (f5 * f6) + (this.layoutWidth * this.textScale);
-            this.f1799h = ((rectF2.top + rectF2.bottom) * f6) + Math.max(f6 * 21.33f, this.layout.getHeight() * this.textScale);
+            this.f1791w = (f5 * f6) + (this.layoutWidth * this.textScale);
+            this.f1790h = ((rectF2.top + rectF2.bottom) * f6) + Math.max(f6 * 21.33f, this.layout.getHeight() * this.textScale);
             this.relayout = false;
         }
     }
@@ -271,7 +271,7 @@ public class LocationMarker extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         setupLayout();
-        setMeasuredDimension(this.padx + Math.round(this.f1800w) + this.padx, this.pady + Math.round(this.f1799h) + this.pady);
+        setMeasuredDimension(this.padx + Math.round(this.f1791w) + this.padx, this.pady + Math.round(this.f1790h) + this.pady);
     }
 
     @Override // android.view.View
@@ -283,15 +283,15 @@ public class LocationMarker extends View {
         RectF rectF = this.bounds;
         int i = this.padx;
         int i2 = this.pady;
-        rectF.set(i, i2, i + this.f1800w, i2 + this.f1799h);
+        rectF.set(i, i2, i + this.f1791w, i2 + this.f1790h);
         RectF rectF2 = this.bounds;
-        float f = this.f1799h;
+        float f = this.f1790h;
         canvas.drawRoundRect(rectF2, f * 0.2f, f * 0.2f, this.outlinePaint);
         float f2 = 2.25f;
         if (this.hasFlag) {
             ImageReceiver imageReceiver = this.flagImageReceiver;
             float f3 = this.density;
-            imageReceiver.setImageCoords(this.padx + ((this.padding.left + 2.25f) * f3), this.pady + ((this.f1799h - (f3 * 21.33f)) / 2.0f), f3 * 21.33f, f3 * 21.33f);
+            imageReceiver.setImageCoords(this.padx + ((this.padding.left + 2.25f) * f3), this.pady + ((this.f1790h - (f3 * 21.33f)) / 2.0f), f3 * 21.33f, f3 * 21.33f);
             canvas.save();
             canvas.scale(1.2f, 1.2f, this.flagImageReceiver.getCenterX(), this.flagImageReceiver.getCenterY());
             this.flagImageReceiver.draw(canvas);
@@ -302,7 +302,7 @@ public class LocationMarker extends View {
             float f4 = this.padding.left;
             float f5 = this.density;
             int i4 = this.pady;
-            float f6 = this.f1799h;
+            float f6 = this.f1790h;
             drawable.setBounds(((int) (f4 * f5)) + i3, ((int) ((f6 - (f5 * 21.33f)) / 2.0f)) + i4, i3 + ((int) ((f4 + 21.33f) * f5)), i4 + ((int) ((f6 + (f5 * 21.33f)) / 2.0f)));
             this.icon.draw(canvas);
         }
@@ -312,7 +312,7 @@ public class LocationMarker extends View {
         if (!this.hasFlag && !this.forceEmoji) {
             f2 = BitmapDescriptorFactory.HUE_RED;
         }
-        canvas.translate(f7 + ((f8 + f2 + 21.33f + 3.25f) * this.density), this.pady + (this.f1799h / 2.0f));
+        canvas.translate(f7 + ((f8 + f2 + 21.33f + 3.25f) * this.density), this.pady + (this.f1790h / 2.0f));
         float f9 = this.textScale;
         canvas.scale(f9, f9);
         canvas.translate(-this.layoutLeft, (-this.layout.getHeight()) / 2.0f);
@@ -325,7 +325,7 @@ public class LocationMarker extends View {
         float f = this.padding.left;
         float f2 = this.density;
         int i2 = this.pady;
-        float f3 = this.f1799h;
+        float f3 = this.f1790h;
         rectF.set(i + ((f + 2.25f) * f2), i2 + ((f3 - (f2 * 21.33f)) / 2.0f), i + ((f + 2.25f + 21.33f) * f2), i2 + ((f3 + (f2 * 21.33f)) / 2.0f));
     }
 }

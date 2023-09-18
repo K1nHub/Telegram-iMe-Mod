@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.ContextProgressView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ContextProgressView extends View {
     private RectF cicleRect;
     private int innerColor;

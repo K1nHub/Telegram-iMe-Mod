@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationRequestCreator")
 @SafeParcelable.Reserved({4, 5, 1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocationRequest extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new zzx();
     @Deprecated
@@ -361,7 +361,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         public static final long IMPLICIT_MAX_UPDATE_AGE = -1;
         public static final long IMPLICIT_MIN_UPDATE_INTERVAL = -1;

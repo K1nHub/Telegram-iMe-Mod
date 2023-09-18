@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableTakeWhile<T> extends AbstractObservableWithUpstream<T, T> {
     final Predicate<? super T> predicate;
 
@@ -21,7 +21,7 @@ public final class ObservableTakeWhile<T> extends AbstractObservableWithUpstream
         this.source.subscribe(new TakeWhileObserver(observer, this.predicate));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class TakeWhileObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super T> downstream;

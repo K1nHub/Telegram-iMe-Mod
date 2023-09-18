@@ -19,7 +19,7 @@ import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 import com.google.firebase.dynamiclinks.internal.IDynamicLinksCallbacks;
 import com.google.firebase.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseDynamicLinksImpl extends FirebaseDynamicLinks {
     private final Provider<AnalyticsConnector> analytics;
     private final GoogleApi<Api.ApiOptions.NoOptions> googleApi;
@@ -43,7 +43,7 @@ public class FirebaseDynamicLinksImpl extends FirebaseDynamicLinks {
         return this.googleApi.doWrite(new GetDynamicLinkImpl(this.analytics, uri.toString()));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class GetDynamicLinkImpl extends TaskApiCall<DynamicLinksClient, PendingDynamicLinkData> {
         private final Provider<AnalyticsConnector> analytics;
         private final String dynamicLink;
@@ -61,7 +61,7 @@ public class FirebaseDynamicLinksImpl extends FirebaseDynamicLinks {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class AbstractDynamicLinkCallbacks extends IDynamicLinksCallbacks.Stub {
         AbstractDynamicLinkCallbacks() {
         }
@@ -73,7 +73,7 @@ public class FirebaseDynamicLinksImpl extends FirebaseDynamicLinks {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DynamicLinkCallbacks extends AbstractDynamicLinkCallbacks {
         private final Provider<AnalyticsConnector> analytics;
         private final TaskCompletionSource<PendingDynamicLinkData> completionSource;

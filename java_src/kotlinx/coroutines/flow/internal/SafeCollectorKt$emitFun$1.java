@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: SafeCollector.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 /* synthetic */ class SafeCollectorKt$emitFun$1 extends FunctionReferenceImpl implements Function3<FlowCollector<? super Object>, Object, Continuation<? super Unit>, Object> {
     public static final SafeCollectorKt$emitFun$1 INSTANCE = new SafeCollectorKt$emitFun$1();
 

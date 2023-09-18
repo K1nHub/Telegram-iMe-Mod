@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.airdrop;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AirdropStep.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum AirdropStep {
     INTRO,
     CREATE_WALLET,
@@ -12,7 +12,7 @@ public enum AirdropStep {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: AirdropStep.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

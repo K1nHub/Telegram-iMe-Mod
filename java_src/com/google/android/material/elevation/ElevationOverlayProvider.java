@@ -7,7 +7,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$attr;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.resources.MaterialAttributes;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ElevationOverlayProvider {
     private final int colorSurface;
     private final float displayDensity;

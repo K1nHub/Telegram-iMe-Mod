@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC$Document;
 /* renamed from: org.telegram.ui.Components.TextPaintImageReceiverSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TextPaintImageReceiverSpan extends ReplacementSpan {
     private boolean alignTop;
     private int height;

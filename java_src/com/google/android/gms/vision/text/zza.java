@@ -3,7 +3,7 @@ package com.google.android.gms.vision.text;
 import java.util.Comparator;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zza implements Comparator<Map.Entry<String, Integer>> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zza(TextBlock textBlock) {

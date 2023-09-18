@@ -34,7 +34,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectRepositoryImpl implements WalletConnectRepository {
     private final ApiErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -158,7 +158,7 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
                 return walletConnectSavedSessions$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "walletConnectSessionsDao…s()\n                    }");
+        Intrinsics.checkNotNullExpressionValue(map, "walletConnectSessionsDao…toSuccess()\n            }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Flowable<Result<List<WCSessionStoreItem>>> handleError = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends WCSessionStoreItem>>>() { // from class: com.iMe.storage.data.repository.crypto.wallet_connect.WalletConnectRepositoryImpl$getWalletConnectSavedSessions$$inlined$handleError$1
             {

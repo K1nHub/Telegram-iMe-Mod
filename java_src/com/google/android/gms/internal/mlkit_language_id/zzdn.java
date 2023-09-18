@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Locale;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzdn implements Serializable, Iterable<Byte> {
     public static final zzdn zza = new zzdx(zzeq.zzb);
     private static final zzdt zzb;

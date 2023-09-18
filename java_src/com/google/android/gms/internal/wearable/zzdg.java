@@ -2,7 +2,7 @@ package com.google.android.gms.internal.wearable;
 
 import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzdg implements zzdn {
     private final zzdc zza;
     private final zzee zzb;

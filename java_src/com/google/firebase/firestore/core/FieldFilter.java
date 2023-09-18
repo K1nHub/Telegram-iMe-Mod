@@ -7,7 +7,7 @@ import com.google.firebase.firestore.model.Values;
 import com.google.firebase.firestore.util.Assert;
 import com.google.firestore.p021v1.Value;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FieldFilter extends Filter {
     private final FieldPath field;
     private final Filter.Operator operator;
@@ -67,7 +67,7 @@ public class FieldFilter extends Filter {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.FieldFilter$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10101 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$core$Filter$Operator;
 

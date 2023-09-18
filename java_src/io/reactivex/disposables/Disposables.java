@@ -4,7 +4,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Disposables {
     public static Disposable fromRunnable(Runnable runnable) {
         ObjectHelper.requireNonNull(runnable, "run is null");

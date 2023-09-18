@@ -30,7 +30,7 @@ import okio.Sink;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: CacheInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CacheInterceptor implements Interceptor {
     public static final Companion Companion = new Companion(null);
     private final Cache cache;
@@ -182,7 +182,7 @@ public final class CacheInterceptor implements Interceptor {
     }
 
     /* compiled from: CacheInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

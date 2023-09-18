@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "AddListenerRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzd extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzd> CREATOR = new zze();
     @SafeParcelable.Field(getter = "getListenerAsBinder", m797id = 2, type = "android.os.IBinder")

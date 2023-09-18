@@ -7,7 +7,7 @@ import com.google.firebase.firestore.util.Logger;
 import io.grpc.Status;
 import java.util.Locale;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class OnlineStateTracker {
     private final OnlineStateCallback onlineStateCallback;
     private AsyncQueue.DelayedTask onlineStateTimer;
@@ -17,7 +17,7 @@ public class OnlineStateTracker {
     private boolean shouldWarnClientIsOffline = true;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnlineStateCallback {
         void handleOnlineStateChange(OnlineState onlineState);
     }

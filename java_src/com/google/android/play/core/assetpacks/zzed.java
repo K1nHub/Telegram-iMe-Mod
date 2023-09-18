@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzed {
     private static final com.google.android.play.core.internal.zzag zza = new com.google.android.play.core.internal.zzag("PackageStateCache");
     private final Context zzb;

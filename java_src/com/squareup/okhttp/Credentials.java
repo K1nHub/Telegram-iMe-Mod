@@ -3,7 +3,7 @@ package com.squareup.okhttp;
 import com.google.android.exoplayer2.C0479C;
 import java.io.UnsupportedEncodingException;
 import okio.ByteString;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Credentials {
     public static String basic(String str, String str2) {
         try {

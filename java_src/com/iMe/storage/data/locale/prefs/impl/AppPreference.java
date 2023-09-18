@@ -12,7 +12,7 @@ import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppPreference.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppPreference extends BasePreference implements PreferenceHelper {
     private final Gson gson;
 

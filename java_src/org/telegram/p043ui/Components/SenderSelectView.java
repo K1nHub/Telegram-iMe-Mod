@@ -14,7 +14,7 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$ChatInvite;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.SenderSelectView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SenderSelectView extends View {
     private static final FloatPropertyCompat<SenderSelectView> MENU_PROGRESS = new SimpleFloatPropertyCompat("menuProgress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.SenderSelectView$$ExternalSyntheticLambda3
         @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Getter
@@ -68,7 +68,7 @@ public class SenderSelectView extends View {
         this.menuPaint.setStrokeCap(Paint.Cap.ROUND);
         this.menuPaint.setStyle(Paint.Style.STROKE);
         updateColors();
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3558R.string.AccDescrSendAsPeer, ""));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3473R.string.AccDescrSendAsPeer, ""));
     }
 
     private void updateColors() {
@@ -132,7 +132,7 @@ public class SenderSelectView extends View {
         } else {
             str = tLObject instanceof TLRPC$ChatInvite ? ((TLRPC$ChatInvite) tLObject).title : "";
         }
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3558R.string.AccDescrSendAsPeer, str));
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", C3473R.string.AccDescrSendAsPeer, str));
         this.avatarDrawable.setInfo(tLObject);
         this.avatarImage.setForUserOrChat(tLObject, this.avatarDrawable);
     }

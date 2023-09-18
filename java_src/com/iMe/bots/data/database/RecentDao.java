@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.RecentDbModel;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecentDao.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class RecentDao {
     public abstract Integer getCounter(String str, String str2, int i);
 

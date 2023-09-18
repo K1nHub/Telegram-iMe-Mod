@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
     private final FirebaseFirestore firestore;
     private final SnapshotMetadata metadata;
@@ -23,7 +23,7 @@ public class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
         this.metadata = new SnapshotMetadata(viewSnapshot.hasPendingWrites(), viewSnapshot.isFromCache());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class QuerySnapshotIterator implements Iterator<QueryDocumentSnapshot>, p033j$.util.Iterator {
 
         /* renamed from: it */

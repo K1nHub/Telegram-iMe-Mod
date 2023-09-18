@@ -55,7 +55,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_messages_updateDialogFiltersOrder;
 /* renamed from: org.telegram.ui.Components.ViewPagerFixed */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ViewPagerFixed extends FrameLayout {
     private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda3
         @Override // android.animation.TimeInterpolator
@@ -93,7 +93,7 @@ public class ViewPagerFixed extends FrameLayout {
     protected SparseArray<View> viewsByType;
 
     /* renamed from: org.telegram.ui.Components.ViewPagerFixed$Adapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class Adapter {
         public abstract void bindView(View view, int i, int i2);
 
@@ -804,7 +804,7 @@ public class ViewPagerFixed extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TabsView extends FrameLayout {
         private int activeTextColorKey;
         private ListAdapter adapter;
@@ -860,14 +860,14 @@ public class ViewPagerFixed extends FrameLayout {
         private int unactiveTextColorKey;
 
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$TabType */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public enum TabType {
             TITLE,
             TITLE_WITH_ICON
         }
 
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$TabsViewDelegate */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface TabsViewDelegate {
             boolean canPerformActions();
 
@@ -931,7 +931,7 @@ public class ViewPagerFixed extends FrameLayout {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$TabWithIcon */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class TabWithIcon extends Tab {
             private Drawable icon;
             private int iconPadding;
@@ -951,18 +951,18 @@ public class ViewPagerFixed extends FrameLayout {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$Tab */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static class Tab {
             public float alpha = 1.0f;
             public int counter;
 
             /* renamed from: id */
-            public int f1883id;
+            public int f1874id;
             public String title;
             public int titleWidth;
 
             public Tab(int i, String str) {
-                this.f1883id = i;
+                this.f1874id = i;
                 this.title = str;
             }
 
@@ -974,7 +974,7 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$TabView */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class TabView extends View {
             private int currentPosition;
             private Tab currentTab;
@@ -1000,7 +1000,7 @@ public class ViewPagerFixed extends FrameLayout {
 
             @Override // android.view.View
             public int getId() {
-                return this.currentTab.f1883id;
+                return this.currentTab.f1874id;
             }
 
             @Override // android.view.View
@@ -1022,7 +1022,7 @@ public class ViewPagerFixed extends FrameLayout {
                 int i9;
                 int i10;
                 int i11;
-                if (this.currentTab.f1883id != Integer.MAX_VALUE && TabsView.this.editingAnimationProgress != BitmapDescriptorFactory.HUE_RED) {
+                if (this.currentTab.f1874id != Integer.MAX_VALUE && TabsView.this.editingAnimationProgress != BitmapDescriptorFactory.HUE_RED) {
                     canvas.save();
                     float f = TabsView.this.editingAnimationProgress * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f);
                     canvas.translate(AndroidUtilities.m73dp(0.66f) * f, BitmapDescriptorFactory.HUE_RED);
@@ -1035,7 +1035,7 @@ public class ViewPagerFixed extends FrameLayout {
                     i = TabsView.this.selectedTabId;
                     i2 = TabsView.this.previousId;
                 }
-                if (this.currentTab.f1883id == i) {
+                if (this.currentTab.f1874id == i) {
                     i3 = TabsView.this.activeTextColorKey;
                     i4 = TabsView.this.unactiveTextColorKey;
                     i5 = Theme.key_chats_tabUnreadActiveBackground;
@@ -1046,7 +1046,7 @@ public class ViewPagerFixed extends FrameLayout {
                     i5 = Theme.key_chats_tabUnreadUnactiveBackground;
                     i6 = Theme.key_chats_tabUnreadActiveBackground;
                 }
-                if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToId != -1) && ((i7 = this.currentTab.f1883id) == i || i7 == i2)) {
+                if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToId != -1) && ((i7 = this.currentTab.f1874id) == i || i7 == i2)) {
                     TabsView.this.textPaint.setColor(ColorUtils.blendARGB(Theme.getColor(i4, TabsView.this.resourcesProvider), Theme.getColor(i3, TabsView.this.resourcesProvider), TabsView.this.animatingIndicatorProgress));
                 } else {
                     TabsView.this.textPaint.setColor(Theme.getColor(i3, TabsView.this.resourcesProvider));
@@ -1061,7 +1061,7 @@ public class ViewPagerFixed extends FrameLayout {
                     i8 = 0;
                     i9 = 0;
                 }
-                if (this.currentTab.f1883id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED)) {
+                if (this.currentTab.f1874id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED)) {
                     i9 = (int) (i9 + ((AndroidUtilities.m72dp(20) - i9) * TabsView.this.editingStartAnimationProgress));
                 }
                 int i13 = this.currentTab.titleWidth;
@@ -1098,13 +1098,13 @@ public class ViewPagerFixed extends FrameLayout {
                     this.textLayout.draw(canvas);
                     canvas.restore();
                 }
-                if (str != null || (this.currentTab.f1883id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED))) {
+                if (str != null || (this.currentTab.f1874id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED))) {
                     TabsView.this.textCounterPaint.setColor(Theme.getColor(TabsView.this.backgroundColorKey, TabsView.this.resourcesProvider));
                     if (!Theme.hasThemeKey(i5) || !Theme.hasThemeKey(i6)) {
                         TabsView.this.counterPaint.setColor(TabsView.this.textPaint.getColor());
                     } else {
                         int color = Theme.getColor(i5, TabsView.this.resourcesProvider);
-                        if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToPosition != -1) && ((i11 = this.currentTab.f1883id) == i || i11 == i2)) {
+                        if ((TabsView.this.animatingIndicator || TabsView.this.manualScrollingToPosition != -1) && ((i11 = this.currentTab.f1874id) == i || i11 == i2)) {
                             TabsView.this.counterPaint.setColor(ColorUtils.blendARGB(Theme.getColor(i6, TabsView.this.resourcesProvider), color, TabsView.this.animatingIndicatorProgress));
                         } else {
                             TabsView.this.counterPaint.setColor(color);
@@ -1112,7 +1112,7 @@ public class ViewPagerFixed extends FrameLayout {
                     }
                     int m72dp = measuredWidth + this.currentTab.titleWidth + AndroidUtilities.m72dp(6);
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.m72dp(20)) / 2;
-                    if (this.currentTab.f1883id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == BitmapDescriptorFactory.HUE_RED) || str != null)) {
+                    if (this.currentTab.f1874id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == BitmapDescriptorFactory.HUE_RED) || str != null)) {
                         TabsView.this.counterPaint.setAlpha(255);
                     } else {
                         TabsView.this.counterPaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
@@ -1122,13 +1122,13 @@ public class ViewPagerFixed extends FrameLayout {
                     float f2 = AndroidUtilities.density;
                     canvas.drawRoundRect(rectF, f2 * 11.5f, f2 * 11.5f, TabsView.this.counterPaint);
                     if (str != null) {
-                        if (this.currentTab.f1883id != Integer.MAX_VALUE) {
+                        if (this.currentTab.f1874id != Integer.MAX_VALUE) {
                             TabsView.this.textCounterPaint.setAlpha((int) ((1.0f - TabsView.this.editingStartAnimationProgress) * 255.0f));
                         }
                         RectF rectF2 = this.rect;
                         canvas.drawText(str, rectF2.left + ((rectF2.width() - i8) / 2.0f), measuredHeight + AndroidUtilities.m73dp(14.5f), TabsView.this.textCounterPaint);
                     }
-                    if (this.currentTab.f1883id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED)) {
+                    if (this.currentTab.f1874id != Integer.MAX_VALUE && (TabsView.this.isEditing || TabsView.this.editingStartAnimationProgress != BitmapDescriptorFactory.HUE_RED)) {
                         TabsView.this.deletePaint.setColor(TabsView.this.textCounterPaint.getColor());
                         TabsView.this.deletePaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                         float m72dp2 = AndroidUtilities.m72dp(3);
@@ -1136,7 +1136,7 @@ public class ViewPagerFixed extends FrameLayout {
                         canvas.drawLine(this.rect.centerX() - m72dp2, this.rect.centerY() + m72dp2, this.rect.centerX() + m72dp2, this.rect.centerY() - m72dp2, TabsView.this.deletePaint);
                     }
                 }
-                if (this.currentTab.f1883id == Integer.MAX_VALUE || TabsView.this.editingAnimationProgress == BitmapDescriptorFactory.HUE_RED) {
+                if (this.currentTab.f1874id == Integer.MAX_VALUE || TabsView.this.editingAnimationProgress == BitmapDescriptorFactory.HUE_RED) {
                     return;
                 }
                 canvas.restore();
@@ -1145,7 +1145,7 @@ public class ViewPagerFixed extends FrameLayout {
             @Override // android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setSelected((this.currentTab == null || TabsView.this.selectedTabId == -1 || this.currentTab.f1883id != TabsView.this.selectedTabId) ? false : true);
+                accessibilityNodeInfo.setSelected((this.currentTab == null || TabsView.this.selectedTabId == -1 || this.currentTab.f1874id != TabsView.this.selectedTabId) ? false : true);
             }
         }
 
@@ -1331,7 +1331,7 @@ public class ViewPagerFixed extends FrameLayout {
             if (this.delegate.canPerformActions()) {
                 TabView tabView = (TabView) view;
                 if (i != this.currentPosition || (tabsViewDelegate = this.delegate) == null) {
-                    scrollToTab(tabView.currentTab.f1883id, i);
+                    scrollToTab(tabView.currentTab.f1874id, i);
                 } else {
                     tabsViewDelegate.onSamePageSelected();
                 }
@@ -1633,7 +1633,7 @@ public class ViewPagerFixed extends FrameLayout {
             int size = arrayList.size();
             for (int i = 0; i < size; i++) {
                 arrayList.get(i);
-                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(arrayList.get(i).f1468id));
+                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(arrayList.get(i).f1459id));
             }
             ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tLRPC$TL_messages_updateDialogFiltersOrder, new RequestDelegate() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -1646,7 +1646,7 @@ public class ViewPagerFixed extends FrameLayout {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.ViewPagerFixed$TabsView$ListAdapter */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class ListAdapter extends RecyclerListView.SelectionAdapter {
             private Context mContext;
 
@@ -1671,7 +1671,7 @@ public class ViewPagerFixed extends FrameLayout {
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public long getItemId(int i) {
-                return ((Tab) TabsView.this.tabs.get(i)).f1883id;
+                return ((Tab) TabsView.this.tabs.get(i)).f1874id;
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter

@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingTransactionArgs implements TransactionArgs {
     private final long chainId;
     private final String data;

@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.TextBlockCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextBlockCell extends FrameLayout {
     private boolean needDivider;
     private TextView textView;

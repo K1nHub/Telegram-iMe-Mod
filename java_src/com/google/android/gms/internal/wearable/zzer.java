@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.wearable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzer extends zzeq {
     @Override // com.google.android.gms.internal.wearable.zzeq
     final int zza(int i, byte[] bArr, int i2, int i3) {

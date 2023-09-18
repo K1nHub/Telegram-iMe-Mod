@@ -3,7 +3,7 @@ package org.telegram.tgnet;
 import com.google.android.exoplayer2.util.MimeTypes;
 import org.telegram.p043ui.Stories.MessageMediaStoryFull;
 import org.telegram.p043ui.Stories.MessageMediaStoryFull_old;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$MessageMedia extends TLObject {
     public String address;
     public TLRPC$Document alt_document;
@@ -21,7 +21,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
     public int heading;
 
     /* renamed from: id */
-    public int f1556id;
+    public int f1547id;
     public String last_name;
     public boolean nopremium;
     public int period;
@@ -493,7 +493,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                     tLRPC$TL_messageMediaDocument.document = tLRPC$TL_documentEncrypted;
                     TLRPC$Video tLRPC$Video = tLRPC$MessageMedia.video_unused;
                     tLRPC$TL_documentEncrypted.key = tLRPC$Video.key;
-                    tLRPC$TL_documentEncrypted.f1540iv = tLRPC$Video.f1698iv;
+                    tLRPC$TL_documentEncrypted.f1531iv = tLRPC$Video.f1689iv;
                 } else {
                     tLRPC$TL_messageMediaDocument.document = new TLRPC$TL_document();
                 }
@@ -501,7 +501,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 TLRPC$Document tLRPC$Document = tLRPC$TL_messageMediaDocument.document;
                 tLRPC$Document.file_reference = new byte[0];
                 TLRPC$Video tLRPC$Video2 = tLRPC$MessageMedia.video_unused;
-                tLRPC$Document.f1539id = tLRPC$Video2.f1697id;
+                tLRPC$Document.f1530id = tLRPC$Video2.f1688id;
                 tLRPC$Document.access_hash = tLRPC$Video2.access_hash;
                 tLRPC$Document.date = tLRPC$Video2.date;
                 String str = tLRPC$Video2.mime_type;
@@ -516,8 +516,8 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 tLRPC$TL_messageMediaDocument.captionLegacy = tLRPC$MessageMedia.captionLegacy;
                 TLRPC$TL_documentAttributeVideo tLRPC$TL_documentAttributeVideo = new TLRPC$TL_documentAttributeVideo();
                 TLRPC$Video tLRPC$Video3 = tLRPC$MessageMedia.video_unused;
-                tLRPC$TL_documentAttributeVideo.f1542w = tLRPC$Video3.f1699w;
-                tLRPC$TL_documentAttributeVideo.f1541h = tLRPC$Video3.f1696h;
+                tLRPC$TL_documentAttributeVideo.f1533w = tLRPC$Video3.f1690w;
+                tLRPC$TL_documentAttributeVideo.f1532h = tLRPC$Video3.f1687h;
                 tLRPC$TL_documentAttributeVideo.duration = tLRPC$Video3.duration;
                 tLRPC$TL_messageMediaDocument.document.attributes.add(tLRPC$TL_documentAttributeVideo);
                 if (tLRPC$TL_messageMediaDocument.captionLegacy == null) {
@@ -532,7 +532,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                     tLRPC$TL_messageMediaDocument.document = tLRPC$TL_documentEncrypted2;
                     TLRPC$Audio tLRPC$Audio = tLRPC$MessageMedia.audio_unused;
                     tLRPC$TL_documentEncrypted2.key = tLRPC$Audio.key;
-                    tLRPC$TL_documentEncrypted2.f1540iv = tLRPC$Audio.f1527iv;
+                    tLRPC$TL_documentEncrypted2.f1531iv = tLRPC$Audio.f1518iv;
                 } else {
                     tLRPC$TL_messageMediaDocument.document = new TLRPC$TL_document();
                 }
@@ -540,7 +540,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 TLRPC$Document tLRPC$Document2 = tLRPC$TL_messageMediaDocument.document;
                 tLRPC$Document2.file_reference = new byte[0];
                 TLRPC$Audio tLRPC$Audio2 = tLRPC$MessageMedia.audio_unused;
-                tLRPC$Document2.f1539id = tLRPC$Audio2.f1526id;
+                tLRPC$Document2.f1530id = tLRPC$Audio2.f1517id;
                 tLRPC$Document2.access_hash = tLRPC$Audio2.access_hash;
                 tLRPC$Document2.date = tLRPC$Audio2.date;
                 String str2 = tLRPC$Audio2.mime_type;

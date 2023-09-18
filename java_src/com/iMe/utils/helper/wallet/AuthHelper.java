@@ -47,7 +47,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -61,7 +61,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_requestUrlAuth;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* compiled from: AuthHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AuthHelper implements KoinComponent, NotificationCenter.NotificationCenterDelegate {
     public static final AuthHelper INSTANCE;
     private static final PublishSubject<Result<Pair<String, TLRPC$TL_messages_requestUrlAuth>>> authSubject;
@@ -79,7 +79,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
     private static final Lazy walletSessionInteractor$delegate;
 
     /* compiled from: AuthHelper.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Delegate {
         void hideLoadingDialog();
 
@@ -134,6 +134,10 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
 
     private final NotificationsController getNotificationsController() {
         return getTelegramControllersGateway().getNotificationsController(currentAccountIndex);
+    }
+
+    private final SendMessagesHelper getSendMessagesHelper() {
+        return getTelegramControllersGateway().getSendMessagesHelper(currentAccountIndex);
     }
 
     static {
@@ -286,10 +290,6 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
         currentAccountIndex = -1;
     }
 
-    private final SendMessagesHelper getSendMessagesHelper() {
-        return getTelegramControllersGateway().getSendMessagesHelper(currentAccountIndex);
-    }
-
     private final boolean isAuthBotBlocked() {
         return getMessagesController().blockePeers.indexOfKey(walletBotId) >= 0;
     }
@@ -320,7 +320,24 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
         delegate = null;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ void manualAuth$default(Delegate delegate2, boolean z, int i, MessageObject messageObject, int i2, Object obj) {
+        if ((i2 & 4) != 0) {
+            i = -1;
+        }
+        manualAuth(delegate2, z, i, messageObject);
+    }
+
+    public static final void manualAuth(Delegate delegate2, boolean z, int i, MessageObject botAuthButtonMessage) {
+        Intrinsics.checkNotNullParameter(delegate2, "delegate");
+        Intrinsics.checkNotNullParameter(botAuthButtonMessage, "botAuthButtonMessage");
+        AuthHelper authHelper = INSTANCE;
+        delegate = delegate2;
+        isAuthVisible = z;
+        currentAccountIndex = i;
+        authHelper.subscribeToAuthSubject();
+        authHelper.runAuthButtonAction(botAuthButtonMessage, true);
+    }
+
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... args) {
         List list;
@@ -331,13 +348,13 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
             long j = walletBotId;
             if (l != null && l.longValue() == j) {
                 Object obj = args[1];
-                MessageObject messageObject = null;
+                Object obj2 = null;
                 ArrayList arrayList = obj instanceof ArrayList ? (ArrayList) obj : null;
                 if (arrayList != null) {
                     list = new ArrayList();
-                    for (Object obj2 : arrayList) {
-                        if (obj2 instanceof MessageObject) {
-                            list.add(obj2);
+                    for (Object obj3 : arrayList) {
+                        if (obj3 instanceof MessageObject) {
+                            list.add(obj3);
                         }
                     }
                 } else {
@@ -347,9 +364,9 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                     list = CollectionsKt__CollectionsKt.emptyList();
                 }
                 ArrayList arrayList2 = new ArrayList();
-                for (Object obj3 : list) {
-                    if (((MessageObject) obj3).messageOwner.from_id.user_id == walletBotId) {
-                        arrayList2.add(obj3);
+                for (Object obj4 : list) {
+                    if (((MessageObject) obj4).messageOwner.from_id.user_id == walletBotId) {
+                        arrayList2.add(obj4);
                     }
                 }
                 Iterator it = arrayList2.iterator();
@@ -368,28 +385,13 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                         continue;
                     }
                     if (z) {
-                        messageObject = next;
+                        obj2 = next;
                         break;
                     }
                 }
-                MessageObject messageObject2 = messageObject;
-                TLRPC$KeyboardButton messageObjectButton = getMessageObjectButton(messageObject2);
-                if (messageObjectButton != null) {
-                    getNotificationCenter().removeObserver(this, NotificationCenter.didReceiveNewMessages);
-                    getSendMessagesHelper().sendCallback(true, messageObject2, messageObjectButton, null, null, null, new Callbacks$Callback2() { // from class: com.iMe.utils.helper.wallet.AuthHelper$$ExternalSyntheticLambda2
-                        @Override // com.iMe.fork.utils.Callbacks$Callback2
-                        public final void invoke(Object obj4, Object obj5) {
-                            AuthHelper.didReceivedNotification$lambda$2((String) obj4, (TLRPC$TL_messages_requestUrlAuth) obj5);
-                        }
-                    });
-                }
+                runAuthButtonAction((MessageObject) obj2, false);
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void didReceivedNotification$lambda$2(String str, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth) {
-        authSubject.onNext(Result.Companion.success(TuplesKt.m103to(str, tLRPC$TL_messages_requestUrlAuth)));
     }
 
     private final void runHiddenAuthWithRemoteConfigCheck() {
@@ -398,12 +400,12 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.utils.helper.wallet.AuthHelper$runHiddenAuthWithRemoteConfigCheck$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1648invoke(result);
+                m1644invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1648invoke(Result<? extends Boolean> it) {
+            public final void m1644invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if ((result instanceof Result.Success) && ((Boolean) ((Result.Success) result).getData()).booleanValue()) {
@@ -434,8 +436,30 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                 }
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         RxExtKt.autoDispose(subscribe, subscriptions);
+    }
+
+    private final void runAuthButtonAction(MessageObject messageObject, boolean z) {
+        TLRPC$KeyboardButton messageObjectButton = getMessageObjectButton(messageObject);
+        if (messageObjectButton != null) {
+            if (!z) {
+                getNotificationCenter().removeObserver(this, NotificationCenter.didReceiveNewMessages);
+            }
+            getSendMessagesHelper().sendCallback(true, messageObject, messageObjectButton, null, null, null, new Callbacks$Callback2() { // from class: com.iMe.utils.helper.wallet.AuthHelper$$ExternalSyntheticLambda2
+                @Override // com.iMe.fork.utils.Callbacks$Callback2
+                public final void invoke(Object obj, Object obj2) {
+                    AuthHelper.runAuthButtonAction$lambda$3((String) obj, (TLRPC$TL_messages_requestUrlAuth) obj2);
+                }
+            });
+        } else if (z) {
+            onError$default(this, null, 1, null);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void runAuthButtonAction$lambda$3(String str, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth) {
+        authSubject.onNext(Result.Companion.success(TuplesKt.m103to(str, tLRPC$TL_messages_requestUrlAuth)));
     }
 
     private final TLRPC$KeyboardButton getMessageObjectButton(MessageObject messageObject) {
@@ -506,7 +530,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
         CompositeDisposable compositeDisposable = subscriptions;
         compositeDisposable.clear();
         Observable<Result<Pair<String, TLRPC$TL_messages_requestUrlAuth>>> take = authSubject.hide().timeout(60L, TimeUnit.SECONDS).take(1L);
-        Intrinsics.checkNotNullExpressionValue(take, "authSubject\n            …\n                .take(1)");
+        Intrinsics.checkNotNullExpressionValue(take, "authSubject\n            …NDS)\n            .take(1)");
         final Function1<Result<? extends Pair<? extends String, ? extends TLRPC$TL_messages_requestUrlAuth>>, ObservableSource<? extends Result<? extends SessionTokens>>> function1 = new Function1<Result<? extends Pair<? extends String, ? extends TLRPC$TL_messages_requestUrlAuth>>, ObservableSource<? extends Result<? extends SessionTokens>>>() { // from class: com.iMe.utils.helper.wallet.AuthHelper$subscribeToAuthSubject$$inlined$flatMapSuccess$1
             @Override // kotlin.jvm.functions.Function1
             public final ObservableSource<? extends Result<? extends SessionTokens>> invoke(Result<? extends Pair<? extends String, ? extends TLRPC$TL_messages_requestUrlAuth>> result) {
@@ -552,7 +576,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                             return this.function.invoke(obj);
                         }
                     });
-                    Intrinsics.checkNotNullExpressionValue(flatMap, "{\n                      …) }\n                    }");
+                    Intrinsics.checkNotNullExpressionValue(flatMap, "{\n                    te…hUrl) }\n                }");
                     return flatMap;
                 }
                 walletSessionInteractor = AuthHelper.INSTANCE.getWalletSessionInteractor();
@@ -600,7 +624,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void onError$default(AuthHelper authHelper, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = authHelper.getResourceManager().getString(C3558R.string.common_error_unexpected);
+            str = authHelper.getResourceManager().getString(C3473R.string.common_error_unexpected);
         }
         authHelper.onError(str);
     }
@@ -643,7 +667,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                     AuthHelper.withLoadingDialog$lambda$9();
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(doFinally, "{\n                doOnSu…gDialog() }\n            }");
+            Intrinsics.checkNotNullExpressionValue(doFinally, "{\n            doOnSubscr…adingDialog() }\n        }");
             return doFinally;
         }
         return observable;
@@ -717,7 +741,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
                 AuthHelper.subscribeWithCommonErrorHandling$lambda$11(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "onSuccess: Callbacks.Cal…          }\n            )");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "onSuccess: Callbacks.Cal…)\n            }\n        )");
         return subscribe;
     }
 

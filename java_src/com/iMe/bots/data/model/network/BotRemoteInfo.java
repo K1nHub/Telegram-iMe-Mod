@@ -4,7 +4,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.gson.annotations.SerializedName;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotRemoteInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotRemoteInfo {
     @SerializedName("description")
     private final String description;

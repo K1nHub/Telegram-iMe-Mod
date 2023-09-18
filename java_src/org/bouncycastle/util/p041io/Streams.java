@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 /* renamed from: org.bouncycastle.util.io.Streams */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Streams {
     private static int BUFFER_SIZE = 4096;
 

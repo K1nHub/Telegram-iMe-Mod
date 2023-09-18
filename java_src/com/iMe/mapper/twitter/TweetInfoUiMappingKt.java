@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 /* compiled from: TweetInfoUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TweetInfoUiMappingKt {
     public static final BaseNode mapToUi(TweetInfo tweetInfo) {
         Intrinsics.checkNotNullParameter(tweetInfo, "<this>");

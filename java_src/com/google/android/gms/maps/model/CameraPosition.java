@@ -14,7 +14,7 @@ import com.google.android.gms.maps.GoogleMapOptions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "CameraPositionCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CameraPosition extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CameraPosition> CREATOR = new zza();
     @SafeParcelable.Field(m797id = 5)
@@ -27,7 +27,7 @@ public final class CameraPosition extends AbstractSafeParcelable implements Refl
     public final float zoom;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private LatLng zza;
         private float zzb;

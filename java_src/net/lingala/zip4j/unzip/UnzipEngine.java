@@ -25,7 +25,7 @@ import net.lingala.zip4j.p035io.ZipInputStream;
 import net.lingala.zip4j.progress.ProgressMonitor;
 import net.lingala.zip4j.util.Raw;
 import net.lingala.zip4j.util.Zip4jUtil;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class UnzipEngine {
     private CRC32 crc;
     private int currSplitFileCounter = 0;

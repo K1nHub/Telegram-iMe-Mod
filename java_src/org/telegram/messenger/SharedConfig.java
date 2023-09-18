@@ -55,7 +55,7 @@ import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
     public static final int PASSCODE_TYPE_PASSWORD = 1;
@@ -246,12 +246,12 @@ public class SharedConfig {
     public static boolean useThreeLinesLayout;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public @interface PasscodeType {
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public @interface PerformanceClass {
     }
 
@@ -598,9 +598,9 @@ public class SharedConfig {
         });
         readOnlyStorageDirAlertShowed = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(lastFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("SdCardError", C3558R.string.SdCardError));
-        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3558R.string.SdCardErrorDescription));
-        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3558R.string.DoNotUseSDCard), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("SdCardError", C3473R.string.SdCardError));
+        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3473R.string.SdCardErrorDescription));
+        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3473R.string.DoNotUseSDCard), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 SharedConfig.lambda$checkSdCard$1(dialogInterface, i);
@@ -734,7 +734,7 @@ public class SharedConfig {
         return hevcEncoderWhitelist.contains(mediaCodecInfo.getName().toLowerCase());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ProxyInfo {
         public String address;
         public boolean available;
@@ -863,22 +863,22 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x018a A[Catch: Exception -> 0x01a6, all -> 0x07c9, TryCatch #2 {Exception -> 0x01a6, blocks: (B:22:0x013b, B:24:0x0143, B:26:0x0153, B:27:0x0167, B:38:0x018a, B:40:0x018e, B:41:0x0190, B:43:0x0194, B:45:0x019a, B:47:0x019e, B:36:0x0184), top: B:88:0x013b, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x018e A[Catch: Exception -> 0x01a6, all -> 0x07c9, TryCatch #2 {Exception -> 0x01a6, blocks: (B:22:0x013b, B:24:0x0143, B:26:0x0153, B:27:0x0167, B:38:0x018a, B:40:0x018e, B:41:0x0190, B:43:0x0194, B:45:0x019a, B:47:0x019e, B:36:0x0184), top: B:88:0x013b, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x05c7  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x05ca  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x05da  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x05dc  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x079a  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x079c  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x07b9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x018a A[Catch: Exception -> 0x01a6, all -> 0x07c6, TryCatch #3 {Exception -> 0x01a6, blocks: (B:22:0x013b, B:24:0x0143, B:26:0x0153, B:27:0x0167, B:38:0x018a, B:40:0x018e, B:41:0x0190, B:43:0x0194, B:45:0x019a, B:47:0x019e, B:36:0x0184), top: B:90:0x013b, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x018e A[Catch: Exception -> 0x01a6, all -> 0x07c6, TryCatch #3 {Exception -> 0x01a6, blocks: (B:22:0x013b, B:24:0x0143, B:26:0x0153, B:27:0x0167, B:38:0x018a, B:40:0x018e, B:41:0x0190, B:43:0x0194, B:45:0x019a, B:47:0x019e, B:36:0x0184), top: B:90:0x013b, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x05c6  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x05c9  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x05d9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x05db  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0799  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x07b6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 1996
+            Method dump skipped, instructions count: 1993
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -1853,7 +1853,7 @@ public class SharedConfig {
         return canBlurChat() && LiteMode.isEnabled(256);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 

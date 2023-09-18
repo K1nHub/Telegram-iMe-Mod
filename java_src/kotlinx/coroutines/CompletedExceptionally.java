@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CompletedExceptionally {
     private static final /* synthetic */ AtomicIntegerFieldUpdater _handled$FU = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled");
     private volatile /* synthetic */ int _handled;
@@ -18,7 +18,7 @@ public class CompletedExceptionally {
         this(th, (i & 2) != 0 ? false : z);
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean getHandled() {
         return this._handled;
     }

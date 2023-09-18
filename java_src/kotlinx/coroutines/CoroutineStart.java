@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 /* compiled from: CoroutineStart.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum CoroutineStart {
     DEFAULT,
     LAZY,
@@ -16,7 +16,7 @@ public enum CoroutineStart {
     UNDISPATCHED;
 
     /* compiled from: CoroutineStart.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

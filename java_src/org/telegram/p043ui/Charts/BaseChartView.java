@@ -38,7 +38,7 @@ import org.telegram.p043ui.Charts.view_data.LineViewData;
 import org.telegram.p043ui.Charts.view_data.TransitionParams;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Charts.BaseChartView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseChartView<T extends ChartData, L extends LineViewData> extends View implements ChartPickerDelegate.Listener {
     protected static final boolean ANIMATE_PICKER_SIZES;
     public static FastOutSlowInInterpolator INTERPOLATOR;
@@ -153,7 +153,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
     private static final int DP_1 = AndroidUtilities.m72dp(1);
 
     /* renamed from: org.telegram.ui.Charts.BaseChartView$DateSelectionListener */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface DateSelectionListener {
         void onDateSelected(long j);
     }
@@ -342,7 +342,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         }
         if (this.legendShowing) {
             int i = this.selectedIndex;
-            long[] jArr = this.chartData.f1728x;
+            long[] jArr = this.chartData.f1719x;
             if (i < jArr.length) {
                 this.legendSignatureView.setData(i, jArr[i], this.lines, false);
             }
@@ -392,7 +392,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         this.chartBottom = AndroidUtilities.m73dp(100.0f);
         this.chartArea.set(this.chartStart - f, BitmapDescriptorFactory.HUE_RED, this.chartEnd + f, getMeasuredHeight() - this.chartBottom);
         if (this.chartData != null) {
-            this.bottomSignatureOffset = (int) (AndroidUtilities.m72dp(20) / (this.pickerWidth / this.chartData.f1728x.length));
+            this.bottomSignatureOffset = (int) (AndroidUtilities.m72dp(20) / (this.pickerWidth / this.chartData.f1719x.length));
         }
         measureHeightThreshold();
     }
@@ -517,7 +517,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
             }
             int i6 = this.endXIndex - this.bottomSignatureOffset;
             while (true) {
-                if (i6 % i4 == 0 && i6 >= this.chartData.f1728x.length - 1) {
+                if (i6 % i4 == 0 && i6 >= this.chartData.f1719x.length - 1) {
                     break;
                 }
                 i6++;
@@ -529,7 +529,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
             float f2 = (this.chartFullWidth * this.pickerDelegate.pickerStart) - HORIZONTAL_PADDING;
             while (i8 < i9) {
                 if (i8 >= 0) {
-                    long[] jArr = this.chartData.f1728x;
+                    long[] jArr = this.chartData.f1719x;
                     if (i8 < jArr.length - 1) {
                         float f3 = ((((float) (jArr[i8] - jArr[c])) / ((float) (jArr[jArr.length - 1] - jArr[c]))) * this.chartFullWidth) - f2;
                         float f4 = f3 - BOTTOM_SIGNATURE_OFFSET;
@@ -621,7 +621,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
             L l = this.lines.get(i4);
             if (l.enabled || l.alpha != BitmapDescriptorFactory.HUE_RED) {
                 float f7 = this.currentMinHeight;
-                float measuredHeight = (getMeasuredHeight() - this.chartBottom) - (((l.line.f1730y[this.selectedIndex] - f7) / (this.currentMaxHeight - f7)) * ((getMeasuredHeight() - this.chartBottom) - SIGNATURE_TEXT_HEIGHT));
+                float measuredHeight = (getMeasuredHeight() - this.chartBottom) - (((l.line.f1721y[this.selectedIndex] - f7) / (this.currentMaxHeight - f7)) * ((getMeasuredHeight() - this.chartBottom) - SIGNATURE_TEXT_HEIGHT));
                 l.selectionPaint.setAlpha((int) (l.alpha * 255.0f * this.selectionA));
                 this.selectionBackgroundPaint.setAlpha((int) (l.alpha * 255.0f * this.selectionA));
                 canvas.drawPoint(f6, measuredHeight, l.selectionPaint);
@@ -1112,7 +1112,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         if (f3 < BitmapDescriptorFactory.HUE_RED) {
             this.selectedIndex = 0;
         } else if (f3 > 1.0f) {
-            this.selectedIndex = t.f1728x.length - 1;
+            this.selectedIndex = t.f1719x.length - 1;
         } else {
             int findIndex = t.findIndex(this.startXIndex, this.endXIndex, f3);
             this.selectedIndex = findIndex;
@@ -1184,7 +1184,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         if (t == null || (i = this.selectedIndex) == -1 || !this.legendShowing) {
             return;
         }
-        this.legendSignatureView.setData(i, t.f1728x[i], this.lines, false);
+        this.legendSignatureView.setData(i, t.f1719x[i], this.lines, false);
         this.legendSignatureView.setVisibility(0);
         this.legendSignatureView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), Integer.MIN_VALUE));
         float f3 = (this.chartData.xPercentage[this.selectedIndex] * this.chartFullWidth) - f;
@@ -1237,7 +1237,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
             clearSelection();
             this.chartData = t;
             if (t != null) {
-                if (t.f1728x[0] == 0) {
+                if (t.f1719x[0] == 0) {
                     ChartPickerDelegate chartPickerDelegate = this.pickerDelegate;
                     chartPickerDelegate.pickerStart = BitmapDescriptorFactory.HUE_RED;
                     chartPickerDelegate.pickerEnd = 1.0f;
@@ -1291,7 +1291,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         if (t == null) {
             return 0.1f;
         }
-        int length = t.f1728x.length;
+        int length = t.f1719x.length;
         if (length < 5) {
             return 1.0f;
         }
@@ -1383,7 +1383,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         }
         ChartHeaderView chartHeaderView = this.chartHeaderView;
         if (chartHeaderView != null) {
-            long[] jArr = this.chartData.f1728x;
+            long[] jArr = this.chartData.f1719x;
             chartHeaderView.setDates(jArr[i], jArr[this.endXIndex]);
         }
         updateLineSignature();
@@ -1517,7 +1517,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         if (this.legendShowing) {
             LegendSignatureView legendSignatureView = this.legendSignatureView;
             int i3 = this.selectedIndex;
-            legendSignatureView.setData(i3, this.chartData.f1728x[i3], this.lines, true);
+            legendSignatureView.setData(i3, this.chartData.f1719x[i3], this.lines, true);
         }
     }
 
@@ -1581,7 +1581,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         if (i < 0) {
             return -1L;
         }
-        return this.chartData.f1728x[i];
+        return this.chartData.f1719x[i];
     }
 
     public void clearSelection() {
@@ -1593,7 +1593,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
     }
 
     public void selectDate(long j) {
-        this.selectedIndex = Arrays.binarySearch(this.chartData.f1728x, j);
+        this.selectedIndex = Arrays.binarySearch(this.chartData.f1719x, j);
         this.legendShowing = true;
         this.legendSignatureView.setVisibility(0);
         this.selectionA = 1.0f;
@@ -1602,21 +1602,21 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
     }
 
     public long getStartDate() {
-        return this.chartData.f1728x[this.startXIndex];
+        return this.chartData.f1719x[this.startXIndex];
     }
 
     public long getEndDate() {
-        return this.chartData.f1728x[this.endXIndex];
+        return this.chartData.f1719x[this.endXIndex];
     }
 
     public void updatePicker(ChartData chartData, long j) {
-        int length = chartData.f1728x.length;
+        int length = chartData.f1719x.length;
         long j2 = j - (j % 86400000);
         long j3 = (86400000 + j2) - 1;
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < length; i3++) {
-            long[] jArr = chartData.f1728x;
+            long[] jArr = chartData.f1719x;
             if (j2 > jArr[i3]) {
                 i = i3;
             }
@@ -1699,13 +1699,13 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
     }
 
     /* renamed from: org.telegram.ui.Charts.BaseChartView$SharedUiComponents */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class SharedUiComponents {
         private Canvas canvas;
         private boolean invalidate;
 
         /* renamed from: k */
-        int f1726k;
+        int f1717k;
         private Bitmap pickerRoundBitmap;
         private RectF rectF = new RectF();
         private Paint xRefP;
@@ -1713,7 +1713,7 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
         public SharedUiComponents() {
             Paint paint = new Paint(1);
             this.xRefP = paint;
-            this.f1726k = 0;
+            this.f1717k = 0;
             this.invalidate = true;
             paint.setColor(0);
             this.xRefP.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
@@ -1721,9 +1721,9 @@ public abstract class BaseChartView<T extends ChartData, L extends LineViewData>
 
         Bitmap getPickerMaskBitmap(int i, int i2) {
             int i3 = (i + i2) << 10;
-            if (i3 != this.f1726k || this.invalidate) {
+            if (i3 != this.f1717k || this.invalidate) {
                 this.invalidate = false;
-                this.f1726k = i3;
+                this.f1717k = i3;
                 this.pickerRoundBitmap = Bitmap.createBitmap(i2, i, Bitmap.Config.ARGB_8888);
                 this.canvas = new Canvas(this.pickerRoundBitmap);
                 this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, i2, i);

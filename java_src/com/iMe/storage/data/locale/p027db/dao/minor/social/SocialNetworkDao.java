@@ -7,7 +7,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialNetworkDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.social.SocialNetworkDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface SocialNetworkDao {
     void clearAndInsertAll(long j, List<SocialNetworkDb> list);
 
@@ -19,7 +19,7 @@ public interface SocialNetworkDao {
 
     /* compiled from: SocialNetworkDao.kt */
     /* renamed from: com.iMe.storage.data.locale.db.dao.minor.social.SocialNetworkDao$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static void $default$clearAndInsertAll(SocialNetworkDao _this, long j, List socialNetworks) {
             Intrinsics.checkNotNullParameter(socialNetworks, "socialNetworks");

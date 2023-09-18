@@ -6,12 +6,12 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: LoadMoreView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.base.mvp.LoadMoreView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface LoadMoreView<T> extends BaseView {
 
     /* compiled from: LoadMoreView.kt */
     /* renamed from: com.iMe.ui.base.mvp.LoadMoreView$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static void $default$resetLoadMore(LoadMoreView loadMoreView) {
         }

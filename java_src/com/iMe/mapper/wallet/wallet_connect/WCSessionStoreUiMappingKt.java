@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSessionStoreUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCSessionStoreUiMappingKt {
     public static final WalletConnectSessionItem mapToUi(WCSessionStoreItem wCSessionStoreItem) {
         Intrinsics.checkNotNullParameter(wCSessionStoreItem, "<this>");

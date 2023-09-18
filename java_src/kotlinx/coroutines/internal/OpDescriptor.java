@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlinx.coroutines.DebugStringsKt;
 /* compiled from: Atomic.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class OpDescriptor {
     public abstract AtomicOp<?> getAtomicOp();
 

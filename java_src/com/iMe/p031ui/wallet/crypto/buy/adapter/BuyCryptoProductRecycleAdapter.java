@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BuyCryptoProductRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.buy.adapter.BuyCryptoProductRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BuyCryptoProductRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BuyCryptoProductRecycleAdapter(SimplexFooterProvider simplexFooterProvider, SimplexProductProvider simplexProductProvider) {

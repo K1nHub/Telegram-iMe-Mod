@@ -8,7 +8,7 @@ import org.koin.core.component.KoinComponent;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: ICustomMvpView.kt */
 /* renamed from: com.iMe.ui.base.mvp.view.ICustomMvpView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ICustomMvpView<T> extends MvpDelegateHolder, MvpView, KoinComponent {
     MvpDelegate<T> getMMvpDelegate();
 
@@ -21,7 +21,7 @@ public interface ICustomMvpView<T> extends MvpDelegateHolder, MvpView, KoinCompo
 
     /* compiled from: ICustomMvpView.kt */
     /* renamed from: com.iMe.ui.base.mvp.view.ICustomMvpView$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static MvpDelegate $default$getMvpDelegate(ICustomMvpView _this) {
             return _this.getMMvpDelegate();

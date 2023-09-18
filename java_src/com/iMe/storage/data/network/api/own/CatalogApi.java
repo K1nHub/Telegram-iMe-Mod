@@ -15,7 +15,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 /* compiled from: CatalogApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CatalogApi {
     public static final Endpoints Endpoints = null;
 
@@ -52,7 +52,7 @@ public interface CatalogApi {
 
     /* compiled from: CatalogApi.kt */
     /* renamed from: com.iMe.storage.data.network.api.own.CatalogApi$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         static {
             Endpoints endpoints = CatalogApi.Endpoints;
@@ -87,7 +87,7 @@ public interface CatalogApi {
     }
 
     /* compiled from: CatalogApi.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Endpoints {
         static final /* synthetic */ Endpoints $$INSTANCE = new Endpoints();
 

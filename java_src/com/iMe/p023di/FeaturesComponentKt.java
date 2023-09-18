@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import org.koin.core.module.Module;
 /* compiled from: FeaturesComponent.kt */
 /* renamed from: com.iMe.di.FeaturesComponentKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FeaturesComponentKt {
     private static List<Module> featureModules;
 

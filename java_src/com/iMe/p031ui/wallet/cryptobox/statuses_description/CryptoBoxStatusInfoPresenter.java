@@ -8,7 +8,7 @@ import moxy.InjectViewState;
 /* compiled from: CryptoBoxStatusInfoPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoBoxStatusInfoPresenter extends BasePresenter<CryptoBoxStatusInfoView> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter

@@ -1,10 +1,10 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$InputStickerSet extends TLObject {
     public long access_hash;
 
     /* renamed from: id */
-    public long f1554id;
+    public long f1545id;
     public String short_name;
 
     public static TLRPC$InputStickerSet TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {

@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.TextStyleSpan;
 /* renamed from: org.telegram.ui.Components.URLSpanUserMention */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class URLSpanUserMention extends URLSpanNoUnderline {
     private int currentType;
     private TextStyleSpan.TextStyleRun style;

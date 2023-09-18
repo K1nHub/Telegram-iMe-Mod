@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ResultCallback<T> {
 
     /* renamed from: org.telegram.tgnet.ResultCallback$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final /* synthetic */ class CC {
         public static void $default$onError(ResultCallback resultCallback, Throwable th) {
         }

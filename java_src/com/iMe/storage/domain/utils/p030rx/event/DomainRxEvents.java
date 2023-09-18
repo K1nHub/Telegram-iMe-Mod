@@ -5,12 +5,12 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DomainRxEvents.kt */
 /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$CryptoEvent */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface CryptoEvent {
     }
 
@@ -23,7 +23,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$ForceWalletLogout */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ForceWalletLogout extends DomainRxEvents {
         public static final ForceWalletLogout INSTANCE = new ForceWalletLogout();
 
@@ -34,7 +34,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$AppUpdateRequired */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AppUpdateRequired extends DomainRxEvents {
         public static final AppUpdateRequired INSTANCE = new AppUpdateRequired();
 
@@ -45,7 +45,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$SelectWalletCryptoTab */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SelectWalletCryptoTab extends DomainRxEvents {
         public static final SelectWalletCryptoTab INSTANCE = new SelectWalletCryptoTab();
 
@@ -56,7 +56,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$SuccessSaveBackup */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SuccessSaveBackup extends DomainRxEvents implements CryptoEvent {
         public static final SuccessSaveBackup INSTANCE = new SuccessSaveBackup();
 
@@ -67,7 +67,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$WalletRestored */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WalletRestored extends DomainRxEvents implements CryptoEvent {
         public static final WalletRestored INSTANCE = new WalletRestored();
 
@@ -78,7 +78,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$WalletCreated */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WalletCreated extends DomainRxEvents implements CryptoEvent {
         public static final WalletCreated INSTANCE = new WalletCreated();
 
@@ -89,7 +89,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$SuccessRecreateWalletByPassword */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SuccessRecreateWalletByPassword extends DomainRxEvents implements CryptoEvent {
         public static final SuccessRecreateWalletByPassword INSTANCE = new SuccessRecreateWalletByPassword();
 
@@ -100,7 +100,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$InterfaceSettingsChanged */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class InterfaceSettingsChanged extends DomainRxEvents implements CryptoEvent {
         public static final InterfaceSettingsChanged INSTANCE = new InterfaceSettingsChanged();
 
@@ -111,7 +111,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$NetworksSettingsChanged */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NetworksSettingsChanged extends DomainRxEvents implements CryptoEvent {
         public static final NetworksSettingsChanged INSTANCE = new NetworksSettingsChanged();
 
@@ -122,7 +122,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$BackupFlowStarted */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BackupFlowStarted extends DomainRxEvents implements CryptoEvent {
         public static final BackupFlowStarted INSTANCE = new BackupFlowStarted();
 
@@ -133,7 +133,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$NetworkUpdated */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NetworkUpdated extends DomainRxEvents implements CryptoEvent {
         public static final NetworkUpdated INSTANCE = new NetworkUpdated();
 
@@ -144,7 +144,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$StakingProgrammesRefresh */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingProgrammesRefresh extends DomainRxEvents implements CryptoEvent {
         public static final StakingProgrammesRefresh INSTANCE = new StakingProgrammesRefresh();
 
@@ -155,7 +155,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$RefreshTransactions */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class RefreshTransactions extends DomainRxEvents implements CryptoEvent {
         public static final RefreshTransactions INSTANCE = new RefreshTransactions();
 
@@ -166,7 +166,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$WalletReset */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WalletReset extends DomainRxEvents implements CryptoEvent {
         public static final WalletReset INSTANCE = new WalletReset();
 
@@ -177,7 +177,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$AllWalletsReset */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AllWalletsReset extends DomainRxEvents implements CryptoEvent {
         public static final AllWalletsReset INSTANCE = new AllWalletsReset();
 
@@ -188,7 +188,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$CryptoBoxCreated */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class CryptoBoxCreated extends DomainRxEvents implements CryptoEvent {
         public static final CryptoBoxCreated INSTANCE = new CryptoBoxCreated();
 
@@ -199,7 +199,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$DonationAddressUpdated */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DonationAddressUpdated extends DomainRxEvents implements CryptoEvent {
         public DonationAddressUpdated(long j) {
             super(null);
@@ -208,7 +208,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$TokensSettingsChanged */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TokensSettingsChanged extends DomainRxEvents implements CryptoEvent {
         private final boolean isFromSearch;
         private final String sourceClassName;
@@ -240,7 +240,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$StakingTabRefreshStateChanged */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingTabRefreshStateChanged extends DomainRxEvents implements CryptoEvent {
         private final boolean isShowRefresh;
         private final StakingTabType stakingTabType;
@@ -264,7 +264,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$StakingOperationsReload */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingOperationsReload extends DomainRxEvents implements CryptoEvent {
         private final String networkId;
 
@@ -282,7 +282,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$BinanceTokensSettingsChanged */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BinanceTokensSettingsChanged extends DomainRxEvents {
         public static final BinanceTokensSettingsChanged INSTANCE = new BinanceTokensSettingsChanged();
 
@@ -293,7 +293,7 @@ public abstract class DomainRxEvents implements RxEvent {
 
     /* compiled from: DomainRxEvents.kt */
     /* renamed from: com.iMe.storage.domain.utils.rx.event.DomainRxEvents$BinanceExpiredSession */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BinanceExpiredSession extends DomainRxEvents {
         public static final BinanceExpiredSession INSTANCE = new BinanceExpiredSession();
 

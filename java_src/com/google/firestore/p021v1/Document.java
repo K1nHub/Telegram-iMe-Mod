@@ -10,7 +10,7 @@ import com.google.protobuf.WireFormat;
 import java.util.Collections;
 import java.util.Map;
 /* renamed from: com.google.firestore.v1.Document */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Document extends GeneratedMessageLite<Document, Builder> implements MessageLiteOrBuilder {
     public static final int CREATE_TIME_FIELD_NUMBER = 3;
     private static final Document DEFAULT_INSTANCE;
@@ -24,7 +24,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
     private Timestamp updateTime_;
 
     /* renamed from: com.google.firestore.v1.Document$FieldsDefaultEntryHolder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class FieldsDefaultEntryHolder {
         static final MapEntryLite<String, Value> defaultEntry = MapEntryLite.newDefaultInstance(WireFormat.FieldType.STRING, "", WireFormat.FieldType.MESSAGE, Value.getDefaultInstance());
     }
@@ -78,7 +78,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
     }
 
     /* renamed from: com.google.firestore.v1.Document$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Document, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10561 c10561) {
             this();
@@ -108,7 +108,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
     }
 
     /* renamed from: com.google.firestore.v1.Document$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10561 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

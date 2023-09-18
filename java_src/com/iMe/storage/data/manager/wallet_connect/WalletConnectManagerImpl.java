@@ -62,7 +62,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.OkHttpClient;
 import timber.log.Timber;
 /* compiled from: WalletConnectManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectManagerImpl implements WalletConnectManager {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -532,7 +532,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         runWithErrorHandle(new Function0<Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$approveSign$1
 
             /* compiled from: WalletConnectManagerImpl.kt */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -581,46 +581,43 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
                     com.iMe.storage.domain.manager.crypto.CryptoAccessManager r0 = com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl.access$getCryptoAccessManager$p(r0)
                     com.iMe.storage.domain.model.crypto.BlockchainType r1 = com.iMe.storage.domain.model.crypto.BlockchainType.EVM
                     boolean r0 = r0.isWalletCreated(r1)
-                    if (r0 == 0) goto L61
+                    if (r0 == 0) goto L59
                     com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl r0 = com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl.this
                     com.iMe.storage.domain.model.crypto.Wallet$EVM r0 = com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl.access$getWallet(r0)
-                    if (r0 == 0) goto L61
-                    wallet.core.jni.HDWallet r0 = r0.getHdWallet()
-                    if (r0 == 0) goto L61
-                    wallet.core.jni.CoinType r1 = wallet.core.jni.CoinType.ETHEREUM
-                    wallet.core.jni.PrivateKey r0 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKey(r0, r1)
-                    if (r0 != 0) goto L25
-                    goto L61
-                L25:
+                    if (r0 == 0) goto L59
+                    wallet.core.jni.PrivateKey r0 = r0.getPrivateKey()
+                    if (r0 != 0) goto L1d
+                    goto L59
+                L1d:
                     com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r1 = r2
                     com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage$WCSignType r1 = r1.getType()
                     int[] r2 = com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$approveSign$1.WhenMappings.$EnumSwitchMapping$0
                     int r1 = r1.ordinal()
                     r1 = r2[r1]
                     r2 = 1
-                    if (r1 == r2) goto L4d
+                    if (r1 == r2) goto L45
                     r2 = 2
-                    if (r1 == r2) goto L4d
+                    if (r1 == r2) goto L45
                     r2 = 3
-                    if (r1 != r2) goto L47
+                    if (r1 != r2) goto L3f
                     com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r1 = r2
                     java.lang.String r1 = r1.getData()
                     java.lang.String r0 = wallet.core.jni.EthereumMessageSigner.signTypedMessage(r0, r1)
-                    goto L57
-                L47:
+                    goto L4f
+                L3f:
                     kotlin.NoWhenBranchMatchedException r0 = new kotlin.NoWhenBranchMatchedException
                     r0.<init>()
                     throw r0
-                L4d:
+                L45:
                     com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r1 = r2
                     java.lang.String r1 = r1.getData()
                     java.lang.String r0 = wallet.core.jni.EthereumMessageSigner.signMessage(r0, r1)
-                L57:
+                L4f:
                     com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl r1 = com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl.this
                     java.lang.String r2 = r3
                     long r3 = r4
                     r1.approveRequest(r2, r3, r0)
-                L61:
+                L59:
                     return
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$approveSign$1.invoke2():void");
@@ -1087,7 +1084,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo717io()).observeOn(this.schedulersProvider.mo716ui());
         final Function1<RxEvent, Unit> function1 = new Function1<RxEvent, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$subscribeToRxEvents$1
             /* JADX INFO: Access modifiers changed from: package-private */

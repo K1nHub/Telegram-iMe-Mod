@@ -10,7 +10,7 @@ import org.koin.core.logger.Logger;
 import org.koin.core.module.Module;
 import org.koin.p042mp.KoinPlatformTimeTools;
 /* compiled from: KoinApplication.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KoinApplication {
     public static final Companion Companion = new Companion(null);
     private boolean allowOverride;
@@ -56,7 +56,7 @@ public final class KoinApplication {
     }
 
     /* compiled from: KoinApplication.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

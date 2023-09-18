@@ -29,7 +29,7 @@ import org.telegram.p043ui.Components.Paint.Brush;
 import org.telegram.p043ui.Components.Paint.Painting;
 import org.telegram.p043ui.Components.Size;
 /* renamed from: org.telegram.ui.Components.Paint.Painting */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Painting {
     private Path activePath;
     private Shape activeShape;
@@ -67,7 +67,7 @@ public class Painting {
     private RenderState renderState = new RenderState();
 
     /* renamed from: org.telegram.ui.Components.Paint.Painting$PaintingDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PaintingDelegate {
         void contentChanged();
 
@@ -77,7 +77,7 @@ public class Painting {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Painting$PaintingData */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class PaintingData {
         public Bitmap bitmap;
         public ByteBuffer data;
@@ -196,7 +196,7 @@ public class Painting {
                     Painting.this.lambda$setHelperShape$1(valueAnimator2);
                 }
             });
-            this.helperAnimator.addListener(new C51061());
+            this.helperAnimator.addListener(new C50211());
             this.helperAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
             this.helperAnimator.start();
             this.helperShape = shape;
@@ -237,9 +237,9 @@ public class Painting {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.Painting$1 */
-    /* loaded from: classes6.dex */
-    public class C51061 extends AnimatorListenerAdapter {
-        C51061() {
+    /* loaded from: classes7.dex */
+    public class C50211 extends AnimatorListenerAdapter {
+        C50211() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -248,7 +248,7 @@ public class Painting {
             Painting.this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Painting.C51061.this.lambda$onAnimationEnd$0();
+                    Painting.C50211.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -277,7 +277,7 @@ public class Painting {
                 Painting.this.lambda$applyHelperShape$4(valueAnimator2);
             }
         });
-        this.helperApplyAnimator.addListener(new C51072());
+        this.helperApplyAnimator.addListener(new C50222());
         this.helperApplyAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.helperApplyAnimator.setDuration(350L);
         this.helperApplyAnimator.start();
@@ -306,9 +306,9 @@ public class Painting {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.Painting$2 */
-    /* loaded from: classes6.dex */
-    public class C51072 extends AnimatorListenerAdapter {
-        C51072() {
+    /* loaded from: classes7.dex */
+    public class C50222 extends AnimatorListenerAdapter {
+        C50222() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -316,7 +316,7 @@ public class Painting {
             Painting.this.renderView.performInContext(new Runnable() { // from class: org.telegram.ui.Components.Paint.Painting$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Painting.C51072.this.lambda$onAnimationEnd$0();
+                    Painting.C50222.this.lambda$onAnimationEnd$0();
                 }
             });
         }

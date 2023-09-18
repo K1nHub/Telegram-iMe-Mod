@@ -3,7 +3,7 @@ package com.google.common.collect;
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ReverseOrdering<T> extends Ordering<T> implements Serializable {
     final Ordering<? super T> forwardOrder;
 

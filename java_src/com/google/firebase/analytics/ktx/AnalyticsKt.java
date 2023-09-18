@@ -5,7 +5,7 @@ import com.google.firebase.ktx.Firebase;
 import com.google.firebase.ktx.FirebaseKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: com.google.firebase:firebase-analytics-ktx@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AnalyticsKt {
     private static volatile FirebaseAnalytics zza;
     private static final Object zzb = new Object();

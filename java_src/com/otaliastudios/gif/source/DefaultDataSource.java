@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class DefaultDataSource implements DataSource {
     private Context mContext;
     private MediaFormat mFormat;

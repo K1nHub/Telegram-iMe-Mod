@@ -39,7 +39,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogRepositoryImpl implements CatalogRepository {
     private final CatalogApi catalogApi;
     private final CatalogCategoryDao catalogCategoryDao;
@@ -176,7 +176,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
                 return languages$lambda$3;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap2, "override fun getLanguage…rorHandler)\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap2, "override fun getLanguage…r(errorHandler)\n        }");
         final ApiErrorHandler apiErrorHandler2 = this.errorHandler;
         Observable<Result<List<CatalogLanguage>>> onErrorReturn2 = flatMap2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends CatalogLanguage>>>() { // from class: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getLanguages$$inlined$handleError$2
             {
@@ -203,7 +203,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
     public Observable<Result<List<CategoryWithCounter>>> getCategories(ChatType chatType, boolean z) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
         Observable<ApiBaseResponse<List<CategoryWithCounterResponse>>> subscribeOn = this.catalogApi.getCategories(chatType.name(), this.preferenceHelper.getCatalogSelectedLanguageId()).subscribeOn(this.schedulersProvider.mo717io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogApi\n             …(schedulersProvider.io())");
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogApi\n            .…(schedulersProvider.io())");
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
         Observable flatMap = subscribeOn.flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends CategoryWithCounterResponse>>, ObservableSource<? extends Result<? extends List<? extends CategoryWithCounter>>>>() { // from class: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

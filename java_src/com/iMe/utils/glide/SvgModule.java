@@ -9,7 +9,7 @@ import com.caverock.androidsvg.SVG;
 import java.io.InputStream;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SvgModule.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SvgModule extends AppGlideModule {
     @Override // com.bumptech.glide.module.AppGlideModule
     public boolean isManifestParsingEnabled() {

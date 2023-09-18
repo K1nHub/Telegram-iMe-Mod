@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TopicsSubscriber {
     private static final long MAX_DELAY_SEC = TimeUnit.HOURS.toSeconds(8);
     private final Context context;

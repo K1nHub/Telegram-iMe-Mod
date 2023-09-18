@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class NativeSessionFileGzipper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void processNativeSessions(File file, List<NativeSessionFile> list) {

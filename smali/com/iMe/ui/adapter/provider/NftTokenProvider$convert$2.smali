@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
+    .line 44
     check-cast p1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->invoke(Lorg/telegram/ui/Components/BackupImageView;)V
@@ -68,13 +68,13 @@
 
     const/4 v0, 0x1
 
-    .line 43
+    .line 45
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 44
+    .line 46
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
 
-    .line 45
+    .line 48
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
@@ -85,6 +85,7 @@
 
     move-result-object v0
 
+    .line 50
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
@@ -97,6 +98,7 @@
 
     const-string v2, "50_50"
 
+    .line 47
     invoke-virtual {p1, v0, v2, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void

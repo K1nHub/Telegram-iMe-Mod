@@ -13,7 +13,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 /* compiled from: GoogleServicesApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface GoogleServicesApi {
     @POST("google-services/detectObjectOnAnImage")
     @Multipart

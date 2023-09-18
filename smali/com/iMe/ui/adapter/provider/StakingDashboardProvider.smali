@@ -112,7 +112,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 37
     sget v0, Lorg/telegram/messenger/R$id;->view_staking_dashboard:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/StakingDashboardProvider$convert$1;
@@ -150,7 +150,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 44
     sget p3, Lorg/telegram/messenger/R$id;->view_staking_dashboard:I
 
     new-instance v0, Lcom/iMe/ui/adapter/provider/StakingDashboardProvider$convert$2;

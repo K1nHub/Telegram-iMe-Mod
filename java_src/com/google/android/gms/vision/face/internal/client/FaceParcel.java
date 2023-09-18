@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @UsedByNative("wrapper.cc")
 @SafeParcelable.Class(creator = "FaceParcelCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FaceParcel extends AbstractSafeParcelable {
     @RecentlyNonNull
     public static final Parcelable.Creator<FaceParcel> CREATOR = new zzd();

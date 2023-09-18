@@ -3,7 +3,7 @@ package com.google.firebase.firestore.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FieldPath extends BasePath<FieldPath> {
     public static final FieldPath KEY_PATH = fromSingleSegment("__name__");
     public static final FieldPath EMPTY_PATH = new FieldPath(Collections.emptyList());

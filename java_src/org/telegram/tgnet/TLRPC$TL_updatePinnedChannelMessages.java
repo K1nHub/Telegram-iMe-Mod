@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updatePinnedChannelMessages extends TLRPC$Update {
     public static int constructor = 1538885128;
     public long channel_id;

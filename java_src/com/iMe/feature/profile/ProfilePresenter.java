@@ -9,7 +9,6 @@ import com.iMe.feature.socialMedias.SocialUseCase;
 import com.iMe.fork.enums.SocialDialogActions;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.group.GroupMembersFilter;
-import com.iMe.model.twitter.SocialAuthResult;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.data.network.model.error.ErrorModel;
@@ -35,12 +34,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 import timber.log.Timber;
 /* compiled from: ProfilePresenter.kt */
 @InjectViewState
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProfilePresenter extends BasePresenter<ProfileView> {
     private final AccountLevelInteractor accountLevelInteractor;
     private final GroupMembershipUseCase groupMembershipUseCase;
@@ -49,10 +48,9 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     private final ProfileUseCase profileUseCase;
     private final ResourceManager resourceManager;
     private final SocialUseCase socialUseCase;
-    private final TwitterInteractor twitterInteractor;
 
     /* compiled from: ProfilePresenter.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -88,7 +86,6 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         Intrinsics.checkNotNullParameter(groupMembershipUseCase, "groupMembershipUseCase");
         this.profileData = profileData;
         this.resourceManager = resourceManager;
-        this.twitterInteractor = twitterInteractor;
         this.accountLevelInteractor = accountLevelInteractor;
         this.profileUseCase = profileUseCase;
         this.socialUseCase = socialUseCase;
@@ -105,8 +102,6 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     public void onFirstViewAttach() {
         saveProfile();
         loadAccountLevelInfo();
-        loadSocials();
-        listenSocialAuthResult();
     }
 
     public final void changeRankVisibility(boolean z) {
@@ -160,7 +155,7 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -227,57 +222,6 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         startSocialAuth(socialNetwork.getSocial());
     }
 
-    public final void onReattachSocialConfirmed(long j) {
-        Observable<Result<Boolean>> acceptConnection = this.twitterInteractor.acceptConnection(j, this.profileUiState.getCurrentProfile().getProfileId());
-        T viewState = getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable scheduleIO = SchedulersExtKt.scheduleIO(RxExtKt.withLoadingDialog$default((Observable) acceptConnection, (BaseView) viewState, false, 2, (Object) null));
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = scheduleIO.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.feature.profile.ProfilePresenter$onReattachSocialConfirmed$$inlined$subscribeWithErrorHandle$default$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1188invoke(result);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1188invoke(Result<? extends Boolean> it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                ProfilePresenter.this.onReattachSocialResult(it);
-            }
-        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.profile.ProfilePresenter$onReattachSocialConfirmed$$inlined$subscribeWithErrorHandle$default$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable error) {
-                Timber.m6e(error);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 != null) {
-                    String message = error.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-                Intrinsics.checkNotNullExpressionValue(error, "error");
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
-        singleDispose(subscribe);
-    }
-
     private final void saveProfile() {
         ProfileUiState copy$default = ProfileUiState.copy$default(this.profileUiState, this.profileData, null, false, null, null, 30, null);
         this.profileUiState = copy$default;
@@ -297,12 +241,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevelInformation> result) {
-                m1185invoke(result);
+                m1184invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1185invoke(Result<? extends AccountLevelInformation> it) {
+            public final void m1184invoke(Result<? extends AccountLevelInformation> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevelInformation> result = it;
                 if (result instanceof Result.Success) {
@@ -336,7 +280,7 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -350,12 +294,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SocialDomain> result) {
-                m1186invoke(result);
+                m1185invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1186invoke(Result<? extends SocialDomain> it) {
+            public final void m1185invoke(Result<? extends SocialDomain> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ProfilePresenter.this.onLoadSocialResult(it);
             }
@@ -384,7 +328,7 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         singleDispose(subscribe);
     }
 
@@ -415,18 +359,6 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         ((ProfileView) getViewState()).updateSocialCell();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void onReattachSocialResult(Result<Boolean> result) {
-        if (result instanceof Result.Success) {
-            loadSocials();
-        } else if (result instanceof Result.Error) {
-            ((ProfileView) getViewState()).showErrorToast((Result.Error) result, this.resourceManager);
-        } else {
-            Timber.m5i("onReattachSocialResult skipped: " + result, new Object[0]);
-        }
-        ((ProfileView) getViewState()).updateSocialCell();
-    }
-
     private final void logoutSocialNetwork(SocialNetwork socialNetwork) {
         Observable<Result<Boolean>> delay = this.socialUseCase.logout(socialNetwork).delay(1500L, TimeUnit.MILLISECONDS);
         Intrinsics.checkNotNullExpressionValue(delay, "socialUseCase\n          …Y, TimeUnit.MILLISECONDS)");
@@ -442,12 +374,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1187invoke(result);
+                m1186invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1187invoke(Result<? extends Boolean> it) {
+            public final void m1186invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ProfilePresenter.this.onSocialLogoutResult(it);
             }
@@ -476,7 +408,7 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -491,92 +423,24 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         }
     }
 
-    private final void listenSocialAuthResult() {
-        Observable<SocialAuthResult> delay = this.socialUseCase.listenSocialChanges().delay(1500L, TimeUnit.MILLISECONDS);
-        Intrinsics.checkNotNullExpressionValue(delay, "socialUseCase\n          …Y, TimeUnit.MILLISECONDS)");
-        Observable scheduleIO = SchedulersExtKt.scheduleIO(delay);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = scheduleIO.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<SocialAuthResult, Unit>() { // from class: com.iMe.feature.profile.ProfilePresenter$listenSocialAuthResult$$inlined$subscribeWithErrorHandle$default$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(SocialAuthResult socialAuthResult) {
-                m1184invoke(socialAuthResult);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1184invoke(SocialAuthResult it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                ProfilePresenter.this.onSocialAuthResult(it);
-            }
-        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.profile.ProfilePresenter$listenSocialAuthResult$$inlined$subscribeWithErrorHandle$default$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable error) {
-                Timber.m6e(error);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 != null) {
-                    String message = error.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-                Intrinsics.checkNotNullExpressionValue(error, "error");
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
-        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void onSocialAuthResult(SocialAuthResult socialAuthResult) {
-        Timber.m7e("onSocialAuthResult: " + socialAuthResult, new Object[0]);
-        if (socialAuthResult instanceof SocialAuthResult.Success) {
-            loadSocials();
-        } else if (socialAuthResult instanceof SocialAuthResult.Verification) {
-            showLinkConfirmationDialog(((SocialAuthResult.Verification) socialAuthResult).getSocialId());
-        } else if (Intrinsics.areEqual(socialAuthResult, SocialAuthResult.Logout.INSTANCE)) {
-            loadSocials();
-        } else {
-            Timber.m9d("onSocialAuthResult skipped: " + socialAuthResult, new Object[0]);
-        }
-    }
-
     private final void showResetConfirmationDialog(SocialNetwork socialNetwork) {
-        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3558R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3558R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3558R.string.social_reset_account_negative_button), this.resourceManager.getString(C3558R.string.social_reset_account_positive_button)), socialNetwork);
+        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3473R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3473R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3473R.string.social_reset_account_negative_button), this.resourceManager.getString(C3473R.string.social_reset_account_positive_button)), socialNetwork);
     }
 
     private final void showNeedAuthorizeDialog() {
-        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3558R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3558R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.common_ok)));
+        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3473R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3473R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.common_ok)));
     }
 
     private final void showBeforeDialog(SocialNetwork socialNetwork) {
         String socialName = socialNetwork.getSocialName();
         String beforeConnectMessage = socialNetwork.getBeforeConnectMessage();
-        String string = this.resourceManager.getString(C3558R.string.common_ok);
+        String string = this.resourceManager.getString(C3473R.string.common_ok);
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
-        String upperCase2 = this.resourceManager.getString(C3558R.string.common_cancel).toUpperCase(locale);
+        String upperCase2 = this.resourceManager.getString(C3473R.string.common_cancel).toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         ((ProfileView) getViewState()).showBeforeConnectMessage(socialNetwork, new DialogModel(socialName, beforeConnectMessage, upperCase2, upperCase));
-    }
-
-    private final void showLinkConfirmationDialog(long j) {
-        ((ProfileView) getViewState()).showLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3558R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3558R.string.profile_twitter_link_confirmation_alert_description), this.resourceManager.getString(C3558R.string.Cancel), this.resourceManager.getString(C3558R.string.common_confirm)), j);
     }
 
     private final void startSocialAuth(SocialType socialType) {
@@ -592,12 +456,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SocialAuthDomain> result) {
-                m1189invoke(result);
+                m1187invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1189invoke(Result<? extends SocialAuthDomain> it) {
+            public final void m1187invoke(Result<? extends SocialAuthDomain> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SocialAuthDomain> result = it;
@@ -636,12 +500,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* compiled from: ProfilePresenter.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

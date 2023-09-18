@@ -1,5 +1,5 @@
 package com.otaliastudios.gif.strategy.size;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Size {
     private int mMajor;
     private int mMinor;

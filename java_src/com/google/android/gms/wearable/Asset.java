@@ -16,7 +16,7 @@ import java.util.Arrays;
 @VisibleForTesting
 @SafeParcelable.Class(creator = "AssetCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Asset extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<Asset> CREATOR = new zzc();
     @SafeParcelable.Field(m797id = 4)

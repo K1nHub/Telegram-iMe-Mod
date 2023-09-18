@@ -14,7 +14,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletTransactionsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletTransactionsView extends BaseView, LoadMoreView<BaseNode>, SwipeRefreshView, SwitchNetworkView {
     void openCryptoBoxActionDetails(CryptoBoxActionItem cryptoBoxActionItem, Network network);
 

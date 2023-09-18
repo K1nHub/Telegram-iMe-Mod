@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import net.lingala.zip4j.exception.ZipException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Zip4jUtil {
     public static void setFileArchive(File file) throws ZipException {
     }

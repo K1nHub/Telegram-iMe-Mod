@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HeaderItemWithRightButton.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HeaderItemWithRightButton extends NoChildNode {
     private final int iconRes;
     private String title;

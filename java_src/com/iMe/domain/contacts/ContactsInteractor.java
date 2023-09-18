@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: ContactsInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ContactsInteractor {
     private final SchedulersProvider schedulersProvider;
     private final SelectedContactsDataStore selectedContactsDataStore;

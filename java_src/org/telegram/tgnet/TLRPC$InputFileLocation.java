@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$InputFileLocation extends TLObject {
     public long access_hash;
     public byte[] file_reference;
     public int flags;
 
     /* renamed from: id */
-    public long f1550id;
+    public long f1541id;
     public int local_id;
     public long secret;
     public String thumb_size;

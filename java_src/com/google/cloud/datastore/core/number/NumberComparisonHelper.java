@@ -1,5 +1,5 @@
 package com.google.cloud.datastore.core.number;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NumberComparisonHelper {
     public static int compareLongs(long j, long j2) {
         int i = (j > j2 ? 1 : (j == j2 ? 0 : -1));

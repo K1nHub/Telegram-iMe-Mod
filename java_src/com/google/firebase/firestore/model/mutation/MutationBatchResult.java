@@ -7,7 +7,7 @@ import com.google.firebase.firestore.model.SnapshotVersion;
 import com.google.firebase.firestore.util.Assert;
 import com.google.protobuf.ByteString;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MutationBatchResult {
     private final MutationBatch batch;
     private final SnapshotVersion commitVersion;

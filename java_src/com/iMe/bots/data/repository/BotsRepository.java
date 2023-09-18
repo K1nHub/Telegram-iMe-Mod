@@ -65,7 +65,7 @@ import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: BotsRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsRepository {
     public static final Companion Companion = new Companion(null);
     private final SmartBotsApi botsApi;
@@ -97,7 +97,7 @@ public final class BotsRepository {
     }
 
     /* compiled from: BotsRepository.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

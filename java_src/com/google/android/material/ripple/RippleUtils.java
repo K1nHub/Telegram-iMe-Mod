@@ -6,7 +6,7 @@ import android.os.Build;
 import android.util.Log;
 import android.util.StateSet;
 import androidx.core.graphics.ColorUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RippleUtils {
     private static final int[] ENABLED_PRESSED_STATE_SET;
     private static final int[] FOCUSED_STATE_SET;

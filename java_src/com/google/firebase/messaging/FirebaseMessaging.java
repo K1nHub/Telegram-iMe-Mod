@@ -37,7 +37,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseMessaging {
     private static final long MAX_DELAY_SEC = TimeUnit.HOURS.toSeconds(8);
     private static Store store;
@@ -58,7 +58,7 @@ public class FirebaseMessaging {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class AutoInit {
         private Boolean autoInitEnabled;
         private EventHandler<DataCollectionDefaultChange> dataCollectionDefaultChangeEventHandler;

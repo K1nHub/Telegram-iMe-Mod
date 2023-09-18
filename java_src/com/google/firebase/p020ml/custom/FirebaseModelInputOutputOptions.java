@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelInputOutputOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelInputOutputOptions {
     private final SparseArray<zzpp> zzaxa;
     private final SparseArray<zzpp> zzaxb;
@@ -35,7 +35,7 @@ public final class FirebaseModelInputOutputOptions {
     }
 
     /* renamed from: com.google.firebase.ml.custom.FirebaseModelInputOutputOptions$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private SparseArray<zzpp> zzaxa = new SparseArray<>();
         private SparseArray<zzpp> zzaxb = new SparseArray<>();

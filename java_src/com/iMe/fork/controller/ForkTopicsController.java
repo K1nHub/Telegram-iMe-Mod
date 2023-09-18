@@ -54,7 +54,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: ForkTopicsController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ForkTopicsController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, ForkTopicsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -274,7 +274,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog = getMessagesController().getDialog(longValue);
                 if (dialog != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog.f1537id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog.f1528id)) {
                         if (dialog.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue));
                         } else {
@@ -288,7 +288,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog2 = getMessagesController().getDialog(longValue2);
                 if (dialog2 != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog2, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog2.f1537id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog2.f1528id)) {
                         if (dialog2.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue2));
                         } else {
@@ -664,7 +664,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
     }
 
     /* compiled from: ForkTopicsController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -713,7 +713,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) =\n   …ontroller(accountIndex) }");
             return (ForkTopicsController) computeIfAbsent;
         }
     }

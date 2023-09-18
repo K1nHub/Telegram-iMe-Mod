@@ -7,7 +7,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.Write */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Write extends GeneratedMessageLite<Write, Builder> implements MessageLiteOrBuilder {
     public static final int CURRENT_DOCUMENT_FIELD_NUMBER = 4;
     private static final Write DEFAULT_INSTANCE;
@@ -28,7 +28,7 @@ public final class Write extends GeneratedMessageLite<Write, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Write$OperationCase */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum OperationCase {
         UPDATE(1),
         DELETE(2),
@@ -184,7 +184,7 @@ public final class Write extends GeneratedMessageLite<Write, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Write$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Write, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10781 c10781) {
             this();
@@ -232,7 +232,7 @@ public final class Write extends GeneratedMessageLite<Write, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Write$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10781 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

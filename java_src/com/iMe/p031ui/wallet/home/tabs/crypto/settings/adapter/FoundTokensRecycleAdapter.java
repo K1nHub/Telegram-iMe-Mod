@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FoundTokensRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.adapter.FoundTokensRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FoundTokensRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final FoundTokenProvider foundTokenProvider;
     private final GlobalStateProvider globalStateProvider;

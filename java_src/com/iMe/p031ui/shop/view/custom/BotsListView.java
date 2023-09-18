@@ -15,7 +15,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: BotsListView.kt */
 /* renamed from: com.iMe.ui.shop.view.custom.BotsListView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsListView extends LinearLayout {
     private final BotsPreviewAdapter adapter;
     private final LinearLayoutManager layoutManager;

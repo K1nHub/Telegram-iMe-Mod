@@ -1,5 +1,5 @@
 package com.stripe.android.exception;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class StripeException extends Exception {
     protected static final long serialVersionUID = 1;
     private String requestId;

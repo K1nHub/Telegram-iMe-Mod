@@ -33,7 +33,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.Premium.GLIcon.GLIconTextureView;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
 /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GLIconTextureView extends TextureView implements TextureView.SurfaceTextureListener {
     ArrayList<Integer> animationIndexes;
     int animationPointer;
@@ -116,7 +116,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         setOpaque(false);
         setRenderer(new GLIconRenderer(context, i));
         initialize(context);
-        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC52401());
+        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC51551());
         this.gestureDetector = gestureDetector;
         gestureDetector.setIsLongpressEnabled(true);
         for (int i2 = 0; i2 < 5; i2++) {
@@ -127,8 +127,8 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1 */
-    /* loaded from: classes6.dex */
-    public class GestureDetector$OnGestureListenerC52401 implements GestureDetector.OnGestureListener {
+    /* loaded from: classes7.dex */
+    public class GestureDetector$OnGestureListenerC51551 implements GestureDetector.OnGestureListener {
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
             return false;
@@ -138,7 +138,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         public void onShowPress(MotionEvent motionEvent) {
         }
 
-        GestureDetector$OnGestureListenerC52401() {
+        GestureDetector$OnGestureListenerC51551() {
         }
 
         @Override // android.view.GestureDetector.OnGestureListener
@@ -168,7 +168,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GLIconTextureView.GestureDetector$OnGestureListenerC52401.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
+                    GLIconTextureView.GestureDetector$OnGestureListenerC51551.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
                 }
             }, 16L);
             return true;
@@ -312,12 +312,12 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$RenderThread */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class RenderThread extends Thread {
         private RenderThread() {
         }
 
-        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC52401 gestureDetector$OnGestureListenerC52401) {
+        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC51551 gestureDetector$OnGestureListenerC51551) {
             this();
         }
 

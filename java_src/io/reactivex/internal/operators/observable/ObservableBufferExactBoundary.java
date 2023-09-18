@@ -14,7 +14,7 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.observers.SerializedObserver;
 import java.util.Collection;
 import java.util.concurrent.Callable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableBufferExactBoundary<T, U extends Collection<? super T>, B> extends AbstractObservableWithUpstream<T, U> {
     final ObservableSource<B> boundary;
     final Callable<U> bufferSupplier;
@@ -30,7 +30,7 @@ public final class ObservableBufferExactBoundary<T, U extends Collection<? super
         this.source.subscribe(new BufferExactBoundaryObserver(new SerializedObserver(observer), this.bufferSupplier, this.boundary));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BufferExactBoundaryObserver<T, U extends Collection<? super T>, B> extends QueueDrainObserver<T, U, U> implements Observer<T> {
         final ObservableSource<B> boundary;
         U buffer;
@@ -144,7 +144,7 @@ public final class ObservableBufferExactBoundary<T, U extends Collection<? super
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BufferBoundaryObserver<T, U extends Collection<? super T>, B> extends DisposableObserver<B> {
         final BufferExactBoundaryObserver<T, U, B> parent;
 

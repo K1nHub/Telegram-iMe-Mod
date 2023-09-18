@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleDoOnSubscribe<T> extends Single<T> {
     final Consumer<? super Disposable> onSubscribe;
     final SingleSource<T> source;
@@ -23,7 +23,7 @@ public final class SingleDoOnSubscribe<T> extends Single<T> {
         this.source.subscribe(new DoOnSubscribeSingleObserver(singleObserver, this.onSubscribe));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class DoOnSubscribeSingleObserver<T> implements SingleObserver<T> {
         boolean done;
         final SingleObserver<? super T> downstream;

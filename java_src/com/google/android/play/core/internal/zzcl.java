@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzcl {
     public static long zza(zzcm zzcmVar, InputStream inputStream, OutputStream outputStream, long j) throws IOException {
         byte[] bArr = new byte[16384];

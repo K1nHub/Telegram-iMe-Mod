@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import com.google.android.gms.common.api.Api;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityRecognition {
     @Deprecated
     public static final Api<Api.ApiOptions.NoOptions> API = com.google.android.gms.internal.location.zzag.zzb;

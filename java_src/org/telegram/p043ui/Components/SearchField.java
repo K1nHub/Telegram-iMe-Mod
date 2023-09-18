@@ -15,11 +15,11 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* renamed from: org.telegram.ui.Components.SearchField */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SearchField extends FrameLayout {
     private ImageView clearSearchImageView;
     private CloseProgressDrawable2 progressDrawable;
@@ -60,7 +60,7 @@ public class SearchField extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.searchIconImageView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.searchIconImageView.setImageResource(C3558R.C3560drawable.smiles_inputsearch);
+        this.searchIconImageView.setImageResource(C3473R.C3475drawable.smiles_inputsearch);
         this.searchIconImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogSearchIcon), PorterDuff.Mode.MULTIPLY));
         if (z) {
             createFrame2 = LayoutHelper.createFrameRelatively(36.0f, 36.0f, 8388659, f + 2.0f, 11.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);

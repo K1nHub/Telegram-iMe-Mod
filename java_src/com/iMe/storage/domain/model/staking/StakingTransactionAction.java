@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.staking;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionAction.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingTransactionAction {
     private final StakingTransactionGas gas;
     private final StakingTransactionArgs transaction;

@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.android.vending.billing.IInAppBillingService;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GetPurchasesRequest extends BasePurchasesRequest {
     private final PurchaseVerifier mVerifier;
 
@@ -36,7 +36,7 @@ public final class GetPurchasesRequest extends BasePurchasesRequest {
         return iInAppBillingService.getPurchases(this.mApiVersion, str, this.mProduct, this.mContinuationToken);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class VerificationListener implements RequestListener<List<Purchase>> {
         private boolean mCalled;
         private final String mContinuationToken;

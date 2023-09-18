@@ -10,7 +10,7 @@ import java.util.Objects;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftCollectionItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftCollectionItem extends BaseExpandNode {
     private final List<BaseNode> childNode;
     private final NftCollection collection;

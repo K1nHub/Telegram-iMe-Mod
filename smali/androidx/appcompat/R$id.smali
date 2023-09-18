@@ -35,54 +35,54 @@
 
 .field public static final decor_content_parent:I = 0x7f09011a
 
-.field public static final edit_query:I = 0x7f09014f
+.field public static final edit_query:I = 0x7f090151
 
-.field public static final group_divider:I = 0x7f090189
+.field public static final group_divider:I = 0x7f09018a
 
-.field public static final message:I = 0x7f090270
+.field public static final message:I = 0x7f09026f
 
-.field public static final parentPanel:I = 0x7f0902c1
+.field public static final parentPanel:I = 0x7f0902be
 
-.field public static final scrollIndicatorDown:I = 0x7f090329
+.field public static final scrollIndicatorDown:I = 0x7f090326
 
-.field public static final scrollIndicatorUp:I = 0x7f09032a
+.field public static final scrollIndicatorUp:I = 0x7f090327
 
-.field public static final scrollView:I = 0x7f09032b
+.field public static final scrollView:I = 0x7f090328
 
-.field public static final search_button:I = 0x7f09032f
+.field public static final search_button:I = 0x7f09032c
 
-.field public static final search_close_btn:I = 0x7f090330
+.field public static final search_close_btn:I = 0x7f09032d
 
-.field public static final search_edit_frame:I = 0x7f090331
+.field public static final search_edit_frame:I = 0x7f09032e
 
-.field public static final search_go_btn:I = 0x7f090332
+.field public static final search_go_btn:I = 0x7f09032f
 
-.field public static final search_mag_icon:I = 0x7f090333
+.field public static final search_mag_icon:I = 0x7f090330
 
-.field public static final search_plate:I = 0x7f090334
+.field public static final search_plate:I = 0x7f090331
 
-.field public static final search_src_text:I = 0x7f090335
+.field public static final search_src_text:I = 0x7f090332
 
-.field public static final search_voice_btn:I = 0x7f090336
+.field public static final search_voice_btn:I = 0x7f090333
 
-.field public static final shortcut:I = 0x7f090341
+.field public static final shortcut:I = 0x7f09033e
 
-.field public static final spacer:I = 0x7f09035d
+.field public static final spacer:I = 0x7f09035a
 
-.field public static final split_action_bar:I = 0x7f090360
+.field public static final split_action_bar:I = 0x7f09035d
 
-.field public static final submenuarrow:I = 0x7f09037e
+.field public static final submenuarrow:I = 0x7f09037b
 
-.field public static final submit_area:I = 0x7f09037f
+.field public static final submit_area:I = 0x7f09037c
 
-.field public static final textSpacerNoButtons:I = 0x7f0903a2
+.field public static final textSpacerNoButtons:I = 0x7f09039f
 
-.field public static final textSpacerNoTitle:I = 0x7f0903a3
+.field public static final textSpacerNoTitle:I = 0x7f0903a0
 
-.field public static final title:I = 0x7f09046b
+.field public static final title:I = 0x7f090469
 
-.field public static final titleDividerNoCustom:I = 0x7f09046c
+.field public static final titleDividerNoCustom:I = 0x7f09046a
 
-.field public static final title_template:I = 0x7f09046d
+.field public static final title_template:I = 0x7f09046b
 
-.field public static final topPanel:I = 0x7f090473
+.field public static final topPanel:I = 0x7f090471

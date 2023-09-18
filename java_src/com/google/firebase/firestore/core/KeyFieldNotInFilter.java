@@ -3,7 +3,7 @@ package com.google.firebase.firestore.core;
 import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class KeyFieldNotInFilter extends FieldFilter {
     private final List<DocumentKey> keys;
 

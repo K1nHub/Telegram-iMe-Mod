@@ -8,7 +8,7 @@ import kotlin.p034io.CloseableKt;
 import kotlin.p034io.TextStreamsKt;
 import kotlin.text.Charsets;
 /* compiled from: InputStreamExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class InputStreamExtKt {
     public static final String asString(InputStream inputStream) {
         Intrinsics.checkNotNullParameter(inputStream, "<this>");

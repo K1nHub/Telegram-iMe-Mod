@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import org.koin.core.Koin;
 import org.koin.core.KoinApplication;
 /* compiled from: KoinContext.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface KoinContext {
     Koin get();
 

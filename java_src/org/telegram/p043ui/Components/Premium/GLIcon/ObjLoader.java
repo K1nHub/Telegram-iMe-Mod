@@ -5,7 +5,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 /* renamed from: org.telegram.ui.Components.Premium.GLIcon.ObjLoader */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ObjLoader {
     public float[] normals;
     public int numFaces;

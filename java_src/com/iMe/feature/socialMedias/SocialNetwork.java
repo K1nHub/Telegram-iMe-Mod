@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialDomain.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialNetwork implements Parcelable {
     public static final Parcelable.Creator<SocialNetwork> CREATOR = new Creator();
     private final String beforeConnectMessage;
@@ -21,7 +21,7 @@ public final class SocialNetwork implements Parcelable {
     private final String socialWebUrl;
 
     /* compiled from: SocialDomain.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Creator implements Parcelable.Creator<SocialNetwork> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

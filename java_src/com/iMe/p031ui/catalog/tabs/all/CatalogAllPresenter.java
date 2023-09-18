@@ -47,7 +47,7 @@ import timber.log.Timber;
 /* compiled from: CatalogAllPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     private final CatalogInteractor catalogInteractor;
     private final List<CategoryPreview> categories;
@@ -99,12 +99,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CategoriesPreviewsCursored> result) {
-                m1356invoke(result);
+                m1354invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1356invoke(Result<? extends CategoriesPreviewsCursored> it) {
+            public final void m1354invoke(Result<? extends CategoriesPreviewsCursored> it) {
                 List<BaseNode> mapNewDataToUiItems;
                 String str2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -164,7 +164,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -191,12 +191,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TLRPC$Chat tLRPC$Chat) {
-                m1358invoke(tLRPC$Chat);
+                m1356invoke(tLRPC$Chat);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1358invoke(TLRPC$Chat it) {
+            public final void m1356invoke(TLRPC$Chat it) {
                 ChatType chatType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogAllView catalogAllView = (CatalogAllView) CatalogAllPresenter.this.getViewState();
@@ -228,7 +228,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -337,12 +337,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CampaignsCursored> result) {
-                m1357invoke(result);
+                m1355invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1357invoke(Result<? extends CampaignsCursored> it) {
+            public final void m1355invoke(Result<? extends CampaignsCursored> it) {
                 ResourceManager resourceManager;
                 List list;
                 Object obj;
@@ -418,7 +418,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

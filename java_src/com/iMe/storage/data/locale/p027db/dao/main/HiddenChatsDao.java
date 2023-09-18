@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HiddenChatsDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.HiddenChatsDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class HiddenChatsDao implements BaseDao<HiddenChatsDb> {
     public abstract void deleteAllHiddenChatsByUserId(long j);
 

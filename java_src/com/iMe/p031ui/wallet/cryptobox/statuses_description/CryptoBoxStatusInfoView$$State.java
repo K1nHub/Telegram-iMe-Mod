@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CryptoBoxStatusInfoView$$State extends MvpViewState<CryptoBoxStatusInfoView> implements CryptoBoxStatusInfoView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -77,7 +77,7 @@ public class CryptoBoxStatusInfoView$$State extends MvpViewState<CryptoBoxStatus
 
     /* compiled from: CryptoBoxStatusInfoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<CryptoBoxStatusInfoView> {
         public final List<CryptoBoxStatus> statuses;
 
@@ -94,7 +94,7 @@ public class CryptoBoxStatusInfoView$$State extends MvpViewState<CryptoBoxStatus
 
     /* compiled from: CryptoBoxStatusInfoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CryptoBoxStatusInfoView> {
         public final String text;
 
@@ -111,7 +111,7 @@ public class CryptoBoxStatusInfoView$$State extends MvpViewState<CryptoBoxStatus
 
     /* compiled from: CryptoBoxStatusInfoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CryptoBoxStatusInfoView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -132,7 +132,7 @@ public class CryptoBoxStatusInfoView$$State extends MvpViewState<CryptoBoxStatus
 
     /* compiled from: CryptoBoxStatusInfoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CryptoBoxStatusInfoView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

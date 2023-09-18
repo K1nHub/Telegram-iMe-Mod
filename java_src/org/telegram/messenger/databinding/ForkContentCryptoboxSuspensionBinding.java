@@ -9,9 +9,9 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.BigActionButton;
 import com.iMe.p031ui.custom.FeeView;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkContentCryptoboxSuspensionBinding implements ViewBinding {
     public final ActionBarMenuItem buttonClose;
     public final BigActionButton buttonProcess;
@@ -39,7 +39,7 @@ public final class ForkContentCryptoboxSuspensionBinding implements ViewBinding 
     }
 
     public static ForkContentCryptoboxSuspensionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_cryptobox_suspension, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_cryptobox_suspension, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -47,20 +47,20 @@ public final class ForkContentCryptoboxSuspensionBinding implements ViewBinding 
     }
 
     public static ForkContentCryptoboxSuspensionBinding bind(View view) {
-        int i = C3558R.C3561id.button_close;
+        int i = C3473R.C3476id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3558R.C3561id.button_process;
+            i = C3473R.C3476id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3558R.C3561id.fee_view;
+                i = C3473R.C3476id.fee_view;
                 FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                 if (feeView != null) {
                     LinearLayout linearLayout = (LinearLayout) view;
-                    i = C3558R.C3561id.text_description;
+                    i = C3473R.C3476id.text_description;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3558R.C3561id.text_title;
+                        i = C3473R.C3476id.text_title;
                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView2 != null) {
                             return new ForkContentCryptoboxSuspensionBinding(linearLayout, actionBarMenuItem, bigActionButton, feeView, linearLayout, appCompatTextView, appCompatTextView2);

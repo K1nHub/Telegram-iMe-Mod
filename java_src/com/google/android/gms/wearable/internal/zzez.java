@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.data.DataHolder;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzez extends com.google.android.gms.internal.wearable.zzb implements zzfa {
     public zzez() {
         super("com.google.android.gms.wearable.internal.IWearableListener");

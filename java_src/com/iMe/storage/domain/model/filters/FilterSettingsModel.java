@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.filters;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterSettingsModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilterSettingsModel {
     private Set<FilterFab> fabs;
     private int filterId;

@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.twitter;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterProfileByTelegramIdRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterProfileByTelegramIdRequest {
     private final String telegramUserId;
 

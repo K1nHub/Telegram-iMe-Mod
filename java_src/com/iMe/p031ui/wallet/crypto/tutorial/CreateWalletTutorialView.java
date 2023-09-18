@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CreateWalletTutorialView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CreateWalletTutorialView extends BaseView {
     void openTutorialPassedScreen(TutorialType.WalletIntro walletIntro);
 

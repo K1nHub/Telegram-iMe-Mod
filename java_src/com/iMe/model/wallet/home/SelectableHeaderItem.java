@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectableHeaderItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SelectableHeaderItem extends NoChildNode {
     private final int icon;
 

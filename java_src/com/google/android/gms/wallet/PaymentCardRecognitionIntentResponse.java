@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentCardRecognitionIntentResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PaymentCardRecognitionIntentResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentCardRecognitionIntentResponse> CREATOR = new zzz();
     @SafeParcelable.Field(m797id = 1)

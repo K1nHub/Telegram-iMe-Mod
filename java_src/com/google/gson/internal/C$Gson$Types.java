@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Properties;
 /* renamed from: com.google.gson.internal.$Gson$Types  reason: invalid class name */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class C$Gson$Types {
     static final Type[] EMPTY_TYPE_ARRAY = new Type[0];
 
@@ -374,7 +374,7 @@ public final class C$Gson$Types {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: $Gson$Types.java */
     /* renamed from: com.google.gson.internal.$Gson$Types$ParameterizedTypeImpl */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ParameterizedTypeImpl implements ParameterizedType, Serializable {
         private final Type ownerType;
         private final Type rawType;
@@ -455,7 +455,7 @@ public final class C$Gson$Types {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: $Gson$Types.java */
     /* renamed from: com.google.gson.internal.$Gson$Types$GenericArrayTypeImpl */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class GenericArrayTypeImpl implements GenericArrayType, Serializable {
         private final Type componentType;
 
@@ -485,7 +485,7 @@ public final class C$Gson$Types {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: $Gson$Types.java */
     /* renamed from: com.google.gson.internal.$Gson$Types$WildcardTypeImpl */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WildcardTypeImpl implements WildcardType, Serializable {
         private final Type lowerBound;
         private final Type upperBound;

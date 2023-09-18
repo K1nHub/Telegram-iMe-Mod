@@ -3,7 +3,7 @@ package com.iMe.i_staking.request;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationsPaginationRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingOperationsPaginationRequest {
     private final String cursor;
     private final Integer size;

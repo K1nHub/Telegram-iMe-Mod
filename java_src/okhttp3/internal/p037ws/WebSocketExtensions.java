@@ -10,7 +10,7 @@ import okhttp3.Headers;
 import okhttp3.internal.Util;
 /* compiled from: WebSocketExtensions.kt */
 /* renamed from: okhttp3.internal.ws.WebSocketExtensions */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WebSocketExtensions {
     public static final Companion Companion = new Companion(null);
     public final Integer clientMaxWindowBits;
@@ -94,7 +94,7 @@ public final class WebSocketExtensions {
 
     /* compiled from: WebSocketExtensions.kt */
     /* renamed from: okhttp3.internal.ws.WebSocketExtensions$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

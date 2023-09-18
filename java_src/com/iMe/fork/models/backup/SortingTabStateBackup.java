@@ -5,7 +5,7 @@ import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SortingTabStateBackup.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SortingTabStateBackup {
     private final FabDataBackup fabDataBackup;
     private Set<? extends FilterFab> fabs;

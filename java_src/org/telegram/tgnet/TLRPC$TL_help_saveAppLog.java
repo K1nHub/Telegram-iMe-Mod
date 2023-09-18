@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_help_saveAppLog extends TLObject {
     public static int constructor = 1862465352;
     public ArrayList<TLRPC$TL_inputAppEvent> events = new ArrayList<>();

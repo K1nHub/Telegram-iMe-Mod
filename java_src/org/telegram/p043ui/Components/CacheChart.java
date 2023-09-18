@@ -25,7 +25,7 @@ import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import java.util.Comparator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -35,7 +35,7 @@ import org.telegram.p043ui.Components.CacheChart;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
 import org.telegram.tgnet.ConnectionsManager;
 /* renamed from: org.telegram.ui.Components.CacheChart */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CacheChart extends View {
     private static final int[] DEFAULT_COLORS;
     private static final int[] DEFAULT_PARTICLES;
@@ -98,16 +98,16 @@ public class CacheChart extends View {
     static {
         int i = Theme.key_statisticChartLine_purple;
         DEFAULT_COLORS = new int[]{Theme.key_statisticChartLine_lightblue, Theme.key_statisticChartLine_blue, Theme.key_statisticChartLine_green, i, Theme.key_statisticChartLine_lightgreen, Theme.key_statisticChartLine_red, Theme.key_statisticChartLine_orange, Theme.key_statisticChartLine_cyan, i, Theme.key_statisticChartLine_golden};
-        int i2 = C3558R.raw.cache_videos;
-        int i3 = C3558R.raw.cache_music;
-        int i4 = C3558R.raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3558R.raw.cache_photos, i2, C3558R.raw.cache_documents, i3, i2, i3, C3558R.raw.cache_stickers, C3558R.raw.cache_profile_photos, i4, i4};
+        int i2 = C3473R.raw.cache_videos;
+        int i3 = C3473R.raw.cache_music;
+        int i4 = C3473R.raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3473R.raw.cache_photos, i2, C3473R.raw.cache_documents, i3, i2, i3, C3473R.raw.cache_stickers, C3473R.raw.cache_profile_photos, i4, i4};
         particlesStart = -1L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.CacheChart$Sector */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class Sector {
         float angleCenter;
         AnimatedFloat angleCenterAnimated;
@@ -539,7 +539,7 @@ public class CacheChart extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.CacheChart$SegmentSize */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class SegmentSize {
         int index;
         public boolean selected;
@@ -933,9 +933,9 @@ public class CacheChart extends View {
                 drawable.distributionAlgorithm = false;
                 drawable.excludeRadius = AndroidUtilities.m72dp(80);
                 StarParticlesView.Drawable drawable2 = this.completeDrawable;
-                drawable2.f1844k3 = 0.85f;
-                drawable2.f1843k2 = 0.85f;
-                drawable2.f1842k1 = 0.85f;
+                drawable2.f1835k3 = 0.85f;
+                drawable2.f1834k2 = 0.85f;
+                drawable2.f1833k1 = 0.85f;
                 drawable2.init();
                 z = true;
             } else {

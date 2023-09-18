@@ -1,6 +1,6 @@
 package com.google.android.play.core.assetpacks;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzeq extends zzdg {
     final int zza;
     final long zzb;

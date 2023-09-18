@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProxyNotificationInitializer {
     private static boolean allowedToUse(Context context) {
         return Binder.getCallingUid() == context.getApplicationInfo().uid;

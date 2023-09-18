@@ -2,7 +2,7 @@ package com.google.firebase.p020ml.vision.cloud;
 
 import com.google.android.gms.common.internal.Objects;
 /* renamed from: com.google.firebase.ml.vision.cloud.FirebaseVisionCloudDetectorOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionCloudDetectorOptions {
     private final int zzazx;
     private final int zzazy;
@@ -27,7 +27,7 @@ public class FirebaseVisionCloudDetectorOptions {
     }
 
     /* renamed from: com.google.firebase.ml.vision.cloud.FirebaseVisionCloudDetectorOptions$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private int zzazx = 10;
         private int zzazy = 1;

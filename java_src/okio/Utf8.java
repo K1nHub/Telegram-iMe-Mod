@@ -2,7 +2,7 @@ package okio;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Utf8.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Utf8 {
     public static /* synthetic */ long size$default(String str, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {

@@ -5,7 +5,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTokenBalanceDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.wallet.WalletTokenBalanceDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletTokenBalanceDb {
     private final String address;
     private final String avatarUrl;

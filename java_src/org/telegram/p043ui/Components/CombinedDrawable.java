@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 /* renamed from: org.telegram.ui.Components.CombinedDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CombinedDrawable extends Drawable implements Drawable.Callback {
     private int backHeight;
     private int backWidth;

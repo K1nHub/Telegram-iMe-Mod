@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MoreObjects {
     public static <T> T firstNonNull(T t, T t2) {
         if (t != null) {
@@ -22,7 +22,7 @@ public final class MoreObjects {
         return new ToStringHelper(cls.getSimpleName());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ToStringHelper {
         private final String className;
         private final ValueHolder holderHead;
@@ -143,7 +143,7 @@ public final class MoreObjects {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class ValueHolder {
             String name;
             ValueHolder next;
@@ -154,7 +154,7 @@ public final class MoreObjects {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class UnconditionalValueHolder extends ValueHolder {
             private UnconditionalValueHolder() {
                 super();

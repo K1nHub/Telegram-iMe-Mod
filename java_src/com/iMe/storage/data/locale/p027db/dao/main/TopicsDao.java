@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TopicsDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.TopicsDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TopicsDao implements BaseDao<TopicDb> {
     public abstract List<TopicDb> getTopics(long j);
 

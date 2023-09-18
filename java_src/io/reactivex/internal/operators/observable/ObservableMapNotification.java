@@ -9,7 +9,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableMapNotification<T, R> extends AbstractObservableWithUpstream<T, ObservableSource<? extends R>> {
     final Callable<? extends ObservableSource<? extends R>> onCompleteSupplier;
     final Function<? super Throwable, ? extends ObservableSource<? extends R>> onErrorMapper;
@@ -27,7 +27,7 @@ public final class ObservableMapNotification<T, R> extends AbstractObservableWit
         this.source.subscribe(new MapNotificationObserver(observer, this.onNextMapper, this.onErrorMapper, this.onCompleteSupplier));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MapNotificationObserver<T, R> implements Observer<T>, Disposable {
         final Observer<? super ObservableSource<? extends R>> downstream;
         final Callable<? extends ObservableSource<? extends R>> onCompleteSupplier;

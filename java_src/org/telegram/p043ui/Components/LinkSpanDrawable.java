@@ -29,7 +29,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ArticleViewer;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 /* renamed from: org.telegram.ui.Components.LinkSpanDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LinkSpanDrawable<S extends CharacterStyle> {
     private static final ArrayList<LinkPath> pathCache = new ArrayList<>();
     private final Path circlePath;
@@ -216,7 +216,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
     }
 
     /* renamed from: org.telegram.ui.Components.LinkSpanDrawable$LinkCollector */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class LinkCollector {
         private ArrayList<Pair<LinkSpanDrawable, Object>> mLinks = new ArrayList<>();
         private int mLinksCount = 0;
@@ -483,7 +483,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
     }
 
     /* renamed from: org.telegram.ui.Components.LinkSpanDrawable$LinksTextView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class LinksTextView extends TextView {
         private boolean disablePaddingsOffset;
         private boolean disablePaddingsOffsetX;
@@ -496,7 +496,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
         private Theme.ResourcesProvider resourcesProvider;
 
         /* renamed from: org.telegram.ui.Components.LinkSpanDrawable$LinksTextView$OnLinkPress */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface OnLinkPress {
             void run(ClickableSpan clickableSpan);
         }
@@ -640,7 +640,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
     }
 
     /* renamed from: org.telegram.ui.Components.LinkSpanDrawable$ClickableSmallTextView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class ClickableSmallTextView extends SimpleTextView {
         private Paint linkBackgroundPaint;
         private LinkCollector links;

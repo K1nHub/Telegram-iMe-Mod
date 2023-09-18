@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ImmutableList<E> extends ImmutableCollection<E> implements List<E>, RandomAccess {
     private static final UnmodifiableListIterator<Object> EMPTY_ITR = new Itr(RegularImmutableList.EMPTY, 0);
 
@@ -109,7 +109,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Itr<E> extends AbstractIndexedListIterator<E> {
         private final ImmutableList<E> list;
 
@@ -163,7 +163,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SubList extends ImmutableList<E> {
         final transient int length;
         final transient int offset;
@@ -281,7 +281,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
         return new Builder<>();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder<E> extends ImmutableCollection.ArrayBasedBuilder<E> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.google.common.collect.ImmutableCollection.Builder

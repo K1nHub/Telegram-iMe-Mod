@@ -5,7 +5,7 @@ import com.iMe.model.wallet.settings.NetworkSettingsItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworksSettingsDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.networks.adapter.diff.NetworksSettingsDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NetworksSettingsDiffCallback extends DiffUtil.ItemCallback<NetworkSettingsItem> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(NetworkSettingsItem oldItem, NetworkSettingsItem newItem) {

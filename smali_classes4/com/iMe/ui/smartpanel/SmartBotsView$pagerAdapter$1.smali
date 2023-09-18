@@ -28,7 +28,7 @@
 
     iput-wide p2, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->$dialogId:J
 
-    .line 277
+    .line 340
     invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
 
     return-void
@@ -43,11 +43,11 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo p2, "obj"
+    const-string p2, "obj"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 295
+    .line 364
     check-cast p3, Landroid/view/View;
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -58,7 +58,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 281
+    .line 344
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$getContent$p(Lcom/iMe/ui/smartpanel/SmartBotsView;)Ljava/util/List;
@@ -87,7 +87,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 284
+    .line 347
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$getContent$p(Lcom/iMe/ui/smartpanel/SmartBotsView;)Ljava/util/List;
@@ -102,9 +102,10 @@
 
     check-cast v2, Lcom/iMe/ui/smartpanel/model/SmartBotTab;
 
-    .line 286
+    .line 349
     new-instance p2, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;
 
+    .line 350
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -113,28 +114,32 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 352
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$getCurrentBotResponseType$p(Lcom/iMe/ui/smartpanel/SmartBotsView;)Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     move-result-object v3
 
+    .line 353
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$getListener$p(Lcom/iMe/ui/smartpanel/SmartBotsView;)Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
     move-result-object v4
 
+    .line 354
     iget-wide v5, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->$dialogId:J
 
     move-object v0, p2
 
+    .line 349
     invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;-><init>(Landroid/content/Context;Lcom/iMe/ui/smartpanel/model/SmartBotTab;Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;J)V
 
-    .line 287
+    .line 356
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 288
+    .line 357
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {p1}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$getContentViews$p(Lcom/iMe/ui/smartpanel/SmartBotsView;)Ljava/util/List;
@@ -149,15 +154,15 @@
 .method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
     .locals 1
 
-    const-string/jumbo v0, "view"
+    const-string v0, "view"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "obj"
+    const-string v0, "obj"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 279
+    .line 342
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1

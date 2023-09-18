@@ -8,7 +8,7 @@ import java.util.Objects;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzdf<T> implements zzdn<T> {
     private static final int[] zza = new int[0];
     private static final Unsafe zzb = zzeo.zzg();

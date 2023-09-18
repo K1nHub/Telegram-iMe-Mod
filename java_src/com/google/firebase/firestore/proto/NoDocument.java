@@ -4,7 +4,7 @@ import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> implements MessageLiteOrBuilder {
     private static final NoDocument DEFAULT_INSTANCE;
     public static final int NAME_FIELD_NUMBER = 1;
@@ -41,7 +41,7 @@ public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> 
         return DEFAULT_INSTANCE.createBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<NoDocument, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10221 c10221) {
             this();
@@ -65,7 +65,7 @@ public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> 
     }
 
     /* renamed from: com.google.firebase.firestore.proto.NoDocument$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10221 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

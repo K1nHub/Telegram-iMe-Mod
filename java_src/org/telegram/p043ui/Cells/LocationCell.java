@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -28,7 +28,7 @@ import org.telegram.p043ui.Components.FlickerLoadingView;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
 /* renamed from: org.telegram.ui.Cells.LocationCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LocationCell extends FrameLayout {
     private static FlickerLoadingView globalGradientView;
     private AnimatedTextView addressTextView;
@@ -160,7 +160,7 @@ public class LocationCell extends FrameLayout {
         int colorForIndex = getColorForIndex(i);
         if (tLRPC$TL_messageMediaVenue != null && (str2 = tLRPC$TL_messageMediaVenue.icon) != null) {
             if ("pin".equals(str2) || tLRPC$TL_messageMediaVenue.icon.startsWith("emoji")) {
-                Drawable mutate = getResources().getDrawable(C3558R.C3560drawable.pin).mutate();
+                Drawable mutate = getResources().getDrawable(C3473R.C3475drawable.pin).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_location_sendLocationIcon), PorterDuff.Mode.MULTIPLY));
                 CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(42), 0), mutate);
                 combinedDrawable.setCustomSize(AndroidUtilities.m72dp(42), AndroidUtilities.m72dp(42));

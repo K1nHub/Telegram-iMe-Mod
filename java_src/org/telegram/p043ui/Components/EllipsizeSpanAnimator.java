@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.Components.Reactions.HwEmojis;
 /* renamed from: org.telegram.ui.Components.EllipsizeSpanAnimator */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EllipsizeSpanAnimator {
     boolean attachedToWindow;
     private final AnimatorSet ellAnimator;
@@ -120,7 +120,7 @@ public class EllipsizeSpanAnimator {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.EllipsizeSpanAnimator$TextAlphaSpan */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TextAlphaSpan extends CharacterStyle {
         private int alpha = 0;
 

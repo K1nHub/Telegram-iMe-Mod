@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.InputStream;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class LimitedInputStream extends InputStream {
     protected final InputStream _in;
     private int _limit;

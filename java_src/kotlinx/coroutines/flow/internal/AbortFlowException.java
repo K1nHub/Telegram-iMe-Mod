@@ -4,7 +4,7 @@ import java.util.concurrent.CancellationException;
 import kotlinx.coroutines.DebugKt;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: FlowExceptions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AbortFlowException extends CancellationException {
     public final transient FlowCollector<?> owner;
 

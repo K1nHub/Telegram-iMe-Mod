@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Unit;
@@ -59,7 +60,7 @@ import kotlin.text.StringsKt__StringsKt;
 import org.solovyev.android.checkout.Purchase;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -67,7 +68,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -75,7 +76,7 @@ import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: NeurobotsStoreActivity.kt */
 /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NeurobotsStoreActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     public static final Companion Companion = new Companion(null);
     private CoordinatorLayout baseViewsContainer;
@@ -102,7 +103,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
 
     /* compiled from: NeurobotsStoreActivity.kt */
     /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -156,12 +157,12 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
 
     /* compiled from: NeurobotsStoreActivity.kt */
     /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$StoreTab */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum StoreTab {
-        ALL(C3558R.string.neurobots_store_tab_all),
-        POPULAR(C3558R.string.neurobots_store_tab_popular),
-        FREE(C3558R.string.neurobots_store_tab_free),
-        MY(C3558R.string.neurobots_store_tab_my);
+        ALL(C3473R.string.neurobots_store_tab_all),
+        POPULAR(C3473R.string.neurobots_store_tab_popular),
+        FREE(C3473R.string.neurobots_store_tab_free),
+        MY(C3473R.string.neurobots_store_tab_my);
         
         private final int resId;
 
@@ -176,7 +177,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
 
     /* compiled from: NeurobotsStoreActivity.kt */
     /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -366,25 +367,25 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         }
         this.fragmentView = sizeNotifierFrameLayout2;
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        int i4 = C3558R.C3560drawable.ic_ab_search;
+        int i4 = C3473R.C3475drawable.ic_ab_search;
         this.searchMenuItem = createMenu.addItem(104, i4);
-        this.changeCountryItem = createMenu.addItem(105, C3558R.C3560drawable.fork_ic_language);
+        this.changeCountryItem = createMenu.addItem(105, C3473R.C3475drawable.fork_ic_language);
         ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, i4).setIsSearchField(true).setActionBarMenuItemSearchListener(new NeurobotsStoreActivity$createView$2(this));
         this.searchItem = actionBarMenuItemSearchListener;
         if (actionBarMenuItemSearchListener != null) {
-            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3558R.string.Search));
+            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3473R.string.Search));
         }
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
         if (actionBarMenuItem != null) {
             actionBarMenuItem.setVisibility(8);
         }
-        this.actionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getInternalString(C3558R.string.neurobots_store_screen_title));
+        this.actionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getInternalString(C3473R.string.neurobots_store_screen_title));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.NeurobotsStoreActivity$createView$3
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.NeurobotsStoreActivity$createView$3
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
-                C3626ActionBar c3626ActionBar;
+                C3541ActionBar c3541ActionBar;
                 SizeNotifierFrameLayout sizeNotifierFrameLayout3;
                 if (i5 == -1) {
                     NeurobotsStoreActivity.this.finishFragment();
@@ -394,8 +395,8 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                     }
                     NeurobotsStoreActivity.this.presentFragment(new LanguagesActivity());
                 } else {
-                    c3626ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
-                    c3626ActionBar.openSearchField("", false);
+                    c3541ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
+                    c3541ActionBar.openSearchField("", false);
                     sizeNotifierFrameLayout3 = NeurobotsStoreActivity.this.rootContainer;
                     if (sizeNotifierFrameLayout3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("rootContainer");
@@ -467,7 +468,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         sizeNotifierFrameLayout3.addView(recyclerListView4, LayoutHelper.createLinear(-1, -1));
         TextView textView2 = new TextView(context);
         this.nothingFoundPlaceholder = textView2;
-        textView2.setText(LocaleController.getInternalString(C3558R.string.neurobots_store_search_empty));
+        textView2.setText(LocaleController.getInternalString(C3473R.string.neurobots_store_search_empty));
         TextView textView3 = this.nothingFoundPlaceholder;
         if (textView3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
@@ -969,8 +970,11 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         Intrinsics.checkNotNullParameter(query, "query");
         ArrayList arrayList = new ArrayList();
         for (Object obj : items) {
-            String lowerCase = ((ShopItem) obj).getSearchField().toLowerCase();
-            Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase()");
+            String searchField = ((ShopItem) obj).getSearchField();
+            Locale locale = Locale.getDefault();
+            Intrinsics.checkNotNullExpressionValue(locale, "getDefault()");
+            String lowerCase = searchField.toLowerCase(locale);
+            Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(locale)");
             contains$default = StringsKt__StringsKt.contains$default((CharSequence) lowerCase, (CharSequence) query, false, 2, (Object) null);
             if (contains$default) {
                 arrayList.add(obj);

@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import androidx.annotation.Keep;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.AnimatedArrowDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedArrowDrawable extends Drawable {
     private float animProgress;
     private float animateToProgress;

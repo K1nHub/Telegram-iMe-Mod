@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_uploadImportedMedia extends TLObject {
     public static int constructor = 713433234;
     public String file_name;

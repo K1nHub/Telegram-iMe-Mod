@@ -10,7 +10,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataCollectionArbiter {
     private Boolean crashlyticsDataCollectionEnabled;
     TaskCompletionSource<Void> dataCollectionEnabledTask;

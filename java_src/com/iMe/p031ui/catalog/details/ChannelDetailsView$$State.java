@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> implements ChannelDetailsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -129,7 +129,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$SetupCampaignInfoCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupCampaignInfoCommand extends ViewCommand<ChannelDetailsView> {
         public final CampaignItem campaignItem;
 
@@ -146,7 +146,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$SetupSubscribeButtonCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupSubscribeButtonCommand extends ViewCommand<ChannelDetailsView> {
         public final boolean canSubscribe;
 
@@ -163,7 +163,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$ShowShareDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowShareDialogCommand extends ViewCommand<ChannelDetailsView> {
         public final String text;
 
@@ -180,7 +180,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$ShowChannelQrCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowChannelQrCommand extends ViewCommand<ChannelDetailsView> {
         public final long chatId;
 
@@ -197,7 +197,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$OnSubscribedToChannelCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSubscribedToChannelCommand extends ViewCommand<ChannelDetailsView> {
         public final Uri channelUri;
 
@@ -214,7 +214,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<ChannelDetailsView> {
         public final String text;
 
@@ -231,7 +231,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<ChannelDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -252,7 +252,7 @@ public class ChannelDetailsView$$State extends MvpViewState<ChannelDetailsView> 
 
     /* compiled from: ChannelDetailsView$$State.java */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<ChannelDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

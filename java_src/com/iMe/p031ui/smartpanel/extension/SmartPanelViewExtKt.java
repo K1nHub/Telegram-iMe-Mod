@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt__MathJVMKt;
 /* compiled from: SmartPanelViewExt.kt */
 /* renamed from: com.iMe.ui.smartpanel.extension.SmartPanelViewExtKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SmartPanelViewExtKt {
     public static final int floatToDp(SmartBotsView smartBotsView, float f) {
         int roundToInt;

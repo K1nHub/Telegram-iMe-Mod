@@ -1,5 +1,5 @@
 package com.google.android.material;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class R$layout {
     public static final int design_layout_snackbar = 2131492907;
     public static final int design_layout_snackbar_include = 2131492908;

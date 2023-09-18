@@ -11,14 +11,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EventManager implements SyncEngine.SyncEngineCallback {
     private final SyncEngine syncEngine;
     private final Set<EventListener<Void>> snapshotsInSyncListeners = new HashSet();
     private OnlineState onlineState = OnlineState.UNKNOWN;
     private final Map<Query, QueryListenersInfo> queries = new HashMap();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ListenOptions {
         public boolean includeDocumentMetadataChanges;
         public boolean includeQueryMetadataChanges;
@@ -26,7 +26,7 @@ public final class EventManager implements SyncEngine.SyncEngineCallback {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryListenersInfo {
         private final List<QueryListener> listeners = new ArrayList();
         private int targetId;

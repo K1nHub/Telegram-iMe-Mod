@@ -10,7 +10,7 @@ import android.view.View;
 import com.google.android.exoplayer2.C0479C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.AnimatedTextView;
@@ -18,7 +18,7 @@ import org.telegram.p043ui.Components.ButtonBounce;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.RLottieDrawable;
 /* renamed from: org.telegram.ui.Stories.recorder.TrashView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TrashView extends View {
     private final ButtonBounce bounce;
     private final Paint circlePaint;
@@ -42,7 +42,7 @@ public class TrashView extends View {
         paint.setStrokeWidth(AndroidUtilities.dpf2(2.66f));
         paint.setShadowLayer(AndroidUtilities.dpf2(3.0f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m73dp(1.66f), C0479C.ENCODING_PCM_32BIT);
         paint2.setColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
-        int i = C3558R.raw.group_pip_delete_icon;
+        int i = C3473R.raw.group_pip_delete_icon;
         RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m72dp(48), AndroidUtilities.m72dp(48), true, null);
         this.drawable = rLottieDrawable;
         rLottieDrawable.setMasterParent(this);
@@ -58,7 +58,7 @@ public class TrashView extends View {
         animatedTextDrawable.setTextSize(AndroidUtilities.m72dp(14));
         animatedTextDrawable.setTextColor(-1);
         animatedTextDrawable.setShadowLayer(AndroidUtilities.dpf2(1.33f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m72dp(1), 1073741824);
-        animatedTextDrawable.setText(LocaleController.getString("TrashHintDrag", C3558R.string.TrashHintDrag));
+        animatedTextDrawable.setText(LocaleController.getString("TrashHintDrag", C3473R.string.TrashHintDrag));
         animatedTextDrawable.setGravity(17);
     }
 
@@ -93,10 +93,10 @@ public class TrashView extends View {
         this.bounce.setPressed(z);
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.textDrawable;
         if (z || z2) {
-            i = C3558R.string.TrashHintRelease;
+            i = C3473R.string.TrashHintRelease;
             str = "TrashHintRelease";
         } else {
-            i = C3558R.string.TrashHintDrag;
+            i = C3473R.string.TrashHintDrag;
             str = "TrashHintDrag";
         }
         animatedTextDrawable.setText(LocaleController.getString(str, i));

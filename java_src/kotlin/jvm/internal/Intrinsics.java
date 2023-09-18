@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import java.util.Arrays;
 import kotlin.KotlinNullPointerException;
 import kotlin.UninitializedPropertyAccessException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Intrinsics {
     public static int compare(int i, int i2) {
         if (i < i2) {

@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletAppearanceSettingsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletAppearanceSettingsView extends BaseView {
     @OneExecution
     void openNetworksSettingsScreen();

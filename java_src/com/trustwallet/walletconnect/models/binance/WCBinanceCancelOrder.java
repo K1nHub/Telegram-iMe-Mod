@@ -2,11 +2,11 @@ package com.trustwallet.walletconnect.models.binance;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceCancelOrder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCBinanceCancelOrder extends WCBinanceOrder<Message> {
 
     /* compiled from: WCBinanceCancelOrder.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum MessageKey {
         REFID("refid"),
         SENDER("sender"),
@@ -24,7 +24,7 @@ public final class WCBinanceCancelOrder extends WCBinanceOrder<Message> {
     }
 
     /* compiled from: WCBinanceCancelOrder.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Message {
         private final String refid;
         private final String sender;

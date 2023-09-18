@@ -128,42 +128,48 @@
 
     move-result-object v1
 
-    .line 43
+    .line 44
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     const/4 v6, 0x2
 
     new-array v7, v6, [I
 
+    .line 45
     sget v8, Lorg/telegram/messenger/R$id;->text_apr_value:I
 
     const/4 v9, 0x0
 
     aput v8, v7, v9
 
+    .line 46
     sget v10, Lorg/telegram/messenger/R$id;->text_apy_value:I
 
     const/4 v11, 0x1
 
     aput v10, v7, v11
 
+    .line 43
     invoke-static {v1, v5, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 44
+    .line 49
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     new-array v7, v6, [I
 
+    .line 50
     sget v12, Lorg/telegram/messenger/R$id;->text_apy_title:I
 
     aput v12, v7, v9
 
+    .line 51
     sget v13, Lorg/telegram/messenger/R$id;->text_apr_title:I
 
     aput v13, v7, v11
 
+    .line 48
     invoke-static {v1, v5, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
@@ -182,12 +188,12 @@
 
     aput v8, v5, v7
 
-    .line 45
+    .line 53
     invoke-static {v1, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v14
 
-    .line 46
+    .line 59
     sget v15, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -214,19 +220,19 @@
 
     move-result-object v1
 
-    .line 47
+    .line 60
     sget v5, Lorg/telegram/messenger/R$id;->image_info:I
 
     invoke-static {v1, v5, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 48
+    .line 61
     invoke-static {v1, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 49
+    .line 64
     iget-object v4, v0, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->staking_programme_apy:I
@@ -235,11 +241,12 @@
 
     move-result-object v4
 
+    .line 62
     invoke-virtual {v1, v12, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 50
+    .line 66
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -262,7 +269,7 @@
 
     move-result-object v1
 
-    .line 51
+    .line 69
     iget-object v4, v0, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
@@ -271,11 +278,12 @@
 
     move-result-object v4
 
+    .line 67
     invoke-virtual {v1, v13, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 52
+    .line 71
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -296,7 +304,7 @@
 
     move-result-object v1
 
-    .line 53
+    .line 72
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -305,7 +313,7 @@
 
     move-result-object v1
 
-    .line 54
+    .line 74
     sget-object v3, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApy()Ljava/lang/String;
@@ -326,11 +334,12 @@
 
     aput v10, v5, v11
 
+    .line 73
     invoke-static {v1, v4, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 55
+    .line 79
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApr()Ljava/lang/String;
 
     move-result-object v4
@@ -349,11 +358,12 @@
 
     aput v8, v4, v11
 
+    .line 78
     invoke-static {v1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 56
+    .line 83
     sget v3, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
     new-instance v4, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$convert$1$1;
@@ -397,7 +407,7 @@
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 97
     sget v2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -424,7 +434,7 @@
 
     move-result-object v0
 
-    .line 70
+    .line 98
     sget v1, Lorg/telegram/messenger/R$id;->text_apy_value:I
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -449,7 +459,7 @@
 
     move-result-object v0
 
-    .line 71
+    .line 99
     sget v2, Lorg/telegram/messenger/R$id;->text_apr_value:I
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -472,7 +482,7 @@
 
     move-result-object v0
 
-    .line 72
+    .line 100
     sget v3, Lorg/telegram/messenger/R$id;->text_name:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getName()Ljava/lang/String;
@@ -483,7 +493,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 102
     sget-object v3, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApy()Ljava/lang/String;
@@ -502,6 +512,7 @@
 
     new-array v6, v5, [I
 
+    .line 103
     sget v7, Lorg/telegram/messenger/R$id;->text_apy_title:I
 
     const/4 v9, 0x0
@@ -512,11 +523,12 @@
 
     aput v1, v6, v7
 
+    .line 101
     invoke-static {v0, v4, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 74
+    .line 107
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApr()Ljava/lang/String;
 
     move-result-object v1
@@ -531,19 +543,22 @@
 
     new-array v3, v5, [I
 
+    .line 108
     sget v4, Lorg/telegram/messenger/R$id;->text_apr_title:I
 
     aput v4, v3, v9
 
     aput v2, v3, v7
 
+    .line 106
     invoke-static {v0, v1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v10
 
-    .line 75
+    .line 112
     sget v11, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
+    .line 113
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v0
@@ -572,6 +587,7 @@
 
     const/16 v16, 0x0
 
+    .line 111
     invoke-static/range {v10 .. v16}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void

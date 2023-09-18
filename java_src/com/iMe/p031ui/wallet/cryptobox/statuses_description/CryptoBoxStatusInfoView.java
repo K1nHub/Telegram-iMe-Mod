@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: CryptoBoxStatusInfoView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CryptoBoxStatusInfoView extends BaseView {
     void renderItems(List<CryptoBoxStatus> list);
 }

@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.Util;
 /* compiled from: ConnectionSpec.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ConnectionSpec {
     private static final CipherSuite[] APPROVED_CIPHER_SUITES;
     public static final ConnectionSpec CLEARTEXT;
@@ -164,7 +164,7 @@ public final class ConnectionSpec {
     }
 
     /* compiled from: ConnectionSpec.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private String[] cipherSuites;
         private boolean supportsTlsExtensions;
@@ -255,7 +255,7 @@ public final class ConnectionSpec {
     }
 
     /* compiled from: ConnectionSpec.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

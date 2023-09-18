@@ -1,5 +1,5 @@
 package org.telegram.messenger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SegmentTree {
     private int[] array;
     private Node[] heap;
@@ -25,7 +25,7 @@ public class SegmentTree {
         this.heap[i] = new Node();
         Node[] nodeArr = this.heap;
         nodeArr[i].from = i2;
-        nodeArr[i].f1493to = (i2 + i3) - 1;
+        nodeArr[i].f1484to = (i2 + i3) - 1;
         if (i3 == 1) {
             Node node = nodeArr[i];
             int[] iArr = this.array;
@@ -70,13 +70,13 @@ public class SegmentTree {
 
     private int rMaxQ(int i, int i2, int i3) {
         Node node = this.heap[i];
-        if (node.pendingVal != null && contains(node.from, node.f1493to, i2, i3)) {
+        if (node.pendingVal != null && contains(node.from, node.f1484to, i2, i3)) {
             return node.pendingVal.intValue();
         }
-        if (contains(i2, i3, node.from, node.f1493to)) {
+        if (contains(i2, i3, node.from, node.f1484to)) {
             return this.heap[i].max;
         }
-        if (intersects(i2, i3, node.from, node.f1493to)) {
+        if (intersects(i2, i3, node.from, node.f1484to)) {
             propagate(i);
             int i4 = i * 2;
             return Math.max(rMaxQ(i4, i2, i3), rMaxQ(i4 + 1, i2, i3));
@@ -108,13 +108,13 @@ public class SegmentTree {
 
     private int rMinQ(int i, int i2, int i3) {
         Node node = this.heap[i];
-        if (node.pendingVal != null && contains(node.from, node.f1493to, i2, i3)) {
+        if (node.pendingVal != null && contains(node.from, node.f1484to, i2, i3)) {
             return node.pendingVal.intValue();
         }
-        if (contains(i2, i3, node.from, node.f1493to)) {
+        if (contains(i2, i3, node.from, node.f1484to)) {
             return this.heap[i].min;
         }
-        if (intersects(i2, i3, node.from, node.f1493to)) {
+        if (intersects(i2, i3, node.from, node.f1484to)) {
             propagate(i);
             int i4 = i * 2;
             return Math.min(rMinQ(i4, i2, i3), rMinQ(i4 + 1, i2, i3));
@@ -143,7 +143,7 @@ public class SegmentTree {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Node {
         int from;
         int max;
@@ -152,13 +152,13 @@ public class SegmentTree {
         int sum;
 
         /* renamed from: to */
-        int f1493to;
+        int f1484to;
 
         Node() {
         }
 
         int size() {
-            return (this.f1493to - this.from) + 1;
+            return (this.f1484to - this.from) + 1;
         }
     }
 }

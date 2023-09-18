@@ -6,7 +6,7 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenInfoMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenInfoMappingKt {
     public static final Pair<TokenDetailed, Boolean> mapToDomain(TokenInfoResponse tokenInfoResponse) {
         Intrinsics.checkNotNullParameter(tokenInfoResponse, "<this>");

@@ -10,7 +10,7 @@ import java.util.Set;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TopicMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TopicMappingKt {
     public static final TopicModel mapToDomain(TopicDb topicDb) {
         Set mutableSet;

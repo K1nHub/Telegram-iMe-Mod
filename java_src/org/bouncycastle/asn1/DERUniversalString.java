@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DERUniversalString extends ASN1Primitive {
     private static final char[] table = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     private final byte[] string;

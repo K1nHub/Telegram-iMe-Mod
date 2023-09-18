@@ -17,7 +17,7 @@ import com.google.android.gms.maps.internal.zzca;
 import com.google.android.gms.maps.model.RuntimeRemoteException;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzax implements StreetViewLifecycleDelegate {
     private final Fragment zza;
     private final IStreetViewPanoramaFragmentDelegate zzb;

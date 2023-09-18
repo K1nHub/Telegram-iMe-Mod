@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_setPrivacy extends TLObject {
     public static int constructor = -906486552;
     public TLRPC$InputPrivacyKey key;

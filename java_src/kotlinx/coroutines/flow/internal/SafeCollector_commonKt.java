@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 /* compiled from: SafeCollector.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SafeCollector_commonKt {
     public static final void checkContext(final SafeCollector<?> safeCollector, CoroutineContext coroutineContext) {
         if (((Number) coroutineContext.fold(0, new Function2<Integer, CoroutineContext.Element, Integer>() { // from class: kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1

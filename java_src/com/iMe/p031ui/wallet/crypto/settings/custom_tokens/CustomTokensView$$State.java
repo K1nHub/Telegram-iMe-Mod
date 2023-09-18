@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CustomTokensView$$State extends MvpViewState<CustomTokensView> implements CustomTokensView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -123,7 +123,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<CustomTokensView> {
         public final List<BaseNode> items;
 
@@ -140,7 +140,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$OpenTokenManagementScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenTokenManagementScreenCommand extends ViewCommand<CustomTokensView> {
         public final TokenManagementFragment.ScreenType screenType;
 
@@ -157,7 +157,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CustomTokensView> {
         public final String text;
 
@@ -174,7 +174,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CustomTokensView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -195,7 +195,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CustomTokensView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -214,7 +214,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<CustomTokensView> {
         public final List<BaseNode> items;
 
@@ -231,7 +231,7 @@ public class CustomTokensView$$State extends MvpViewState<CustomTokensView> impl
 
     /* compiled from: CustomTokensView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<CustomTokensView> {
         OnLoadMoreCompleteCommand(CustomTokensView$$State customTokensView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);

@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class ExtensionSchemas {
     private static final ExtensionSchema<?> LITE_SCHEMA = new ExtensionSchemaLite();
     private static final ExtensionSchema<?> FULL_SCHEMA = loadSchemaForFullRuntime();

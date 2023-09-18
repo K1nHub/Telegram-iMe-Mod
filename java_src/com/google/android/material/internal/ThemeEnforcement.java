@@ -7,7 +7,7 @@ import android.util.TypedValue;
 import androidx.appcompat.widget.TintTypedArray;
 import com.google.android.material.R$attr;
 import com.google.android.material.R$styleable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThemeEnforcement {
     private static final int[] APPCOMPAT_CHECK_ATTRS = {R$attr.colorPrimary};
     private static final int[] MATERIAL_CHECK_ATTRS = {R$attr.colorPrimaryVariant};

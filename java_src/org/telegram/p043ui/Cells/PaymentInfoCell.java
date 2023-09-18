@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC$TL_messageMediaInvoice;
 import org.telegram.tgnet.TLRPC$TL_payments_paymentReceipt;
 import org.telegram.tgnet.TLRPC$WebDocument;
 /* renamed from: org.telegram.ui.Cells.PaymentInfoCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PaymentInfoCell extends FrameLayout {
     private TextView detailExTextView;
     private TextView detailTextView;

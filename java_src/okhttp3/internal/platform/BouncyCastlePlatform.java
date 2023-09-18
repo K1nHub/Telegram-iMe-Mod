@@ -17,7 +17,7 @@ import org.bouncycastle.jsse.BCSSLParameters;
 import org.bouncycastle.jsse.BCSSLSocket;
 import org.bouncycastle.jsse.provider.BouncyCastleJsseProvider;
 /* compiled from: BouncyCastlePlatform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BouncyCastlePlatform extends Platform {
     public static final Companion Companion;
     private static final boolean isSupported;
@@ -94,7 +94,7 @@ public final class BouncyCastlePlatform extends Platform {
     }
 
     /* compiled from: BouncyCastlePlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -9,8 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkContentNetworkCellBinding implements ViewBinding {
     public final DividerView divider;
     public final AppCompatImageView imageCheck;
@@ -36,7 +36,7 @@ public final class ForkContentNetworkCellBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkCellBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_network_cell, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_network_cell, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -44,16 +44,16 @@ public final class ForkContentNetworkCellBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkCellBinding bind(View view) {
-        int i = C3558R.C3561id.divider;
+        int i = C3473R.C3476id.divider;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
-            i = C3558R.C3561id.image_check;
+            i = C3473R.C3476id.image_check;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3558R.C3561id.image_network;
+                i = C3473R.C3476id.image_network;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3558R.C3561id.text_network;
+                    i = C3473R.C3476id.text_network;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
                         return new ForkContentNetworkCellBinding((ConstraintLayout) view, dividerView, appCompatImageView, appCompatImageView2, appCompatTextView);

@@ -42,7 +42,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkRecylcerImageItemBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TweetProvider.kt */
@@ -80,7 +80,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         });
         this.resource$delegate = lazy;
         this.itemViewType = IdFabric$ViewTypes.TWEET;
-        this.layoutId = C3558R.layout.fork_recycle_item_tweet;
+        this.layoutId = C3473R.layout.fork_recycle_item_tweet;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -140,28 +140,28 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         if (url == null) {
             url = "";
         }
-        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3558R.C3561id.view_tweet, Theme.key_windowBackgroundWhite);
+        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3473R.C3476id.view_tweet, Theme.key_windowBackgroundWhite);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        int i2 = C3558R.C3561id.text_name;
-        int i3 = C3558R.C3561id.text_post;
+        int i2 = C3473R.C3476id.text_name;
+        int i3 = C3473R.C3476id.text_post;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, i2, i3);
         int i4 = Theme.key_windowBackgroundWhiteGrayText;
-        int i5 = C3558R.C3561id.text_nickname;
-        int i6 = C3558R.C3561id.text_time;
+        int i5 = C3473R.C3476id.text_nickname;
+        int i6 = C3473R.C3476id.text_time;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5, i6);
         int i7 = Theme.key_windowBackgroundWhiteGrayText2;
-        int i8 = C3558R.C3561id.text_comments_count;
-        int i9 = C3558R.C3561id.text_retweets_count;
-        int i10 = C3558R.C3561id.text_likes_count;
+        int i8 = C3473R.C3476id.text_comments_count;
+        int i9 = C3473R.C3476id.text_retweets_count;
+        int i10 = C3473R.C3476id.text_likes_count;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i7, i8, i9, i10);
-        int i11 = C3558R.C3561id.image_share;
-        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor3, i7, C3558R.C3561id.image_comments, C3558R.C3561id.image_retweets, i11, C3558R.C3561id.image_menu);
-        int i12 = C3558R.C3561id.image_like;
-        BaseViewHolder autoSizedCircleRippleBackground = BaseQuickAdapterExtKt.setAutoSizedCircleRippleBackground(themedImageColor.setImageResource(i12, item.isLiked() ? C3558R.C3560drawable.fork_ic_heart_filled_20 : C3558R.C3560drawable.fork_ic_heart_20), i11);
+        int i11 = C3473R.C3476id.image_share;
+        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor3, i7, C3473R.C3476id.image_comments, C3473R.C3476id.image_retweets, i11, C3473R.C3476id.image_menu);
+        int i12 = C3473R.C3476id.image_like;
+        BaseViewHolder autoSizedCircleRippleBackground = BaseQuickAdapterExtKt.setAutoSizedCircleRippleBackground(themedImageColor.setImageResource(i12, item.isLiked() ? C3473R.C3475drawable.fork_ic_heart_filled_20 : C3473R.C3475drawable.fork_ic_heart_20), i11);
         if (item.isLiked()) {
             i7 = Theme.key_text_RedRegular;
         }
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedImageColor(autoSizedCircleRippleBackground, i12, i7), i2), C3558R.C3561id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3558R.C3560drawable.fork_logo_avatar), false, 8, null).setText(i2, item.getAuthorName()).setText(i5, item.getAuthorNickname()).setText(i3, StringExtKt.addTwitterLinks(item.getText())).setText(i8, item.getCommentsCountText()).setText(i9, item.getRetweetsCountText()).setText(i10, item.getLikesCountText()).setText(i6, item.getDate()), i3, new Function1<TextView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$convert$1$1
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedImageColor(autoSizedCircleRippleBackground, i12, i7), i2), C3473R.C3476id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3473R.C3475drawable.fork_logo_avatar), false, 8, null).setText(i2, item.getAuthorName()).setText(i5, item.getAuthorNickname()).setText(i3, StringExtKt.addTwitterLinks(item.getText())).setText(i8, item.getCommentsCountText()).setText(i9, item.getRetweetsCountText()).setText(i10, item.getLikesCountText()).setText(i6, item.getDate()), i3, new Function1<TextView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$convert$1$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TextView textView) {
                 invoke2(textView);
@@ -174,7 +174,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
                 applyForView.setLinkTextColor(Theme.getColor(Theme.key_chats_actionBackground));
                 applyForView.setMovementMethod(LinkMovementMethod.getInstance());
             }
-        }), C3558R.C3561id.recycler, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$convert$1$2
+        }), C3473R.C3476id.recycler, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$convert$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -201,7 +201,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
                 linePagerIndicatorDecoration2 = this.itemDecoration;
                 applyForView.addItemDecoration(linePagerIndicatorDecoration2);
                 List<MediaInfoDomain> mediaInfo = item.getMediaInfo();
-                int i13 = C3558R.layout.fork_recylcer_image_item;
+                int i13 = C3473R.layout.fork_recylcer_image_item;
                 final TweetProvider tweetProvider = this;
                 final TweetItem tweetItem = item;
                 SimpleInitExtensionsKt.quickInit(applyForView, mediaInfo, i13, new Function3<View, MediaInfoDomain, Integer, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$convert$1$2.1
@@ -230,15 +230,15 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        int i = C3558R.C3561id.image_like;
-        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(helper.setImageResource(i, item.isLiked() ? C3558R.C3560drawable.fork_ic_heart_filled_20 : C3558R.C3560drawable.fork_ic_heart_20), i, item.isLiked() ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText2), C3558R.C3561id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3558R.C3560drawable.fork_logo_avatar), false, 8, null).setText(C3558R.C3561id.text_name, item.getAuthorName()).setText(C3558R.C3561id.text_nickname, item.getAuthorNickname()).setText(C3558R.C3561id.text_post, item.getText()).setText(C3558R.C3561id.text_comments_count, item.getCommentsCountText()).setText(C3558R.C3561id.text_retweets_count, item.getRetweetsCountText()).setText(C3558R.C3561id.text_likes_count, item.getLikesCountText()).setText(C3558R.C3561id.text_time, item.getDate());
+        int i = C3473R.C3476id.image_like;
+        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(helper.setImageResource(i, item.isLiked() ? C3473R.C3475drawable.fork_ic_heart_filled_20 : C3473R.C3475drawable.fork_ic_heart_20), i, item.isLiked() ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText2), C3473R.C3476id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3473R.C3475drawable.fork_logo_avatar), false, 8, null).setText(C3473R.C3476id.text_name, item.getAuthorName()).setText(C3473R.C3476id.text_nickname, item.getAuthorNickname()).setText(C3473R.C3476id.text_post, item.getText()).setText(C3473R.C3476id.text_comments_count, item.getCommentsCountText()).setText(C3473R.C3476id.text_retweets_count, item.getRetweetsCountText()).setText(C3473R.C3476id.text_likes_count, item.getLikesCountText()).setText(C3473R.C3476id.text_time, item.getDate());
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public void onViewAttachedToWindow(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         super.onViewAttachedToWindow(holder);
-        BaseQuickAdapterExtKt.applyForView(holder, C3558R.C3561id.text_post, new Function1<TextView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$onViewAttachedToWindow$1
+        BaseQuickAdapterExtKt.applyForView(holder, C3473R.C3476id.text_post, new Function1<TextView, Unit>() { // from class: com.iMe.ui.adapter.provider.TweetProvider$onViewAttachedToWindow$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TextView textView) {
                 invoke2(textView);
@@ -310,7 +310,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
                 ViewExtKt.gone$default(progressBar2, false, 1, null);
             }
         });
-        bind.errorBlock.textError.setText(getResource().getString(C3558R.string.error_block_failed_to_load_media));
+        bind.errorBlock.textError.setText(getResource().getString(C3473R.string.error_block_failed_to_load_media));
         bind.imageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.adapter.provider.TweetProvider$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

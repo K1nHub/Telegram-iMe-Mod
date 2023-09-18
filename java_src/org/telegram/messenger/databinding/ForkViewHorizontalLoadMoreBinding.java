@@ -10,8 +10,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkViewHorizontalLoadMoreBinding implements ViewBinding {
     private final ConstraintLayout rootView;
 
@@ -29,7 +29,7 @@ public final class ForkViewHorizontalLoadMoreBinding implements ViewBinding {
     }
 
     public static ForkViewHorizontalLoadMoreBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_view_horizontal_load_more, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_view_horizontal_load_more, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,31 +37,31 @@ public final class ForkViewHorizontalLoadMoreBinding implements ViewBinding {
     }
 
     public static ForkViewHorizontalLoadMoreBinding bind(View view) {
-        int i = C3558R.C3561id.load_more_load_complete_view;
+        int i = C3473R.C3476id.load_more_load_complete_view;
         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
         if (frameLayout != null) {
-            i = C3558R.C3561id.load_more_load_end_view;
+            i = C3473R.C3476id.load_more_load_end_view;
             FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
             if (frameLayout2 != null) {
-                i = C3558R.C3561id.load_more_load_fail_view;
+                i = C3473R.C3476id.load_more_load_fail_view;
                 FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout3 != null) {
-                    i = C3558R.C3561id.load_more_loading_view;
+                    i = C3473R.C3476id.load_more_loading_view;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3558R.C3561id.loading_progress;
+                        i = C3473R.C3476id.loading_progress;
                         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
                         if (progressBar != null) {
-                            i = C3558R.C3561id.loading_text;
+                            i = C3473R.C3476id.loading_text;
                             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView != null) {
-                                i = C3558R.C3561id.tv_load_complete;
+                                i = C3473R.C3476id.tv_load_complete;
                                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView2 != null) {
-                                    i = C3558R.C3561id.tv_load_end;
+                                    i = C3473R.C3476id.tv_load_end;
                                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView3 != null) {
-                                        i = C3558R.C3561id.tv_prompt;
+                                        i = C3473R.C3476id.tv_prompt;
                                         AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView4 != null) {
                                             return new ForkViewHorizontalLoadMoreBinding((ConstraintLayout) view, frameLayout, frameLayout2, frameLayout3, linearLayout, progressBar, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4);

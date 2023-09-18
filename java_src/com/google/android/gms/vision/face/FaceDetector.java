@@ -19,7 +19,7 @@ import com.google.android.gms.vision.zzc;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FaceDetector extends Detector<Face> {
     public static final int ACCURATE_MODE = 1;
     public static final int ALL_CLASSIFICATIONS = 1;
@@ -59,7 +59,7 @@ public final class FaceDetector extends Detector<Face> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final Context zza;
         private int zzb = 0;

@@ -3,7 +3,7 @@ package com.google.android.material.bottomappbar;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.shape.EdgeTreatment;
 import com.google.android.material.shape.ShapePath;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BottomAppBarTopEdgeTreatment extends EdgeTreatment implements Cloneable {
     private float cradleVerticalOffset;
     private float fabCornerSize;

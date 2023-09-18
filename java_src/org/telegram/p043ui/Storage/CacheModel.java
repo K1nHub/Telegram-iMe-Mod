@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.p043ui.CacheControlActivity;
 import org.telegram.p043ui.Storage.CacheModel;
 /* renamed from: org.telegram.ui.Storage.CacheModel */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CacheModel {
     public boolean allDocumentsSelected;
     public boolean allMusicSelected;
@@ -393,7 +393,7 @@ public class CacheModel {
     }
 
     /* renamed from: org.telegram.ui.Storage.CacheModel$FileInfo */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class FileInfo {
         public long dialogId;
         public final File file;
@@ -405,7 +405,7 @@ public class CacheModel {
         public int type;
 
         /* renamed from: org.telegram.ui.Storage.CacheModel$FileInfo$FileMetadata */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static class FileMetadata {
             public String author;
             public boolean loading;

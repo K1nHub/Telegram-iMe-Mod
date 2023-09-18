@@ -5,7 +5,7 @@ import android.content.pm.ProviderInfo;
 import android.net.Uri;
 import android.util.Log;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbg {
     private static volatile zzcy<Boolean> zza = zzcy.zzc();
     private static final Object zzb = new Object();

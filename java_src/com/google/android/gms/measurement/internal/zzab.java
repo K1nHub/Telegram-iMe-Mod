@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @SafeParcelable.Class(creator = "ConditionalUserPropertyParcelCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzab extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzab> CREATOR = new zzac();
     @SafeParcelable.Field(m797id = 2)

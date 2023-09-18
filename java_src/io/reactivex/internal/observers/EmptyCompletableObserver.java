@@ -6,7 +6,7 @@ import io.reactivex.exceptions.OnErrorNotImplementedException;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EmptyCompletableObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
     @Override // io.reactivex.disposables.Disposable
     public void dispose() {

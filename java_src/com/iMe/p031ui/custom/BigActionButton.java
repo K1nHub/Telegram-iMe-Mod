@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 /* compiled from: BigActionButton.kt */
 /* renamed from: com.iMe.ui.custom.BigActionButton */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BigActionButton extends ActionButton {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public BigActionButton(Context context, AttributeSet attributeSet) {

@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletConnectSessionDetailsView$$State extends MvpViewState<WalletConnectSessionDetailsView> implements WalletConnectSessionDetailsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -75,7 +75,7 @@ public class WalletConnectSessionDetailsView$$State extends MvpViewState<WalletC
 
     /* compiled from: WalletConnectSessionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletConnectSessionDetailsView> {
         public final String address;
         public final String connectedDate;
@@ -102,7 +102,7 @@ public class WalletConnectSessionDetailsView$$State extends MvpViewState<WalletC
 
     /* compiled from: WalletConnectSessionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletConnectSessionDetailsView> {
         public final String text;
 
@@ -119,7 +119,7 @@ public class WalletConnectSessionDetailsView$$State extends MvpViewState<WalletC
 
     /* compiled from: WalletConnectSessionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletConnectSessionDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -140,7 +140,7 @@ public class WalletConnectSessionDetailsView$$State extends MvpViewState<WalletC
 
     /* compiled from: WalletConnectSessionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletConnectSessionDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -6,7 +6,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ShopItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ShopItem {
     private final String avatar;
     private final String botId;

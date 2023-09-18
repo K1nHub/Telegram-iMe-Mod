@@ -1,7 +1,7 @@
 package com.google.firebase.platforminfo;
 
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_LibraryVersion extends LibraryVersion {
     private final String libraryName;
     private final String version;

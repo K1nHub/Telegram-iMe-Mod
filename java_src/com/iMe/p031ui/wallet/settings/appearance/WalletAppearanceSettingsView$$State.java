@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppearanceSettingsView> implements WalletAppearanceSettingsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -90,7 +90,7 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
 
     /* compiled from: WalletAppearanceSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State$SetupSettingsItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupSettingsItemsCommand extends ViewCommand<WalletAppearanceSettingsView> {
         public final List<InterfaceSettingItem> items;
 
@@ -107,7 +107,7 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
 
     /* compiled from: WalletAppearanceSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State$OpenNetworksSettingsScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenNetworksSettingsScreenCommand extends ViewCommand<WalletAppearanceSettingsView> {
         OpenNetworksSettingsScreenCommand(WalletAppearanceSettingsView$$State walletAppearanceSettingsView$$State) {
             super("openNetworksSettingsScreen", OneExecutionStateStrategy.class);
@@ -121,7 +121,7 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
 
     /* compiled from: WalletAppearanceSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletAppearanceSettingsView> {
         public final String text;
 
@@ -138,7 +138,7 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
 
     /* compiled from: WalletAppearanceSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletAppearanceSettingsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -159,7 +159,7 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
 
     /* compiled from: WalletAppearanceSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletAppearanceSettingsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -1,5 +1,5 @@
 package kotlin.jvm.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PropertyReference1Impl extends PropertyReference1 {
     public PropertyReference1Impl(Class cls, String str, String str2, int i) {
         super(CallableReference.NO_RECEIVER, cls, str, str2, i);

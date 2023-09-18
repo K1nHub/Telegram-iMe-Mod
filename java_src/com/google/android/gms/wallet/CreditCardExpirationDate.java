@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CreditCardExpirationDateCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreditCardExpirationDate extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CreditCardExpirationDate> CREATOR = new zzj();
     @SafeParcelable.Field(m797id = 1)

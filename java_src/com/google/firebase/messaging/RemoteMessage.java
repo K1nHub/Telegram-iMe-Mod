@@ -11,7 +11,7 @@ import java.util.Map;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 @SafeParcelable.Class(creator = "RemoteMessageCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RemoteMessage> CREATOR = new RemoteMessageCreator();
     @SafeParcelable.Field(m797id = 2)

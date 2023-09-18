@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: SystemProps.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     public static final boolean systemProp(String str, boolean z) {
         String systemProp = SystemPropsKt.systemProp(str);

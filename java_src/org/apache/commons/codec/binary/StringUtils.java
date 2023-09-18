@@ -2,7 +2,7 @@ package org.apache.commons.codec.binary;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringUtils {
     private static String newString(byte[] bArr, Charset charset) {
         if (bArr == null) {

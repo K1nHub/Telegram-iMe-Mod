@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotsDatabase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsDatabase$Companion$getInstance$1$1 extends RoomDatabase.Callback {
     final /* synthetic */ Context $context;
 

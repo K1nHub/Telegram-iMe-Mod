@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzfl extends zzfj {
     private static final Class<?> zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
 

@@ -3,7 +3,7 @@ package io.grpc.okhttp;
 import io.grpc.internal.WritableBuffer;
 import io.grpc.internal.WritableBufferAllocator;
 import okio.Buffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class OkHttpWritableBufferAllocator implements WritableBufferAllocator {
     @Override // io.grpc.internal.WritableBufferAllocator
     public WritableBuffer allocate(int i) {

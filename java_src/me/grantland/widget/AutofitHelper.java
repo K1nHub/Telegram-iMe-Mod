@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AutofitHelper {
     private boolean mEnabled;
     private boolean mIsAutofitting;
@@ -34,7 +34,7 @@ public class AutofitHelper {
     private TextWatcher mTextWatcher = new AutofitTextWatcher();
     private View.OnLayoutChangeListener mOnLayoutChangeListener = new AutofitOnLayoutChangeListener();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface OnTextSizeChangeListener {
         void onTextSizeChange(float f, float f2);
     }
@@ -278,7 +278,7 @@ public class AutofitHelper {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class AutofitTextWatcher implements TextWatcher {
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
@@ -297,7 +297,7 @@ public class AutofitHelper {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class AutofitOnLayoutChangeListener implements View.OnLayoutChangeListener {
         private AutofitOnLayoutChangeListener() {
         }

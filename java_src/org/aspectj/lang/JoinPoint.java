@@ -1,8 +1,8 @@
 package org.aspectj.lang;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface JoinPoint {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface StaticPart {
         String toString();
     }

@@ -11,7 +11,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @SafeParcelable.Class(creator = "AppMetadataCreator")
 @SafeParcelable.Reserved({1, 17, 20})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzp extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzp> CREATOR = new zzq();
     @SafeParcelable.Field(m797id = 2)

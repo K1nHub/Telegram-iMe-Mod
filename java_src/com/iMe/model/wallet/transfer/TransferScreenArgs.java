@@ -6,7 +6,7 @@ import com.iMe.model.wallet.crypto.TokenItem;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferScreenArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransferScreenArgs implements Parcelable {
     public static final Parcelable.Creator<TransferScreenArgs> CREATOR = new Creator();
     private final String address;
@@ -16,7 +16,7 @@ public final class TransferScreenArgs implements Parcelable {
     private final Long userId;
 
     /* compiled from: TransferScreenArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Creator implements Parcelable.Creator<TransferScreenArgs> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

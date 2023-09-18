@@ -8,7 +8,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> implements WalletAirdropView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -18,32 +18,6 @@ public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> im
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
         BaseView.CC.$default$removeSelfFromStackImmediately(this);
-    }
-
-    @Override // com.iMe.p031ui.wallet.airdrop.WalletAirdropView
-    public void showAirdropDialog() {
-        ShowAirdropDialogCommand showAirdropDialogCommand = new ShowAirdropDialogCommand(this);
-        this.viewCommands.beforeApply(showAirdropDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showAirdropDialog();
-        }
-        this.viewCommands.afterApply(showAirdropDialogCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.airdrop.WalletAirdropView
-    public void checkNeedToShowAirdropDialog() {
-        CheckNeedToShowAirdropDialogCommand checkNeedToShowAirdropDialogCommand = new CheckNeedToShowAirdropDialogCommand(this);
-        this.viewCommands.beforeApply(checkNeedToShowAirdropDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.checkNeedToShowAirdropDialog();
-        }
-        this.viewCommands.afterApply(checkNeedToShowAirdropDialogCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -86,36 +60,8 @@ public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> im
     }
 
     /* compiled from: WalletAirdropView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State$ShowAirdropDialogCommand */
-    /* loaded from: classes4.dex */
-    public class ShowAirdropDialogCommand extends ViewCommand<WalletAirdropView> {
-        ShowAirdropDialogCommand(WalletAirdropView$$State walletAirdropView$$State) {
-            super("showAirdropDialog", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletAirdropView walletAirdropView) {
-            walletAirdropView.showAirdropDialog();
-        }
-    }
-
-    /* compiled from: WalletAirdropView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State$CheckNeedToShowAirdropDialogCommand */
-    /* loaded from: classes4.dex */
-    public class CheckNeedToShowAirdropDialogCommand extends ViewCommand<WalletAirdropView> {
-        CheckNeedToShowAirdropDialogCommand(WalletAirdropView$$State walletAirdropView$$State) {
-            super("checkNeedToShowAirdropDialog", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletAirdropView walletAirdropView) {
-            walletAirdropView.checkNeedToShowAirdropDialog();
-        }
-    }
-
-    /* compiled from: WalletAirdropView$$State.java */
     /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletAirdropView> {
         public final String text;
 
@@ -132,7 +78,7 @@ public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> im
 
     /* compiled from: WalletAirdropView$$State.java */
     /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletAirdropView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -153,7 +99,7 @@ public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> im
 
     /* compiled from: WalletAirdropView$$State.java */
     /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletAirdropView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

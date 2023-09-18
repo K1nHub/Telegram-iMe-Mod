@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_storyItem extends TLRPC$StoryItem {
     public static int constructor = 1153718222;
 
@@ -17,7 +17,7 @@ public class TLRPC$TL_storyItem extends TLRPC$StoryItem {
         this.edited = (readInt32 & 2048) != 0;
         this.contacts = (readInt32 & 4096) != 0;
         this.selected_contacts = (readInt32 & 8192) != 0;
-        this.f1566id = abstractSerializedData.readInt32(z);
+        this.f1557id = abstractSerializedData.readInt32(z);
         this.date = abstractSerializedData.readInt32(z);
         this.expire_date = abstractSerializedData.readInt32(z);
         if ((this.flags & 1) != 0) {
@@ -103,7 +103,7 @@ public class TLRPC$TL_storyItem extends TLRPC$StoryItem {
         int i8 = this.selected_contacts ? i7 | 8192 : i7 & (-8193);
         this.flags = i8;
         abstractSerializedData.writeInt32(i8);
-        abstractSerializedData.writeInt32(this.f1566id);
+        abstractSerializedData.writeInt32(this.f1557id);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt32(this.expire_date);
         if ((this.flags & 1) != 0) {

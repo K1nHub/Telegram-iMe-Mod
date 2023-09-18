@@ -13,7 +13,7 @@ import com.iMe.bots.data.model.database.TagDbModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsTagDao_Impl extends BotsTagDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<TagDbModel> __insertionAdapterOfTagDbModel;

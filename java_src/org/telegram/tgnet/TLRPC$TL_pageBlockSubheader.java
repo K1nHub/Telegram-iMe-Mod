@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_pageBlockSubheader extends TLRPC$PageBlock {
     public static int constructor = -248793375;
     public TLRPC$RichText text;

@@ -8,7 +8,7 @@ import com.google.mlkit.p022nl.languageid.LanguageIdentifierImpl;
 import com.google.mlkit.p022nl.languageid.internal.LanguageIdentificationJni;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* renamed from: com.google.mlkit.nl.languageid.zza */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class zza implements ComponentFactory {
     static final ComponentFactory zza = new zza();
 

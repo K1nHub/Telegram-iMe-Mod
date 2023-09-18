@@ -28,7 +28,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.DefinitionBindingKt;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: KoinExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KoinExtKt {
     public static /* synthetic */ KoinApplication androidLogger$default(KoinApplication koinApplication, Level level, int i, Object obj) {
         if ((i & 1) != 0) {

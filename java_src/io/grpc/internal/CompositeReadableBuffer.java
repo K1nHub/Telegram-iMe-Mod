@@ -3,7 +3,7 @@ package io.grpc.internal;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Queue;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CompositeReadableBuffer extends AbstractReadableBuffer {
     private final Queue<ReadableBuffer> buffers = new ArrayDeque();
     private int readableBytes;
@@ -117,11 +117,11 @@ public class CompositeReadableBuffer extends AbstractReadableBuffer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class ReadOperation {
 
         /* renamed from: ex */
-        IOException f528ex;
+        IOException f519ex;
         int value;
 
         abstract int readInternal(ReadableBuffer readableBuffer, int i) throws IOException;
@@ -133,12 +133,12 @@ public class CompositeReadableBuffer extends AbstractReadableBuffer {
             try {
                 this.value = readInternal(readableBuffer, i);
             } catch (IOException e) {
-                this.f528ex = e;
+                this.f519ex = e;
             }
         }
 
         final boolean isError() {
-            return this.f528ex != null;
+            return this.f519ex != null;
         }
     }
 }

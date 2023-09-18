@@ -11,7 +11,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadioButton;
 /* renamed from: org.telegram.ui.Cells.RadioColorCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RadioColorCell extends FrameLayout {
     private RadioButton radioButton;
     private final Theme.ResourcesProvider resourcesProvider;

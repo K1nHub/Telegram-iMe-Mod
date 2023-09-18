@@ -2,7 +2,7 @@ package io.grpc.okhttp.internal;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class OptionalMethod<T> {
     private final String methodName;
     private final Class[] methodParams;

@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: AbstractChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Receive<E> extends LockFreeLinkedListNode implements ReceiveOrClosed<E> {
     public Function1<Throwable, Unit> resumeOnCancellationFun(E e) {
         return null;

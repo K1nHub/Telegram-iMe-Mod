@@ -32,12 +32,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: BuyCryptoProductPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProductView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final TokenDetailed initToken;
@@ -56,7 +56,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         this.resourceManager = resourceManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.schedulersProvider = schedulersProvider;
-        resourceManager.getString(C3558R.string.common_dash);
+        resourceManager.getString(C3473R.string.common_dash);
     }
 
     public final void loadAvailableProducts() {
@@ -102,12 +102,12 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<BuyingCryptoQuote>> result) {
-                m1436invoke(result);
+                m1429invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1436invoke(Result<? extends List<BuyingCryptoQuote>> it) {
+            public final void m1429invoke(Result<? extends List<BuyingCryptoQuote>> it) {
                 ResourceManager resourceManager;
                 TokenDetailed tokenDetailed2;
                 List sortedWith;
@@ -154,7 +154,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -182,7 +182,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         List<BaseNode> mutableListOf;
         SpreadBuilder spreadBuilder = new SpreadBuilder(2);
         spreadBuilder.addSpread(cryptoBuyItemArr);
-        spreadBuilder.add(new CryptoBuyFooterItem(C3558R.string.wallet_crypto_buy_footer_title, C3558R.string.wallet_crypto_buy_footer_description));
+        spreadBuilder.add(new CryptoBuyFooterItem(C3473R.string.wallet_crypto_buy_footer_title, C3473R.string.wallet_crypto_buy_footer_description));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
         ((BuyCryptoProductView) getViewState()).showUiItems(mutableListOf);
     }

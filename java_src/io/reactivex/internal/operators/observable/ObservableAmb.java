@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableAmb<T> extends Observable<T> {
     final ObservableSource<? extends T>[] sources;
     final Iterable<? extends ObservableSource<? extends T>> sourcesIterable;
@@ -59,7 +59,7 @@ public final class ObservableAmb<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class AmbCoordinator<T> implements Disposable {
         final Observer<? super T> downstream;
         final AmbInnerObserver<T>[] observers;
@@ -124,7 +124,7 @@ public final class ObservableAmb<T> extends Observable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class AmbInnerObserver<T> extends AtomicReference<Disposable> implements Observer<T> {
         final Observer<? super T> downstream;
         final int index;

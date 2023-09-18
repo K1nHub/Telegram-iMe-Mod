@@ -13,7 +13,7 @@ import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectInteractor {
     private final SchedulersProvider schedulersProvider;
     private final WalletConnectRepository walletConnectRepository;

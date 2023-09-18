@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzig implements zzld {
     private final zzif zza;
     private int zzb;

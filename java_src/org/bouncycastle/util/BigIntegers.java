@@ -1,7 +1,7 @@
 package org.bouncycastle.util;
 
 import java.math.BigInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BigIntegers {
     public static final BigInteger ZERO = BigInteger.valueOf(0);
     public static final BigInteger ONE = BigInteger.valueOf(1);

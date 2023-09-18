@@ -42,7 +42,7 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.QueryName;
 import retrofit2.http.Url;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class RequestFactory {
     private final HttpUrl baseUrl;
     private final MediaType contentType;
@@ -90,7 +90,7 @@ public final class RequestFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder {
         MediaType contentType;
         boolean gotBody;

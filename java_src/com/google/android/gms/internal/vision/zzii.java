@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzii extends zzhq {
     private static final Logger zzb = Logger.getLogger(zzii.class.getName());
     private static final boolean zzc = zzma.zza();
@@ -134,7 +134,7 @@ public abstract class zzii extends zzhq {
     public abstract void zze(int i, int i2) throws IOException;
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class zzb extends IOException {
         zzb() {
             super("CodedOutputStream was writing to a flat byte array and ran out of space.");
@@ -193,7 +193,7 @@ public abstract class zzii extends zzhq {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class zza extends zzii {
         private final byte[] zzb;
         private final int zzc;

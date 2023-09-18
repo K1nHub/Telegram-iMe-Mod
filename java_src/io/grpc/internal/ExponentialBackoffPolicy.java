@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import io.grpc.internal.BackoffPolicy;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ExponentialBackoffPolicy implements BackoffPolicy {
     private Random random = new Random();
     private long initialBackoffNanos = TimeUnit.SECONDS.toNanos(1);
@@ -13,7 +13,7 @@ public final class ExponentialBackoffPolicy implements BackoffPolicy {
     private double jitter = 0.2d;
     private long nextBackoffNanos = this.initialBackoffNanos;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Provider implements BackoffPolicy.Provider {
         @Override // io.grpc.internal.BackoffPolicy.Provider
         public BackoffPolicy get() {

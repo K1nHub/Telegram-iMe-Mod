@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingView$$State extends MvpViewState<StakingView> implements StakingView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -128,7 +128,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$OnTabSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnTabSelectedCommand extends ViewCommand<StakingView> {
         public final int position;
 
@@ -145,7 +145,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$OnSetupNavigationRouterCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSetupNavigationRouterCommand extends ViewCommand<StakingView> {
         OnSetupNavigationRouterCommand(StakingView$$State stakingView$$State) {
             super("onSetupNavigationRouter", AddToEndSingleStrategy.class);
@@ -159,7 +159,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$UpdateDashboardItemCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateDashboardItemCommand extends ViewCommand<StakingView> {
         public final StakingDashboardItem stakingDashboardItem;
 
@@ -176,7 +176,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$ShowStakingInfoHintCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowStakingInfoHintCommand extends ViewCommand<StakingView> {
         ShowStakingInfoHintCommand(StakingView$$State stakingView$$State) {
             super("showStakingInfoHint", OneExecutionStateStrategy.class);
@@ -190,7 +190,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingView> {
         public final String text;
 
@@ -207,7 +207,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -228,7 +228,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -247,7 +247,7 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
 
     /* compiled from: StakingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.StakingView$$State$ShowRefreshingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshingCommand extends ViewCommand<StakingView> {
         public final boolean show;
 

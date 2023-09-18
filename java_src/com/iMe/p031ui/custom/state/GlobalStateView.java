@@ -5,12 +5,12 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: GlobalStateView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.custom.state.GlobalStateView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface GlobalStateView extends MvpView {
 
     /* compiled from: GlobalStateView.kt */
     /* renamed from: com.iMe.ui.custom.state.GlobalStateView$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static void $default$onEmptyState(GlobalStateView globalStateView) {
         }

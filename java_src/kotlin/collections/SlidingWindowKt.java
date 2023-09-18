@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.SequencesKt__SequenceBuilderKt;
 /* compiled from: SlidingWindow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SlidingWindowKt {
     public static final void checkWindowSizeStep(int i, int i2) {
         String str;

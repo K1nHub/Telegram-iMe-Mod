@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.notification;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetNotificationsRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GetNotificationsRequest {
     private final String lastItemId;
     private final int limit;

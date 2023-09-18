@@ -4,7 +4,7 @@ import com.google.firebase.firestore.util.Preconditions;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FieldPath {
     private static final Pattern RESERVED = Pattern.compile("[~*/\\[\\]]");
     private final com.google.firebase.firestore.model.FieldPath internalPath;

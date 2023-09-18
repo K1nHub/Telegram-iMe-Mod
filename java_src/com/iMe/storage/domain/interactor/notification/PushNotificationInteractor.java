@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PushNotificationInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PushNotificationInteractor {
     private final PushNotificationRepository pushNotificationRepository;
     private final SchedulersProvider schedulersProvider;

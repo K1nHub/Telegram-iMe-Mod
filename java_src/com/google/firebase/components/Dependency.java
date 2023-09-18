@@ -1,7 +1,7 @@
 package com.google.firebase.components;
 
 import com.google.android.gms.fido.fido2.api.common.DevicePublicKeyStringDef;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Dependency {
     private final Class<?> anInterface;
     private final int injection;

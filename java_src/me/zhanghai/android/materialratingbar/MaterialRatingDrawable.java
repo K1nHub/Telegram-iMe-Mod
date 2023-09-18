@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import androidx.appcompat.content.res.AppCompatResources;
 import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MaterialRatingDrawable extends LayerDrawable {
     /* JADX WARN: Illegal instructions before constructor call */
     /*

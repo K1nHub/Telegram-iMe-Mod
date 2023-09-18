@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.common;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CursoredData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CursoredData<T> {
     private final String cursor;
     private final List<T> data;

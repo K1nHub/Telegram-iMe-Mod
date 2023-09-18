@@ -19,7 +19,7 @@ import org.telegram.messenger.databinding.ForkRecycleItemWalletTokenBalanceBindi
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DonationBalanceView.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationBalanceView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DonationBalanceView extends FrameLayout {
     private ForkRecycleItemWalletTokenBalanceBinding binding;
 

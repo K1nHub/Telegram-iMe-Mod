@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LazyFieldLite {
     private ByteString delayedBytes;
     private ExtensionRegistryLite extensionRegistry;

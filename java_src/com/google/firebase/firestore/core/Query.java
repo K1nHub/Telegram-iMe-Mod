@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Query {
     private static final OrderBy KEY_ORDERING_ASC;
     private static final OrderBy KEY_ORDERING_DESC;
@@ -26,7 +26,7 @@ public final class Query {
     private final ResourcePath path;
     private final Bound startAt;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum LimitType {
         LIMIT_TO_FIRST,
         LIMIT_TO_LAST
@@ -229,7 +229,7 @@ public final class Query {
         return new QueryComparator(getOrderBy());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class QueryComparator implements Comparator<Document> {
         private final List<OrderBy> sortOrder;
 

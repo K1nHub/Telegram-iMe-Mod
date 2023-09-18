@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class UninitializedMessageException extends RuntimeException {
     public UninitializedMessageException(MessageLite messageLite) {
         super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");

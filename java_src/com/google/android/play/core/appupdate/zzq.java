@@ -16,7 +16,7 @@ import com.google.android.play.core.tasks.Task;
 import com.google.android.play.core.tasks.Tasks;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzq {
     private static final zzag zzb = new zzag("AppUpdateService");
     private static final Intent zzc = new Intent("com.google.android.play.core.install.BIND_UPDATE_SERVICE").setPackage("com.android.vending");

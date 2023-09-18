@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import android.os.Build;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class NativeLoader {
     private static final String LIB_NAME = "tmessages.45";
     private static final String LIB_SO_NAME = "libtmessages.45.so";
@@ -12,9 +12,9 @@ public class NativeLoader {
 
     private static native void init(String str, boolean z);
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0036 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0037 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0022  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0035 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0036 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -22,33 +22,33 @@ public class NativeLoader {
     private static java.io.File getNativeLibraryDir(android.content.Context r4) {
         /*
             r0 = 0
-            if (r4 == 0) goto L20
-            java.io.File r1 = new java.io.File     // Catch: java.lang.Throwable -> L1c
+            if (r4 == 0) goto L1f
+            java.io.File r1 = new java.io.File     // Catch: java.lang.Throwable -> L1b
             java.lang.Class<android.content.pm.ApplicationInfo> r2 = android.content.pm.ApplicationInfo.class
             java.lang.String r3 = "nativeLibraryDir"
-            java.lang.reflect.Field r2 = r2.getField(r3)     // Catch: java.lang.Throwable -> L1c
-            android.content.pm.ApplicationInfo r3 = r4.getApplicationInfo()     // Catch: java.lang.Throwable -> L1c
-            java.lang.Object r2 = r2.get(r3)     // Catch: java.lang.Throwable -> L1c
-            java.lang.String r2 = (java.lang.String) r2     // Catch: java.lang.Throwable -> L1c
-            r1.<init>(r2)     // Catch: java.lang.Throwable -> L1c
-            goto L21
-        L1c:
+            java.lang.reflect.Field r2 = r2.getField(r3)     // Catch: java.lang.Throwable -> L1b
+            android.content.pm.ApplicationInfo r3 = r4.getApplicationInfo()     // Catch: java.lang.Throwable -> L1b
+            java.lang.Object r2 = r2.get(r3)     // Catch: java.lang.Throwable -> L1b
+            java.lang.String r2 = (java.lang.String) r2     // Catch: java.lang.Throwable -> L1b
+            r1.<init>(r2)     // Catch: java.lang.Throwable -> L1b
+            goto L20
+        L1b:
             r1 = move-exception
             r1.printStackTrace()
-        L20:
+        L1f:
             r1 = r0
-        L21:
-            if (r1 != 0) goto L30
+        L20:
+            if (r1 != 0) goto L2f
             java.io.File r1 = new java.io.File
             android.content.pm.ApplicationInfo r4 = r4.getApplicationInfo()
             java.lang.String r4 = r4.dataDir
             java.lang.String r2 = "lib"
             r1.<init>(r4, r2)
-        L30:
+        L2f:
             boolean r4 = r1.isDirectory()
-            if (r4 == 0) goto L37
+            if (r4 == 0) goto L36
             return r1
-        L37:
+        L36:
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NativeLoader.getNativeLibraryDir(android.content.Context):java.io.File");

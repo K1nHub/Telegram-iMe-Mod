@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.wallet.token;
 /* compiled from: TokenCode.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TokenCode {
     ETHER,
     BNB,

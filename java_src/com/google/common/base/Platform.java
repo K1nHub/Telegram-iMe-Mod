@@ -2,7 +2,7 @@ package com.google.common.base;
 
 import java.util.Locale;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class Platform {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String nullToEmpty(String str) {
@@ -45,7 +45,7 @@ final class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class JdkPatternCompiler implements PatternCompiler {
         private JdkPatternCompiler() {
         }

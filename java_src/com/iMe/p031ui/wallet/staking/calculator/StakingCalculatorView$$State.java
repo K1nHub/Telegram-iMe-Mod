@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingCalculatorView$$State extends MvpViewState<StakingCalculatorView> implements StakingCalculatorView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -118,7 +118,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$ShowBalanceCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowBalanceCommand extends ViewCommand<StakingCalculatorView> {
         public final TokenBalance balance;
 
@@ -135,7 +135,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$UpdateStakingCalculatorViewsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateStakingCalculatorViewsCommand extends ViewCommand<StakingCalculatorView> {
         UpdateStakingCalculatorViewsCommand(StakingCalculatorView$$State stakingCalculatorView$$State) {
             super("updateStakingCalculatorViews", AddToEndSingleStrategy.class);
@@ -149,7 +149,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$OpenDepositScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenDepositScreenCommand extends ViewCommand<StakingCalculatorView> {
         public final double presetAmount;
         public final StakingDetailsItem stakingDetails;
@@ -168,7 +168,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$ShowLevelRequiredDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLevelRequiredDialogCommand extends ViewCommand<StakingCalculatorView> {
         public final AccountLevel minimalRank;
         public final TokenDetailed token;
@@ -187,7 +187,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingCalculatorView> {
         public final String text;
 
@@ -204,7 +204,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingCalculatorView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -225,7 +225,7 @@ public class StakingCalculatorView$$State extends MvpViewState<StakingCalculator
 
     /* compiled from: StakingCalculatorView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingCalculatorView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

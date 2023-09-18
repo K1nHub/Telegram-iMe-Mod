@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogCampaignsUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogCampaignsUiMappingKt {
     public static final List<CampaignItem> mapToUi(List<Campaign> list) {
         int collectionSizeOrDefault;

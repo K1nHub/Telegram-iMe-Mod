@@ -1,5 +1,5 @@
 package com.google.firebase.firestore.remote;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ExistenceFilter {
     private final int count;
 

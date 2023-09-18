@@ -12,7 +12,7 @@ import okio.BufferedSource;
 import okio.ByteString;
 import okio.Source;
 import okio.Timeout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Http2 implements Variant {
     private static final Logger logger = Logger.getLogger(FrameLogger.class.getName());
     private static final ByteString CONNECTION_PREFACE = ByteString.encodeUtf8("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
@@ -27,7 +27,7 @@ public final class Http2 implements Variant {
         return new Writer(bufferedSink, z);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class Reader implements FrameReader {
         private final ContinuationSource continuation;
         final Hpack.Reader hpackReader;
@@ -262,7 +262,7 @@ public final class Http2 implements Variant {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class Writer implements FrameWriter {
         private final boolean client;
         private boolean closed;
@@ -484,7 +484,7 @@ public final class Http2 implements Variant {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ContinuationSource implements Source {
         byte flags;
         int left;
@@ -561,7 +561,7 @@ public final class Http2 implements Variant {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class FrameLogger {
         private static final String[] TYPES = {"DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION"};
         private static final String[] FLAGS = new String[64];

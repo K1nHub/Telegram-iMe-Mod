@@ -16,7 +16,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DonationSeeMoreButton.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationSeeMoreButton */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DonationSeeMoreButton extends FrameLayout {
     private final Lazy textView$delegate;
 
@@ -93,7 +93,7 @@ public final class DonationSeeMoreButton extends FrameLayout {
 
     /* compiled from: DonationSeeMoreButton.kt */
     /* renamed from: com.iMe.ui.custom.donation.DonationSeeMoreButton$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

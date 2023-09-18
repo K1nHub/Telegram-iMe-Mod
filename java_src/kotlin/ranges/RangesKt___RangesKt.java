@@ -8,7 +8,7 @@ import kotlin.ranges.IntProgression;
 import kotlin.ranges.LongProgression;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Ranges.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class RangesKt___RangesKt extends RangesKt__RangesKt {
     public static int coerceAtLeast(int i, int i2) {
         return i < i2 ? i2 : i;

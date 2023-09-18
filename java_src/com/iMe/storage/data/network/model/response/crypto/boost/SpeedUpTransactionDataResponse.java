@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import com.iMe.storage.data.network.model.response.wallet.TokenResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetBoostTransactionDataResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SpeedUpTransactionDataResponse {
     private final TokenDetailedResponse feeToken;
     private final TransactionMethodParamsResponse oldTransactionData;
@@ -84,7 +84,7 @@ public final class SpeedUpTransactionDataResponse {
     }
 
     /* compiled from: GetBoostTransactionDataResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TransactionMethodParamsResponse {
         private final String contractMethod;
         private final TransferMethodParamsResponse transferMethodParams;
@@ -148,7 +148,7 @@ public final class SpeedUpTransactionDataResponse {
         }
 
         /* compiled from: GetBoostTransactionDataResponse.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class TransferMethodParamsResponse {
             private final String from;
 

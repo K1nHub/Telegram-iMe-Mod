@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.IAccountAccessor;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zaf extends com.google.android.gms.internal.base.zaa {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zaf(IBinder iBinder) {

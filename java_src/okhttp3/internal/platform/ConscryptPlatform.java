@@ -17,7 +17,7 @@ import okhttp3.Protocol;
 import org.conscrypt.Conscrypt;
 import org.conscrypt.ConscryptHostnameVerifier;
 /* compiled from: ConscryptPlatform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ConscryptPlatform extends Platform {
     public static final Companion Companion;
     private static final boolean isSupported;
@@ -67,7 +67,7 @@ public final class ConscryptPlatform extends Platform {
     }
 
     /* compiled from: ConscryptPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DisabledHostnameVerifier implements ConscryptHostnameVerifier {
         public static final DisabledHostnameVerifier INSTANCE = new DisabledHostnameVerifier();
 
@@ -109,7 +109,7 @@ public final class ConscryptPlatform extends Platform {
     }
 
     /* compiled from: ConscryptPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

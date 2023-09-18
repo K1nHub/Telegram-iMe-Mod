@@ -3,7 +3,7 @@ package kotlin.text;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringBuilder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt__StringBuilderKt extends StringsKt__StringBuilderJVMKt {
     public static StringBuilder append(StringBuilder sb, String... value) {
         Intrinsics.checkNotNullParameter(sb, "<this>");

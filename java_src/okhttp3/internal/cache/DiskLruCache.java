@@ -36,7 +36,7 @@ import okio.Okio;
 import okio.Sink;
 import okio.Source;
 /* compiled from: DiskLruCache.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DiskLruCache implements Closeable, Flushable {
     public static final long ANY_SEQUENCE_NUMBER;
     public static final String CLEAN;
@@ -658,7 +658,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Snapshot implements Closeable {
         private final String key;
         private final long sequenceNumber;
@@ -693,7 +693,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Editor {
         private boolean done;
         private final Entry entry;
@@ -794,7 +794,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Entry {
         private final List<File> cleanFiles;
         private Editor currentEditor;
@@ -980,7 +980,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     /* compiled from: DiskLruCache.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

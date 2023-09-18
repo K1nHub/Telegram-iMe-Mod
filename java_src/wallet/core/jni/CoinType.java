@@ -1,7 +1,7 @@
 package wallet.core.jni;
 
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum CoinType {
     AETERNITY(457),
     AION(425),

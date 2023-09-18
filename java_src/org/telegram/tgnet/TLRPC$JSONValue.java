@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$JSONValue extends TLObject {
     public static TLRPC$JSONValue TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$JSONValue tLRPC$TL_jsonObject;

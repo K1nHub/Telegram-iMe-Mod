@@ -4,7 +4,7 @@ import com.google.firebase.firestore.core.Target;
 import com.google.firebase.firestore.model.SnapshotVersion;
 import com.google.firebase.firestore.util.Preconditions;
 import com.google.protobuf.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TargetData {
     private final SnapshotVersion lastLimboFreeSnapshotVersion;
     private final QueryPurpose purpose;

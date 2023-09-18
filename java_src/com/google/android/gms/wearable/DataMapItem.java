@@ -10,7 +10,7 @@ import com.google.android.gms.internal.wearable.zzcf;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataMapItem {
     private final Uri zza;
     private final DataMap zzb;

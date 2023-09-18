@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
 /* compiled from: JvmClassMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class JvmClassMappingKt {
     public static final <T> Class<T> getJavaClass(KClass<T> kClass) {
         Intrinsics.checkNotNullParameter(kClass, "<this>");

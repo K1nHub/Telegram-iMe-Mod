@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RemoteMessageCreator implements Parcelable.Creator<RemoteMessage> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void writeToParcel(RemoteMessage remoteMessage, Parcel parcel, int i) {

@@ -16,10 +16,10 @@ import com.iMe.p031ui.adapter.provider.GlobalStateProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: CryptoBoxesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.adapter.CryptoBoxesRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoBoxesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     private final GlobalStateProvider globalStateProvider;
 
@@ -36,7 +36,7 @@ public final class CryptoBoxesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         Intrinsics.checkNotNullParameter(cryptoBoxProvider, "cryptoBoxProvider");
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3558R.C3561id.button_new_cryptobox, C3558R.C3561id.image_order);
+        addChildClickViewIds(C3473R.C3476id.button_new_cryptobox, C3473R.C3476id.image_order);
         addItemProvider(BaseQuickAdapterExtKt.asItem(cryptoBoxesHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(cryptoBoxesListHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(cryptoBoxesChatProvider));

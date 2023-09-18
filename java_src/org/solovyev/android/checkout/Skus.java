@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.json.JSONException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Skus {
     public final List<Sku> list;
 

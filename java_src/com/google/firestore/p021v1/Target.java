@@ -8,7 +8,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 /* renamed from: com.google.firestore.v1.Target */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Target extends GeneratedMessageLite<Target, Builder> implements MessageLiteOrBuilder {
     private static final Target DEFAULT_INSTANCE;
     public static final int DOCUMENTS_FIELD_NUMBER = 3;
@@ -29,7 +29,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Target$DocumentsTarget */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DocumentsTarget extends GeneratedMessageLite<DocumentsTarget, Builder> implements MessageLiteOrBuilder {
         private static final DocumentsTarget DEFAULT_INSTANCE;
         public static final int DOCUMENTS_FIELD_NUMBER = 2;
@@ -67,7 +67,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
         }
 
         /* renamed from: com.google.firestore.v1.Target$DocumentsTarget$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DocumentsTarget, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10741 c10741) {
                 this();
@@ -128,7 +128,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Target$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10741 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
@@ -169,7 +169,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Target$QueryTarget */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class QueryTarget extends GeneratedMessageLite<QueryTarget, Builder> implements MessageLiteOrBuilder {
         private static final QueryTarget DEFAULT_INSTANCE;
         public static final int PARENT_FIELD_NUMBER = 1;
@@ -211,7 +211,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
         }
 
         /* renamed from: com.google.firestore.v1.Target$QueryTarget$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<QueryTarget, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10741 c10741) {
                 this();
@@ -315,7 +315,7 @@ public final class Target extends GeneratedMessageLite<Target, Builder> implemen
     }
 
     /* renamed from: com.google.firestore.v1.Target$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Target, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10741 c10741) {
             this();

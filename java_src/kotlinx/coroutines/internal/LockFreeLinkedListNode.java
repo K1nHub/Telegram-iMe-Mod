@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference0Impl;
 import kotlinx.coroutines.DebugStringsKt;
 /* compiled from: LockFreeLinkedList.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LockFreeLinkedListNode {
     static final /* synthetic */ AtomicReferenceFieldUpdater _next$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_next");
     static final /* synthetic */ AtomicReferenceFieldUpdater _prev$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_prev");
@@ -15,7 +15,7 @@ public class LockFreeLinkedListNode {
     private volatile /* synthetic */ Object _removedRef = null;
 
     /* compiled from: LockFreeLinkedList.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class PrepareOp extends OpDescriptor {
     }
 
@@ -30,7 +30,7 @@ public class LockFreeLinkedListNode {
     }
 
     /* compiled from: LockFreeLinkedList.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class CondAddOp extends AtomicOp<LockFreeLinkedListNode> {
         public final LockFreeLinkedListNode newNode;
         public LockFreeLinkedListNode oldNext;
@@ -112,7 +112,7 @@ public class LockFreeLinkedListNode {
     }
 
     /* renamed from: remove */
-    public boolean mo1689remove() {
+    public boolean mo1687remove() {
         return removeOrNext() == null;
     }
 
@@ -156,7 +156,7 @@ public class LockFreeLinkedListNode {
             if (lockFreeLinkedListNode == this) {
                 return null;
             }
-            if (lockFreeLinkedListNode.mo1689remove()) {
+            if (lockFreeLinkedListNode.mo1687remove()) {
                 return lockFreeLinkedListNode;
             }
             lockFreeLinkedListNode.helpRemove();

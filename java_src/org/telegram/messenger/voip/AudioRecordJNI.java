@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.audio.OpusUtil;
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AudioRecordJNI {
     private AcousticEchoCanceler aec;
     private AutomaticGainControl agc;
@@ -21,7 +21,7 @@ public class AudioRecordJNI {
     private boolean needResampling = false;
 
     /* renamed from: ns */
-    private NoiseSuppressor f1521ns;
+    private NoiseSuppressor f1512ns;
     private boolean running;
     private Thread thread;
 
@@ -70,9 +70,9 @@ public class AudioRecordJNI {
                 try {
                     if (NoiseSuppressor.isAvailable()) {
                         NoiseSuppressor create2 = NoiseSuppressor.create(this.audioRecord.getAudioSessionId());
-                        this.f1521ns = create2;
+                        this.f1512ns = create2;
                         if (create2 != null) {
-                            create2.setEnabled(Instance.getGlobalServerConfig().useSystemNs && isGoodAudioEffect(this.f1521ns));
+                            create2.setEnabled(Instance.getGlobalServerConfig().useSystemNs && isGoodAudioEffect(this.f1512ns));
                         }
                     } else {
                         VLog.m41w("NoiseSuppressor is not available on this device :(");
@@ -151,10 +151,10 @@ public class AudioRecordJNI {
             automaticGainControl.release();
             this.agc = null;
         }
-        NoiseSuppressor noiseSuppressor = this.f1521ns;
+        NoiseSuppressor noiseSuppressor = this.f1512ns;
         if (noiseSuppressor != null) {
             noiseSuppressor.release();
-            this.f1521ns = null;
+            this.f1512ns = null;
         }
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         if (acousticEchoCanceler != null) {
@@ -226,7 +226,7 @@ public class AudioRecordJNI {
     public int getEnabledEffectsMask() {
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         int i = (acousticEchoCanceler == null || !acousticEchoCanceler.getEnabled()) ? 0 : 1;
-        NoiseSuppressor noiseSuppressor = this.f1521ns;
+        NoiseSuppressor noiseSuppressor = this.f1512ns;
         return (noiseSuppressor == null || !noiseSuppressor.getEnabled()) ? i : i | 2;
     }
 

@@ -6,10 +6,10 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WatchChange {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum WatchTargetChangeType {
         NoChange,
         Added,
@@ -21,7 +21,7 @@ public abstract class WatchChange {
     private WatchChange() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DocumentChange extends WatchChange {
         private final DocumentKey documentKey;
         private final MutableDocument newDocument;
@@ -79,7 +79,7 @@ public abstract class WatchChange {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ExistenceFilterWatchChange extends WatchChange {
         private final ExistenceFilter existenceFilter;
         private final int targetId;
@@ -103,7 +103,7 @@ public abstract class WatchChange {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WatchTargetChange extends WatchChange {
         private final Status cause;
         private final WatchTargetChangeType changeType;

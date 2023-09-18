@@ -1,7 +1,7 @@
 package kotlin.math;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MathJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MathKt__MathJVMKt extends MathKt__MathHKt {
     public static int roundToInt(double d) {
         if (Double.isNaN(d)) {

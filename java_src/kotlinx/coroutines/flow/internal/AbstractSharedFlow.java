@@ -7,7 +7,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 /* compiled from: AbstractSharedFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
     private int nCollectors;
     private int nextIndex;
@@ -64,7 +64,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
         for (Continuation<Unit> continuation : freeLocked) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
         }
     }

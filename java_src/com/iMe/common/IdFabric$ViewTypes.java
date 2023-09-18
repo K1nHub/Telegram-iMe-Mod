@@ -1,5 +1,5 @@
 package com.iMe.common;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdFabric$ViewTypes {
     public static final int ADD_TOKENS;
     public static final int BANNERS;

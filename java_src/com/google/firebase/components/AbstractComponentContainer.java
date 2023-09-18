@@ -3,7 +3,7 @@ package com.google.firebase.components;
 import com.google.firebase.inject.Provider;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractComponentContainer implements ComponentContainer {
     @Override // com.google.firebase.components.ComponentContainer
     public <T> T get(Class<T> cls) {

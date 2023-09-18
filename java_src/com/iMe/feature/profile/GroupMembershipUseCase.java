@@ -12,12 +12,12 @@ import org.telegram.tgnet.TLRPC$ChatParticipant;
 import org.telegram.tgnet.TLRPC$TL_chatParticipantAdmin;
 import org.telegram.tgnet.TLRPC$TL_chatParticipantCreator;
 /* compiled from: GroupMembershipUseCase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GroupMembershipUseCase {
     private final TelegramControllersGateway telegramControllersGateway;
 
     /* compiled from: GroupMembershipUseCase.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -40,16 +40,20 @@ public final class GroupMembershipUseCase {
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[GroupMembersFilter.RESTRICTED.ordinal()] = 5;
+                iArr[GroupMembersFilter.PREMIUM.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[GroupMembersFilter.BLOCKED.ordinal()] = 6;
+                iArr[GroupMembersFilter.RESTRICTED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[GroupMembersFilter.DELETED.ordinal()] = 7;
+                iArr[GroupMembersFilter.BLOCKED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[GroupMembersFilter.DELETED.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -64,7 +68,8 @@ public final class GroupMembershipUseCase {
     /* JADX WARN: Type inference failed for: r0v5, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r7v4, types: [java.util.Collection, java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r7v5, types: [java.util.Collection, java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r7v7, types: [java.util.Collection, java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r7v6, types: [java.util.Collection, java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r7v8, types: [java.util.Collection, java.util.ArrayList] */
     public final ArrayList<TLRPC$ChatParticipant> filterMembers(ArrayList<TLRPC$ChatParticipant> allNotMegaGroupMembers, GroupMembersFilter membersFilter) {
         ArrayList<TLRPC$ChatParticipant> arrayList;
         Intrinsics.checkNotNullParameter(allNotMegaGroupMembers, "allNotMegaGroupMembers");
@@ -102,16 +107,25 @@ public final class GroupMembershipUseCase {
                 allNotMegaGroupMembers = arrayList;
                 break;
             case 5:
-                allNotMegaGroupMembers = new ArrayList<>();
+                arrayList = new ArrayList<>();
+                for (Object obj3 : allNotMegaGroupMembers) {
+                    if (messagesController$default.getUser(Long.valueOf(((TLRPC$ChatParticipant) obj3).user_id)).premium) {
+                        arrayList.add(obj3);
+                    }
+                }
+                allNotMegaGroupMembers = arrayList;
                 break;
             case 6:
                 allNotMegaGroupMembers = new ArrayList<>();
                 break;
             case 7:
+                allNotMegaGroupMembers = new ArrayList<>();
+                break;
+            case 8:
                 arrayList = new ArrayList<>();
-                for (Object obj3 : allNotMegaGroupMembers) {
-                    if (UserObject.isDeleted(messagesController$default.getUser(Long.valueOf(((TLRPC$ChatParticipant) obj3).user_id)))) {
-                        arrayList.add(obj3);
+                for (Object obj4 : allNotMegaGroupMembers) {
+                    if (UserObject.isDeleted(messagesController$default.getUser(Long.valueOf(((TLRPC$ChatParticipant) obj4).user_id)))) {
+                        arrayList.add(obj4);
                     }
                 }
                 allNotMegaGroupMembers = arrayList;

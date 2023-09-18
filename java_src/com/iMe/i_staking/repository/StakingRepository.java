@@ -17,7 +17,7 @@ import io.reactivex.Observable;
 import java.math.BigDecimal;
 import kotlin.Pair;
 /* compiled from: StakingRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface StakingRepository {
     Observable<Result<StakingApprovalInfo>> getApprovalInfo(long j);
 

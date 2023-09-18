@@ -25,7 +25,7 @@ import org.telegram.p043ui.Cells.RadioColorCell;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DialogUtils.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DialogUtils {
     static {
         new DialogUtils();

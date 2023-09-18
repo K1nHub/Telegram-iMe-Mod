@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CompletableSubscribeOn extends Completable {
     final Scheduler scheduler;
     final CompletableSource source;
@@ -25,7 +25,7 @@ public final class CompletableSubscribeOn extends Completable {
         subscribeOnObserver.task.replace(this.scheduler.scheduleDirect(subscribeOnObserver));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class SubscribeOnObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable, Runnable {
         final CompletableObserver downstream;
         final CompletableSource source;

@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Cells.GroupCallTextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GroupCallTextCell extends FrameLayout {
     private Paint dividerPaint;
     private int imageLeft;

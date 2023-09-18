@@ -3,7 +3,7 @@ package org.aspectj.runtime.reflect;
 import java.lang.ref.SoftReference;
 import java.util.StringTokenizer;
 import org.aspectj.lang.Signature;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 abstract class SignatureImpl implements Signature {
     private static boolean useCache = true;
     Class declaringType;
@@ -15,7 +15,7 @@ abstract class SignatureImpl implements Signature {
     private String stringRep;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Cache {
         String get(int i);
 
@@ -153,7 +153,7 @@ abstract class SignatureImpl implements Signature {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class CacheImpl implements Cache {
         private SoftReference toStringCacheRef;
 

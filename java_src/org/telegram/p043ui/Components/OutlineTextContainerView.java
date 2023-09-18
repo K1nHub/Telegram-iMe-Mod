@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 /* renamed from: org.telegram.ui.Components.OutlineTextContainerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class OutlineTextContainerView extends FrameLayout {
     private EditText attachedEditText;
     private float errorProgress;

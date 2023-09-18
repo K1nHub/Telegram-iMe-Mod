@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.asn1.McElieceCCA2PublicKey;
 import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.crypto.mceliece.McElieceCCA2PublicKeyParameters;
 import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCMcElieceCCA2PublicKey implements CipherParameters, PublicKey {
     private McElieceCCA2PublicKeyParameters params;
 

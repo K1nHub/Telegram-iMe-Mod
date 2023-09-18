@@ -1,5 +1,5 @@
 package net.lingala.zip4j.model;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Zip64ExtendedInfo {
     private long compressedSize = -1;
     private long unCompressedSize = -1;

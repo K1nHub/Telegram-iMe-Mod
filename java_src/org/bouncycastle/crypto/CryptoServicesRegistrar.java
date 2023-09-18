@@ -12,14 +12,14 @@ import org.bouncycastle.crypto.params.DSAParameters;
 import org.bouncycastle.crypto.params.DSAValidationParameters;
 import org.bouncycastle.util.encoders.Hex;
 import p033j$.util.DesugarCollections;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoServicesRegistrar {
     private static final Object cacheLock;
     private static SecureRandom defaultSecureRandom;
     private static final Map<String, Object[]> globalProperties;
     private static final ThreadLocal<Map<String, Object[]>> threadProperties;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Property {
         public static final Property DH_DEFAULT_PARAMS;
         public static final Property DSA_DEFAULT_PARAMS;

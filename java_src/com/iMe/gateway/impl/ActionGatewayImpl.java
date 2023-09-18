@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.NotificationCenter;
 /* compiled from: ActionGatewayImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ActionGatewayImpl implements ActionGateway {
     public ActionGatewayImpl(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");

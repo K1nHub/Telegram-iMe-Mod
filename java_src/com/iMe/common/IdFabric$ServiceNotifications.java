@@ -1,5 +1,5 @@
 package com.iMe.common;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdFabric$ServiceNotifications {
     public static final int CHAT_PARTICIPANTS_PROCESSING;
     public static final int CONTACTS_PROCESSING;

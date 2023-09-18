@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import io.reactivex.Observable;
 /* compiled from: CryptoWalletsManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CryptoWalletsManager {
     Observable<Result<Wallet>> createWallet(BlockchainType blockchainType);
 

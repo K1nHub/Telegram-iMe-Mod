@@ -3,7 +3,7 @@ package com.iMe.bots.data.model;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum BotStatus {
     AVAILABLE,
     PAID,
@@ -15,7 +15,7 @@ public enum BotStatus {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: BotStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

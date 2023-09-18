@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemTwitterUserBinding implements ViewBinding {
     private final FrameLayout rootView;
 
@@ -25,7 +25,7 @@ public final class ForkRecycleItemTwitterUserBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemTwitterUserBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_twitter_user, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_twitter_user, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

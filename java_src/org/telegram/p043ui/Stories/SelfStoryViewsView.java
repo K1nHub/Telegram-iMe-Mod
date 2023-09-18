@@ -17,7 +17,7 @@ import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
@@ -33,7 +33,7 @@ import org.telegram.p043ui.Stories.StoriesController;
 import org.telegram.p043ui.Stories.StoryViewer;
 import org.telegram.tgnet.TLRPC$StoryItem;
 /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SelfStoryViewsView extends FrameLayout {
     public float bottomPadding;
     private int currentState;
@@ -102,7 +102,7 @@ public class SelfStoryViewsView extends FrameLayout {
                 storyViewer.cancelSwipeToViews(false);
             }
         };
-        Drawable mutate = context.getResources().getDrawable(C3558R.C3560drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3473R.C3475drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
         this.viewPagerContainer = new ContainerView(context);
@@ -158,9 +158,9 @@ public class SelfStoryViewsView extends FrameLayout {
             }
         });
         ViewPagerInner viewPagerInner2 = this.viewPager;
-        C69734 c69734 = new C69734(storyViewer, context);
-        this.pagerAdapter = c69734;
-        viewPagerInner2.setAdapter(c69734);
+        C68884 c68884 = new C68884(storyViewer, context);
+        this.pagerAdapter = c68884;
+        viewPagerInner2.setAdapter(c68884);
         this.viewPagerContainer.addView(this.viewPager, LayoutHelper.createFrame(-1, -1, 0, 0, 0, 0, 0));
         addView(this.selfStoriesPreviewView, LayoutHelper.createFrame(-1, -1));
         addView(this.viewPagerContainer);
@@ -169,8 +169,8 @@ public class SelfStoryViewsView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView$4 */
-    /* loaded from: classes6.dex */
-    public class C69734 extends PagerAdapter {
+    /* loaded from: classes7.dex */
+    public class C68884 extends PagerAdapter {
         final /* synthetic */ Context val$context;
         final /* synthetic */ StoryViewer val$storyViewer;
 
@@ -179,7 +179,7 @@ public class SelfStoryViewsView extends FrameLayout {
             return view == obj;
         }
 
-        C69734(StoryViewer storyViewer, Context context) {
+        C68884(StoryViewer storyViewer, Context context) {
             this.val$storyViewer = storyViewer;
             this.val$context = context;
         }
@@ -194,7 +194,7 @@ public class SelfStoryViewsView extends FrameLayout {
             SelfStoryViewsPage selfStoryViewsPage = new SelfStoryViewsPage(this.val$storyViewer, this.val$context, SelfStoryViewsView.this.sharedFilterState, new Consumer() { // from class: org.telegram.ui.Stories.SelfStoryViewsView$4$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    SelfStoryViewsView.C69734.this.lambda$instantiateItem$0((SelfStoryViewsPage) obj);
+                    SelfStoryViewsView.C68884.this.lambda$instantiateItem$0((SelfStoryViewsPage) obj);
                 }
             }) { // from class: org.telegram.ui.Stories.SelfStoryViewsView.4.1
                 @Override // org.telegram.p043ui.Stories.SelfStoryViewsPage
@@ -310,7 +310,7 @@ public class SelfStoryViewsView extends FrameLayout {
                     imageReceiver.setVisible(true, true);
                     this.storyViewer.transitionViewHolder.storyImage = null;
                 }
-                this.storyViewer.storiesViewPager.setCurrentDate(day, messageObject.storyItem.f1566id);
+                this.storyViewer.storiesViewPager.setCurrentDate(day, messageObject.storyItem.f1557id);
             } else if (currentPeerView != null) {
                 currentPeerView.selectPosition(this.selfStoriesPreviewView.getClosestPosition());
             }
@@ -378,7 +378,7 @@ public class SelfStoryViewsView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView$ContainerView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ContainerView extends FrameLayout implements NestedScrollingParent3 {
         private final NestedScrollingParentHelper nestedScrollingParentHelper;
 
@@ -443,7 +443,7 @@ public class SelfStoryViewsView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView$ViewPagerInner */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ViewPagerInner extends ViewPager {
         boolean gesturesEnabled;
 
@@ -478,7 +478,7 @@ public class SelfStoryViewsView extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView$StoryItemInternal */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class StoryItemInternal {
         public TLRPC$StoryItem storyItem;
         public StoriesController.UploadingStory uploadingStory;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import com.google.firebase.crashlytics.internal.unity.UnityVersionProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppData {
     public final String buildId;
     public final String googleAppId;

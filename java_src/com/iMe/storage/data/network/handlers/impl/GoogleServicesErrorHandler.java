@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import retrofit2.HttpException;
 import timber.log.Timber;
 /* compiled from: GoogleServicesErrorHandler.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GoogleServicesErrorHandler extends ApiErrorHandler {
     private final ResourceManager resourceManager;
 
@@ -48,7 +48,11 @@ public final class GoogleServicesErrorHandler extends ApiErrorHandler {
         } else if (th instanceof FirebaseException) {
             FirebaseException firebaseException = (FirebaseException) th;
             Throwable cause = firebaseException.getCause();
-            errorModel = cause instanceof SocketTimeoutException ? true : cause instanceof IOException ? new ErrorModel(firebaseException.getMessage(), ApiErrorHandler.ErrorStatus.NO_CONNECTION, th) : new ErrorModel(null, ApiErrorHandler.ErrorStatus.BAD_RESPONSE, th);
+            if (cause instanceof SocketTimeoutException ? true : cause instanceof IOException) {
+                errorModel = new ErrorModel(firebaseException.getMessage(), ApiErrorHandler.ErrorStatus.NO_CONNECTION, th);
+            } else {
+                errorModel = new ErrorModel(null, ApiErrorHandler.ErrorStatus.BAD_RESPONSE, th);
+            }
         }
         if (errorModel != null) {
             Timber.tag("ErrorHandler").mo1e(th);

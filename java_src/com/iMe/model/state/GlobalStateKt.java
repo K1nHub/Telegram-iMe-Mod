@@ -1,6 +1,6 @@
 package com.iMe.model.state;
 /* compiled from: GlobalState.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlobalStateKt {
     private static final String CONTENT_STATE = "content_state";
     private static final String EMPTY_BALANCE_STATE = "empty_balance_state";

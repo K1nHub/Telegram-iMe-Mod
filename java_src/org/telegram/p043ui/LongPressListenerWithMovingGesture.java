@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.Components.GestureDetector2;
 /* renamed from: org.telegram.ui.LongPressListenerWithMovingGesture */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LongPressListenerWithMovingGesture implements View.OnTouchListener {
     GestureDetector2 gestureDetector2;
     private int[] location;

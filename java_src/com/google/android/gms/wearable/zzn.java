@@ -7,7 +7,7 @@ import android.os.Message;
 import android.util.Log;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzn extends com.google.android.gms.internal.wearable.zzi {
     final /* synthetic */ WearableListenerService zza;
     private boolean zzb;

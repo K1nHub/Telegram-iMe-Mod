@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.wallet.FiatValueResponse;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingValuesResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingValuesResponse {
     private final FiatValueResponse asFiat;
     private final BigDecimal asToken;

@@ -2,7 +2,7 @@ package org.solovyev.android.checkout;
 
 import org.solovyev.android.checkout.Cache;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SafeCache implements Cache {
     private final Cache mCache;
 

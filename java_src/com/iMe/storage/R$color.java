@@ -1,5 +1,5 @@
 package com.iMe.storage;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class R$color {
     public static final int account_level_adviser = 2131099675;
     public static final int account_level_base = 2131099676;

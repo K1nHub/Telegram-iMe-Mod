@@ -40,7 +40,7 @@ import com.google.android.material.shape.MaterialShapeUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppBarLayout extends LinearLayout implements CoordinatorLayout.AttachedBehavior {
     private static final int DEF_STYLE_RES = R$style.Widget_Design_AppBarLayout;
     private int currentOffset;
@@ -61,12 +61,12 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
     private int[] tmpStatesArray;
     private int totalScrollRange;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BaseOnOffsetChangedListener<T extends AppBarLayout> {
         void onOffsetChanged(T t, int i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnOffsetChangedListener extends BaseOnOffsetChangedListener<AppBarLayout> {
     }
 
@@ -728,7 +728,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         return windowInsetsCompat;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LayoutParams extends LinearLayout.LayoutParams {
         int scrollFlags;
         Interpolator scrollInterpolator;
@@ -783,7 +783,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Behavior extends BaseBehavior<AppBarLayout> {
         public Behavior() {
         }
@@ -794,7 +794,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BaseBehavior<T extends AppBarLayout> extends HeaderBehavior<T> {
         private WeakReference<View> lastNestedScrollingChildRef;
         private int lastStartedType;
@@ -1312,7 +1312,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class SavedState extends AbsSavedState {
             public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() { // from class: com.google.android.material.appbar.AppBarLayout.BaseBehavior.SavedState.1
                 /* JADX WARN: Can't rename method to resolve collision */
@@ -1356,7 +1356,7 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ScrollingViewBehavior extends HeaderScrollingViewBehavior {
         @Override // com.google.android.material.appbar.HeaderScrollingViewBehavior
         /* bridge */ /* synthetic */ View findFirstDependency(List list) {

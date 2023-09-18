@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoCancelMetadata.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoCancelMetadata {
     private final TokenDetailed feeToken;
     private final TransactionParams.Ether transactionParams;

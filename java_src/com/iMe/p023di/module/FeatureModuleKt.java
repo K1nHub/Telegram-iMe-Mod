@@ -42,7 +42,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: FeatureModule.kt */
 /* renamed from: com.iMe.di.module.FeatureModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FeatureModuleKt {
     private static Module devToolsFeature = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1
         @Override // kotlin.jvm.functions.Function1

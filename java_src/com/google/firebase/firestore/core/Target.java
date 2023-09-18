@@ -4,7 +4,7 @@ import com.google.firebase.firestore.core.OrderBy;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.model.ResourcePath;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Target {
     private final String collectionGroup;
     private final Bound endAt;

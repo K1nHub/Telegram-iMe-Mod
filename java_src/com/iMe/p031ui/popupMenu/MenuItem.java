@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: MenuItem.kt */
 /* renamed from: com.iMe.ui.popupMenu.MenuItem */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MenuItem {
     private final int iconColor;
     private final int iconResId;

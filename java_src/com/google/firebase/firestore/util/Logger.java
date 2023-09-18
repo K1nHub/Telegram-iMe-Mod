@@ -1,11 +1,11 @@
 package com.google.firebase.firestore.util;
 
 import android.util.Log;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Logger {
     private static Level logLevel = Level.WARN;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Level {
         DEBUG,
         WARN,
@@ -32,7 +32,7 @@ public class Logger {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.util.Logger$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10411 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$util$Logger$Level;
 

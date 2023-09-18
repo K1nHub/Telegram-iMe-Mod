@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StrictSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
     volatile boolean done;
     final Subscriber<? super T> downstream;

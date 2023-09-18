@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateServiceNotification extends TLRPC$Update {
     public static int constructor = -337352679;
     public ArrayList<TLRPC$MessageEntity> entities = new ArrayList<>();

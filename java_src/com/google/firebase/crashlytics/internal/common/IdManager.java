@@ -8,7 +8,7 @@ import com.google.firebase.installations.FirebaseInstallationsApi;
 import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdManager implements InstallIdProvider {
     private final Context appContext;
     private final String appIdentifier;

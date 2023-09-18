@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$attr;
 import com.google.android.material.R$integer;
 import com.google.android.material.internal.ThemeEnforcement;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class ViewUtilsLollipop {
     private static final int[] STATE_LIST_ANIM_ATTRS = {16843848};
 

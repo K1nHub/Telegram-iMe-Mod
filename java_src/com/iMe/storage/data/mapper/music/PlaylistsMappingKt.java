@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlaylistsMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PlaylistsMappingKt {
     public static final PlaylistModel mapToDomain(PlaylistsDb playlistsDb) {
         Intrinsics.checkNotNullParameter(playlistsDb, "<this>");

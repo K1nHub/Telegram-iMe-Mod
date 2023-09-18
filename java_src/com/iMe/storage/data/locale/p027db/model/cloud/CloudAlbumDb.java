@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.p027db.model.cloud;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: CloudAlbumDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.cloud.CloudAlbumDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CloudAlbumDb {
     private long albumId;
     private long userId;

@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "TimeIntervalCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TimeInterval extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TimeInterval> CREATOR = new zzl();
     @SafeParcelable.Field(m797id = 2)

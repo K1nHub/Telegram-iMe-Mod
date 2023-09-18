@@ -160,7 +160,7 @@
 
     move-result-object p1
 
-    .line 35
+    .line 37
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->cryptoboxes_description:I
@@ -169,11 +169,12 @@
 
     move-result-object v1
 
+    .line 35
     invoke-virtual {p1, p2, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 36
+    .line 41
     iget-object p2, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->cryptoboxes_create_new:I
@@ -182,11 +183,12 @@
 
     move-result-object p2
 
+    .line 39
     invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 37
+    .line 43
     sget p2, Lorg/telegram/messenger/R$id;->image_header:I
 
     sget-object v1, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$1;
@@ -195,7 +197,7 @@
 
     move-result-object p1
 
-    .line 42
+    .line 48
     sget p2, Lorg/telegram/messenger/R$id;->button_new_cryptobox:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$2;
@@ -206,7 +208,7 @@
 
     move-result-object p1
 
-    .line 49
+    .line 55
     sget-object p2, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$3;->INSTANCE:Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$3;
 
     invoke-static {p1, v0, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;

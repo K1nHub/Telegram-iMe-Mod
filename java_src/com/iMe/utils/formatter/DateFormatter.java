@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LocaleController;
 import p033j$.util.DesugarTimeZone;
 /* compiled from: DateFormatter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DateFormatter {
     public static final DateFormatter INSTANCE = new DateFormatter();
     private static final HashMap<String, HashMap<DateType, SimpleDateFormat>> availableLocalesFormatter = new HashMap<>();
@@ -92,7 +92,7 @@ public final class DateFormatter {
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* compiled from: DateFormatter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DateType {
         private static final /* synthetic */ DateType[] $VALUES;
         public static final DateType DATE_AND_TIME;

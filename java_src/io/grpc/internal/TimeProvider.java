@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface TimeProvider {
     public static final TimeProvider SYSTEM_TIME_PROVIDER = new TimeProvider() { // from class: io.grpc.internal.TimeProvider.1
         @Override // io.grpc.internal.TimeProvider

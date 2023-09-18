@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TotalBalanceItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TotalBalanceItem extends NoChildNode {
     private final String balanceText;
     private final boolean isBalanceHidden;

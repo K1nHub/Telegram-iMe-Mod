@@ -3,7 +3,7 @@ package org.solovyev.android.checkout;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ActivityCheckout extends UiCheckout {
     private final Activity mActivity;
     private final IntentStarter mIntentStarter;

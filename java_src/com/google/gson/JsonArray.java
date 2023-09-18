@@ -2,7 +2,7 @@ package com.google.gson;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonArray extends JsonElement implements Iterable<JsonElement> {
     private final ArrayList<JsonElement> elements = new ArrayList<>();
 

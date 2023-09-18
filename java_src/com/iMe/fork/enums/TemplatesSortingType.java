@@ -2,13 +2,13 @@ package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: TemplatesSortingType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TemplatesSortingType {
-    DATE(C3558R.string.dialogs_albums_sort_date, C3558R.C3560drawable.msg_contacts_time),
-    NAME(C3558R.string.dialogs_albums_sort_alphabetically, C3558R.C3560drawable.msg_contacts_name),
-    USAGE(C3558R.string.sort_by_usage, C3558R.C3560drawable.fork_templates_sort_usage_rating);
+    DATE(C3473R.string.dialogs_albums_sort_date, C3473R.C3475drawable.msg_contacts_time),
+    NAME(C3473R.string.dialogs_albums_sort_alphabetically, C3473R.C3475drawable.msg_contacts_name),
+    USAGE(C3473R.string.sort_by_usage, C3473R.C3475drawable.fork_templates_sort_usage_rating);
     
     public static final Companion Companion = new Companion(null);
     private final int iconResId;
@@ -32,7 +32,7 @@ public enum TemplatesSortingType {
     }
 
     /* compiled from: TemplatesSortingType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

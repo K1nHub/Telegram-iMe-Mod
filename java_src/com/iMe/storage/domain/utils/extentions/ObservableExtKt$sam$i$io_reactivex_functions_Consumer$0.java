@@ -4,7 +4,7 @@ import io.reactivex.functions.Consumer;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ObservableExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0 implements Consumer {
     private final /* synthetic */ Function1 function;
 

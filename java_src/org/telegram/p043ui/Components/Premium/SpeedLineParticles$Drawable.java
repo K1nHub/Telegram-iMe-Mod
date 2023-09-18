@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Premium.SpeedLineParticles$Drawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SpeedLineParticles$Drawable {
     public final int count;
     private int lastColor;
@@ -26,7 +26,7 @@ public class SpeedLineParticles$Drawable {
     public long minLifeTime = ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS;
 
     /* renamed from: dt */
-    private final float f1835dt = 1000.0f / AndroidUtilities.screenRefreshRate;
+    private final float f1826dt = 1000.0f / AndroidUtilities.screenRefreshRate;
 
     public SpeedLineParticles$Drawable(int i) {
         this.count = i;
@@ -66,7 +66,7 @@ public class SpeedLineParticles$Drawable {
             } else {
                 particle.draw(canvas, i, currentTimeMillis);
             }
-            if (currentTimeMillis > particle.lifeTime || !this.screenRect.contains(particle.f1836x, particle.f1837y)) {
+            if (currentTimeMillis > particle.lifeTime || !this.screenRect.contains(particle.f1827x, particle.f1828y)) {
                 particle.genPosition(currentTimeMillis, false);
             }
         }
@@ -74,7 +74,7 @@ public class SpeedLineParticles$Drawable {
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.SpeedLineParticles$Drawable$Particle */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class Particle {
         float inProgress;
         private long lifeTime;
@@ -82,31 +82,31 @@ public class SpeedLineParticles$Drawable {
         private float vecY;
 
         /* renamed from: x */
-        private float f1836x;
+        private float f1827x;
 
         /* renamed from: y */
-        private float f1837y;
+        private float f1828y;
 
         private Particle() {
         }
 
         public void draw(Canvas canvas, int i, long j) {
             int i2 = i * 4;
-            SpeedLineParticles$Drawable.this.lines[i2] = this.f1836x;
-            SpeedLineParticles$Drawable.this.lines[i2 + 1] = this.f1837y;
-            SpeedLineParticles$Drawable.this.lines[i2 + 2] = this.f1836x + (AndroidUtilities.m72dp(30) * this.vecX);
-            SpeedLineParticles$Drawable.this.lines[i2 + 3] = this.f1837y + (AndroidUtilities.m72dp(30) * this.vecY);
+            SpeedLineParticles$Drawable.this.lines[i2] = this.f1827x;
+            SpeedLineParticles$Drawable.this.lines[i2 + 1] = this.f1828y;
+            SpeedLineParticles$Drawable.this.lines[i2 + 2] = this.f1827x + (AndroidUtilities.m72dp(30) * this.vecX);
+            SpeedLineParticles$Drawable.this.lines[i2 + 3] = this.f1828y + (AndroidUtilities.m72dp(30) * this.vecY);
             if (SpeedLineParticles$Drawable.this.paused) {
                 return;
             }
-            float m72dp = AndroidUtilities.m72dp(4) * (SpeedLineParticles$Drawable.this.f1835dt / 660.0f);
+            float m72dp = AndroidUtilities.m72dp(4) * (SpeedLineParticles$Drawable.this.f1826dt / 660.0f);
             SpeedLineParticles$Drawable speedLineParticles$Drawable = SpeedLineParticles$Drawable.this;
             float f = m72dp * speedLineParticles$Drawable.speedScale;
-            this.f1836x += this.vecX * f;
-            this.f1837y += this.vecY * f;
+            this.f1827x += this.vecX * f;
+            this.f1828y += this.vecY * f;
             float f2 = this.inProgress;
             if (f2 != 1.0f) {
-                float f3 = f2 + (speedLineParticles$Drawable.f1835dt / 200.0f);
+                float f3 = f2 + (speedLineParticles$Drawable.f1826dt / 200.0f);
                 this.inProgress = f3;
                 if (f3 > 1.0f) {
                     this.inProgress = 1.0f;
@@ -119,9 +119,9 @@ public class SpeedLineParticles$Drawable {
             SpeedLineParticles$Drawable speedLineParticles$Drawable = SpeedLineParticles$Drawable.this;
             RectF rectF = z ? speedLineParticles$Drawable.screenRect : speedLineParticles$Drawable.rect;
             float abs = rectF.left + Math.abs(Utilities.fastRandom.nextInt() % rectF.width());
-            this.f1836x = abs;
-            this.f1837y = rectF.top + Math.abs(Utilities.fastRandom.nextInt() % rectF.height());
-            double atan2 = Math.atan2(abs - SpeedLineParticles$Drawable.this.rect.centerX(), this.f1837y - SpeedLineParticles$Drawable.this.rect.centerY());
+            this.f1827x = abs;
+            this.f1828y = rectF.top + Math.abs(Utilities.fastRandom.nextInt() % rectF.height());
+            double atan2 = Math.atan2(abs - SpeedLineParticles$Drawable.this.rect.centerX(), this.f1828y - SpeedLineParticles$Drawable.this.rect.centerY());
             this.vecX = (float) Math.sin(atan2);
             this.vecY = (float) Math.cos(atan2);
             Utilities.fastRandom.nextInt(50);

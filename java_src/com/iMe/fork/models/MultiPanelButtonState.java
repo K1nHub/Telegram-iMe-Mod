@@ -3,7 +3,7 @@ package com.iMe.fork.models;
 import com.iMe.fork.enums.MultiPanelButton;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MultiPanelButtonState.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MultiPanelButtonState {
     private boolean isEnabled;
     private int position;

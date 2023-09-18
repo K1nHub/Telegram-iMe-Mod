@@ -37,7 +37,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
     private static final int DEF_STYLE_RES = R$style.Widget_Design_BottomSheet_Modal;
     int activePointerId;
@@ -91,7 +91,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     ViewDragHelper viewDragHelper;
     WeakReference<V> viewRef;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class BottomSheetCallback {
         public abstract void onSlide(View view, float f);
 
@@ -1170,7 +1170,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SettleRunnable implements Runnable {
         private boolean isPosted;
         int targetState;
@@ -1194,7 +1194,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SavedState extends AbsSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() { // from class: com.google.android.material.bottomsheet.BottomSheetBehavior.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */

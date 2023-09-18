@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsDatabase_Impl extends BotsDatabase {
     private volatile BotsCategoryDao _botsCategoryDao;
     private volatile BotsDao _botsDao;

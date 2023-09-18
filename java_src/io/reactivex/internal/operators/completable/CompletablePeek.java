@@ -11,7 +11,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CompletablePeek extends Completable {
     final Action onAfterTerminate;
     final Action onComplete;
@@ -36,7 +36,7 @@ public final class CompletablePeek extends Completable {
         this.source.subscribe(new CompletableObserverImplementation(completableObserver));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     final class CompletableObserverImplementation implements CompletableObserver, Disposable {
         final CompletableObserver downstream;
         Disposable upstream;

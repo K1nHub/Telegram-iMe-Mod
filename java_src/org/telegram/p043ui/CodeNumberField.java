@@ -30,7 +30,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
 import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 /* renamed from: org.telegram.ui.CodeNumberField */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CodeNumberField extends EditTextBoldCursor {
     float enterAnimation;
     ValueAnimator enterAnimator;

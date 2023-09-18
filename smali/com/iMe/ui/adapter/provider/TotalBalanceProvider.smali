@@ -23,15 +23,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 15
+    .line 14
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 18
+    .line 17
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOTAL_BALANCE:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->itemViewType:I
 
-    .line 19
+    .line 18
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_crypto_total_balance:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->layoutId:I
@@ -55,8 +55,10 @@
     .line 25
     sget v0, Lorg/telegram/messenger/R$id;->text_wallet_crypto_total_balance:I
 
+    .line 26
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
+    .line 24
     invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
@@ -69,12 +71,12 @@
 
     aput v0, v2, v3
 
-    .line 26
+    .line 28
     invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 27
+    .line 29
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->getBalanceText()Ljava/lang/String;
 
     move-result-object v2
@@ -83,16 +85,18 @@
 
     move-result-object p1
 
-    .line 28
+    .line 31
     sget v0, Lorg/telegram/messenger/R$id;->image_wallet_crypto_eye:I
 
+    .line 32
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 30
     invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 29
+    .line 36
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->isBalanceHidden()Z
 
     move-result p2
@@ -106,12 +110,13 @@
     :cond_0
     sget p2, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_eye:I
 
+    .line 34
     :goto_0
     invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 30
+    .line 38
     invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
@@ -120,25 +125,27 @@
 
     new-array p2, p2, [I
 
-    .line 31
+    .line 41
     sget v0, Lorg/telegram/messenger/R$id;->image_wallet_crypto_tokens_settings:I
 
     aput v0, p2, v3
 
+    .line 42
     sget v3, Lorg/telegram/messenger/R$id;->image_wallet_order_tokens:I
 
     aput v3, p2, v1
 
+    .line 39
     invoke-static {p1, v2, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 32
+    .line 44
     invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 33
+    .line 45
     invoke-static {p1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
@@ -170,7 +177,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 50
     sget p3, Lorg/telegram/messenger/R$id;->text_wallet_crypto_total_balance:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->getBalanceText()Ljava/lang/String;
@@ -185,7 +192,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 15
+    .line 14
     check-cast p2, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/TotalBalanceItem;)V
@@ -196,7 +203,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 15
+    .line 14
     check-cast p2, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/TotalBalanceItem;Ljava/util/List;)V
@@ -207,7 +214,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 18
+    .line 17
     iget v0, p0, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->itemViewType:I
 
     return v0
@@ -216,7 +223,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 19
+    .line 18
     iget v0, p0, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;->layoutId:I
 
     return v0

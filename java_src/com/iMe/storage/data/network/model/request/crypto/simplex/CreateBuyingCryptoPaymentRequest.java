@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.simplex;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreateBuyingCryptoPaymentRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreateBuyingCryptoPaymentRequest {
     private final float digitalAmount;
     private final String digitalCurrency;

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LazyField extends LazyFieldLite {
     private final MessageLite defaultInstance;
 
@@ -27,7 +27,7 @@ public class LazyField extends LazyFieldLite {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LazyEntry<K> implements Map.Entry<K, Object> {
         private Map.Entry<K, LazyField> entry;
 
@@ -63,7 +63,7 @@ public class LazyField extends LazyFieldLite {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>>, p033j$.util.Iterator {
         private Iterator<Map.Entry<K, Object>> iterator;
 

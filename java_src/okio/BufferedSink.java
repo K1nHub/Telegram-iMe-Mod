@@ -3,7 +3,7 @@ package okio;
 import java.io.IOException;
 import java.nio.channels.WritableByteChannel;
 /* compiled from: BufferedSink.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface BufferedSink extends Sink, WritableByteChannel {
     BufferedSink emit() throws IOException;
 

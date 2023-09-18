@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthScreen.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class AuthScreen$setupWebView$1$2 extends FunctionReferenceImpl implements Function1<String, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AuthScreen$setupWebView$1$2(Object obj) {

@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: HistoryDialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HistoryDialogModel {
     private long creationDate;
     private final long dialogId;
