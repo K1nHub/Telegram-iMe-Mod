@@ -20,7 +20,7 @@ jobs:
       - name: Build apk file
         run: apktool b -o ./dist/moded-from-action.apk ./ --use-aapt2
       - name: Sign apk file
-        run: signapk testkey.x509.pem testkey.pk8 ./dist/moded-from-action.apk signed-moded-from-action.apk
+        run: signapk ./keys/testkey.x509.pem ./keys/testkey.pk8 ./dist/moded-from-action.apk signed-moded-from-action.apk
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
