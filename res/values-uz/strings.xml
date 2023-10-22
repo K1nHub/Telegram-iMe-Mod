@@ -415,6 +415,8 @@ Sozlamalar > Asboblar > Chatlar > Shablonlar"</string>
     <string name="debug_option_choose_wallet_environment">Hamyon muhitini tanlang (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">"Atrof muhitni o'zgartirgandan so'ng, barcha joriy hamyon ma'lumotlari va u bilan bog'liq bo'lgan barcha narsalar o'chiriladi"</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Ishonchingiz komilmi?</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">"Xabarlar o'chirilmoqda… %2$d dan %1$d qayta ishlandi"</string>
     <string name="deleting_messages_success">"Xizmat xabarlari o'chirildi"</string>
     <string name="dialog_promo_discussion_group_description">Guruh</string>
@@ -505,7 +507,7 @@ skanerlang"</string>
     <string name="folder_tabs_remember_last_filter_tab_hint">"Ilovani ochganingizda, siz o'zingizni oxirgi marta ko'rgan tabda ko'rasiz. Agar bu parametr o'chirilgan bo'lsa, standart bo'yicha chapdagi birinchi varaq ochiladi."</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">Yorliqni eslab qolish</string>
     <string name="folder_tabs_settings_folders_first">Saralash yorliqlarining chap tomonida</string>
-    <string name="folder_tabs_settings_header">Tab sozlamalari</string>
+    <string name="folder_tabs_settings_header">Sozlamalar</string>
     <string name="folder_tabs_settings_hide_folders">Jildlarni yashirish</string>
     <string name="folder_tabs_sorting_settings">"Turlar bo'yicha yorliqlar"</string>
     <string name="folder_tabs_sorting_settings_item_title">Chatni tartiblash</string>

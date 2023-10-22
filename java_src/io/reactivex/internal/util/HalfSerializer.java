@@ -4,7 +4,7 @@ import io.reactivex.Observer;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HalfSerializer {
     /* JADX WARN: Multi-variable type inference failed */
     public static <T> void onNext(Subscriber<? super T> subscriber, T t, AtomicInteger atomicInteger, AtomicThrowable atomicThrowable) {

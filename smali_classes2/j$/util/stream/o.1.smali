@@ -3,7 +3,7 @@
 
 # interfaces
 .implements Lj$/util/function/Consumer;
-.implements Lj$/util/function/y;
+.implements Lj$/util/function/x;
 
 
 # instance fields
@@ -49,7 +49,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/D;)V
+.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/C;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -66,7 +66,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/U;)V
+.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/S;)V
     .locals 1
 
     const/4 v0, 0x2
@@ -83,7 +83,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/i0;)V
+.method public synthetic constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/g0;)V
     .locals 1
 
     const/4 v0, 0x3
@@ -267,12 +267,12 @@
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/i0;
+    check-cast v1, Lj$/wrappers/g0;
 
     .line 2
     new-instance v2, Lj$/util/stream/h1;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/h1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/i0;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/h1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/g0;)V
 
     return-object v2
 
@@ -284,12 +284,12 @@
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/U;
+    check-cast v1, Lj$/wrappers/S;
 
     .line 4
     new-instance v2, Lj$/util/stream/g1;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/g1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/U;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/g1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/S;)V
 
     return-object v2
 
@@ -301,12 +301,12 @@
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/D;
+    check-cast v1, Lj$/wrappers/C;
 
     .line 6
     new-instance v2, Lj$/util/stream/i1;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/i1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/D;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/i1;-><init>(Lj$/util/stream/k1;Lj$/wrappers/C;)V
 
     return-object v2
 

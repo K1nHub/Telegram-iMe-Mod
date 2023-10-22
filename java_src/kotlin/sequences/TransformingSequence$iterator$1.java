@@ -7,7 +7,7 @@ import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TransformingSequence$iterator$1<R> implements Iterator<R>, KMappedMarker, p033j$.util.Iterator {
     private final Iterator<T> iterator;
     final /* synthetic */ TransformingSequence<T, R> this$0;

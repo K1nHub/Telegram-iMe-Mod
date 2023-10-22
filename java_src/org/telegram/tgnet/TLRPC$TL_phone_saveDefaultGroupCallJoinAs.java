@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_phone_saveDefaultGroupCallJoinAs extends TLObject {
     public static int constructor = 1465786252;
     public TLRPC$InputPeer join_as;

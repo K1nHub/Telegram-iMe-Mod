@@ -16,7 +16,7 @@ import java.nio.FloatBuffer;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlTextureProgram.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GlTextureProgram extends GlProgram {
     private Gl2dDrawable lastDrawable;
     private final RectF lastDrawableBounds;
@@ -99,9 +99,9 @@ public class GlTextureProgram extends GlProgram {
             Egloo.checkGlError("glUniformMatrix4fv");
         }
         GlProgramLocation glProgramLocation2 = this.vertexPositionHandle;
-        GLES20.glEnableVertexAttribArray(glProgramLocation2.m1649getUvaluepVg5ArA$library_release());
+        GLES20.glEnableVertexAttribArray(glProgramLocation2.m1882getUvaluepVg5ArA$library_release());
         Egloo.checkGlError("glEnableVertexAttribArray");
-        GLES20.glVertexAttribPointer(glProgramLocation2.m1649getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) drawable.getVertexArray());
+        GLES20.glVertexAttribPointer(glProgramLocation2.m1882getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) drawable.getVertexArray());
         Egloo.checkGlError("glVertexAttribPointer");
         GlProgramLocation glProgramLocation3 = this.textureCoordsHandle;
         if (glProgramLocation3 == null) {
@@ -138,9 +138,9 @@ public class GlTextureProgram extends GlProgram {
             }
         }
         this.textureCoordsBuffer.rewind();
-        GLES20.glEnableVertexAttribArray(glProgramLocation3.m1649getUvaluepVg5ArA$library_release());
+        GLES20.glEnableVertexAttribArray(glProgramLocation3.m1882getUvaluepVg5ArA$library_release());
         Egloo.checkGlError("glEnableVertexAttribArray");
-        GLES20.glVertexAttribPointer(glProgramLocation3.m1649getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) this.textureCoordsBuffer);
+        GLES20.glVertexAttribPointer(glProgramLocation3.m1882getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) this.textureCoordsBuffer);
         Egloo.checkGlError("glVertexAttribPointer");
     }
 
@@ -148,10 +148,10 @@ public class GlTextureProgram extends GlProgram {
     public void onPostDraw(GlDrawable drawable) {
         Intrinsics.checkNotNullParameter(drawable, "drawable");
         super.onPostDraw(drawable);
-        GLES20.glDisableVertexAttribArray(this.vertexPositionHandle.m1649getUvaluepVg5ArA$library_release());
+        GLES20.glDisableVertexAttribArray(this.vertexPositionHandle.m1882getUvaluepVg5ArA$library_release());
         GlProgramLocation glProgramLocation = this.textureCoordsHandle;
         if (glProgramLocation != null) {
-            GLES20.glDisableVertexAttribArray(glProgramLocation.m1649getUvaluepVg5ArA$library_release());
+            GLES20.glDisableVertexAttribArray(glProgramLocation.m1882getUvaluepVg5ArA$library_release());
         }
         GlTexture glTexture = this.texture;
         if (glTexture != null) {
@@ -172,7 +172,7 @@ public class GlTextureProgram extends GlProgram {
     }
 
     /* compiled from: GlTextureProgram.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

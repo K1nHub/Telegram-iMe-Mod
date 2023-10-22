@@ -7,15 +7,15 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.BuildVars;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class ThreadUtils {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface BlockingOperation {
         void run() throws InterruptedException;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -131,15 +131,15 @@ public class ThreadUtils {
                 try {
                     C1Result.this.value = callable.call();
                 } catch (Exception e2) {
-                    c1CaughtException.f1925e = e2;
+                    c1CaughtException.f2099e = e2;
                 }
                 countDownLatch.countDown();
             }
         });
         awaitUninterruptibly(countDownLatch);
-        if (c1CaughtException.f1925e != null) {
-            RuntimeException runtimeException = new RuntimeException(c1CaughtException.f1925e);
-            runtimeException.setStackTrace(concatStackTraces(c1CaughtException.f1925e.getStackTrace(), runtimeException.getStackTrace()));
+        if (c1CaughtException.f2099e != null) {
+            RuntimeException runtimeException = new RuntimeException(c1CaughtException.f2099e);
+            runtimeException.setStackTrace(concatStackTraces(c1CaughtException.f2099e.getStackTrace(), runtimeException.getStackTrace()));
             throw runtimeException;
         }
         return c1Result.value;
@@ -147,11 +147,11 @@ public class ThreadUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.ThreadUtils$1CaughtException  reason: invalid class name */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public class C1CaughtException {
 
         /* renamed from: e */
-        Exception f1925e;
+        Exception f2099e;
 
         C1CaughtException() {
         }
@@ -159,7 +159,7 @@ public class ThreadUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.ThreadUtils$1Result  reason: invalid class name */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public class C1Result {
         public V value;
 

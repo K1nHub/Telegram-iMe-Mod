@@ -49,7 +49,7 @@
     :goto_0
     iget-object v1, v0, Lj$/util/stream/w2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v1}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v1}, Lj$/util/stream/A1;->n()I
 
     move-result v1
 
@@ -64,7 +64,7 @@
     :cond_0
     iget-object v1, v0, Lj$/util/stream/w2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v1}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v1}, Lj$/util/stream/A1;->n()I
 
     move-result v1
 
@@ -79,7 +79,7 @@
     :goto_1
     iget-object v3, v0, Lj$/util/stream/w2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v3}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v3}, Lj$/util/stream/A1;->n()I
 
     move-result v3
 

@@ -3,7 +3,7 @@ package com.google.common.collect;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RegularImmutableList<E> extends ImmutableList<E> {
     static final ImmutableList<Object> EMPTY = new RegularImmutableList(new Object[0], 0);
     final transient Object[] array;

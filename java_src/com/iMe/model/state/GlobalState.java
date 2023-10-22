@@ -1,9 +1,9 @@
 package com.iMe.model.state;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 /* compiled from: GlobalState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class GlobalState {
     private final int description;
     private final int icon;
@@ -38,7 +38,7 @@ public abstract class GlobalState {
     }
 
     /* compiled from: GlobalState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Content extends GlobalState {
         public static final Content INSTANCE = new Content();
 
@@ -48,37 +48,37 @@ public abstract class GlobalState {
     }
 
     /* compiled from: GlobalState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class NoInternet extends GlobalState {
         public static final NoInternet INSTANCE = new NoInternet();
 
         private NoInternet() {
-            super("no_internet_state", C3473R.raw.fork_state_no_internet, C3473R.string.common_no_network_state_title, C3473R.string.common_no_network_state_description, null);
+            super("no_internet_state", C3630R.raw.fork_state_no_internet, C3630R.string.common_no_network_state_title, C3630R.string.common_no_network_state_description, null);
         }
     }
 
     /* compiled from: GlobalState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Unexpected extends GlobalState {
         public static final Unexpected INSTANCE = new Unexpected();
 
         private Unexpected() {
-            super("unexpected_error_state", C3473R.raw.fork_state_unexpected, C3473R.string.common_unexpected_state_title, C3473R.string.common_unexpected_state_description, null);
+            super("unexpected_error_state", C3630R.raw.fork_state_unexpected, C3630R.string.common_unexpected_state_title, C3630R.string.common_unexpected_state_description, null);
         }
     }
 
     /* compiled from: GlobalState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Progress extends GlobalState {
         public static final Progress INSTANCE = new Progress();
 
         private Progress() {
-            super("progress_state", C3473R.raw.fork_state_progress, C3473R.string.common_progress_state_title, C3473R.string.common_progress_state_description, null);
+            super("progress_state", C3630R.raw.fork_state_progress, C3630R.string.common_progress_state_title, C3630R.string.common_progress_state_description, null);
         }
     }
 
     /* compiled from: GlobalState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Empty extends GlobalState {
         private final int description;
         private final int icon;
@@ -118,92 +118,92 @@ public abstract class GlobalState {
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Common extends Empty {
             public static final Common INSTANCE = new Common();
 
             private Common() {
-                super("empty_content_state", C3473R.raw.fork_state_empty_common, C3473R.string.common_empty_state_title, C3473R.string.common_empty_state_description, null);
+                super("empty_content_state", C3630R.raw.fork_state_empty_common, C3630R.string.common_empty_state_title, C3630R.string.common_empty_state_description, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Balance extends Empty {
             public static final Balance INSTANCE = new Balance();
 
             private Balance() {
-                super("empty_balance_state", C3473R.raw.fork_state_empty_balance, C3473R.string.common_empty_state_title, C3473R.string.common_empty_balance_state_description, null);
+                super("empty_balance_state", C3630R.raw.fork_state_empty_balance, C3630R.string.common_empty_state_title, C3630R.string.common_empty_balance_state_description, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Staking extends Empty {
             public static final Staking INSTANCE = new Staking();
 
             private Staking() {
-                super("empty_staking_state", C3473R.raw.fork_state_empty_balance, C3473R.string.common_empty_state_title, C3473R.string.staking_programmes_empty_state_description, null);
+                super("empty_staking_state", C3630R.raw.fork_state_empty_balance, C3630R.string.common_empty_state_title, C3630R.string.staking_programmes_empty_state_description, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Twitter extends Empty {
             public static final Twitter INSTANCE = new Twitter();
 
             private Twitter() {
-                super("empty_twitter_state", C3473R.raw.fork_state_empty_common, C3473R.string.twitter_empty_state_title, C3473R.string.twitter_empty_state_subtitle, null);
+                super("empty_twitter_state", C3630R.raw.fork_state_empty_common, C3630R.string.twitter_empty_state_title, C3630R.string.twitter_empty_state_subtitle, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class TwitterSearch extends Empty {
             public static final TwitterSearch INSTANCE = new TwitterSearch();
 
             private TwitterSearch() {
-                super("empty_twitter_search_state", C3473R.raw.fork_state_empty_common, C3473R.string.twitter_search_title, C3473R.string.twitter_search_subtitle, null);
+                super("empty_twitter_search_state", C3630R.raw.fork_state_empty_common, C3630R.string.twitter_search_title, C3630R.string.twitter_search_subtitle, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class TokenSearchStart extends Empty {
             public static final TokenSearchStart INSTANCE = new TokenSearchStart();
 
             private TokenSearchStart() {
-                super("empty_token_search_start_state", C3473R.raw.fork_state_empty_common, C3473R.string.token_search_empty_start_title, C3473R.string.token_search_empty_start_subtitle, null);
+                super("empty_token_search_start_state", C3630R.raw.fork_state_empty_common, C3630R.string.token_search_empty_start_title, C3630R.string.token_search_empty_start_subtitle, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class TokenSearchResult extends Empty {
             public static final TokenSearchResult INSTANCE = new TokenSearchResult();
 
             private TokenSearchResult() {
-                super("empty_token_search_result_state", C3473R.raw.fork_state_empty_common, C3473R.string.common_empty_state_title, C3473R.string.common_empty_state_description, null);
+                super("empty_token_search_result_state", C3630R.raw.fork_state_empty_common, C3630R.string.common_empty_state_title, C3630R.string.common_empty_state_description, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class NetworksSearchResult extends Empty {
             public static final NetworksSearchResult INSTANCE = new NetworksSearchResult();
 
             private NetworksSearchResult() {
-                super("empty_token_search_result_state", C3473R.raw.fork_state_empty_common, C3473R.string.common_empty_state_title, C3473R.string.wallet_network_type_dialog_search_empty, null);
+                super("empty_token_search_result_state", C3630R.raw.fork_state_empty_common, C3630R.string.common_empty_state_title, C3630R.string.wallet_network_type_dialog_search_empty, null);
             }
         }
 
         /* compiled from: GlobalState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class CustomTokens extends Empty {
             public static final CustomTokens INSTANCE = new CustomTokens();
 
             private CustomTokens() {
-                super("empty_custom_tokens_state", C3473R.raw.fork_catalog_empty, C3473R.string.wallet_custom_tokens_empty_title, C3473R.string.wallet_custom_tokens_empty_description, null);
+                super("empty_custom_tokens_state", C3630R.raw.fork_catalog_empty, C3630R.string.wallet_custom_tokens_empty_title, C3630R.string.wallet_custom_tokens_empty_description, null);
             }
         }
     }

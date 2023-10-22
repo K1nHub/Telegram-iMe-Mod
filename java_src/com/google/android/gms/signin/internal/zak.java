@@ -9,19 +9,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.zav;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "SignInResponseCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zak extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zak> CREATOR = new zal();
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getConnectionResult", m797id = 2)
+    @SafeParcelable.Field(getter = "getConnectionResult", m1089id = 2)
     private final ConnectionResult zab;
-    @SafeParcelable.Field(getter = "getResolveAccountResponse", m797id = 3)
+    @SafeParcelable.Field(getter = "getResolveAccountResponse", m1089id = 3)
     private final zav zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zak(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) ConnectionResult connectionResult, @SafeParcelable.Param(m796id = 3) zav zavVar) {
+    public zak(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ConnectionResult connectionResult, @SafeParcelable.Param(m1088id = 3) zav zavVar) {
         this.zaa = i;
         this.zab = connectionResult;
         this.zac = zavVar;

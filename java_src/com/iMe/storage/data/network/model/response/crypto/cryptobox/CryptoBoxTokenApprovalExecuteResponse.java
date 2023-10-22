@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTokenApprovalExecuteResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTokenApprovalExecuteResponse {
     private final String transactionUrl;
 

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/q;
+.implements Lj$/util/function/p;
 
 
 # instance fields
@@ -82,7 +82,7 @@
     .end packed-switch
 .end method
 
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public f(Lj$/util/function/p;)Lj$/util/function/p;
     .locals 1
 
     iget v0, p0, Lj$/util/stream/W0;->a:I
@@ -96,9 +96,9 @@
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 
@@ -107,9 +107,9 @@
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 

@@ -4,18 +4,18 @@ import android.app.Activity;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.iMe.navigation.wallet.coordinator.PinCodeCoordinator;
-import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
+import com.iMe.p030ui.base.mvp.base.BaseView;
+import com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Network;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ContextExtKt;
-import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p031rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposables;
 import io.reactivex.functions.Action;
@@ -26,11 +26,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import org.telegram.p043ui.ActionBar.INavigationLayout;
-import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p042ui.ActionBar.INavigationLayout;
+import org.telegram.p042ui.LaunchActivity;
 import timber.log.Timber;
 /* compiled from: WalletFlowCoordinator.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletFlowCoordinator {
     private final CryptoAccessManager cryptoAccessManager;
     private final PinCodeCoordinator pinCodeCoordinator;
@@ -70,7 +70,7 @@ public final class WalletFlowCoordinator {
         ?? disposed = Disposables.disposed();
         Intrinsics.checkNotNullExpressionValue(disposed, "disposed()");
         ref$ObjectRef.element = disposed;
-        Observable<Result<List<Network>>> doFinally = this.walletInteractor.getSupportedNetworksWithUpdateCheck().observeOn(this.schedulersProvider.mo716ui()).doFinally(new Action() { // from class: com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator$$ExternalSyntheticLambda0
+        Observable<Result<List<Network>>> doFinally = this.walletInteractor.getSupportedNetworksWithUpdateCheck().observeOn(this.schedulersProvider.mo1009ui()).doFinally(new Action() { // from class: com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletFlowCoordinator.start$lambda$0(LaunchActivity.this);
@@ -85,12 +85,12 @@ public final class WalletFlowCoordinator {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Network>> result) {
-                m1308invoke(result);
+                m1535invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1308invoke(Result<? extends List<? extends Network>> it) {
+            public final void m1535invoke(Result<? extends List<? extends Network>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends Network>> result = it;

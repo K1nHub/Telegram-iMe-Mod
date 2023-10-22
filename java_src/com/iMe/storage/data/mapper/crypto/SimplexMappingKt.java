@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.simplex.BuyingCryptoQuote;
 import com.iMe.storage.domain.model.crypto.simplex.BuyingCryptoQuoteArgs;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimplexMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SimplexMappingKt {
     public static final BuyingCryptoQuote mapToDomain(GetBuyingCryptoQuoteResponse.CryptoQuote cryptoQuote) {
         Intrinsics.checkNotNullParameter(cryptoQuote, "<this>");

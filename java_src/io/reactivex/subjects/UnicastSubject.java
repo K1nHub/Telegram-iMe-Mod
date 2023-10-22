@@ -11,7 +11,7 @@ import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class UnicastSubject<T> extends Subject<T> {
     final boolean delayError;
     volatile boolean disposed;
@@ -216,7 +216,7 @@ public final class UnicastSubject<T> extends Subject<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     final class UnicastQueueDisposable extends BasicIntQueueDisposable<T> {
         UnicastQueueDisposable() {
         }

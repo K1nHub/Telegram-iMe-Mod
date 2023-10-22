@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.material.datepicker.CalendarConstraints;
 import java.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DateValidatorPointForward implements CalendarConstraints.DateValidator {
     public static final Parcelable.Creator<DateValidatorPointForward> CREATOR = new Parcelable.Creator<DateValidatorPointForward>() { // from class: com.google.android.material.datepicker.DateValidatorPointForward.1
         /* JADX WARN: Can't rename method to resolve collision */

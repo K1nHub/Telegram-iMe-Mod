@@ -2,6 +2,7 @@ package androidx.navigation;
 
 import android.os.Bundle;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
@@ -64,7 +65,7 @@ public abstract class NavigatorState {
         reentrantLock.lock();
         try {
             MutableStateFlow<List<NavBackStackEntry>> mutableStateFlow = this._backStack;
-            plus = CollectionsKt___CollectionsKt.plus(mutableStateFlow.getValue(), backStackEntry);
+            plus = CollectionsKt___CollectionsKt.plus((Collection<? extends Object>) ((Collection) mutableStateFlow.getValue()), (Object) backStackEntry);
             mutableStateFlow.setValue(plus);
             Unit unit = Unit.INSTANCE;
         } finally {
@@ -97,8 +98,8 @@ public abstract class NavigatorState {
         List<NavBackStackEntry> plus;
         Intrinsics.checkNotNullParameter(backStackEntry, "backStackEntry");
         MutableStateFlow<List<NavBackStackEntry>> mutableStateFlow = this._backStack;
-        minus = CollectionsKt___CollectionsKt.minus(mutableStateFlow.getValue(), CollectionsKt.last(this._backStack.getValue()));
-        plus = CollectionsKt___CollectionsKt.plus(minus, backStackEntry);
+        minus = CollectionsKt___CollectionsKt.minus(mutableStateFlow.getValue(), CollectionsKt.last((List<? extends Object>) this._backStack.getValue()));
+        plus = CollectionsKt___CollectionsKt.plus((Collection<? extends Object>) ((Collection) minus), (Object) backStackEntry);
         mutableStateFlow.setValue(plus);
     }
 

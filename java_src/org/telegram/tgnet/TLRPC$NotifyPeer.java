@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$NotifyPeer extends TLObject {
     public static TLRPC$NotifyPeer TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$NotifyPeer tLRPC$TL_notifyPeer;

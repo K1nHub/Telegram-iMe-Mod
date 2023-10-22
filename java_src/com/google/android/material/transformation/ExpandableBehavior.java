@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import com.google.android.material.expandable.ExpandableWidget;
 import java.util.List;
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ExpandableBehavior extends CoordinatorLayout.Behavior<View> {
     private int currentState;
 

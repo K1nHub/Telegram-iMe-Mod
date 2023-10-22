@@ -6,7 +6,7 @@ import org.bouncycastle.crypto.digests.SHA224Digest;
 import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.digests.SHA384Digest;
 import org.bouncycastle.crypto.digests.SHA512Digest;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DigestFactory {
     public static Digest createSHA1() {
         return new SHA1Digest();

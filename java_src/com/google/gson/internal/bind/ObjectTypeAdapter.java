@@ -15,7 +15,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     private static final TypeAdapterFactory DOUBLE_FACTORY = newFactory(ToNumberPolicy.DOUBLE);
     private final Gson gson;
@@ -47,8 +47,8 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.ObjectTypeAdapter$2 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11432 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C10652 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -82,7 +82,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     }
 
     private Object tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-        int i = C11432.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+        int i = C10652.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
         if (i == 1) {
             jsonReader.beginArray();
             return new ArrayList();
@@ -95,7 +95,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     }
 
     private Object readTerminal(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-        int i = C11432.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+        int i = C10652.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
         if (i != 3) {
             if (i != 4) {
                 if (i != 5) {

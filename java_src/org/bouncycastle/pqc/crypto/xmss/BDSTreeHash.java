@@ -6,7 +6,7 @@ import java.util.Stack;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class BDSTreeHash implements Serializable, Cloneable {
     private int height;
     private final int initialHeight;

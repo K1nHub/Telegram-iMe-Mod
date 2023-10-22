@@ -7,19 +7,11 @@ import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
-    private final LinearLayout rootView;
-
     private ForkRecycleItemWalletBannersBinding(LinearLayout linearLayout, ScrollingPagerIndicator scrollingPagerIndicator, RecyclerView recyclerView) {
-        this.rootView = linearLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletBannersBinding inflate(LayoutInflater layoutInflater) {
@@ -27,7 +19,7 @@ public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletBannersBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_banners, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_banners, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +27,10 @@ public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletBannersBinding bind(View view) {
-        int i = C3473R.C3476id.banner_slide_indicator;
+        int i = C3630R.C3633id.banner_slide_indicator;
         ScrollingPagerIndicator scrollingPagerIndicator = (ScrollingPagerIndicator) ViewBindings.findChildViewById(view, i);
         if (scrollingPagerIndicator != null) {
-            i = C3473R.C3476id.recycle_banners;
+            i = C3630R.C3633id.recycle_banners;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkRecycleItemWalletBannersBinding((LinearLayout) view, scrollingPagerIndicator, recyclerView);

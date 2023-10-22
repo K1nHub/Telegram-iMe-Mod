@@ -2,7 +2,7 @@ package com.iMe.model.staking;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingAnnualPercentageData.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingAnnualPercentageData {
     private final String apr;
     private final String apy;

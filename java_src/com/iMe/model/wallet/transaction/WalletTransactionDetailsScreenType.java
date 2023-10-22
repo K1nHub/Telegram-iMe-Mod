@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransactionDetailsScreenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class WalletTransactionDetailsScreenType {
     public /* synthetic */ WalletTransactionDetailsScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -14,7 +14,7 @@ public abstract class WalletTransactionDetailsScreenType {
     }
 
     /* compiled from: WalletTransactionDetailsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TransactionDetails extends WalletTransactionDetailsScreenType {
         private final TransactionItem item;
 
@@ -62,7 +62,7 @@ public abstract class WalletTransactionDetailsScreenType {
     }
 
     /* compiled from: WalletTransactionDetailsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class StakingOperationDetails extends WalletTransactionDetailsScreenType {
         private final StakingOperationItem item;
         private final Network network;
@@ -129,7 +129,7 @@ public abstract class WalletTransactionDetailsScreenType {
     }
 
     /* compiled from: WalletTransactionDetailsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoBoxActionDetails extends WalletTransactionDetailsScreenType {
         private final CryptoBoxActionItem item;
         private final Network network;

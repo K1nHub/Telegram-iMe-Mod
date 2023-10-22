@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import com.iMe.storage.data.network.model.response.wallet.TokenResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetBoostTransactionDataResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SpeedUpTransactionDataResponse {
     private final TokenDetailedResponse feeToken;
     private final TransactionMethodParamsResponse oldTransactionData;
@@ -84,7 +84,7 @@ public final class SpeedUpTransactionDataResponse {
     }
 
     /* compiled from: GetBoostTransactionDataResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TransactionMethodParamsResponse {
         private final String contractMethod;
         private final TransferMethodParamsResponse transferMethodParams;
@@ -148,12 +148,12 @@ public final class SpeedUpTransactionDataResponse {
         }
 
         /* compiled from: GetBoostTransactionDataResponse.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class TransferMethodParamsResponse {
             private final String from;
 
             /* renamed from: to */
-            private final String f388to;
+            private final String f321to;
             private final TokenResponse token;
             private final String value;
 
@@ -162,7 +162,7 @@ public final class SpeedUpTransactionDataResponse {
                     str = transferMethodParamsResponse.from;
                 }
                 if ((i & 2) != 0) {
-                    str2 = transferMethodParamsResponse.f388to;
+                    str2 = transferMethodParamsResponse.f321to;
                 }
                 if ((i & 4) != 0) {
                     str3 = transferMethodParamsResponse.value;
@@ -178,7 +178,7 @@ public final class SpeedUpTransactionDataResponse {
             }
 
             public final String component2() {
-                return this.f388to;
+                return this.f321to;
             }
 
             public final String component3() {
@@ -203,17 +203,17 @@ public final class SpeedUpTransactionDataResponse {
                 }
                 if (obj instanceof TransferMethodParamsResponse) {
                     TransferMethodParamsResponse transferMethodParamsResponse = (TransferMethodParamsResponse) obj;
-                    return Intrinsics.areEqual(this.from, transferMethodParamsResponse.from) && Intrinsics.areEqual(this.f388to, transferMethodParamsResponse.f388to) && Intrinsics.areEqual(this.value, transferMethodParamsResponse.value) && Intrinsics.areEqual(this.token, transferMethodParamsResponse.token);
+                    return Intrinsics.areEqual(this.from, transferMethodParamsResponse.from) && Intrinsics.areEqual(this.f321to, transferMethodParamsResponse.f321to) && Intrinsics.areEqual(this.value, transferMethodParamsResponse.value) && Intrinsics.areEqual(this.token, transferMethodParamsResponse.token);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((this.from.hashCode() * 31) + this.f388to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.token.hashCode();
+                return (((((this.from.hashCode() * 31) + this.f321to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.token.hashCode();
             }
 
             public String toString() {
-                return "TransferMethodParamsResponse(from=" + this.from + ", to=" + this.f388to + ", value=" + this.value + ", token=" + this.token + ')';
+                return "TransferMethodParamsResponse(from=" + this.from + ", to=" + this.f321to + ", value=" + this.value + ", token=" + this.token + ')';
             }
 
             public TransferMethodParamsResponse(String from, String to, String value, TokenResponse token) {
@@ -222,7 +222,7 @@ public final class SpeedUpTransactionDataResponse {
                 Intrinsics.checkNotNullParameter(value, "value");
                 Intrinsics.checkNotNullParameter(token, "token");
                 this.from = from;
-                this.f388to = to;
+                this.f321to = to;
                 this.value = value;
                 this.token = token;
             }
@@ -232,7 +232,7 @@ public final class SpeedUpTransactionDataResponse {
             }
 
             public final String getTo() {
-                return this.f388to;
+                return this.f321to;
             }
 
             public final String getValue() {

@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum EthereumChainID {
     ETHEREUM(1),
     CLASSIC(61),

@@ -5,12 +5,12 @@ import com.iMe.storage.domain.model.crypto.airdrop.AirdropStatus;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletAirdropMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletAirdropMetadata {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: default  reason: not valid java name */
-    private static final WalletAirdropMetadata f1982default = new WalletAirdropMetadata(false, 0, "", AirdropStatus.UNKNOWN, AirdropDisplayStatus.UNKNOWN);
+    private static final WalletAirdropMetadata f2156default = new WalletAirdropMetadata(false, 0, "", AirdropStatus.UNKNOWN, AirdropDisplayStatus.UNKNOWN);
     private final String airdropRequestId;
     private final AirdropStatus airdropStatus;
     private final AirdropDisplayStatus alertStatus;
@@ -61,7 +61,7 @@ public final class WalletAirdropMetadata {
     }
 
     /* compiled from: WalletAirdropMetadata.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -71,7 +71,7 @@ public final class WalletAirdropMetadata {
         }
 
         public final WalletAirdropMetadata getDefault() {
-            return WalletAirdropMetadata.f1982default;
+            return WalletAirdropMetadata.f2156default;
         }
     }
 }

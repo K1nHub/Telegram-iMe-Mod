@@ -4,7 +4,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.IOnDeviceAutoMLImageLabeler */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface IOnDeviceAutoMLImageLabeler extends IInterface {
     void close() throws RemoteException;
 

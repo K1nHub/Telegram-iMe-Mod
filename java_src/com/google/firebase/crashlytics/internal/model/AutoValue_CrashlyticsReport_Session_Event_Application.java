@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Application extends CrashlyticsReport.Session.Event.Application {
     private final Boolean background;
     private final ImmutableList<CrashlyticsReport.CustomAttribute> customAttributes;
@@ -77,7 +77,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application extends Crashl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Builder {
         private Boolean background;
         private ImmutableList<CrashlyticsReport.CustomAttribute> customAttributes;

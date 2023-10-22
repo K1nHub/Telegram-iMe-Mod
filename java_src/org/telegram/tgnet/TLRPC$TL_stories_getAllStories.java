@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_stories_getAllStories extends TLObject {
     public static int constructor = -290400731;
     public int flags;

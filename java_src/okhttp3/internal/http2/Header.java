@@ -4,7 +4,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okio.ByteString;
 /* compiled from: Header.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Header {
     public static final ByteString PSEUDO_PREFIX;
     public static final ByteString RESPONSE_STATUS;
@@ -83,7 +83,7 @@ public final class Header {
     }
 
     /* compiled from: Header.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

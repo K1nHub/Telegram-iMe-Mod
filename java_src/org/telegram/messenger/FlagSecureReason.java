@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.view.Window;
 import java.util.HashMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FlagSecureReason {
     private static HashMap<Window, Integer> currentSecureReasons;
     private final FlagSecureCondition condition;
@@ -10,7 +10,7 @@ public class FlagSecureReason {
     private boolean attached = false;
     private boolean value = false;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface FlagSecureCondition {
         boolean run();
     }

@@ -1,12 +1,16 @@
-.class public Lj$/time/a;
-.super Ljava/lang/RuntimeException;
+.class public abstract synthetic Lj$/time/a;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public static a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .locals 1
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    return-void
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-object v0
 .end method

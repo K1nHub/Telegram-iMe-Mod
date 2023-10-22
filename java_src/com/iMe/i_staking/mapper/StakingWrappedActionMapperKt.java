@@ -10,7 +10,7 @@ import kotlin.TuplesKt;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: StakingWrappedActionMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingWrappedActionMapperKt {
     public static final Pair<String, StakingTransactionAction> mapToDomain(StakingWrappedActionResponse stakingWrappedActionResponse) {
         Intrinsics.checkNotNullParameter(stakingWrappedActionResponse, "<this>");
@@ -24,12 +24,12 @@ public final class StakingWrappedActionMapperKt {
             StakingTransactionGas stakingTransactionGas = (StakingTransactionGas) jwt.getClaim("gas").asObject(StakingTransactionGas.class);
             if (stakingTransactionGas != null) {
                 Intrinsics.checkNotNullExpressionValue(stakingTransactionGas, "jwt.getClaim(GAS_KEY).as…     ?: throw Throwable()");
-                return TuplesKt.m103to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
+                return TuplesKt.m144to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
             }
             throw new Throwable();
         } catch (Exception e) {
             Timber.m6e(e);
-            return TuplesKt.m103to(stakingWrappedActionResponse.getWrappedAction(), null);
+            return TuplesKt.m144to(stakingWrappedActionResponse.getWrappedAction(), null);
         }
     }
 }

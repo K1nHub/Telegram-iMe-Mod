@@ -1,12 +1,12 @@
 package com.iMe.storage.data.mapper.wallet;
 
-import com.iMe.storage.data.locale.p027db.model.wallet.WalletConnectSessionDb;
+import com.iMe.storage.data.locale.p026db.model.wallet.WalletConnectSessionDb;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import com.trustwallet.walletconnect.models.WCPeerMeta;
 import com.trustwallet.walletconnect.models.session.WCSession;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectSessionMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectSessionMappingKt {
     public static final WCSessionStoreItem mapToDomain(WalletConnectSessionDb walletConnectSessionDb) {
         Intrinsics.checkNotNullParameter(walletConnectSessionDb, "<this>");

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenItem extends NoChildNode implements Parcelable {
     public static final Parcelable.Creator<TokenItem> CREATOR = new Creator();
     private final String address;
@@ -18,7 +18,7 @@ public final class TokenItem extends NoChildNode implements Parcelable {
     private final String website;
 
     /* compiled from: TokenItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creator implements Parcelable.Creator<TokenItem> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

@@ -2,7 +2,7 @@ package com.iMe.storage.data.manager.wallet_connect;
 
 import com.iMe.storage.data.utils.extentions.RxExtKt;
 import com.iMe.storage.domain.interactor.crypto.wallet_connect.WalletConnectInteractor;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import io.reactivex.Completable;
 import io.reactivex.disposables.CompositeDisposable;
@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectManagerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lambda implements Function2<Integer, String, Unit> {
     final /* synthetic */ WCSessionStoreItem $sessionStoreItem;
     final /* synthetic */ WalletConnectManagerImpl this$0;
@@ -52,7 +52,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
             walletConnectInteractor = this.this$0.walletConnectInteractor;
             Completable deleteWalletConnectSession = walletConnectInteractor.deleteWalletConnectSession(this.$sessionStoreItem.getSession().getKey());
             schedulersProvider = this.this$0.schedulersProvider;
-            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo716ui());
+            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo1009ui());
             final WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
             final WCSessionStoreItem wCSessionStoreItem = this.$sessionStoreItem;
             Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda0

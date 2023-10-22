@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: FirebaseExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseExtKt {
     public static final <TResult> Observable<TResult> asObservableTask(final Task<TResult> task, final Activity activity) {
         Intrinsics.checkNotNullParameter(task, "<this>");

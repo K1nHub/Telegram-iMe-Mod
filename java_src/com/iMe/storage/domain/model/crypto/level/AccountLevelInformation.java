@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.level;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevelInformation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AccountLevelInformation {
     private final boolean isOwnLevel;
     private boolean isPublic;

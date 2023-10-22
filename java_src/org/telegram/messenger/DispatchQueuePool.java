@@ -3,8 +3,8 @@ package org.telegram.messenger;
 import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.LinkedList;
-import org.telegram.p043ui.Components.Reactions.HwEmojis;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Components.Reactions.HwEmojis;
+/* loaded from: classes4.dex */
 public class DispatchQueuePool {
     private boolean cleanupScheduled;
     private int createdCount;

@@ -7,7 +7,7 @@ import org.bouncycastle.crypto.DataLengthException;
 import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.crypto.OutputLengthException;
 import org.bouncycastle.crypto.params.ParametersWithRandom;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class PaddedBufferedBlockCipher extends BufferedBlockCipher {
     BlockCipherPadding padding;
 

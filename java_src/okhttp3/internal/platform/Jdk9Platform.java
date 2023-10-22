@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Protocol;
 /* compiled from: Jdk9Platform.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Jdk9Platform extends Platform {
     public static final Companion Companion = new Companion(null);
     private static final boolean isAvailable;
@@ -46,7 +46,7 @@ public class Jdk9Platform extends Platform {
     }
 
     /* compiled from: Jdk9Platform.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -48,7 +48,7 @@
 
 
 # virtual methods
-.method H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 0
 
     iget p1, p0, Lj$/util/stream/O;->l:I

@@ -5,10 +5,8 @@ import java.io.InputStream;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.Charset;
 /* compiled from: BufferedSource.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface BufferedSource extends Source, ReadableByteChannel {
-    Buffer buffer();
-
     boolean exhausted() throws IOException;
 
     Buffer getBuffer();

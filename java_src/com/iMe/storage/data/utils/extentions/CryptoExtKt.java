@@ -10,7 +10,7 @@ import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.util.encoders.Hex;
 import timber.log.Timber;
 /* compiled from: CryptoExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoExtKt {
     public static final String aesEncrypt(String textToEncrypt, String password) throws Exception {
         Intrinsics.checkNotNullParameter(textToEncrypt, "textToEncrypt");

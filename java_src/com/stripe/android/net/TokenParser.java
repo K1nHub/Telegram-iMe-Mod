@@ -7,7 +7,7 @@ import com.stripe.android.util.StripeTextUtils;
 import java.util.Date;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class TokenParser {
     private static final String FIELD_CARD = "card";
     private static final String FIELD_CREATED = "created";

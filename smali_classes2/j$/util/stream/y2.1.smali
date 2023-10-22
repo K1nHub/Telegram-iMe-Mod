@@ -13,32 +13,32 @@
 
 
 # virtual methods
-.method abstract n0(Lj$/util/stream/m3;Lj$/util/s;)V
+.method abstract m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 .end method
 
-.method abstract o0(Lj$/util/stream/m3;Lj$/util/s;)V
+.method abstract n0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 .end method
 
-.method abstract p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+.method abstract o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 .end method
 
-.method abstract q0(Lj$/util/s;)J
+.method abstract p0(Lj$/util/Spliterator;)J
 .end method
 
-.method abstract r0()Lj$/util/stream/e4;
+.method abstract q0()Lj$/util/stream/e4;
 .end method
 
-.method abstract s0()I
+.method abstract r0()I
 .end method
 
-.method abstract t0(JLj$/util/function/m;)Lj$/util/stream/s1;
+.method abstract s0(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 .end method
 
-.method abstract u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+.method abstract t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 .end method
 
-.method abstract v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+.method abstract u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 .end method
 
-.method abstract w0(Lj$/util/s;)Lj$/util/s;
+.method abstract v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 .end method

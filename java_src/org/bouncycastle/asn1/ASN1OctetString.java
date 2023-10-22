@@ -7,7 +7,7 @@ import java.util.Objects;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ASN1OctetString extends ASN1Primitive implements ASN1OctetStringParser {
     byte[] string;
 

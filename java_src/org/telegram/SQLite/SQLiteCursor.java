@@ -3,7 +3,7 @@ package org.telegram.SQLite;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
     public static final int FIELD_TYPE_FLOAT = 2;
@@ -95,12 +95,12 @@ public class SQLiteCursor {
                 }
                 try {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m70d("sqlite busy, waiting...");
+                        FileLog.m100d("sqlite busy, waiting...");
                     }
                     Thread.sleep(500L);
                     step = this.preparedStatement.step();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
                 if (step == 0) {
                     break;

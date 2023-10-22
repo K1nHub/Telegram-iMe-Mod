@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_sendVerifyPhoneCode extends TLObject {
     public static int constructor = -1516022023;
     public String phone_number;

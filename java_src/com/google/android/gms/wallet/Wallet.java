@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.ShowFirstParty;
 import com.google.android.gms.wallet.wobs.WalletObjects;
 import java.util.Locale;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Wallet {
     public static final Api<WalletOptions> API;
     public static final WalletObjects zza;
@@ -21,7 +21,7 @@ public final class Wallet {
     private static final Api.AbstractClientBuilder zze;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class WalletOptions implements Api.ApiOptions.HasAccountOptions {
         public final int environment;
         public final int theme;
@@ -30,7 +30,7 @@ public final class Wallet {
         final boolean zzb;
 
         /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Builder {
             private int zza = 3;
             private int zzb = 1;

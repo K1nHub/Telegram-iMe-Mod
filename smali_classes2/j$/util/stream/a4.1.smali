@@ -28,7 +28,7 @@
     return-void
 .end method
 
-.method private v()V
+.method private u()V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/a4;->f:[[Ljava/lang/Object;
@@ -68,7 +68,7 @@
 
     if-ne v0, v1, :cond_2
 
-    invoke-direct {p0}, Lj$/util/stream/a4;->v()V
+    invoke-direct {p0}, Lj$/util/stream/a4;->u()V
 
     iget v0, p0, Lj$/util/stream/e;->c:I
 
@@ -88,7 +88,7 @@
 
     .line 1
     :cond_0
-    invoke-virtual {p0}, Lj$/util/stream/a4;->t()J
+    invoke-virtual {p0}, Lj$/util/stream/a4;->s()J
 
     move-result-wide v0
 
@@ -96,7 +96,7 @@
 
     add-long/2addr v0, v2
 
-    invoke-virtual {p0, v0, v1}, Lj$/util/stream/a4;->u(J)V
+    invoke-virtual {p0, v0, v1}, Lj$/util/stream/a4;->t(J)V
 
     :cond_1
     const/4 v0, 0x0
@@ -261,7 +261,7 @@
 .method public synthetic forEach(Ljava/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
@@ -364,55 +364,19 @@
     .locals 1
 
     .line 1
-    invoke-interface {p0}, Lj$/lang/e;->spliterator()Lj$/util/s;
+    invoke-interface {p0}, Lj$/lang/e;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
     .line 2
-    invoke-static {v0}, Lj$/util/I;->i(Lj$/util/s;)Ljava/util/Iterator;
+    invoke-static {v0}, Lj$/util/F;->i(Lj$/util/Spliterator;)Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public spliterator()Lj$/util/s;
-    .locals 7
-
-    new-instance v6, Lj$/util/stream/S3;
-
-    iget v3, p0, Lj$/util/stream/e;->c:I
-
-    iget v5, p0, Lj$/util/stream/e;->b:I
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/S3;-><init>(Lj$/util/stream/a4;IIII)V
-
-    return-object v6
-.end method
-
-.method public synthetic spliterator()Ljava/util/Spliterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/a4;->spliterator()Lj$/util/s;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/s;)Ljava/util/Spliterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected t()J
+.method protected s()J
     .locals 4
 
     iget v0, p0, Lj$/util/stream/e;->c:I
@@ -446,46 +410,46 @@
     return-wide v0
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 3
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 7
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v6, Lj$/util/stream/S3;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iget v3, p0, Lj$/util/stream/e;->c:I
 
-    new-instance v1, Lj$/util/stream/b;
+    iget v5, p0, Lj$/util/stream/e;->b:I
 
-    invoke-direct {v1, v0}, Lj$/util/stream/b;-><init>(Ljava/util/List;)V
+    const/4 v2, 0x0
 
-    .line 1
-    invoke-interface {p0, v1}, Lj$/lang/e;->forEach(Lj$/util/function/Consumer;)V
+    const/4 v4, 0x0
 
-    .line 2
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-object v0, v6
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v1, p0
 
-    const-string v2, "SpinedBuffer:"
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/S3;-><init>(Lj$/util/stream/a4;IIII)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v6
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+.method public synthetic spliterator()Ljava/util/Spliterator;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/a4;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final u(J)V
+.method protected final t(J)V
     .locals 11
 
-    invoke-virtual {p0}, Lj$/util/stream/a4;->t()J
+    invoke-virtual {p0}, Lj$/util/stream/a4;->s()J
 
     move-result-wide v0
 
@@ -493,7 +457,7 @@
 
     if-lez v2, :cond_1
 
-    invoke-direct {p0}, Lj$/util/stream/a4;->v()V
+    invoke-direct {p0}, Lj$/util/stream/a4;->u()V
 
     iget v2, p0, Lj$/util/stream/e;->c:I
 
@@ -531,7 +495,7 @@
     iput-object v3, p0, Lj$/util/stream/e;->d:[J
 
     :cond_0
-    invoke-virtual {p0, v2}, Lj$/util/stream/e;->s(I)I
+    invoke-virtual {p0, v2}, Lj$/util/stream/e;->r(I)I
 
     move-result v3
 
@@ -565,4 +529,40 @@
 
     :cond_1
     return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v1, Lj$/util/stream/b;
+
+    invoke-direct {v1, v0}, Lj$/util/stream/b;-><init>(Ljava/util/List;)V
+
+    .line 1
+    invoke-interface {p0, v1}, Lj$/lang/e;->forEach(Lj$/util/function/Consumer;)V
+
+    .line 2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "SpinedBuffer:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

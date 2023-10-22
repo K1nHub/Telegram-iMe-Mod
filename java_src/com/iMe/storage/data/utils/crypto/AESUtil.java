@@ -22,7 +22,7 @@ import org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 /* compiled from: AESUtil.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AESUtil {
     public static final AESUtil INSTANCE = new AESUtil();
 
@@ -165,7 +165,7 @@ public final class AESUtil {
     }
 
     /* compiled from: AESUtil.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class DecryptionException extends Exception {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public DecryptionException(String message) {

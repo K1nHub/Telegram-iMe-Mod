@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/DoubleConsumer;
+.implements Lj$/util/function/g;
 
 
 # instance fields
-.field final synthetic a:Lj$/util/function/f;
+.field final synthetic a:Ljava/util/function/DoubleFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/function/f;)V
+.method private synthetic constructor <init>(Ljava/util/function/DoubleFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/A;->a:Lj$/util/function/f;
+    iput-object p1, p0, Lj$/wrappers/A;->a:Ljava/util/function/DoubleFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
+.method public static synthetic a(Ljava/util/function/DoubleFunction;)Lj$/util/function/g;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,50 +30,32 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/z;
+    instance-of v0, p0, Lj$/wrappers/B;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/z;
+    check-cast p0, Lj$/wrappers/B;
 
-    iget-object p0, p0, Lj$/wrappers/z;->a:Ljava/util/function/DoubleConsumer;
+    iget-object p0, p0, Lj$/wrappers/B;->a:Lj$/util/function/g;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/A;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/A;-><init>(Lj$/util/function/f;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/A;-><init>(Ljava/util/function/DoubleFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic accept(D)V
+.method public synthetic apply(D)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/A;->a:Lj$/util/function/f;
+    iget-object v0, p0, Lj$/wrappers/A;->a:Ljava/util/function/DoubleFunction;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/f;->accept(D)V
-
-    return-void
-.end method
-
-.method public synthetic andThen(Ljava/util/function/DoubleConsumer;)Ljava/util/function/DoubleConsumer;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/A;->a:Lj$/util/function/f;
-
-    invoke-static {p1}, Lj$/wrappers/z;->b(Ljava/util/function/DoubleConsumer;)Lj$/util/function/f;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/f;->j(Lj$/util/function/f;)Lj$/util/function/f;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/A;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
+    invoke-interface {v0, p1, p2}, Ljava/util/function/DoubleFunction;->apply(D)Ljava/lang/Object;
 
     move-result-object p1
 

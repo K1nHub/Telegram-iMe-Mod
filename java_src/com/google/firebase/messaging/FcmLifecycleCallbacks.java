@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.WeakHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     private final Set<Intent> seenIntents = Collections.newSetFromMap(new WeakHashMap());
 

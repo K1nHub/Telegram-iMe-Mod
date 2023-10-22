@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Objects;
 /* compiled from: CollectionToArray.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CollectionToArray {
     private static final Object[] EMPTY = new Object[0];
 

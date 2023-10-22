@@ -2,7 +2,7 @@
 .super Lj$/util/stream/H4;
 
 # interfaces
-.implements Lj$/util/s$a;
+.implements Lj$/util/Spliterator$a;
 .implements Lj$/util/function/f;
 
 
@@ -11,18 +11,18 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s$a;JJ)V
+.method constructor <init>(Lj$/util/Spliterator$a;JJ)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lj$/util/stream/H4;-><init>(Lj$/util/t;JJ)V
+    invoke-direct/range {p0 .. p5}, Lj$/util/stream/H4;-><init>(Lj$/util/Spliterator$d;JJ)V
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/s$a;Lj$/util/stream/E4;)V
+.method constructor <init>(Lj$/util/Spliterator$a;Lj$/util/stream/E4;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/H4;-><init>(Lj$/util/t;Lj$/util/stream/H4;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/H4;-><init>(Lj$/util/Spliterator$d;Lj$/util/stream/H4;)V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->j(Lj$/util/s$a;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->f(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -50,7 +50,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->b(Lj$/util/s$a;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->a(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -69,15 +69,15 @@
     return-object v0
 .end method
 
-.method protected q(Lj$/util/s;)Lj$/util/s;
+.method protected q(Lj$/util/Spliterator;)Lj$/util/Spliterator;
     .locals 1
 
-    check-cast p1, Lj$/util/s$a;
+    check-cast p1, Lj$/util/Spliterator$a;
 
     .line 1
     new-instance v0, Lj$/util/stream/E4;
 
-    invoke-direct {v0, p1, p0}, Lj$/util/stream/E4;-><init>(Lj$/util/s$a;Lj$/util/stream/E4;)V
+    invoke-direct {v0, p1, p0}, Lj$/util/stream/E4;-><init>(Lj$/util/Spliterator$a;Lj$/util/stream/E4;)V
 
     return-object v0
 .end method

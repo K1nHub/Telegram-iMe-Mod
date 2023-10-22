@@ -6,7 +6,7 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @KeepForSdk
 /* renamed from: com.google.android.gms.vision.L */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class C0718L {
     @RecentlyNonNull
     @KeepForSdk
@@ -14,7 +14,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: v */
-    public static int m771v(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1063v(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 2)) {
             return Log.v(TAG, String.format(str, objArr));
         }
@@ -23,7 +23,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: d */
-    public static int m776d(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1068d(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 3)) {
             return Log.d(TAG, String.format(str, objArr));
         }
@@ -32,7 +32,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: d */
-    public static int m775d(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1067d(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 3)) {
             return Log.d(TAG, String.format(str, objArr), th);
         }
@@ -41,7 +41,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: i */
-    public static int m772i(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1064i(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 4)) {
             return Log.i(TAG, String.format(str, objArr));
         }
@@ -50,7 +50,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: e */
-    public static int m774e(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1066e(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 6)) {
             return Log.e(TAG, String.format(str, objArr));
         }
@@ -59,7 +59,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: e */
-    public static int m773e(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1065e(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 6)) {
             if (Log.isLoggable(TAG, 3)) {
                 return Log.e(TAG, String.format(str, objArr), th);
@@ -77,7 +77,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: w */
-    public static int m770w(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1062w(@RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 5)) {
             return Log.w(TAG, String.format(str, objArr));
         }
@@ -86,7 +86,7 @@ public class C0718L {
 
     @KeepForSdk
     /* renamed from: w */
-    public static int m769w(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
+    public static int m1061w(@RecentlyNonNull Throwable th, @RecentlyNonNull String str, @RecentlyNonNull Object... objArr) {
         if (Log.isLoggable(TAG, 5)) {
             if (Log.isLoggable(TAG, 3)) {
                 return Log.w(TAG, String.format(str, objArr), th);

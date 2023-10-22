@@ -2,42 +2,42 @@ package com.google.zxing;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ResultPoint {
 
     /* renamed from: x */
-    private final float f314x;
+    private final float f255x;
 
     /* renamed from: y */
-    private final float f315y;
+    private final float f256y;
 
     public ResultPoint(float f, float f2) {
-        this.f314x = f;
-        this.f315y = f2;
+        this.f255x = f;
+        this.f256y = f2;
     }
 
     public final float getX() {
-        return this.f314x;
+        return this.f255x;
     }
 
     public final float getY() {
-        return this.f315y;
+        return this.f256y;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof ResultPoint) {
             ResultPoint resultPoint = (ResultPoint) obj;
-            return this.f314x == resultPoint.f314x && this.f315y == resultPoint.f315y;
+            return this.f255x == resultPoint.f255x && this.f256y == resultPoint.f256y;
         }
         return false;
     }
 
     public final int hashCode() {
-        return (Float.floatToIntBits(this.f314x) * 31) + Float.floatToIntBits(this.f315y);
+        return (Float.floatToIntBits(this.f255x) * 31) + Float.floatToIntBits(this.f256y);
     }
 
     public final String toString() {
-        return "(" + this.f314x + ',' + this.f315y + ')';
+        return "(" + this.f255x + ',' + this.f256y + ')';
     }
 
     public static void orderBestPatterns(ResultPoint[] resultPointArr) {
@@ -71,12 +71,12 @@ public class ResultPoint {
     }
 
     public static float distance(ResultPoint resultPoint, ResultPoint resultPoint2) {
-        return MathUtils.distance(resultPoint.f314x, resultPoint.f315y, resultPoint2.f314x, resultPoint2.f315y);
+        return MathUtils.distance(resultPoint.f255x, resultPoint.f256y, resultPoint2.f255x, resultPoint2.f256y);
     }
 
     private static float crossProductZ(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3) {
-        float f = resultPoint2.f314x;
-        float f2 = resultPoint2.f315y;
-        return ((resultPoint3.f314x - f) * (resultPoint.f315y - f2)) - ((resultPoint3.f315y - f2) * (resultPoint.f314x - f));
+        float f = resultPoint2.f255x;
+        float f2 = resultPoint2.f256y;
+        return ((resultPoint3.f255x - f) * (resultPoint.f256y - f2)) - ((resultPoint3.f256y - f2) * (resultPoint.f255x - f));
     }
 }

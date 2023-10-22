@@ -6,7 +6,7 @@ import android.util.Log;
 import androidx.core.content.PermissionChecker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzbd implements zzay {
     private static zzbd zza;
     private final Context zzb;

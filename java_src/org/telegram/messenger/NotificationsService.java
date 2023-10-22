@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class NotificationsService extends Service {
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {

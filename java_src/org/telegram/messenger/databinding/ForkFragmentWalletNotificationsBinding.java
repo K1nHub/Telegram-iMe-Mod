@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.state.GlobalStateLayout;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentWalletNotificationsBinding implements ViewBinding {
     public final GlobalStateLayout globalStateLayout;
     public final RecyclerView recycleNotifications;
@@ -21,7 +21,6 @@ public final class ForkFragmentWalletNotificationsBinding implements ViewBinding
         this.recycleNotifications = recyclerView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public SwipeRefreshLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkFragmentWalletNotificationsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletNotificationsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_notifications, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_wallet_notifications, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +38,10 @@ public final class ForkFragmentWalletNotificationsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletNotificationsBinding bind(View view) {
-        int i = C3473R.C3476id.global_state_layout;
+        int i = C3630R.C3633id.global_state_layout;
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) ViewBindings.findChildViewById(view, i);
         if (globalStateLayout != null) {
-            i = C3473R.C3476id.recycle_notifications;
+            i = C3630R.C3633id.recycle_notifications;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkFragmentWalletNotificationsBinding((SwipeRefreshLayout) view, globalStateLayout, recyclerView);

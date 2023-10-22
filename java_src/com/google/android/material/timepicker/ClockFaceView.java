@@ -32,7 +32,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.timepicker.ClockHandView;
 import java.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateListener {
     private final int clockHandPadding;
     private final ClockHandView clockHandView;

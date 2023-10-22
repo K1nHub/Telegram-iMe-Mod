@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.voip.NativeInstance;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Instance {
     public static final int AUDIO_STATE_ACTIVE = 1;
     public static final int AUDIO_STATE_MUTED = 0;
@@ -58,22 +58,22 @@ public final class Instance {
     public static final List<String> AVAILABLE_VERSIONS = Arrays.asList("2.4.4", "2.7.7", "5.0.0", "6.0.0", "7.0.0", "8.0.0", "9.0.0", "10.0.0", "11.0.0");
     private static ServerConfig globalServerConfig = new ServerConfig(new JSONObject());
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnRemoteMediaStateUpdatedListener {
         void onMediaStateUpdated(int i, int i2);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnSignalBarsUpdatedListener {
         void onSignalBarsUpdated(int i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnSignalingDataListener {
         void onSignalingData(byte[] bArr);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnStateUpdatedListener {
         void onStateUpdated(int i, boolean z);
     }
@@ -98,7 +98,7 @@ public final class Instance {
             }
         } catch (JSONException e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m68e("failed to parse tgvoip server config", e);
+                FileLog.m98e("failed to parse tgvoip server config", e);
             }
         }
     }
@@ -139,7 +139,7 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Config {
         public final int dataSaving;
         public final boolean enableAec;
@@ -174,11 +174,11 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Endpoint {
 
         /* renamed from: id */
-        public final long f1515id;
+        public final long f1593id;
         public final String ipv4;
         public final String ipv6;
         public final boolean isRtc;
@@ -194,7 +194,7 @@ public final class Instance {
 
         public Endpoint(boolean z, long j, String str, String str2, int i, int i2, byte[] bArr, boolean z2, boolean z3, String str3, String str4, boolean z4) {
             this.isRtc = z;
-            this.f1515id = j;
+            this.f1593id = j;
             this.ipv4 = str;
             this.ipv6 = str2;
             this.port = i;
@@ -216,11 +216,11 @@ public final class Instance {
         }
 
         public String toString() {
-            return "Endpoint{id=" + this.f1515id + ", ipv4='" + this.ipv4 + "', ipv6='" + this.ipv6 + "', port=" + this.port + ", type=" + this.type + ", peerTag=" + Arrays.toString(this.peerTag) + ", turn=" + this.turn + ", stun=" + this.stun + ", username=" + this.username + ", password=" + this.password + ", tcp=" + this.tcp + '}';
+            return "Endpoint{id=" + this.f1593id + ", ipv4='" + this.ipv4 + "', ipv6='" + this.ipv6 + "', port=" + this.port + ", type=" + this.type + ", peerTag=" + Arrays.toString(this.peerTag) + ", turn=" + this.turn + ", stun=" + this.stun + ", username=" + this.username + ", password=" + this.password + ", tcp=" + this.tcp + '}';
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Proxy {
         public final String host;
         public final String login;
@@ -239,7 +239,7 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class EncryptionKey {
         public final boolean isOutgoing;
         public final byte[] value;
@@ -254,7 +254,7 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class FinalState {
         public String debugLog;
         public final boolean isRatingSuggested;
@@ -273,7 +273,7 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class TrafficStats {
         public final long bytesReceivedMobile;
         public final long bytesReceivedWifi;
@@ -292,7 +292,7 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Fingerprint {
         public final String fingerprint;
         public final String hash;
@@ -309,17 +309,17 @@ public final class Instance {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Candidate {
         public final String component;
         public final String foundation;
         public final String generation;
 
         /* renamed from: id */
-        public final String f1513id;
+        public final String f1591id;
 
         /* renamed from: ip */
-        public final String f1514ip;
+        public final String f1592ip;
         public final String network;
         public final String port;
         public final String priority;
@@ -334,11 +334,11 @@ public final class Instance {
             this.protocol = str2;
             this.network = str3;
             this.generation = str4;
-            this.f1513id = str5;
+            this.f1591id = str5;
             this.component = str6;
             this.foundation = str7;
             this.priority = str8;
-            this.f1514ip = str9;
+            this.f1592ip = str9;
             this.type = str10;
             this.tcpType = str11;
             this.relAddr = str12;
@@ -346,11 +346,11 @@ public final class Instance {
         }
 
         public String toString() {
-            return "Candidate{port=" + this.port + ", protocol=" + this.protocol + ", network=" + this.network + ", generation=" + this.generation + ", id=" + this.f1513id + ", component=" + this.component + ", foundation=" + this.foundation + ", priority=" + this.priority + ", ip=" + this.f1514ip + ", type=" + this.type + ", tcpType=" + this.tcpType + ", relAddr=" + this.relAddr + ", relPort=" + this.relPort + '}';
+            return "Candidate{port=" + this.port + ", protocol=" + this.protocol + ", network=" + this.network + ", generation=" + this.generation + ", id=" + this.f1591id + ", component=" + this.component + ", foundation=" + this.foundation + ", priority=" + this.priority + ", ip=" + this.f1592ip + ", type=" + this.type + ", tcpType=" + this.tcpType + ", relAddr=" + this.relAddr + ", relPort=" + this.relPort + '}';
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ServerConfig {
         public final boolean enableStunMarking;
         public final boolean enable_h264_decoder;

@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.binancepay;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceConvertQuote.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceConvertQuote {
     private final double inputAmount;
     private final String inputToken;
@@ -62,7 +62,7 @@ public final class BinanceConvertQuote {
     }
 
     public int hashCode() {
-        return (((((((((((this.quoteId.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.inputAmount)) * 31) + this.inputToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.outputAmount)) * 31) + this.outputToken.hashCode()) * 31) + this.inputTokenShortName.hashCode()) * 31) + this.outputTokenShortName.hashCode();
+        return (((((((((((this.quoteId.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.inputAmount)) * 31) + this.inputToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.outputAmount)) * 31) + this.outputToken.hashCode()) * 31) + this.inputTokenShortName.hashCode()) * 31) + this.outputTokenShortName.hashCode();
     }
 
     public String toString() {

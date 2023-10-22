@@ -1,10 +1,10 @@
 package com.google.android.gms.wallet.wobs;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletObjectsConstants {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface State {
         public static final int ACTIVE = 1;
         public static final int COMPLETED = 2;

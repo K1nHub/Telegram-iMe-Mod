@@ -16,10 +16,10 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Nervos {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface CellDepOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -36,7 +36,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface CellOrBuilder extends MessageLiteOrBuilder {
         ByteString getBlockHash();
 
@@ -71,7 +71,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface CellOutputOrBuilder extends MessageLiteOrBuilder {
         long getCapacity();
 
@@ -90,7 +90,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DaoDepositOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -109,7 +109,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DaoWithdrawPhase1OrBuilder extends MessageLiteOrBuilder {
         String getChangeAddress();
 
@@ -126,7 +126,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DaoWithdrawPhase2OrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -145,7 +145,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface NativeTransferOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -166,7 +166,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface OutPointOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -179,7 +179,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface ScriptOrBuilder extends MessageLiteOrBuilder {
         ByteString getArgs();
 
@@ -196,7 +196,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         long getByteFee();
 
@@ -245,7 +245,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -266,7 +266,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SudtTransferOrBuilder extends MessageLiteOrBuilder {
         String getAmount();
 
@@ -291,7 +291,7 @@ public final class Nervos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionPlanOrBuilder extends MessageLiteOrBuilder {
         CellDep getCellDeps(int index);
 
@@ -340,7 +340,7 @@ public final class Nervos {
     private Nervos() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionPlan extends GeneratedMessageLite<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
         public static final int CELL_DEPS_FIELD_NUMBER = 1;
         private static final TransactionPlan DEFAULT_INSTANCE;
@@ -745,9 +745,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -1071,7 +1071,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionPlan();
                 case 2:
@@ -1117,47 +1117,47 @@ public final class Nervos {
     }
 
     /* renamed from: wallet.core.jni.proto.Nervos$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73471 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76811 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1963xa1df5c61;
+        static final /* synthetic */ int[] f2137xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1963xa1df5c61 = iArr;
+            f2137xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1963xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2137xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class CellDep extends GeneratedMessageLite<CellDep, Builder> implements CellDepOrBuilder {
         private static final CellDep DEFAULT_INSTANCE;
         public static final int DEP_TYPE_FIELD_NUMBER = 1;
@@ -1285,9 +1285,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CellDep, Builder> implements CellDepOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -1360,7 +1360,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CellDep();
                 case 2:
@@ -1405,7 +1405,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class OutPoint extends GeneratedMessageLite<OutPoint, Builder> implements OutPointOrBuilder {
         private static final OutPoint DEFAULT_INSTANCE;
         public static final int INDEX_FIELD_NUMBER = 2;
@@ -1504,9 +1504,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OutPoint, Builder> implements OutPointOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -1551,7 +1551,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OutPoint();
                 case 2:
@@ -1596,7 +1596,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class CellOutput extends GeneratedMessageLite<CellOutput, Builder> implements CellOutputOrBuilder {
         public static final int CAPACITY_FIELD_NUMBER = 1;
         private static final CellOutput DEFAULT_INSTANCE;
@@ -1747,9 +1747,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CellOutput, Builder> implements CellOutputOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -1845,7 +1845,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CellOutput();
                 case 2:
@@ -1890,7 +1890,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Script extends GeneratedMessageLite<Script, Builder> implements ScriptOrBuilder {
         public static final int ARGS_FIELD_NUMBER = 3;
         public static final int CODE_HASH_FIELD_NUMBER = 1;
@@ -2023,9 +2023,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Script, Builder> implements ScriptOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -2098,7 +2098,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Script();
                 case 2:
@@ -2143,7 +2143,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class NativeTransfer extends GeneratedMessageLite<NativeTransfer, Builder> implements NativeTransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         public static final int CHANGE_ADDRESS_FIELD_NUMBER = 2;
@@ -2299,9 +2299,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<NativeTransfer, Builder> implements NativeTransferOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -2402,7 +2402,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new NativeTransfer();
                 case 2:
@@ -2447,7 +2447,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SudtTransfer extends GeneratedMessageLite<SudtTransfer, Builder> implements SudtTransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 4;
         public static final int CHANGE_ADDRESS_FIELD_NUMBER = 2;
@@ -2633,9 +2633,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SudtTransfer, Builder> implements SudtTransferOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -2764,7 +2764,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SudtTransfer();
                 case 2:
@@ -2809,7 +2809,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DaoDeposit extends GeneratedMessageLite<DaoDeposit, Builder> implements DaoDepositOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         public static final int CHANGE_ADDRESS_FIELD_NUMBER = 2;
@@ -2948,9 +2948,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DaoDeposit, Builder> implements DaoDepositOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -3034,7 +3034,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DaoDeposit();
                 case 2:
@@ -3079,7 +3079,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DaoWithdrawPhase1 extends GeneratedMessageLite<DaoWithdrawPhase1, Builder> implements DaoWithdrawPhase1OrBuilder {
         public static final int CHANGE_ADDRESS_FIELD_NUMBER = 2;
         private static final DaoWithdrawPhase1 DEFAULT_INSTANCE;
@@ -3207,9 +3207,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DaoWithdrawPhase1, Builder> implements DaoWithdrawPhase1OrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -3282,7 +3282,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DaoWithdrawPhase1();
                 case 2:
@@ -3327,7 +3327,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DaoWithdrawPhase2 extends GeneratedMessageLite<DaoWithdrawPhase2, Builder> implements DaoWithdrawPhase2OrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         private static final DaoWithdrawPhase2 DEFAULT_INSTANCE;
@@ -3478,9 +3478,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DaoWithdrawPhase2, Builder> implements DaoWithdrawPhase2OrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -3576,7 +3576,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DaoWithdrawPhase2();
                 case 2:
@@ -3621,7 +3621,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int BYTE_FEE_FIELD_NUMBER = 1;
         public static final int CELL_FIELD_NUMBER = 3;
@@ -3644,7 +3644,7 @@ public final class Nervos {
         private SigningInput() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum OperationOneofCase {
             NATIVE_TRANSFER(5),
             SUDT_TRANSFER(6),
@@ -4116,9 +4116,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -4469,7 +4469,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4514,7 +4514,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Cell extends GeneratedMessageLite<Cell, Builder> implements CellOrBuilder {
         public static final int BLOCK_HASH_FIELD_NUMBER = 7;
         public static final int BLOCK_NUMBER_FIELD_NUMBER = 6;
@@ -4811,9 +4811,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Cell, Builder> implements CellOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -5045,7 +5045,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Cell();
                 case 2:
@@ -5090,7 +5090,7 @@ public final class Nervos {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ERROR_FIELD_NUMBER = 3;
@@ -5240,9 +5240,9 @@ public final class Nervos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73471 c73471) {
+            /* synthetic */ Builder(C76811 c76811) {
                 this();
             }
 
@@ -5337,7 +5337,7 @@ public final class Nervos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73471.f1963xa1df5c61[method.ordinal()]) {
+            switch (C76811.f2137xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

@@ -1,7 +1,7 @@
 package com.stripe.android.time;
 
 import java.util.Calendar;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FrozenClock extends Clock {
     public static void freeze(Calendar calendar) {
         Clock.getInstance().calendarInstance = calendar;

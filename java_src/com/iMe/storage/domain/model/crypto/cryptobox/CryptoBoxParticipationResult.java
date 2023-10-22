@@ -1,8 +1,8 @@
 package com.iMe.storage.domain.model.crypto.cryptobox;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 /* compiled from: CryptoBoxParticipationResult.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxParticipationResult {
     private final long expectedDurationSeconds;
     private final boolean isQueued;
@@ -50,7 +50,7 @@ public final class CryptoBoxParticipationResult {
         if (z) {
             r0 = 1;
         }
-        return (r0 * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.expectedDurationSeconds);
+        return (r0 * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.expectedDurationSeconds);
     }
 
     public String toString() {

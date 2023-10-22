@@ -16,7 +16,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 /* compiled from: TonConfigRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TonConfigRepositoryImpl implements TonConfigRepository {
     private final ApiErrorHandler errorHandler;
     private final OkHttpClient okHttpClient;

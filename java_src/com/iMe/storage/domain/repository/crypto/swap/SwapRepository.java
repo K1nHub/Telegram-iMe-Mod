@@ -14,7 +14,7 @@ import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: SwapRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface SwapRepository {
     Observable<Result<String>> approveToken(ApproveArgs approveArgs);
 

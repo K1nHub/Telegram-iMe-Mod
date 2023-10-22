@@ -11,7 +11,7 @@ import okhttp3.internal.platform.Platform;
 import okhttp3.internal.platform.android.DeferredSocketAdapter;
 import org.conscrypt.Conscrypt;
 /* compiled from: ConscryptSocketAdapter.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ConscryptSocketAdapter implements SocketAdapter {
     public static final Companion Companion = new Companion(null);
     private static final DeferredSocketAdapter.Factory factory = new DeferredSocketAdapter.Factory() { // from class: okhttp3.internal.platform.android.ConscryptSocketAdapter$Companion$factory$1
@@ -61,7 +61,7 @@ public final class ConscryptSocketAdapter implements SocketAdapter {
     }
 
     /* compiled from: ConscryptSocketAdapter.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -231,7 +231,7 @@ public final class GapWorker implements Runnable {
             }
             return tryGetViewHolderForPositionByDeadline;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: androidx.recyclerview.widget.GapWorker$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {

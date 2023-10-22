@@ -19,7 +19,7 @@ import com.google.android.gms.vision.Frame;
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TextRecognizer extends Detector<TextBlock> {
     private final zzan zza;
 
@@ -32,7 +32,7 @@ public final class TextRecognizer extends Detector<TextBlock> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private Context zza;
         private zzam zzb = new zzam();

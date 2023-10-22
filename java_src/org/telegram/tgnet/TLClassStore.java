@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import android.util.SparseArray;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLClassStore {
     static TLClassStore store;
     private SparseArray<Class> classStore;
@@ -47,7 +47,7 @@ public class TLClassStore {
                 tLObject.readParams(nativeByteBuffer, z);
                 return tLObject;
             } catch (Throwable th) {
-                FileLog.m67e(th);
+                FileLog.m97e(th);
             }
         }
         return null;

@@ -3,7 +3,7 @@ package okio;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Okio.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BlackholeSink implements Sink {
     @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
     public void close() {

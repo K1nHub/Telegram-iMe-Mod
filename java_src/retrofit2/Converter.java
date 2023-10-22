@@ -6,11 +6,11 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public interface Converter<F, T> {
     T convert(F f) throws IOException;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Factory {
         public Converter<?, RequestBody> requestBodyConverter(Type type, Annotation[] annotationArr, Annotation[] annotationArr2, Retrofit retrofit) {
             return null;

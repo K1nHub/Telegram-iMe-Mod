@@ -3,7 +3,7 @@ package com.iMe.model.staking;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.exoplayer2.C0479C;
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: StakingDetailsItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDetailsItem implements Parcelable {
     public static final Parcelable.Creator<StakingDetailsItem> CREATOR = new Creator();
     private final StakingAnnualPercentageMode annualPercentageMode;
@@ -32,7 +32,7 @@ public final class StakingDetailsItem implements Parcelable {
     private final boolean hasEnoughFunds;
 
     /* renamed from: id */
-    private final long f358id;
+    private final long f291id;
     private final double immediateWithdrawalFeePercentage;
     private final BigDecimal impact;
     private final double incomePercent;
@@ -48,7 +48,7 @@ public final class StakingDetailsItem implements Parcelable {
     private final String website;
 
     /* compiled from: StakingDetailsItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creator implements Parcelable.Creator<StakingDetailsItem> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator
@@ -69,7 +69,7 @@ public final class StakingDetailsItem implements Parcelable {
     }
 
     public static /* synthetic */ StakingDetailsItem copy$default(StakingDetailsItem stakingDetailsItem, long j, String str, String str2, TokenItem tokenItem, String str3, TokenItem tokenItem2, String str4, String str5, BigDecimal bigDecimal, String str6, String str7, String str8, String str9, BigDecimal bigDecimal2, BigDecimal bigDecimal3, double d, boolean z, boolean z2, double d2, double d3, double d4, long j2, StakingAnnualPercentageMode stakingAnnualPercentageMode, boolean z3, AccountLevel accountLevel, String str10, long j3, double d5, int i, Object obj) {
-        long j4 = (i & 1) != 0 ? stakingDetailsItem.f358id : j;
+        long j4 = (i & 1) != 0 ? stakingDetailsItem.f291id : j;
         String str11 = (i & 2) != 0 ? stakingDetailsItem.name : str;
         String str12 = (i & 4) != 0 ? stakingDetailsItem.author : str2;
         TokenItem tokenItem3 = (i & 8) != 0 ? stakingDetailsItem.tokenItem : tokenItem;
@@ -85,7 +85,7 @@ public final class StakingDetailsItem implements Parcelable {
     }
 
     public final long component1() {
-        return this.f358id;
+        return this.f291id;
     }
 
     public final String component10() {
@@ -228,38 +228,38 @@ public final class StakingDetailsItem implements Parcelable {
         }
         if (obj instanceof StakingDetailsItem) {
             StakingDetailsItem stakingDetailsItem = (StakingDetailsItem) obj;
-            return this.f358id == stakingDetailsItem.f358id && Intrinsics.areEqual(this.name, stakingDetailsItem.name) && Intrinsics.areEqual(this.author, stakingDetailsItem.author) && Intrinsics.areEqual(this.tokenItem, stakingDetailsItem.tokenItem) && Intrinsics.areEqual(this.contract, stakingDetailsItem.contract) && Intrinsics.areEqual(this.feeTokenItem, stakingDetailsItem.feeTokenItem) && Intrinsics.areEqual(this.formattedAPR, stakingDetailsItem.formattedAPR) && Intrinsics.areEqual(this.formattedAPY, stakingDetailsItem.formattedAPY) && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingDetailsItem.compoundAccrualThreshold) && Intrinsics.areEqual(this.startsAt, stakingDetailsItem.startsAt) && Intrinsics.areEqual(this.startsAtISO, stakingDetailsItem.startsAtISO) && Intrinsics.areEqual(this.endsAt, stakingDetailsItem.endsAt) && Intrinsics.areEqual(this.endsAtISO, stakingDetailsItem.endsAtISO) && Intrinsics.areEqual(this.impact, stakingDetailsItem.impact) && Intrinsics.areEqual(this.debt, stakingDetailsItem.debt) && Double.compare(this.availableForClaim, stakingDetailsItem.availableForClaim) == 0 && this.canWithdrawSafely == stakingDetailsItem.canWithdrawSafely && this.canWithdrawImmediately == stakingDetailsItem.canWithdrawImmediately && Double.compare(this.prematureWithdrawalFeePercentage, stakingDetailsItem.prematureWithdrawalFeePercentage) == 0 && Double.compare(this.immediateWithdrawalFeePercentage, stakingDetailsItem.immediateWithdrawalFeePercentage) == 0 && Double.compare(this.safeWithdrawalFeePercentage, stakingDetailsItem.safeWithdrawalFeePercentage) == 0 && this.safeWithdrawalDuration == stakingDetailsItem.safeWithdrawalDuration && this.annualPercentageMode == stakingDetailsItem.annualPercentageMode && this.hasEnoughFunds == stakingDetailsItem.hasEnoughFunds && this.minimalRank == stakingDetailsItem.minimalRank && Intrinsics.areEqual(this.website, stakingDetailsItem.website) && this.incomePeriod == stakingDetailsItem.incomePeriod && Double.compare(this.incomePercent, stakingDetailsItem.incomePercent) == 0;
+            return this.f291id == stakingDetailsItem.f291id && Intrinsics.areEqual(this.name, stakingDetailsItem.name) && Intrinsics.areEqual(this.author, stakingDetailsItem.author) && Intrinsics.areEqual(this.tokenItem, stakingDetailsItem.tokenItem) && Intrinsics.areEqual(this.contract, stakingDetailsItem.contract) && Intrinsics.areEqual(this.feeTokenItem, stakingDetailsItem.feeTokenItem) && Intrinsics.areEqual(this.formattedAPR, stakingDetailsItem.formattedAPR) && Intrinsics.areEqual(this.formattedAPY, stakingDetailsItem.formattedAPY) && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingDetailsItem.compoundAccrualThreshold) && Intrinsics.areEqual(this.startsAt, stakingDetailsItem.startsAt) && Intrinsics.areEqual(this.startsAtISO, stakingDetailsItem.startsAtISO) && Intrinsics.areEqual(this.endsAt, stakingDetailsItem.endsAt) && Intrinsics.areEqual(this.endsAtISO, stakingDetailsItem.endsAtISO) && Intrinsics.areEqual(this.impact, stakingDetailsItem.impact) && Intrinsics.areEqual(this.debt, stakingDetailsItem.debt) && Double.compare(this.availableForClaim, stakingDetailsItem.availableForClaim) == 0 && this.canWithdrawSafely == stakingDetailsItem.canWithdrawSafely && this.canWithdrawImmediately == stakingDetailsItem.canWithdrawImmediately && Double.compare(this.prematureWithdrawalFeePercentage, stakingDetailsItem.prematureWithdrawalFeePercentage) == 0 && Double.compare(this.immediateWithdrawalFeePercentage, stakingDetailsItem.immediateWithdrawalFeePercentage) == 0 && Double.compare(this.safeWithdrawalFeePercentage, stakingDetailsItem.safeWithdrawalFeePercentage) == 0 && this.safeWithdrawalDuration == stakingDetailsItem.safeWithdrawalDuration && this.annualPercentageMode == stakingDetailsItem.annualPercentageMode && this.hasEnoughFunds == stakingDetailsItem.hasEnoughFunds && this.minimalRank == stakingDetailsItem.minimalRank && Intrinsics.areEqual(this.website, stakingDetailsItem.website) && this.incomePeriod == stakingDetailsItem.incomePeriod && Double.compare(this.incomePercent, stakingDetailsItem.incomePercent) == 0;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((((((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f358id) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.tokenItem.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.feeTokenItem.hashCode()) * 31) + this.formattedAPR.hashCode()) * 31) + this.formattedAPY.hashCode()) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.startsAtISO.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.endsAtISO.hashCode()) * 31) + this.impact.hashCode()) * 31) + this.debt.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.availableForClaim)) * 31;
+        int m1017m = ((((((((((((((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f291id) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.tokenItem.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.feeTokenItem.hashCode()) * 31) + this.formattedAPR.hashCode()) * 31) + this.formattedAPY.hashCode()) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.startsAtISO.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.endsAtISO.hashCode()) * 31) + this.impact.hashCode()) * 31) + this.debt.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.availableForClaim)) * 31;
         boolean z = this.canWithdrawSafely;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        int i2 = (m724m + i) * 31;
+        int i2 = (m1017m + i) * 31;
         boolean z2 = this.canWithdrawImmediately;
         int i3 = z2;
         if (z2 != 0) {
             i3 = 1;
         }
-        int m718m = (((((((((((i2 + i3) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.prematureWithdrawalFeePercentage)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.immediateWithdrawalFeePercentage)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.safeWithdrawalFeePercentage)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.safeWithdrawalDuration)) * 31) + this.annualPercentageMode.hashCode()) * 31;
+        int m1011m = (((((((((((i2 + i3) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.prematureWithdrawalFeePercentage)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.immediateWithdrawalFeePercentage)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.safeWithdrawalFeePercentage)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.safeWithdrawalDuration)) * 31) + this.annualPercentageMode.hashCode()) * 31;
         boolean z3 = this.hasEnoughFunds;
-        return ((((((((m718m + (z3 ? 1 : z3 ? 1 : 0)) * 31) + this.minimalRank.hashCode()) * 31) + this.website.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.incomePeriod)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.incomePercent);
+        return ((((((((m1011m + (z3 ? 1 : z3 ? 1 : 0)) * 31) + this.minimalRank.hashCode()) * 31) + this.website.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.incomePeriod)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.incomePercent);
     }
 
     public String toString() {
-        return "StakingDetailsItem(id=" + this.f358id + ", name=" + this.name + ", author=" + this.author + ", tokenItem=" + this.tokenItem + ", contract=" + this.contract + ", feeTokenItem=" + this.feeTokenItem + ", formattedAPR=" + this.formattedAPR + ", formattedAPY=" + this.formattedAPY + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", startsAt=" + this.startsAt + ", startsAtISO=" + this.startsAtISO + ", endsAt=" + this.endsAt + ", endsAtISO=" + this.endsAtISO + ", impact=" + this.impact + ", debt=" + this.debt + ", availableForClaim=" + this.availableForClaim + ", canWithdrawSafely=" + this.canWithdrawSafely + ", canWithdrawImmediately=" + this.canWithdrawImmediately + ", prematureWithdrawalFeePercentage=" + this.prematureWithdrawalFeePercentage + ", immediateWithdrawalFeePercentage=" + this.immediateWithdrawalFeePercentage + ", safeWithdrawalFeePercentage=" + this.safeWithdrawalFeePercentage + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", annualPercentageMode=" + this.annualPercentageMode + ", hasEnoughFunds=" + this.hasEnoughFunds + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ')';
+        return "StakingDetailsItem(id=" + this.f291id + ", name=" + this.name + ", author=" + this.author + ", tokenItem=" + this.tokenItem + ", contract=" + this.contract + ", feeTokenItem=" + this.feeTokenItem + ", formattedAPR=" + this.formattedAPR + ", formattedAPY=" + this.formattedAPY + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", startsAt=" + this.startsAt + ", startsAtISO=" + this.startsAtISO + ", endsAt=" + this.endsAt + ", endsAtISO=" + this.endsAtISO + ", impact=" + this.impact + ", debt=" + this.debt + ", availableForClaim=" + this.availableForClaim + ", canWithdrawSafely=" + this.canWithdrawSafely + ", canWithdrawImmediately=" + this.canWithdrawImmediately + ", prematureWithdrawalFeePercentage=" + this.prematureWithdrawalFeePercentage + ", immediateWithdrawalFeePercentage=" + this.immediateWithdrawalFeePercentage + ", safeWithdrawalFeePercentage=" + this.safeWithdrawalFeePercentage + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", annualPercentageMode=" + this.annualPercentageMode + ", hasEnoughFunds=" + this.hasEnoughFunds + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ')';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel out, int i) {
         Intrinsics.checkNotNullParameter(out, "out");
-        out.writeLong(this.f358id);
+        out.writeLong(this.f291id);
         out.writeString(this.name);
         out.writeString(this.author);
         this.tokenItem.writeToParcel(out, i);
@@ -307,7 +307,7 @@ public final class StakingDetailsItem implements Parcelable {
         Intrinsics.checkNotNullParameter(annualPercentageMode, "annualPercentageMode");
         Intrinsics.checkNotNullParameter(minimalRank, "minimalRank");
         Intrinsics.checkNotNullParameter(website, "website");
-        this.f358id = j;
+        this.f291id = j;
         this.name = name;
         this.author = author;
         this.tokenItem = tokenItem;
@@ -338,7 +338,7 @@ public final class StakingDetailsItem implements Parcelable {
     }
 
     public final long getId() {
-        return this.f358id;
+        return this.f291id;
     }
 
     public final String getName() {

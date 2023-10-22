@@ -9,7 +9,7 @@ import kotlinx.coroutines.internal.ContextScope;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 /* compiled from: CoroutineScope.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineScopeKt {
     public static final CoroutineScope plus(CoroutineScope coroutineScope, CoroutineContext coroutineContext) {
         return new ContextScope(coroutineScope.getCoroutineContext().plus(coroutineContext));

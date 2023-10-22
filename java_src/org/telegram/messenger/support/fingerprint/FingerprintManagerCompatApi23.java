@@ -8,10 +8,10 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FingerprintManagerCompatApi23 {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static abstract class AuthenticationCallback {
         public abstract void onAuthenticationError(int i, CharSequence charSequence);
 
@@ -34,7 +34,7 @@ public final class FingerprintManagerCompatApi23 {
             }
             return fingerprintManager.hasEnrolledFingerprints();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -47,7 +47,7 @@ public final class FingerprintManagerCompatApi23 {
             }
             return fingerprintManager.isHardwareDetected();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -56,7 +56,7 @@ public final class FingerprintManagerCompatApi23 {
         try {
             getFingerprintManager(context).authenticate(wrapCryptoObject(cryptoObject), (CancellationSignal) obj, i, wrapCallback(authenticationCallback), handler);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -117,7 +117,7 @@ public final class FingerprintManagerCompatApi23 {
         };
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class CryptoObject {
         private final Cipher mCipher;
         private final Mac mMac;
@@ -154,7 +154,7 @@ public final class FingerprintManagerCompatApi23 {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class AuthenticationResultInternal {
         private CryptoObject mCryptoObject;
 

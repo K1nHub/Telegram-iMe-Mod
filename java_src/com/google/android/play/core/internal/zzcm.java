@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzcm implements Closeable {
     public abstract long zza();
 

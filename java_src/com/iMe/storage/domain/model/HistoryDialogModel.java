@@ -1,8 +1,8 @@
 package com.iMe.storage.domain.model;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 /* compiled from: HistoryDialogModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class HistoryDialogModel {
     private long creationDate;
     private final long dialogId;
@@ -52,13 +52,13 @@ public final class HistoryDialogModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.dialogId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.creationDate)) * 31;
+        int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.dialogId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.creationDate)) * 31;
         boolean z = this.isPinned;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m724m + i;
+        return m1017m + i;
     }
 
     public String toString() {

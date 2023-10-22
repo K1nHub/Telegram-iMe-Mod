@@ -1,5 +1,5 @@
 package kotlinx.coroutines;
 /* compiled from: CancellableContinuationImpl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class CancelHandler extends CancelHandlerBase implements NotCompleted {
 }

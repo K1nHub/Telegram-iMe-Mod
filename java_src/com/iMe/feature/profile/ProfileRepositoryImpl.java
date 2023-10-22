@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ProfileRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ProfileRepositoryImpl implements ProfileRepository {
     private ProfileData currentProfile;
     private final TelegramGateway telegramGateway;

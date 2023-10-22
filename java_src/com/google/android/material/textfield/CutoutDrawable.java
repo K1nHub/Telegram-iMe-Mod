@@ -11,7 +11,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class CutoutDrawable extends MaterialShapeDrawable {
     private final RectF cutoutBounds;
     private final Paint cutoutPaint;

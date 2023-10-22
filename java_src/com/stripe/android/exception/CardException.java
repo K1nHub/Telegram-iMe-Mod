@@ -1,5 +1,5 @@
 package com.stripe.android.exception;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CardException extends StripeException {
     private String charge;
     private String code;

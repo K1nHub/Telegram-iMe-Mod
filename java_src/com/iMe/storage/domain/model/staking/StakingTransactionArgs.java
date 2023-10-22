@@ -1,12 +1,12 @@
 package com.iMe.storage.domain.model.staking;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingTransactionArgs implements TransactionArgs {
     private final long chainId;
     private final String data;
@@ -16,7 +16,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f442to;
+    private final String f375to;
     private final int value;
 
     public final long component1() {
@@ -28,7 +28,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String component3() {
-        return this.f442to;
+        return this.f375to;
     }
 
     public final int component4() {
@@ -67,17 +67,17 @@ public final class StakingTransactionArgs implements TransactionArgs {
         }
         if (obj instanceof StakingTransactionArgs) {
             StakingTransactionArgs stakingTransactionArgs = (StakingTransactionArgs) obj;
-            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f442to, stakingTransactionArgs.f442to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
+            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f375to, stakingTransactionArgs.f375to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f442to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f375to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {
-        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f442to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
+        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f375to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
     }
 
     public StakingTransactionArgs(long j, String from, String to, int i, String data, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit) {
@@ -89,7 +89,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
         Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
         this.chainId = j;
         this.from = from;
-        this.f442to = to;
+        this.f375to = to;
         this.value = i;
         this.data = data;
         this.nonce = nonce;
@@ -110,7 +110,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String getTo() {
-        return this.f442to;
+        return this.f375to;
     }
 
     public final int getValue() {

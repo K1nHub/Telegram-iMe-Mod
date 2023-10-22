@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzae extends zzb implements zzaf {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzae(IBinder iBinder) {
@@ -16,10 +16,10 @@ public final class zzae extends zzb implements zzaf {
     @Override // com.google.android.gms.internal.vision.zzaf
     public final zzad zza(IObjectWrapper iObjectWrapper, zzam zzamVar) throws RemoteException {
         zzad zzacVar;
-        Parcel m778a_ = m778a_();
-        zzd.zza(m778a_, iObjectWrapper);
-        zzd.zza(m778a_, zzamVar);
-        Parcel zza = zza(1, m778a_);
+        Parcel m1070a_ = m1070a_();
+        zzd.zza(m1070a_, iObjectWrapper);
+        zzd.zza(m1070a_, zzamVar);
+        Parcel zza = zza(1, m1070a_);
         IBinder readStrongBinder = zza.readStrongBinder();
         if (readStrongBinder == null) {
             zzacVar = null;

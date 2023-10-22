@@ -7,13 +7,13 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscriber<T>, QueueSubscription<R> {
     protected boolean done;
     protected final Subscriber<? super R> downstream;
 
     /* renamed from: qs */
-    protected QueueSubscription<T> f563qs;
+    protected QueueSubscription<T> f476qs;
     protected int sourceMode;
     protected Subscription upstream;
 
@@ -33,7 +33,7 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
         if (SubscriptionHelper.validate(this.upstream, subscription)) {
             this.upstream = subscription;
             if (subscription instanceof QueueSubscription) {
-                this.f563qs = (QueueSubscription) subscription;
+                this.f476qs = (QueueSubscription) subscription;
             }
             if (beforeDownstream()) {
                 this.downstream.onSubscribe(this);
@@ -70,7 +70,7 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int transitiveBoundaryFusion(int i) {
-        QueueSubscription<T> queueSubscription = this.f563qs;
+        QueueSubscription<T> queueSubscription = this.f476qs;
         if (queueSubscription == null || (i & 4) != 0) {
             return 0;
         }
@@ -93,12 +93,12 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public boolean isEmpty() {
-        return this.f563qs.isEmpty();
+        return this.f476qs.isEmpty();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public void clear() {
-        this.f563qs.clear();
+        this.f476qs.clear();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue

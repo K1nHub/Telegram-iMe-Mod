@@ -8,14 +8,14 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzeo<MessageType extends zzeo<MessageType, BuilderType>, BuilderType extends zzb<MessageType, BuilderType>> extends zzde<MessageType, BuilderType> {
     private static Map<Object, zzeo<?, ?>> zzd = new ConcurrentHashMap();
     protected zzhg zzb = zzhg.zza();
     private int zzc = -1;
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     protected static class zza<T extends zzeo<T, ?>> extends zzdj<T> {
         private final T zza;
 
@@ -25,13 +25,13 @@ public abstract class zzeo<MessageType extends zzeo<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzc<MessageType extends zzc<MessageType, BuilderType>, BuilderType extends zzd<MessageType, BuilderType>> extends zzeo<MessageType, BuilderType> implements zzgb {
         protected zzej<zzf> zzc = zzej.zza();
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum zze {
         public static final int zza = 1;
         public static final int zzb = 2;
@@ -48,7 +48,7 @@ public abstract class zzeo<MessageType extends zzeo<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class zzf implements zzel<zzf> {
         @Override // com.google.android.gms.internal.mlkit_language_id.zzel
         public final int zza() {
@@ -95,7 +95,7 @@ public abstract class zzeo<MessageType extends zzeo<MessageType, BuilderType>, B
     public abstract Object zza(int i, Object obj, Object obj2);
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzd<MessageType extends zzc<MessageType, BuilderType>, BuilderType extends zzd<MessageType, BuilderType>> extends zzb<MessageType, BuilderType> implements zzgb {
         /* JADX INFO: Access modifiers changed from: protected */
         public zzd(MessageType messagetype) {
@@ -140,7 +140,7 @@ public abstract class zzeo<MessageType extends zzeo<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzb<MessageType extends zzeo<MessageType, BuilderType>, BuilderType extends zzb<MessageType, BuilderType>> extends zzdh<MessageType, BuilderType> {
         protected MessageType zza;
         protected boolean zzb = false;

@@ -2,8 +2,8 @@ package org.telegram.messenger;
 
 import com.google.android.exoplayer2.C0479C;
 import java.util.ArrayList;
-import org.telegram.p043ui.ChatActivity;
-import org.telegram.p043ui.Stories.StoriesStorage;
+import org.telegram.p042ui.ChatActivity;
+import org.telegram.p042ui.Stories.StoriesStorage;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Message;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC$TL_storyItem;
 import org.telegram.tgnet.TLRPC$TL_storyItemDeleted;
 import org.telegram.tgnet.TLRPC$TL_updateMessageReactions;
 import org.telegram.tgnet.TLRPC$Updates;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ChatMessagesMetadataController {
     final ChatActivity chatActivity;
     private ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
@@ -99,9 +99,9 @@ public class ChatMessagesMetadataController {
                 }
             }
             final long j2 = tLRPC$StoryItem.dialogId;
-            tLRPC$TL_stories_getStoriesByID.user_id = this.chatActivity.getMessagesController().getInputUser(j2);
-            tLRPC$TL_stories_getStoriesByID.f1665id.add(Integer.valueOf(tLRPC$StoryItem.f1557id));
-            final int i3 = tLRPC$StoryItem.f1557id;
+            tLRPC$TL_stories_getStoriesByID.peer = this.chatActivity.getMessagesController().getInputPeer(j2);
+            tLRPC$TL_stories_getStoriesByID.f1743id.add(Integer.valueOf(tLRPC$StoryItem.f1635id));
+            final int i3 = tLRPC$StoryItem.f1635id;
             this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_stories_getStoriesByID, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -124,7 +124,7 @@ public class ChatMessagesMetadataController {
             }
             final TLRPC$StoryItem tLRPC$StoryItem2 = tLRPC$StoryItem;
             tLRPC$StoryItem2.lastUpdateTime = System.currentTimeMillis();
-            tLRPC$StoryItem2.f1557id = i;
+            tLRPC$StoryItem2.f1635id = i;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -166,7 +166,7 @@ public class ChatMessagesMetadataController {
         TLRPC$TL_messages_getMessagesReactions tLRPC$TL_messages_getMessagesReactions = new TLRPC$TL_messages_getMessagesReactions();
         tLRPC$TL_messages_getMessagesReactions.peer = this.chatActivity.getMessagesController().getInputPeer(j);
         for (int i = 0; i < arrayList.size(); i++) {
-            tLRPC$TL_messages_getMessagesReactions.f1625id.add(Integer.valueOf(arrayList.get(i).getId()));
+            tLRPC$TL_messages_getMessagesReactions.f1702id.add(Integer.valueOf(arrayList.get(i).getId()));
         }
         this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getMessagesReactions, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
@@ -199,7 +199,7 @@ public class ChatMessagesMetadataController {
         TLRPC$TL_messages_getExtendedMedia tLRPC$TL_messages_getExtendedMedia = new TLRPC$TL_messages_getExtendedMedia();
         tLRPC$TL_messages_getExtendedMedia.peer = this.chatActivity.getMessagesController().getInputPeer(j);
         for (int i = 0; i < arrayList.size(); i++) {
-            tLRPC$TL_messages_getExtendedMedia.f1621id.add(Integer.valueOf(arrayList.get(i).getId()));
+            tLRPC$TL_messages_getExtendedMedia.f1698id.add(Integer.valueOf(arrayList.get(i).getId()));
         }
         this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tLRPC$TL_messages_getExtendedMedia, new RequestDelegate() { // from class: org.telegram.messenger.ChatMessagesMetadataController$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate

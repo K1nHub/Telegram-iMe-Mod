@@ -3,19 +3,19 @@ package com.googlecode.mp4parser.h264.read;
 import com.googlecode.mp4parser.h264.CharCache;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class BitstreamReader {
     protected static int bitsRead;
     private int curByte;
     protected CharCache debugBits = new CharCache(50);
 
     /* renamed from: is */
-    private InputStream f320is;
+    private InputStream f261is;
     int nBit;
     private int nextByte;
 
     public BitstreamReader(InputStream inputStream) throws IOException {
-        this.f320is = inputStream;
+        this.f261is = inputStream;
         this.curByte = inputStream.read();
         this.nextByte = inputStream.read();
     }
@@ -53,7 +53,7 @@ public class BitstreamReader {
 
     private void advance() throws IOException {
         this.curByte = this.nextByte;
-        this.nextByte = this.f320is.read();
+        this.nextByte = this.f261is.read();
         this.nBit = 0;
     }
 

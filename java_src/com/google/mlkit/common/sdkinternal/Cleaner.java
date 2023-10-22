@@ -9,13 +9,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ThreadFactory;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Cleaner {
     private final ReferenceQueue<Object> zza = new ReferenceQueue<>();
     private final Set<zza> zzb = Collections.synchronizedSet(new HashSet());
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Cleanable {
         @KeepForSdk
         void clean();
@@ -26,7 +26,7 @@ public class Cleaner {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.mlkit:common@@17.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class zza extends PhantomReference<Object> implements Cleanable {
         private final Set<zza> zza;
         private final Runnable zzb;

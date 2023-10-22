@@ -14,9 +14,10 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SequenceBuilder.kt */
-/* loaded from: classes6.dex */
-final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker, p033j$.util.Iterator {
+/* loaded from: classes4.dex */
+public final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker, p033j$.util.Iterator {
     private Iterator<? extends T> nextIterator;
     private Continuation<? super Unit> nextStep;
     private T nextValue;
@@ -63,7 +64,7 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
             Intrinsics.checkNotNull(continuation);
             this.nextStep = null;
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -107,20 +108,23 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
     }
 
     @Override // kotlin.sequences.SequenceScope
-    public Object yield(T t, Continuation<? super Unit> continuation) {
+    public Object yieldAll(java.util.Iterator<? extends T> it, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
         Object coroutine_suspended2;
         Object coroutine_suspended3;
-        this.nextValue = t;
-        this.state = 3;
-        this.nextStep = continuation;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        coroutine_suspended2 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (coroutine_suspended == coroutine_suspended2) {
-            DebugProbesKt.probeCoroutineSuspended(continuation);
+        if (it.hasNext()) {
+            this.nextIterator = it;
+            this.state = 2;
+            this.nextStep = continuation;
+            coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            coroutine_suspended2 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            if (coroutine_suspended == coroutine_suspended2) {
+                DebugProbesKt.probeCoroutineSuspended(continuation);
+            }
+            coroutine_suspended3 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            return coroutine_suspended == coroutine_suspended3 ? coroutine_suspended : Unit.INSTANCE;
         }
-        coroutine_suspended3 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return coroutine_suspended == coroutine_suspended3 ? coroutine_suspended : Unit.INSTANCE;
+        return Unit.INSTANCE;
     }
 
     @Override // kotlin.coroutines.Continuation

@@ -201,7 +201,7 @@ public final class FragmentStrictMode {
             runOnHostThread(fragment, new Runnable() { // from class: androidx.fragment.app.strictmode.FragmentStrictMode$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FragmentStrictMode.m881handlePolicyViolation$lambda0(FragmentStrictMode.Policy.this, violation);
+                    FragmentStrictMode.m1173handlePolicyViolation$lambda0(FragmentStrictMode.Policy.this, violation);
                 }
             });
         }
@@ -209,7 +209,7 @@ public final class FragmentStrictMode {
             runOnHostThread(fragment, new Runnable() { // from class: androidx.fragment.app.strictmode.FragmentStrictMode$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FragmentStrictMode.m882handlePolicyViolation$lambda1(name, violation);
+                    FragmentStrictMode.m1174handlePolicyViolation$lambda1(name, violation);
                 }
             });
         }
@@ -217,7 +217,7 @@ public final class FragmentStrictMode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: handlePolicyViolation$lambda-0  reason: not valid java name */
-    public static final void m881handlePolicyViolation$lambda0(Policy policy, Violation violation) {
+    public static final void m1173handlePolicyViolation$lambda0(Policy policy, Violation violation) {
         Intrinsics.checkNotNullParameter(policy, "$policy");
         Intrinsics.checkNotNullParameter(violation, "$violation");
         policy.getListener$fragment_release().onViolation(violation);
@@ -225,7 +225,7 @@ public final class FragmentStrictMode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: handlePolicyViolation$lambda-1  reason: not valid java name */
-    public static final void m882handlePolicyViolation$lambda1(String str, Violation violation) {
+    public static final void m1174handlePolicyViolation$lambda1(String str, Violation violation) {
         Intrinsics.checkNotNullParameter(violation, "$violation");
         Log.e("FragmentStrictMode", "Policy violation with PENALTY_DEATH in " + str, violation);
         throw violation;

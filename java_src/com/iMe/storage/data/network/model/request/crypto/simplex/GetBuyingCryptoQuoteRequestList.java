@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.simplex;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetBuyingCryptoQuoteRequestList.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetBuyingCryptoQuoteRequestList {
     private final List<GetBuyingCryptoQuoteRequest> input;
 

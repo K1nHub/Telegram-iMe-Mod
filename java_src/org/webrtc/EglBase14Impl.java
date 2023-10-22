@@ -12,7 +12,7 @@ import android.view.Surface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
     private static final int EGLExt_SDK_VERSION = 18;
@@ -34,7 +34,7 @@ public class EglBase14Impl implements EglBase14 {
         return i >= 18;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 

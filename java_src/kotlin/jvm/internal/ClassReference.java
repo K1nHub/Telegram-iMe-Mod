@@ -42,7 +42,7 @@ import kotlin.jvm.functions.Function9;
 import kotlin.reflect.KClass;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: ClassReference.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ClassReference implements KClass<Object>, ClassBasedDeclarationContainer {
     public static final Companion Companion = new Companion(null);
     private static final Map<Class<? extends Function<?>>, Integer> FUNCTION_CLASSES;
@@ -68,6 +68,11 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     }
 
     @Override // kotlin.reflect.KClass
+    public String getQualifiedName() {
+        return Companion.getClassQualifiedName(getJClass());
+    }
+
+    @Override // kotlin.reflect.KClass
     public boolean isInstance(Object obj) {
         return Companion.isInstance(obj, getJClass());
     }
@@ -85,7 +90,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     }
 
     /* compiled from: ClassReference.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -137,6 +142,24 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             return str2;
         }
 
+        public final String getClassQualifiedName(Class<?> jClass) {
+            String str;
+            Intrinsics.checkNotNullParameter(jClass, "jClass");
+            String str2 = null;
+            if (jClass.isAnonymousClass() || jClass.isLocalClass()) {
+                return null;
+            }
+            if (!jClass.isArray()) {
+                String str3 = (String) ClassReference.classFqNames.get(jClass.getName());
+                return str3 == null ? jClass.getCanonicalName() : str3;
+            }
+            Class<?> componentType = jClass.getComponentType();
+            if (componentType.isPrimitive() && (str = (String) ClassReference.classFqNames.get(componentType.getName())) != null) {
+                str2 = str + "Array";
+            }
+            return str2 == null ? "kotlin.Array" : str2;
+        }
+
         public final boolean isInstance(Object obj, Class<?> jClass) {
             Intrinsics.checkNotNullParameter(jClass, "jClass");
             Map map = ClassReference.FUNCTION_CLASSES;
@@ -169,7 +192,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             if (i < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList.add(TuplesKt.m103to((Class) obj, Integer.valueOf(i)));
+            arrayList.add(TuplesKt.m144to((Class) obj, Integer.valueOf(i)));
             i = i2;
         }
         map = MapsKt__MapsKt.toMap(arrayList);
@@ -225,8 +248,8 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             substringAfterLast$default2 = StringsKt__StringsKt.substringAfterLast$default(kotlinName, '.', null, 2, null);
             sb.append(substringAfterLast$default2);
             sb.append("CompanionObject");
-            Pair m103to = TuplesKt.m103to(sb.toString(), kotlinName + ".Companion");
-            hashMap3.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(sb.toString(), kotlinName + ".Companion");
+            hashMap3.put(m144to.getFirst(), m144to.getSecond());
         }
         for (Map.Entry<Class<? extends Function<?>>, Integer> entry : FUNCTION_CLASSES.entrySet()) {
             int intValue = entry.getValue().intValue();

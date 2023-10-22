@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import java.io.File;
 import java.util.List;
 /* compiled from: GoogleServicesRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface GoogleServicesRepository {
     Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap bitmap);
 

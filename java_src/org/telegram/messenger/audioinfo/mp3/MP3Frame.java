@@ -5,12 +5,12 @@ import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.exoplayer2.audio.Ac3Util;
 import com.google.android.exoplayer2.audio.DtsUtil;
 import com.google.android.exoplayer2.audio.OpusUtil;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MP3Frame {
     private final byte[] bytes;
     private final Header header;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class CRC16 {
         private short crc = -1;
 
@@ -41,7 +41,7 @@ public class MP3Frame {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Header {
         private final int bitrate;
         private final int channelMode;

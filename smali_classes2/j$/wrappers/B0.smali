@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/ToDoubleFunction;
+.implements Lj$/util/function/ToLongFunction;
 
 
 # instance fields
-.field final synthetic a:Lj$/util/function/ToDoubleFunction;
+.field final synthetic a:Ljava/util/function/ToLongFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/function/ToDoubleFunction;)V
+.method private synthetic constructor <init>(Ljava/util/function/ToLongFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/B0;->a:Lj$/util/function/ToDoubleFunction;
+    iput-object p1, p0, Lj$/wrappers/B0;->a:Ljava/util/function/ToLongFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/ToDoubleFunction;)Ljava/util/function/ToDoubleFunction;
+.method public static synthetic a(Ljava/util/function/ToLongFunction;)Lj$/util/function/ToLongFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,32 +30,32 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/A0;
+    instance-of v0, p0, Lj$/wrappers/C0;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/A0;
+    check-cast p0, Lj$/wrappers/C0;
 
-    iget-object p0, p0, Lj$/wrappers/A0;->a:Ljava/util/function/ToDoubleFunction;
+    iget-object p0, p0, Lj$/wrappers/C0;->a:Lj$/util/function/ToLongFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/B0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/B0;-><init>(Lj$/util/function/ToDoubleFunction;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/B0;-><init>(Ljava/util/function/ToLongFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic applyAsDouble(Ljava/lang/Object;)D
+.method public synthetic applyAsLong(Ljava/lang/Object;)J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/B0;->a:Lj$/util/function/ToDoubleFunction;
+    iget-object v0, p0, Lj$/wrappers/B0;->a:Ljava/util/function/ToLongFunction;
 
-    invoke-interface {v0, p1}, Lj$/util/function/ToDoubleFunction;->applyAsDouble(Ljava/lang/Object;)D
+    invoke-interface {v0, p1}, Ljava/util/function/ToLongFunction;->applyAsLong(Ljava/lang/Object;)J
 
     move-result-wide v0
 

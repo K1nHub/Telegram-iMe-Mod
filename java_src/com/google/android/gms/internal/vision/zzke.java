@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzke<K, V> extends LinkedHashMap<K, V> {
     private static final zzke zzb;
     private boolean zza;

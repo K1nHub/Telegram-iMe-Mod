@@ -3,4 +3,4 @@
 
 # interfaces
 .implements Lj$/util/stream/m3;
-.implements Lj$/util/function/y;
+.implements Lj$/util/function/x;

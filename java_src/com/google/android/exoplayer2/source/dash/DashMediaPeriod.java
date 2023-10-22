@@ -130,7 +130,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
             while (true) {
                 if (it.hasNext()) {
                     EventStream next = it.next();
-                    if (next.m822id().equals(eventSampleStream.eventStreamId())) {
+                    if (next.m1114id().equals(eventSampleStream.eventStreamId())) {
                         boolean z = true;
                         eventSampleStream.updateEventStream(next, (dashManifest.dynamic && i == dashManifest.getPeriodCount() - 1) ? false : false);
                     }
@@ -511,7 +511,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
         EventStream eventStream;
         int i2 = 0;
         while (i2 < list.size()) {
-            trackGroupArr[i] = new TrackGroup(eventStream.m822id() + ":" + i2, new Format.Builder().setId(list.get(i2).m822id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
+            trackGroupArr[i] = new TrackGroup(eventStream.m1114id() + ":" + i2, new Format.Builder().setId(list.get(i2).m1114id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
             trackGroupInfoArr[i] = TrackGroupInfo.mpdEventTrack(i2);
             i2++;
             i++;

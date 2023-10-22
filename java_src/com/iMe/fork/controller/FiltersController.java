@@ -8,8 +8,8 @@ import com.iMe.fork.models.SortingTabState;
 import com.iMe.fork.models.backup.Backup;
 import com.iMe.fork.models.backup.BackupMappingKt;
 import com.iMe.fork.models.backup.SortingTabStateBackup;
-import com.iMe.storage.data.locale.p027db.dao.main.FiltersDao;
-import com.iMe.storage.data.locale.p027db.model.filter.FilterSettingsDb;
+import com.iMe.storage.data.locale.p026db.dao.main.FiltersDao;
+import com.iMe.storage.data.locale.p026db.model.filter.FilterSettingsDb;
 import com.iMe.storage.data.mapper.filter.FilterSettingsMappingKt;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import com.iMe.storage.domain.model.filters.FilterSettingsModel;
@@ -47,17 +47,18 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.FilterCreateActivity;
+import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.FilterCreateActivity;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: FiltersController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FiltersController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, FiltersController> accountInstances = new ConcurrentHashMap<>(5);
@@ -309,7 +310,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1459id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1537id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -326,6 +327,26 @@ public final class FiltersController extends BaseController implements KoinCompo
                 }
             }
         }
+    }
+
+    public final void setHidden(int i, boolean z) {
+        FilterSettingsModel settings = getSettings(i);
+        settings.setHidden(z);
+        addOrEditFilterSettings(settings);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
+    }
+
+    public final int getHiddenFiltersCount() {
+        Map<Integer, FilterSettingsModel> map = this.filterSettings;
+        int i = 0;
+        if (!map.isEmpty()) {
+            for (Map.Entry<Integer, FilterSettingsModel> entry : map.entrySet()) {
+                if (entry.getValue().isHidden()) {
+                    i++;
+                }
+            }
+        }
+        return i;
     }
 
     public final List<SortingTabStateBackup> getBackupSortingTabs(boolean z) {
@@ -433,26 +454,26 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m103to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m144to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
 
     public final void addOrEditFilterSettings(final FilterSettingsModel settings) {
         Intrinsics.checkNotNullParameter(settings, "settings");
+        this.filterSettings.put(Integer.valueOf(settings.getFilterId()), settings);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.FiltersController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FiltersController.addOrEditFilterSettings$lambda$13(FiltersController.this, settings);
+                FiltersController.addOrEditFilterSettings$lambda$14(FiltersController.this, settings);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addOrEditFilterSettings$lambda$13(FiltersController this$0, FilterSettingsModel settings) {
+    public static final void addOrEditFilterSettings$lambda$14(FiltersController this$0, FilterSettingsModel settings) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(settings, "$settings");
-        this$0.filterSettings.put(Integer.valueOf(settings.getFilterId()), settings);
         this$0.getFiltersDao().insert((FiltersDao) FilterSettingsMappingKt.mapToDb(settings, this$0.getUserConfig().clientUserId));
     }
 
@@ -466,7 +487,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         FilterSettingsModel filterSettingsModel = this.filterSettings.get(Integer.valueOf(i));
         if (filterSettingsModel == null) {
             mutableSetOf = SetsKt__SetsKt.mutableSetOf(FilterFab.CREATE_CHAT);
-            return new FilterSettingsModel(i, mutableSetOf, null);
+            return new FilterSettingsModel(i, mutableSetOf, null, false);
         }
         return filterSettingsModel;
     }
@@ -491,8 +512,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m103to = TuplesKt.m103to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1459id).name(), TuplesKt.m103to(arrayList, arrayList2));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1537id).name(), TuplesKt.m144to(arrayList, arrayList2));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -527,7 +548,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             sortingTabs.add(new SortingTabState(sortingFilter, companion.mapNamesToEnums(of), sharedPreferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter), sortingFilter.groupOrdinal()), sharedPreferences.getBoolean(TelegramPreferenceKeys.User.buildSortingTabEnabledKey(sortingFilter), sortingFilter.isEnabledByDefault())));
         }
         if (sortingTabs.size() > 1) {
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: com.iMe.fork.controller.FiltersController$loadSortingTabsConfig$lambda$19$lambda$18$$inlined$sortBy$1
+            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: com.iMe.fork.controller.FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     int compareValues;
@@ -560,7 +581,7 @@ public final class FiltersController extends BaseController implements KoinCompo
     }
 
     /* compiled from: FiltersController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

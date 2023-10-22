@@ -51,7 +51,7 @@ public final class StreamVolumeManager {
             Util.registerReceiverNotExported(applicationContext, volumeChangeReceiver, new IntentFilter(VOLUME_CHANGED_ACTION));
             this.receiver = volumeChangeReceiver;
         } catch (RuntimeException e) {
-            Log.m813w(TAG, "Error registering stream volume receiver", e);
+            Log.m1105w(TAG, "Error registering stream volume receiver", e);
         }
     }
 
@@ -122,7 +122,7 @@ public final class StreamVolumeManager {
             try {
                 this.applicationContext.unregisterReceiver(volumeChangeReceiver);
             } catch (RuntimeException e) {
-                Log.m813w(TAG, "Error unregistering stream volume receiver", e);
+                Log.m1105w(TAG, "Error unregistering stream volume receiver", e);
             }
             this.receiver = null;
         }
@@ -144,7 +144,7 @@ public final class StreamVolumeManager {
         try {
             return audioManager.getStreamVolume(i);
         } catch (RuntimeException e) {
-            Log.m813w(TAG, "Could not retrieve stream volume for stream type " + i, e);
+            Log.m1105w(TAG, "Could not retrieve stream volume for stream type " + i, e);
             return audioManager.getStreamMaxVolume(i);
         }
     }

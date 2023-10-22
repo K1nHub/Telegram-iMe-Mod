@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.error.MissingAndroidContextException;
 import org.koin.core.scope.Scope;
 /* compiled from: ModuleExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ModuleExtKt {
     public static final Context androidContext(Scope scope) {
         Intrinsics.checkNotNullParameter(scope, "<this>");

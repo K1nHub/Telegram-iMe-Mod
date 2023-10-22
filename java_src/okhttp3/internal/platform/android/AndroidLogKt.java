@@ -3,7 +3,7 @@ package okhttp3.internal.platform.android;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 /* compiled from: AndroidLog.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class AndroidLogKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final int getAndroidLevel(LogRecord logRecord) {

@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Function;
+.implements Lj$/util/function/j;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/Function;
+.field final synthetic a:Ljava/util/function/IntBinaryOperator;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/Function;)V
+.method private synthetic constructor <init>(Ljava/util/function/IntBinaryOperator;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/L;->a:Ljava/util/function/Function;
+    iput-object p1, p0, Lj$/wrappers/L;->a:Ljava/util/function/IntBinaryOperator;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/Function;)Lj$/util/function/Function;
+.method public static synthetic a(Ljava/util/function/IntBinaryOperator;)Lj$/util/function/j;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,68 +36,28 @@
 
     check-cast p0, Lj$/wrappers/M;
 
-    iget-object p0, p0, Lj$/wrappers/M;->a:Lj$/util/function/Function;
+    iget-object p0, p0, Lj$/wrappers/M;->a:Lj$/util/function/j;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/L;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/L;-><init>(Ljava/util/function/Function;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/L;-><init>(Ljava/util/function/IntBinaryOperator;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/Function;
+.method public synthetic applyAsInt(II)I
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/L;->a:Ljava/util/function/Function;
+    iget-object v0, p0, Lj$/wrappers/L;->a:Ljava/util/function/IntBinaryOperator;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
+    invoke-interface {v0, p1, p2}, Ljava/util/function/IntBinaryOperator;->applyAsInt(II)I
 
-    move-result-object p1
+    move-result p1
 
-    invoke-interface {v0, p1}, Ljava/util/function/Function;->andThen(Ljava/util/function/Function;)Ljava/util/function/Function;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/L;->a:Ljava/util/function/Function;
-
-    invoke-interface {v0, p1}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic compose(Lj$/util/function/Function;)Lj$/util/function/Function;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/L;->a:Ljava/util/function/Function;
-
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/function/Function;->compose(Ljava/util/function/Function;)Ljava/util/function/Function;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
-
-    move-result-object p1
-
-    return-object p1
+    return p1
 .end method

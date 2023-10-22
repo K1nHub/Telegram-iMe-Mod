@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inputInvoiceSlug extends TLRPC$InputInvoice {
     public static int constructor = -1020867857;
     public String slug;

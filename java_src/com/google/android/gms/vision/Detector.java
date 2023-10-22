@@ -4,13 +4,13 @@ import android.util.SparseArray;
 import androidx.annotation.RecentlyNonNull;
 import com.google.android.gms.vision.Frame;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Detector<T> {
     private final Object zza = new Object();
     private Processor<T> zzb;
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Processor<T> {
         void receiveDetections(@RecentlyNonNull Detections<T> detections);
 
@@ -39,7 +39,7 @@ public abstract class Detector<T> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Detections<T> {
         private final SparseArray<T> zza;
         private final Frame.Metadata zzb;

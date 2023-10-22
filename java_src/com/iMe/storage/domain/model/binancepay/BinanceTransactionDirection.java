@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTransactionDirection.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum BinanceTransactionDirection {
     IN(R$string.wallet_binance_pay_transaction_direction_in_title),
     OUT(R$string.wallet_binance_pay_transaction_direction_out_title);
@@ -25,7 +25,7 @@ public enum BinanceTransactionDirection {
     }
 
     /* compiled from: BinanceTransactionDirection.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

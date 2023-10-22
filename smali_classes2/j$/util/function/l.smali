@@ -6,5 +6,5 @@
 .method public abstract accept(I)V
 .end method
 
-.method public abstract l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public abstract k(Lj$/util/function/l;)Lj$/util/function/l;
 .end method

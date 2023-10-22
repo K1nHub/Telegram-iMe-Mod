@@ -12,7 +12,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.maybe.MaybeToObservable;
 import io.reactivex.internal.operators.single.SingleToObservable;
 import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class ScalarXMapZHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <T> boolean tryAsCompletable(Object obj, Function<? super T, ? extends CompletableSource> function, CompletableObserver completableObserver) {

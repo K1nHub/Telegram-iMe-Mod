@@ -5,7 +5,7 @@ import okhttp3.Protocol;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class Response<T> {
     private final T body;
     private final ResponseBody errorBody;

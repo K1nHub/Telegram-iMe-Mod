@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public q(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public p(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
     .locals 4
 
     invoke-virtual {p0}, Lj$/util/stream/C1;->count()J
@@ -70,7 +70,7 @@
 
     long-to-int v0, v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/IntFunction;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -92,7 +92,7 @@
     throw p1
 .end method
 
-.method public r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 9
 
     const-wide/16 v0, 0x0
@@ -130,7 +130,7 @@
 
     move-object v6, p5
 
-    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -149,7 +149,7 @@
 
     move-object v6, p5
 
-    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -168,7 +168,7 @@
 
     move-object v6, p5
 
-    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -178,7 +178,7 @@
 
     const-wide/16 v2, 0x0
 
-    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/A1;->q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p2
 
@@ -189,7 +189,7 @@
     return-object p1
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public spliterator()Lj$/util/Spliterator;
     .locals 1
 
     new-instance v0, Lj$/util/stream/j2;

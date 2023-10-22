@@ -11,10 +11,10 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.ActionBar.Theme;
 /* compiled from: CryptoBoxActionItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxActionItem extends NoChildNode {
     private final BigDecimal amount;
     private final String createdAt;
@@ -22,7 +22,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     private final TokenItem feeToken;
 
     /* renamed from: id */
-    private final String f372id;
+    private final String f306id;
     private final CryptoBoxActionStatus status;
     private final TokenItem token;
     private final String txHash;
@@ -30,7 +30,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     private final CryptoBoxActionType type;
 
     /* compiled from: CryptoBoxActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -64,7 +64,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     }
 
     public final String component1() {
-        return this.f372id;
+        return this.f306id;
     }
 
     public final TokenItem component10() {
@@ -123,25 +123,25 @@ public final class CryptoBoxActionItem extends NoChildNode {
         }
         if (obj instanceof CryptoBoxActionItem) {
             CryptoBoxActionItem cryptoBoxActionItem = (CryptoBoxActionItem) obj;
-            return Intrinsics.areEqual(this.f372id, cryptoBoxActionItem.f372id) && Intrinsics.areEqual(this.amount, cryptoBoxActionItem.amount) && this.type == cryptoBoxActionItem.type && this.status == cryptoBoxActionItem.status && Intrinsics.areEqual(this.createdAt, cryptoBoxActionItem.createdAt) && Intrinsics.areEqual(this.txHash, cryptoBoxActionItem.txHash) && Intrinsics.areEqual(this.txUrl, cryptoBoxActionItem.txUrl) && Intrinsics.areEqual(this.feeToken, cryptoBoxActionItem.feeToken) && Intrinsics.areEqual(this.feeAmount, cryptoBoxActionItem.feeAmount) && Intrinsics.areEqual(this.token, cryptoBoxActionItem.token);
+            return Intrinsics.areEqual(this.f306id, cryptoBoxActionItem.f306id) && Intrinsics.areEqual(this.amount, cryptoBoxActionItem.amount) && this.type == cryptoBoxActionItem.type && this.status == cryptoBoxActionItem.status && Intrinsics.areEqual(this.createdAt, cryptoBoxActionItem.createdAt) && Intrinsics.areEqual(this.txHash, cryptoBoxActionItem.txHash) && Intrinsics.areEqual(this.txUrl, cryptoBoxActionItem.txUrl) && Intrinsics.areEqual(this.feeToken, cryptoBoxActionItem.feeToken) && Intrinsics.areEqual(this.feeAmount, cryptoBoxActionItem.feeAmount) && Intrinsics.areEqual(this.token, cryptoBoxActionItem.token);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((this.f372id.hashCode() * 31) + this.amount.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31) + this.txUrl.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.token.hashCode();
+        return (((((((((((((((((this.f306id.hashCode() * 31) + this.amount.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31) + this.txUrl.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.token.hashCode();
     }
 
     public String toString() {
-        return "CryptoBoxActionItem(id=" + this.f372id + ", amount=" + this.amount + ", type=" + this.type + ", status=" + this.status + ", createdAt=" + this.createdAt + ", txHash=" + this.txHash + ", txUrl=" + this.txUrl + ", feeToken=" + this.feeToken + ", feeAmount=" + this.feeAmount + ", token=" + this.token + ')';
+        return "CryptoBoxActionItem(id=" + this.f306id + ", amount=" + this.amount + ", type=" + this.type + ", status=" + this.status + ", createdAt=" + this.createdAt + ", txHash=" + this.txHash + ", txUrl=" + this.txUrl + ", feeToken=" + this.feeToken + ", feeAmount=" + this.feeAmount + ", token=" + this.token + ')';
     }
 
     public final String getId() {
-        return this.f372id;
+        return this.f306id;
     }
 
     /* renamed from: getAmount  reason: collision with other method in class */
-    public final BigDecimal m1307getAmount() {
+    public final BigDecimal m1534getAmount() {
         return this.amount;
     }
 
@@ -188,7 +188,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
         Intrinsics.checkNotNullParameter(token, "token");
-        this.f372id = id;
+        this.f306id = id;
         this.amount = amount;
         this.type = type;
         this.status = status;
@@ -205,11 +205,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3473R.string.cryptobox_action_type_create;
+            i = C3630R.string.cryptobox_action_type_create;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3473R.string.cryptobox_action_type_stop;
+            i = C3630R.string.cryptobox_action_type_stop;
         }
         return resourceManager.getString(i);
     }
@@ -237,11 +237,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return C3473R.C3475drawable.fork_ic_transaction_staking_withdraw;
+                return C3630R.C3632drawable.fork_ic_transaction_staking_withdraw;
             }
             throw new NoWhenBranchMatchedException();
         }
-        return C3473R.C3475drawable.fork_ic_transaction_sent;
+        return C3630R.C3632drawable.fork_ic_transaction_sent;
     }
 
     public final String getTransactionTimeText() {

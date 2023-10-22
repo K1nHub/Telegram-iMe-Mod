@@ -2,7 +2,7 @@ package com.google.android.play.core.tasks;
 
 import java.util.concurrent.CountDownLatch;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzo implements zzp {
     private final CountDownLatch zza = new CountDownLatch(1);
 

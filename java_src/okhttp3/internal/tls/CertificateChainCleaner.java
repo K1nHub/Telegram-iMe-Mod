@@ -8,14 +8,14 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.platform.Platform;
 /* compiled from: CertificateChainCleaner.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class CertificateChainCleaner {
     public static final Companion Companion = new Companion(null);
 
     public abstract List<Certificate> clean(List<? extends Certificate> list, String str) throws SSLPeerUnverifiedException;
 
     /* compiled from: CertificateChainCleaner.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

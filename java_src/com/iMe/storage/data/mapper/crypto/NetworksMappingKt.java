@@ -9,7 +9,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworksMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NetworksMappingKt {
     public static final List<Network> mapToDomain(NetworksListResponse networksListResponse) {
         int collectionSizeOrDefault;

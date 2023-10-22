@@ -3,6 +3,7 @@ package kotlin.jvm.internal;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import kotlin.Function;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -31,7 +32,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.jvm.internal.markers.KMutableCollection;
 import kotlin.jvm.internal.markers.KMutableIterable;
 import kotlin.jvm.internal.markers.KMutableList;
-/* loaded from: classes6.dex */
+import kotlin.jvm.internal.markers.KMutableMap;
+import kotlin.jvm.internal.markers.KMutableSet;
+/* loaded from: classes4.dex */
 public class TypeIntrinsics {
     private static <T extends Throwable> T sanitizeStackTrace(T t) {
         return (T) Intrinsics.sanitizeStackTrace(t, TypeIntrinsics.class.getName());
@@ -95,8 +98,23 @@ public class TypeIntrinsics {
         }
     }
 
+    public static Set asMutableSet(Object obj) {
+        if ((obj instanceof KMappedMarker) && !(obj instanceof KMutableSet)) {
+            throwCce(obj, "kotlin.collections.MutableSet");
+        }
+        return castToSet(obj);
+    }
+
+    public static Set castToSet(Object obj) {
+        try {
+            return (Set) obj;
+        } catch (ClassCastException e) {
+            throw throwCce(e);
+        }
+    }
+
     public static Map asMutableMap(Object obj) {
-        if (obj instanceof KMappedMarker) {
+        if ((obj instanceof KMappedMarker) && !(obj instanceof KMutableMap)) {
             throwCce(obj, "kotlin.collections.MutableMap");
         }
         return castToMap(obj);

@@ -10,18 +10,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionEventCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ActivityTransitionEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionEvent> CREATOR = new zzf();
-    @SafeParcelable.Field(getter = "getActivityType", m797id = 1)
+    @SafeParcelable.Field(getter = "getActivityType", m1089id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getTransitionType", m797id = 2)
+    @SafeParcelable.Field(getter = "getTransitionType", m1089id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getElapsedRealTimeNanos", m797id = 3)
+    @SafeParcelable.Field(getter = "getElapsedRealTimeNanos", m1089id = 3)
     private final long zzc;
 
     @SafeParcelable.Constructor
-    public ActivityTransitionEvent(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) long j) {
+    public ActivityTransitionEvent(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) long j) {
         ActivityTransition.zza(i2);
         this.zza = i;
         this.zzb = i2;

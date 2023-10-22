@@ -20,7 +20,7 @@ import kotlinx.coroutines.channels.ReceiveChannel;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: ChannelFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ChannelFlow<T> implements Flow {
     public final int capacity;
     public final CoroutineContext context;
@@ -65,7 +65,7 @@ public abstract class ChannelFlow<T> implements Flow {
         return ProduceKt.produce$default(coroutineScope, this.context, getProduceCapacity$kotlinx_coroutines_core(), this.onBufferOverflow, CoroutineStart.ATOMIC, null, getCollectToFun$kotlinx_coroutines_core(), 16, null);
     }
 
-    static /* synthetic */ Object collect$suspendImpl(ChannelFlow channelFlow, FlowCollector flowCollector, Continuation continuation) {
+    static /* synthetic */ <T> Object collect$suspendImpl(ChannelFlow<T> channelFlow, FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
         Object coroutineScope = CoroutineScopeKt.coroutineScope(new ChannelFlow$collect$2(flowCollector, channelFlow, null), continuation);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

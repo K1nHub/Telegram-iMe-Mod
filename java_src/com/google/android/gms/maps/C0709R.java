@@ -1,10 +1,10 @@
 package com.google.android.gms.maps;
 /* renamed from: com.google.android.gms.maps.R */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class C0709R {
 
     /* renamed from: com.google.android.gms.maps.R$attr */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class attr {
         public static final int ambientEnabled = 2130968630;
         public static final int backgroundColor = 2130968651;
@@ -38,22 +38,22 @@ public final class C0709R {
     }
 
     /* renamed from: com.google.android.gms.maps.R$id */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class C0710id {
-        public static final int hybrid = 2131296667;
-        public static final int none = 2131296933;
-        public static final int normal = 2131296934;
-        public static final int satellite = 2131297055;
-        public static final int terrain = 2131297168;
+        public static final int hybrid = 2131296645;
+        public static final int none = 2131296899;
+        public static final int normal = 2131296900;
+        public static final int satellite = 2131297007;
+        public static final int terrain = 2131297118;
 
         private C0710id() {
         }
     }
 
     /* renamed from: com.google.android.gms.maps.R$styleable */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class styleable {
-        public static final int[] MapAttrs = {com.iMe.android.R.attr.ambientEnabled, com.iMe.android.R.attr.backgroundColor, com.iMe.android.R.attr.cameraBearing, com.iMe.android.R.attr.cameraMaxZoomPreference, com.iMe.android.R.attr.cameraMinZoomPreference, com.iMe.android.R.attr.cameraTargetLat, com.iMe.android.R.attr.cameraTargetLng, com.iMe.android.R.attr.cameraTilt, com.iMe.android.R.attr.cameraZoom, com.iMe.android.R.attr.latLngBoundsNorthEastLatitude, com.iMe.android.R.attr.latLngBoundsNorthEastLongitude, com.iMe.android.R.attr.latLngBoundsSouthWestLatitude, com.iMe.android.R.attr.latLngBoundsSouthWestLongitude, com.iMe.android.R.attr.liteMode, com.iMe.android.R.attr.mapId, com.iMe.android.R.attr.mapType, com.iMe.android.R.attr.uiCompass, com.iMe.android.R.attr.uiMapToolbar, com.iMe.android.R.attr.uiRotateGestures, com.iMe.android.R.attr.uiScrollGestures, com.iMe.android.R.attr.uiScrollGesturesDuringRotateOrZoom, com.iMe.android.R.attr.uiTiltGestures, com.iMe.android.R.attr.uiZoomControls, com.iMe.android.R.attr.uiZoomGestures, com.iMe.android.R.attr.useViewLifecycle, com.iMe.android.R.attr.zOrderOnTop};
+        public static final int[] MapAttrs = {com.iMe.android.web.R.attr.ambientEnabled, com.iMe.android.web.R.attr.backgroundColor, com.iMe.android.web.R.attr.cameraBearing, com.iMe.android.web.R.attr.cameraMaxZoomPreference, com.iMe.android.web.R.attr.cameraMinZoomPreference, com.iMe.android.web.R.attr.cameraTargetLat, com.iMe.android.web.R.attr.cameraTargetLng, com.iMe.android.web.R.attr.cameraTilt, com.iMe.android.web.R.attr.cameraZoom, com.iMe.android.web.R.attr.latLngBoundsNorthEastLatitude, com.iMe.android.web.R.attr.latLngBoundsNorthEastLongitude, com.iMe.android.web.R.attr.latLngBoundsSouthWestLatitude, com.iMe.android.web.R.attr.latLngBoundsSouthWestLongitude, com.iMe.android.web.R.attr.liteMode, com.iMe.android.web.R.attr.mapId, com.iMe.android.web.R.attr.mapType, com.iMe.android.web.R.attr.uiCompass, com.iMe.android.web.R.attr.uiMapToolbar, com.iMe.android.web.R.attr.uiRotateGestures, com.iMe.android.web.R.attr.uiScrollGestures, com.iMe.android.web.R.attr.uiScrollGesturesDuringRotateOrZoom, com.iMe.android.web.R.attr.uiTiltGestures, com.iMe.android.web.R.attr.uiZoomControls, com.iMe.android.web.R.attr.uiZoomGestures, com.iMe.android.web.R.attr.useViewLifecycle, com.iMe.android.web.R.attr.zOrderOnTop};
         public static final int MapAttrs_ambientEnabled = 0;
         public static final int MapAttrs_backgroundColor = 1;
         public static final int MapAttrs_cameraBearing = 2;

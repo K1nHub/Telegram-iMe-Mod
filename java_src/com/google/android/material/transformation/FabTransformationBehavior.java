@@ -39,7 +39,7 @@ import com.google.android.material.math.MathUtils;
 import java.util.ArrayList;
 import java.util.List;
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class FabTransformationBehavior extends ExpandableTransformationBehavior {
     private float dependencyOriginalTranslationX;
     private float dependencyOriginalTranslationY;
@@ -49,7 +49,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
     private final RectF tmpRectF2;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FabTransformationSpec {
         public Positioning positioning;
         public MotionSpec timings;

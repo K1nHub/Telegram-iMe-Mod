@@ -1,5 +1,5 @@
 package com.google.common.base;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Preconditions {
     public static void checkArgument(boolean z) {
         if (!z) {
@@ -16,12 +16,6 @@ public final class Preconditions {
     public static void checkArgument(boolean z, String str, char c) {
         if (!z) {
             throw new IllegalArgumentException(Strings.lenientFormat(str, Character.valueOf(c)));
-        }
-    }
-
-    public static void checkArgument(boolean z, String str, int i) {
-        if (!z) {
-            throw new IllegalArgumentException(Strings.lenientFormat(str, Integer.valueOf(i)));
         }
     }
 
@@ -67,12 +61,6 @@ public final class Preconditions {
         }
     }
 
-    public static void checkState(boolean z, String str, int i) {
-        if (!z) {
-            throw new IllegalStateException(Strings.lenientFormat(str, Integer.valueOf(i)));
-        }
-    }
-
     public static void checkState(boolean z, String str, Object obj) {
         if (!z) {
             throw new IllegalStateException(Strings.lenientFormat(str, obj));
@@ -89,13 +77,6 @@ public final class Preconditions {
             return t;
         }
         throw new NullPointerException(String.valueOf(obj));
-    }
-
-    public static <T> T checkNotNull(T t, String str, Object obj) {
-        if (t != null) {
-            return t;
-        }
-        throw new NullPointerException(Strings.lenientFormat(str, obj));
     }
 
     public static int checkElementIndex(int i, int i2) {

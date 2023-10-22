@@ -17,10 +17,10 @@ import kotlinx.coroutines.DispatchedTask;
 import kotlinx.coroutines.EventLoop;
 import kotlinx.coroutines.ThreadLocalEventLoop;
 /* compiled from: DispatchedContinuation.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DispatchedContinuation<T> extends DispatchedTask<T> implements CoroutineStackFrame, Continuation<T> {
-    private static final /* synthetic */ AtomicReferenceFieldUpdater _reusableCancellableContinuation$FU = AtomicReferenceFieldUpdater.newUpdater(DispatchedContinuation.class, Object.class, "_reusableCancellableContinuation");
-    private volatile /* synthetic */ Object _reusableCancellableContinuation;
+    private static final AtomicReferenceFieldUpdater _reusableCancellableContinuation$FU = AtomicReferenceFieldUpdater.newUpdater(DispatchedContinuation.class, Object.class, "_reusableCancellableContinuation");
+    private volatile Object _reusableCancellableContinuation;
     public Object _state;
     public final Continuation<T> continuation;
     public final Object countOrElement;
@@ -48,7 +48,6 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         this.continuation = continuation;
         this._state = DispatchedContinuationKt.access$getUNDEFINED$p();
         this.countOrElement = ThreadContextKt.threadContextElements(getContext());
-        this._reusableCancellableContinuation = null;
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
@@ -61,22 +60,82 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
     }
 
     private final CancellableContinuationImpl<?> getReusableCancellableContinuation() {
-        Object obj = this._reusableCancellableContinuation;
+        Object obj = _reusableCancellableContinuation$FU.get(this);
         if (obj instanceof CancellableContinuationImpl) {
             return (CancellableContinuationImpl) obj;
         }
         return null;
     }
 
-    public final boolean isReusable() {
-        return this._reusableCancellableContinuation != null;
+    public final boolean isReusable$kotlinx_coroutines_core() {
+        return _reusableCancellableContinuation$FU.get(this) != null;
     }
 
-    public final void release() {
-        awaitReusability();
+    public final void awaitReusability$kotlinx_coroutines_core() {
+        do {
+        } while (_reusableCancellableContinuation$FU.get(this) == DispatchedContinuationKt.REUSABLE_CLAIMED);
+    }
+
+    public final void release$kotlinx_coroutines_core() {
+        awaitReusability$kotlinx_coroutines_core();
         CancellableContinuationImpl<?> reusableCancellableContinuation = getReusableCancellableContinuation();
         if (reusableCancellableContinuation != null) {
             reusableCancellableContinuation.detachChild$kotlinx_coroutines_core();
+        }
+    }
+
+    public final CancellableContinuationImpl<T> claimReusableCancellableContinuation$kotlinx_coroutines_core() {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _reusableCancellableContinuation$FU;
+        while (true) {
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            if (obj == null) {
+                _reusableCancellableContinuation$FU.set(this, DispatchedContinuationKt.REUSABLE_CLAIMED);
+                return null;
+            } else if (obj instanceof CancellableContinuationImpl) {
+                if (_reusableCancellableContinuation$FU.compareAndSet(this, obj, DispatchedContinuationKt.REUSABLE_CLAIMED)) {
+                    return (CancellableContinuationImpl) obj;
+                }
+            } else if (obj != DispatchedContinuationKt.REUSABLE_CLAIMED && !(obj instanceof Throwable)) {
+                throw new IllegalStateException(("Inconsistent state " + obj).toString());
+            }
+        }
+    }
+
+    public final Throwable tryReleaseClaimedContinuation$kotlinx_coroutines_core(CancellableContinuation<?> cancellableContinuation) {
+        Symbol symbol;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _reusableCancellableContinuation$FU;
+        do {
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            symbol = DispatchedContinuationKt.REUSABLE_CLAIMED;
+            if (obj != symbol) {
+                if (obj instanceof Throwable) {
+                    if (!_reusableCancellableContinuation$FU.compareAndSet(this, obj, null)) {
+                        throw new IllegalArgumentException("Failed requirement.".toString());
+                    }
+                    return (Throwable) obj;
+                }
+                throw new IllegalStateException(("Inconsistent state " + obj).toString());
+            }
+        } while (!_reusableCancellableContinuation$FU.compareAndSet(this, symbol, cancellableContinuation));
+        return null;
+    }
+
+    public final boolean postponeCancellation$kotlinx_coroutines_core(Throwable th) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _reusableCancellableContinuation$FU;
+        while (true) {
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            Symbol symbol = DispatchedContinuationKt.REUSABLE_CLAIMED;
+            if (Intrinsics.areEqual(obj, symbol)) {
+                if (_reusableCancellableContinuation$FU.compareAndSet(this, symbol, th)) {
+                    return true;
+                }
+            } else if (obj instanceof Throwable) {
+                return true;
+            } else {
+                if (_reusableCancellableContinuation$FU.compareAndSet(this, obj, null)) {
+                    return false;
+                }
+            }
         }
     }
 
@@ -99,7 +158,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         if (this.dispatcher.isDispatchNeeded(context)) {
             this._state = state$default;
             this.resumeMode = 0;
-            this.dispatcher.mo1688dispatch(context, this);
+            this.dispatcher.mo2114dispatch(context, this);
             return;
         }
         DebugKt.getASSERTIONS_ENABLED();
@@ -134,64 +193,13 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         }
     }
 
+    public final void dispatchYield$kotlinx_coroutines_core(CoroutineContext coroutineContext, T t) {
+        this._state = t;
+        this.resumeMode = 1;
+        this.dispatcher.dispatchYield(coroutineContext, this);
+    }
+
     public String toString() {
         return "DispatchedContinuation[" + this.dispatcher + ", " + DebugStringsKt.toDebugString(this.continuation) + ']';
-    }
-
-    public final void awaitReusability() {
-        do {
-        } while (this._reusableCancellableContinuation == DispatchedContinuationKt.REUSABLE_CLAIMED);
-    }
-
-    public final CancellableContinuationImpl<T> claimReusableCancellableContinuation() {
-        while (true) {
-            Object obj = this._reusableCancellableContinuation;
-            if (obj == null) {
-                this._reusableCancellableContinuation = DispatchedContinuationKt.REUSABLE_CLAIMED;
-                return null;
-            } else if (obj instanceof CancellableContinuationImpl) {
-                if (_reusableCancellableContinuation$FU.compareAndSet(this, obj, DispatchedContinuationKt.REUSABLE_CLAIMED)) {
-                    return (CancellableContinuationImpl) obj;
-                }
-            } else if (obj != DispatchedContinuationKt.REUSABLE_CLAIMED && !(obj instanceof Throwable)) {
-                throw new IllegalStateException(("Inconsistent state " + obj).toString());
-            }
-        }
-    }
-
-    public final Throwable tryReleaseClaimedContinuation(CancellableContinuation<?> cancellableContinuation) {
-        Symbol symbol;
-        do {
-            Object obj = this._reusableCancellableContinuation;
-            symbol = DispatchedContinuationKt.REUSABLE_CLAIMED;
-            if (obj != symbol) {
-                if (obj instanceof Throwable) {
-                    if (!_reusableCancellableContinuation$FU.compareAndSet(this, obj, null)) {
-                        throw new IllegalArgumentException("Failed requirement.".toString());
-                    }
-                    return (Throwable) obj;
-                }
-                throw new IllegalStateException(("Inconsistent state " + obj).toString());
-            }
-        } while (!_reusableCancellableContinuation$FU.compareAndSet(this, symbol, cancellableContinuation));
-        return null;
-    }
-
-    public final boolean postponeCancellation(Throwable th) {
-        while (true) {
-            Object obj = this._reusableCancellableContinuation;
-            Symbol symbol = DispatchedContinuationKt.REUSABLE_CLAIMED;
-            if (Intrinsics.areEqual(obj, symbol)) {
-                if (_reusableCancellableContinuation$FU.compareAndSet(this, symbol, th)) {
-                    return true;
-                }
-            } else if (obj instanceof Throwable) {
-                return true;
-            } else {
-                if (_reusableCancellableContinuation$FU.compareAndSet(this, obj, null)) {
-                    return false;
-                }
-            }
-        }
     }
 }

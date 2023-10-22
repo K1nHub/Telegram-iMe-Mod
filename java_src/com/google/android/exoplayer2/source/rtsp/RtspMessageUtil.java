@@ -88,7 +88,7 @@ public final class RtspMessageUtil {
     }
 
     public static byte[] convertMessageToByteArray(List<String> list) {
-        return Joiner.m765on(CRLF).join(list).getBytes(RtspMessageChannel.CHARSET);
+        return Joiner.m1057on(CRLF).join(list).getBytes(RtspMessageChannel.CHARSET);
     }
 
     public static Uri removeUserInfo(Uri uri) {
@@ -257,7 +257,7 @@ public final class RtspMessageUtil {
         int parseInt = Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1)));
         int indexOf = list.indexOf("");
         Assertions.checkArgument(indexOf > 0);
-        return new RtspResponse(parseInt, new RtspHeaders.Builder().addAll(list.subList(1, indexOf)).build(), Joiner.m765on(CRLF).join(list.subList(indexOf + 1, list.size())));
+        return new RtspResponse(parseInt, new RtspHeaders.Builder().addAll(list.subList(1, indexOf)).build(), Joiner.m1057on(CRLF).join(list.subList(indexOf + 1, list.size())));
     }
 
     public static RtspRequest parseRequest(List<String> list) {
@@ -267,7 +267,7 @@ public final class RtspMessageUtil {
         Uri parse = Uri.parse((String) Assertions.checkNotNull(matcher.group(2)));
         int indexOf = list.indexOf("");
         Assertions.checkArgument(indexOf > 0);
-        return new RtspRequest(parse, parseMethodString, new RtspHeaders.Builder().addAll(list.subList(1, indexOf)).build(), Joiner.m765on(CRLF).join(list.subList(indexOf + 1, list.size())));
+        return new RtspRequest(parse, parseMethodString, new RtspHeaders.Builder().addAll(list.subList(1, indexOf)).build(), Joiner.m1057on(CRLF).join(list.subList(indexOf + 1, list.size())));
     }
 
     public static boolean isRtspStartLine(String str) {
@@ -300,7 +300,7 @@ public final class RtspMessageUtil {
 
     public static ImmutableList<Integer> parsePublicHeader(String str) {
         if (str == null) {
-            return ImmutableList.m762of();
+            return ImmutableList.m1054of();
         }
         ImmutableList.Builder builder = new ImmutableList.Builder();
         for (String str2 : Util.split(str, ",\\s?")) {

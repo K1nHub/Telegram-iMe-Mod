@@ -9,6 +9,6 @@ import moxy.viewstate.strategy.StateStrategyType;
 @Target({ElementType.TYPE, ElementType.METHOD})
 @StateStrategyType(AddToEndStrategy.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public @interface AddToEnd {
 }

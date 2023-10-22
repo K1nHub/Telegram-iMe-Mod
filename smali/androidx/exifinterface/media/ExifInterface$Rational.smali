@@ -24,7 +24,7 @@
 .method constructor <init>(JJ)V
     .locals 3
 
-    .line 3081
+    .line 3085
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
@@ -33,21 +33,21 @@
 
     if-nez v2, :cond_0
 
-    .line 3084
+    .line 3088
     iput-wide v0, p0, Landroidx/exifinterface/media/ExifInterface$Rational;->numerator:J
 
     const-wide/16 p1, 0x1
 
-    .line 3085
+    .line 3089
     iput-wide p1, p0, Landroidx/exifinterface/media/ExifInterface$Rational;->denominator:J
 
     return-void
 
-    .line 3088
+    .line 3092
     :cond_0
     iput-wide p1, p0, Landroidx/exifinterface/media/ExifInterface$Rational;->numerator:J
 
-    .line 3089
+    .line 3093
     iput-wide p3, p0, Landroidx/exifinterface/media/ExifInterface$Rational;->denominator:J
 
     return-void
@@ -58,7 +58,7 @@
 .method public calculate()D
     .locals 4
 
-    .line 3098
+    .line 3102
     iget-wide v0, p0, Landroidx/exifinterface/media/ExifInterface$Rational;->numerator:J
 
     long-to-double v0, v0
@@ -75,7 +75,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 3094
+    .line 3098
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

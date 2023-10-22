@@ -3,7 +3,7 @@ package com.google.android.gms.vision.label.internal.client;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzf implements Parcelable.Creator<zze> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zze[] newArray(int i) {

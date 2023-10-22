@@ -2,7 +2,7 @@ package com.otaliastudios.opengl.internal;
 
 import android.opengl.EGL14;
 /* compiled from: egl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EglKt {
     private static final EglContext EGL_NO_CONTEXT = new EglContext(EGL14.EGL_NO_CONTEXT);
     private static final EglDisplay EGL_NO_DISPLAY = new EglDisplay(EGL14.EGL_NO_DISPLAY);

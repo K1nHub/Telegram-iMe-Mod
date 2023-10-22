@@ -4,12 +4,12 @@ import com.iMe.storage.data.datasource.base.DataSourceFactory;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletApproveDataSourceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletApproveDataSourceFactory implements DataSourceFactory<BlockchainType, WalletApproveDataSource> {
     private final WalletApproveDataSource ethApproveDataSource;
 
     /* compiled from: WalletApproveDataSourceFactory.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

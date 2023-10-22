@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.persistence;
 import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FileStoreImpl implements FileStore {
     private final Context context;
 
@@ -26,10 +26,10 @@ public class FileStoreImpl implements FileStore {
             if (file.exists() || file.mkdirs()) {
                 return file;
             }
-            Logger.getLogger().m738w("Couldn't create file");
+            Logger.getLogger().m1030w("Couldn't create file");
             return null;
         }
-        Logger.getLogger().m738w("Null File");
+        Logger.getLogger().m1030w("Null File");
         return null;
     }
 }

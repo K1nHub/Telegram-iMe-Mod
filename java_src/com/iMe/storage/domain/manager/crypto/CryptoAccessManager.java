@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import java.util.List;
 /* compiled from: CryptoAccessManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoAccessManager {
     void deleteAllWallets();
 

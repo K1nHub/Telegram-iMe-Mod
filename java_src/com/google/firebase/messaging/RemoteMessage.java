@@ -11,15 +11,15 @@ import java.util.Map;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 @SafeParcelable.Class(creator = "RemoteMessageCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RemoteMessage> CREATOR = new RemoteMessageCreator();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     Bundle bundle;
     private Map<String, String> data;
 
     @SafeParcelable.Constructor
-    public RemoteMessage(@SafeParcelable.Param(m796id = 2) Bundle bundle) {
+    public RemoteMessage(@SafeParcelable.Param(m1088id = 2) Bundle bundle) {
         this.bundle = bundle;
     }
 

@@ -4,7 +4,7 @@ import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
 import org.bouncycastle.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WOTSPlus {
     private final KeyedHashFunctions khf;
     private final WOTSPlusParameters params;
@@ -42,7 +42,7 @@ public final class WOTSPlus {
             for (int i4 = 0; i4 < treeDigestSize; i4++) {
                 bArr2[i4] = (byte) (chain[i4] ^ PRF2[i4]);
             }
-            return this.khf.m80F(PRF, bArr2);
+            return this.khf.m106F(PRF, bArr2);
         }
         throw new IllegalArgumentException("max chain length must not be greater than w");
     }

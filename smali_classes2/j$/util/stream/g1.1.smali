@@ -8,16 +8,16 @@
 # instance fields
 .field final synthetic c:Lj$/util/stream/k1;
 
-.field final synthetic d:Lj$/wrappers/U;
+.field final synthetic d:Lj$/wrappers/S;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/U;)V
+.method constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/S;)V
     .locals 0
 
     iput-object p1, p0, Lj$/util/stream/g1;->c:Lj$/util/stream/k1;
 
-    iput-object p2, p0, Lj$/util/stream/g1;->d:Lj$/wrappers/U;
+    iput-object p2, p0, Lj$/util/stream/g1;->d:Lj$/wrappers/S;
 
     invoke-direct {p0, p1}, Lj$/util/stream/j1;-><init>(Lj$/util/stream/k1;)V
 
@@ -33,9 +33,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lj$/util/stream/g1;->d:Lj$/wrappers/U;
+    iget-object v0, p0, Lj$/util/stream/g1;->d:Lj$/wrappers/S;
 
-    invoke-virtual {v0, p1}, Lj$/wrappers/U;->b(I)Z
+    invoke-virtual {v0, p1}, Lj$/wrappers/S;->b(I)Z
 
     move-result p1
 
@@ -82,7 +82,7 @@
     return-void
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1

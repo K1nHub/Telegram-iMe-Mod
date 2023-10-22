@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.wallet.token;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FoundToken.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FoundTokenWithFamily {
     private final FoundToken foundToken;
     private final List<FoundToken> tokenFamily;

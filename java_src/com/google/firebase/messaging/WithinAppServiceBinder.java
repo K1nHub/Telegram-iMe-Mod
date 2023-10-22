@@ -9,12 +9,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.WithinAppServiceConnection;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class WithinAppServiceBinder extends Binder {
     private final IntentHandler intentHandler;
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     interface IntentHandler {
         Task<Void> handle(Intent intent);
     }

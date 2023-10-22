@@ -2,14 +2,14 @@
 .super Lj$/util/stream/D4;
 
 # interfaces
-.implements Lj$/util/s;
+.implements Lj$/util/Spliterator;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;JJ)V
+.method constructor <init>(Lj$/util/Spliterator;JJ)V
     .locals 12
 
-    invoke-interface {p1}, Lj$/util/s;->estimateSize()J
+    invoke-interface {p1}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -28,22 +28,22 @@
     move-wide v4, p2
 
     .line 1
-    invoke-direct/range {v2 .. v11}, Lj$/util/stream/D4;-><init>(Lj$/util/s;JJJJ)V
+    invoke-direct/range {v2 .. v11}, Lj$/util/stream/D4;-><init>(Lj$/util/Spliterator;JJJJ)V
 
     return-void
 .end method
 
-.method private constructor <init>(Lj$/util/s;JJJJ)V
+.method private constructor <init>(Lj$/util/Spliterator;JJJJ)V
     .locals 0
 
-    invoke-direct/range {p0 .. p9}, Lj$/util/stream/D4;-><init>(Lj$/util/s;JJJJ)V
+    invoke-direct/range {p0 .. p9}, Lj$/util/stream/D4;-><init>(Lj$/util/Spliterator;JJJJ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(Lj$/util/s;JJJJ)Lj$/util/s;
+.method protected a(Lj$/util/Spliterator;JJJJ)Lj$/util/Spliterator;
     .locals 11
 
     new-instance v10, Lj$/util/stream/C4;
@@ -60,7 +60,7 @@
 
     move-wide/from16 v8, p8
 
-    invoke-direct/range {v0 .. v9}, Lj$/util/stream/C4;-><init>(Lj$/util/s;JJJJ)V
+    invoke-direct/range {v0 .. v9}, Lj$/util/stream/C4;-><init>(Lj$/util/Spliterator;JJJJ)V
 
     return-object v10
 .end method
@@ -96,11 +96,11 @@
 
     if-lez v0, :cond_1
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
     sget-object v4, Lj$/util/stream/B4;->a:Lj$/util/stream/B4;
 
-    invoke-interface {v0, v4}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, v4}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     iget-wide v4, p0, Lj$/util/stream/D4;->d:J
 
@@ -124,9 +124,9 @@
 
     iput-wide v4, p0, Lj$/util/stream/D4;->d:J
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -164,9 +164,9 @@
 
     if-ltz v0, :cond_2
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -178,9 +178,9 @@
 
     if-gtz v0, :cond_2
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     iget-wide v0, p0, Lj$/util/stream/D4;->e:J
 
@@ -200,11 +200,11 @@
 
     if-lez v0, :cond_3
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
     sget-object v3, Lj$/util/stream/A4;->a:Lj$/util/stream/A4;
 
-    invoke-interface {v0, v3}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, v3}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     iget-wide v3, p0, Lj$/util/stream/D4;->d:J
 
@@ -224,9 +224,9 @@
 
     if-gez v0, :cond_4
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     iget-wide v3, p0, Lj$/util/stream/D4;->d:J
 
@@ -255,7 +255,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -265,7 +265,7 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 

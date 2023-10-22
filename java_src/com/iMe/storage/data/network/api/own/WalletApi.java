@@ -24,7 +24,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: WalletApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletApi {
     @POST("detachCustomToken")
     Observable<ApiBaseResponse<Object>> detachCustomToken(@Body TokenCommonRequest tokenCommonRequest);

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$DraftMessage extends TLObject {
     public int date;
     public ArrayList<TLRPC$MessageEntity> entities = new ArrayList<>();

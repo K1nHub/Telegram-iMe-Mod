@@ -1,10 +1,10 @@
 package com.iMe.model.wallet.notification;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationPushText.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NotificationPushText {
     private String action;
     private final String linkedObject;
@@ -64,7 +64,7 @@ public final class NotificationPushText {
     }
 
     public int hashCode() {
-        return (((((this.text.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId)) * 31) + this.action.hashCode()) * 31) + this.linkedObject.hashCode();
+        return (((((this.text.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.userId)) * 31) + this.action.hashCode()) * 31) + this.linkedObject.hashCode();
     }
 
     public String toString() {

@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.twitter;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterProfileInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterProfileInfo {
     private final boolean isUnlinked;
     private final long telegramUserId;
@@ -49,13 +49,13 @@ public final class TwitterProfileInfo {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterUserId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterUserIdInDatabase)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.telegramUserId)) * 31) + this.twitterUserName.hashCode()) * 31;
+        int m1017m = ((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.twitterUserId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.twitterUserIdInDatabase)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.telegramUserId)) * 31) + this.twitterUserName.hashCode()) * 31;
         boolean z = this.isUnlinked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m724m + i;
+        return m1017m + i;
     }
 
     public String toString() {

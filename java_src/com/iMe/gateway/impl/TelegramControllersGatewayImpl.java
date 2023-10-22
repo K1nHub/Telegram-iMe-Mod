@@ -11,7 +11,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: TelegramControllersGatewayImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TelegramControllersGatewayImpl implements TelegramControllersGateway {
     private final HashMap<String, Object> instancesCache;
     private final TelegramGateway telegramGateway;

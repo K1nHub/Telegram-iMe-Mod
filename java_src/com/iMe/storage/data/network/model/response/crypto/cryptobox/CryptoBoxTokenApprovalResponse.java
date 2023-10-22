@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTokenApprovalStatus;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTokenApprovalResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTokenApprovalResponse {
     private final CryptoBoxTokenApprovalStatus status;
     private final TokenDetailedResponse token;

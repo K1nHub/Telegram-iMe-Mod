@@ -1,18 +1,18 @@
 package com.iMe.model.twitter;
 
 import com.google.gson.annotations.SerializedName;
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialAuthResult.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SocialAuthResult {
     public /* synthetic */ SocialAuthResult(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Success extends SocialAuthResult {
         @SerializedName("twitterUserId")
         private final long socialId;
@@ -58,7 +58,7 @@ public abstract class SocialAuthResult {
         }
 
         public int hashCode() {
-            return (this.status.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.socialId);
+            return (this.status.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.socialId);
         }
 
         public String toString() {
@@ -90,7 +90,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Verification extends SocialAuthResult {
         private final long socialId;
 
@@ -117,7 +117,7 @@ public abstract class SocialAuthResult {
         }
 
         public int hashCode() {
-            return BotsDbModel$$ExternalSyntheticBackport0.m724m(this.socialId);
+            return ProfileData$$ExternalSyntheticBackport0.m1017m(this.socialId);
         }
 
         public String toString() {
@@ -135,7 +135,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Failure extends SocialAuthResult {
         private final String message;
 
@@ -183,7 +183,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Cancelled extends SocialAuthResult {
         public static final Cancelled INSTANCE = new Cancelled();
 
@@ -193,7 +193,7 @@ public abstract class SocialAuthResult {
     }
 
     /* compiled from: SocialAuthResult.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Logout extends SocialAuthResult {
         public static final Logout INSTANCE = new Logout();
 

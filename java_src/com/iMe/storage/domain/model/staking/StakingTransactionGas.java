@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionGas.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingTransactionGas {
     private final BigDecimal asNativeToken;
     private final BigDecimal asUsd;

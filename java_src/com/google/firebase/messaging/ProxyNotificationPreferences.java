@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ProxyNotificationPreferences {
     private static SharedPreferences getPreference(Context context) {
         Context applicationContext = context.getApplicationContext();

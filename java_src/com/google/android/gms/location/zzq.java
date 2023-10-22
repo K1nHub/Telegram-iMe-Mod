@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzq extends com.google.android.gms.internal.location.zzb implements zzr {
     public zzq() {
         super("com.google.android.gms.location.ILocationCallback");

@@ -5,7 +5,7 @@ import java.util.AbstractList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class AbstractProtobufList<E> extends AbstractList<E> implements Internal.ProtobufList<E> {
     private boolean isMutable = true;
 

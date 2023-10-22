@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenApproveData.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TokenApproveData {
     private final TokenApproveStatus status;
     private final TokenDetailed token;
@@ -35,7 +35,7 @@ public abstract class TokenApproveData {
     }
 
     /* compiled from: TokenApproveData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Allowed extends TokenApproveData {
         private final TokenDetailed token;
         private final String value;
@@ -104,7 +104,7 @@ public abstract class TokenApproveData {
     }
 
     /* compiled from: TokenApproveData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class InProgress extends TokenApproveData {
         private final TokenDetailed token;
         private final String value;
@@ -173,7 +173,7 @@ public abstract class TokenApproveData {
     }
 
     /* compiled from: TokenApproveData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class NeedApprove extends TokenApproveData {
         private final TokenDetailed feeToken;
         private final String spenderContractAddress;
@@ -224,7 +224,7 @@ public abstract class TokenApproveData {
         }
 
         /* compiled from: TokenApproveData.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class NotAllowed extends NeedApprove {
             private final TokenDetailed feeToken;
             private final String spenderContractAddress;
@@ -344,7 +344,7 @@ public abstract class TokenApproveData {
         }
 
         /* compiled from: TokenApproveData.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Error extends NeedApprove {
             private final TokenDetailed feeToken;
             private final String lastErrorMessage;

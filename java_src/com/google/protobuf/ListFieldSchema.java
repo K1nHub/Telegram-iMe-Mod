@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ListFieldSchema {
     private static final ListFieldSchema FULL_INSTANCE = new ListFieldSchemaFull();
     private static final ListFieldSchema LITE_INSTANCE = new ListFieldSchemaLite();
@@ -32,7 +32,7 @@ public abstract class ListFieldSchema {
         return LITE_INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class ListFieldSchemaFull extends ListFieldSchema {
         private static final Class<?> UNMODIFIABLE_LIST_CLASS = Collections.unmodifiableList(Collections.emptyList()).getClass();
 
@@ -127,7 +127,7 @@ public abstract class ListFieldSchema {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class ListFieldSchemaLite extends ListFieldSchema {
         private ListFieldSchemaLite() {
             super();

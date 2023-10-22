@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s;
+.implements Lj$/util/Spliterator;
 .implements Lj$/util/function/Consumer;
 
 
@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field private final a:Lj$/util/s;
+.field private final a:Lj$/util/Spliterator;
 
 .field private final b:Lj$/util/concurrent/ConcurrentHashMap;
 
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/s;)V
+.method constructor <init>(Lj$/util/Spliterator;)V
     .locals 1
 
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
@@ -41,19 +41,19 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
     iput-object v0, p0, Lj$/util/stream/m4;->b:Lj$/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method
 
-.method private constructor <init>(Lj$/util/s;Lj$/util/concurrent/ConcurrentHashMap;)V
+.method private constructor <init>(Lj$/util/Spliterator;Lj$/util/concurrent/ConcurrentHashMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
     iput-object p2, p0, Lj$/util/stream/m4;->b:Lj$/util/concurrent/ConcurrentHashMap;
 
@@ -84,9 +84,9 @@
     .locals 3
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p0}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
@@ -135,9 +135,9 @@
 .method public characteristics()I
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->characteristics()I
+    invoke-interface {v0}, Lj$/util/Spliterator;->characteristics()I
 
     move-result v0
 
@@ -151,9 +151,9 @@
 .method public estimateSize()J
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -194,13 +194,13 @@
 .method public forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
     new-instance v1, Lj$/util/stream/o;
 
     invoke-direct {v1, p0, p1}, Lj$/util/stream/o;-><init>(Lj$/util/stream/m4;Lj$/util/function/Consumer;)V
 
-    invoke-interface {v0, v1}, Lj$/util/s;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, v1}, Lj$/util/Spliterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -208,9 +208,9 @@
 .method public getComparator()Ljava/util/Comparator;
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->getComparator()Ljava/util/Comparator;
+    invoke-interface {v0}, Lj$/util/Spliterator;->getComparator()Ljava/util/Comparator;
 
     move-result-object v0
 
@@ -220,7 +220,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -230,19 +230,19 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public trySplit()Lj$/util/s;
+.method public trySplit()Lj$/util/Spliterator;
     .locals 3
 
-    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/m4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -252,7 +252,7 @@
 
     iget-object v2, p0, Lj$/util/stream/m4;->b:Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v1, v0, v2}, Lj$/util/stream/m4;-><init>(Lj$/util/s;Lj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct {v1, v0, v2}, Lj$/util/stream/m4;-><init>(Lj$/util/Spliterator;Lj$/util/concurrent/ConcurrentHashMap;)V
 
     goto :goto_0
 

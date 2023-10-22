@@ -15,8 +15,8 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.p043ui.Components.AnimatedEmojiSpan;
-import org.telegram.p043ui.Components.URLSpanReplacement;
+import org.telegram.p042ui.Components.AnimatedEmojiSpan;
+import org.telegram.p042ui.Components.URLSpanReplacement;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityBold;
 import org.telegram.tgnet.TLRPC$TL_messageEntityCustomEmoji;
@@ -30,7 +30,7 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CopyUtilities {
     public static Spannable fromHTML(String str) {
         try {
@@ -88,7 +88,7 @@ public class CopyUtilities {
             MediaDataController.addAnimatedEmojiSpans(arrayList, spannableString, null);
             return spannableString;
         } catch (Exception e) {
-            FileLog.m68e("Html.fromHtml", e);
+            FileLog.m98e("Html.fromHtml", e);
             return null;
         }
     }
@@ -99,14 +99,14 @@ public class CopyUtilities {
         return tLRPC$MessageEntity;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class HTMLTagAttributesHandler implements Html.TagHandler, ContentHandler {
         private final TagHandler handler;
         private ArrayDeque<Boolean> tagStatus;
         private Editable text;
         private ContentHandler wrapped;
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public interface TagHandler {
             boolean handleTag(boolean z, String str, Editable editable, Attributes attributes);
         }
@@ -201,7 +201,7 @@ public class CopyUtilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class HTMLTagHandler implements HTMLTagAttributesHandler.TagHandler {
         private HTMLTagHandler() {
         }
@@ -288,7 +288,7 @@ public class CopyUtilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class ParsedSpan {
         final int type;
 

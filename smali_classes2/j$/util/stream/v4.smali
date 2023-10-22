@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1

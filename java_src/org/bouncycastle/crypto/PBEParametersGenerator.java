@@ -1,7 +1,7 @@
 package org.bouncycastle.crypto;
 
 import org.bouncycastle.util.Strings;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class PBEParametersGenerator {
     protected int iterationCount;
     protected byte[] password;

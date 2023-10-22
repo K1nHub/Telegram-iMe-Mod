@@ -9,7 +9,7 @@
 # instance fields
 .field protected final a:Lj$/util/stream/y2;
 
-.field protected b:Lj$/util/s;
+.field protected b:Lj$/util/Spliterator;
 
 .field protected c:J
 
@@ -35,12 +35,12 @@
     return-void
 .end method
 
-.method protected constructor <init>(Lj$/util/stream/f;Lj$/util/s;)V
+.method protected constructor <init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
     .locals 0
 
     invoke-direct {p0, p1}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
 
-    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     iget-object p2, p1, Lj$/util/stream/f;->a:Lj$/util/stream/y2;
 
@@ -53,7 +53,7 @@
     return-void
 .end method
 
-.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/s;)V
+.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -62,7 +62,7 @@
 
     iput-object p1, p0, Lj$/util/stream/f;->a:Lj$/util/stream/y2;
 
-    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     const-wide/16 p1, 0x0
 
@@ -123,9 +123,9 @@
 .method public compute()V
     .locals 9
 
-    iget-object v0, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v1
 
@@ -158,19 +158,19 @@
     if-lez v1, :cond_2
 
     .line 2
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    invoke-virtual {v6, v1}, Lj$/util/stream/f;->f(Lj$/util/s;)Lj$/util/stream/f;
+    invoke-virtual {v6, v1}, Lj$/util/stream/f;->f(Lj$/util/Spliterator;)Lj$/util/stream/f;
 
     move-result-object v2
 
     iput-object v2, v6, Lj$/util/stream/f;->d:Lj$/util/stream/f;
 
-    invoke-virtual {v6, v0}, Lj$/util/stream/f;->f(Lj$/util/s;)Lj$/util/stream/f;
+    invoke-virtual {v6, v0}, Lj$/util/stream/f;->f(Lj$/util/Spliterator;)Lj$/util/stream/f;
 
     move-result-object v7
 
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2}, Ljava/util/concurrent/CountedCompleter;->fork()Ljava/util/concurrent/ForkJoinTask;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v1
 
@@ -254,7 +254,7 @@
     return v0
 .end method
 
-.method protected abstract f(Lj$/util/s;)Lj$/util/stream/f;
+.method protected abstract f(Lj$/util/Spliterator;)Lj$/util/stream/f;
 .end method
 
 .method protected g(Ljava/lang/Object;)V
@@ -278,7 +278,7 @@
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 

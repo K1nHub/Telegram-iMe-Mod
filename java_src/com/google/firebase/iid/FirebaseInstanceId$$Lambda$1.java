@@ -2,7 +2,7 @@ package com.google.firebase.iid;
 
 import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final /* synthetic */ class FirebaseInstanceId$$Lambda$1 implements Executor {
     static final Executor $instance = new FirebaseInstanceId$$Lambda$1();
 

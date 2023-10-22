@@ -7,18 +7,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "ImageLabelParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zze extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zze> CREATOR = new zzf();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final String label;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final String zzdn;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final float zzdo;
 
     @SafeParcelable.Constructor
-    public zze(@SafeParcelable.Param(m796id = 4) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) float f) {
+    public zze(@SafeParcelable.Param(m1088id = 4) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) float f) {
         this.label = str2;
         this.zzdo = f;
         this.zzdn = str;

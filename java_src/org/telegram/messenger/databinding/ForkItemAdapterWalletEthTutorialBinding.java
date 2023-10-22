@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.Components.RLottieImageView;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.Components.RLottieImageView;
+/* loaded from: classes4.dex */
 public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBinding {
     public final RLottieImageView imageLogo;
     private final LinearLayout rootView;
@@ -23,7 +23,6 @@ public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBindin
         this.textTitle = appCompatTextView2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayout getRoot() {
         return this.rootView;
     }
@@ -33,7 +32,7 @@ public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBindin
     }
 
     public static ForkItemAdapterWalletEthTutorialBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_item_adapter_wallet_eth_tutorial, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_item_adapter_wallet_eth_tutorial, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -41,13 +40,13 @@ public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBindin
     }
 
     public static ForkItemAdapterWalletEthTutorialBinding bind(View view) {
-        int i = C3473R.C3476id.image_logo;
+        int i = C3630R.C3633id.image_logo;
         RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
         if (rLottieImageView != null) {
-            i = C3473R.C3476id.text_description;
+            i = C3630R.C3633id.text_description;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3473R.C3476id.text_title;
+                i = C3630R.C3633id.text_title;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
                     return new ForkItemAdapterWalletEthTutorialBinding((LinearLayout) view, rLottieImageView, appCompatTextView, appCompatTextView2);

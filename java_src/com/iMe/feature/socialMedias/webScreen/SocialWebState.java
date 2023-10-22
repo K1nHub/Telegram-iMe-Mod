@@ -4,7 +4,7 @@ import com.iMe.feature.socialMedias.SocialNetwork;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialWebState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialWebState {
     private final boolean isLoading;
     private final SocialNetwork socialNetwork;

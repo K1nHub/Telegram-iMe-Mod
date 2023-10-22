@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateUserPhoto extends TLRPC$Update {
     public static int constructor = -232290676;
     public int date;

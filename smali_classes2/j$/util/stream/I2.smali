@@ -7,22 +7,22 @@
 
 .field final synthetic c:Lj$/util/function/BiConsumer;
 
-.field final synthetic d:Lj$/util/function/y;
+.field final synthetic d:Lj$/util/function/x;
 
-.field final synthetic e:Lj$/wrappers/I0;
+.field final synthetic e:Lj$/wrappers/F0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/BiConsumer;Lj$/util/function/y;Lj$/wrappers/I0;)V
+.method constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/BiConsumer;Lj$/util/function/x;Lj$/wrappers/F0;)V
     .locals 0
 
     iput-object p2, p0, Lj$/util/stream/I2;->b:Lj$/util/function/b;
 
     iput-object p3, p0, Lj$/util/stream/I2;->c:Lj$/util/function/BiConsumer;
 
-    iput-object p4, p0, Lj$/util/stream/I2;->d:Lj$/util/function/y;
+    iput-object p4, p0, Lj$/util/stream/I2;->d:Lj$/util/function/x;
 
-    iput-object p5, p0, Lj$/util/stream/I2;->e:Lj$/wrappers/I0;
+    iput-object p5, p0, Lj$/util/stream/I2;->e:Lj$/wrappers/F0;
 
     invoke-direct {p0, p1}, Lj$/util/stream/U2;-><init>(Lj$/util/stream/e4;)V
 
@@ -37,13 +37,13 @@
     .line 1
     new-instance v0, Lj$/util/stream/J2;
 
-    iget-object v1, p0, Lj$/util/stream/I2;->d:Lj$/util/function/y;
+    iget-object v1, p0, Lj$/util/stream/I2;->d:Lj$/util/function/x;
 
     iget-object v2, p0, Lj$/util/stream/I2;->c:Lj$/util/function/BiConsumer;
 
     iget-object v3, p0, Lj$/util/stream/I2;->b:Lj$/util/function/b;
 
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/J2;-><init>(Lj$/util/function/y;Lj$/util/function/BiConsumer;Lj$/util/function/b;)V
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/J2;-><init>(Lj$/util/function/x;Lj$/util/function/BiConsumer;Lj$/util/function/b;)V
 
     return-object v0
 .end method
@@ -51,9 +51,9 @@
 .method public b()I
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/I2;->e:Lj$/wrappers/I0;
+    iget-object v0, p0, Lj$/util/stream/I2;->e:Lj$/wrappers/F0;
 
-    invoke-virtual {v0}, Lj$/wrappers/I0;->b()Ljava/util/Set;
+    invoke-virtual {v0}, Lj$/wrappers/F0;->b()Ljava/util/Set;
 
     move-result-object v0
 

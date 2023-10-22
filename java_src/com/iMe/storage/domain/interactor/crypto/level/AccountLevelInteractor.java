@@ -5,13 +5,13 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.crypto.level.AccountLevelInformation;
 import com.iMe.storage.domain.repository.crypto.level.AccountLevelRepository;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevelInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AccountLevelInteractor {
     private final AccountLevelRepository accountLevelRepository;
     private final TelegramGateway telegramGateway;
@@ -66,7 +66,7 @@ public final class AccountLevelInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -91,7 +91,7 @@ public final class AccountLevelInteractor {
                             if (!(result2 instanceof Result.Success)) {
                                 if (result2 instanceof Result.Error) {
                                     Result<? extends AccountLevelInformation> error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
-                                    Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                                    Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                                     return error$default2;
                                 } else if (result2 instanceof Object) {
                                     return result2;

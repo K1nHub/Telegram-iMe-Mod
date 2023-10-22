@@ -7,13 +7,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Multimaps {
     public static <K, V> ListMultimap<K, V> newListMultimap(Map<K, Collection<V>> map, Supplier<? extends List<V>> supplier) {
         return new CustomListMultimap(map, supplier);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class CustomListMultimap<K, V> extends AbstractListMultimap<K, V> {
         transient Supplier<? extends List<V>> factory;
 
@@ -39,7 +39,7 @@ public final class Multimaps {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static abstract class Entries<K, V> extends AbstractCollection<Map.Entry<K, V>> {
         abstract Multimap<K, V> multimap();
 

@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SmsReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
@@ -46,7 +46,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
     }
 

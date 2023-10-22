@@ -137,13 +137,13 @@
     return-void
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
     const/4 p1, 0x1

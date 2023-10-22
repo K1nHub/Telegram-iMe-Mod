@@ -1,7 +1,7 @@
 package org.bouncycastle.crypto.digests;
 
 import org.bouncycastle.crypto.Xof;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SHAKEDigest extends KeccakDigest implements Xof {
     public SHAKEDigest(int i) {
         super(checkBitLength(i));

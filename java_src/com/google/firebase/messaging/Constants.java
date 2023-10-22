@@ -4,12 +4,12 @@ import android.os.Bundle;
 import androidx.collection.ArrayMap;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Constants {
     public static final long WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS = TimeUnit.MINUTES.toMillis(3);
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class MessagePayloadKeys {
         public static ArrayMap<String, String> extractDeveloperDefinedPayload(Bundle bundle) {
             ArrayMap<String, String> arrayMap = new ArrayMap<>();

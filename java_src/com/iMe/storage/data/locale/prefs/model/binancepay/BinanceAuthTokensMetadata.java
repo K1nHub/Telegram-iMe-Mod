@@ -1,10 +1,10 @@
 package com.iMe.storage.data.locale.prefs.model.binancepay;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.binancepay.BinanceAuthTokens;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceAuthTokensMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceAuthTokensMetadata {
     private final BinanceAuthTokens authTokens;
     private final long updateTimestamp;
@@ -22,7 +22,7 @@ public final class BinanceAuthTokensMetadata {
 
     public int hashCode() {
         BinanceAuthTokens binanceAuthTokens = this.authTokens;
-        return ((binanceAuthTokens == null ? 0 : binanceAuthTokens.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.updateTimestamp);
+        return ((binanceAuthTokens == null ? 0 : binanceAuthTokens.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.updateTimestamp);
     }
 
     public String toString() {

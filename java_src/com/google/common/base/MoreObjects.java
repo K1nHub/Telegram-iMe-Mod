@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MoreObjects {
     public static <T> T firstNonNull(T t, T t2) {
         if (t != null) {
@@ -18,11 +18,7 @@ public final class MoreObjects {
         return new ToStringHelper(obj.getClass().getSimpleName());
     }
 
-    public static ToStringHelper toStringHelper(Class<?> cls) {
-        return new ToStringHelper(cls.getSimpleName());
-    }
-
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ToStringHelper {
         private final String className;
         private final ValueHolder holderHead;
@@ -39,11 +35,6 @@ public final class MoreObjects {
             this.className = (String) Preconditions.checkNotNull(str);
         }
 
-        public ToStringHelper omitNullValues() {
-            this.omitNullValues = true;
-            return this;
-        }
-
         public ToStringHelper add(String str, Object obj) {
             return addHolder(str, obj);
         }
@@ -52,16 +43,8 @@ public final class MoreObjects {
             return addUnconditionalHolder(str, String.valueOf(z));
         }
 
-        public ToStringHelper add(String str, double d) {
-            return addUnconditionalHolder(str, String.valueOf(d));
-        }
-
         public ToStringHelper add(String str, int i) {
             return addUnconditionalHolder(str, String.valueOf(i));
-        }
-
-        public ToStringHelper add(String str, long j) {
-            return addUnconditionalHolder(str, String.valueOf(j));
         }
 
         private static boolean isEmpty(Object obj) {
@@ -143,7 +126,7 @@ public final class MoreObjects {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static class ValueHolder {
             String name;
             ValueHolder next;
@@ -154,7 +137,7 @@ public final class MoreObjects {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class UnconditionalValueHolder extends ValueHolder {
             private UnconditionalValueHolder() {
                 super();

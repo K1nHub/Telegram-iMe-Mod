@@ -7,7 +7,7 @@ import android.os.Looper;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.BaseGmsClient;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzeh extends BaseGmsClient<zzeb> {
     public zzeh(Context context, Looper looper, BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks, BaseGmsClient.BaseOnConnectionFailedListener baseOnConnectionFailedListener) {
         super(context, looper, 93, baseConnectionCallbacks, baseOnConnectionFailedListener, null);

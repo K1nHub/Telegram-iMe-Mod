@@ -1,6 +1,6 @@
 package com.google.android.material.resources;
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TextAppearanceConfig {
     private static boolean shouldLoadFontSynchronously;
 

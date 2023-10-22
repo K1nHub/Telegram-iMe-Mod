@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TakeWhileSequence<T> implements Sequence<T> {
     private final Function1<T, Boolean> predicate;
     private final Sequence<T> sequence;

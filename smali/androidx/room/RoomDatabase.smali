@@ -35,6 +35,17 @@
     .end annotation
 .end field
 
+.field private final mBackingFieldMap:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field protected mCallbacks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,6 +145,10 @@
 
     .line 150
     invoke-static {v0}, Lj$/util/DesugarCollections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroidx/room/RoomDatabase;->mBackingFieldMap:Ljava/util/Map;
 
     .line 186
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->createInvalidationTracker()Landroidx/room/InvalidationTracker;

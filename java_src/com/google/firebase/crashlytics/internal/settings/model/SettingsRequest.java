@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.settings.model;
 
 import com.google.firebase.crashlytics.internal.common.InstallIdProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SettingsRequest {
     public final String buildVersion;
     public final String deviceModel;

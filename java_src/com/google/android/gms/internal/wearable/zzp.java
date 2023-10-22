@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.wearable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzp extends zzbs implements zzdd {
     /* JADX WARN: Illegal instructions before constructor call */
     /*

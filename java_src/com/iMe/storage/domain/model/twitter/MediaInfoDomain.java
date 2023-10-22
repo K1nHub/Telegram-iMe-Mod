@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.twitter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MediaInfoDomain {
     private final MediaType type;
     private final String url;

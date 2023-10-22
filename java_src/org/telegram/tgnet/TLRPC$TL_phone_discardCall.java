@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_phone_discardCall extends TLObject {
     public static int constructor = -1295269440;
     public long connection_id;

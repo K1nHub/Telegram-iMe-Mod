@@ -8,7 +8,7 @@ import kotlin.ranges.IntProgression;
 import kotlin.ranges.LongProgression;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Ranges.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class RangesKt___RangesKt extends RangesKt__RangesKt {
     public static int coerceAtLeast(int i, int i2) {
         return i < i2 ? i2 : i;
@@ -80,5 +80,12 @@ public class RangesKt___RangesKt extends RangesKt__RangesKt {
             return i < i2 ? i2 : i > i3 ? i3 : i;
         }
         throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + i3 + " is less than minimum " + i2 + '.');
+    }
+
+    public static long coerceIn(long j, long j2, long j3) {
+        if (j2 <= j3) {
+            return j < j2 ? j2 : j > j3 ? j3 : j;
+        }
+        throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + j3 + " is less than minimum " + j2 + '.');
     }
 }

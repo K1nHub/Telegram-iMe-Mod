@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/d;
+.implements Ljava/util/function/DoubleBinaryOperator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/DoubleBinaryOperator;
+.field final synthetic a:Lj$/util/function/d;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/DoubleBinaryOperator;)V
+.method private synthetic constructor <init>(Lj$/util/function/d;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/x;->a:Ljava/util/function/DoubleBinaryOperator;
+    iput-object p1, p0, Lj$/wrappers/x;->a:Lj$/util/function/d;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/DoubleBinaryOperator;)Lj$/util/function/d;
+.method public static synthetic a(Lj$/util/function/d;)Ljava/util/function/DoubleBinaryOperator;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,20 +30,20 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/y;
+    instance-of v0, p0, Lj$/wrappers/w;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/y;
+    check-cast p0, Lj$/wrappers/w;
 
-    iget-object p0, p0, Lj$/wrappers/y;->a:Lj$/util/function/d;
+    iget-object p0, p0, Lj$/wrappers/w;->a:Ljava/util/function/DoubleBinaryOperator;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/x;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/x;-><init>(Ljava/util/function/DoubleBinaryOperator;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/x;-><init>(Lj$/util/function/d;)V
 
     return-object v0
 .end method
@@ -53,9 +53,9 @@
 .method public synthetic applyAsDouble(DD)D
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/x;->a:Ljava/util/function/DoubleBinaryOperator;
+    iget-object v0, p0, Lj$/wrappers/x;->a:Lj$/util/function/d;
 
-    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/function/DoubleBinaryOperator;->applyAsDouble(DD)D
+    invoke-interface {v0, p1, p2, p3, p4}, Lj$/util/function/d;->applyAsDouble(DD)D
 
     move-result-wide p1
 

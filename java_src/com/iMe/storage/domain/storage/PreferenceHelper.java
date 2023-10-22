@@ -4,7 +4,7 @@ import com.iMe.storage.data.locale.prefs.model.RequestAppReviewMetadata;
 import com.iMe.storage.data.locale.prefs.model.RequestAppUpdateMetadata;
 import com.iMe.storage.domain.model.common.Environment;
 /* compiled from: PreferenceHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface PreferenceHelper extends BasePreferenceHelper {
     long getCatalogLanguagesLastUpdateTime();
 
@@ -14,6 +14,8 @@ public interface PreferenceHelper extends BasePreferenceHelper {
 
     String getKiklikoUUID();
 
+    long getLastMarkActivityTime();
+
     String getPushAllowanceToken();
 
     String getPushToken();
@@ -22,6 +24,8 @@ public interface PreferenceHelper extends BasePreferenceHelper {
 
     RequestAppUpdateMetadata getRequestAppUpdateMetadata();
 
+    boolean isNewsBotActivated();
+
     boolean isPushTokenRegistered();
 
     void setCatalogLanguagesLastUpdateTime(long j);
@@ -29,6 +33,10 @@ public interface PreferenceHelper extends BasePreferenceHelper {
     void setCatalogSelectedLanguageId(Long l);
 
     void setEnvironment(Environment environment);
+
+    void setLastMarkActivityTime(long j);
+
+    void setNewsBotActivated(boolean z);
 
     void setPushAllowanceToken(String str);
 

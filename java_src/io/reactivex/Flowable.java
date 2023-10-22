@@ -21,14 +21,13 @@ import io.reactivex.internal.operators.flowable.FlowableSingleSingle;
 import io.reactivex.internal.operators.flowable.FlowableSubscribeOn;
 import io.reactivex.internal.operators.flowable.FlowableTake;
 import io.reactivex.internal.operators.flowable.FlowableUnsubscribeOn;
-import io.reactivex.internal.operators.observable.ObservableFromPublisher;
 import io.reactivex.internal.subscribers.LambdaSubscriber;
 import io.reactivex.internal.subscribers.StrictSubscriber;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Flowable<T> implements Publisher<T> {
     static final int BUFFER_SIZE = Math.max(1, Integer.getInteger("rx2.buffer-size", 128).intValue());
 
@@ -160,10 +159,6 @@ public abstract class Flowable<T> implements Publisher<T> {
             throw new IllegalArgumentException("count >= 0 required but it was " + j);
         }
         return RxJavaPlugins.onAssembly(new FlowableTake(this, j));
-    }
-
-    public final Observable<T> toObservable() {
-        return RxJavaPlugins.onAssembly(new ObservableFromPublisher(this));
     }
 
     public final Flowable<T> unsubscribeOn(Scheduler scheduler) {

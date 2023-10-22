@@ -33,12 +33,12 @@ import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p042ui.LaunchActivity;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Message;
 import org.telegram.tgnet.TLRPC$User;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MusicBrowserService extends MediaBrowserService implements NotificationCenter.NotificationCenterDelegate {
     public static final String ACTION_CMD = "com.example.android.mediabrowserservice.ACTION_CMD";
     public static final String CMD_NAME = "CMD_NAME";
@@ -110,7 +110,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     @Override // android.service.media.MediaBrowserService
     public void onLoadChildren(final String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         if (passcode()) {
-            Toast.makeText(getApplicationContext(), LocaleController.getString(C3473R.string.EnterYourTelegramPasscode), 1).show();
+            Toast.makeText(getApplicationContext(), LocaleController.getString(C3630R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
         } else if (!this.chatsLoaded) {
@@ -159,7 +159,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                         byteBufferValue.reuse();
                         if (MessageObject.isMusicMessage(TLdeserialize)) {
                             long longValue2 = queryFinalized2.longValue(0);
-                            TLdeserialize.f1546id = queryFinalized2.intValue(2);
+                            TLdeserialize.f1624id = queryFinalized2.intValue(2);
                             TLdeserialize.dialog_id = longValue2;
                             ArrayList<MessageObject> arrayList3 = this.musicObjects.get(longValue2);
                             ArrayList<MediaSession.QueueItem> arrayList4 = this.musicQueues.get(longValue2);
@@ -184,7 +184,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getUsersInternal(TextUtils.join(",", arrayList), arrayList5);
                     for (int i = 0; i < arrayList5.size(); i++) {
                         TLRPC$User tLRPC$User = arrayList5.get(i);
-                        this.users.put(tLRPC$User.f1685id, tLRPC$User);
+                        this.users.put(tLRPC$User.f1762id, tLRPC$User);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
@@ -192,12 +192,12 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
                     for (int i2 = 0; i2 < arrayList6.size(); i2++) {
                         TLRPC$Chat tLRPC$Chat = arrayList6.get(i2);
-                        this.chats.put(tLRPC$Chat.f1522id, tLRPC$Chat);
+                        this.chats.put(tLRPC$Chat.f1600id, tLRPC$Chat);
                     }
                 }
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicBrowserService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
@@ -294,12 +294,12 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
             }
             return null;
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
             return null;
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private final class MediaSessionCallback extends MediaSession.Callback {
         private MediaSessionCallback() {
         }
@@ -344,7 +344,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                 arrayList = (ArrayList) MusicBrowserService.this.musicObjects.get(parseLong);
                 arrayList2 = (ArrayList) MusicBrowserService.this.musicQueues.get(parseLong);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             if (arrayList != null && parseInt >= 0 && parseInt < arrayList.size()) {
                 MusicBrowserService.this.lastSelectedDialog = parseLong;
@@ -473,7 +473,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
             try {
                 startService(new Intent(getApplicationContext(), MusicBrowserService.class));
             } catch (Throwable th) {
-                FileLog.m67e(th);
+                FileLog.m97e(th);
             }
             this.serviceStarted = true;
         }
@@ -509,7 +509,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class DelayedStopHandler extends Handler {
         private final WeakReference<MusicBrowserService> mWeakReference;
 

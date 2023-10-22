@@ -13,22 +13,22 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public class FidoCredentialDetails extends AbstractSafeParcelable {
     public static final Parcelable.Creator<FidoCredentialDetails> CREATOR = new zzv();
-    @SafeParcelable.Field(getter = "getUserName", m797id = 1)
+    @SafeParcelable.Field(getter = "getUserName", m1089id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getUserDisplayName", m797id = 2)
+    @SafeParcelable.Field(getter = "getUserDisplayName", m1089id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getUserId", m797id = 3)
+    @SafeParcelable.Field(getter = "getUserId", m1089id = 3)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getCredentialId", m797id = 4)
+    @SafeParcelable.Field(getter = "getCredentialId", m1089id = 4)
     private final byte[] zzd;
-    @SafeParcelable.Field(getter = "getIsDiscoverable", m797id = 5)
+    @SafeParcelable.Field(getter = "getIsDiscoverable", m1089id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "getIsPaymentCredential", m797id = 6)
+    @SafeParcelable.Field(getter = "getIsPaymentCredential", m1089id = 6)
     private final boolean zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public FidoCredentialDetails(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) byte[] bArr, @SafeParcelable.Param(m796id = 4) byte[] bArr2, @SafeParcelable.Param(m796id = 5) boolean z, @SafeParcelable.Param(m796id = 6) boolean z2) {
+    public FidoCredentialDetails(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) byte[] bArr, @SafeParcelable.Param(m1088id = 4) byte[] bArr2, @SafeParcelable.Param(m1088id = 5) boolean z, @SafeParcelable.Param(m1088id = 6) boolean z2) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = bArr;

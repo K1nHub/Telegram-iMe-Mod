@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DefaultDataSink implements DataSink {
     private static final Logger LOG = new Logger(DefaultDataSink.class.getSimpleName());
     private final MediaMuxer mMuxer;
@@ -20,7 +20,7 @@ public class DefaultDataSink implements DataSink {
     private ByteBuffer mQueueBuffer;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class QueuedSample {
         private final int mFlags;
         private final int mSize;
@@ -61,7 +61,7 @@ public class DefaultDataSink implements DataSink {
         }
         this.mMuxerIndex = this.mMuxer.addTrack(mediaFormat);
         Logger logger = LOG;
-        logger.m707v("Added track #" + this.mMuxerIndex + " with " + mediaFormat.getString("mime") + " to muxer");
+        logger.m1000v("Added track #" + this.mMuxerIndex + " with " + mediaFormat.getString("mime") + " to muxer");
         this.mMuxer.start();
         this.mMuxerStarted = true;
         drainQueue();
@@ -92,7 +92,7 @@ public class DefaultDataSink implements DataSink {
         }
         this.mQueueBuffer.flip();
         Logger logger = LOG;
-        logger.m709i("Output format determined, writing pending data into the muxer. samples:" + this.mQueue.size() + " bytes:" + this.mQueueBuffer.limit());
+        logger.m1002i("Output format determined, writing pending data into the muxer. samples:" + this.mQueue.size() + " bytes:" + this.mQueueBuffer.limit());
         MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
         int i = 0;
         for (QueuedSample queuedSample : this.mQueue) {
@@ -114,7 +114,7 @@ public class DefaultDataSink implements DataSink {
         try {
             this.mMuxer.release();
         } catch (Exception e) {
-            LOG.m705w("Failed to release the muxer.", e);
+            LOG.m998w("Failed to release the muxer.", e);
         }
     }
 }

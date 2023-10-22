@@ -1,8 +1,7 @@
 package com.google.common.math;
 
-import com.google.common.primitives.Ints;
 import java.math.RoundingMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class IntMath {
     public static boolean isPowerOfTwo(int i) {
         return (i > 0) & ((i & (i + (-1))) == 0);
@@ -13,8 +12,8 @@ public final class IntMath {
     }
 
     /* renamed from: com.google.common.math.IntMath$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C09241 {
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class C09151 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 
         static {
@@ -58,7 +57,7 @@ public final class IntMath {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int log2(int i, RoundingMode roundingMode) {
         MathPreconditions.checkPositive("x", i);
-        switch (C09241.$SwitchMap$java$math$RoundingMode[roundingMode.ordinal()]) {
+        switch (C09151.$SwitchMap$java$math$RoundingMode[roundingMode.ordinal()]) {
             case 1:
                 MathPreconditions.checkRoundingUnnecessary(isPowerOfTwo(i));
                 break;
@@ -110,7 +109,7 @@ public final class IntMath {
             int r5 = r5 >> 31
             r2 = 1
             r5 = r5 | r2
-            int[] r3 = com.google.common.math.IntMath.C09241.$SwitchMap$java$math$RoundingMode
+            int[] r3 = com.google.common.math.IntMath.C09151.$SwitchMap$java$math$RoundingMode
             int r4 = r7.ordinal()
             r3 = r3[r4]
             r4 = 0
@@ -196,9 +195,5 @@ public final class IntMath {
         }
         int i3 = i % i2;
         return i3 >= 0 ? i3 : i3 + i2;
-    }
-
-    public static int saturatedMultiply(int i, int i2) {
-        return Ints.saturatedCast(i * i2);
     }
 }

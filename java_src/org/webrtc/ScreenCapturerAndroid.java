@@ -8,7 +8,7 @@ import android.media.projection.MediaProjectionManager;
 import android.view.Surface;
 import org.telegram.messenger.FileLog;
 import org.webrtc.VideoSink;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
     private static final int VIRTUAL_DISPLAY_DPI = 400;
@@ -139,7 +139,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         try {
             this.virtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
     }
 

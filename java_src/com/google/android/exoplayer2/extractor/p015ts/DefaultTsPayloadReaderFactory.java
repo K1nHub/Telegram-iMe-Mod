@@ -41,7 +41,7 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
     }
 
     public DefaultTsPayloadReaderFactory(int i) {
-        this(i, ImmutableList.m762of());
+        this(i, ImmutableList.m1054of());
     }
 
     public DefaultTsPayloadReaderFactory(int i, List<Format> list) {
@@ -90,7 +90,7 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
                                                     switch (i) {
                                                         case 128:
                                                             break;
-                                                        case 129:
+                                                        case TsExtractor.TS_STREAM_TYPE_AC3 /* 129 */:
                                                             break;
                                                         case TsExtractor.TS_STREAM_TYPE_HDMV_DTS /* 130 */:
                                                             if (!isSet(64)) {

@@ -6,7 +6,7 @@ import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: MessageLinkCache.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MessageLinkCache {
     private final Map<Long, String> chatRootLinkCache = new LinkedHashMap();
 

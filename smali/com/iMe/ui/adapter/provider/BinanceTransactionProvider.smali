@@ -37,12 +37,12 @@
     .line 21
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 28
+    .line 26
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->itemViewType:I
 
-    .line 29
+    .line 27
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_transaction:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->layoutId:I
@@ -63,7 +63,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
+    .line 31
     sget v2, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v0, 0x0
@@ -72,7 +72,7 @@
 
     move-result-object v1
 
-    .line 36
+    .line 32
     sget v9, Lorg/telegram/messenger/R$id;->text_date:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_date:I
@@ -81,7 +81,7 @@
 
     move-result-object v1
 
-    .line 37
+    .line 33
     sget v10, Lorg/telegram/messenger/R$id;->text_amount:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_name:I
@@ -90,10 +90,10 @@
 
     move-result-object v1
 
-    .line 38
+    .line 34
     sget v11, Lorg/telegram/messenger/R$id;->text_status:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionStatusColor()I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionStatusColorKey()I
 
     move-result v3
 
@@ -101,7 +101,7 @@
 
     move-result-object v1
 
-    .line 39
+    .line 35
     sget v12, Lorg/telegram/messenger/R$id;->text_transaction_type_title:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
@@ -110,7 +110,7 @@
 
     move-result-object v1
 
-    .line 40
+    .line 36
     sget v3, Lorg/telegram/messenger/R$id;->view_divider:I
 
     invoke-virtual {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;->getAdapter()Lcom/chad/library/adapter/base/BaseNodeAdapter;
@@ -131,10 +131,10 @@
 
     move-result-object p1
 
-    .line 41
+    .line 37
     sget v1, Lorg/telegram/messenger/R$id;->image_transaction_type_icon:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionIcon()I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionIconResId()I
 
     move-result v3
 
@@ -146,12 +146,12 @@
 
     aput v10, v1, v0
 
-    .line 42
+    .line 38
     invoke-static {p1, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 45
+    .line 41
     iget v5, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->extraPadding:F
 
     const/4 v4, 0x0
@@ -164,12 +164,12 @@
 
     move v3, v5
 
-    .line 43
+    .line 39
     invoke-static/range {v1 .. v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setPadding$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IFFFFILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 48
+    .line 44
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionStatus(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -180,8 +180,10 @@
 
     move-result-object p1
 
-    .line 49
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getAmount()Ljava/lang/String;
+    .line 45
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getAmount(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -189,7 +191,7 @@
 
     move-result-object p1
 
-    .line 50
+    .line 46
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;->getTransactionTitle(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -200,7 +202,7 @@
 
     move-result-object p1
 
-    .line 51
+    .line 47
     new-instance v0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider$convert$1;
 
     invoke-direct {v0, p2}, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider$convert$1;-><init>(Lcom/iMe/model/wallet/home/pay/BinanceTransactionItem;)V
@@ -224,7 +226,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 28
+    .line 26
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->itemViewType:I
 
     return v0
@@ -233,7 +235,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 29
+    .line 27
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTransactionProvider;->layoutId:I
 
     return v0

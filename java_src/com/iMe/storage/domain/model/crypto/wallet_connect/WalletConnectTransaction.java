@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.wallet_connect;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransaction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectTransaction {
     private final String data;
     private final String from;
@@ -13,7 +13,7 @@ public final class WalletConnectTransaction {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f421to;
+    private final String f354to;
     private final String value;
 
     public WalletConnectTransaction(String from, String to, String value, String data, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String networkId) {
@@ -23,7 +23,7 @@ public final class WalletConnectTransaction {
         Intrinsics.checkNotNullParameter(data, "data");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
         this.from = from;
-        this.f421to = to;
+        this.f354to = to;
         this.value = value;
         this.data = data;
         this.gas = bigInteger;
@@ -37,7 +37,7 @@ public final class WalletConnectTransaction {
     }
 
     public final String getTo() {
-        return this.f421to;
+        return this.f354to;
     }
 
     public final String getValue() {

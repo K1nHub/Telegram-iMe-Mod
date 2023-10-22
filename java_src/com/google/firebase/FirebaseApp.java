@@ -37,7 +37,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseApp {
     private final Context applicationContext;
     private final ComponentRuntime componentRuntime;
@@ -53,7 +53,7 @@ public class FirebaseApp {
     private final List<FirebaseAppLifecycleListener> lifecycleListeners = new CopyOnWriteArrayList();
 
     @KeepForSdk
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface BackgroundStateChangeListener {
         @KeepForSdk
         void onBackgroundStateChanged(boolean z);
@@ -171,7 +171,7 @@ public class FirebaseApp {
         this.applicationContext = (Context) Preconditions.checkNotNull(context);
         this.name = Preconditions.checkNotEmpty(str);
         this.options = (FirebaseOptions) Preconditions.checkNotNull(firebaseOptions);
-        this.componentRuntime = ComponentRuntime.builder(UI_EXECUTOR).addLazyComponentRegistrars(ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy()).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponent(Component.m748of(context, Context.class, new Class[0])).addComponent(Component.m748of(this, FirebaseApp.class, new Class[0])).addComponent(Component.m748of(firebaseOptions, FirebaseOptions.class, new Class[0])).build();
+        this.componentRuntime = ComponentRuntime.builder(UI_EXECUTOR).addLazyComponentRegistrars(ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy()).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponent(Component.m1040of(context, Context.class, new Class[0])).addComponent(Component.m1040of(this, FirebaseApp.class, new Class[0])).addComponent(Component.m1040of(firebaseOptions, FirebaseOptions.class, new Class[0])).build();
         this.dataCollectionConfigStorage = new Lazy<>(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
@@ -243,7 +243,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class UserUnlockReceiver extends BroadcastReceiver {
         private static AtomicReference<UserUnlockReceiver> INSTANCE = new AtomicReference<>();
         private final Context applicationContext;
@@ -278,7 +278,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
         private static AtomicReference<GlobalBackgroundStateListener> INSTANCE = new AtomicReference<>();
 
@@ -313,7 +313,7 @@ public class FirebaseApp {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class UiExecutor implements Executor {
         private static final Handler HANDLER = new Handler(Looper.getMainLooper());
 

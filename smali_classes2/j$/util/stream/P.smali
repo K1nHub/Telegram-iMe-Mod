@@ -3,17 +3,17 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;IZ)V
+.method constructor <init>(Lj$/util/Spliterator;IZ)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/T;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/T;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final G0()Z
+.method final F0()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -23,7 +23,7 @@
     throw v0
 .end method
 
-.method final H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method final G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -42,15 +42,15 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->J0()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/c;->I0()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/stream/T;->L0(Lj$/util/s;)Lj$/util/s$a;
+    invoke-static {v0}, Lj$/util/stream/T;->K0(Lj$/util/Spliterator;)Lj$/util/Spliterator$a;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/s$a;->e(Lj$/util/function/f;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$a;->e(Lj$/util/function/f;)V
 
     goto :goto_0
 
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method public l0(Lj$/util/function/f;)V
+.method public k0(Lj$/util/function/f;)V
     .locals 2
 
     invoke-virtual {p0}, Lj$/util/stream/c;->isParallel()Z
@@ -70,15 +70,15 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->J0()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/c;->I0()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/stream/T;->L0(Lj$/util/s;)Lj$/util/s$a;
+    invoke-static {v0}, Lj$/util/stream/T;->K0(Lj$/util/Spliterator;)Lj$/util/Spliterator$a;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/s$a;->e(Lj$/util/function/f;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$a;->e(Lj$/util/function/f;)V
 
     goto :goto_0
 
@@ -94,7 +94,7 @@
     invoke-direct {v0, p1, v1}, Lj$/util/stream/k0;-><init>(Lj$/util/function/f;Z)V
 
     .line 3
-    invoke-virtual {p0, v0}, Lj$/util/stream/c;->x0(Lj$/util/stream/N4;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lj$/util/stream/c;->w0(Lj$/util/stream/N4;)Ljava/lang/Object;
 
     :goto_0
     return-void

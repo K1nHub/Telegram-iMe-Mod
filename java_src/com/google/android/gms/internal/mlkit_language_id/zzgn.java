@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzgn<E> extends zzdi<E> implements RandomAccess {
     private static final zzgn<Object> zza;
     private E[] zzb;
@@ -124,6 +124,6 @@ final class zzgn<E> extends zzdi<E> implements RandomAccess {
     static {
         zzgn<Object> zzgnVar = new zzgn<>(new Object[0], 0);
         zza = zzgnVar;
-        zzgnVar.mo780b_();
+        zzgnVar.mo1072b_();
     }
 }

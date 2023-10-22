@@ -283,17 +283,17 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         AdsLoader.Provider provider = this.adsLoaderProvider;
         AdViewProvider adViewProvider = this.adViewProvider;
         if (provider == null || adViewProvider == null) {
-            Log.m814w(TAG, "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
+            Log.m1106w(TAG, "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
             return mediaSource;
         }
         AdsLoader adsLoader = provider.getAdsLoader(adsConfiguration);
         if (adsLoader == null) {
-            Log.m814w(TAG, "Playing media without ads, as no AdsLoader was provided.");
+            Log.m1106w(TAG, "Playing media without ads, as no AdsLoader was provided.");
             return mediaSource;
         }
         DataSpec dataSpec = new DataSpec(adsConfiguration.adTagUri);
         Object obj = adsConfiguration.adsId;
-        return new AdsMediaSource(mediaSource, dataSpec, obj != null ? obj : ImmutableList.m759of((Uri) mediaItem.mediaId, mediaItem.localConfiguration.uri, adsConfiguration.adTagUri), this, adsLoader, adViewProvider);
+        return new AdsMediaSource(mediaSource, dataSpec, obj != null ? obj : ImmutableList.m1051of((Uri) mediaItem.mediaId, mediaItem.localConfiguration.uri, adsConfiguration.adTagUri), this, adsLoader, adViewProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

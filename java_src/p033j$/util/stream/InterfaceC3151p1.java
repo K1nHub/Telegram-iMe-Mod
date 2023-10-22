@@ -1,8 +1,0 @@
-package p033j$.util.stream;
-/* renamed from: j$.util.stream.p1 */
-/* loaded from: classes2.dex */
-public interface InterfaceC3151p1 extends InterfaceC3169s1, InterfaceC3117j3 {
-    @Override // p033j$.util.stream.InterfaceC3169s1
-    /* renamed from: a */
-    InterfaceC3181u1 mo341a();
-}

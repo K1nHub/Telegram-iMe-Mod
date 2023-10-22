@@ -10,7 +10,7 @@ import io.reactivex.internal.observers.BasicFuseableObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Collection;
 import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableDistinct<T, K> extends AbstractObservableWithUpstream<T, T> {
     final Callable<? extends Collection<? super K>> collectionSupplier;
     final Function<? super T, K> keySelector;
@@ -31,7 +31,7 @@ public final class ObservableDistinct<T, K> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DistinctObserver<T, K> extends BasicFuseableObserver<T, T> {
         final Collection<? super K> collection;
         final Function<? super T, K> keySelector;
@@ -92,7 +92,7 @@ public final class ObservableDistinct<T, K> extends AbstractObservableWithUpstre
         public T poll() throws Exception {
             T poll;
             do {
-                poll = this.f533qd.poll();
+                poll = this.f446qd.poll();
                 if (poll == null) {
                     break;
                 }

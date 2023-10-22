@@ -5,7 +5,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.Xof;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class KeyedHashFunctions {
     private final Digest digest;
     private final int digestSize;
@@ -35,7 +35,7 @@ public final class KeyedHashFunctions {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: F */
-    public byte[] m80F(byte[] bArr, byte[] bArr2) {
+    public byte[] m106F(byte[] bArr, byte[] bArr2) {
         int length = bArr.length;
         int i = this.digestSize;
         if (length == i) {
@@ -49,7 +49,7 @@ public final class KeyedHashFunctions {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: H */
-    public byte[] m79H(byte[] bArr, byte[] bArr2) {
+    public byte[] m105H(byte[] bArr, byte[] bArr2) {
         int length = bArr.length;
         int i = this.digestSize;
         if (length == i) {

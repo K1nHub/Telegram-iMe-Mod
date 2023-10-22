@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.MessagesController;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum UNREAD uses external variables
@@ -22,7 +22,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum UNREAD uses extern
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: SortingFilter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SortingFilter {
     private static final /* synthetic */ SortingFilter[] $VALUES;
     public static final SortingFilter ADMIN;
@@ -152,59 +152,59 @@ public final class SortingFilter {
     }
 
     static {
-        int i = C3473R.string.sorting_settings_tab_unread_chats_item_title;
-        int i2 = C3473R.C3475drawable.fork_filter_icon_bubble_point;
-        int i3 = C3473R.C3475drawable.fork_filter_icon_bubble_point_filled;
+        int i = C3630R.string.sorting_settings_tab_unread_chats_item_title;
+        int i2 = C3630R.C3632drawable.fork_filter_icon_bubble_point;
+        int i3 = C3630R.C3632drawable.fork_filter_icon_bubble_point_filled;
         FilterFab filterFab = FilterFab.MARK_ALL_READ;
         UNREAD = new SortingFilter("UNREAD", 0, i, i2, i3, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 0, false);
-        int i4 = C3473R.string.sorting_settings_tab_personal_chats_item_title;
-        int i5 = C3473R.C3475drawable.fork_filter_icon_user;
-        int i6 = C3473R.C3475drawable.fork_filter_icon_user_filled;
+        int i4 = C3630R.string.sorting_settings_tab_personal_chats_item_title;
+        int i5 = C3630R.C3632drawable.fork_filter_icon_user;
+        int i6 = C3630R.C3632drawable.fork_filter_icon_user_filled;
         FilterFab filterFab2 = FilterFab.CREATE_CHAT;
         PERSONAL = new SortingFilter("PERSONAL", 1, i4, i5, i6, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 1, false);
-        int i7 = C3473R.string.sorting_settings_tab_groups_item_title;
-        int i8 = C3473R.C3475drawable.fork_filter_icon_users;
-        int i9 = C3473R.C3475drawable.fork_filter_icon_users_filled;
+        int i7 = C3630R.string.sorting_settings_tab_groups_item_title;
+        int i8 = C3630R.C3632drawable.fork_filter_icon_users;
+        int i9 = C3630R.C3632drawable.fork_filter_icon_users_filled;
         GROUPS = new SortingFilter("GROUPS", 2, i7, i8, i9, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_GROUPS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 2, false);
-        int i10 = C3473R.string.sorting_settings_tab_channels_item_title;
-        int i11 = C3473R.C3475drawable.fork_filter_icon_channel;
-        int i12 = C3473R.C3475drawable.fork_filter_icon_channel_filled;
+        int i10 = C3630R.string.sorting_settings_tab_channels_item_title;
+        int i11 = C3630R.C3632drawable.fork_filter_icon_channel;
+        int i12 = C3630R.C3632drawable.fork_filter_icon_channel_filled;
         CHANNELS = new SortingFilter("CHANNELS", 3, i10, i11, i12, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_CHANNELS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 3, false);
-        int i13 = C3473R.string.sorting_settings_tab_bots_item_title;
-        int i14 = C3473R.C3475drawable.fork_filter_icon_bot;
-        int i15 = C3473R.C3475drawable.fork_filter_icon_bot_filled;
+        int i13 = C3630R.string.sorting_settings_tab_bots_item_title;
+        int i14 = C3630R.C3632drawable.fork_filter_icon_bot;
+        int i15 = C3630R.C3632drawable.fork_filter_icon_bot_filled;
         BOTS = new SortingFilter("BOTS", 4, i13, i14, i15, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_BOTS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 4, false);
-        int i16 = C3473R.string.sorting_settings_tab_admin_item_title;
-        int i17 = C3473R.C3475drawable.fork_filter_icon_chat_admin;
-        int i18 = C3473R.C3475drawable.fork_filter_icon_chat_admin_filled;
+        int i16 = C3630R.string.sorting_settings_tab_admin_item_title;
+        int i17 = C3630R.C3632drawable.fork_filter_icon_chat_admin;
+        int i18 = C3630R.C3632drawable.fork_filter_icon_chat_admin_filled;
         ADMIN = new SortingFilter("ADMIN", 5, i16, i17, i18, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_ADMIN | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 6, false);
-        int i19 = C3473R.string.sorting_settings_tab_owner_item_title;
-        int i20 = C3473R.C3475drawable.fork_filter_icon_owner;
-        int i21 = C3473R.C3475drawable.fork_filter_icon_owner_filled;
+        int i19 = C3630R.string.sorting_settings_tab_owner_item_title;
+        int i20 = C3630R.C3632drawable.fork_filter_icon_owner;
+        int i21 = C3630R.C3632drawable.fork_filter_icon_owner_filled;
         OWNER = new SortingFilter("OWNER", 6, i19, i20, i21, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_OWNER | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, true, 5, false);
-        int i22 = C3473R.string.sorting_settings_tab_private_groups_item_title;
-        int i23 = C3473R.C3475drawable.fork_filter_icon_private_groups;
-        int i24 = C3473R.C3475drawable.fork_filter_icon_private_groups_filled;
+        int i22 = C3630R.string.sorting_settings_tab_private_groups_item_title;
+        int i23 = C3630R.C3632drawable.fork_filter_icon_private_groups;
+        int i24 = C3630R.C3632drawable.fork_filter_icon_private_groups_filled;
         PRIVATE_GROUPS = new SortingFilter("PRIVATE_GROUPS", 7, i22, i23, i24, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_PRIVATE_GROUPS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 8, false);
-        int i25 = C3473R.string.sorting_settings_tab_public_groups_item_title;
-        int i26 = C3473R.C3475drawable.fork_filter_icon_public_groups;
-        int i27 = C3473R.C3475drawable.fork_filter_icon_public_groups_filled;
+        int i25 = C3630R.string.sorting_settings_tab_public_groups_item_title;
+        int i26 = C3630R.C3632drawable.fork_filter_icon_public_groups;
+        int i27 = C3630R.C3632drawable.fork_filter_icon_public_groups_filled;
         PUBLIC_GROUPS = new SortingFilter("PUBLIC_GROUPS", 8, i25, i26, i27, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_PUBLIC_GROUPS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 9, false);
-        MENTIONED_CHATS = new SortingFilter("MENTIONED_CHATS", 9, C3473R.string.sorting_settings_tab_mentioned_chats, C3473R.C3475drawable.fork_filter_icon_mentionbutton, C3473R.C3475drawable.fork_filter_icon_mentionbutton_filled, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_MENTIONED | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 11, false);
-        int i28 = C3473R.string.sorting_settings_tab_live_chats;
-        LIVE_CHATS = new SortingFilter("LIVE_CHATS", 10, i28, C3473R.C3475drawable.fork_filter_icon_voicechat, C3473R.C3475drawable.fork_filter_icon_voicechat_filled, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_LIVE_CHAT | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 12, false);
-        int i29 = C3473R.string.sorting_settings_tab_deleted_users;
-        int i30 = C3473R.C3475drawable.fork_ic_ghost_26;
-        int i31 = C3473R.C3475drawable.fork_ic_ghost_filled_26;
+        MENTIONED_CHATS = new SortingFilter("MENTIONED_CHATS", 9, C3630R.string.sorting_settings_tab_mentioned_chats, C3630R.C3632drawable.fork_filter_icon_mentionbutton, C3630R.C3632drawable.fork_filter_icon_mentionbutton_filled, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_MENTIONED | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 11, false);
+        int i28 = C3630R.string.sorting_settings_tab_live_chats;
+        LIVE_CHATS = new SortingFilter("LIVE_CHATS", 10, i28, C3630R.C3632drawable.fork_filter_icon_voicechat, C3630R.C3632drawable.fork_filter_icon_voicechat_filled, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_LIVE_CHAT | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 12, false);
+        int i29 = C3630R.string.sorting_settings_tab_deleted_users;
+        int i30 = C3630R.C3632drawable.fork_ic_ghost_26;
+        int i31 = C3630R.C3632drawable.fork_ic_ghost_filled_26;
         DELETED_USERS = new SortingFilter("DELETED_USERS", 11, i29, i30, i31, filterFab, true, MessagesController.DIALOG_FILTER_FLAG_DELETED | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 10, false);
-        int i32 = C3473R.string.sorting_settings_tab_secret_chats_item_title;
-        int i33 = C3473R.C3475drawable.fork_filter_icon_lock;
-        int i34 = C3473R.C3475drawable.fork_filter_icon_lock_filled;
+        int i32 = C3630R.string.sorting_settings_tab_secret_chats_item_title;
+        int i33 = C3630R.C3632drawable.fork_filter_icon_lock;
+        int i34 = C3630R.C3632drawable.fork_filter_icon_lock_filled;
         SECRET_CHATS = new SortingFilter("SECRET_CHATS", 12, i32, i33, i34, filterFab2, true, MessagesController.DIALOG_FILTER_FLAG_SECRET_CHAT | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED, false, 7, false);
-        DRAFTS = new SortingFilter("DRAFTS", 13, C3473R.string.sorting_settings_tab_drafts, C3473R.C3475drawable.fork_filter_icon_drafts, C3473R.C3475drawable.fork_filter_icon_drafts_filled, FilterFab.CLEAR_DRAFTS, false, MessagesController.DIALOG_FILTER_FLAG_DRAFTS, false, 13, false);
-        int i35 = C3473R.string.settings_tools_cloud_albums;
-        int i36 = C3473R.C3475drawable.fork_filter_icon_albums;
-        int i37 = C3473R.C3475drawable.fork_filter_icon_albums_filled;
+        DRAFTS = new SortingFilter("DRAFTS", 13, C3630R.string.sorting_settings_tab_drafts, C3630R.C3632drawable.fork_filter_icon_drafts, C3630R.C3632drawable.fork_filter_icon_drafts_filled, FilterFab.CLEAR_DRAFTS, false, MessagesController.DIALOG_FILTER_FLAG_DRAFTS, false, 13, false);
+        int i35 = C3630R.string.settings_tools_cloud_albums;
+        int i36 = C3630R.C3632drawable.fork_filter_icon_albums;
+        int i37 = C3630R.C3632drawable.fork_filter_icon_albums_filled;
         FilterFab filterFab3 = FilterFab.CREATE_ALBUM;
         ALBUMS = new SortingFilter("ALBUMS", 14, i35, i36, i37, filterFab3, false, MessagesController.DIALOG_FILTER_FLAG_ALBUMS | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 14, false);
         ARCHIVE_UNREAD = new SortingFilter("ARCHIVE_UNREAD", 15, i, i2, i3, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS | MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, true, 0, true);
@@ -216,7 +216,7 @@ public final class SortingFilter {
         ARCHIVE_OWNER = new SortingFilter("ARCHIVE_OWNER", 21, i19, i20, i21, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_OWNER | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, true, 7, true);
         ARCHIVE_PRIVATE_GROUPS = new SortingFilter("ARCHIVE_PRIVATE_GROUPS", 22, i22, i23, i24, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_PRIVATE_GROUPS | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 5, true);
         ARCHIVE_PUBLIC_GROUPS = new SortingFilter("ARCHIVE_PUBLIC_GROUPS", 23, i25, i26, i27, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_PUBLIC_GROUPS | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 6, true);
-        ARCHIVE_LIVE_CHATS = new SortingFilter("ARCHIVE_LIVE_CHATS", 24, i28, C3473R.C3475drawable.msg_voicechat, C3473R.C3475drawable.msg_voicechat2, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_LIVE_CHAT | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 12, true);
+        ARCHIVE_LIVE_CHATS = new SortingFilter("ARCHIVE_LIVE_CHATS", 24, i28, C3630R.C3632drawable.msg_voicechat, C3630R.C3632drawable.msg_voicechat2, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_LIVE_CHAT | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 12, true);
         ARCHIVE_DELETED_USERS = new SortingFilter("ARCHIVE_DELETED_USERS", 25, i29, i30, i31, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_DELETED | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 11, true);
         ARCHIVE_SECRET_CHATS = new SortingFilter("ARCHIVE_SECRET_CHATS", 26, i32, i33, i34, filterFab, false, MessagesController.DIALOG_FILTER_FLAG_SECRET_CHAT | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, false, 9, true);
         ARCHIVE_ALBUMS = new SortingFilter("ARCHIVE_ALBUMS", 27, i35, i36, i37, filterFab3, false, MessagesController.DIALOG_FILTER_FLAG_ALBUMS | MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED, true, 10, true);
@@ -233,7 +233,7 @@ public final class SortingFilter {
     }
 
     /* compiled from: SortingFilter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

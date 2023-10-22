@@ -44,7 +44,7 @@ final class RtpMpeg4Reader implements RtpPayloadReader {
         Assertions.checkStateNotNull(this.trackOutput);
         int i2 = this.previousSequenceNumber;
         if (i2 != -1 && i != (nextSequenceNumber = RtpPacket.getNextSequenceNumber(i2))) {
-            Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+            Log.m1106w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
         }
         int bytesLeft = parsableByteArray.bytesLeft();
         this.trackOutput.sampleData(parsableByteArray, bytesLeft);

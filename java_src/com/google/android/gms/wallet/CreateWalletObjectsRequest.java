@@ -11,22 +11,22 @@ import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CreateWalletObjectsRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CreateWalletObjectsRequest> CREATOR = new zzi();
     public static final int REQUEST_IMMEDIATE_SAVE = 1;
     public static final int SHOW_SAVE_PROMPT = 0;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     LoyaltyWalletObject zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     OfferWalletObject zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     GiftCardWalletObject zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         /* synthetic */ Builder(zzh zzhVar) {
         }
@@ -60,7 +60,7 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface CreateMode {
     }
 
@@ -109,7 +109,7 @@ public final class CreateWalletObjectsRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CreateWalletObjectsRequest(@SafeParcelable.Param(m796id = 2) LoyaltyWalletObject loyaltyWalletObject, @SafeParcelable.Param(m796id = 3) OfferWalletObject offerWalletObject, @SafeParcelable.Param(m796id = 4) GiftCardWalletObject giftCardWalletObject, @SafeParcelable.Param(m796id = 5) int i) {
+    public CreateWalletObjectsRequest(@SafeParcelable.Param(m1088id = 2) LoyaltyWalletObject loyaltyWalletObject, @SafeParcelable.Param(m1088id = 3) OfferWalletObject offerWalletObject, @SafeParcelable.Param(m1088id = 4) GiftCardWalletObject giftCardWalletObject, @SafeParcelable.Param(m1088id = 5) int i) {
         this.zza = loyaltyWalletObject;
         this.zzb = offerWalletObject;
         this.zzc = giftCardWalletObject;

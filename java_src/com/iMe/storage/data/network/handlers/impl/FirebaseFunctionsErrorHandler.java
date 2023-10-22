@@ -8,11 +8,11 @@ import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import timber.log.Timber;
 /* compiled from: FirebaseFunctionsErrorHandler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseResponse<?>> {
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum AirdropErrorStatus implements IErrorStatus {
         AIRDROP_NOT_ACTIVE,
         REQUEST_ID_NOT_FOUND,
@@ -21,7 +21,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum CryptoErrorStatus implements IErrorStatus {
         PIN_CODE_MAX_ATTEMPTS,
         ETHER_BLOCK_CHAIN_ERROR,
@@ -39,7 +39,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum ErrorStatus implements IErrorStatus {
         UNAUTHORIZED,
         NO_ENOUGH_MONEY,
@@ -52,7 +52,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum StakingErrorStatus implements IErrorStatus {
         ERR_STAKING_FINISHED,
         ERR_STAKING_WITHDRAWAL_OVER_LIMIT,
@@ -60,7 +60,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum TwitterErrorStatus implements IErrorStatus {
         WRONG_TWITTER_ACCESS_TOKEN_ERROR,
         WRONG_TWITTER_REFRESH_TOKEN_ERROR,
@@ -69,7 +69,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

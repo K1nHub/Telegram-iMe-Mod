@@ -1,6 +1,6 @@
 package com.google.android.play.core.common;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocalTestingException extends Exception {
     public LocalTestingException(String str) {
         super(str);

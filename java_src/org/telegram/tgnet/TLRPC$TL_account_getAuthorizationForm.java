@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_getAuthorizationForm extends TLObject {
     public static int constructor = -1456907910;
     public long bot_id;

@@ -19,29 +19,29 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "GiftCardWalletObjectCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GiftCardWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GiftCardWalletObject> CREATOR = new zzn();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     CommonWalletObject zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     String zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     String zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     @Deprecated
     String zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     long zze;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     String zzf;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     long zzg;
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     String zzh;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         private com.google.android.gms.wallet.wobs.zzb zzb = CommonWalletObject.zzb();
 
@@ -353,7 +353,7 @@ public final class GiftCardWalletObject extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GiftCardWalletObject(@SafeParcelable.Param(m796id = 2) CommonWalletObject commonWalletObject, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2, @SafeParcelable.Param(m796id = 5) String str3, @SafeParcelable.Param(m796id = 6) long j, @SafeParcelable.Param(m796id = 7) String str4, @SafeParcelable.Param(m796id = 8) long j2, @SafeParcelable.Param(m796id = 9) String str5) {
+    public GiftCardWalletObject(@SafeParcelable.Param(m1088id = 2) CommonWalletObject commonWalletObject, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) String str3, @SafeParcelable.Param(m1088id = 6) long j, @SafeParcelable.Param(m1088id = 7) String str4, @SafeParcelable.Param(m1088id = 8) long j2, @SafeParcelable.Param(m1088id = 9) String str5) {
         CommonWalletObject.zzb();
         this.zza = commonWalletObject;
         this.zzb = str;

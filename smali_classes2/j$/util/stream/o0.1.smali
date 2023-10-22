@@ -81,7 +81,7 @@
     return v0
 .end method
 
-.method public c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 2
 
     .line 1
@@ -91,18 +91,18 @@
 
     new-instance v0, Lj$/util/stream/q0;
 
-    invoke-direct {v0, p1, p2, p0}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/stream/m3;)V
+    invoke-direct {v0, p1, p2, p0}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/stream/m3;)V
 
     goto :goto_0
 
     :cond_0
     new-instance v0, Lj$/util/stream/r0;
 
-    invoke-virtual {p1, p0}, Lj$/util/stream/y2;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {p1, p0}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v1
 
-    invoke-direct {v0, p1, p2, v1}, Lj$/util/stream/r0;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/stream/m3;)V
+    invoke-direct {v0, p1, p2, v1}, Lj$/util/stream/r0;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/stream/m3;)V
 
     :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
@@ -112,18 +112,18 @@
     return-object p1
 .end method
 
-.method public d(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public d(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 1
 
     .line 1
     check-cast p1, Lj$/util/stream/c;
 
     .line 2
-    invoke-virtual {p1, p0}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {p1, p0}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0, p2}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {p1, v0, p2}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     const/4 p1, 0x0
 
@@ -138,13 +138,13 @@
     return-object v0
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public synthetic n(J)V
+.method public synthetic m(J)V
     .locals 0
 
     return-void

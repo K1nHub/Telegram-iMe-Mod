@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTransaction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BinanceTransaction {
     private final double amount;
     private final String asset;
@@ -87,7 +87,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Unsupported extends BinanceTransaction {
         private final String createdAt;
         private final BinanceTransactionDirection direction;
@@ -224,7 +224,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Pay extends BinanceTransaction {
         private final double amount;
         private final String asset;
@@ -320,7 +320,7 @@ public abstract class BinanceTransaction {
         }
 
         public int hashCode() {
-            return (((((((((((((((((((((((getOrderId().hashCode() * 31) + getTransactionId().hashCode()) * 31) + getPayerUserId().hashCode()) * 31) + getInitiatorUserId().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount())) * 31) + getAsset().hashCode()) * 31) + getAssetName().hashCode()) * 31) + getAssetLogo().hashCode()) * 31) + getDirection().hashCode()) * 31) + getType().hashCode()) * 31) + getStatus().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + this.clientTradeNo.hashCode();
+            return (((((((((((((((((((((((getOrderId().hashCode() * 31) + getTransactionId().hashCode()) * 31) + getPayerUserId().hashCode()) * 31) + getInitiatorUserId().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount())) * 31) + getAsset().hashCode()) * 31) + getAssetName().hashCode()) * 31) + getAssetLogo().hashCode()) * 31) + getDirection().hashCode()) * 31) + getType().hashCode()) * 31) + getStatus().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + this.clientTradeNo.hashCode();
         }
 
         public String toString() {
@@ -423,7 +423,7 @@ public abstract class BinanceTransaction {
     }
 
     /* compiled from: BinanceTransaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Convert extends BinanceTransaction {
         private final double amount;
         private final String asset;
@@ -547,7 +547,7 @@ public abstract class BinanceTransaction {
         }
 
         public int hashCode() {
-            return (((((((((((((((((((((((((((((((((getOrderId().hashCode() * 31) + getTransactionId().hashCode()) * 31) + getPayerUserId().hashCode()) * 31) + getInitiatorUserId().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(getAmount())) * 31) + getAsset().hashCode()) * 31) + getAssetName().hashCode()) * 31) + getAssetLogo().hashCode()) * 31) + getDirection().hashCode()) * 31) + getType().hashCode()) * 31) + getStatus().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.inputAmount)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.outputAmount)) * 31) + this.inputAssetCode.hashCode()) * 31) + this.outputAssetCode.hashCode()) * 31) + this.inputAssetShortName.hashCode()) * 31) + this.outputAssetShortName.hashCode();
+            return (((((((((((((((((((((((((((((((((getOrderId().hashCode() * 31) + getTransactionId().hashCode()) * 31) + getPayerUserId().hashCode()) * 31) + getInitiatorUserId().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount())) * 31) + getAsset().hashCode()) * 31) + getAssetName().hashCode()) * 31) + getAssetLogo().hashCode()) * 31) + getDirection().hashCode()) * 31) + getType().hashCode()) * 31) + getStatus().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.inputAmount)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.outputAmount)) * 31) + this.inputAssetCode.hashCode()) * 31) + this.outputAssetCode.hashCode()) * 31) + this.inputAssetShortName.hashCode()) * 31) + this.outputAssetShortName.hashCode();
         }
 
         public String toString() {

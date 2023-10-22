@@ -10,7 +10,7 @@ import android.util.Property;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import com.google.android.material.circularreveal.CircularRevealWidget;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CircularRevealCompat {
     public static Animator createCircularReveal(CircularRevealWidget circularRevealWidget, float f, float f2, float f3) {
         ObjectAnimator ofObject = ObjectAnimator.ofObject(circularRevealWidget, (Property<CircularRevealWidget, V>) CircularRevealWidget.CircularRevealProperty.CIRCULAR_REVEAL, (TypeEvaluator) CircularRevealWidget.CircularRevealEvaluator.CIRCULAR_REVEAL, (Object[]) new CircularRevealWidget.RevealInfo[]{new CircularRevealWidget.RevealInfo(f, f2, f3)});

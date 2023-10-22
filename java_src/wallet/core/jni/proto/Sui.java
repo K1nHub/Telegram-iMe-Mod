@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Sui {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SignDirectOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -28,7 +28,7 @@ public final class Sui {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -45,7 +45,7 @@ public final class Sui {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -68,7 +68,7 @@ public final class Sui {
     private Sui() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SignDirect extends GeneratedMessageLite<SignDirect, Builder> implements SignDirectOrBuilder {
         private static final SignDirect DEFAULT_INSTANCE;
         private static volatile Parser<SignDirect> PARSER = null;
@@ -161,9 +161,9 @@ public final class Sui {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SignDirect, Builder> implements SignDirectOrBuilder {
-            /* synthetic */ Builder(C73571 c73571) {
+            /* synthetic */ Builder(C76911 c76911) {
                 this();
             }
 
@@ -202,7 +202,7 @@ public final class Sui {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73571.f1971xa1df5c61[method.ordinal()]) {
+            switch (C76911.f2145xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SignDirect();
                 case 2:
@@ -248,47 +248,47 @@ public final class Sui {
     }
 
     /* renamed from: wallet.core.jni.proto.Sui$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73571 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76911 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1971xa1df5c61;
+        static final /* synthetic */ int[] f2145xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1971xa1df5c61 = iArr;
+            f2145xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1971xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2145xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         private static volatile Parser<SigningInput> PARSER = null;
@@ -301,7 +301,7 @@ public final class Sui {
         private SigningInput() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum TransactionPayloadCase {
             SIGN_DIRECT_MESSAGE(2),
             TRANSACTIONPAYLOAD_NOT_SET(0);
@@ -454,9 +454,9 @@ public final class Sui {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73571 c73571) {
+            /* synthetic */ Builder(C76911 c76911) {
                 this();
             }
 
@@ -529,7 +529,7 @@ public final class Sui {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73571.f1971xa1df5c61[method.ordinal()]) {
+            switch (C76911.f2145xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -574,7 +574,7 @@ public final class Sui {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         private static volatile Parser<SigningOutput> PARSER = null;
@@ -696,9 +696,9 @@ public final class Sui {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73571 c73571) {
+            /* synthetic */ Builder(C76911 c76911) {
                 this();
             }
 
@@ -765,7 +765,7 @@ public final class Sui {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73571.f1971xa1df5c61[method.ordinal()]) {
+            switch (C76911.f2145xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

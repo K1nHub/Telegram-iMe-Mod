@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SearchResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SearchResponse {
     @SerializedName("current_page")
     private final int currentPage;

@@ -3,21 +3,21 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/LongToDoubleFunction;
+.field final synthetic a:Ljava/util/function/LongToIntFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/LongToDoubleFunction;)V
+.method private synthetic constructor <init>(Ljava/util/function/LongToIntFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/k0;->a:Ljava/util/function/LongToDoubleFunction;
+    iput-object p1, p0, Lj$/wrappers/k0;->a:Ljava/util/function/LongToIntFunction;
 
     return-void
 .end method
 
-.method public static synthetic b(Ljava/util/function/LongToDoubleFunction;)Lj$/wrappers/k0;
+.method public static synthetic b(Ljava/util/function/LongToIntFunction;)Lj$/wrappers/k0;
     .locals 1
 
     if-nez p0, :cond_0
@@ -40,21 +40,21 @@
     :cond_1
     new-instance v0, Lj$/wrappers/k0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/k0;-><init>(Ljava/util/function/LongToDoubleFunction;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/k0;-><init>(Ljava/util/function/LongToIntFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a(J)D
+.method public a(J)I
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/k0;->a:Ljava/util/function/LongToDoubleFunction;
+    iget-object v0, p0, Lj$/wrappers/k0;->a:Ljava/util/function/LongToIntFunction;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/function/LongToDoubleFunction;->applyAsDouble(J)D
+    invoke-interface {v0, p1, p2}, Ljava/util/function/LongToIntFunction;->applyAsInt(J)I
 
-    move-result-wide p1
+    move-result p1
 
-    return-wide p1
+    return p1
 .end method

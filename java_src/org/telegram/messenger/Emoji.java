@@ -26,8 +26,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.CompoundEmoji;
-import org.telegram.p043ui.Components.AnimatedEmojiSpan;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Components.AnimatedEmojiSpan;
+/* loaded from: classes4.dex */
 public class Emoji {
     private static String[] DEFAULT_RECENT = null;
     private static final int MAX_RECENT_EMOJI_COUNT = 48;
@@ -47,7 +47,7 @@ public class Emoji {
     private static HashMap<CharSequence, DrawableInfo> rects = new HashMap<>();
     private static boolean inited = false;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static abstract class EmojiDrawable extends Drawable {
         boolean fullSize = false;
         int placeholderColor = 268435456;
@@ -76,8 +76,8 @@ public class Emoji {
         };
         emojiDrawingUseAlpha = true;
         DEFAULT_RECENT = new String[]{"😂", "😘", "❤", "😍", "😊", "😁", "👍", "☺", "😔", "😄", "😭", "💋", "😒", "😳", "😜", "🙈", "😉", "😃", "😢", "😝", "😱", "😡", "😏", "😞", "😅", "😚", "🙊", "😌", "😀", "😋", "😆", "👌", "😐", "😕"};
-        drawImgSize = AndroidUtilities.m72dp(20);
-        bigImgSize = AndroidUtilities.m72dp(AndroidUtilities.isTablet() ? 40 : 34);
+        drawImgSize = AndroidUtilities.m102dp(20);
+        bigImgSize = AndroidUtilities.m102dp(AndroidUtilities.isTablet() ? 40 : 34);
         int i = 0;
         while (true) {
             Bitmap[][] bitmapArr = emojiBmp;
@@ -158,7 +158,7 @@ public class Emoji {
                     open.close();
                 } catch (Throwable th) {
                     th = th;
-                    FileLog.m67e(th);
+                    FileLog.m97e(th);
                     return bitmap;
                 }
             } catch (Throwable th2) {
@@ -168,7 +168,7 @@ public class Emoji {
             return bitmap;
         } catch (Throwable th3) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m68e("Error loading emoji", th3);
+                FileLog.m98e("Error loading emoji", th3);
             }
             return null;
         }
@@ -284,7 +284,7 @@ public class Emoji {
         return compoundEmojiDrawable;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class SimpleEmojiDrawable extends EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();
@@ -367,7 +367,7 @@ public class Emoji {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class DrawableInfo {
         public int emojiIndex;
         public byte page;
@@ -380,7 +380,7 @@ public class Emoji {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class EmojiSpanRange {
         public CharSequence code;
         public int end;
@@ -426,7 +426,7 @@ public class Emoji {
     }
 
     public static CharSequence replaceEmoji(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z) {
-        return replaceEmoji(charSequence, fontMetricsInt, AndroidUtilities.m72dp(16), z, (int[]) null);
+        return replaceEmoji(charSequence, fontMetricsInt, AndroidUtilities.m102dp(16), z, (int[]) null);
     }
 
     public static CharSequence replaceEmoji(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i, boolean z) {
@@ -460,7 +460,7 @@ public class Emoji {
             try {
                 emojiSpanRange = parseEmojis.get(i2);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             if (animatedEmojiSpanArr != null) {
                 int i4 = 0;
@@ -493,7 +493,7 @@ public class Emoji {
         return newSpannable;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class EmojiSpan extends ImageSpan {
         public boolean drawn;
         public String emoji;
@@ -506,13 +506,13 @@ public class Emoji {
         public EmojiSpan(Drawable drawable, int i, Paint.FontMetricsInt fontMetricsInt) {
             super(drawable, i);
             this.scale = 1.0f;
-            this.size = AndroidUtilities.m72dp(20);
+            this.size = AndroidUtilities.m102dp(20);
             this.fontMetrics = fontMetricsInt;
             if (fontMetricsInt != null) {
                 int abs = Math.abs(fontMetricsInt.descent) + Math.abs(this.fontMetrics.ascent);
                 this.size = abs;
                 if (abs == 0) {
-                    this.size = AndroidUtilities.m72dp(20);
+                    this.size = AndroidUtilities.m102dp(20);
                 }
             }
         }
@@ -528,7 +528,7 @@ public class Emoji {
                 int abs = Math.abs(fontMetricsInt.descent) + Math.abs(this.fontMetrics.ascent);
                 this.size = abs;
                 if (abs == 0) {
-                    this.size = AndroidUtilities.m72dp(20);
+                    this.size = AndroidUtilities.m102dp(20);
                 }
             }
         }
@@ -542,11 +542,11 @@ public class Emoji {
             Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
             if (fontMetricsInt2 == null) {
                 int size = super.getSize(paint, charSequence, i, i2, fontMetricsInt);
-                int m72dp = AndroidUtilities.m72dp(8);
-                int m72dp2 = AndroidUtilities.m72dp(10);
-                int i4 = (-m72dp2) - m72dp;
+                int m102dp = AndroidUtilities.m102dp(8);
+                int m102dp2 = AndroidUtilities.m102dp(10);
+                int i4 = (-m102dp2) - m102dp;
                 fontMetricsInt.top = i4;
-                int i5 = m72dp2 - m72dp;
+                int i5 = m102dp2 - m102dp;
                 fontMetricsInt.bottom = i5;
                 fontMetricsInt.ascent = i4;
                 fontMetricsInt.leading = 0;
@@ -734,7 +734,7 @@ public class Emoji {
             }
             sortEmoji();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         try {
             String string3 = globalEmojiSettings.getString(TtmlNode.ATTR_TTS_COLOR, "");
@@ -746,7 +746,7 @@ public class Emoji {
                 emojiColor.put(split3[0], split3[1]);
             }
         } catch (Exception e2) {
-            FileLog.m67e(e2);
+            FileLog.m97e(e2);
         }
     }
 

@@ -1,10 +1,10 @@
 package com.iMe.storage.data.locale.prefs.model;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RequestAppUpdateMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RequestAppUpdateMetadata {
     private int count;
     private long lastRequestTime;
@@ -26,7 +26,7 @@ public final class RequestAppUpdateMetadata {
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
     }
 
     public String toString() {

@@ -2,14 +2,14 @@ package com.iMe.domain.contacts;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ContactSelectAction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ContactSelectAction {
     public /* synthetic */ ContactSelectAction(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: ContactSelectAction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class OpenActionMode extends ContactSelectAction {
         public static final OpenActionMode INSTANCE = new OpenActionMode();
 
@@ -22,7 +22,7 @@ public abstract class ContactSelectAction {
     }
 
     /* compiled from: ContactSelectAction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CloseActionMode extends ContactSelectAction {
         public static final CloseActionMode INSTANCE = new CloseActionMode();
 
@@ -32,7 +32,7 @@ public abstract class ContactSelectAction {
     }
 
     /* compiled from: ContactSelectAction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ClearSelectedContacts extends ContactSelectAction {
         public static final ClearSelectedContacts INSTANCE = new ClearSelectedContacts();
 
@@ -42,7 +42,7 @@ public abstract class ContactSelectAction {
     }
 
     /* compiled from: ContactSelectAction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ChangeSelectedQty extends ContactSelectAction {
         private final int newQty;
 

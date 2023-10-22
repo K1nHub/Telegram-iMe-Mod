@@ -3,7 +3,7 @@ package com.google.firebase.iid;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final /* synthetic */ class Registrar$$Lambda$1 implements ComponentFactory {
     static final ComponentFactory $instance = new Registrar$$Lambda$1();
 

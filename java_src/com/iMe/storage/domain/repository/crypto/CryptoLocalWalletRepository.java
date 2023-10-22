@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: CryptoLocalWalletRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoLocalWalletRepository {
     Observable<Result<Wallet>> createWallet(BlockchainType blockchainType);
 

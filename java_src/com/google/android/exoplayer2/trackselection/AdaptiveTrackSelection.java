@@ -123,7 +123,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     }
 
     public AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, BandwidthMeter bandwidthMeter) {
-        this(trackGroup, iArr, 0, bandwidthMeter, 10000L, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.m762of(), Clock.DEFAULT);
+        this(trackGroup, iArr, 0, bandwidthMeter, 10000L, 25000L, 25000L, DEFAULT_MAX_WIDTH_TO_DISCARD, DEFAULT_MAX_HEIGHT_TO_DISCARD, 0.7f, 0.75f, ImmutableList.m1054of(), Clock.DEFAULT);
     }
 
     protected AdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, int i, BandwidthMeter bandwidthMeter, long j, long j2, long j3, int i2, int i3, float f, float f2, List<AdaptationCheckpoint> list, Clock clock) {
@@ -131,7 +131,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         BandwidthMeter bandwidthMeter2;
         long j4;
         if (j3 < j) {
-            Log.m814w(TAG, "Adjusting minDurationToRetainAfterDiscardMs to be at least minDurationForQualityIncreaseMs");
+            Log.m1106w(TAG, "Adjusting minDurationToRetainAfterDiscardMs to be at least minDurationForQualityIncreaseMs");
             bandwidthMeter2 = bandwidthMeter;
             j4 = j;
         } else {
@@ -366,7 +366,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         ImmutableList.Builder builder2 = ImmutableList.builder();
         for (int i6 = 0; i6 < arrayList.size(); i6++) {
             ImmutableList.Builder builder3 = (ImmutableList.Builder) arrayList.get(i6);
-            builder2.add((ImmutableList.Builder) (builder3 == null ? ImmutableList.m762of() : builder3.build()));
+            builder2.add((ImmutableList.Builder) (builder3 == null ? ImmutableList.m1054of() : builder3.build()));
         }
         return builder2.build();
     }

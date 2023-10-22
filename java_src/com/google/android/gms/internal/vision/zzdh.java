@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import java.io.Serializable;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzdh<T> implements zzdf<T>, Serializable {
     private final zzdf<T> zza;
     private volatile transient boolean zzb;

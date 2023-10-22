@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static final a:Lj$/time/temporal/j;
+.field public static final a:Lj$/time/temporal/o;
 
-.field public static final b:Lj$/time/temporal/j;
+.field public static final b:Lj$/time/temporal/o;
 
-.field public static final c:Lj$/time/temporal/j;
+.field public static final c:Lj$/time/temporal/o;
 
 
 # direct methods
@@ -18,15 +18,15 @@
 
     sget-object v0, Lj$/time/temporal/g;->QUARTER_OF_YEAR:Lj$/time/temporal/g;
 
-    sput-object v0, Lj$/time/temporal/i;->a:Lj$/time/temporal/j;
+    sput-object v0, Lj$/time/temporal/i;->a:Lj$/time/temporal/o;
 
     sget-object v0, Lj$/time/temporal/g;->WEEK_OF_WEEK_BASED_YEAR:Lj$/time/temporal/g;
 
-    sput-object v0, Lj$/time/temporal/i;->b:Lj$/time/temporal/j;
+    sput-object v0, Lj$/time/temporal/i;->b:Lj$/time/temporal/o;
 
     sget-object v0, Lj$/time/temporal/g;->WEEK_BASED_YEAR:Lj$/time/temporal/g;
 
-    sput-object v0, Lj$/time/temporal/i;->c:Lj$/time/temporal/j;
+    sput-object v0, Lj$/time/temporal/i;->c:Lj$/time/temporal/o;
 
     sget-object v0, Lj$/time/temporal/h;->WEEK_BASED_YEARS:Lj$/time/temporal/h;
 

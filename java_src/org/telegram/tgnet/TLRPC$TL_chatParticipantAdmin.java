@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_chatParticipantAdmin extends TLRPC$ChatParticipant {
     public static int constructor = -1600962725;
 

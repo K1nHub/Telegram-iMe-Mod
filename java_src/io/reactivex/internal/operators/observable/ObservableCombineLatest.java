@@ -13,7 +13,7 @@ import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.internal.util.AtomicThrowable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableCombineLatest<T, R> extends Observable<R> {
     final int bufferSize;
     final Function<? super Object[], ? extends R> combiner;
@@ -56,7 +56,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class LatestCoordinator<T, R> extends AtomicInteger implements Disposable {
         int active;
         volatile boolean cancelled;
@@ -306,7 +306,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class CombinerObserver<T, R> extends AtomicReference<Disposable> implements Observer<T> {
         final int index;
         final LatestCoordinator<T, R> parent;

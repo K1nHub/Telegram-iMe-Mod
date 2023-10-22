@@ -9,12 +9,12 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import androidx.collection.LongSparseArray;
 import java.util.ArrayList;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p042ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: ContactsWidgetService.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
     private int appWidgetId;

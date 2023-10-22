@@ -436,6 +436,8 @@
     <string name="debug_option_choose_wallet_environment">वॉलेट परिवेश चुनें (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">आपके द्वारा परिवेश बदलने के बाद, सभी मौजूदा वॉलेट डेटा और इससे जुड़ी हर चीज़ हटा दी जाएगी</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">क्या आप निश्चित है?</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">संदेशों को हटाया जा रहा है... %2$d में से %1$d संसाधित किये गए</string>
     <string name="deleting_messages_success">सेवा संदेशों को मिटा दिया गया है</string>
     <string name="dialog_promo_discussion_group_description">ग्रुप</string>
@@ -531,7 +533,7 @@
     <string name="folder_tabs_remember_last_filter_tab_hint">जब आप एप्लिकेशन खोलते हैं, तो आप अपने आप को उसी टैब में पाएंगे जहां आप पिछली बार थे. यदि यह विकल्प अक्षम है, तो बाईं ओर पहला टैब डिफ़ॉल्ट रूप से खोला जाता है.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">टैब याद रखें</string>
     <string name="folder_tabs_settings_folders_first">सॉर्टिंग टैब के बाईं ओर</string>
-    <string name="folder_tabs_settings_header">टैब सेटिंग्स</string>
+    <string name="folder_tabs_settings_header">सेटिंग्स</string>
     <string name="folder_tabs_settings_hide_folders">फ़ोल्डर छुपाएं</string>
     <string name="folder_tabs_sorting_settings">प्रकार के अनुसार टैब</string>
     <string name="folder_tabs_sorting_settings_item_title">चैट छँटाई</string>
@@ -733,7 +735,6 @@
     <string name="neurobots_store_tab_free">नि:शुल्क</string>
     <string name="neurobots_store_tab_my">मेरा</string>
     <string name="neurobots_store_tab_popular">लोकप्रिय</string>
-    <string name="new_telegram_authorization_rules_alert">18 फरवरी, 2023 से नए टेलीग्राम प्राधिकरण नियम लागू हो गए हैं, जिसके अनुसार वैकल्पिक क्लाइंट उपयोगकर्ता केवल आधिकारिक टेलीग्राम क्लाइंट से एसएमएस कोड प्राप्त कर सकते हैं. कृपया टेलीग्राम ऐप इंस्टॉल करें और वहां अपने खाते में लॉग इन करें यदि आपको एसएमएस कोड की आवश्यकता है, जिसके बाद आप iMe में कोड का पुनः अनुरोध कर सकते हैं (यह टेलीग्राम सेवा चैट में आएगा).</string>
     <string name="new_telegram_authorization_rules_info">कृपया टेलीग्राम में *नए प्राधिकरण नियम* पढ़ें</string>
     <string name="nft_collection_size">एनएफटी की संख्या: %d</string>
     <string name="nft_preview_copy_token_id">टोकन ID कॉपी करें</string>
@@ -744,6 +745,7 @@
     <string name="no_unread_bots">आपके पास कोई अपठित बॉट नहीं है</string>
     <string name="no_unread_groups">आपके पास कोई अपठित समूह नहीं है</string>
     <string name="no_unread_personal_chats">आपकी कोई अपठित व्यक्तिगत बातचीत नहीं है</string>
+    <string name="open_telegram_alert_auth">18 फरवरी, 2023 से नए टेलीग्राम प्राधिकरण नियम लागू हो गए हैं, जिसके अनुसार वैकल्पिक क्लाइंट उपयोगकर्ता केवल आधिकारिक टेलीग्राम क्लाइंट से एसएमएस कोड प्राप्त कर सकते हैं. कृपया टेलीग्राम ऐप इंस्टॉल करें और वहां अपने खाते में लॉग इन करें यदि आपको एसएमएस कोड की आवश्यकता है, जिसके बाद आप iMe में कोड का पुनः अनुरोध कर सकते हैं (यह टेलीग्राम सेवा चैट में आएगा).</string>
     <string name="password_toggle_content_description">पासवर्ड दिखाएं</string>
     <string name="period_all_time">हर समय</string>
     <string name="period_last_day">अंतिम दिन</string>

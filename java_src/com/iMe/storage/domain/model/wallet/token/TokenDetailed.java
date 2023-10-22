@@ -9,7 +9,7 @@ import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenDetailed.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenDetailed {
     private final String address;
     private final String avatarUrl;
@@ -164,7 +164,7 @@ public final class TokenDetailed {
     }
 
     /* compiled from: TokenDetailed.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

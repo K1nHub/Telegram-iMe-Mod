@@ -8,7 +8,7 @@ import android.os.Build;
 import android.util.TypedValue;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.TintTypedArray;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MaterialResources {
     public static ColorStateList getColorStateList(Context context, TypedArray typedArray, int i) {
         int color;

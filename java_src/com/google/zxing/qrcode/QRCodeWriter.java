@@ -14,7 +14,7 @@ import com.google.zxing.qrcode.encoder.ByteMatrix;
 import java.util.Arrays;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class QRCodeWriter {
     private int imageBlockX;
     private int imageBloks;

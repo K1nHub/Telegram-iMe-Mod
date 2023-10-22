@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentImageHeaderBinding implements ViewBinding {
     public final AppCompatImageView imageIcon;
     public final AppCompatImageView imageNetworkIcon;
@@ -25,7 +25,6 @@ public final class ForkContentImageHeaderBinding implements ViewBinding {
         this.textTitle = appCompatTextView2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -35,7 +34,7 @@ public final class ForkContentImageHeaderBinding implements ViewBinding {
     }
 
     public static ForkContentImageHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_image_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_image_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -43,16 +42,16 @@ public final class ForkContentImageHeaderBinding implements ViewBinding {
     }
 
     public static ForkContentImageHeaderBinding bind(View view) {
-        int i = C3473R.C3476id.image_icon;
+        int i = C3630R.C3633id.image_icon;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3473R.C3476id.image_network_icon;
+            i = C3630R.C3633id.image_network_icon;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3473R.C3476id.text_subtitle;
+                i = C3630R.C3633id.text_subtitle;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3473R.C3476id.text_title;
+                    i = C3630R.C3633id.text_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkContentImageHeaderBinding((ConstraintLayout) view, appCompatImageView, appCompatImageView2, appCompatTextView, appCompatTextView2);

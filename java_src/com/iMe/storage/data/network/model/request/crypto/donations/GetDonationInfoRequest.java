@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.donations;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetDonationInfoRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetDonationInfoRequest {
     private final String chatId;
 

@@ -14,8 +14,8 @@ import com.iMe.fork.enums.PhotoViewerMenuItem;
 import com.iMe.fork.enums.RecentChatsDialogType;
 import com.iMe.fork.enums.SortingFilter;
 import com.iMe.fork.models.SortingTabState;
-import com.iMe.p031ui.drawer.DrawerAccountData;
-import com.iMe.p031ui.drawer.DrawerSwitchableItem;
+import com.iMe.p030ui.drawer.DrawerAccountData;
+import com.iMe.p030ui.drawer.DrawerItem;
 import com.iMe.storage.data.utils.extentions.GsonExtKt;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.SharedConfig;
 /* compiled from: TelegramPreferenceMigrationManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TelegramPreferenceMigrationManager {
     static {
         new TelegramPreferenceMigrationManager();
@@ -70,8 +70,8 @@ public final class TelegramPreferenceMigrationManager {
                             }
                         case 7:
                             if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
-                                Set<DrawerSwitchableItem> set = SharedConfig.selectedDrawerItems;
-                                set.add(DrawerSwitchableItem.CATALOG);
+                                Set<DrawerItem> set = SharedConfig.selectedDrawerItems;
+                                set.add(DrawerItem.CATALOG);
                                 SharedConfig.setSelectedDrawerItems(set);
                                 break;
                             } else {
@@ -103,8 +103,8 @@ public final class TelegramPreferenceMigrationManager {
                     }
                 }
             } else if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
-                Set<DrawerSwitchableItem> set3 = SharedConfig.selectedDrawerItems;
-                set3.add(DrawerSwitchableItem.ALBUMS);
+                Set<DrawerItem> set3 = SharedConfig.selectedDrawerItems;
+                set3.add(DrawerItem.ALBUMS);
                 SharedConfig.setSelectedDrawerItems(set3);
             }
             preferences.edit().putInt("iMe_globalPreferencesVersion", i).apply();

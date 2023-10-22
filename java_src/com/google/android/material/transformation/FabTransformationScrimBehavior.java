@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FabTransformationScrimBehavior extends ExpandableTransformationBehavior {
     private final MotionTiming collapseTiming;
     private final MotionTiming expandTiming;

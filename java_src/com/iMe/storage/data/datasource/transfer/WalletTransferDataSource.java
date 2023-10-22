@@ -7,9 +7,9 @@ import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.token.Token;
 import io.reactivex.Observable;
 /* compiled from: WalletTransferDataSource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletTransferDataSource extends SignTransactionDatasource<TransactionArgs> {
     Observable<Result<CryptoTransferMetadata>> getTransferMetadata(Token token, String str, String str2);
 
-    Observable<Result<Boolean>> transfer(TransactionArgs transactionArgs, String str);
+    Observable<Result<String>> transfer(TransactionArgs transactionArgs, String str);
 }

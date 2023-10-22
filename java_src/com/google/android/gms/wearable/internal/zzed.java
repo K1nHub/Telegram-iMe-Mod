@@ -10,16 +10,16 @@ import com.google.android.gms.wearable.ConnectionConfiguration;
 @SafeParcelable.Class(creator = "GetConfigResponseCreator")
 @SafeParcelable.Reserved({1})
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzed extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzed> CREATOR = new zzee();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final ConnectionConfiguration zzb;
 
     @SafeParcelable.Constructor
-    public zzed(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) ConnectionConfiguration connectionConfiguration) {
+    public zzed(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) ConnectionConfiguration connectionConfiguration) {
         this.zza = i;
         this.zzb = connectionConfiguration;
     }

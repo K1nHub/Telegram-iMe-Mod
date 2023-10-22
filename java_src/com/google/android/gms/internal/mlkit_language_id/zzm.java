@@ -4,7 +4,7 @@ import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzm<E> extends zzk<E> {
     private final transient int zza;
     private final transient int zzb;

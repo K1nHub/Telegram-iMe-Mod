@@ -3,11 +3,11 @@ package com.google.firebase.installations;
 import com.google.auto.value.AutoValue;
 import com.google.firebase.installations.AutoValue_InstallationTokenResult;
 @AutoValue
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class InstallationTokenResult {
 
     @AutoValue.Builder
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Builder {
         public abstract InstallationTokenResult build();
 

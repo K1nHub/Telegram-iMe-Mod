@@ -3,7 +3,7 @@ package com.google.mlkit.common;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MlKitException extends Exception {
     @KeepForSdk
     public MlKitException(String str, int i) {

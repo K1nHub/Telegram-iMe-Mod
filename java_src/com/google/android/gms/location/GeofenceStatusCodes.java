@@ -2,7 +2,7 @@ package com.google.android.gms.location;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GeofenceStatusCodes extends CommonStatusCodes {
     public static final int GEOFENCE_INSUFFICIENT_LOCATION_PERMISSION = 1004;
     public static final int GEOFENCE_NOT_AVAILABLE = 1000;

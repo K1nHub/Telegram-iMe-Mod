@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.internal.firebase_ml.zzuu;
 /* renamed from: com.google.firebase.ml.vision.label.FirebaseVisionOnDeviceImageLabelerOptions */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionOnDeviceImageLabelerOptions {
     private final float zzazi;
 

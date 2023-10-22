@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: NervosAddress.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class NervosAddressPhantomReference extends PhantomReference<NervosAddress> {
     private long nativeHandle;
     private static Set<NervosAddressPhantomReference> references = new HashSet();

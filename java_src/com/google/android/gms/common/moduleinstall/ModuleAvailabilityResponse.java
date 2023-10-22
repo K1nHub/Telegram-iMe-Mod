@@ -13,9 +13,9 @@ import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes.dex */
 public class ModuleAvailabilityResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleAvailabilityResponse> CREATOR = new zaa();
-    @SafeParcelable.Field(getter = "areModulesAvailable", m797id = 1)
+    @SafeParcelable.Field(getter = "areModulesAvailable", m1089id = 1)
     private final boolean zaa;
-    @SafeParcelable.Field(getter = "getAvailabilityStatus", m797id = 2)
+    @SafeParcelable.Field(getter = "getAvailabilityStatus", m1089id = 2)
     private final int zab;
 
     /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
@@ -29,7 +29,7 @@ public class ModuleAvailabilityResponse extends AbstractSafeParcelable {
 
     @SafeParcelable.Constructor
     @KeepForSdk
-    public ModuleAvailabilityResponse(@SafeParcelable.Param(m796id = 1) boolean z, @SafeParcelable.Param(m796id = 2) int i) {
+    public ModuleAvailabilityResponse(@SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) int i) {
         this.zaa = z;
         this.zab = i;
     }

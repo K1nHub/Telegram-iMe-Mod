@@ -15,17 +15,17 @@ import com.google.android.gms.maps.GoogleMapOptions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "LatLngBoundsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LatLngBounds extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new zzf();
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final LatLng northeast;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final LatLng southwest;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private double zza = Double.POSITIVE_INFINITY;
         private double zzb = Double.NEGATIVE_INFINITY;
@@ -62,7 +62,7 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
     }
 
     @SafeParcelable.Constructor
-    public LatLngBounds(@SafeParcelable.Param(m796id = 2) LatLng latLng, @SafeParcelable.Param(m796id = 3) LatLng latLng2) {
+    public LatLngBounds(@SafeParcelable.Param(m1088id = 2) LatLng latLng, @SafeParcelable.Param(m1088id = 3) LatLng latLng2) {
         Preconditions.checkNotNull(latLng, "southwest must not be null.");
         Preconditions.checkNotNull(latLng2, "northeast must not be null.");
         double d = latLng2.latitude;

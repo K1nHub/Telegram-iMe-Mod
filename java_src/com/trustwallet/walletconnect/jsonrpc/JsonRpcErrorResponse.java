@@ -1,15 +1,15 @@
 package com.trustwallet.walletconnect.jsonrpc;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JsonRpcResponse.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class JsonRpcErrorResponse {
     private final JsonRpcError error;
 
     /* renamed from: id */
-    private final long f473id;
+    private final long f412id;
     private final String jsonrpc;
 
     public boolean equals(Object obj) {
@@ -18,24 +18,24 @@ public final class JsonRpcErrorResponse {
         }
         if (obj instanceof JsonRpcErrorResponse) {
             JsonRpcErrorResponse jsonRpcErrorResponse = (JsonRpcErrorResponse) obj;
-            return Intrinsics.areEqual(this.jsonrpc, jsonRpcErrorResponse.jsonrpc) && this.f473id == jsonRpcErrorResponse.f473id && Intrinsics.areEqual(this.error, jsonRpcErrorResponse.error);
+            return Intrinsics.areEqual(this.jsonrpc, jsonRpcErrorResponse.jsonrpc) && this.f412id == jsonRpcErrorResponse.f412id && Intrinsics.areEqual(this.error, jsonRpcErrorResponse.error);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f473id)) * 31) + this.error.hashCode();
+        return (((this.jsonrpc.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f412id)) * 31) + this.error.hashCode();
     }
 
     public String toString() {
-        return "JsonRpcErrorResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f473id + ", error=" + this.error + ')';
+        return "JsonRpcErrorResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f412id + ", error=" + this.error + ')';
     }
 
     public JsonRpcErrorResponse(String jsonrpc, long j, JsonRpcError error) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
         Intrinsics.checkNotNullParameter(error, "error");
         this.jsonrpc = jsonrpc;
-        this.f473id = j;
+        this.f412id = j;
         this.error = error;
     }
 

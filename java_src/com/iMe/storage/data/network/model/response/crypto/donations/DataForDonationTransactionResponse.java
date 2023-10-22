@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionPara
 import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DataForDonationTransactionResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DataForDonationTransactionResponse {
     private final TokenDetailedResponse feeToken;
     private final String recipientAddress;

@@ -10,24 +10,24 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsStatesCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocationSettingsStates extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsStates> CREATOR = new zzab();
-    @SafeParcelable.Field(getter = "isGpsUsable", m797id = 1)
+    @SafeParcelable.Field(getter = "isGpsUsable", m1089id = 1)
     private final boolean zza;
-    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m797id = 2)
+    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m1089id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "isBleUsable", m797id = 3)
+    @SafeParcelable.Field(getter = "isBleUsable", m1089id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "isGpsPresent", m797id = 4)
+    @SafeParcelable.Field(getter = "isGpsPresent", m1089id = 4)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m797id = 5)
+    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m1089id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "isBlePresent", m797id = 6)
+    @SafeParcelable.Field(getter = "isBlePresent", m1089id = 6)
     private final boolean zzf;
 
     @SafeParcelable.Constructor
-    public LocationSettingsStates(@SafeParcelable.Param(m796id = 1) boolean z, @SafeParcelable.Param(m796id = 2) boolean z2, @SafeParcelable.Param(m796id = 3) boolean z3, @SafeParcelable.Param(m796id = 4) boolean z4, @SafeParcelable.Param(m796id = 5) boolean z5, @SafeParcelable.Param(m796id = 6) boolean z6) {
+    public LocationSettingsStates(@SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) boolean z2, @SafeParcelable.Param(m1088id = 3) boolean z3, @SafeParcelable.Param(m1088id = 4) boolean z4, @SafeParcelable.Param(m1088id = 5) boolean z5, @SafeParcelable.Param(m1088id = 6) boolean z6) {
         this.zza = z;
         this.zzb = z2;
         this.zzc = z3;

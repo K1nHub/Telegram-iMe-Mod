@@ -27,7 +27,7 @@ import okio.BufferedSource;
 import okio.ByteString;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: Http2Connection.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Http2Connection implements Closeable {
     public static final Companion Companion = new Companion(null);
     private static final Settings DEFAULT_SETTINGS;
@@ -572,7 +572,7 @@ public final class Http2Connection implements Closeable {
     }
 
     /* compiled from: Http2Connection.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private boolean client;
         public String connectionName;
@@ -679,7 +679,7 @@ public final class Http2Connection implements Closeable {
     }
 
     /* compiled from: Http2Connection.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class ReaderRunnable implements Http2Reader.Handler, Function0<Unit> {
         private final Http2Reader reader;
         final /* synthetic */ Http2Connection this$0;
@@ -870,10 +870,10 @@ public final class Http2Connection implements Closeable {
         }
 
         /* JADX WARN: Can't wrap try/catch for region: R(8:(2:15|(10:17|18|19|20|21|22|23|24|25|26)(2:51|52))|20|21|22|23|24|25|26) */
-        /* JADX WARN: Code restructure failed: missing block: B:90:0x00d9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:90:0x00da, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:91:0x00da, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:91:0x00db, code lost:
             r21.this$0.failConnection(r0);
          */
         /* JADX WARN: Multi-variable type inference failed */
@@ -883,7 +883,7 @@ public final class Http2Connection implements Closeable {
         */
         public final void applyAndAckSettings(boolean r22, okhttp3.internal.http2.Settings r23) {
             /*
-                Method dump skipped, instructions count: 271
+                Method dump skipped, instructions count: 272
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.http2.Http2Connection.ReaderRunnable.applyAndAckSettings(boolean, okhttp3.internal.http2.Settings):void");
@@ -1211,7 +1211,7 @@ public final class Http2Connection implements Closeable {
     }
 
     /* compiled from: Http2Connection.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Listener {
         public static final Listener REFUSE_INCOMING_STREAMS;
 
@@ -1223,7 +1223,7 @@ public final class Http2Connection implements Closeable {
         public abstract void onStream(Http2Stream http2Stream) throws IOException;
 
         /* compiled from: Http2Connection.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class Companion {
             private Companion() {
             }
@@ -1246,7 +1246,7 @@ public final class Http2Connection implements Closeable {
     }
 
     /* compiled from: Http2Connection.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

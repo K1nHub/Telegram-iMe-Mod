@@ -1,24 +1,17 @@
-.class public final synthetic Lj$/wrappers/J;
+.class public abstract synthetic Lj$/wrappers/J;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/function/DoubleUnaryOperator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/DoubleUnaryOperator;
+.field final synthetic a:Lj$/wrappers/I;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/DoubleUnaryOperator;)V
+.method public static synthetic a(Lj$/wrappers/I;)Ljava/util/function/DoubleUnaryOperator;
     .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/wrappers/J;->a:Ljava/util/function/DoubleUnaryOperator;
-
-    return-void
-.end method
-
-.method public static synthetic b(Ljava/util/function/DoubleUnaryOperator;)Lj$/wrappers/J;
-    .locals 1
 
     if-nez p0, :cond_0
 
@@ -27,34 +20,7 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/K;
-
-    if-eqz v0, :cond_1
-
-    check-cast p0, Lj$/wrappers/K;
-
-    iget-object p0, p0, Lj$/wrappers/K;->a:Lj$/wrappers/J;
+    iget-object p0, p0, Lj$/wrappers/I;->a:Ljava/util/function/DoubleUnaryOperator;
 
     return-object p0
-
-    :cond_1
-    new-instance v0, Lj$/wrappers/J;
-
-    invoke-direct {v0, p0}, Lj$/wrappers/J;-><init>(Ljava/util/function/DoubleUnaryOperator;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a(D)D
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/J;->a:Ljava/util/function/DoubleUnaryOperator;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/function/DoubleUnaryOperator;->applyAsDouble(D)D
-
-    move-result-wide p1
-
-    return-wide p1
 .end method

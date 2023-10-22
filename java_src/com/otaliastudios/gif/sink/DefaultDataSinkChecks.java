@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.sink;
 
 import android.media.MediaFormat;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class DefaultDataSinkChecks {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void checkOutputFormat(MediaFormat mediaFormat) {

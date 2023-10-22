@@ -12,13 +12,13 @@ import kotlin.text.StringsKt__StringsJVMKt;
 /* loaded from: classes.dex */
 public final class C0384a {
     /* renamed from: a */
-    public static final AppStatus m842a(Context context) {
+    public static final AppStatus m1134a(Context context) {
         Intrinsics.checkParameterIsNotNull(context, "context");
-        return !m841a(context, "com.binance.dev") ? AppStatus.UnInstalled : m837c(context) < ((float) 1) ? AppStatus.UnSupported : AppStatus.Supported;
+        return !m1133a(context, "com.binance.dev") ? AppStatus.UnInstalled : m1129c(context) < ((float) 1) ? AppStatus.UnSupported : AppStatus.Supported;
     }
 
     /* renamed from: a */
-    public static final String m843a() {
+    public static final String m1135a() {
         Locale locale = Locale.getDefault();
         Intrinsics.checkExpressionValueIsNotNull(locale, "locale");
         String lang = locale.getLanguage();
@@ -34,19 +34,19 @@ public final class C0384a {
     }
 
     /* renamed from: a */
-    public static final boolean m841a(Context context, String packageName) {
+    public static final boolean m1133a(Context context, String packageName) {
         Intrinsics.checkParameterIsNotNull(context, "context");
         Intrinsics.checkParameterIsNotNull(packageName, "packageName");
         return context.getPackageManager().getPackageInfo(packageName, 2048) != null;
     }
 
     /* renamed from: a */
-    public static final boolean m840a(OAuthParams oAuthParams) {
+    public static final boolean m1132a(OAuthParams oAuthParams) {
         boolean isBlank;
         Intrinsics.checkParameterIsNotNull(oAuthParams, "oAuthParams");
         isBlank = StringsKt__StringsJVMKt.isBlank(oAuthParams.getRedirectUri());
         if (isBlank) {
-            C0385b.m836a("redirectUri cannot be null");
+            C0385b.m1128a("redirectUri cannot be null");
             return false;
         }
         return true;
@@ -59,7 +59,7 @@ public final class C0384a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static final boolean m839a(java.lang.String r2) {
+    public static final boolean m1131a(java.lang.String r2) {
         /*
             r0 = 0
             r1 = 1
@@ -75,16 +75,16 @@ public final class C0384a {
         Le:
             if (r2 == 0) goto L16
             java.lang.String r2 = "clientId cannot be null"
-            com.binance.android.opensdk.p014c.C0385b.m836a(r2)
+            com.binance.android.opensdk.p014c.C0385b.m1128a(r2)
             return r0
         L16:
             return r1
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.binance.android.opensdk.p014c.C0384a.m839a(java.lang.String):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.binance.android.opensdk.p014c.C0384a.m1131a(java.lang.String):boolean");
     }
 
     /* renamed from: b */
-    public static final String m838b(Context context) {
+    public static final String m1130b(Context context) {
         Intrinsics.checkParameterIsNotNull(context, "context");
         Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
         if (bundle != null) {
@@ -94,7 +94,7 @@ public final class C0384a {
     }
 
     /* renamed from: c */
-    public static final float m837c(Context context) {
+    public static final float m1129c(Context context) {
         Intrinsics.checkParameterIsNotNull(context, "context");
         try {
             return context.getPackageManager().getApplicationInfo("com.binance.dev", 128).metaData.getFloat("com.binance.dev.open.sdk.version", BitmapDescriptorFactory.HUE_RED);

@@ -7,16 +7,17 @@ import kotlin.coroutines.ContinuationInterceptor;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.LimitedDispatcher;
 import kotlinx.coroutines.internal.LimitedDispatcherKt;
 /* compiled from: CoroutineDispatcher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class CoroutineDispatcher extends AbstractCoroutineContextElement implements ContinuationInterceptor {
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -27,7 +28,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         return (E) ContinuationInterceptor.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return ContinuationInterceptor.DefaultImpls.minusKey(this, key);
     }
@@ -37,7 +38,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     }
 
     /* compiled from: CoroutineDispatcher.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Key extends AbstractCoroutineContextKey<ContinuationInterceptor, CoroutineDispatcher> {
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -61,6 +62,10 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         return new LimitedDispatcher(this, i);
     }
 
+    public void dispatchYield(CoroutineContext coroutineContext, Runnable runnable) {
+        mo2114dispatch(coroutineContext, runnable);
+    }
+
     @Override // kotlin.coroutines.ContinuationInterceptor
     public final <T> Continuation<T> interceptContinuation(Continuation<? super T> continuation) {
         return new DispatchedContinuation(this, continuation);
@@ -68,7 +73,8 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
 
     @Override // kotlin.coroutines.ContinuationInterceptor
     public final void releaseInterceptedContinuation(Continuation<?> continuation) {
-        ((DispatchedContinuation) continuation).release();
+        Intrinsics.checkNotNull(continuation, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<*>");
+        ((DispatchedContinuation) continuation).release$kotlinx_coroutines_core();
     }
 
     public String toString() {

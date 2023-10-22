@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_uninstallStickerSet extends TLObject {
     public static int constructor = -110209570;
     public TLRPC$InputStickerSet stickerset;

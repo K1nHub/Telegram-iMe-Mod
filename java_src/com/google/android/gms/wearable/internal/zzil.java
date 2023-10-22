@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzil implements Runnable {
     final /* synthetic */ Uri zza;
     final /* synthetic */ BaseImplementation.ResultHolder zzb;

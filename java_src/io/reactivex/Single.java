@@ -2,20 +2,13 @@ package io.reactivex;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
-import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.internal.observers.BlockingMultiObserver;
 import io.reactivex.internal.observers.ConsumerSingleObserver;
 import io.reactivex.internal.operators.single.SingleCreate;
-import io.reactivex.internal.operators.single.SingleDoFinally;
-import io.reactivex.internal.operators.single.SingleDoOnSubscribe;
-import io.reactivex.internal.operators.single.SingleDoOnSuccess;
-import io.reactivex.internal.operators.single.SingleError;
-import io.reactivex.internal.operators.single.SingleFlatMap;
 import io.reactivex.internal.operators.single.SingleFlatMapCompletable;
 import io.reactivex.internal.operators.single.SingleJust;
 import io.reactivex.internal.operators.single.SingleMap;
@@ -24,8 +17,7 @@ import io.reactivex.internal.operators.single.SingleOnErrorReturn;
 import io.reactivex.internal.operators.single.SingleSubscribeOn;
 import io.reactivex.internal.operators.single.SingleToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
-import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Single<T> implements SingleSource<T> {
     protected abstract void subscribeActual(SingleObserver<? super T> singleObserver);
 
@@ -34,39 +26,9 @@ public abstract class Single<T> implements SingleSource<T> {
         return RxJavaPlugins.onAssembly(new SingleCreate(singleOnSubscribe));
     }
 
-    public static <T> Single<T> error(Callable<? extends Throwable> callable) {
-        ObjectHelper.requireNonNull(callable, "errorSupplier is null");
-        return RxJavaPlugins.onAssembly(new SingleError(callable));
-    }
-
-    public static <T> Single<T> error(Throwable th) {
-        ObjectHelper.requireNonNull(th, "exception is null");
-        return error(Functions.justCallable(th));
-    }
-
     public static <T> Single<T> just(T t) {
         ObjectHelper.requireNonNull(t, "item is null");
         return RxJavaPlugins.onAssembly(new SingleJust(t));
-    }
-
-    public final Single<T> doFinally(Action action) {
-        ObjectHelper.requireNonNull(action, "onFinally is null");
-        return RxJavaPlugins.onAssembly(new SingleDoFinally(this, action));
-    }
-
-    public final Single<T> doOnSubscribe(Consumer<? super Disposable> consumer) {
-        ObjectHelper.requireNonNull(consumer, "onSubscribe is null");
-        return RxJavaPlugins.onAssembly(new SingleDoOnSubscribe(this, consumer));
-    }
-
-    public final Single<T> doOnSuccess(Consumer<? super T> consumer) {
-        ObjectHelper.requireNonNull(consumer, "onSuccess is null");
-        return RxJavaPlugins.onAssembly(new SingleDoOnSuccess(this, consumer));
-    }
-
-    public final <R> Single<R> flatMap(Function<? super T, ? extends SingleSource<? extends R>> function) {
-        ObjectHelper.requireNonNull(function, "mapper is null");
-        return RxJavaPlugins.onAssembly(new SingleFlatMap(this, function));
     }
 
     public final Completable flatMapCompletable(Function<? super T, ? extends CompletableSource> function) {

@@ -9,8 +9,8 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkViewCollapsableHeaderPagerBinding implements ViewBinding {
     public final AppBarLayout appbar;
     public final FrameLayout frameCollapsingContentContainer;
@@ -28,7 +28,6 @@ public final class ForkViewCollapsableHeaderPagerBinding implements ViewBinding 
         this.toolbar = materialToolbar;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public CoordinatorLayout getRoot() {
         return this.rootView;
     }
@@ -38,7 +37,7 @@ public final class ForkViewCollapsableHeaderPagerBinding implements ViewBinding 
     }
 
     public static ForkViewCollapsableHeaderPagerBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_view_collapsable_header_pager, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_view_collapsable_header_pager, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -46,20 +45,20 @@ public final class ForkViewCollapsableHeaderPagerBinding implements ViewBinding 
     }
 
     public static ForkViewCollapsableHeaderPagerBinding bind(View view) {
-        int i = C3473R.C3476id.appbar;
+        int i = C3630R.C3633id.appbar;
         AppBarLayout appBarLayout = (AppBarLayout) ViewBindings.findChildViewById(view, i);
         if (appBarLayout != null) {
             CoordinatorLayout coordinatorLayout = (CoordinatorLayout) view;
-            i = C3473R.C3476id.frame_collapsing_content_container;
+            i = C3630R.C3633id.frame_collapsing_content_container;
             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
             if (frameLayout != null) {
-                i = C3473R.C3476id.frame_pages_container;
+                i = C3630R.C3633id.frame_pages_container;
                 FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout2 != null) {
-                    i = C3473R.C3476id.frame_tabs_container;
+                    i = C3630R.C3633id.frame_tabs_container;
                     FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                     if (frameLayout3 != null) {
-                        i = C3473R.C3476id.toolbar;
+                        i = C3630R.C3633id.toolbar;
                         MaterialToolbar materialToolbar = (MaterialToolbar) ViewBindings.findChildViewById(view, i);
                         if (materialToolbar != null) {
                             return new ForkViewCollapsableHeaderPagerBinding(coordinatorLayout, appBarLayout, coordinatorLayout, frameLayout, frameLayout2, frameLayout3, materialToolbar);

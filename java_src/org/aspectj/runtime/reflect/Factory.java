@@ -7,7 +7,7 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.aspectj.lang.reflect.SourceLocation;
 import org.aspectj.runtime.reflect.JoinPointImpl;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Factory {
     private static Object[] NO_ARGS;
     static /* synthetic */ Class class$java$lang$ClassNotFoundException;

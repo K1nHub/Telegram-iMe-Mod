@@ -1,12 +1,13 @@
 package com.iMe.fork.controller;
 
 import android.content.SharedPreferences;
+import com.iMe.common.IdFabric$CustomType;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.MusicController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.p031ui.music.MusicTab;
-import com.iMe.storage.data.locale.p027db.dao.main.PlaylistsDao;
-import com.iMe.storage.data.locale.p027db.model.music.PlaylistsDb;
+import com.iMe.p030ui.music.MusicTab;
+import com.iMe.storage.data.locale.p026db.dao.main.PlaylistsDao;
+import com.iMe.storage.data.locale.p026db.model.music.PlaylistsDb;
 import com.iMe.storage.data.mapper.music.PlaylistsMappingKt;
 import com.iMe.storage.domain.model.music.PlaylistModel;
 import java.util.ArrayList;
@@ -34,17 +35,19 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.Components.MediaActivity;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: MusicController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MusicController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, MusicController> accountInstances = new ConcurrentHashMap<>(5);
@@ -146,8 +149,8 @@ public final class MusicController extends BaseController implements KoinCompone
         });
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (PlaylistsDb playlistsDb : filter) {
-            Pair m103to = TuplesKt.m103to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.playlists = mutableMap;
@@ -240,6 +243,12 @@ public final class MusicController extends BaseController implements KoinCompone
         this$0.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.playlistDidChanged, messageIds, Boolean.FALSE);
     }
 
+    public final void showAddToPlaylistUndoView(BaseFragment baseFragment, boolean z) {
+        if (baseFragment instanceof MediaActivity) {
+            ((MediaActivity) baseFragment).getUndoView().showWithAction(0L, z ? IdFabric$CustomType.UNDO_ADD_TO_PLAYLIST : IdFabric$CustomType.UNDO_REMOVE_TO_PLAYLIST, (Object) 1);
+        }
+    }
+
     public final ArrayList<Integer> getPlaylistForDialog(long j) {
         ArrayList<Integer> messageIds;
         PlaylistModel playlistModel = this.playlists.get(Long.valueOf(j));
@@ -251,13 +260,13 @@ public final class MusicController extends BaseController implements KoinCompone
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MusicController.setNewPlaylists$lambda$10(MusicController.this);
+                MusicController.setNewPlaylists$lambda$11(MusicController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNewPlaylists$lambda$10(MusicController this$0) {
+    public static final void setNewPlaylists$lambda$11(MusicController this$0) {
         List<PlaylistModel> list;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         PlaylistsDao dao = this$0.getDao();
@@ -267,7 +276,7 @@ public final class MusicController extends BaseController implements KoinCompone
     }
 
     /* compiled from: MusicController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

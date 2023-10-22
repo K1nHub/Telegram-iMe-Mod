@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.StringResourceValueReader;
 import com.google.android.gms.common.util.Strings;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseOptions {
     private final String apiKey;
     private final String applicationId;
@@ -16,7 +16,7 @@ public final class FirebaseOptions {
     private final String projectId;
     private final String storageBucket;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private String apiKey;
         private String applicationId;

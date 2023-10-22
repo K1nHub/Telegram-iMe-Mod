@@ -1,7 +1,7 @@
 package com.google.common.collect;
 
 import java.util.ListIterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class UnmodifiableListIterator<E> extends UnmodifiableIterator<E> implements ListIterator<E> {
     @Override // java.util.ListIterator
     @Deprecated

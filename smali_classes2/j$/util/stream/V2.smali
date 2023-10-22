@@ -7,20 +7,20 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/U2;Lj$/util/stream/y2;Lj$/util/s;)V
+.method constructor <init>(Lj$/util/stream/U2;Lj$/util/stream/y2;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {p0, p2, p3}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     iput-object p1, p0, Lj$/util/stream/V2;->h:Lj$/util/stream/U2;
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/V2;Lj$/util/s;)V
+.method constructor <init>(Lj$/util/stream/V2;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
 
     iget-object p1, p1, Lj$/util/stream/V2;->h:Lj$/util/stream/U2;
 
@@ -43,20 +43,20 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, v1, v2}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+    invoke-virtual {v0, v1, v2}, Lj$/util/stream/y2;->t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 
     return-object v1
 .end method
 
-.method protected f(Lj$/util/s;)Lj$/util/stream/f;
+.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
     .locals 1
 
     .line 1
     new-instance v0, Lj$/util/stream/V2;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/V2;-><init>(Lj$/util/stream/V2;Lj$/util/s;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/V2;-><init>(Lj$/util/stream/V2;Lj$/util/Spliterator;)V
 
     return-object v0
 .end method
@@ -98,7 +98,7 @@
     const/4 p1, 0x0
 
     .line 1
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 

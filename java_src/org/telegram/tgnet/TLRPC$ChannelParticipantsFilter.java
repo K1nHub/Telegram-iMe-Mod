@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$ChannelParticipantsFilter extends TLObject {
 
     /* renamed from: q */
-    public String f1521q;
+    public String f1599q;
 }

@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static final compat_notification_large_icon_max_height:I = 0x7f07006d
+.field public static final compat_notification_large_icon_max_height:I = 0x7f070068
 
-.field public static final compat_notification_large_icon_max_width:I = 0x7f07006e
+.field public static final compat_notification_large_icon_max_width:I = 0x7f070069

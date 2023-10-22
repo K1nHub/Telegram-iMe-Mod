@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.send;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BitcoinUnspentOutput.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BitcoinUnspentOutput {
     private final BigInteger amount;
     private final int index;

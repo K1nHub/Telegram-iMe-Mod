@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.internal;
 
 import android.util.Log;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Logger {
     private static int sLevel;
     private String mTag;
@@ -15,32 +15,32 @@ public class Logger {
     }
 
     /* renamed from: v */
-    public void m707v(String str) {
-        m706v(str, null);
+    public void m1000v(String str) {
+        m999v(str, null);
     }
 
     /* renamed from: i */
-    public void m709i(String str) {
-        m708i(str, null);
+    public void m1002i(String str) {
+        m1001i(str, null);
     }
 
     /* renamed from: v */
-    public void m706v(String str, Throwable th) {
+    public void m999v(String str, Throwable th) {
         log(0, str, th);
     }
 
     /* renamed from: i */
-    public void m708i(String str, Throwable th) {
+    public void m1001i(String str, Throwable th) {
         log(1, str, th);
     }
 
     /* renamed from: w */
-    public void m705w(String str, Throwable th) {
+    public void m998w(String str, Throwable th) {
         log(2, str, th);
     }
 
     /* renamed from: e */
-    public void m710e(String str, Throwable th) {
+    public void m1003e(String str, Throwable th) {
         log(3, str, th);
     }
 

@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.staking.StakingOperationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationsRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingOperationsRequest {
     private final String networkType;
     private final StakingOperationsPaginationRequest paging;

@@ -16,7 +16,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import com.google.android.search.verification.api.ISearchActionVerificationService;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SearchActionVerificationClientService extends IntentService {
     private static final int CONNECTION_TIMEOUT_IN_MS = 1000;
     public static final String EXTRA_INTENT = "SearchActionVerificationClientExtraIntent";
@@ -65,7 +65,7 @@ public abstract class SearchActionVerificationClientService extends IntentServic
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class SearchActionVerificationServiceConnection implements ServiceConnection {
         private ISearchActionVerificationService iRemoteService;
 

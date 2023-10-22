@@ -17,7 +17,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final int bufferSize;
     final ErrorMode delayErrors;
@@ -42,7 +42,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SourceObserver<T, U> extends AtomicInteger implements Observer<T>, Disposable {
         volatile boolean active;
         final int bufferSize;
@@ -182,7 +182,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class InnerObserver<U> extends AtomicReference<Disposable> implements Observer<U> {
             final Observer<? super U> downstream;
             final SourceObserver<?, ?> parent;
@@ -219,7 +219,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ConcatMapDelayErrorObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         volatile boolean active;
         final int bufferSize;
@@ -380,7 +380,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class DelayErrorInnerObserver<R> extends AtomicReference<Disposable> implements Observer<R> {
             final Observer<? super R> downstream;
             final ConcatMapDelayErrorObserver<?, R> parent;

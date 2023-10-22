@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateLangPackTooLong extends TLRPC$Update {
     public static int constructor = 1180041828;
     public String lang_code;

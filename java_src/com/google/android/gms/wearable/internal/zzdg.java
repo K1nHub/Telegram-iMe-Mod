@@ -4,7 +4,7 @@ import com.google.android.gms.common.data.DataBufferRef;
 import com.google.android.gms.common.data.DataHolder;
 import com.google.android.gms.wearable.DataItemAsset;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdg extends DataBufferRef implements DataItemAsset {
     public zzdg(DataHolder dataHolder, int i) {
         super(dataHolder, i);

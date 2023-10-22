@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$chatlist_ChatlistInvite extends TLObject {
     public static TLRPC$chatlist_ChatlistInvite TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$chatlist_ChatlistInvite tLRPC$TL_chatlists_chatlistInviteAlready;

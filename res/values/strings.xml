@@ -224,6 +224,7 @@
     <string name="ActionAttachMenuBotAllowed">You allowed this bot to message you when you added it to your attachment menu.</string>
     <string name="ActionBotAllowed">You allowed this bot to message you when you logged in on %1$s.</string>
     <string name="ActionBotAllowedApp">You allowed this bot to message you when you logged in on %1$s app.</string>
+    <string name="ActionBotAllowedWebapp">You allowed this bot to message you in web-app</string>
     <string name="ActionBotDocumentAddress">Address</string>
     <string name="ActionBotDocumentBankStatement">Bank Statement</string>
     <string name="ActionBotDocumentDriverLicence">Driver Licence</string>
@@ -681,7 +682,9 @@ Remember, logging out kills all your Secret Chats."</string>
     <string name="AreYouSureSessionsTitle">Terminate sessions</string>
     <string name="AreYouSureShareMyContactInfo">Are you sure you want to share your phone number?</string>
     <string name="AreYouSureShareMyContactInfoBot">The bot will know your phone number. This can be useful for integration with other services.</string>
+    <string name="AreYouSureShareMyContactInfoBotUnblock">This will also unblock the bot.</string>
     <string name="AreYouSureShareMyContactInfoUser">Are you sure you want to share your phone number %1$s with **%2$s**?</string>
+    <string name="AreYouSureShareMyContactInfoWebapp">**%s** will know your phone number. This can be useful for integration with other services.</string>
     <string name="AreYouSureUnblockContact">Are you sure you want to unblock this contact?</string>
     <string name="AreYouSureWebSessions">Are you sure you want to disconnect all websites where you used Telegram to log in?</string>
     <string name="ArticleByAuthor">by %1$s</string>
@@ -980,10 +983,34 @@ Sunrise: %2$s"</string>
     <string name="BlurOff">Off</string>
     <string name="BlurRadial">Radial</string>
     <string name="Bold">Bold</string>
+    <string name="BoostChannel">Boost Channel</string>
+    <string name="BoostExpireOn">boost expires on %s</string>
+    <string name="BoostLinkButton">BOOST</string>
+    <string name="BoostStories_few">**%d** stories</string>
+    <string name="BoostStories_many">**%d** stories</string>
+    <string name="BoostStories_one">**%d** story</string>
+    <string name="BoostStories_other">**%d** stories</string>
+    <string name="BoostStories_two">**%d** stories</string>
+    <string name="BoostStories_zero">**%d** story</string>
+    <string name="Boosters">Boosters</string>
+    <string name="BoostersInfoDescription">Your channel is currently boosted by these users.</string>
+    <string name="BoostingEnableStories">Enable Stories</string>
+    <string name="BoostingEnableStoriesForChannel">Enable stories for the channel</string>
+    <string name="BoostingEnableStoriesForChannel2">Enable stories for channel</string>
+    <string name="BoostingIncreaseLevel">Increase Story Limit</string>
+    <string name="Boosts">Boosts</string>
+    <string name="BoostsExisting">Existing Boosts</string>
+    <string name="BoostsLevel">Level %d</string>
+    <string name="BoostsLevel2">Level</string>
+    <string name="BoostsMaxLevelReached">Maximum Level Reached</string>
+    <string name="BoostsToLevel">Boosts to level up</string>
     <string name="Bot">bot</string>
     <string name="BotAddToGroupOrChannelInfo">This bot is able to manage a group or channel.</string>
     <string name="BotAddToMenu">Add to Menu</string>
     <string name="BotAlreadyAddedToAttachMenu">This bot is already in your attachment menu.</string>
+    <string name="BotAttachMenuShortcatAddedAttach">**%s** shortcut added in attachment menu.</string>
+    <string name="BotAttachMenuShortcatAddedAttachAndSide">**%s** shortcut added in attachment menu and side menu.</string>
+    <string name="BotAttachMenuShortcatAddedSide">**%s** shortcut added in side menu.</string>
     <string name="BotCantAddToAttachMenu">"This bot can't be added to the attachment menu."</string>
     <string name="BotCantJoinGroups">"This bot can't join groups."</string>
     <string name="BotCantOpenAttachMenuBot">"This bot can't be opened in chats with bots."</string>
@@ -1012,7 +1039,7 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotPublicLink">Public Link</string>
     <string name="BotPublicLinks">Public Links</string>
     <string name="BotPublicLinksCount">%1$s/%2$s</string>
-    <string name="BotRemoveFromMenu">Remove **%1$s** from the attachment menu?</string>
+    <string name="BotRemoveFromMenu">This will remove **%1$s** shortcuts from all menus.</string>
     <string name="BotRemoveFromMenuTitle">Remove bot</string>
     <string name="BotRemoveInlineFromMenu">Remove **%1$s** from suggestions?</string>
     <string name="BotRequestAttachPermission">**%1$s** requests to be added as an option to your attachments menu so you can access it from any chat.</string>
@@ -1033,6 +1060,8 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotUnblock">RESTART</string>
     <string name="BotUsernameHelp">This link cannot be edited. You can acquire additional usernames on *Fragment*.</string>
     <string name="BotUsernamesHelp">Drag and drop links to change the order in which they will be displayed on the bot info page.</string>
+    <string name="BotWebAppDisclaimerCheck">I agree to the **Terms of Use**</string>
+    <string name="BotWebAppDisclaimerSubtitle">You are about to use a mini app operated by an independent party **not affiliated with Telegram**. You must agree to the Terms of Use of mini apps to continue.</string>
     <string name="BotWebAppInstantViewOpen">Open App</string>
     <string name="BotWebViewChangesMayNotBeSaved">Changes that you made may not be saved.</string>
     <string name="BotWebViewCloseAnyway">Close anyway</string>
@@ -1042,6 +1071,14 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotWebViewOpenBot">Open bot</string>
     <string name="BotWebViewReloadPage">Reload page</string>
     <string name="BotWebViewRequestAllow">Allow</string>
+    <string name="BotWebViewRequestCameraMicPermission">"Allow **%1$s** to access to your camera and microphone?
+
+The developer of **%1$s** will be able to access your camera and microphone when this web app is open."</string>
+    <string name="BotWebViewRequestCameraMicPermissionWithHint">"Allow **%1$s** to access to your camera and microphone?
+
+The developer of **%1$s** will be able to access your camera and microphone when this web app is open.
+
+Enable camera access in Settings > Permissions > Camera."</string>
     <string name="BotWebViewRequestCameraPermission">"Allow **%1$s** to access to your camera?
 
 The developer of **%1$s** will be able to access your camera when this web app is open."</string>
@@ -1067,6 +1104,8 @@ The developer of **%1$s** will be able to access your microphone when this web a
 The developer of **%1$s** will be able to access your microphone when this web app is open.
 
 Enable microphone access in Settings > Permissions > Microphone."</string>
+    <string name="BotWebViewRequestWriteMessage">Allow this bot to send you messages?</string>
+    <string name="BotWebViewRequestWriteTitle">Allow messaging</string>
     <string name="BotWebViewSettings">Settings</string>
     <string name="BotWebViewStartPermission">"You will connect to this bot's website to launch its web app."</string>
     <string name="BotsMenuTitle">Menu</string>
@@ -1162,6 +1201,10 @@ If this wasn't you, please enter the code we've just sent you via SMS. You can a
     <string name="CancelReset">Cancel reset</string>
     <string name="CancelSending">Cancel sending</string>
     <string name="CantAddBotAsAdmin">Sorry, bots can only be added to channels as administrators.</string>
+    <string name="CantBoostTooOften">Can’t boost too often!</string>
+    <string name="CantBoostTooOftenDescription">You can change the channel you boost only once a day. Next time you can boost is in **%s.**</string>
+    <string name="CantBoostWithGiftedPremium">Can’t boost with gifted Premium!</string>
+    <string name="CantBoostWithGiftedPremiumDescription">Because your **Telegram Premium** subscription was gifted to you, you can’t use it boost channels.</string>
     <string name="CantPlayVideo">App was unable to play this video. Try to play it with external player?</string>
     <string name="Caption">Caption</string>
     <string name="CaptionPremiumSubtitle_other">Increase this limit **%1$d** times to **%2$s** symbols by subscribing to __Telegram Premium.__</string>
@@ -1220,6 +1263,8 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
     <string name="ChannelBlacklist">Removed Users</string>
     <string name="ChannelBlockUser">Remove User</string>
     <string name="ChannelBlockedUsers">Removed users</string>
+    <string name="ChannelBoostsJustReachedLevel1">This channel reached **Level 1** and can now post stories.</string>
+    <string name="ChannelBoostsJustReachedLevelNext">This channel reached **Level %1$d** and can now post **%2$s** per day.</string>
     <string name="ChannelBots">Bots</string>
     <string name="ChannelBroadcast">Broadcast</string>
     <string name="ChannelCantOpenBanned">Unfortunately, you were banned from participating in public groups.</string>
@@ -1265,6 +1310,8 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
     <string name="ChannelLeaveAlertWithName">Are you sure you want to leave **%1$s**?</string>
     <string name="ChannelLinkInfo">Anyone on Telegram will be able to join your channel by following this link.</string>
     <string name="ChannelLinkTitle">Permanent link</string>
+    <string name="ChannelManageMessages">Manage Messages</string>
+    <string name="ChannelManageStories">Manage Stories</string>
     <string name="ChannelMegaJoined">You joined this group</string>
     <string name="ChannelMembers">Members</string>
     <string name="ChannelMembersInfo">Only channel administrators can see this list.</string>
@@ -1286,6 +1333,15 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
     <string name="ChannelMessageStickerEmoji">%1$s posted a %2$s sticker</string>
     <string name="ChannelMessageVideo">%1$s posted a video</string>
     <string name="ChannelMute">MUTE</string>
+    <string name="ChannelNeedBoostsAlreadyBoostedDescriptionLevel1">This channel need %s more boosts to enable stories.</string>
+    <string name="ChannelNeedBoostsDescription">"Your channel need %s to enable posting stories.
+
+Ask your Premium subscribers to boost your channel with this link:"</string>
+    <string name="ChannelNeedBoostsDescriptionLevel1">This channel need %s to enable stories. Help make it possible!</string>
+    <string name="ChannelNeedBoostsDescriptionLevelNext">This channel need %1$s to be able post **%2$s** per day. Help make it possible!</string>
+    <string name="ChannelNeedBoostsDescriptionNextLevel">"Your channel need %1$s to be able post **%2$s** per day.
+
+Ask your Premium subscribers to boost your channel with this link:"</string>
     <string name="ChannelNotifyMembersInfoOff">Members will receive a silent notification</string>
     <string name="ChannelNotifyMembersInfoOn">Members will be notified when you post</string>
     <string name="ChannelOtherMembers">Other members</string>
@@ -1947,6 +2003,7 @@ You can always switch back to the default Telegram theme here."</string>
     <string name="DiceInfo2">Send a **:dice:** emoji to any chat to roll a die.</string>
     <string name="DidNotGetTheCode">"Didn't get the code?"</string>
     <string name="DidNotGetTheCodeEditNumberButton">Edit number</string>
+    <string name="DidNotGetTheCodeFragment">Get a code via Fragment</string>
     <string name="DidNotGetTheCodeHelpButton">Help</string>
     <string name="DidNotGetTheCodeInfo">"If you didn't get the code by SMS or call, please check your **cellular data settings** and phone number:
 
@@ -2049,11 +2106,14 @@ Anyone from the channel will be able to see messages in this group."</string>
     <string name="EditAdminChangeGroupInfo">Change Group Info</string>
     <string name="EditAdminChannelTransfer">Transfer Channel Ownership</string>
     <string name="EditAdminDeleteMessages">Delete Messages of Others</string>
+    <string name="EditAdminDeleteStories">Delete Stories of Others</string>
     <string name="EditAdminEditMessages">Edit Messages of Others</string>
+    <string name="EditAdminEditStories">Edit Stories of Others</string>
     <string name="EditAdminGroupDeleteMessages">Delete Messages</string>
     <string name="EditAdminGroupTransfer">Transfer Group Ownership</string>
     <string name="EditAdminPinMessages">Pin Messages</string>
     <string name="EditAdminPostMessages">Post Messages</string>
+    <string name="EditAdminPostStories">Post Stories</string>
     <string name="EditAdminPromotedBy">Promoted by %1$s</string>
     <string name="EditAdminRank">Custom title</string>
     <string name="EditAdminRankInfo">"A custom title that will be shown to all members instead of '%1$s'."</string>
@@ -2335,11 +2395,14 @@ have been found."</string>
     <string name="EventLogPromotedChangeChannelInfo">Change channel Info</string>
     <string name="EventLogPromotedChangeGroupInfo">Change group Info</string>
     <string name="EventLogPromotedDeleteMessages">Delete messages</string>
+    <string name="EventLogPromotedDeleteStories">Delete stories</string>
     <string name="EventLogPromotedEditMessages">Edit messages</string>
+    <string name="EventLogPromotedEditStories">Edit stories</string>
     <string name="EventLogPromotedManageCall">Manage Live Streams</string>
     <string name="EventLogPromotedNoRights">promoted %1$s</string>
     <string name="EventLogPromotedPinMessages">Pin messages</string>
     <string name="EventLogPromotedPostMessages">Post messages</string>
+    <string name="EventLogPromotedPostStories">Post stories</string>
     <string name="EventLogPromotedRemovedTitle">Title</string>
     <string name="EventLogPromotedSendAnonymously">Send anonymously</string>
     <string name="EventLogPromotedTitle">Title: %1$s</string>
@@ -2914,6 +2977,10 @@ about Telegram?"</string>
     <string name="GroupChats">Group Chats</string>
     <string name="GroupContacts">Contacts in this group</string>
     <string name="GroupCreateAutodeleteDescription">Automatically delete messages in this group for everyone after a period of time.</string>
+    <string name="GroupCreateMembersFive">%1$s, %2$s, %3$s, %4$s and %5$s</string>
+    <string name="GroupCreateMembersFour">%1$s, %2$s, %3$s and %4$s</string>
+    <string name="GroupCreateMembersThree">%1$s, %2$s and %3$s</string>
+    <string name="GroupCreateMembersTwo">%1$s and %2$s</string>
     <string name="GroupDeletedUndo">Group deleted.</string>
     <string name="GroupDescription1">Up to 200,000 members</string>
     <string name="GroupDescription2">Persistent chat history</string>
@@ -2958,6 +3025,7 @@ Note that they can still join via the group's invite link as long as they are no
     <string name="HasBeenAddedToGroup">%1$s added to the group</string>
     <string name="HashtagCopied">Hashtag copied to clipboard.</string>
     <string name="Hashtags">HASHTAGS</string>
+    <string name="HelpUpgradeChannel">Help upgrade channel</string>
     <string name="HidAccount">The account was hidden by the user</string>
     <string name="HiddenName">Deleted Account</string>
     <string name="HiddenSendersNameDescription">Sender names removed</string>
@@ -3354,6 +3422,7 @@ This link will only work for members of this chat."</string>
     <string name="LinkDesktopDevice">Link Desktop Device</string>
     <string name="LinkExpiresIn">The link expires %s</string>
     <string name="LinkExpiresInTime">The link expires in %s</string>
+    <string name="LinkForBoosting">Link for boosting</string>
     <string name="LinkHashExpired">Link is no longer active</string>
     <string name="LinkInUse">Sorry, this name is already taken.</string>
     <string name="LinkInfo">Anyone who has Telegram installed will be able to join your group by following this link.</string>
@@ -3755,6 +3824,12 @@ This may take a few moments. You can continue using the app while the files are 
     <string name="Months_two">%1$d months</string>
     <string name="Months_zero">%1$d months</string>
     <string name="MoreAboutThisBot">More about this bot</string>
+    <string name="MoreBoosts_few">**%d** more boosts</string>
+    <string name="MoreBoosts_many">**%d** more boosts</string>
+    <string name="MoreBoosts_one">**%d** more boost</string>
+    <string name="MoreBoosts_other">**%d** more boosts</string>
+    <string name="MoreBoosts_two">**%d** more boosts</string>
+    <string name="MoreBoosts_zero">**%d** more boost</string>
     <string name="MoreInfo">More info</string>
     <string name="Music">Music</string>
     <string name="MusicFiles_few">%1$d music files</string>
@@ -3846,6 +3921,7 @@ This may take a few moments. You can continue using the app while the files are 
     <string name="NoBlockedChannel2">"Users removed from the channel by the admins can't rejoin via invite links."</string>
     <string name="NoBlockedGroup2">"Users removed from the group by the admins can't rejoin via invite links."</string>
     <string name="NoBlockedUsers">No removed users</string>
+    <string name="NoBoostersHint">No users currently boost your channel</string>
     <string name="NoChats">Welcome</string>
     <string name="NoChatsContactsHelp">Start messaging by tapping the pencil button in the bottom right corner.</string>
     <string name="NoChatsHelp">Start messaging by tapping the pencil button in the bottom right corner.</string>
@@ -4214,6 +4290,7 @@ Stories"</string>
     <string name="OpenBot">OPEN BOT</string>
     <string name="OpenChannel">VIEW CHANNEL</string>
     <string name="OpenChannel2">Open Channel</string>
+    <string name="OpenChannelArchiveStories">Archived Stories</string>
     <string name="OpenChannelPost">VIEW POST</string>
     <string name="OpenFile">OPEN FILE</string>
     <string name="OpenFragment">Open Fragment</string>
@@ -4650,6 +4727,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PermissionDrawAboveOtherAppsGroupCall">Overlay mode lets you use push-to-talk and see who is talking even when you are outside of Telegram.</string>
     <string name="PermissionDrawAboveOtherAppsGroupCallTitle">Voice Chat Overlay</string>
     <string name="PermissionDrawAboveOtherAppsTitle">Picture-in-Picture</string>
+    <string name="PermissionNoAudioStorageStory">**Telegram** needs access to music files to upload with your story. Tap Settings -> Permissions, and turn **Music and Audio** on.</string>
     <string name="PermissionNoAudioVideoWithHint">**Telegram** needs microphone access so that you can send voice messages. Tap Settings -> Permissions, and turn **Microphone** on.</string>
     <string name="PermissionNoAudioWithHint">**Telegram** needs microphone access so that you can send voice messages. Tap Settings -> Permissions, and turn **Microphone** on.</string>
     <string name="PermissionNoCameraMicVideo">**Telegram** needs camera and microphone access so that you can send video messages. Tap Settings -> Permissions, and turn **Microphone** and **Camera** on.</string>
@@ -4699,6 +4777,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PhotoForRestTooltip">This photo will be shown to those who are restricted from viewing your main photo.</string>
     <string name="PhotoSavedHint">Photo saved to gallery</string>
     <string name="PhotoSavedToDownloadsHint">Photo saved to downloads</string>
+    <string name="PhotoShownOnce">This photo can only be viewed once.</string>
     <string name="PhotosSavedHint_few">%1$d photos saved to gallery</string>
     <string name="PhotosSavedHint_many">%1$d photos saved to gallery</string>
     <string name="PhotosSavedHint_one">Photo saved to gallery</string>
@@ -4792,6 +4871,8 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PostingMembers">Posting Members</string>
     <string name="PowerUsage">Power Usage</string>
     <string name="PremiumMore">More</string>
+    <string name="PremiumNeeded">Premium needed!</string>
+    <string name="PremiumNeededForBoosting">Only **Telegram Premium** subscribers can boost channels. Do you want subscribe to **Telegram Premium?**</string>
     <string name="PremiumPreviewAdvancedChatManagement">Advanced Chat Management</string>
     <string name="PremiumPreviewAdvancedChatManagementDescription">Tools to set the default folder, auto-archive and hide new chats from non-contacts.</string>
     <string name="PremiumPreviewAdvancedChatManagementDescription2">Subscribers of Telegram Premium can set the default folder, auto-archive and hide new chats from non-contacts.</string>
@@ -4849,6 +4930,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PremiumStoriesStealthDescription">Hide the fact that you viewed other people’s stories.</string>
     <string name="PremiumStoriesViews">Permanent Views History</string>
     <string name="PremiumStoriesViewsDescription">Check who opens your stories — even after they expire.</string>
+    <string name="PremiumSubscribers">Premium subscribers</string>
     <string name="PremiumTierAnnual">Annual</string>
     <string name="PremiumTierMonthly">Monthly</string>
     <string name="PremiumTierSemiannual">Semiannual</string>
@@ -5002,6 +5084,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="ProfilePopupNotificationInfo">New messages from this contact will appear on your screen when you are not using Telegram.</string>
     <string name="ProfileStories">Stories</string>
     <string name="ProfileStoriesArchive">Stories Archive</string>
+    <string name="ProfileStoriesArchiveChannelHint">Only admins can see archived stories unless you choose to post them to channel profile.</string>
     <string name="ProfileStoriesArchiveCount_few">%d archived stories</string>
     <string name="ProfileStoriesArchiveCount_many">%d archived stories</string>
     <string name="ProfileStoriesArchiveCount_one">%d archived story</string>
@@ -5195,6 +5278,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="RemoveDocumentsTitle_two">Remove %d documents</string>
     <string name="RemoveDocumentsTitle_zero">Remove %d documents</string>
     <string name="RemoveFromListText">Tap and hold on user to delete.</string>
+    <string name="RemoveFromPosts">Remove from Posts</string>
     <string name="RemoveFromRecent">Remove from Recent</string>
     <string name="RemoveGroupStickerSet">Remove Group Sticker Set</string>
     <string name="RemoveManyEmojiCount_few">Remove %1$d emoji</string>
@@ -5235,6 +5319,8 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="RepeatNotifications">Repeat Notifications</string>
     <string name="RepeatNotificationsNever">Never</string>
     <string name="RepeatSong">Repeat song</string>
+    <string name="Replace">Replace</string>
+    <string name="ReplaceBoostChannelDescription">You currently boost **%1$s**. Do you want to boost **%2$s** instead?</string>
     <string name="ReplacePhoto">Replace photo</string>
     <string name="RepliesChatInfo">This chat helps you keep track of replies to your comments in Channels.</string>
     <string name="RepliesTitle">Replies</string>
@@ -5455,6 +5541,7 @@ The channels will become private."</string>
     <string name="SaveToGalleryVideos">Videos</string>
     <string name="SaveToGalleryVideosUpTo">Videos up to %s</string>
     <string name="SaveToMusic">Save to music</string>
+    <string name="SaveToPosts">Save to Posts</string>
     <string name="SaveToProfile">Save to Profile</string>
     <string name="SaveVideo">Save Video</string>
     <string name="SavedGifsLimitSubtitle">Save up to %d GIFs in your Favorite GIFs</string>
@@ -5467,6 +5554,7 @@ The channels will become private."</string>
     <string name="Schedule">Schedule</string>
     <string name="ScheduleMessage">Schedule message</string>
     <string name="ScheduleWhenOnline">Send when %1$s comes online</string>
+    <string name="ScheduledHint">Long tap to send your message later.</string>
     <string name="ScheduledMessages">Scheduled Messages</string>
     <string name="ScheduledOrNoSoundHint">Hold this button to schedule your message or send it without sound.</string>
     <string name="ScreenCapture">Show App Content in Task Switcher</string>
@@ -6019,6 +6107,7 @@ messages?"</string>
     <string name="StoryArchived_other">%d stories are hidden from your profile</string>
     <string name="StoryArchived_two">%d stories are hidden from your profile</string>
     <string name="StoryArchived_zero">%d stories are hidden from your profile</string>
+    <string name="StoryAudioRemove">Remove Audio</string>
     <string name="StoryAutoExceptions">Automatic Exceptions</string>
     <string name="StoryAutoExceptionsInfo">Automatically enable story notifications from 5 users you contact most frequently.</string>
     <string name="StoryBlockListEmpty">**Select people** who won’t see your stories.</string>
@@ -6033,6 +6122,8 @@ messages?"</string>
     <string name="StoryCameraHint2">Take photos or videos to share with all your contacts or close friends at once.</string>
     <string name="StoryCameraSavedDualBackHint">Tap here to disable the second camera</string>
     <string name="StoryCameraSavedDualFrontHint">Tap here to disable the selfie camera</string>
+    <string name="StoryChannelDisableKeep">The story will disappear after it expires.</string>
+    <string name="StoryChannelEnableKeep">Users allowed to view your story will see it on the channel after it expires.</string>
     <string name="StoryCloseFriendsHint">You are seeing this story because **%s** added you to their list of Close Friends</string>
     <string name="StoryContactsHint">Only **%s’s** contacts can view this story.</string>
     <string name="StoryContainsEmojiFrom">This story contains emoji from %s.</string>
@@ -6082,6 +6173,13 @@ messages?"</string>
     <string name="StoryHintPinchToZoom">Pinch to zoom</string>
     <string name="StoryHintSwipeToZoom">Swipe to zoom</string>
     <string name="StoryKeep">Keep on My Page</string>
+    <string name="StoryKeepChannel">Post to Channel Page</string>
+    <string name="StoryKeepChannelInfo_few">Keep this story on the channel page even after it expires in %d hours.</string>
+    <string name="StoryKeepChannelInfo_many">Keep this story on the channel page even after it expires in %d hours.</string>
+    <string name="StoryKeepChannelInfo_one">Keep this story on the channel page even after it expires in %d hour.</string>
+    <string name="StoryKeepChannelInfo_other">Keep this story on the channel page even after it expires in %d hours.</string>
+    <string name="StoryKeepChannelInfo_two">Keep this story on the channel page even after it expires in %d hours.</string>
+    <string name="StoryKeepChannelInfo_zero">Keep this story on the channel page even after it expires in %d hours.</string>
     <string name="StoryKeepDraft">Keep Draft</string>
     <string name="StoryKeepInfo_few">Keep this story on your page even after it expires in %d hours. Privacy settings will apply.</string>
     <string name="StoryKeepInfo_many">Keep this story on your page even after it expires in %d hours. Privacy settings will apply.</string>
@@ -6114,6 +6212,8 @@ messages?"</string>
     <string name="StoryNotificationHidden_zero">%d stories were posted</string>
     <string name="StoryNotificationMention">mentioned you in a story</string>
     <string name="StoryNotificationSingle">posted a story</string>
+    <string name="StoryOriginalSoundMuted">Original audio will be removed.</string>
+    <string name="StoryOriginalSoundNotMuted">Original audio will be preserved.</string>
     <string name="StoryPeriodHint">Choose how long the story will be visible.</string>
     <string name="StoryPeriodKeep">Keep Always</string>
     <string name="StoryPeriodPremium_few">Subscribe to **Telegram Premium** to make your stories disappear after %d hours.</string>
@@ -6123,8 +6223,11 @@ messages?"</string>
     <string name="StoryPeriodPremium_two">Subscribe to **Telegram Premium** to make your stories disappear after %d hours.</string>
     <string name="StoryPeriodPremium_zero">Subscribe to **Telegram Premium** to make your stories disappear after %d hours.</string>
     <string name="StoryPhoto">Photo</string>
+    <string name="StoryPinnedToPosts">Story saved to the channel’s profile</string>
+    <string name="StoryPinnedToPostsDescription">Saved stories can be viewed by others on the channel’s profile until an admin removes them.</string>
     <string name="StoryPinnedToProfile">This story is pinned to your profile.</string>
     <string name="StoryPremiumFormatting">Subscribe to **Telegram Premium** to add links and text formatting to your stories.</string>
+    <string name="StoryPremiumWidgets">Subscribe to **Telegram Premium** to add up to 5 reactions and tags to a story.</string>
     <string name="StoryPrivacyAlertAsMessageSubtitle">Choose recipients</string>
     <string name="StoryPrivacyAlertAsMessageTitle">Send as message</string>
     <string name="StoryPrivacyAlertBlocklistSubtitle">Select people</string>
@@ -6193,12 +6296,16 @@ messages?"</string>
     <string name="StoryPrivacyOptionPeople_zero">%d people</string>
     <string name="StoryPrivacyOptionSelectedContacts">Selected Contacts</string>
     <string name="StoryPrivacyOptionSelectedContactsDetail">edit list</string>
+    <string name="StoryPrivacyPublishAs">Publish story as</string>
     <string name="StoryPrivacyRecipients_few">%d recipients</string>
     <string name="StoryPrivacyRecipients_many">%d recipients</string>
     <string name="StoryPrivacyRecipients_one">%d recipient</string>
     <string name="StoryPrivacyRecipients_other">%d recipients</string>
     <string name="StoryPrivacyRecipients_two">%d recipients</string>
     <string name="StoryPrivacyRecipients_zero">%d recipients</string>
+    <string name="StoryPrivacyWhoCanView">Who can view your story</string>
+    <string name="StoryReactionsHint">Send reaction as a private message</string>
+    <string name="StoryReactionsWidgetLimit">You can’t add up more than 5 reactions tags to a story.</string>
     <string name="StoryReplyDisabled">You can’t reply to this story</string>
     <string name="StoryRestrictions">Privacy Restrictions</string>
     <string name="StoryRestrictionsInfo">The privacy settings of your story will prevent some users you tagged (%s) from viewing it.</string>
@@ -6239,7 +6346,9 @@ messages?"</string>
     <string name="StoryShownBackToToast">%s would be able to see your stories again.</string>
     <string name="StorySoundMuted">Sound is now muted.</string>
     <string name="StorySoundNotMuted">Sound is now not muted.</string>
+    <string name="StoryTapToSound">Tap here to enable sound</string>
     <string name="StoryUnavailable">Story unavailable</string>
+    <string name="StoryUnpinnedFromPosts">Story removed from the channel’s profile</string>
     <string name="StoryUnsupported">This story is not supported by your version of Telegram.</string>
     <string name="StoryUploadError">Uploading story error</string>
     <string name="StoryUploading">Uploading story…</string>
@@ -6247,10 +6356,14 @@ messages?"</string>
     <string name="StoryViewLocation">View Location ></string>
     <string name="StoryViewsPremiumHint">To unlock viewers’ lists for expired and saved stories, subscribe to **Telegram Premium.**</string>
     <string name="StoryViewsSortDescription">Choose the order for the list of viewers.</string>
+    <string name="StoryWidgetAudio">Audio</string>
+    <string name="StoryWidgetLocation">Location</string>
+    <string name="StoryWidgetPhoto">Photo</string>
     <string name="StoryYouMentionInDialog">You mentioned %s</string>
     <string name="StoryYouMentionedTitle">You mentioned %s in a story.</string>
     <string name="Streaming">Streaming</string>
     <string name="Strike">Strikethrough</string>
+    <string name="Style">Style</string>
     <string name="SubscribeRequests">Subscribe Requests</string>
     <string name="SubscribeToPremium">Subscribe for %s per month</string>
     <string name="SubscribeToPremiumNoPrice">Subscribe</string>
@@ -6393,6 +6506,7 @@ Here’s what is now unlocked."</string>
     <string name="TermsOfService">Terms of Service</string>
     <string name="TermsOfServiceLogin">"By signing up,
 you agree to the *Terms of Service*."</string>
+    <string name="TermsOfUse">Terms of Use</string>
     <string name="TextCopied">Text copied to clipboard</string>
     <string name="TextPlaceholder">Add text</string>
     <string name="TextSelectionHit">Hold the **word**, then move the cursor to select more text to copy.</string>
@@ -6464,6 +6578,17 @@ Minimum length is 5 characters."</string>
     <string name="TimeLimitHint">Set custom duration</string>
     <string name="TimeToEdit">%1$s</string>
     <string name="TimeToEditExpired">Sorry, editing time expired.</string>
+    <string name="TimerPeriodDoNotDelete">Do Not Delete</string>
+    <string name="TimerPeriodHint">Choose how long the media will be kept after opening.</string>
+    <string name="TimerPeriodOnce">View Once</string>
+    <string name="TimerPeriodPhotoKeep">Photo will be kept.</string>
+    <string name="TimerPeriodPhotoSetOnce">Photo set to view once</string>
+    <string name="TimerPeriodPhotoSetSeconds_one">Photo will be deleted in **%d** second after opening.</string>
+    <string name="TimerPeriodPhotoSetSeconds_other">Photo will be deleted in **%d** seconds after opening.</string>
+    <string name="TimerPeriodVideoKeep">Video will be kept.</string>
+    <string name="TimerPeriodVideoSetOnce">Video set to view once</string>
+    <string name="TimerPeriodVideoSetSeconds_one">Video will be deleted in **%d** second after opening.</string>
+    <string name="TimerPeriodVideoSetSeconds_other">Video will be deleted in **%d** seconds after opening.</string>
     <string name="Times_few">%1$d times</string>
     <string name="Times_many">%1$d times</string>
     <string name="Times_one">%1$d time</string>
@@ -6593,6 +6718,21 @@ But if you're generally not OK with Telegram's modest needs, it won't be possibl
     <string name="UnbanText">Tap and hold on user to unban.</string>
     <string name="Unblock">Unblock</string>
     <string name="UnblockText">Tap and hold on user to unblock.</string>
+    <string name="UnconfirmedAuthConfirm">Yes, it’s me</string>
+    <string name="UnconfirmedAuthConfirmed">New Login Allowed</string>
+    <string name="UnconfirmedAuthConfirmedMessage">You can check the list of your active logins in **Settings > Devices**.</string>
+    <string name="UnconfirmedAuthDeniedMessageMultiple">We have terminated the login attempts from: %s</string>
+    <string name="UnconfirmedAuthDeniedMessageSingle">We have terminated the login attempt from %s.</string>
+    <string name="UnconfirmedAuthDeniedTitle_one">New Login Prevented</string>
+    <string name="UnconfirmedAuthDeniedTitle_other">New Logins Prevented</string>
+    <string name="UnconfirmedAuthDeniedWarning">Never send your login code to anyone or you can lose your Telegram account!</string>
+    <string name="UnconfirmedAuthDeny">No, it’s not me!</string>
+    <string name="UnconfirmedAuthMultipleFrom_one" formatted="false">We detected new %d login to your account from %s. Is it you?</string>
+    <string name="UnconfirmedAuthMultipleFrom_other" formatted="false">We detected new %d logins to your account from %s. Is it you?</string>
+    <string name="UnconfirmedAuthMultiple_one">We detected new %d login to your account. Is it you?</string>
+    <string name="UnconfirmedAuthMultiple_other">We detected new %d logins to your account. Is it you?</string>
+    <string name="UnconfirmedAuthSingle">We detected a new login to your account from %s. Is it you?</string>
+    <string name="UnconfirmedAuthTitle">Someone just got access to your messages!</string>
     <string name="Underline">Underline</string>
     <string name="Undo">Undo</string>
     <string name="UndoAllCustom">Undo all custom notification settings for all your contacts, groups and channels.</string>
@@ -6632,7 +6772,7 @@ But if you're generally not OK with Telegram's modest needs, it won't be possibl
     <string name="UnsavedChanges">Unsaved Changes</string>
     <string name="UnsavedChangesMessage">You have changed the settings of this invite link. Apply changes?</string>
     <string name="UnsupportedAttachment">Unsupported attachment</string>
-    <string name="UnsupportedMedia">This message is not supported on your version of Telegram. Update the app to view: https://telegram.org/update</string>
+    <string name="UnsupportedMedia">The message is not supported by your version of iMe. Please update to the latest version. If the update is not available yet, then try again later, we are already working on the update, and will release new functionality in the coming days.</string>
     <string name="Unvote">Retract Vote</string>
     <string name="UpToFileSize">Up to %s</string>
     <string name="Update">UPDATE</string>
@@ -6828,6 +6968,7 @@ However, it is currently available for purchase. **Learn more…**"</string>
     <string name="VideoQualityIsTooLow">Video quality is too low to change compression settings.</string>
     <string name="VideoSavedHint">Video saved to gallery</string>
     <string name="VideoSavedToDownloadsHint">Video saved to downloads</string>
+    <string name="VideoShownOnce">This video can only be viewed once.</string>
     <string name="VideoSpeedCustom">Custom %s</string>
     <string name="VideoSpeedFast">Fast</string>
     <string name="VideoSpeedNormal">Normal</string>
@@ -7181,6 +7322,7 @@ your screen"</string>
     <string name="WantsToSpeak">wants to speak</string>
     <string name="Warmth">Warmth</string>
     <string name="Warning">Warning</string>
+    <string name="WebAppDisclaimerUrl">https://telegram.org/tos/mini-apps</string>
     <string name="WebSessionsTitle">Logged in with Telegram</string>
     <string name="Weeks_few">%1$d weeks</string>
     <string name="Weeks_many">%1$d weeks</string>
@@ -7225,6 +7367,8 @@ your screen"</string>
     <string name="YesterdayAt">yesterday at</string>
     <string name="YesterdayAtFormatted">yesterday at %1$s</string>
     <string name="YouBlockedUser">"Sorry, you can't add this user or bot to groups because you've blocked them. Please unblock to proceed."</string>
+    <string name="YouBoostedChannel">You boosted the channel</string>
+    <string name="YouBoostedChannel2">You boosted %s!</string>
     <string name="YouCreatedBroadcastList">You created a broadcast list</string>
     <string name="YouHaveNewMessage">You have a new message</string>
     <string name="YouLeft">You left this group</string>
@@ -7322,11 +7466,36 @@ To get the reward, you need to:"</string>
     <string name="already_processing">Another participants processing is already started, try again later</string>
     <string name="already_removing">Another deleting process is already started, try again later</string>
     <string name="androidx_startup">androidx.startup</string>
-    <string name="app_name">Responses</string>
+    <string name="app_name">BubbleTabBar</string>
     <string name="app_restart_error">We were unable to open the app ourselves. Try it yourself.</string>
     <string name="app_update_dialog_description">Update the application to use this functionality</string>
     <string name="app_update_not_found">The latest version of the application is already installed</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Distribute was disabled</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d MB of %2$d MB</string>
+    <string name="appcenter_distribute_downloading_error">Failed to download app update</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">Downloading update</string>
+    <string name="appcenter_distribute_downloading_update">@string/appcenter_distribute_downloading_mandatory_update</string>
+    <string name="appcenter_distribute_downloading_version">Downloading version %1$s (%2$d)</string>
+    <string name="appcenter_distribute_install">Install</string>
+    <string name="appcenter_distribute_install_completed_message">%1$s %2$s (%3$d) has been installed.</string>
+    <string name="appcenter_distribute_install_completed_title">App update installed</string>
+    <string name="appcenter_distribute_install_error">Failed to install app update</string>
+    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) has been downloaded and is ready to be installed.</string>
+    <string name="appcenter_distribute_install_ready_title">App update downloaded</string>
+    <string name="appcenter_distribute_notification_category">App updates</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">For security, your device is set to block installation of apps obtained from unknown sources.</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">Settings</string>
+    <string name="appcenter_distribute_update_dialog_download">Download</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">The developers of this app require you to update to %1$s %2$s (%3$d).</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) is available to download and install.</string>
+    <string name="appcenter_distribute_update_dialog_postpone">Ask me in a day</string>
+    <string name="appcenter_distribute_update_dialog_title">App update available</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">View release notes</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">Ignore</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">This release was either side-loaded or downloaded using a browser in private mode.</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstall app</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">In-app updates disabled</string>
     <string name="archive_content_is_hidden">The content is hidden</string>
     <string name="archive_empty_subtitle">This is where the chats you sent to the archive are stored</string>
     <string name="archive_empty_title">Archive is empty</string>
@@ -7393,106 +7562,15 @@ Please update your App version or login via browser."</string>
     <string name="binance_pay_not_install_tip">You have not installed the Binance App. Install now?</string>
     <string name="binance_pay_update">Update</string>
     <string name="binance_pay_version_not_support">Your app version is not up to date. Please update to the latest version.</string>
+    <string name="binance_replenish_custom_address_unsupported">Custom address for Binance replenishment is not supported, please select a token to get the address for replenishment</string>
+    <string name="binance_replenish_no_token_on_balance">You have no tokens to replenish</string>
     <string name="binance_replenish_token_choose_token_cant_change_error">Address for replenishment provided by Binance can`t be changed</string>
     <string name="binance_replenish_token_choose_token_first_error">Select token to get address for replenishment automatically</string>
     <string name="binance_replenish_token_description">Replenish Binance from iMe wallet</string>
     <string name="binance_replenish_token_toolbar_title">Replenish Binance</string>
+    <string name="binance_replenish_unsupported_network">Unsupported network</string>
     <string name="binance_token_details_distribution_margin">Funding</string>
     <string name="binance_token_details_distribution_spot">Spot</string>
-    <string name="bot_description_adage">Russian proverbs and sayings, short sayings and stable combinations.</string>
-    <string name="bot_description_assistant">Personal assistant to discuss popular topics of communication.</string>
-    <string name="bot_description_celentano">Very charismatic Italian musician, movie actor.</string>
-    <string name="bot_description_chanel">French designer who founded the fashion house «Chanel».</string>
-    <string name="bot_description_churchill">British statesman and politician.</string>
-    <string name="bot_description_confucius">Ancient Chinese thinker and philosopher.</string>
-    <string name="bot_description_corleone">Main character of the Godfather novel by Mario Puzo and main hero of the movie based on the book.</string>
-    <string name="bot_description_daenerys">The representative of a sort of Targaryen from «Game of Thrones» drama series.</string>
-    <string name="bot_description_darth_vader">The head of the army of the Galactic Empire in the movie Star Wars.</string>
-    <string name="bot_description_deadpool">Antihero of Marvel comics has a peculiar and cynical sense of humor.</string>
-    <string name="bot_description_einstein">Genius, theoretical physicist, remarkable person.</string>
-    <string name="bot_description_garfield">Lazy red cat from the same movie.</string>
-    <string name="bot_description_holidays">Holidays of Russia. Bot is activated on holiday dates.</string>
-    <string name="bot_description_jon_snow">"Bastard of the Starks family and brother of the Night's Watch from «Game of Thrones» drama series."</string>
-    <string name="bot_description_karlson">Handsome, moderately plump man in his prime living on the roof.</string>
-    <string name="bot_description_lenin">Russian revolutionary, political and statesman.</string>
-    <string name="bot_description_lotr">Roman epic of the English writer J.R.R.Tolkien.</string>
-    <string name="bot_description_memes">Text information including main popular phrases.</string>
-    <string name="bot_description_minions">Little minions of all villains.</string>
-    <string name="bot_description_monroe">American movie actress, sex icon of 1950th, singer and model.</string>
-    <string name="bot_description_napoleon">Outstanding French commander and statesman.</string>
-    <string name="bot_description_nu_pogodi">The cult Soviet cartoon series about the wolf and the hare.</string>
-    <string name="bot_description_panda">Panda Po character - real Kung Fu Master.</string>
-    <string name="bot_description_pushkin">Russian poet, playwright and prose writer.</string>
-    <string name="bot_description_scooby_doo">German mastiff solving mysteries with quasi-supernatural creatures.</string>
-    <string name="bot_description_shrek">Giant green ogre from the eponymous cartoon.</string>
-    <string name="bot_description_simpsons">Satirical animated series about the life of the Simpsons family.</string>
-    <string name="bot_description_south_park">The animated series about the adventures of four boys.</string>
-    <string name="bot_description_soviet_films">Collection of popular phrases and quotes from the best Soviet films.</string>
-    <string name="bot_description_sponge_bob">Overly optimistic cartoon character that always irritates other characters.</string>
-    <string name="bot_description_teresa">Catholic nun, founder of the Missionaries of Charity, a Catholic order of nuns.</string>
-    <string name="bot_description_terminator">Character played by Arnold Schwarzenegger.</string>
-    <string name="bot_description_trade_binbank">BinBank</string>
-    <string name="bot_description_tsoy">Soviet rock musician. Founder and leader of the «Kino» (movie) rock band.</string>
-    <string name="bot_description_tyrion">Sharp-witted and smooth-talking dwarf from «Game of Thrones» drama series.</string>
-    <string name="bot_description_yoda">One of the main characters of the «Star Wars» movie, the wisest and strongest Jedi.</string>
-    <string name="bot_label_advert">Adverts Bot</string>
-    <string name="bot_label_most_used">Favorites</string>
-    <string name="bot_label_neuro">NeuroBot</string>
-    <string name="bot_label_normal">Bot</string>
-    <string name="bot_tag_famous">Famous</string>
-    <string name="bot_tag_free">Free</string>
-    <string name="bot_tag_gif">GIF</string>
-    <string name="bot_tag_great">Great</string>
-    <string name="bot_tag_hero_cartoon">Cartoon hero</string>
-    <string name="bot_tag_hero_movie">Movie hero</string>
-    <string name="bot_tag_man">Man</string>
-    <string name="bot_tag_pack">Collection</string>
-    <string name="bot_tag_paid">Paid</string>
-    <string name="bot_tag_woman">Woman</string>
-    <string name="bot_title_adage">Proverbs and sayings</string>
-    <string name="bot_title_assistant">Assistant</string>
-    <string name="bot_title_celentano">Celentano</string>
-    <string name="bot_title_chanel">Coco Chanel</string>
-    <string name="bot_title_churchill">Churchill</string>
-    <string name="bot_title_confucius">Confucius</string>
-    <string name="bot_title_corleone">Don Corleone</string>
-    <string name="bot_title_daenerys">Daenerys Targaryen</string>
-    <string name="bot_title_darth_vader">Darth Vader</string>
-    <string name="bot_title_deadpool">Deadpool</string>
-    <string name="bot_title_einstein">Einstein</string>
-    <string name="bot_title_garfield">Garfield</string>
-    <string name="bot_title_holiday_12th_apr">Space Exploration Day</string>
-    <string name="bot_title_holiday_1st_apr">"April Fools' Day"</string>
-    <string name="bot_title_holiday_1st_may">May Day</string>
-    <string name="bot_title_holiday_23rd_feb">Defender of the Fatherland Day</string>
-    <string name="bot_title_holiday_28th_apr">Easter</string>
-    <string name="bot_title_holiday_8th_mar">"International Women's Day"</string>
-    <string name="bot_title_holiday_9th_may">Victory Day</string>
-    <string name="bot_title_holidays">Holidays</string>
-    <string name="bot_title_jon_snow">Jon Snow</string>
-    <string name="bot_title_karlson">Karlsson</string>
-    <string name="bot_title_lenin">Lenin</string>
-    <string name="bot_title_lotr">The Lord of the Rings</string>
-    <string name="bot_title_memes">Memes</string>
-    <string name="bot_title_minions">Minions</string>
-    <string name="bot_title_monroe">Marilyn Monroe</string>
-    <string name="bot_title_napoleon">Napoleon</string>
-    <string name="bot_title_nu_pogodi">Nu, pogodi!</string>
-    <string name="bot_title_panda">Kung Fu Panda</string>
-    <string name="bot_title_pushkin">Pushkin</string>
-    <string name="bot_title_recent">Frequently used</string>
-    <string name="bot_title_scooby_doo">Scooby-Doo</string>
-    <string name="bot_title_shrek">Shrek</string>
-    <string name="bot_title_simpsons">The Simpsons</string>
-    <string name="bot_title_south_park">South Park</string>
-    <string name="bot_title_soviet_films">Soviet films</string>
-    <string name="bot_title_sponge_bob">Sponge Bob</string>
-    <string name="bot_title_teresa">Mother Teresa</string>
-    <string name="bot_title_terminator">Terminator</string>
-    <string name="bot_title_trade_binbank">BinBank</string>
-    <string name="bot_title_tsoy">Victor Tsoy</string>
-    <string name="bot_title_tyrion">Tyrion Lannister</string>
-    <string name="bot_title_yoda">Grand Master Yoda</string>
     <string name="bottom_sheet_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="bottomsheet_action_expand_halfway">Expand halfway</string>
     <string name="bottomsheet_multibutton_choose_fab">Select buttons</string>
@@ -7701,7 +7779,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">9597e7d5f5d3463ea062c95d12c8d74d</string>
+    <string name="com.crashlytics.android.build_id">02ceac1bf3064b1b97d59d299adf1f19</string>
     <string name="combine_messages_disable">Do not combine messages</string>
     <string name="combine_messages_enable">Combine messages</string>
     <string name="combine_messages_send_without_combine">Send without combining</string>
@@ -7734,6 +7812,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="common_google_play_services_update_title">Update Google Play services</string>
     <string name="common_google_play_services_updating_text">"%1$s won't run without Google Play services, which are currently updating."</string>
     <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_hidden">Hidden</string>
     <string name="common_id">ID %d</string>
     <string name="common_max">Max</string>
     <string name="common_next">Next</string>
@@ -8133,13 +8212,14 @@ Approval will be given for this smart contract:
     <string name="custom_mention_change">Change mention</string>
     <string name="custom_mention_hint">Enter name</string>
     <string name="custom_qr_error">Error reading QR-code. Try another!</string>
+    <string name="custom_username_set">Set as username</string>
     <string name="data_settings_storage_path_no_flash_drive">No flash drive</string>
     <string name="debug_option_choose_wallet_environment">Choose wallet environment (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">After you change the environment, all the current wallet data and everything associated with it will be deleted</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Are you sure?</string>
     <string name="debug_option_reset_airdrop">Reset airdrop information (with wallet)</string>
-    <string name="debug_option_theme_switch_off">Disable Volume+ theme switch</string>
-    <string name="debug_option_theme_switch_on">Enable Volume+ theme switch</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="default_web_client_id">444157464191-eatql08si0ai4bose4r53n2rg0v9r5pi.apps.googleusercontent.com</string>
     <string name="deleting_messages">Deleting messages… Processed %1$d of %2$d</string>
     <string name="deleting_messages_success">Service messages have been deleted</string>
@@ -8197,6 +8277,7 @@ and we will try to find his Telegram account"</string>
     <string name="drawer_social_network_telegram">Telegram</string>
     <string name="drawer_social_network_twitter">Twitter</string>
     <string name="drawer_social_network_youtube">YouTube</string>
+    <string name="drawer_wallet_bot">Wallet Bot</string>
     <string name="drawer_wallet_item_title">Wallet</string>
     <string name="emoji_premium_message_off_alert">Disable suggested premium emoji</string>
     <string name="emoji_premium_message_on_alert">Enable suggested premium emoji</string>
@@ -8245,9 +8326,8 @@ and we will try to find his Telegram account"</string>
     <string name="folder_tabs_notification_mode_value_points">Points</string>
     <string name="folder_tabs_remember_last_filter_tab_hint">When you open the application, you will find yourself in the same tab you were last time. If this option is disabled, the first tab on the left is opened by default.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">Remember tab</string>
-    <string name="folder_tabs_settings_folders_first">To the left of the sorting tabs</string>
-    <string name="folder_tabs_settings_header">Tab settings</string>
-    <string name="folder_tabs_settings_hide_folder_undo_messages">The folder is hidden from the list, your chats are not affected.</string>
+    <string name="folder_tabs_settings_folders_first">Folders at the left</string>
+    <string name="folder_tabs_settings_header">Settings</string>
     <string name="folder_tabs_settings_hide_folders">Hide folders</string>
     <string name="folder_tabs_sorting_settings">Tabs by type</string>
     <string name="folder_tabs_sorting_settings_item_title">Chat sorting</string>
@@ -8285,20 +8365,52 @@ and we will try to find his Telegram account"</string>
     <string name="forwarding_editor_move_down">Move down</string>
     <string name="forwarding_editor_move_up">Move up</string>
     <string name="forwarding_editor_ungroup">Ungroup messages</string>
+    <string name="fragment_premium_balance">"Available: "</string>
+    <string name="fragment_premium_choose_duration">Choose duration</string>
+    <string name="fragment_premium_gift">Gift Telegram Premium for %s</string>
+    <string name="fragment_premium_gift_confirmation_description">"Do you want to buy a Telegram Premium subscription for **%1$s** for **%2$s**?
+
+**NOTE:** Additional network fee will be charged and **%1$s** will receive a message about gift"</string>
+    <string name="fragment_premium_gift_confirmation_title">Gift Telegram Premium</string>
+    <string name="fragment_premium_gift_success_description">You have successfully gifted Telegram Premium!</string>
+    <string name="fragment_premium_product_price">%s TON</string>
+    <string name="fragment_premium_subtitle">"Go beyond the limits, get exclusive features and
+support Telegram by subscribing to Telegram Premium."</string>
+    <string name="fragment_premium_title">Telegram Premium</string>
+    <string name="fragment_username_details_buy">Buy for %s</string>
+    <string name="fragment_username_details_description">This username can be used as a link for your personal account, channel or group.</string>
+    <string name="fragment_username_details_ends_in">Ends in</string>
+    <string name="fragment_username_details_time_left">%s left</string>
+    <string name="fragment_username_details_time_left_less_than_minute">less than minute</string>
+    <string name="fragment_usernames_buy">Buy Telegram Username via Fragment</string>
+    <string name="fragment_usernames_buy_confirmation_description">Are you sure you want to buy a Telegram Username **%1$s** for **%2$s**?</string>
+    <string name="fragment_usernames_buy_success_description">You have successfully bought the username!</string>
+    <string name="fragment_usernames_description">Secure your name with blockchain in an ecosystem of 700+ million users and assign it as a link for your personal account, channel or group.</string>
+    <string name="fragment_usernames_link">Link Telegram Username via Fragment</string>
+    <string name="fragment_usernames_list_title">Telegram Usernames</string>
+    <string name="fragment_usernames_search_hint">Search usernames</string>
+    <string name="fragment_usernames_site_url">https://fragment.com/</string>
+    <string name="fragment_usernames_sorting_ending_soon">Ending soon</string>
+    <string name="fragment_usernames_sorting_price_ascending">Price low to high</string>
+    <string name="fragment_usernames_sorting_price_descending">Price high to low</string>
+    <string name="fragment_usernames_sorting_recently_listed">Recently listed</string>
+    <string name="fragment_usernames_sorting_title">Sort by</string>
+    <string name="fragment_usernames_title">Telegram Usernames</string>
     <string name="frontal_camera_popup_text">Front camera</string>
     <string name="gcm_defaultSenderId">444157464191</string>
     <string name="gif_sticker_preview_choose_alert_message">Do you want to preview stickers and GIFs before sending it in chat? You can always configure this option in the interface settings.</string>
     <string name="google_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
-    <string name="google_app_id">1:444157464191:android:dd047cf092fd1ad8</string>
+    <string name="google_app_id">1:444157464191:android:f0774a8183f85b2d20b94a</string>
     <string name="google_assistant_verification_channel_name">Assistant verifier</string>
     <string name="google_assistant_verification_notification_title">Google Assistant sending message</string>
     <string name="google_crash_reporting_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
     <string name="google_storage_bucket">ime-messenger.appspot.com</string>
+    <string name="hidden">Hidden</string>
     <string name="hidden_chats_empty">No hidden chats</string>
     <string name="hidden_chats_empty_title">"You don't have hidden chats"</string>
-    <string name="hidden_chats_hide_alert">Are you sure you want send chat (s) to Subarchive?</string>
+    <string name="hidden_chats_hide_alert">Hide to Subarchive</string>
     <string name="hidden_chats_hide_chats">Hide to Subarchive</string>
-    <string name="hidden_chats_info_search_chats">Hidden chats are sent to Subarchive with muted notifications. Pull down the chat list in Archive to get access to hidden section.</string>
+    <string name="hidden_chats_info_search_chats">Hidden chats are moved to Subarchive with muted notifications. Pull down the chat list in Archive to get access to hidden section.</string>
     <string name="hidden_chats_info_unhide">You can return the chat back to the chat list.</string>
     <string name="hidden_chats_pinned">Hidden chats pinned</string>
     <string name="hidden_chats_release_for_hidden_chats">Release for hidden chats</string>
@@ -8512,10 +8624,10 @@ Add music to the Playlist"</string>
     <string name="neurobots_store_tab_free">Free</string>
     <string name="neurobots_store_tab_my">My</string>
     <string name="neurobots_store_tab_popular">Popular</string>
-    <string name="new_telegram_authorization_rules_alert">From February 18, 2023, new Telegram authorization rules have come into effect, according to which the alternative clients users can receive the SMS code only from the official Telegram client. Please install Telegram app and log into your account there if you need the SMS code, after which you can re-request the code in iMe (it will come in the Telegram service chat).</string>
     <string name="new_telegram_authorization_rules_info">Please read the *new authorization rules* in Telegram</string>
     <string name="nft_collection_size">Number of NFT: %d</string>
     <string name="nft_preview_copy_token_id">Copy token ID</string>
+    <string name="nft_preview_copy_username">Copy username</string>
     <string name="nft_preview_open_contract">Contract address</string>
     <string name="nft_preview_open_source">Storage Source</string>
     <string name="no_icon">No icon</string>
@@ -8523,6 +8635,8 @@ Add music to the Playlist"</string>
     <string name="no_unread_bots">You have no unread bots</string>
     <string name="no_unread_groups">You have no unread groups</string>
     <string name="no_unread_personal_chats">You have no unread private chats</string>
+    <string name="open_telegram_alert_auth">From February 18, 2023, new Telegram authorization rules have come into effect, according to which the alternative clients users can receive the SMS code only from the official Telegram client. Please install Telegram app and log into your account there if you need the SMS code, after which you can re-request the code in iMe (it will come in the Telegram service chat).</string>
+    <string name="open_telegram_alert_change_phone_number">Unfortunately, according to the new Telegram rules, the alternative clients users can not receive the SMS code for changing phone number. Please, download the official Telegram client and try again.</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -8608,6 +8722,8 @@ Please log out or link the Twitter account again."</string>
     <string name="profile_user_id_item_title">User ID</string>
     <string name="profile_user_id_item_value_unknown">Unknown</string>
     <string name="project_id">ime-messenger</string>
+    <string name="proxy_import_from_file">Import from file…</string>
+    <string name="proxy_link_qr_scanner_hint">Scan proxy QR-code</string>
     <string name="pull_to_go_to_next_unread_bot">Pull up to go to the next unread bot</string>
     <string name="pull_to_go_to_next_unread_group">Pull up to go to the next unread group</string>
     <string name="pull_to_go_to_next_unread_personal_chat">Pull up to go to the next unread private chat</string>
@@ -8777,6 +8893,7 @@ If you select Bot API option, a \"-\" will be added to the beginning of the ID f
     <string name="settings_tools_chat_profile_id_telegram_enable_panel">Enable panel</string>
     <string name="settings_tools_chat_profile_id_telegram_hint">Enable this if you want the account ID to be displayed in the chat profile</string>
     <string name="settings_tools_chat_profile_id_telegram_telegram_api">Telegram API</string>
+    <string name="settings_tools_chat_profile_open_photo_swipe">Swipe to open profile avatar</string>
     <string name="settings_tools_cloud">Cloud</string>
     <string name="settings_tools_cloud_albums">Albums</string>
     <string name="settings_tools_cloud_albums_hint">Create albums based on Telegram private channels which will be stored in the archive and appear in your Cloud chat for your convenience.</string>
@@ -9023,7 +9140,6 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="topic_create_discard_title">Do you want to create a Topic?</string>
     <string name="topic_edit">Edit topic</string>
     <string name="topic_edit_discard_message">You have edited this topic. Apply changes?</string>
-    <string name="topic_hide_undo_messages">The topic is hidden from the list, your chats are not affected.</string>
     <string name="topic_main_chats">Main chats</string>
     <string name="topic_name_hint">Topic name</string>
     <string name="topic_new">New Topic</string>
@@ -9133,8 +9249,19 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="twitter_title">Tweets</string>
     <string name="undo_all_chats_tab_disabled">"**All Chats** tab disabled.
 Archive access button is in the Side Menu"</string>
+    <string name="undo_cloud_albums_save_to">Saved to **%1$s**</string>
+    <string name="undo_cloud_albums_save_to_audio">Audio saved to **%1$s**</string>
+    <string name="undo_cloud_albums_save_to_audios">Audios saved to **%1$s**</string>
+    <string name="undo_cloud_albums_save_to_message">Message saved to **%1$s**</string>
+    <string name="undo_cloud_albums_save_to_messages">Messages saved to **%1$s**</string>
+    <string name="undo_folder_tabs_settings_hide_folder_info">The folder is hidden from the chat list. This does not affect the chats that are in it.</string>
+    <string name="undo_folder_tabs_settings_unhide_folder_info">The folder was returned to the chat list.</string>
+    <string name="undo_music_player_add_to_playlist">Added to playlist</string>
+    <string name="undo_music_player_remove_from_playlist">Removed from playlist</string>
     <string name="undo_recent_chats_disabled">Recent chats disabled</string>
     <string name="undo_stories_bar_disabled">Stories bar disabled</string>
+    <string name="undo_topic_hide_info">The topic is hidden from the chat list. This does not affect the chats that are in it.</string>
+    <string name="undo_topic_unhide_info">The topic was returned to the chat list.</string>
     <string name="unlock_premium_transcription_hint">To transcribe voice for more than 1 min, Telegram Premium is required.</string>
     <string name="user_restrictions_send_games">Games</string>
     <string name="user_restrictions_send_gifs">GIFs</string>
@@ -9170,7 +9297,12 @@ Archive access button is in the Side Menu"</string>
     <string name="wallet_amount_input_hint">Enter the amount of %s</string>
     <string name="wallet_amount_send_balance_title">My balance</string>
     <string name="wallet_amount_send_change_fee">Change</string>
-    <string name="wallet_amount_send_confirm_alert_description">Are you sure you want to make a transfer of %1$s %2$s?</string>
+    <string name="wallet_amount_send_confirm_alert_description">Are you sure you want to make a transfer of **%1$s %2$s**?</string>
+    <string name="wallet_amount_send_enter_address_hint">Enter address</string>
+    <string name="wallet_amount_send_error_fee_exceeds_balance">Gas shortage</string>
+    <string name="wallet_amount_send_error_incorrect_address">Incorrect address</string>
+    <string name="wallet_amount_send_error_insufficient_funds">Insufficient funds</string>
+    <string name="wallet_amount_send_error_unsupported_token">Unsupported token</string>
     <string name="wallet_amount_send_fee">"Fee:
 %s"</string>
     <string name="wallet_amount_send_fee_dialog_title">Select a fee</string>
@@ -9180,13 +9312,18 @@ Archive access button is in the Side Menu"</string>
     <string name="wallet_amount_send_invalid_chat_id">Choose correct chat for make donation</string>
     <string name="wallet_amount_send_invalid_eth_address">Enter correct address or choose recipient</string>
     <string name="wallet_amount_send_message_checkbox_title">Send a message to the chat recipient about the transfer</string>
+    <string name="wallet_amount_send_message_hash_unavailable">unavailable</string>
     <string name="wallet_amount_send_message_id">ID</string>
-    <string name="wallet_amount_send_message_payload">"Transfer Status: Completed
-Transfer Amount: %1$s %2$s
-Sender: ID %3$s
-Recipient: ID %4$s
-Date: %5$s
-Processing: iMe Wallet
+    <string name="wallet_amount_send_message_open_etherscan">"
+🔎 View on %s
+        "</string>
+    <string name="wallet_amount_send_message_payload">"🚀 %1$s on %2$s were sent ✅
+
+⬅️ From: %3$s
+➡️ To: %4$s
+🔗 Hash: %5$s
+⏰ Date: %6$s
+%7$s
 #iMeTransfer"</string>
     <string name="wallet_amount_send_message_processing_name">iMe Wallet</string>
     <string name="wallet_amount_send_recipient_crypto_bsc_unknown">BNB Chain address</string>
@@ -9194,7 +9331,9 @@ Processing: iMe Wallet
     <string name="wallet_amount_send_recipient_tg_id">ID %s</string>
     <string name="wallet_amount_send_recipient_tg_unknown">User</string>
     <string name="wallet_amount_send_recipient_title">Recipient</string>
+    <string name="wallet_amount_send_select_network_title">Select network</string>
     <string name="wallet_amount_send_select_token_error">This token is not supported on selected network, please change the token or network</string>
+    <string name="wallet_amount_send_send_amount_in_fiat">~%s</string>
     <string name="wallet_amount_send_unsupported_token_on_network_error">This token is not supported on selected network, please change the token or network</string>
     <string name="wallet_amount_send_without_fee">No fee transfer</string>
     <string name="wallet_amount_success_send_description">You have sent %1$s %2$s</string>
@@ -9267,7 +9406,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">No more unnecessary fees and commissions. Pay, send and receive crypto - it’s all without commissions.</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">NO FEES</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Via chats, Telegram ID, address, QR code</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">Make cryptocurrency transfers right in chats, by Telegram ID, Twitter ID, using QR code or public addresses.</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">Make cryptocurrency transfers right in chats, by Telegram ID, using QR code or public addresses.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">CRYPTO TRANSFERS</string>
     <string name="wallet_banner_slide_faq_description">General functionality description</string>
     <string name="wallet_banner_slide_faq_long_description">Please read the iMe functionality description, you will find a lot of answers to your questions.</string>
@@ -9328,6 +9467,7 @@ All transactions are carried out via Binance platform with no fees."</string>
     <string name="wallet_binance_receive_selected_token_is_unsupported">The selected token is not supported. Please select another one.</string>
     <string name="wallet_binance_receive_selected_user_is_empty">Please select the user for your request</string>
     <string name="wallet_binance_verify_profile_website">https://www.binance.com/en/my/settings/profile</string>
+    <string name="wallet_blockchain_add_wallet">Add wallet %s</string>
     <string name="wallet_boost_transaction_description">Are you sure you want to speed up the current transaction? (Network commission will be charged)</string>
     <string name="wallet_boost_transaction_success_dialog_description">Your transaction should be confirmed faster in blockchain</string>
     <string name="wallet_boost_transaction_success_dialog_title">Transaction speed up was sent successfully</string>
@@ -9580,6 +9720,7 @@ To use the previously linked crypto wallet address, log in to your account via r
     <string name="wallet_details_info_ton_title">TON</string>
     <string name="wallet_details_info_tron_description">This is your active account on TRON blockchain.</string>
     <string name="wallet_details_info_tron_title">TRON</string>
+    <string name="wallet_details_menu_hide_banner">Hide banners</string>
     <string name="wallet_details_reset_description">Are you sure you want to reset this wallet?</string>
     <string name="wallet_details_reset_title">Reset wallet</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_description">"Are you sure you want to reset your account to the initial value?
@@ -9672,6 +9813,11 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_internal_point_staking_subtitle">Create deposits</string>
     <string name="wallet_internal_point_staking_title">Staking</string>
     <string name="wallet_internal_point_subscriptions">My subscriptions</string>
+    <string name="wallet_internal_point_telegram_premium_subtitle">Buy Telegram Premium for TON</string>
+    <string name="wallet_internal_point_telegram_premium_title">Telegram Premium</string>
+    <string name="wallet_internal_point_telegram_usernames_subtitle">Buy usernames for TON</string>
+    <string name="wallet_internal_point_telegram_usernames_title">Telegram Usernames</string>
+    <string name="wallet_internal_point_ton_services">TON services</string>
     <string name="wallet_navigation_exchange">Exchange</string>
     <string name="wallet_navigation_settings">Settings</string>
     <string name="wallet_navigation_transactions">Transactions</string>
@@ -9712,6 +9858,14 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_recipient_address_bsc_hint">Type BNB Chain address</string>
     <string name="wallet_recipient_address_hint">Type %s address</string>
     <string name="wallet_recipient_error_dialog_no_eth_address_description">The recipient does not have an activated crypto wallet</string>
+    <string name="wallet_recipient_error_invalid_user_btn_txt">Invite %1$s %2$s</string>
+    <string name="wallet_recipient_error_invalid_user_description">The user does not have activated iMe wallet. In order to send tokens, please invite them to iMe at first</string>
+    <string name="wallet_recipient_error_invalid_user_title">Oops... Not an iMe Wallet user</string>
+    <string name="wallet_recipient_error_send_message_invitation">"I invite you to the iMe Messenger &amp; Crypto Wallet!
+
+An advanced client, powered by Telegram API, with common synchronization and security, with improved functionality and crypto wallet. 
+
+Download"</string>
     <string name="wallet_recipient_or_choose_title">or choose contact</string>
     <string name="wallet_recipient_request_permission_dialog_action_btn_text">Send</string>
     <string name="wallet_recipient_request_permission_dialog_description">Send a request to be added to a whitelist of contacts to make a transfer?</string>
@@ -9725,6 +9879,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_reset_all_title">Reset wallets</string>
     <string name="wallet_restore_address_eth_error">The passphrase is not suitable for the linked account</string>
     <string name="wallet_restore_eth_error">Incorrectly entered</string>
+    <string name="wallet_restore_eth_error_info">Sorry, you have entered the wrong secret words. Please double check and try again.</string>
     <string name="wallet_restore_eth_submit_import_btn">Import</string>
     <string name="wallet_restore_eth_submit_restore_btn">Restore</string>
     <string name="wallet_restore_eth_title">Words are entered through a space</string>
@@ -9824,6 +9979,9 @@ Slippage is a change in price between the moment you place your swap order and i
     <string name="wallet_token_details_eth_website">https://ethereum.org/en/</string>
     <string name="wallet_token_details_internal_point_website">https://imem.app</string>
     <string name="wallet_token_details_lime_description_website">https://telegra.ph/Lime-02-10</string>
+    <string name="wallet_token_details_menu_hide_rates">Hide rates</string>
+    <string name="wallet_token_details_menu_hide_token">Hide token</string>
+    <string name="wallet_token_details_menu_show_rates">Show rates</string>
     <string name="wallet_token_details_site_action">Website</string>
     <string name="wallet_token_details_token_information">Token information</string>
     <string name="wallet_token_details_transactions">Transactions</string>
@@ -9894,6 +10052,7 @@ Custom tokens can be set up in crypto account settings."</string>
     <string name="wallet_transactions_type_1inch_fusion_title">Swap via 1inch Fusion</string>
     <string name="wallet_transactions_type_1inch_title">Swap via 1inch</string>
     <string name="wallet_transactions_type_approve_title">%1$s token approval</string>
+    <string name="wallet_transactions_type_binance_swap_value">%1$s %2$s -> %3$s %4$s</string>
     <string name="wallet_transactions_type_cancel_title">Cancel transaction</string>
     <string name="wallet_transactions_type_cancelled_title">Cancelled</string>
     <string name="wallet_transactions_type_in_app_purchase_title">In-App Purchase</string>

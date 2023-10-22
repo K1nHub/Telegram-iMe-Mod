@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdh implements DataItem {
     private final Uri zza;
     private final byte[] zzb;

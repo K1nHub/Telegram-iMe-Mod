@@ -493,7 +493,7 @@ public class FragmentedMp4Extractor implements Extractor {
             readUnsignedInt = parsableByteArray.readUnsignedInt();
             j = j3;
         } else if (parseFullAtomVersion != 1) {
-            Log.m814w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
+            Log.m1106w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
             return;
         } else {
             long readUnsignedInt3 = parsableByteArray.readUnsignedInt();
@@ -930,7 +930,7 @@ public class FragmentedMp4Extractor implements Extractor {
             }
             int currentSampleOffset = (int) (trackBundle.getCurrentSampleOffset() - extractorInput.getPosition());
             if (currentSampleOffset < 0) {
-                Log.m814w(TAG, "Ignoring negative offset to sample data.");
+                Log.m1106w(TAG, "Ignoring negative offset to sample data.");
                 currentSampleOffset = 0;
             }
             extractorInput.skipFully(currentSampleOffset);
@@ -1086,7 +1086,7 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = leafAtom.data.getData();
                 UUID parseUuid = PsshAtomUtil.parseUuid(data);
                 if (parseUuid == null) {
-                    Log.m814w(TAG, "Skipped pssh atom (failed to extract uuid)");
+                    Log.m1106w(TAG, "Skipped pssh atom (failed to extract uuid)");
                 } else {
                     arrayList.add(new DrmInitData.SchemeData(parseUuid, MimeTypes.VIDEO_MP4, data));
                 }

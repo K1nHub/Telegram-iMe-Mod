@@ -9,14 +9,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
-import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.Components.AnimatedEmojiDrawable;
+import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p042ui.Components.AnimatedEmojiDrawable;
 import org.telegram.tgnet.TLRPC$JSONValue;
 import org.telegram.tgnet.TLRPC$TL_jsonArray;
 import org.telegram.tgnet.TLRPC$TL_jsonNumber;
 import org.telegram.tgnet.TLRPC$TL_jsonObject;
 import org.telegram.tgnet.TLRPC$TL_jsonObjectValue;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
     private static int BATTERY_LOW = 10;
@@ -144,7 +144,7 @@ public class LiteMode {
                         PRESET_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList.get(1)).value;
                         PRESET_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList.get(2)).value;
                     } catch (Exception e) {
-                        FileLog.m67e(e);
+                        FileLog.m97e(e);
                     }
                 }
             }
@@ -157,7 +157,7 @@ public class LiteMode {
                         BATTERY_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(1)).value;
                         BATTERY_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(2)).value;
                     } catch (Exception e2) {
-                        FileLog.m67e(e2);
+                        FileLog.m97e(e2);
                     }
                 }
             }

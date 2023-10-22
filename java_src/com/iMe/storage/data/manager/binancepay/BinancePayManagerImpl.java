@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayManagerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayManagerImpl implements BinancePayManager {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
 
@@ -69,7 +69,7 @@ public final class BinancePayManagerImpl implements BinancePayManager {
     }
 
     /* compiled from: BinancePayManagerImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

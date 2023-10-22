@@ -1,5 +1,5 @@
 package com.google.firebase.remoteconfig;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteConfigFetchThrottledException extends FirebaseRemoteConfigException {
     public FirebaseRemoteConfigFetchThrottledException(long j) {
         this("Fetch was throttled.", j);

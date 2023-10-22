@@ -6,11 +6,10 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m102c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1", m101f = "AuthViewModel.kt", m100l = {54, 55, 56, 57}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
-public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
+@DebugMetadata(m143c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1", m142f = "AuthViewModel.kt", m141l = {54, 55, 56, 57}, m140m = "invokeSuspend")
+/* loaded from: classes3.dex */
+final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
 
@@ -88,7 +87,7 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
                         // error: 0x0005: SPUT  (r0 I:com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1) com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.1.INSTANCE com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14771.<clinit>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C13791.<clinit>():void");
                 }
 
                 {
@@ -98,7 +97,7 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
                         r1.<init>(r0)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14771.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C13791.<init>():void");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
@@ -118,7 +117,7 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
                         com.iMe.feature.socialMedias.auth.AuthState r7 = com.iMe.feature.socialMedias.auth.AuthState.copy$default(r0, r1, r2, r3, r4, r5)
                         return r7
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14771.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.auth.AuthState");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C13791.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.auth.AuthState");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
@@ -129,7 +128,7 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
                         com.iMe.feature.socialMedias.auth.AuthState r1 = r0.invoke(r1)
                         return r1
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14771.invoke(java.lang.Object):java.lang.Object");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C13791.invoke(java.lang.Object):java.lang.Object");
                 }
             }
             r6.L$0 = r1

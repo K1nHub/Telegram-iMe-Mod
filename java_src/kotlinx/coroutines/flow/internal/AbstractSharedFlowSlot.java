@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow.internal;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 /* compiled from: AbstractSharedFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractSharedFlowSlot<F> {
     public abstract boolean allocateLocked(F f);
 

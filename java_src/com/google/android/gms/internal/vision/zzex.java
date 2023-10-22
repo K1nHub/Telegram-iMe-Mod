@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import java.util.Iterator;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzex<E> extends zzej<E> {
     private final transient E zza;
     private transient int zzb;

@@ -12,13 +12,13 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.p043ui.ActionBar.Theme$$ExternalSyntheticLambda2;
+import org.telegram.p042ui.ActionBar.Theme$$ExternalSyntheticLambda2;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
     private TextureView backgroundRenderer;
@@ -83,7 +83,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         textureEglRenderer.isFirstFrameRendered = false;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;

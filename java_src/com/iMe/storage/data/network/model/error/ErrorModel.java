@@ -5,7 +5,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ErrorModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ErrorModel {
     private final Integer code;
     private final String errorMessage;
@@ -42,10 +42,6 @@ public final class ErrorModel {
         this.code = num;
         this.status = status;
         this.originThrowable = th;
-    }
-
-    public final String getErrorMessage() {
-        return this.errorMessage;
     }
 
     public final IErrorStatus getStatus() {

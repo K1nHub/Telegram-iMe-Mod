@@ -82,7 +82,7 @@
     .end packed-switch
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     iget v0, p0, Lj$/util/stream/B0;->a:I

@@ -3,16 +3,16 @@
 
 
 # instance fields
-.field final synthetic b:Lj$/util/function/o;
+.field final synthetic b:Lj$/util/function/n;
 
 .field final synthetic c:J
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/e4;Lj$/util/function/o;J)V
+.method constructor <init>(Lj$/util/stream/e4;Lj$/util/function/n;J)V
     .locals 0
 
-    iput-object p2, p0, Lj$/util/stream/P2;->b:Lj$/util/function/o;
+    iput-object p2, p0, Lj$/util/stream/P2;->b:Lj$/util/function/n;
 
     iput-wide p3, p0, Lj$/util/stream/P2;->c:J
 
@@ -31,9 +31,9 @@
 
     iget-wide v1, p0, Lj$/util/stream/P2;->c:J
 
-    iget-object v3, p0, Lj$/util/stream/P2;->b:Lj$/util/function/o;
+    iget-object v3, p0, Lj$/util/stream/P2;->b:Lj$/util/function/n;
 
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/Q2;-><init>(JLj$/util/function/o;)V
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/Q2;-><init>(JLj$/util/function/n;)V
 
     return-object v0
 .end method

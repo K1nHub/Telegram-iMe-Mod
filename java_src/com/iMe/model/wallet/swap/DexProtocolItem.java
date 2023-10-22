@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DexProtocolItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DexProtocolItem extends NoChildNode {
     private final SwapProtocolInfo info;
     private final boolean isEnabled;

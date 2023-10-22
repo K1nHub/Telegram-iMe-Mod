@@ -7,7 +7,7 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CompletableObserveOn extends Completable {
     final Scheduler scheduler;
     final CompletableSource source;
@@ -22,7 +22,7 @@ public final class CompletableObserveOn extends Completable {
         this.source.subscribe(new ObserveOnCompletableObserver(completableObserver, this.scheduler));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ObserveOnCompletableObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable, Runnable {
         final CompletableObserver downstream;
         Throwable error;

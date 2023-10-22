@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: MediaType.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class MediaType {
     private final String mediaType;
     private final String[] parameterNamesAndValues;
@@ -66,7 +66,7 @@ public final class MediaType {
         return charset;
     }
 
-    /* JADX WARN: Incorrect condition in loop: B:8:0x002c */
+    /* JADX WARN: Incorrect condition in loop: B:8:0x002d */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -83,26 +83,26 @@ public final class MediaType {
             int r1 = r0.getFirst()
             int r2 = r0.getLast()
             int r0 = r0.getStep()
-            if (r0 < 0) goto L21
-            if (r1 > r2) goto L38
-            goto L23
-        L21:
-            if (r1 < r2) goto L38
-        L23:
+            if (r0 < 0) goto L22
+            if (r1 > r2) goto L39
+            goto L24
+        L22:
+            if (r1 < r2) goto L39
+        L24:
             java.lang.String[] r3 = r5.parameterNamesAndValues
             r3 = r3[r1]
             r4 = 1
             boolean r3 = kotlin.text.StringsKt.equals(r3, r6, r4)
-            if (r3 == 0) goto L34
+            if (r3 == 0) goto L35
             java.lang.String[] r6 = r5.parameterNamesAndValues
             int r1 = r1 + r4
             r6 = r6[r1]
             return r6
-        L34:
-            if (r1 == r2) goto L38
+        L35:
+            if (r1 == r2) goto L39
             int r1 = r1 + r0
-            goto L23
-        L38:
+            goto L24
+        L39:
             r6 = 0
             return r6
         */
@@ -122,7 +122,7 @@ public final class MediaType {
     }
 
     /* compiled from: MediaType.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

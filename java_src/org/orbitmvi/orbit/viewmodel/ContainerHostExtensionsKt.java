@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import org.orbitmvi.orbit.ContainerHost;
 /* compiled from: ContainerHostExtensions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ContainerHostExtensionsKt {
     public static final <STATE, SIDE_EFFECT> void observe(ContainerHost<STATE, SIDE_EFFECT> containerHost, LifecycleOwner lifecycleOwner, Function2<? super STATE, ? super Continuation<? super Unit>, ? extends Object> function2, Function2<? super SIDE_EFFECT, ? super Continuation<? super Unit>, ? extends Object> function22) {
         Intrinsics.checkNotNullParameter(containerHost, "<this>");

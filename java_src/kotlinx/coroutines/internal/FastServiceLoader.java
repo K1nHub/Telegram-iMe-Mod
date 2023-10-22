@@ -20,7 +20,7 @@ import kotlin.p034io.CloseableKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: FastServiceLoader.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FastServiceLoader {
     public static final FastServiceLoader INSTANCE = new FastServiceLoader();
 

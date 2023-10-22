@@ -3,7 +3,7 @@ package com.google.common.collect;
 import com.google.common.base.Function;
 import java.util.Comparator;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Ordering<T> implements Comparator<T> {
     @Override // java.util.Comparator
     public abstract int compare(T t, T t2);

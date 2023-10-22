@@ -131,7 +131,7 @@ public final class AtomParsers {
                     arrayList.add(parseMdtaMetadataEntryFromIlst);
                 }
             } else {
-                Log.m814w(TAG, "Skipped metadata with unknown key index: " + readInt4);
+                Log.m1106w(TAG, "Skipped metadata with unknown key index: " + readInt4);
             }
             parsableByteArray2.setPosition(position + readInt3);
         }
@@ -383,7 +383,7 @@ public final class AtomParsers {
                 int i5 = (i3 - 8) - 8;
                 byte[] bArr = new byte[i5];
                 parsableByteArray.readBytes(bArr, 0, i5);
-                immutableList = ImmutableList.m761of(bArr);
+                immutableList = ImmutableList.m1053of(bArr);
                 str2 = MimeTypes.APPLICATION_TX3G;
             } else if (i == 2004251764) {
                 str2 = MimeTypes.APPLICATION_MP4VTT;
@@ -569,7 +569,7 @@ public final class AtomParsers {
                         esdsData = parseEsdsFromParent(parsableByteArray, position2);
                         String str6 = esdsData.mimeType;
                         byte[] bArr4 = esdsData.initializationData;
-                        list2 = bArr4 != null ? ImmutableList.m761of(bArr4) : list;
+                        list2 = bArr4 != null ? ImmutableList.m1053of(bArr4) : list;
                         str3 = str6;
                         bArr2 = bArr;
                         f2 = f;
@@ -632,7 +632,7 @@ public final class AtomParsers {
                             i14 = z2 ? 1 : 2;
                             i15 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedShort4);
                         } else {
-                            Log.m814w(TAG, "Unsupported color type: " + Atom.getAtomTypeString(readInt3));
+                            Log.m1106w(TAG, "Unsupported color type: " + Atom.getAtomTypeString(readInt3));
                         }
                     }
                 }
@@ -1006,7 +1006,7 @@ public final class AtomParsers {
             if (MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
                 int pcmFrameSize = Util.getPcmFrameSize(format.pcmEncoding, format.channelCount);
                 if (readUnsignedIntToInt == 0 || readUnsignedIntToInt % pcmFrameSize != 0) {
-                    Log.m814w(AtomParsers.TAG, "Audio sample size mismatch. stsd sample size: " + pcmFrameSize + ", stsz sample size: " + readUnsignedIntToInt);
+                    Log.m1106w(AtomParsers.TAG, "Audio sample size mismatch. stsd sample size: " + pcmFrameSize + ", stsz sample size: " + readUnsignedIntToInt);
                     readUnsignedIntToInt = pcmFrameSize;
                 }
             }

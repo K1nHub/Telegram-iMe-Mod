@@ -22,7 +22,7 @@ public final class zzoh {
         String headerField2 = zza.getHeaderField("ETag");
         GmsLogger gmsLogger = zzass;
         String valueOf = String.valueOf(headerField);
-        gmsLogger.m807d("BaseModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
+        gmsLogger.m1099d("BaseModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
         if (headerField == null) {
             return null;
         }

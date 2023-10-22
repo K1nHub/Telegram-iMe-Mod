@@ -10,17 +10,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "LatLngCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LatLng extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<LatLng> CREATOR = new zzg();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final double latitude;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final double longitude;
 
     @SafeParcelable.Constructor
-    public LatLng(@SafeParcelable.Param(m796id = 2) double d, @SafeParcelable.Param(m796id = 3) double d2) {
+    public LatLng(@SafeParcelable.Param(m1088id = 2) double d, @SafeParcelable.Param(m1088id = 3) double d2) {
         if (d2 < -180.0d || d2 >= 180.0d) {
             this.longitude = ((((d2 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d;
         } else {

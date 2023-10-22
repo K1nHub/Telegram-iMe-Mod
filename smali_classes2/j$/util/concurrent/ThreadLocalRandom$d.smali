@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s$c;
+.implements Lj$/util/Spliterator$c;
 
 
 # annotations
@@ -86,7 +86,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->l(Lj$/util/s$c;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->h(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -101,7 +101,7 @@
     return v0
 .end method
 
-.method public d(Lj$/util/function/q;)V
+.method public d(Lj$/util/function/p;)V
     .locals 11
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -129,7 +129,7 @@
 
     move-result-wide v9
 
-    invoke-interface {p1, v9, v10}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {p1, v9, v10}, Lj$/util/function/p;->accept(J)V
 
     const-wide/16 v9, 0x1
 
@@ -158,7 +158,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->d(Lj$/util/s$c;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->c(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -166,9 +166,9 @@
 .method public bridge synthetic forEachRemaining(Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Lj$/util/function/q;
+    check-cast p1, Lj$/util/function/p;
 
-    invoke-virtual {p0, p1}, Lj$/util/concurrent/ThreadLocalRandom$d;->d(Lj$/util/function/q;)V
+    invoke-virtual {p0, p1}, Lj$/util/concurrent/ThreadLocalRandom$d;->d(Lj$/util/function/p;)V
 
     return-void
 .end method
@@ -187,7 +187,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -197,14 +197,14 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public i(Lj$/util/function/q;)Z
+.method public i(Lj$/util/function/p;)Z
     .locals 7
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -229,7 +229,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v2, v3}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {p1, v2, v3}, Lj$/util/function/p;->accept(J)V
 
     const-wide/16 v2, 0x1
 
@@ -250,16 +250,16 @@
 .method public bridge synthetic tryAdvance(Ljava/lang/Object;)Z
     .locals 0
 
-    check-cast p1, Lj$/util/function/q;
+    check-cast p1, Lj$/util/function/p;
 
-    invoke-virtual {p0, p1}, Lj$/util/concurrent/ThreadLocalRandom$d;->i(Lj$/util/function/q;)Z
+    invoke-virtual {p0, p1}, Lj$/util/concurrent/ThreadLocalRandom$d;->i(Lj$/util/function/p;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$c;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$c;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$d;->a()Lj$/util/concurrent/ThreadLocalRandom$d;
@@ -269,7 +269,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$d;->a()Lj$/util/concurrent/ThreadLocalRandom$d;
@@ -279,7 +279,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/t;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$d;->a()Lj$/util/concurrent/ThreadLocalRandom$d;

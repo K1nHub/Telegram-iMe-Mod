@@ -22,9 +22,9 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: EnvironmentManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class EnvironmentManager implements KoinComponent {
     public static final EnvironmentManager INSTANCE;
     private static final Lazy actionGateway$delegate;
@@ -36,7 +36,7 @@ public final class EnvironmentManager implements KoinComponent {
     private static final Lazy telegramGateway$delegate;
 
     /* compiled from: EnvironmentManager.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

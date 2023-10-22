@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field final synthetic b:Lj$/util/function/y;
+.field final synthetic b:Lj$/util/function/x;
 
 .field final synthetic c:Lj$/util/function/BiConsumer;
 
@@ -14,10 +14,10 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/function/y;Lj$/util/function/BiConsumer;Lj$/util/function/b;)V
+.method constructor <init>(Lj$/util/function/x;Lj$/util/function/BiConsumer;Lj$/util/function/b;)V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/J2;->b:Lj$/util/function/y;
+    iput-object p1, p0, Lj$/util/stream/J2;->b:Lj$/util/function/x;
 
     iput-object p2, p0, Lj$/util/stream/J2;->c:Lj$/util/function/BiConsumer;
 
@@ -103,18 +103,18 @@
     return-void
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
-    iget-object p1, p0, Lj$/util/stream/J2;->b:Lj$/util/function/y;
+    iget-object p1, p0, Lj$/util/stream/J2;->b:Lj$/util/function/x;
 
-    invoke-interface {p1}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 

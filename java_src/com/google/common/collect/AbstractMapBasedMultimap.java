@@ -22,7 +22,7 @@ import java.util.SortedSet;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V> implements Serializable {
     private transient Map<K, Collection<V>> map;
     private transient int totalSize;
@@ -118,7 +118,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class WrappedCollection extends AbstractCollection<V> {
         final AbstractMapBasedMultimap<K, V>.WrappedCollection ancestor;
         final Collection<V> ancestorDelegate;
@@ -206,7 +206,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public class WrappedIterator implements Iterator<V>, p033j$.util.Iterator {
             final Iterator<V> delegateIterator;
             final Collection<V> originalDelegate;
@@ -363,7 +363,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class WrappedList extends AbstractMapBasedMultimap<K, V>.WrappedCollection implements List<V> {
         WrappedList(K k, List<V> list, AbstractMapBasedMultimap<K, V>.WrappedCollection wrappedCollection) {
             super(k, list, wrappedCollection);
@@ -452,7 +452,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return AbstractMapBasedMultimap.this.wrapList(getKey(), getListDelegate().subList(i, i2), getAncestor() == null ? this : getAncestor());
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         private class WrappedListIterator extends AbstractMapBasedMultimap<K, V>.WrappedCollection.WrappedIterator implements ListIterator<V> {
             WrappedListIterator() {
                 super();
@@ -504,7 +504,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class RandomAccessWrappedList extends AbstractMapBasedMultimap<K, V>.WrappedList implements RandomAccess {
         RandomAccessWrappedList(AbstractMapBasedMultimap abstractMapBasedMultimap, K k, List<V> list, AbstractMapBasedMultimap<K, V>.WrappedCollection wrappedCollection) {
             super(k, list, wrappedCollection);
@@ -524,7 +524,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class KeySet extends Maps.KeySet<K, Collection<V>> {
         KeySet(Map<K, Collection<V>> map) {
             super(map);
@@ -532,8 +532,8 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.google.common.collect.AbstractMapBasedMultimap$KeySet$1 */
-        /* loaded from: classes4.dex */
-        public class C09031 implements java.util.Iterator<K>, p033j$.util.Iterator {
+        /* loaded from: classes3.dex */
+        public class C08951 implements java.util.Iterator<K>, p033j$.util.Iterator {
             Map.Entry<K, Collection<V>> entry;
             final /* synthetic */ java.util.Iterator val$entryIterator;
 
@@ -542,7 +542,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
 
-            C09031(java.util.Iterator it) {
+            C08951(java.util.Iterator it) {
                 this.val$entryIterator = it;
             }
 
@@ -571,7 +571,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public java.util.Iterator<K> iterator() {
-            return new C09031(map().entrySet().iterator());
+            return new C08951(map().entrySet().iterator());
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -610,7 +610,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class SortedKeySet extends AbstractMapBasedMultimap<K, V>.KeySet implements SortedSet<K> {
         SortedKeySet(SortedMap<K, Collection<V>> sortedMap) {
             super(sortedMap);
@@ -649,7 +649,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class NavigableKeySet extends AbstractMapBasedMultimap<K, V>.SortedKeySet implements NavigableSet<K> {
         @Override // com.google.common.collect.AbstractMapBasedMultimap.SortedKeySet, java.util.SortedSet, java.util.NavigableSet
         public /* bridge */ /* synthetic */ SortedSet headSet(Object obj) {
@@ -752,7 +752,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private abstract class Itr<T> implements java.util.Iterator<T>, p033j$.util.Iterator {
         final java.util.Iterator<Map.Entry<K, Collection<V>>> keyIterator;
         K key = null;
@@ -834,7 +834,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         return new AbstractMapBasedMultimap<K, V>.Itr<Map.Entry<K, V>>(this) { // from class: com.google.common.collect.AbstractMapBasedMultimap.2
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr
             /* bridge */ /* synthetic */ Object output(Object obj, Object obj2) {
-                return output((C09022) obj, obj2);
+                return output((C08942) obj, obj2);
             }
 
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr
@@ -857,7 +857,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class AsMap extends Maps.ViewCachingAbstractMap<K, Collection<V>> {
         final transient Map<K, Collection<V>> submap;
 
@@ -936,7 +936,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return Maps.immutableEntry(key, AbstractMapBasedMultimap.this.wrapCollection(key, entry.getValue()));
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         class AsMapEntries extends Maps.EntrySet<K, Collection<V>> {
             AsMapEntries() {
             }
@@ -968,7 +968,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         class AsMapIterator implements java.util.Iterator<Map.Entry<K, Collection<V>>>, p033j$.util.Iterator {
             Collection<V> collection;
             final java.util.Iterator<Map.Entry<K, Collection<V>>> delegateIterator;
@@ -1006,7 +1006,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class SortedAsMap extends AbstractMapBasedMultimap<K, V>.AsMap implements SortedMap<K, Collection<V>> {
         SortedSet<K> sortedKeySet;
 
@@ -1062,7 +1062,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class NavigableAsMap extends AbstractMapBasedMultimap<K, V>.SortedAsMap implements NavigableMap<K, Collection<V>> {
         @Override // com.google.common.collect.AbstractMapBasedMultimap.SortedAsMap, java.util.SortedMap, java.util.NavigableMap
         public /* bridge */ /* synthetic */ SortedMap headMap(Object obj) {

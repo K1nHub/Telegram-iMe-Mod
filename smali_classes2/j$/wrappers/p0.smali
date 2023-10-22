@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/LongUnaryOperator;
+.implements Ljava/util/function/ObjDoubleConsumer;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/t;)Ljava/util/function/LongUnaryOperator;
+.method public static synthetic a(Lj$/util/function/t;)Ljava/util/function/ObjDoubleConsumer;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/o0;
 
-    iget-object p0, p0, Lj$/wrappers/o0;->a:Ljava/util/function/LongUnaryOperator;
+    iget-object p0, p0, Lj$/wrappers/o0;->a:Ljava/util/function/ObjDoubleConsumer;
 
     return-object p0
 
@@ -50,54 +50,12 @@
 
 
 # virtual methods
-.method public synthetic andThen(Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
+.method public synthetic accept(Ljava/lang/Object;D)V
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/p0;->a:Lj$/util/function/t;
 
-    invoke-static {p1}, Lj$/wrappers/o0;->c(Ljava/util/function/LongUnaryOperator;)Lj$/util/function/t;
+    invoke-interface {v0, p1, p2, p3}, Lj$/util/function/t;->accept(Ljava/lang/Object;D)V
 
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/t;->a(Lj$/util/function/t;)Lj$/util/function/t;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/p0;->a(Lj$/util/function/t;)Ljava/util/function/LongUnaryOperator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic applyAsLong(J)J
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/p0;->a:Lj$/util/function/t;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/function/t;->applyAsLong(J)J
-
-    move-result-wide p1
-
-    return-wide p1
-.end method
-
-.method public synthetic compose(Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/p0;->a:Lj$/util/function/t;
-
-    invoke-static {p1}, Lj$/wrappers/o0;->c(Ljava/util/function/LongUnaryOperator;)Lj$/util/function/t;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/t;->b(Lj$/util/function/t;)Lj$/util/function/t;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/p0;->a(Lj$/util/function/t;)Ljava/util/function/LongUnaryOperator;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.os.Message;
 import com.google.android.gms.common.ConnectionResult;
 import java.lang.ref.WeakReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class SnackbarManager {
     private static SnackbarManager snackbarManager;
     private SnackbarRecord currentSnackbar;
@@ -23,7 +23,7 @@ class SnackbarManager {
     });
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Callback {
         void dismiss(int i);
 
@@ -125,7 +125,7 @@ class SnackbarManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class SnackbarRecord {
         final WeakReference<Callback> callback;
         int duration;

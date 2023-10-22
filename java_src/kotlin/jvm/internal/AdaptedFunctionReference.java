@@ -1,7 +1,7 @@
 package kotlin.jvm.internal;
 
 import java.io.Serializable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AdaptedFunctionReference implements FunctionBase, Serializable {
     private final int arity;
     private final int flags;

@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.cryptobox;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTokenApprovalInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTokenApprovalInfo {
     private final CryptoBoxTokenApprovalStatus status;
     private final TokenDetailed token;

@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [SIDE_EFFECT] */
 /* compiled from: LazyCreateContainerDecorator.kt */
-@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator$sideEffectFlow$1", m101f = "LazyCreateContainerDecorator.kt", m100l = {42}, m99m = "invokeSuspend")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator$sideEffectFlow$1", m142f = "LazyCreateContainerDecorator.kt", m141l = {42}, m140m = "invokeSuspend")
+/* loaded from: classes4.dex */
 public final class LazyCreateContainerDecorator$sideEffectFlow$1<SIDE_EFFECT> extends SuspendLambda implements Function2<FlowCollector<? super SIDE_EFFECT>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;

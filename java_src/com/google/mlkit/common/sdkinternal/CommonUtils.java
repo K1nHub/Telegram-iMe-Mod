@@ -9,7 +9,7 @@ import com.google.android.gms.common.util.PlatformVersion;
 import java.util.Locale;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CommonUtils {
     private static final GmsLogger zza = new GmsLogger("CommonUtils", "");
 
@@ -23,7 +23,7 @@ public class CommonUtils {
             StringBuilder sb = new StringBuilder(valueOf.length() + 48);
             sb.append("Exception thrown when trying to get app version ");
             sb.append(valueOf);
-            gmsLogger.m805e("CommonUtils", sb.toString());
+            gmsLogger.m1097e("CommonUtils", sb.toString());
             return "";
         }
     }

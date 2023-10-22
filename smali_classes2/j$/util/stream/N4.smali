@@ -6,8 +6,8 @@
 .method public abstract b()I
 .end method
 
-.method public abstract c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public abstract c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 .end method
 
-.method public abstract d(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public abstract d(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 .end method

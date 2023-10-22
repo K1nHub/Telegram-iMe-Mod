@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Zilliqa {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -42,7 +42,7 @@ public final class Zilliqa {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -57,7 +57,7 @@ public final class Zilliqa {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -82,7 +82,7 @@ public final class Zilliqa {
     private Zilliqa() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Transaction extends GeneratedMessageLite<Transaction, Builder> implements TransactionOrBuilder {
         private static final Transaction DEFAULT_INSTANCE;
         private static volatile Parser<Transaction> PARSER = null;
@@ -91,7 +91,7 @@ public final class Zilliqa {
         private int messageOneofCase_ = 0;
         private Object messageOneof_;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface RawOrBuilder extends MessageLiteOrBuilder {
             ByteString getAmount();
 
@@ -106,7 +106,7 @@ public final class Zilliqa {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface TransferOrBuilder extends MessageLiteOrBuilder {
             ByteString getAmount();
 
@@ -120,7 +120,7 @@ public final class Zilliqa {
         private Transaction() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
             public static final int AMOUNT_FIELD_NUMBER = 1;
             private static final Transfer DEFAULT_INSTANCE;
@@ -202,9 +202,9 @@ public final class Zilliqa {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-                /* synthetic */ Builder(C73711 c73711) {
+                /* synthetic */ Builder(C77051 c77051) {
                     this();
                 }
 
@@ -232,7 +232,7 @@ public final class Zilliqa {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73711.f1981xa1df5c61[method.ordinal()]) {
+                switch (C77051.f2155xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Transfer();
                     case 2:
@@ -277,7 +277,7 @@ public final class Zilliqa {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Raw extends GeneratedMessageLite<Raw, Builder> implements RawOrBuilder {
             public static final int AMOUNT_FIELD_NUMBER = 1;
             public static final int CODE_FIELD_NUMBER = 2;
@@ -399,9 +399,9 @@ public final class Zilliqa {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Raw, Builder> implements RawOrBuilder {
-                /* synthetic */ Builder(C73711 c73711) {
+                /* synthetic */ Builder(C77051 c77051) {
                     this();
                 }
 
@@ -463,7 +463,7 @@ public final class Zilliqa {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73711.f1981xa1df5c61[method.ordinal()]) {
+                switch (C77051.f2155xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Raw();
                     case 2:
@@ -508,7 +508,7 @@ public final class Zilliqa {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum MessageOneofCase {
             TRANSFER(1),
             RAW_TRANSACTION(2),
@@ -688,9 +688,9 @@ public final class Zilliqa {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C73711 c73711) {
+            /* synthetic */ Builder(C77051 c77051) {
                 this();
             }
 
@@ -780,7 +780,7 @@ public final class Zilliqa {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73711.f1981xa1df5c61[method.ordinal()]) {
+            switch (C77051.f2155xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -826,47 +826,47 @@ public final class Zilliqa {
     }
 
     /* renamed from: wallet.core.jni.proto.Zilliqa$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73711 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C77051 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1981xa1df5c61;
+        static final /* synthetic */ int[] f2155xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1981xa1df5c61 = iArr;
+            f2155xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2155xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         public static final int GAS_LIMIT_FIELD_NUMBER = 5;
@@ -1084,9 +1084,9 @@ public final class Zilliqa {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73711 c73711) {
+            /* synthetic */ Builder(C77051 c77051) {
                 this();
             }
 
@@ -1244,7 +1244,7 @@ public final class Zilliqa {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73711.f1981xa1df5c61[method.ordinal()]) {
+            switch (C77051.f2155xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1289,7 +1289,7 @@ public final class Zilliqa {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int JSON_FIELD_NUMBER = 2;
@@ -1400,9 +1400,9 @@ public final class Zilliqa {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73711 c73711) {
+            /* synthetic */ Builder(C77051 c77051) {
                 this();
             }
 
@@ -1458,7 +1458,7 @@ public final class Zilliqa {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73711.f1981xa1df5c61[method.ordinal()]) {
+            switch (C77051.f2155xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

@@ -1,4 +1,4 @@
 package com.google.common.collect;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class BaseImmutableMultimap<K, V> extends AbstractMultimap<K, V> {
 }

@@ -84,7 +84,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         this.scratchDataReaderAdapter = new DataReaderAdapter();
         this.extractorOutput = new DummyExtractorOutput();
         this.sampleTimestampUpperLimitFilterUs = C0479C.TIME_UNSET;
-        this.muxedCaptionFormats = ImmutableList.m762of();
+        this.muxedCaptionFormats = ImmutableList.m1054of();
     }
 
     public void setSampleTimestampUpperLimitFilterUs(long j) {
@@ -261,7 +261,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             i2 = Integer.parseInt((String) Util.castNonNull(matcher.group(2)));
             i3 = parseInt;
         } catch (RuntimeException e) {
-            Log.m817e(TAG, "Unexpected error while parsing CryptoInfo: " + cryptoInfo, e);
+            Log.m1109e(TAG, "Unexpected error while parsing CryptoInfo: " + cryptoInfo, e);
             i2 = 0;
         }
         TrackOutput.CryptoData cryptoData = new TrackOutput.CryptoData(cryptoInfo.mode, cryptoInfo.key, i3, i2);

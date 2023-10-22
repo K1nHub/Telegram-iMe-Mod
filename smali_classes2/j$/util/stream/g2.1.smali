@@ -2,7 +2,7 @@
 .super Lj$/util/stream/i2;
 
 # interfaces
-.implements Lj$/util/s$b;
+.implements Lj$/util/Spliterator$b;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->k(Lj$/util/s$b;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->g(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -29,7 +29,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/s$b;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->b(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)V
 
     return-void
 .end method

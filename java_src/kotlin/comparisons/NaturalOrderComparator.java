@@ -9,15 +9,15 @@ import p033j$.util.function.ToIntFunction;
 import p033j$.util.function.ToLongFunction;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Comparisons.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class NaturalOrderComparator implements Comparator<Comparable<? super Object>>, p033j$.util.Comparator {
     public static final NaturalOrderComparator INSTANCE = new NaturalOrderComparator();
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ Comparator thenComparing(Function function) {
-        Comparator m650a;
-        m650a = Comparator.EL.m650a(this, Comparator.CC.comparing(function));
-        return m650a;
+        Comparator m692a;
+        m692a = Comparator.EL.m692a(this, Comparator.CC.comparing(function));
+        return m692a;
     }
 
     @Override // p033j$.util.Comparator
@@ -32,23 +32,23 @@ public final class NaturalOrderComparator implements Comparator<Comparable<? sup
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        java.util.Comparator m650a;
-        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingDouble(toDoubleFunction));
-        return m650a;
+        java.util.Comparator m692a;
+        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingDouble(toDoubleFunction));
+        return m692a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        java.util.Comparator m650a;
-        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingInt(toIntFunction));
-        return m650a;
+        java.util.Comparator m692a;
+        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingInt(toIntFunction));
+        return m692a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        java.util.Comparator m650a;
-        m650a = Comparator.EL.m650a(this, Comparator.CC.comparingLong(toLongFunction));
-        return m650a;
+        java.util.Comparator m692a;
+        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingLong(toLongFunction));
+        return m692a;
     }
 
     private NaturalOrderComparator() {

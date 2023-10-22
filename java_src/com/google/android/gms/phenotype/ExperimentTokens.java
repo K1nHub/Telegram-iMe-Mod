@@ -15,25 +15,25 @@ import java.util.List;
 @KeepForSdk
 @SafeParcelable.Class(creator = "ExperimentTokensCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ExperimentTokens extends AbstractSafeParcelable {
     private static final byte[][] zzn;
     private static final ExperimentTokens zzo;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     private final String zzp;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     private final byte[] zzq;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     private final byte[][] zzr;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     private final byte[][] zzs;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     private final byte[][] zzt;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     private final byte[][] zzu;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     private final int[] zzv;
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     private final byte[][] zzw;
     @KeepForSdk
     public static final Parcelable.Creator<ExperimentTokens> CREATOR = new zzh();
@@ -43,7 +43,7 @@ public class ExperimentTokens extends AbstractSafeParcelable {
     private static final zza zzaa = new zzg();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface zza {
     }
 
@@ -54,7 +54,7 @@ public class ExperimentTokens extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public ExperimentTokens(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) byte[] bArr, @SafeParcelable.Param(m796id = 4) byte[][] bArr2, @SafeParcelable.Param(m796id = 5) byte[][] bArr3, @SafeParcelable.Param(m796id = 6) byte[][] bArr4, @SafeParcelable.Param(m796id = 7) byte[][] bArr5, @SafeParcelable.Param(m796id = 8) int[] iArr, @SafeParcelable.Param(m796id = 9) byte[][] bArr6) {
+    public ExperimentTokens(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) byte[] bArr, @SafeParcelable.Param(m1088id = 4) byte[][] bArr2, @SafeParcelable.Param(m1088id = 5) byte[][] bArr3, @SafeParcelable.Param(m1088id = 6) byte[][] bArr4, @SafeParcelable.Param(m1088id = 7) byte[][] bArr5, @SafeParcelable.Param(m1088id = 8) int[] iArr, @SafeParcelable.Param(m1088id = 9) byte[][] bArr6) {
         this.zzp = str;
         this.zzq = bArr;
         this.zzr = bArr2;

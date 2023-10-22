@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.Task;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface FusedLocationProviderClient extends HasApiKey<Api.ApiOptions.NoOptions> {
     @Deprecated
     public static final String KEY_MOCK_LOCATION = "mockLocation";

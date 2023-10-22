@@ -13,7 +13,6 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
@@ -22,13 +21,12 @@ import androidx.multidex.MultiDex;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.iMe.bots.usecase.AiBotsManager;
 import com.iMe.common.AppLifecycleObserver;
-import com.iMe.p023di.KoinJavaAppKt;
-import com.iMe.p031ui.shop.PurchaseHelper;
-import com.iMe.p031ui.shop.configuration.BillingConfiguration;
-import com.iMe.p031ui.shop.configuration.BillingProvider;
+import com.iMe.p022di.KoinJavaAppKt;
 import com.iMe.storage.data.manager.FlipperManager;
+import com.iMe.storage.data.manager.analytics.AnalyticsManager;
+import com.iMe.storage.data.manager.analytics.providers.FirebaseAnalyticsProvider;
+import com.iMe.storage.data.manager.analytics.providers.LoggerProvider;
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 import com.iMe.storage.data.utils.crypto.CryptoLibsLoader;
 import com.iMe.utils.debug.FileLogTree;
@@ -37,20 +35,20 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.io.File;
 import org.koin.java.KoinJavaComponent;
-import org.solovyev.android.checkout.Billing;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.p043ui.Components.ForegroundDetector;
-import org.telegram.p043ui.LauncherIconController;
+import org.telegram.p042ui.Components.ForegroundDetector;
+import org.telegram.p042ui.LauncherIconController;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
-/* loaded from: classes6.dex */
-public class ApplicationLoader extends Application implements BillingProvider {
+/* loaded from: classes4.dex */
+public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
     public static volatile Handler applicationHandler = null;
     private static volatile boolean applicationInited = false;
-    private static ApplicationLoader applicationLoaderInstance = null;
+    public static ApplicationLoader applicationLoaderInstance = null;
     public static boolean canDrawOverlays = false;
     private static ConnectivityManager connectivityManager = null;
     public static volatile NetworkInfo currentNetworkInfo = null;
@@ -67,13 +65,14 @@ public class ApplicationLoader extends Application implements BillingProvider {
     public static volatile boolean mainInterfaceStopped = true;
     private static IMapsProvider mapsProvider;
     private static volatile ConnectivityManager.NetworkCallback networkCallback;
-    public static volatile PurchaseHelper purchaseHelper;
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
-    public static volatile AiBotsManager smartBotsManager;
     public static long startTime;
-    private final Billing mBilling = new Billing(this, new BillingConfiguration());
 
     protected void appCenterLogInternal(Throwable th) {
+    }
+
+    public boolean checkApkInstallPermissions(Context context) {
+        return false;
     }
 
     protected void checkForUpdatesInternal() {
@@ -98,6 +97,10 @@ public class ApplicationLoader extends Application implements BillingProvider {
         return null;
     }
 
+    public boolean openApkInstall(Activity activity, TLRPC$Document tLRPC$Document) {
+        return false;
+    }
+
     protected void startAppCenterInternal(Activity activity) {
     }
 
@@ -120,26 +123,6 @@ public class ApplicationLoader extends Application implements BillingProvider {
         return applicationLoaderInstance.onGetVersionCode();
     }
 
-    private static void initForkSmartBots() {
-        try {
-            File externalFilesDir = applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
-            File file = new File(getFilesDirFixed().getAbsolutePath(), "ime");
-            if (externalFilesDir != null) {
-                smartBotsManager = AiBotsManager.Companion.getInstance(applicationContext, externalFilesDir, file);
-            }
-            purchaseHelper = PurchaseHelper.Companion.getInstance(smartBotsManager);
-            applicationContext.registerReceiver(new BroadcastReceiver() { // from class: org.telegram.messenger.ApplicationLoader.1
-                @Override // android.content.BroadcastReceiver
-                public void onReceive(Context context, Intent intent) {
-                    ApplicationLoader.smartBotsManager.handleDownloadCompletion(intent.getLongExtra("extra_download_id", -1L));
-                }
-            }, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
-        } catch (Exception e) {
-            e.printStackTrace();
-            FileLog.m67e(e);
-        }
-    }
-
     private static void initDebugTools() {
         Timber.plant(new FileLogTree());
         RxJavaPlugins.setErrorHandler(new Consumer() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda0
@@ -160,13 +143,13 @@ public class ApplicationLoader extends Application implements BillingProvider {
         ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppLifecycleObserver());
     }
 
-    private static void initKoin() {
-        KoinJavaAppKt.start(applicationContext);
+    private static void initAnalytics() {
+        AnalyticsManager.registerProvider(new FirebaseAnalyticsProvider());
+        AnalyticsManager.registerProvider(new LoggerProvider());
     }
 
-    @Override // com.iMe.p031ui.shop.configuration.BillingProvider
-    public Billing provideBilling() {
-        return this.mBilling;
+    private static void initKoin() {
+        KoinJavaAppKt.start(applicationContext);
     }
 
     @Override // android.content.ContextWrapper
@@ -230,7 +213,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             file.mkdirs();
             return file;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new File("/data/data/org.telegram.messenger/files".replace(BuildConfig.LIBRARY_PACKAGE_NAME, getApplicationId()));
         }
     }
@@ -241,11 +224,12 @@ public class ApplicationLoader extends Application implements BillingProvider {
             return;
         }
         applicationInited = true;
-        initForkSmartBots();
+        NativeLoader.initNativeLibs(applicationContext);
         checkKoinInit();
         PushListenerController.GooglePushListenerServiceProvider.INSTANCE.firebaseMessaging = (FirebaseMessaging) initGoogleServices().get(FirebaseMessaging.class);
         initDebugTools();
         initCryptoSecureServices();
+        initAnalytics();
         for (int i = 0; i < 5; i++) {
             UserConfig.getInstance(i).loadConfig();
         }
@@ -257,7 +241,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         }
         try {
             connectivityManager = (ConnectivityManager) applicationContext.getSystemService("connectivity");
-            applicationContext.registerReceiver(new BroadcastReceiver() { // from class: org.telegram.messenger.ApplicationLoader.2
+            applicationContext.registerReceiver(new BroadcastReceiver() { // from class: org.telegram.messenger.ApplicationLoader.1
                 @Override // android.content.BroadcastReceiver
                 public void onReceive(Context context, Intent intent) {
                     try {
@@ -284,7 +268,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("screen state = " + isScreenOn);
+                FileLog.m100d("screen state = " + isScreenOn);
             }
         } catch (Exception e4) {
             e4.printStackTrace();
@@ -306,14 +290,13 @@ public class ApplicationLoader extends Application implements BillingProvider {
         }
         ((ApplicationLoader) applicationContext).initPushServices();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("app initied");
+            FileLog.m100d("app initied");
         }
         MediaController.getInstance();
         for (int i3 = 0; i3 < 5; i3++) {
             ContactsController.getInstance(i3).checkAppAccount();
             DownloadController.getInstance(i3);
         }
-        ChatThemeController.init();
         BillingController.getInstance().lambda$onBillingServiceDisconnected$5();
     }
 
@@ -334,8 +317,8 @@ public class ApplicationLoader extends Application implements BillingProvider {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
             sb.append(elapsedRealtime);
-            FileLog.m70d(sb.toString());
-            FileLog.m70d("buildVersion = " + BuildVars.BUILD_VERSION);
+            FileLog.m100d(sb.toString());
+            FileLog.m100d("buildVersion = " + BuildVars.BUILD_VERSION);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -343,8 +326,8 @@ public class ApplicationLoader extends Application implements BillingProvider {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             ConnectionsManager.native_setJava(false);
-            new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.3
-                @Override // org.telegram.p043ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
+            new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.p042ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -354,7 +337,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             };
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+                FileLog.m100d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
@@ -419,7 +402,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("No valid " + getPushProvider().getLogTitle() + " APK found.");
+            FileLog.m100d("No valid " + getPushProvider().getLogTitle() + " APK found.");
         }
         SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
         PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
@@ -429,7 +412,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             return GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == 0;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return true;
         }
     }
@@ -445,7 +428,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 if (Build.VERSION.SDK_INT < 24 || networkCallback != null) {
                     return;
                 }
-                networkCallback = new ConnectivityManager.NetworkCallback() { // from class: org.telegram.messenger.ApplicationLoader.4
+                networkCallback = new ConnectivityManager.NetworkCallback() { // from class: org.telegram.messenger.ApplicationLoader.3
                     @Override // android.net.ConnectivityManager.NetworkCallback
                     public void onAvailable(Network network) {
                         int unused = ApplicationLoader.lastKnownNetworkType = -1;
@@ -470,7 +453,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return false;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -487,7 +470,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 return true;
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         return false;
     }
@@ -501,7 +484,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
                 }
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         return false;
     }
@@ -525,7 +508,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             ensureCurrentNetworkGet(false);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         if (currentNetworkInfo == null) {
             return 0;
@@ -570,7 +553,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return true;
         }
     }
@@ -594,7 +577,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return true;
         }
     }
@@ -602,7 +585,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
     public static boolean isNetworkOnline() {
         boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
         if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
-            FileLog.m70d("network online mismatch");
+            FileLog.m100d("network online mismatch");
         }
         return isNetworkOnlineRealtime;
     }

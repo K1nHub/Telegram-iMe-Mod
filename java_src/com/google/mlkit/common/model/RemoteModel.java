@@ -6,7 +6,7 @@ import com.google.mlkit.common.sdkinternal.model.BaseModel;
 import java.util.EnumMap;
 import java.util.Map;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RemoteModel {
     private static final Map<BaseModel, String> zze;
     private final String zza;

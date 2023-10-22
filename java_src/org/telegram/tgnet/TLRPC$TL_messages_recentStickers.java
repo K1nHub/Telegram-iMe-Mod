@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_recentStickers extends TLRPC$messages_RecentStickers {
     public static int constructor = -1999405994;
     public long hash;

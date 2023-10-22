@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FiatValue.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FiatValue {
     public static final Companion Companion = new Companion(null);
     private final String symbol;
@@ -55,7 +55,7 @@ public final class FiatValue {
     }
 
     public int hashCode() {
-        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
+        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
     }
 
     public String toString() {
@@ -83,7 +83,7 @@ public final class FiatValue {
     }
 
     /* compiled from: FiatValue.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

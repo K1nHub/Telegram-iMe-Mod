@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.staking.StakingOperation;
 import io.reactivex.Observable;
 /* compiled from: StakingDataSource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface StakingDataSource extends SignTransactionDatasource<TransactionArgs> {
     Observable<Result<StakingOperation>> sendApprovalExecute(String str, TransactionArgs transactionArgs);
 

@@ -13,14 +13,13 @@ import com.iMe.fork.controller.HiddenChatsController;
 import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.controller.MultiPanelController;
 import com.iMe.fork.controller.MusicController;
-import com.iMe.fork.controller.NeuroBotsController;
 import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
-import org.telegram.p043ui.Components.Paint.PersistColorPalette;
+import org.telegram.p042ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AccountInstance {
     private static volatile AccountInstance[] Instance = new AccountInstance[5];
     private int currentAccount;
@@ -55,10 +54,6 @@ public class AccountInstance {
 
     public MusicController getMusicController() {
         return MusicController.getInstance(this.currentAccount);
-    }
-
-    public NeuroBotsController getNeuroBotsController() {
-        return NeuroBotsController.getInstance(this.currentAccount);
     }
 
     public TemplatesController getTemplatesController() {

@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$ObjectRef;
 /* compiled from: CoroutineContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineContextKt {
     public static final CoroutineContext newCoroutineContext(CoroutineScope coroutineScope, CoroutineContext coroutineContext) {
         CoroutineContext foldCopies = foldCopies(coroutineScope.getCoroutineContext(), coroutineContext, true);

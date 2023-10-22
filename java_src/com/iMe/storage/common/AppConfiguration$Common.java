@@ -4,7 +4,7 @@ import com.google.firebase.FirebaseOptions;
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AppConfiguration$Common {
     public static final AppConfiguration$Common INSTANCE = new AppConfiguration$Common();
     private static final FirebaseOptions prodGoogleServices;

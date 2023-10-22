@@ -4,7 +4,7 @@ import com.google.android.gms.wearable.Channel;
 import com.google.android.gms.wearable.ChannelApi;
 import com.google.android.gms.wearable.ChannelClient;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzbc implements ChannelApi.ChannelListener {
     private final ChannelClient.ChannelCallback zza;
 

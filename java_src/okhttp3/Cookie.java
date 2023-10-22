@@ -1,6 +1,6 @@
 package okhttp3;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -16,11 +16,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
+import kotlinx.serialization.json.JsonLiteral$$ExternalSyntheticBackport0;
 import okhttp3.internal.HostnamesKt;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.DatesKt;
 /* compiled from: Cookie.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Cookie {
     private final String domain;
     private final long expiresAt;
@@ -72,7 +73,7 @@ public final class Cookie {
     }
 
     public int hashCode() {
-        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + Cookie$$ExternalSyntheticBackport0.m95m(this.secure)) * 31) + Cookie$$ExternalSyntheticBackport0.m95m(this.httpOnly)) * 31) + Cookie$$ExternalSyntheticBackport0.m95m(this.persistent)) * 31) + Cookie$$ExternalSyntheticBackport0.m95m(this.hostOnly);
+        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.secure)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.httpOnly)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.persistent)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.hostOnly);
     }
 
     public String toString() {
@@ -113,7 +114,7 @@ public final class Cookie {
     }
 
     /* compiled from: Cookie.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -137,20 +138,20 @@ public final class Cookie {
             return parse$okhttp(System.currentTimeMillis(), url, setCookie);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x0106, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x0107, code lost:
             if (r1 > 253402300799999L) goto L86;
          */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x0118  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x011b  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x0142  */
-        /* JADX WARN: Removed duplicated region for block: B:82:0x015e  */
+        /* JADX WARN: Removed duplicated region for block: B:63:0x0119  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x011c  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x0143  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x015f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public final okhttp3.Cookie parse$okhttp(long r26, okhttp3.HttpUrl r28, java.lang.String r29) {
             /*
-                Method dump skipped, instructions count: 377
+                Method dump skipped, instructions count: 379
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: okhttp3.Cookie.Companion.parse$okhttp(long, okhttp3.HttpUrl, java.lang.String):okhttp3.Cookie");

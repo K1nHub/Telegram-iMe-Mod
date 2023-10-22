@@ -2,8 +2,8 @@ package com.iMe.feature.twitter;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.p031ui.base.mvp.LoadMoreView;
-import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.p030ui.base.mvp.LoadMoreView;
+import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -12,14 +12,14 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TwitterView$$State extends MvpViewState<TwitterView> implements TwitterView {
-    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
         BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    @Override // com.iMe.p030ui.base.mvp.LoadMoreView
     public /* synthetic */ void resetLoadMore() {
         LoadMoreView.CC.$default$resetLoadMore(this);
     }
@@ -89,7 +89,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(showResetTwitterDialogCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public void showToast(String str) {
         ShowToastCommand showToastCommand = new ShowToastCommand(this, str);
         this.viewCommands.beforeApply(showToastCommand);
@@ -102,7 +102,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(showToastCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public void showLoadingDialog(boolean z, boolean z2, Disposable disposable) {
         ShowLoadingDialogCommand showLoadingDialogCommand = new ShowLoadingDialogCommand(this, z, z2, disposable);
         this.viewCommands.beforeApply(showLoadingDialogCommand);
@@ -115,7 +115,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(showLoadingDialogCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public <T> void showErrorToast(Result.Error<? extends T> error, ResourceManager resourceManager) {
         ShowErrorToastCommand showErrorToastCommand = new ShowErrorToastCommand(this, error, resourceManager);
         this.viewCommands.beforeApply(showErrorToastCommand);
@@ -128,7 +128,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(showErrorToastCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public void finishScreen() {
         FinishScreenCommand finishScreenCommand = new FinishScreenCommand(this);
         this.viewCommands.beforeApply(finishScreenCommand);
@@ -141,7 +141,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(finishScreenCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    @Override // com.iMe.p030ui.base.mvp.LoadMoreView
     public void onLoadMoreItems(List<BaseNode> list) {
         OnLoadMoreItemsCommand onLoadMoreItemsCommand = new OnLoadMoreItemsCommand(this, list);
         this.viewCommands.beforeApply(onLoadMoreItemsCommand);
@@ -154,7 +154,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(onLoadMoreItemsCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    @Override // com.iMe.p030ui.base.mvp.LoadMoreView
     public void onLoadMoreComplete() {
         OnLoadMoreCompleteCommand onLoadMoreCompleteCommand = new OnLoadMoreCompleteCommand(this);
         this.viewCommands.beforeApply(onLoadMoreCompleteCommand);
@@ -167,7 +167,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(onLoadMoreCompleteCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    @Override // com.iMe.p030ui.base.mvp.LoadMoreView
     public void onLoadMoreError() {
         OnLoadMoreErrorCommand onLoadMoreErrorCommand = new OnLoadMoreErrorCommand(this);
         this.viewCommands.beforeApply(onLoadMoreErrorCommand);
@@ -180,7 +180,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         this.viewCommands.afterApply(onLoadMoreErrorCommand);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.SwipeRefreshView
+    @Override // com.iMe.p030ui.base.mvp.SwipeRefreshView
     public void showRefreshing(boolean z) {
         ShowRefreshingCommand showRefreshingCommand = new ShowRefreshingCommand(this, z);
         this.viewCommands.beforeApply(showRefreshingCommand);
@@ -194,7 +194,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class OpenBrowserUrlCommand extends ViewCommand<TwitterView> {
         public final String url;
 
@@ -210,7 +210,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShareLinkCommand extends ViewCommand<TwitterView> {
         public final String url;
 
@@ -226,7 +226,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class RenderInitialItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -242,7 +242,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class RenderItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -258,7 +258,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShowResetTwitterDialogCommand extends ViewCommand<TwitterView> {
         public final DialogModel dialogModel;
 
@@ -274,7 +274,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShowToastCommand extends ViewCommand<TwitterView> {
         public final String text;
 
@@ -290,7 +290,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TwitterView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -310,7 +310,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TwitterView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -328,7 +328,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class FinishScreenCommand extends ViewCommand<TwitterView> {
         FinishScreenCommand(TwitterView$$State twitterView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);
@@ -341,7 +341,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -357,7 +357,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<TwitterView> {
         OnLoadMoreCompleteCommand(TwitterView$$State twitterView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -370,7 +370,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<TwitterView> {
         OnLoadMoreErrorCommand(TwitterView$$State twitterView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -383,7 +383,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShowRefreshingCommand extends ViewCommand<TwitterView> {
         public final boolean show;
 

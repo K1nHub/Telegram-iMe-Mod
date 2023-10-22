@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.zip.Deflater;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DeflaterSink.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DeflaterSink implements Sink {
     private boolean closed;
     private final Deflater deflater;

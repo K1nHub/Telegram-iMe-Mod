@@ -7,20 +7,20 @@
 
 
 # instance fields
-.field final synthetic b:Lj$/util/function/y;
+.field final synthetic b:Lj$/util/function/x;
 
-.field final synthetic c:Lj$/util/function/v;
+.field final synthetic c:Lj$/util/function/u;
 
 .field final synthetic d:Lj$/util/function/b;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/function/y;Lj$/util/function/v;Lj$/util/function/b;)V
+.method constructor <init>(Lj$/util/function/x;Lj$/util/function/u;Lj$/util/function/b;)V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/O2;->b:Lj$/util/function/y;
+    iput-object p1, p0, Lj$/util/stream/O2;->b:Lj$/util/function/x;
 
-    iput-object p2, p0, Lj$/util/stream/O2;->c:Lj$/util/function/v;
+    iput-object p2, p0, Lj$/util/stream/O2;->c:Lj$/util/function/u;
 
     iput-object p3, p0, Lj$/util/stream/O2;->d:Lj$/util/function/b;
 
@@ -44,11 +44,11 @@
 .method public accept(I)V
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/O2;->c:Lj$/util/function/v;
+    iget-object v0, p0, Lj$/util/stream/O2;->c:Lj$/util/function/u;
 
     iget-object v1, p0, Lj$/util/stream/T2;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Lj$/util/function/v;->accept(Ljava/lang/Object;I)V
+    invoke-interface {v0, v1, p1}, Lj$/util/function/u;->accept(Ljava/lang/Object;I)V
 
     return-void
 .end method
@@ -113,7 +113,7 @@
     return-void
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1
@@ -127,18 +127,18 @@
     return-object v0
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
-    iget-object p1, p0, Lj$/util/stream/O2;->b:Lj$/util/function/y;
+    iget-object p1, p0, Lj$/util/stream/O2;->b:Lj$/util/function/x;
 
-    invoke-interface {p1}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 

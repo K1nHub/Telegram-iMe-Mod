@@ -3,7 +3,7 @@ package okio;
 import java.nio.ByteBuffer;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RealBufferedSink.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealBufferedSink implements BufferedSink {
     public final Buffer bufferField;
     public boolean closed;

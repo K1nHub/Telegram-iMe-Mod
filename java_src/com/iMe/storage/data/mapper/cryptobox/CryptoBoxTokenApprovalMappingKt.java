@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.crypto.cryptobox.CryptoBoxTok
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTokenApprovalInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTokenApprovalMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTokenApprovalMappingKt {
     public static final CryptoBoxTokenApprovalInfo mapToDomain(CryptoBoxTokenApprovalResponse cryptoBoxTokenApprovalResponse) {
         Intrinsics.checkNotNullParameter(cryptoBoxTokenApprovalResponse, "<this>");

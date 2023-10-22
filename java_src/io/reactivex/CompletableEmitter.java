@@ -1,5 +1,5 @@
 package io.reactivex;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface CompletableEmitter {
     void onComplete();
 

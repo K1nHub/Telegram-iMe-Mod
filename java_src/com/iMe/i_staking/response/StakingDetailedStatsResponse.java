@@ -3,7 +3,7 @@ package com.iMe.i_staking.response;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedStatsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDetailedStatsResponse {
     private final BigDecimal availableForWithdrawal;
     private final StakingValuesResponse debt;

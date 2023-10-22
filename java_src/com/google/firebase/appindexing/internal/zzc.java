@@ -11,26 +11,26 @@ import com.google.firebase.appindexing.Action;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "ActionImplCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzc extends AbstractSafeParcelable implements Action {
     public static final Parcelable.Creator<zzc> CREATOR = new zzd();
-    @SafeParcelable.Field(getter = "getActionType", m797id = 1)
+    @SafeParcelable.Field(getter = "getActionType", m1089id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getObjectName", m797id = 2)
+    @SafeParcelable.Field(getter = "getObjectName", m1089id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getObjectUrl", m797id = 3)
+    @SafeParcelable.Field(getter = "getObjectUrl", m1089id = 3)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getObjectSameAs", m797id = 4)
+    @SafeParcelable.Field(getter = "getObjectSameAs", m1089id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getMetadata", m797id = 5)
+    @SafeParcelable.Field(getter = "getMetadata", m1089id = 5)
     private final zzb zze;
-    @SafeParcelable.Field(getter = "getActionStatus", m797id = 6)
+    @SafeParcelable.Field(getter = "getActionStatus", m1089id = 6)
     private final String zzf;
-    @SafeParcelable.Field(getter = "getPropertyBundle", m797id = 7)
+    @SafeParcelable.Field(getter = "getPropertyBundle", m1089id = 7)
     private final Bundle zzg;
 
     @SafeParcelable.Constructor
-    public zzc(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) String str3, @SafeParcelable.Param(m796id = 4) String str4, @SafeParcelable.Param(m796id = 5) zzb zzbVar, @SafeParcelable.Param(m796id = 6) String str5, @SafeParcelable.Param(m796id = 7) Bundle bundle) {
+    public zzc(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) String str3, @SafeParcelable.Param(m1088id = 4) String str4, @SafeParcelable.Param(m1088id = 5) zzb zzbVar, @SafeParcelable.Param(m1088id = 6) String str5, @SafeParcelable.Param(m1088id = 7) Bundle bundle) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

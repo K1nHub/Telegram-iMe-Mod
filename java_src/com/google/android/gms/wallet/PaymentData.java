@@ -12,24 +12,24 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentDataCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PaymentData extends AbstractSafeParcelable implements AutoResolvableResult {
     public static final Parcelable.Creator<PaymentData> CREATOR = new zzaa();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     String zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     CardInfo zzb;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     UserAddress zzc;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     PaymentMethodToken zzd;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     String zze;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     Bundle zzf;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     String zzg;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     Bundle zzh;
 
     private PaymentData() {
@@ -109,7 +109,7 @@ public final class PaymentData extends AbstractSafeParcelable implements AutoRes
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentData(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) CardInfo cardInfo, @SafeParcelable.Param(m796id = 3) UserAddress userAddress, @SafeParcelable.Param(m796id = 4) PaymentMethodToken paymentMethodToken, @SafeParcelable.Param(m796id = 5) String str2, @SafeParcelable.Param(m796id = 6) Bundle bundle, @SafeParcelable.Param(m796id = 7) String str3, @SafeParcelable.Param(m796id = 8) Bundle bundle2) {
+    public PaymentData(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) CardInfo cardInfo, @SafeParcelable.Param(m1088id = 3) UserAddress userAddress, @SafeParcelable.Param(m1088id = 4) PaymentMethodToken paymentMethodToken, @SafeParcelable.Param(m1088id = 5) String str2, @SafeParcelable.Param(m1088id = 6) Bundle bundle, @SafeParcelable.Param(m1088id = 7) String str3, @SafeParcelable.Param(m1088id = 8) Bundle bundle2) {
         this.zza = str;
         this.zzb = cardInfo;
         this.zzc = userAddress;

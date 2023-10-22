@@ -5,8 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.IntRange;
 /* compiled from: Collections.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMKt {
     public static final <T> Collection<T> asCollection(T[] tArr) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
@@ -55,6 +56,11 @@ public class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMK
         Intrinsics.checkNotNullParameter(elements, "elements");
         filterNotNull = ArraysKt___ArraysKt.filterNotNull(elements);
         return filterNotNull;
+    }
+
+    public static IntRange getIndices(Collection<?> collection) {
+        Intrinsics.checkNotNullParameter(collection, "<this>");
+        return new IntRange(0, collection.size() - 1);
     }
 
     public static <T> int getLastIndex(List<? extends T> list) {

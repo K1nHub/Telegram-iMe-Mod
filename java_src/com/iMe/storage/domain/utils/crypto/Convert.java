@@ -1,7 +1,7 @@
 package com.iMe.storage.domain.utils.crypto;
 
 import java.math.BigDecimal;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Convert {
     public static BigDecimal fromWei(String number, Unit unit) {
         return fromWei(new BigDecimal(number), unit);
@@ -11,7 +11,7 @@ public final class Convert {
         return number.divide(unit.getWeiFactor());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum Unit {
         WEI("wei", 0),
         KWEI("kwei", 3),

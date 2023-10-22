@@ -17,15 +17,15 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public final class zan extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zan> CREATOR = new zao();
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zaa;
     private final HashMap zab;
-    @SafeParcelable.Field(getter = "getRootClassName", m797id = 3)
+    @SafeParcelable.Field(getter = "getRootClassName", m1089id = 3)
     private final String zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zan(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) ArrayList arrayList, @SafeParcelable.Param(m796id = 3) String str) {
+    public zan(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ArrayList arrayList, @SafeParcelable.Param(m1088id = 3) String str) {
         this.zaa = i;
         HashMap hashMap = new HashMap();
         int size = arrayList.size();

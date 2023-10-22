@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: CryptoProduct.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum CryptoProduct {
     PRODUCT_100(100.0f),
     PRODUCT_250(250.0f),
@@ -31,7 +31,7 @@ public enum CryptoProduct {
     }
 
     /* compiled from: CryptoProduct.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

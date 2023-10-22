@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface zzeb extends IInterface {
     String zzd(zzp zzpVar) throws RemoteException;
 

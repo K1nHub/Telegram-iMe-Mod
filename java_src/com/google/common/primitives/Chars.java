@@ -1,7 +1,7 @@
 package com.google.common.primitives;
 
 import com.google.common.base.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Chars {
     public static char fromBytes(byte b, byte b2) {
         return (char) ((b << 8) | (b2 & 255));

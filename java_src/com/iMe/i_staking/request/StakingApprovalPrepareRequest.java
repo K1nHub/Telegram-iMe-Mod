@@ -1,9 +1,9 @@
 package com.iMe.i_staking.request;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingApprovalPrepareRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingApprovalPrepareRequest {
     private final long stakingId;
     private final String token;
@@ -43,7 +43,7 @@ public final class StakingApprovalPrepareRequest {
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.stakingId) * 31) + this.token.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.token.hashCode();
     }
 
     public String toString() {

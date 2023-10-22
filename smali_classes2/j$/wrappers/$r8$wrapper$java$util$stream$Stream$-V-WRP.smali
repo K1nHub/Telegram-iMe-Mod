@@ -30,13 +30,13 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/O0;
+    instance-of v0, p0, Lj$/wrappers/L0;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/O0;
+    check-cast p0, Lj$/wrappers/L0;
 
-    iget-object p0, p0, Lj$/wrappers/O0;->a:Lj$/util/stream/Stream;
+    iget-object p0, p0, Lj$/wrappers/L0;->a:Lj$/util/stream/Stream;
 
     return-object p0
 
@@ -50,16 +50,16 @@
 
 
 # virtual methods
-.method public synthetic B(Ljava/lang/Object;Lj$/util/function/BiFunction;Lj$/util/function/b;)Ljava/lang/Object;
+.method public synthetic A(Ljava/lang/Object;Lj$/util/function/BiFunction;Lj$/util/function/b;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p2}, Lj$/wrappers/t;->a(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
+    invoke-static {p2}, Lj$/wrappers/s;->a(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
 
     move-result-object p2
 
-    invoke-static {p3}, Lj$/wrappers/v;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
+    invoke-static {p3}, Lj$/wrappers/u;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
 
     move-result-object p3
 
@@ -70,12 +70,12 @@
     return-object p1
 .end method
 
-.method public synthetic E(Lj$/util/function/Function;)Lj$/util/stream/U;
+.method public synthetic D(Lj$/util/function/Function;)Lj$/util/stream/U;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
+    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
 
     move-result-object p1
 
@@ -83,19 +83,19 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {p1}, Lj$/wrappers/H0;->m0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic T(Lj$/util/function/Predicate;)Lj$/util/stream/Stream;
+.method public synthetic S(Lj$/util/function/Predicate;)Lj$/util/stream/Stream;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
 
     move-result-object p1
 
@@ -110,7 +110,7 @@
     return-object p1
 .end method
 
-.method public synthetic V(Lj$/util/function/Consumer;)Lj$/util/stream/Stream;
+.method public synthetic U(Lj$/util/function/Consumer;)Lj$/util/stream/Stream;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
@@ -130,12 +130,12 @@
     return-object p1
 .end method
 
-.method public synthetic W(Lj$/util/function/Predicate;)Z
+.method public synthetic V(Lj$/util/function/Predicate;)Z
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
 
     move-result-object p1
 
@@ -146,12 +146,12 @@
     return p1
 .end method
 
-.method public synthetic X(Lj$/util/function/Function;)Lj$/util/stream/e1;
+.method public synthetic W(Lj$/util/function/Function;)Lj$/util/stream/e1;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
+    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
 
     move-result-object p1
 
@@ -159,7 +159,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/M0;->n0(Ljava/util/stream/LongStream;)Lj$/util/stream/e1;
+    invoke-static {p1}, Lj$/wrappers/J0;->m0(Ljava/util/stream/LongStream;)Lj$/util/stream/e1;
 
     move-result-object p1
 
@@ -171,7 +171,7 @@
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
 
     move-result-object p1
 
@@ -182,7 +182,7 @@
     return p1
 .end method
 
-.method public synthetic b0(Lj$/wrappers/I0;)Ljava/lang/Object;
+.method public synthetic a0(Lj$/wrappers/F0;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
@@ -195,7 +195,7 @@
 
     .line 1
     :cond_0
-    iget-object p1, p1, Lj$/wrappers/I0;->a:Ljava/util/stream/Collector;
+    iget-object p1, p1, Lj$/wrappers/F0;->a:Ljava/util/stream/Collector;
 
     .line 2
     :goto_0
@@ -211,7 +211,7 @@
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
+    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
 
     move-result-object p1
 
@@ -224,6 +224,22 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public synthetic c0(Lj$/util/function/Predicate;)Z
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
+
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->noneMatch(Ljava/util/function/Predicate;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public synthetic close()V
@@ -246,22 +262,6 @@
     move-result-wide v0
 
     return-wide v0
-.end method
-
-.method public synthetic d0(Lj$/util/function/Predicate;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
-
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->noneMatch(Ljava/util/function/Predicate;)Z
-
-    move-result p1
-
-    return p1
 .end method
 
 .method public synthetic distinct()Lj$/util/stream/Stream;
@@ -294,6 +294,26 @@
     return-void
 .end method
 
+.method public synthetic f0(Lj$/util/function/ToLongFunction;)Lj$/util/stream/e1;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
+
+    invoke-static {p1}, Lj$/wrappers/C0;->a(Lj$/util/function/ToLongFunction;)Ljava/util/function/ToLongFunction;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToLong(Ljava/util/function/ToLongFunction;)Ljava/util/stream/LongStream;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/J0;->m0(Ljava/util/stream/LongStream;)Lj$/util/stream/e1;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public synthetic findAny()Lj$/util/Optional;
     .locals 1
 
@@ -303,7 +323,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/a;->m(Ljava/util/Optional;)Lj$/util/Optional;
+    invoke-static {v0}, Lj$/util/k;->i(Ljava/util/Optional;)Lj$/util/Optional;
 
     move-result-object v0
 
@@ -319,7 +339,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/a;->m(Ljava/util/Optional;)Lj$/util/Optional;
+    invoke-static {v0}, Lj$/util/k;->i(Ljava/util/Optional;)Lj$/util/Optional;
 
     move-result-object v0
 
@@ -340,32 +360,12 @@
     return-void
 .end method
 
-.method public synthetic g0(Lj$/util/function/ToLongFunction;)Lj$/util/stream/e1;
+.method public synthetic i(Lj$/util/function/x;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/F0;->a(Lj$/util/function/ToLongFunction;)Ljava/util/function/ToLongFunction;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToLong(Ljava/util/function/ToLongFunction;)Ljava/util/stream/LongStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/M0;->n0(Ljava/util/stream/LongStream;)Lj$/util/stream/e1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic i(Lj$/util/function/y;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
-
-    invoke-static {p1}, Lj$/wrappers/z0;->a(Lj$/util/function/y;)Ljava/util/function/Supplier;
+    invoke-static {p1}, Lj$/wrappers/w0;->a(Lj$/util/function/x;)Ljava/util/function/Supplier;
 
     move-result-object p1
 
@@ -378,6 +378,26 @@
     move-result-object p3
 
     invoke-interface {v0, p1, p2, p3}, Ljava/util/stream/Stream;->collect(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic i0(Lj$/util/function/ToDoubleFunction;)Lj$/util/stream/U;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
+
+    invoke-static {p1}, Lj$/wrappers/y0;->a(Lj$/util/function/ToDoubleFunction;)Ljava/util/function/ToDoubleFunction;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/H0;->m0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
 
     move-result-object p1
 
@@ -408,36 +428,36 @@
     return-object v0
 .end method
 
-.method public synthetic j0(Lj$/util/function/ToDoubleFunction;)Lj$/util/stream/U;
+.method public synthetic l(Lj$/util/function/ToIntFunction;)Lj$/util/stream/IntStream;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/B0;->a(Lj$/util/function/ToDoubleFunction;)Ljava/util/function/ToDoubleFunction;
+    invoke-static {p1}, Lj$/wrappers/A0;->a(Lj$/util/function/ToIntFunction;)Ljava/util/function/ToIntFunction;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$IntStream$-V-WRP;->convert(Ljava/util/stream/IntStream;)Lj$/util/stream/IntStream;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic l(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public synthetic l0(Ljava/lang/Object;Lj$/util/function/b;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/T;->a(Lj$/util/function/m;)Ljava/util/function/IntFunction;
+    invoke-static {p2}, Lj$/wrappers/u;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Ljava/util/stream/Stream;->reduce(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -460,36 +480,20 @@
     return-object p1
 .end method
 
-.method public synthetic m(Lj$/util/function/ToIntFunction;)Lj$/util/stream/IntStream;
+.method public synthetic m(Lj$/util/function/Function;)Lj$/util/stream/Stream;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/D0;->a(Lj$/util/function/ToIntFunction;)Ljava/util/function/ToIntFunction;
+    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$IntStream$-V-WRP;->convert(Ljava/util/stream/IntStream;)Lj$/util/stream/IntStream;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic m0(Ljava/lang/Object;Lj$/util/function/b;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
-
-    invoke-static {p2}, Lj$/wrappers/v;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
-
-    move-result-object p2
-
-    invoke-interface {v0, p1, p2}, Ljava/util/stream/Stream;->reduce(Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->convert(Ljava/util/stream/Stream;)Lj$/util/stream/Stream;
 
     move-result-object p1
 
@@ -505,7 +509,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/util/a;->m(Ljava/util/Optional;)Lj$/util/Optional;
+    invoke-static {p1}, Lj$/util/k;->i(Ljava/util/Optional;)Lj$/util/Optional;
 
     move-result-object p1
 
@@ -521,7 +525,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/util/a;->m(Ljava/util/Optional;)Lj$/util/Optional;
+    invoke-static {p1}, Lj$/util/k;->i(Ljava/util/Optional;)Lj$/util/Optional;
 
     move-result-object p1
 
@@ -533,27 +537,7 @@
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->convert(Ljava/util/stream/Stream;)Lj$/util/stream/Stream;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic o(Lj$/util/function/Function;)Lj$/util/stream/Stream;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
-
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
+    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
 
     move-result-object p1
 
@@ -577,7 +561,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-static {p1}, Lj$/wrappers/D0;->m0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
 
     move-result-object p1
 
@@ -593,11 +577,31 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-static {v0}, Lj$/wrappers/D0;->m0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public synthetic s(Lj$/util/function/b;)Lj$/util/Optional;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
+
+    invoke-static {p1}, Lj$/wrappers/u;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->reduce(Ljava/util/function/BinaryOperator;)Ljava/util/Optional;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/util/k;->i(Ljava/util/Optional;)Lj$/util/Optional;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public synthetic sequential()Lj$/util/stream/g;
@@ -609,7 +613,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-static {v0}, Lj$/wrappers/D0;->m0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
 
     move-result-object v0
 
@@ -664,7 +668,7 @@
     return-object p1
 .end method
 
-.method public synthetic spliterator()Lj$/util/s;
+.method public synthetic spliterator()Lj$/util/Spliterator;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
@@ -673,31 +677,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/g;->a(Ljava/util/Spliterator;)Lj$/util/s;
+    invoke-static {v0}, Lj$/wrappers/g;->a(Ljava/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public synthetic t(Lj$/util/function/b;)Lj$/util/Optional;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
-
-    invoke-static {p1}, Lj$/wrappers/v;->a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->reduce(Ljava/util/function/BinaryOperator;)Ljava/util/Optional;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/util/a;->m(Ljava/util/Optional;)Lj$/util/Optional;
-
-    move-result-object p1
-
-    return-object p1
 .end method
 
 .method public synthetic toArray()[Ljava/lang/Object;
@@ -712,6 +696,22 @@
     return-object v0
 .end method
 
+.method public synthetic toArray(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->a:Ljava/util/stream/Stream;
+
+    invoke-static {p1}, Lj$/wrappers/Q;->a(Lj$/util/function/IntFunction;)Ljava/util/function/IntFunction;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/stream/Stream;->toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public synthetic unordered()Lj$/util/stream/g;
     .locals 1
 
@@ -721,7 +721,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-static {v0}, Lj$/wrappers/D0;->m0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
 
     move-result-object v0
 

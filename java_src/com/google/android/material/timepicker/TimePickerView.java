@@ -14,7 +14,7 @@ import com.google.android.material.R$id;
 import com.google.android.material.R$layout;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.chip.Chip;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class TimePickerView extends ConstraintLayout {
     private final Chip hourView;
     private final Chip minuteView;
@@ -24,17 +24,17 @@ class TimePickerView extends ConstraintLayout {
     private final View.OnClickListener selectionListener;
     private final MaterialButtonToggleGroup toggle;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     interface OnDoubleTapListener {
         void onDoubleTap();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     interface OnPeriodChangeListener {
         void onPeriodChange(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     interface OnSelectionChange {
         void onSelectionChanged(int i);
     }

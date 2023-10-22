@@ -3,17 +3,14 @@ package kotlin.p034io;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.Charsets;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FileReadWrite.kt */
 /* renamed from: kotlin.io.FilesKt__FileReadWriteKt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
     public static byte[] readBytes(File file) {
         Intrinsics.checkNotNullParameter(file, "<this>");
@@ -76,24 +73,5 @@ public class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
             CloseableKt.closeFinally(fileOutputStream, null);
         } finally {
         }
-    }
-
-    public static final String readText(File file, Charset charset) {
-        Intrinsics.checkNotNullParameter(file, "<this>");
-        Intrinsics.checkNotNullParameter(charset, "charset");
-        InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(file), charset);
-        try {
-            String readText = TextStreamsKt.readText(inputStreamReader);
-            CloseableKt.closeFinally(inputStreamReader, null);
-            return readText;
-        } finally {
-        }
-    }
-
-    public static /* synthetic */ String readText$default(File file, Charset charset, int i, Object obj) {
-        if ((i & 1) != 0) {
-            charset = Charsets.UTF_8;
-        }
-        return readText(file, charset);
     }
 }

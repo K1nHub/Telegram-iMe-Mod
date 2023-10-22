@@ -18,7 +18,7 @@ import okio.Buffer;
 import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: ResponseBody.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ResponseBody implements Closeable {
     public static final Companion Companion = new Companion(null);
     private Reader reader;
@@ -154,7 +154,7 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* compiled from: ResponseBody.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BomAwareReader extends Reader {
         private final Charset charset;
         private boolean closed;
@@ -195,7 +195,7 @@ public abstract class ResponseBody implements Closeable {
     }
 
     /* compiled from: ResponseBody.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

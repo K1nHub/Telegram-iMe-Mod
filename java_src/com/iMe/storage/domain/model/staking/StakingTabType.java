@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.staking;
 import com.iMe.storage.R$id;
 import com.iMe.storage.R$string;
 /* compiled from: StakingTabType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum StakingTabType {
     ALL(R$string.staking_all, R$id.staking_all, null),
     PARTICIPATED(R$string.staking_participated, R$id.staking_participated, Boolean.TRUE);

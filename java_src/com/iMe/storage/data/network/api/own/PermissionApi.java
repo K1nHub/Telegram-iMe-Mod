@@ -11,7 +11,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: PermissionApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface PermissionApi {
     @POST("getNotOwnWallets")
     Observable<ApiBaseResponse<AccountInfoResponse>> getAccountInfo(@Body GetAccountInfoRequest getAccountInfoRequest);

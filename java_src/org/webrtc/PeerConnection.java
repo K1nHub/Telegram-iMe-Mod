@@ -10,7 +10,7 @@ import java.util.Objects;
 import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class PeerConnection {
     private final List<MediaStream> localStreams;
     private final long nativePeerConnection;
@@ -18,26 +18,26 @@ public class PeerConnection {
     private List<RtpSender> senders;
     private List<RtpTransceiver> transceivers;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum BundlePolicy {
         BALANCED,
         MAXBUNDLE,
         MAXCOMPAT
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum CandidateNetworkPolicy {
         ALL,
         LOW_COST
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum ContinualGatheringPolicy {
         GATHER_ONCE,
         GATHER_CONTINUALLY
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum IceTransportsType {
         NONE,
         RELAY,
@@ -45,17 +45,17 @@ public class PeerConnection {
         ALL
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum KeyType {
         RSA,
         ECDSA
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface Observer {
 
         /* renamed from: org.webrtc.PeerConnection$Observer$-CC  reason: invalid class name */
-        /* loaded from: classes7.dex */
+        /* loaded from: classes6.dex */
         public final /* synthetic */ class CC {
             @CalledByNative("Observer")
             public static void $default$onConnectionChange(Observer observer, PeerConnectionState peerConnectionState) {
@@ -120,32 +120,32 @@ public class PeerConnection {
         void onTrack(RtpTransceiver rtpTransceiver);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum PortPrunePolicy {
         NO_PRUNE,
         PRUNE_BASED_ON_PRIORITY,
         KEEP_FIRST_READY
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum RtcpMuxPolicy {
         NEGOTIATE,
         REQUIRE
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum SdpSemantics {
         PLAN_B,
         UNIFIED_PLAN
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum TcpCandidatePolicy {
         ENABLED,
         DISABLED
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum TlsCertPolicy {
         TLS_CERT_POLICY_SECURE,
         TLS_CERT_POLICY_INSECURE_NO_CHECK
@@ -223,7 +223,7 @@ public class PeerConnection {
 
     private native void nativeStopRtcEventLog();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum IceGatheringState {
         NEW,
         GATHERING,
@@ -235,7 +235,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum IceConnectionState {
         NEW,
         CHECKING,
@@ -251,7 +251,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum PeerConnectionState {
         NEW,
         CONNECTING,
@@ -266,7 +266,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum SignalingState {
         STABLE,
         HAVE_LOCAL_OFFER,
@@ -281,7 +281,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class IceServer {
         public final String hostname;
         public final String password;
@@ -371,7 +371,7 @@ public class PeerConnection {
             return new Builder(list);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes6.dex */
         public static class Builder {
             private String hostname;
             private String password;
@@ -463,7 +463,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum AdapterType {
         UNKNOWN(0),
         ETHERNET(1),
@@ -497,7 +497,7 @@ public class PeerConnection {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class RTCConfiguration {
         public RtcCertificatePem certificate;
         public List<IceServer> iceServers;

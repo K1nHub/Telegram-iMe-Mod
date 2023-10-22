@@ -13,12 +13,12 @@
 
 
 # virtual methods
-.method E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+.method D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 4
 
     sget-object v0, Lj$/util/stream/d4;->DISTINCT:Lj$/util/stream/d4;
 
-    invoke-virtual {p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -30,7 +30,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1, p2, v1, p3}, Lj$/util/stream/y2;->p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p1, p2, v1, p3}, Lj$/util/stream/y2;->o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -39,7 +39,7 @@
     :cond_0
     sget-object p3, Lj$/util/stream/d4;->ORDERED:Lj$/util/stream/d4;
 
-    invoke-virtual {p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v0
 
@@ -49,7 +49,7 @@
 
     if-eqz p3, :cond_1
 
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/s;->L0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/stream/A1;
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/s;->K0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -74,7 +74,7 @@
     invoke-direct {v3, v2, v1}, Lj$/util/stream/n0;-><init>(Lj$/util/function/Consumer;Z)V
 
     .line 2
-    invoke-virtual {v3, p1, p2}, Lj$/util/stream/o0;->c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+    invoke-virtual {v3, p1, p2}, Lj$/util/stream/o0;->c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -105,12 +105,12 @@
     return-object p2
 .end method
 
-.method F0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/s;
+.method E0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/Spliterator;
     .locals 2
 
     sget-object v0, Lj$/util/stream/d4;->DISTINCT:Lj$/util/stream/d4;
 
-    invoke-virtual {p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1, p2}, Lj$/util/stream/y2;->w0(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual {p1, p2}, Lj$/util/stream/y2;->v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object p1
 
@@ -129,7 +129,7 @@
     :cond_0
     sget-object v0, Lj$/util/stream/d4;->ORDERED:Lj$/util/stream/d4;
 
-    invoke-virtual {p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -139,13 +139,13 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/s;->L0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/stream/A1;
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/s;->K0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/stream/A1;
 
     move-result-object p1
 
     check-cast p1, Lj$/util/stream/E1;
 
-    invoke-virtual {p1}, Lj$/util/stream/E1;->spliterator()Lj$/util/s;
+    invoke-virtual {p1}, Lj$/util/stream/E1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object p1
 
@@ -154,16 +154,16 @@
     :cond_1
     new-instance v0, Lj$/util/stream/m4;
 
-    invoke-virtual {p1, p2}, Lj$/util/stream/y2;->w0(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual {p1, p2}, Lj$/util/stream/y2;->v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/util/stream/m4;-><init>(Lj$/util/s;)V
+    invoke-direct {v0, p1}, Lj$/util/stream/m4;-><init>(Lj$/util/Spliterator;)V
 
     return-object v0
 .end method
 
-.method H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 1
 
     .line 1
@@ -203,7 +203,7 @@
     return-object p1
 .end method
 
-.method L0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/stream/A1;
+.method K0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/stream/A1;
     .locals 5
 
     sget-object v0, Lj$/util/stream/p;->a:Lj$/util/stream/p;
@@ -217,10 +217,10 @@
 
     sget-object v4, Lj$/util/stream/e4;->REFERENCE:Lj$/util/stream/e4;
 
-    invoke-direct {v3, v4, v2, v1, v0}, Lj$/util/stream/z2;-><init>(Lj$/util/stream/e4;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;Lj$/util/function/y;)V
+    invoke-direct {v3, v4, v2, v1, v0}, Lj$/util/stream/z2;-><init>(Lj$/util/stream/e4;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;Lj$/util/function/x;)V
 
     .line 2
-    invoke-virtual {v3, p1, p2}, Lj$/util/stream/U2;->c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+    invoke-virtual {v3, p1, p2}, Lj$/util/stream/U2;->c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,5 +1,5 @@
 package org.telegram.messenger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AnimationNotificationsLocker {
     final int[] allowedNotifications;
     int currentAccount;

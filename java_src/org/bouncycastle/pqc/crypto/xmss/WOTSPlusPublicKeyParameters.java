@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import java.util.Objects;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class WOTSPlusPublicKeyParameters {
     private final byte[][] publicKey;
 

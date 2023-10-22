@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class KeepAliveJob extends JobIntentService {
     private static volatile CountDownLatch countDownLatch;
     private static volatile boolean startingJob;
@@ -26,7 +26,7 @@ public class KeepAliveJob extends JobIntentService {
         }
         try {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("starting keep-alive job");
+                FileLog.m100d("starting keep-alive job");
             }
             synchronized (sync) {
                 startingJob = true;
@@ -41,13 +41,13 @@ public class KeepAliveJob extends JobIntentService {
         synchronized (sync) {
             if (countDownLatch != null) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("finish keep-alive job");
+                    FileLog.m100d("finish keep-alive job");
                 }
                 countDownLatch.countDown();
             }
             if (startingJob) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("finish queued keep-alive job");
+                    FileLog.m100d("finish queued keep-alive job");
                 }
                 startingJob = false;
             }
@@ -64,7 +64,7 @@ public class KeepAliveJob extends JobIntentService {
             if (startingJob) {
                 countDownLatch = new CountDownLatch(1);
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("started keep-alive job");
+                    FileLog.m100d("started keep-alive job");
                 }
                 Utilities.globalQueue.postRunnable(finishJobByTimeoutRunnable, 60000L);
                 try {
@@ -76,7 +76,7 @@ public class KeepAliveJob extends JobIntentService {
                     countDownLatch = null;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("ended keep-alive job");
+                    FileLog.m100d("ended keep-alive job");
                 }
             }
         }

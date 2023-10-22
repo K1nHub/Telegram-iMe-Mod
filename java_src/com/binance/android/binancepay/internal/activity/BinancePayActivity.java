@@ -10,12 +10,14 @@ import com.binance.android.binancepay.api.BinancePayFactory;
 import com.binance.android.binancepay.api.BinancePayListener;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Locale;
+import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import p000a.p001a.p002a.p003a.p004a.C0000a;
 import p000a.p001a.p002a.p003a.p005b.EnumC0001a;
 import p000a.p001a.p002a.p003a.p005b.p006c.C0003a;
 import p000a.p001a.p002a.p003a.p005b.p006c.C0004b;
 import p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a;
+@Metadata(m152bv = {1, 0, 3}, m151d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u0001:\u0001\fB\u0007¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u0003\u001a\u00020\u0002J\b\u0010\u0004\u001a\u00020\u0002H\u0002J\b\u0010\u0005\u001a\u00020\u0002H\u0002J\b\u0010\u0006\u001a\u00020\u0002H\u0002R\u0016\u0010\b\u001a\u00020\u00078\u0002@\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\b\u0010\t¨\u0006\r"}, m150d2 = {"Lcom/binance/android/binancepay/internal/activity/BinancePayActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "", "goDownloadPage", "payWithClient", "showInstallDialog", "showUnSupportDialog", "Lcom/binance/android/binancepay/api/BinancePay;", "binancePay", "Lcom/binance/android/binancepay/api/BinancePay;", "<init>", "()V", "Companion", "pay_release"}, m149k = 1, m148mv = {1, 4, 0})
 /* loaded from: classes.dex */
 public final class BinancePayActivity extends AppCompatActivity {
 
@@ -31,7 +33,7 @@ public final class BinancePayActivity extends AppCompatActivity {
     }
 
     /* renamed from: a */
-    public final void m857a() {
+    public final void m1149a() {
         Locale local = Locale.getDefault();
         Intrinsics.checkExpressionValueIsNotNull(local, "local");
         String language = local.getLanguage();
@@ -68,7 +70,7 @@ public final class BinancePayActivity extends AppCompatActivity {
         super.onCreate(bundle);
         int i = Intrinsics.areEqual(getIntent().getStringExtra("extra_key_api_type"), "c2c") ? 2 : 1;
         Intrinsics.checkParameterIsNotNull(this, "context");
-        if (C0000a.m867a(this, "com.binance.dev")) {
+        if (C0000a.m1159a(this, "com.binance.dev")) {
             Intrinsics.checkParameterIsNotNull(this, "context");
             float f = BitmapDescriptorFactory.HUE_RED;
             try {

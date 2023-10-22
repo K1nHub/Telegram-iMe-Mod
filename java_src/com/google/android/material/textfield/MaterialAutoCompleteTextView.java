@@ -21,7 +21,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView {
     private final AccessibilityManager accessibilityManager;
     private final ListPopupWindow modalListPopup;

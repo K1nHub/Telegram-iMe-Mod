@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetectorOptions */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionBarcodeDetectorOptions {
     private static final Map<Integer, zztc> zzazk;
     private final int zzazr;

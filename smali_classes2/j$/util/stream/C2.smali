@@ -134,13 +134,13 @@
     return-object v0
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
     iget-wide p1, p0, Lj$/util/stream/C2;->b:D

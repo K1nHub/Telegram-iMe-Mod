@@ -8,9 +8,9 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.DividerView;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentTokenFamilyBinding implements ViewBinding {
     public final TextView buttonDone;
     public final DividerView divider;
@@ -28,7 +28,6 @@ public final class ForkContentTokenFamilyBinding implements ViewBinding {
         this.textTitle = textView3;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public NestedScrollView getRoot() {
         return this.rootView;
     }
@@ -38,7 +37,7 @@ public final class ForkContentTokenFamilyBinding implements ViewBinding {
     }
 
     public static ForkContentTokenFamilyBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_token_family, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_token_family, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -46,19 +45,19 @@ public final class ForkContentTokenFamilyBinding implements ViewBinding {
     }
 
     public static ForkContentTokenFamilyBinding bind(View view) {
-        int i = C3473R.C3476id.button_done;
+        int i = C3630R.C3633id.button_done;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3473R.C3476id.divider;
+            i = C3630R.C3633id.divider;
             DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
             if (dividerView != null) {
-                i = C3473R.C3476id.recycler_tokens;
+                i = C3630R.C3633id.recycler_tokens;
                 RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                 if (recyclerView != null) {
-                    i = C3473R.C3476id.text_description;
+                    i = C3630R.C3633id.text_description;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
-                        i = C3473R.C3476id.text_title;
+                        i = C3630R.C3633id.text_title;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView3 != null) {
                             return new ForkContentTokenFamilyBinding((NestedScrollView) view, textView, dividerView, recyclerView, textView2, textView3);

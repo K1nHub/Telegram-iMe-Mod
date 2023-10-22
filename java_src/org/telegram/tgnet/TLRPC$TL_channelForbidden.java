@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channelForbidden extends TLRPC$Chat {
     public static int constructor = 399807445;
 
@@ -9,7 +9,7 @@ public class TLRPC$TL_channelForbidden extends TLRPC$Chat {
         this.flags = readInt32;
         this.broadcast = (readInt32 & 32) != 0;
         this.megagroup = (readInt32 & 256) != 0;
-        this.f1522id = abstractSerializedData.readInt64(z);
+        this.f1600id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.title = abstractSerializedData.readString(z);
         if ((this.flags & 65536) != 0) {
@@ -25,7 +25,7 @@ public class TLRPC$TL_channelForbidden extends TLRPC$Chat {
         int i2 = this.megagroup ? i | 256 : i & (-257);
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
-        abstractSerializedData.writeInt64(this.f1522id);
+        abstractSerializedData.writeInt64(this.f1600id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeString(this.title);
         if ((this.flags & 65536) != 0) {

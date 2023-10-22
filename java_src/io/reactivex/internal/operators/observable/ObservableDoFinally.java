@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.internal.observers.BasicIntQueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream<T, T> {
     final Action onFinally;
 
@@ -23,13 +23,13 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
         this.source.subscribe(new DoFinallyObserver(observer, this.onFinally));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DoFinallyObserver<T> extends BasicIntQueueDisposable<T> implements Observer<T> {
         final Observer<? super T> downstream;
         final Action onFinally;
 
         /* renamed from: qd */
-        QueueDisposable<T> f542qd;
+        QueueDisposable<T> f455qd;
         boolean syncFused;
         Disposable upstream;
 
@@ -43,7 +43,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
             if (DisposableHelper.validate(this.upstream, disposable)) {
                 this.upstream = disposable;
                 if (disposable instanceof QueueDisposable) {
-                    this.f542qd = (QueueDisposable) disposable;
+                    this.f455qd = (QueueDisposable) disposable;
                 }
                 this.downstream.onSubscribe(this);
             }
@@ -79,7 +79,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
 
         @Override // io.reactivex.internal.fuseable.QueueFuseable
         public int requestFusion(int i) {
-            QueueDisposable<T> queueDisposable = this.f542qd;
+            QueueDisposable<T> queueDisposable = this.f455qd;
             if (queueDisposable == null || (i & 4) != 0) {
                 return 0;
             }
@@ -92,17 +92,17 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public void clear() {
-            this.f542qd.clear();
+            this.f455qd.clear();
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public boolean isEmpty() {
-            return this.f542qd.isEmpty();
+            return this.f455qd.isEmpty();
         }
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
-            T poll = this.f542qd.poll();
+            T poll = this.f455qd.poll();
             if (poll == null && this.syncFused) {
                 runFinally();
             }

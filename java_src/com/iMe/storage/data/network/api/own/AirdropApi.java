@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: AirdropApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface AirdropApi {
     @POST("airdrop/checkStart")
     Observable<ApiBaseResponse<CheckAirdropPromotionStartResponse>> checkStart(@Body CheckAirdropPromotionStartRequest checkAirdropPromotionStartRequest);

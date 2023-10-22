@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: AuthScreen.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 /* synthetic */ class AuthScreen$showPopupMenu$menuItems$2 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AuthScreen$showPopupMenu$menuItems$2(Object obj) {

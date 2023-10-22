@@ -2,7 +2,7 @@ package com.iMe.manager.multireply.message;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MessageLinkPattern.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MessageLinkPattern {
     private final String messageLinkChatPattern;
     private final String patternReplaceSymbols;

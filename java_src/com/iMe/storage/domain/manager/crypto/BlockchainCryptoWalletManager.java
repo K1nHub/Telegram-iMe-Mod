@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainCryptoWalletManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BlockchainCryptoWalletManager {
     private final BlockchainType blockchainType;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;

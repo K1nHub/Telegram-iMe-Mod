@@ -3,7 +3,7 @@ package com.google.android.gms.wearable.internal;
 import com.google.android.gms.wearable.CapabilityApi;
 import com.google.android.gms.wearable.CapabilityInfo;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzab implements CapabilityApi.CapabilityListener {
     final CapabilityApi.CapabilityListener zza;
     final String zzb;

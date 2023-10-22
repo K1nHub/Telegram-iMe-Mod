@@ -28,13 +28,13 @@ public class SignResponseData extends ResponseData {
     public static final String JSON_RESPONSE_DATA_KEY_HANDLE = "keyHandle";
     @VisibleForTesting
     public static final String JSON_RESPONSE_DATA_SIGNATURE_DATA = "signatureData";
-    @SafeParcelable.Field(getter = "getKeyHandle", m797id = 2)
+    @SafeParcelable.Field(getter = "getKeyHandle", m1089id = 2)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getClientDataString", m797id = 3)
+    @SafeParcelable.Field(getter = "getClientDataString", m1089id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getSignatureData", m797id = 4)
+    @SafeParcelable.Field(getter = "getSignatureData", m1089id = 4)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getApplication", m797id = 5)
+    @SafeParcelable.Field(getter = "getApplication", m1089id = 5)
     private final byte[] zzd;
 
     @Deprecated
@@ -105,7 +105,7 @@ public class SignResponseData extends ResponseData {
     }
 
     @SafeParcelable.Constructor
-    public SignResponseData(@SafeParcelable.Param(m796id = 2) byte[] bArr, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) byte[] bArr2, @SafeParcelable.Param(m796id = 5) byte[] bArr3) {
+    public SignResponseData(@SafeParcelable.Param(m1088id = 2) byte[] bArr, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) byte[] bArr2, @SafeParcelable.Param(m1088id = 5) byte[] bArr3) {
         this.zza = (byte[]) Preconditions.checkNotNull(bArr);
         this.zzb = (String) Preconditions.checkNotNull(str);
         this.zzc = (byte[]) Preconditions.checkNotNull(bArr2);

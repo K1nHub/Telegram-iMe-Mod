@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/o;)V
+.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/n;)V
     .locals 1
 
     const/4 v0, 0x3
@@ -122,9 +122,9 @@
 
     iget-object v1, p0, Lj$/util/stream/D2;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/o;
+    check-cast v1, Lj$/util/function/n;
 
-    invoke-direct {v0, v1}, Lj$/util/stream/R2;-><init>(Lj$/util/function/o;)V
+    invoke-direct {v0, v1}, Lj$/util/stream/R2;-><init>(Lj$/util/function/n;)V
 
     return-object v0
 

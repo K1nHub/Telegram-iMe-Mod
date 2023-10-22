@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_photos_photo extends TLObject {
     public static int constructor = 539045032;
     public TLRPC$Photo photo;

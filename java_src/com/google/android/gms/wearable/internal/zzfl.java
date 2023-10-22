@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.wearable.MessageApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfl implements MessageApi {
     private static final PendingResult zza(GoogleApiClient googleApiClient, MessageApi.MessageListener messageListener, IntentFilter[] intentFilterArr) {
         return googleApiClient.enqueue(new zzfj(googleApiClient, messageListener, googleApiClient.registerListener(messageListener), intentFilterArr, null));

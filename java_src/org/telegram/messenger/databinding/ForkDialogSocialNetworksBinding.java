@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     public final LinearLayout linearLayout;
     private final ConstraintLayout rootView;
@@ -21,7 +21,6 @@ public final class ForkDialogSocialNetworksBinding implements ViewBinding {
         this.text = textView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_dialog_social_networks, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_dialog_social_networks, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,13 +38,13 @@ public final class ForkDialogSocialNetworksBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksBinding bind(View view) {
-        int i = C3473R.C3476id.divider;
+        int i = C3630R.C3633id.divider;
         View findChildViewById = ViewBindings.findChildViewById(view, i);
         if (findChildViewById != null) {
-            i = C3473R.C3476id.linearLayout;
+            i = C3630R.C3633id.linearLayout;
             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout != null) {
-                i = C3473R.C3476id.text;
+                i = C3630R.C3633id.text;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
                     return new ForkDialogSocialNetworksBinding((ConstraintLayout) view, findChildViewById, linearLayout, textView);

@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzdq {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String zza(List<File> list) throws NoSuchAlgorithmException, IOException {

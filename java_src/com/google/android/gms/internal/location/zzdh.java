@@ -17,27 +17,27 @@ import java.util.Locale;
 /* loaded from: classes.dex */
 public final class zzdh extends AbstractSafeParcelable implements Geofence {
     public static final Parcelable.Creator<zzdh> CREATOR = new zzdi();
-    @SafeParcelable.Field(getter = "getRequestId", m797id = 1)
+    @SafeParcelable.Field(getter = "getRequestId", m1089id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getExpirationTime", m797id = 2)
+    @SafeParcelable.Field(getter = "getExpirationTime", m1089id = 2)
     private final long zzb;
-    @SafeParcelable.Field(getter = "getType", m797id = 3)
+    @SafeParcelable.Field(getter = "getType", m1089id = 3)
     private final short zzc;
-    @SafeParcelable.Field(getter = "getLatitude", m797id = 4)
+    @SafeParcelable.Field(getter = "getLatitude", m1089id = 4)
     private final double zzd;
-    @SafeParcelable.Field(getter = "getLongitude", m797id = 5)
+    @SafeParcelable.Field(getter = "getLongitude", m1089id = 5)
     private final double zze;
-    @SafeParcelable.Field(getter = "getRadius", m797id = 6)
+    @SafeParcelable.Field(getter = "getRadius", m1089id = 6)
     private final float zzf;
-    @SafeParcelable.Field(getter = "getTransitionTypes", m797id = 7)
+    @SafeParcelable.Field(getter = "getTransitionTypes", m1089id = 7)
     private final int zzg;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getNotificationResponsiveness", m797id = 8)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getNotificationResponsiveness", m1089id = 8)
     private final int zzh;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getLoiteringDelay", m797id = 9)
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getLoiteringDelay", m1089id = 9)
     private final int zzi;
 
     @SafeParcelable.Constructor
-    public zzdh(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 7) int i, @SafeParcelable.Param(m796id = 3) short s, @SafeParcelable.Param(m796id = 4) double d, @SafeParcelable.Param(m796id = 5) double d2, @SafeParcelable.Param(m796id = 6) float f, @SafeParcelable.Param(m796id = 2) long j, @SafeParcelable.Param(m796id = 8) int i2, @SafeParcelable.Param(m796id = 9) int i3) {
+    public zzdh(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 7) int i, @SafeParcelable.Param(m1088id = 3) short s, @SafeParcelable.Param(m1088id = 4) double d, @SafeParcelable.Param(m1088id = 5) double d2, @SafeParcelable.Param(m1088id = 6) float f, @SafeParcelable.Param(m1088id = 2) long j, @SafeParcelable.Param(m1088id = 8) int i2, @SafeParcelable.Param(m1088id = 9) int i3) {
         if (str == null || str.length() > 100) {
             throw new IllegalArgumentException("requestId is null or too long: ".concat(String.valueOf(str)));
         }

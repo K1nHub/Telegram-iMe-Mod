@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$Dialog extends TLObject {
     public TLRPC$DraftMessage draft;
     public int flags;
     public int folder_id;
 
     /* renamed from: id */
-    public long f1528id;
+    public long f1606id;
     public boolean isFolder;
     public int last_message_date;
     public TLRPC$PeerNotifySettings notify_settings;

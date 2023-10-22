@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CachedSettingsIo {
     private final Context context;
 
@@ -24,7 +24,7 @@ public class CachedSettingsIo {
         Throwable th;
         FileInputStream fileInputStream;
         JSONObject jSONObject;
-        Logger.getLogger().m746d("Checking for cached settings...");
+        Logger.getLogger().m1038d("Checking for cached settings...");
         FileInputStream fileInputStream2 = null;
         try {
             try {
@@ -36,12 +36,12 @@ public class CachedSettingsIo {
                         fileInputStream2 = fileInputStream;
                     } catch (Exception e) {
                         e = e;
-                        Logger.getLogger().m743e("Failed to fetch cached settings", e);
+                        Logger.getLogger().m1035e("Failed to fetch cached settings", e);
                         CommonUtils.closeOrLog(fileInputStream, "Error while closing settings cache file.");
                         return null;
                     }
                 } else {
-                    Logger.getLogger().m740v("Settings file does not exist.");
+                    Logger.getLogger().m1032v("Settings file does not exist.");
                     jSONObject = null;
                 }
                 CommonUtils.closeOrLog(fileInputStream2, "Error while closing settings cache file.");
@@ -63,7 +63,7 @@ public class CachedSettingsIo {
 
     public void writeCachedSettings(long j, JSONObject jSONObject) {
         FileWriter fileWriter;
-        Logger.getLogger().m740v("Writing settings to cache file...");
+        Logger.getLogger().m1032v("Writing settings to cache file...");
         if (jSONObject != null) {
             FileWriter fileWriter2 = null;
             try {
@@ -83,7 +83,7 @@ public class CachedSettingsIo {
             } catch (Exception e2) {
                 e = e2;
                 fileWriter2 = fileWriter;
-                Logger.getLogger().m743e("Failed to cache settings", e);
+                Logger.getLogger().m1035e("Failed to cache settings", e);
                 CommonUtils.closeOrLog(fileWriter2, "Failed to close settings writer.");
             } catch (Throwable th2) {
                 th = th2;

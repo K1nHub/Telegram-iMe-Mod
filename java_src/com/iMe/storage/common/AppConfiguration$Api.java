@@ -2,7 +2,7 @@ package com.iMe.storage.common;
 
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AppConfiguration$Api {
     public static final AppConfiguration$Api INSTANCE = new AppConfiguration$Api();
 

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/q;
+.implements Lj$/util/p;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/PrimitiveIterator$OfLong;)Lj$/util/q;
+.method public static synthetic a(Ljava/util/PrimitiveIterator$OfLong;)Lj$/util/p;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/f;
 
-    iget-object p0, p0, Lj$/wrappers/f;->a:Lj$/util/q;
+    iget-object p0, p0, Lj$/wrappers/f;->a:Lj$/util/p;
 
     return-object p0
 
@@ -50,12 +50,12 @@
 
 
 # virtual methods
-.method public synthetic d(Lj$/util/function/q;)V
+.method public synthetic d(Lj$/util/function/p;)V
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/e;->a:Ljava/util/PrimitiveIterator$OfLong;
 
-    invoke-static {p1}, Lj$/wrappers/f0;->a(Lj$/util/function/q;)Ljava/util/function/LongConsumer;
+    invoke-static {p1}, Lj$/wrappers/d0;->a(Lj$/util/function/p;)Ljava/util/function/LongConsumer;
 
     move-result-object p1
 

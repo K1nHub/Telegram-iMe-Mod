@@ -323,7 +323,7 @@ public final class AdtsReader implements ElementaryStreamReader {
         if (!this.hasOutputFormat) {
             int readBits = this.adtsScratch.readBits(2) + 1;
             if (readBits != 2) {
-                Log.m814w(TAG, "Detected audio object type: " + readBits + ", but assuming AAC LC.");
+                Log.m1106w(TAG, "Detected audio object type: " + readBits + ", but assuming AAC LC.");
                 readBits = 2;
             }
             this.adtsScratch.skipBits(5);

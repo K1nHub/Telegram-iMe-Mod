@@ -12,7 +12,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum zzb uses external 
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzjm {
     public static final zzjm zza;
     public static final zzjm zzb;

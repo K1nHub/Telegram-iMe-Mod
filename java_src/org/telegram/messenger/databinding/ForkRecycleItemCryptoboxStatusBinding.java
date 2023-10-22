@@ -8,19 +8,11 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.DividerView;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding {
-    private final ConstraintLayout rootView;
-
     private ForkRecycleItemCryptoboxStatusBinding(ConstraintLayout constraintLayout, AppCompatImageView appCompatImageView, TextView textView, DividerView dividerView) {
-        this.rootView = constraintLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public ConstraintLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemCryptoboxStatusBinding inflate(LayoutInflater layoutInflater) {
@@ -28,7 +20,7 @@ public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxStatusBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_cryptobox_status, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_cryptobox_status, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,13 +28,13 @@ public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxStatusBinding bind(View view) {
-        int i = C3473R.C3476id.image_check;
+        int i = C3630R.C3633id.image_check;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3473R.C3476id.text_description;
+            i = C3630R.C3633id.text_description;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3473R.C3476id.view_divider;
+                i = C3630R.C3633id.view_divider;
                 DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                 if (dividerView != null) {
                     return new ForkRecycleItemCryptoboxStatusBinding((ConstraintLayout) view, appCompatImageView, textView, dividerView);

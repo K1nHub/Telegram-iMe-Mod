@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxInfo {
     private final int capacity;
     private final CryptoBoxChat chat;
@@ -17,7 +17,7 @@ public final class CryptoBoxInfo {
     private final String fullName;
 
     /* renamed from: id */
-    private final String f416id;
+    private final String f349id;
     private final String name;
     private final Network network;
     private final String ownerAddress;
@@ -27,7 +27,7 @@ public final class CryptoBoxInfo {
     private final CryptoBoxStatus status;
 
     public final String component1() {
-        return this.f416id;
+        return this.f349id;
     }
 
     public final TokenDetailed component10() {
@@ -104,17 +104,17 @@ public final class CryptoBoxInfo {
         }
         if (obj instanceof CryptoBoxInfo) {
             CryptoBoxInfo cryptoBoxInfo = (CryptoBoxInfo) obj;
-            return Intrinsics.areEqual(this.f416id, cryptoBoxInfo.f416id) && Intrinsics.areEqual(this.chat, cryptoBoxInfo.chat) && this.status == cryptoBoxInfo.status && Intrinsics.areEqual(this.network, cryptoBoxInfo.network) && Intrinsics.areEqual(this.name, cryptoBoxInfo.name) && Intrinsics.areEqual(this.description, cryptoBoxInfo.description) && Intrinsics.areEqual(this.ownerAddress, cryptoBoxInfo.ownerAddress) && Intrinsics.areEqual(this.contractAddress, cryptoBoxInfo.contractAddress) && Intrinsics.areEqual(this.contractUrl, cryptoBoxInfo.contractUrl) && Intrinsics.areEqual(this.rewardToken, cryptoBoxInfo.rewardToken) && Intrinsics.areEqual(this.rewardValue, cryptoBoxInfo.rewardValue) && this.capacity == cryptoBoxInfo.capacity && this.participantsCount == cryptoBoxInfo.participantsCount && Intrinsics.areEqual(this.createdAt, cryptoBoxInfo.createdAt);
+            return Intrinsics.areEqual(this.f349id, cryptoBoxInfo.f349id) && Intrinsics.areEqual(this.chat, cryptoBoxInfo.chat) && this.status == cryptoBoxInfo.status && Intrinsics.areEqual(this.network, cryptoBoxInfo.network) && Intrinsics.areEqual(this.name, cryptoBoxInfo.name) && Intrinsics.areEqual(this.description, cryptoBoxInfo.description) && Intrinsics.areEqual(this.ownerAddress, cryptoBoxInfo.ownerAddress) && Intrinsics.areEqual(this.contractAddress, cryptoBoxInfo.contractAddress) && Intrinsics.areEqual(this.contractUrl, cryptoBoxInfo.contractUrl) && Intrinsics.areEqual(this.rewardToken, cryptoBoxInfo.rewardToken) && Intrinsics.areEqual(this.rewardValue, cryptoBoxInfo.rewardValue) && this.capacity == cryptoBoxInfo.capacity && this.participantsCount == cryptoBoxInfo.participantsCount && Intrinsics.areEqual(this.createdAt, cryptoBoxInfo.createdAt);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((this.f416id.hashCode() * 31) + this.chat.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.ownerAddress.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.contractUrl.hashCode()) * 31) + this.rewardToken.hashCode()) * 31) + this.rewardValue.hashCode()) * 31) + this.capacity) * 31) + this.participantsCount) * 31) + this.createdAt.hashCode();
+        return (((((((((((((((((((((((((this.f349id.hashCode() * 31) + this.chat.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.ownerAddress.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.contractUrl.hashCode()) * 31) + this.rewardToken.hashCode()) * 31) + this.rewardValue.hashCode()) * 31) + this.capacity) * 31) + this.participantsCount) * 31) + this.createdAt.hashCode();
     }
 
     public String toString() {
-        return "CryptoBoxInfo(id=" + this.f416id + ", chat=" + this.chat + ", status=" + this.status + ", network=" + this.network + ", name=" + this.name + ", description=" + this.description + ", ownerAddress=" + this.ownerAddress + ", contractAddress=" + this.contractAddress + ", contractUrl=" + this.contractUrl + ", rewardToken=" + this.rewardToken + ", rewardValue=" + this.rewardValue + ", capacity=" + this.capacity + ", participantsCount=" + this.participantsCount + ", createdAt=" + this.createdAt + ')';
+        return "CryptoBoxInfo(id=" + this.f349id + ", chat=" + this.chat + ", status=" + this.status + ", network=" + this.network + ", name=" + this.name + ", description=" + this.description + ", ownerAddress=" + this.ownerAddress + ", contractAddress=" + this.contractAddress + ", contractUrl=" + this.contractUrl + ", rewardToken=" + this.rewardToken + ", rewardValue=" + this.rewardValue + ", capacity=" + this.capacity + ", participantsCount=" + this.participantsCount + ", createdAt=" + this.createdAt + ')';
     }
 
     public CryptoBoxInfo(String id, CryptoBoxChat chat, CryptoBoxStatus status, Network network, String name, String description, String ownerAddress, String contractAddress, String contractUrl, TokenDetailed rewardToken, BigDecimal rewardValue, int i, int i2, String createdAt) {
@@ -130,7 +130,7 @@ public final class CryptoBoxInfo {
         Intrinsics.checkNotNullParameter(rewardToken, "rewardToken");
         Intrinsics.checkNotNullParameter(rewardValue, "rewardValue");
         Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-        this.f416id = id;
+        this.f349id = id;
         this.chat = chat;
         this.status = status;
         this.network = network;
@@ -148,7 +148,7 @@ public final class CryptoBoxInfo {
     }
 
     public final String getId() {
-        return this.f416id;
+        return this.f349id;
     }
 
     public final CryptoBoxChat getChat() {
@@ -213,6 +213,14 @@ public final class CryptoBoxInfo {
 
     public final String getBalanceText(Function2<? super Number, ? super TokenDetailed, String> balanceFormatterAction) {
         Intrinsics.checkNotNullParameter(balanceFormatterAction, "balanceFormatterAction");
-        return balanceFormatterAction.invoke(Double.valueOf((this.capacity - this.participantsCount) * this.rewardValue.doubleValue()), this.rewardToken) + " / " + balanceFormatterAction.invoke(Double.valueOf(this.capacity * this.rewardValue.doubleValue()), this.rewardToken);
+        StringBuilder sb = new StringBuilder();
+        BigDecimal valueOf = BigDecimal.valueOf(this.capacity - this.participantsCount);
+        Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(this.toLong())");
+        BigDecimal multiply = valueOf.multiply(this.rewardValue);
+        Intrinsics.checkNotNullExpressionValue(multiply, "this.multiply(other)");
+        sb.append(balanceFormatterAction.invoke(multiply, this.rewardToken));
+        sb.append(" / ");
+        sb.append(balanceFormatterAction.invoke(Double.valueOf(this.capacity * this.rewardValue.doubleValue()), this.rewardToken));
+        return sb.toString();
     }
 }

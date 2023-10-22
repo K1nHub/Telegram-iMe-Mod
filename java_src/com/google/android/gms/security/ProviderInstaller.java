@@ -12,7 +12,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamite.DynamiteModule;
 import java.lang.reflect.Method;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ProviderInstaller {
     public static final String PROVIDER_NAME = "GmsCore_OpenSSL";
     private static final GoogleApiAvailabilityLight zza = GoogleApiAvailabilityLight.getInstance();
@@ -21,7 +21,7 @@ public class ProviderInstaller {
     private static Method zzd = null;
 
     /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface ProviderInstallListener {
         void onProviderInstallFailed(int i, Intent intent);
 

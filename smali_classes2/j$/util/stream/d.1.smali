@@ -9,10 +9,10 @@
 
 
 # direct methods
-.method protected constructor <init>(Lj$/util/stream/d;Lj$/util/s;)V
+.method protected constructor <init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
 
     iget-object p1, p1, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -21,10 +21,10 @@
     return-void
 .end method
 
-.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/s;)V
+.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -74,9 +74,9 @@
 .method public compute()V
     .locals 10
 
-    iget-object v0, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v1
 
@@ -152,7 +152,7 @@
 
     if-lez v1, :cond_5
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v1
 
@@ -161,7 +161,7 @@
     goto :goto_4
 
     :cond_3
-    invoke-virtual {v7, v1}, Lj$/util/stream/f;->f(Lj$/util/s;)Lj$/util/stream/f;
+    invoke-virtual {v7, v1}, Lj$/util/stream/f;->f(Lj$/util/Spliterator;)Lj$/util/stream/f;
 
     move-result-object v2
 
@@ -169,7 +169,7 @@
 
     iput-object v2, v7, Lj$/util/stream/f;->d:Lj$/util/stream/f;
 
-    invoke-virtual {v7, v0}, Lj$/util/stream/f;->f(Lj$/util/s;)Lj$/util/stream/f;
+    invoke-virtual {v7, v0}, Lj$/util/stream/f;->f(Lj$/util/Spliterator;)Lj$/util/stream/f;
 
     move-result-object v8
 
@@ -199,7 +199,7 @@
 
     invoke-virtual {v2}, Ljava/util/concurrent/CountedCompleter;->fork()Ljava/util/concurrent/ForkJoinTask;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v1
 

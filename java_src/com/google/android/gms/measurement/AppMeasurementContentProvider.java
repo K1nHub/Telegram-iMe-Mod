@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.measurement.internal.zzfv;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AppMeasurementContentProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public void attachInfo(Context context, ProviderInfo providerInfo) {

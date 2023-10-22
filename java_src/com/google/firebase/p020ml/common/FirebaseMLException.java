@@ -3,7 +3,7 @@ package com.google.firebase.p020ml.common;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.FirebaseException;
 /* renamed from: com.google.firebase.ml.common.FirebaseMLException */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseMLException extends FirebaseException {
     private final int code;
 

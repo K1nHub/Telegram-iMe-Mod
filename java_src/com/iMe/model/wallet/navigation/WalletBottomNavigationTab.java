@@ -1,16 +1,16 @@
 package com.iMe.model.wallet.navigation;
 
 import com.iMe.model.common.NavigationTab;
-import com.iMe.p031ui.wallet.common.WalletTabFragment;
+import com.iMe.p030ui.wallet.common.WalletTabFragment;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBottomNavigationTab.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFragment> {
     private final WalletTabFragment fragment;
 
     /* renamed from: id */
-    private final int f371id;
+    private final int f305id;
     private final String title;
 
     public static /* synthetic */ WalletBottomNavigationTab copy$default(WalletBottomNavigationTab walletBottomNavigationTab, int i, WalletTabFragment walletTabFragment, String str, int i2, Object obj) {
@@ -69,7 +69,7 @@ public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFrag
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f371id;
+        return this.f305id;
     }
 
     @Override // com.iMe.model.common.NavigationTab
@@ -86,7 +86,7 @@ public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFrag
         super(i, fragment);
         Intrinsics.checkNotNullParameter(fragment, "fragment");
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f371id = i;
+        this.f305id = i;
         this.fragment = fragment;
         this.title = title;
     }

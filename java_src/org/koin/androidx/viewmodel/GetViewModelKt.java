@@ -13,7 +13,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: GetViewModel.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class GetViewModelKt {
     public static /* synthetic */ ViewModel resolveViewModel$default(KClass kClass, ViewModelStore viewModelStore, String str, CreationExtras creationExtras, Qualifier qualifier, Scope scope, Function0 function0, int i, Object obj) {
         return resolveViewModel(kClass, viewModelStore, (i & 4) != 0 ? null : str, creationExtras, (i & 16) != 0 ? null : qualifier, scope, (i & 64) != 0 ? null : function0);

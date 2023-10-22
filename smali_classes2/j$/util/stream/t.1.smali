@@ -35,11 +35,11 @@
 .method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Lj$/util/f;
+    check-cast p1, Lj$/util/d;
 
-    check-cast p2, Lj$/util/f;
+    check-cast p2, Lj$/util/d;
 
-    invoke-virtual {p1, p2}, Lj$/util/f;->b(Lj$/util/f;)V
+    invoke-virtual {p1, p2}, Lj$/util/d;->b(Lj$/util/d;)V
 
     return-void
 .end method

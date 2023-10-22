@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.BillingController;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_help_premiumPromo extends TLObject {
     public static int constructor = 1395946908;
     public String currency;

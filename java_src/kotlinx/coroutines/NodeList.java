@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.LockFreeLinkedListHead;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class NodeList extends LockFreeLinkedListHead implements Incomplete {
     @Override // kotlinx.coroutines.Incomplete
     public NodeList getList() {
@@ -21,8 +21,10 @@ public final class NodeList extends LockFreeLinkedListHead implements Incomplete
         sb.append("List{");
         sb.append(str);
         sb.append("}[");
+        Object next = getNext();
+        Intrinsics.checkNotNull(next, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
         boolean z = true;
-        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) getNext(); !Intrinsics.areEqual(lockFreeLinkedListNode, this); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
+        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) next; !Intrinsics.areEqual(lockFreeLinkedListNode, this); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
             if (lockFreeLinkedListNode instanceof JobNode) {
                 JobNode jobNode = (JobNode) lockFreeLinkedListNode;
                 if (z) {

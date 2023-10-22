@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_phone_requestCall extends TLObject {
     public static int constructor = 1124046573;
     public int flags;

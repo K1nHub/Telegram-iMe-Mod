@@ -8,7 +8,7 @@ import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.util.Integers;
 import org.bouncycastle.util.Memoable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class HMac implements Mac {
     private static Hashtable blockLengths;
     private int blockLength;

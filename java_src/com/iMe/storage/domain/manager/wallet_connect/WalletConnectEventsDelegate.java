@@ -5,12 +5,12 @@ import com.trustwallet.walletconnect.WCSessionStoreItem;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectEventsDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletConnectEventsDelegate {
 
     /* compiled from: WalletConnectEventsDelegate.kt */
     /* renamed from: com.iMe.storage.domain.manager.wallet_connect.WalletConnectEventsDelegate$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         public static void $default$onEthSign(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, WCEthereumSignMessage message) {
             Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");

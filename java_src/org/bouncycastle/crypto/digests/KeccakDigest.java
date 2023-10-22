@@ -5,7 +5,7 @@ import org.bouncycastle.crypto.ExtendedDigest;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Pack;
 import org.bouncycastle.util.encoders.Hex;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class KeccakDigest implements ExtendedDigest {
     private static long[] KeccakRoundConstants = {1, 32898, -9223372036854742902L, -9223372034707259392L, 32907, 2147483649L, -9223372034707259263L, -9223372036854743031L, 138, 136, 2147516425L, 2147483658L, 2147516555L, -9223372036854775669L, -9223372036854742903L, -9223372036854743037L, -9223372036854743038L, -9223372036854775680L, 32778, -9223372034707292150L, -9223372034707259263L, -9223372036854742912L, 2147483649L, -9223372034707259384L};
     protected int bitsInQueue;

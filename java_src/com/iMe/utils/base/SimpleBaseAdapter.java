@@ -9,7 +9,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimpleBaseAdapter.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SimpleBaseAdapter<Item> extends RecyclerView.Adapter<BaseViewHolder> {
     private final Function3<View, Item, Integer, Unit> bindItem;
     private List<? extends Item> items;
@@ -46,7 +46,7 @@ public final class SimpleBaseAdapter<Item> extends RecyclerView.Adapter<BaseView
     }
 
     /* compiled from: SimpleBaseAdapter.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BaseViewHolder extends RecyclerView.ViewHolder {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public BaseViewHolder(View itemView) {

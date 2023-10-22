@@ -1,11 +1,11 @@
 package com.iMe.storage.domain.model.crypto.wallet_connect;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectTransactionArgs implements TransactionArgs {
     private final BigInteger amount;
     private final long chainId;
@@ -65,7 +65,7 @@ public final class WalletConnectTransactionArgs implements TransactionArgs {
     }
 
     public int hashCode() {
-        return (((((((((((this.recipientAddress.hashCode() * 31) + this.amount.hashCode()) * 31) + this.data.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((this.recipientAddress.hashCode() * 31) + this.amount.hashCode()) * 31) + this.data.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {

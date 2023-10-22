@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$ChannelAdminLogEventAction extends TLObject {
     public static TLRPC$ChannelAdminLogEventAction TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$ChannelAdminLogEventAction tLRPC$TL_channelAdminLogEventActionStopPoll;

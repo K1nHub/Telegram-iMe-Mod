@@ -159,7 +159,7 @@ public final class AacUtil {
 
     private static void parseGaSpecificConfig(ParsableBitArray parsableBitArray, int i, int i2) {
         if (parsableBitArray.readBit()) {
-            Log.m814w(TAG, "Unexpected frameLengthFlag = 1");
+            Log.m1106w(TAG, "Unexpected frameLengthFlag = 1");
         }
         if (parsableBitArray.readBit()) {
             parsableBitArray.skipBits(14);

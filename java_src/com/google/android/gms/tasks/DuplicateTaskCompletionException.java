@@ -1,13 +1,13 @@
 package com.google.android.gms.tasks;
 /* compiled from: com.google.android.gms:play-services-tasks@@18.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DuplicateTaskCompletionException extends IllegalStateException {
     private DuplicateTaskCompletionException(String str, Throwable th) {
         super(str, th);
     }
 
     /* renamed from: of */
-    public static IllegalStateException m777of(Task<?> task) {
+    public static IllegalStateException m1069of(Task<?> task) {
         String str;
         if (!task.isComplete()) {
             return new IllegalStateException("DuplicateTaskCompletionException can only be created from completed Task.");

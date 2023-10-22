@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Iterables {
     public static <T> boolean removeIf(Iterable<T> iterable, Predicate<? super T> predicate) {
         if ((iterable instanceof RandomAccess) && (iterable instanceof List)) {

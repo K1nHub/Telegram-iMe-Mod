@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DLExternal extends ASN1External {
     public DLExternal(ASN1EncodableVector aSN1EncodableVector) {
         super(aSN1EncodableVector);

@@ -19,6 +19,17 @@
 
 
 # instance fields
+.field private header:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private payload:Lcom/auth0/android/jwt/JWTPayload;
 
 .field private final token:Ljava/lang/String;
@@ -125,6 +136,8 @@
     move-result-object v0
 
     check-cast v0, Ljava/util/Map;
+
+    iput-object v0, p0, Lcom/auth0/android/jwt/JWT;->header:Ljava/util/Map;
 
     const/4 v0, 0x1
 

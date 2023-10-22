@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_getChatInviteImporters extends TLObject {
     public static int constructor = -553329330;
     public int flags;
@@ -10,7 +10,7 @@ public class TLRPC$TL_messages_getChatInviteImporters extends TLObject {
     public TLRPC$InputPeer peer;
 
     /* renamed from: q */
-    public String f1619q;
+    public String f1696q;
     public boolean requested;
 
     @Override // org.telegram.tgnet.TLObject
@@ -29,7 +29,7 @@ public class TLRPC$TL_messages_getChatInviteImporters extends TLObject {
             abstractSerializedData.writeString(this.link);
         }
         if ((this.flags & 4) != 0) {
-            abstractSerializedData.writeString(this.f1619q);
+            abstractSerializedData.writeString(this.f1696q);
         }
         abstractSerializedData.writeInt32(this.offset_date);
         this.offset_user.serializeToStream(abstractSerializedData);

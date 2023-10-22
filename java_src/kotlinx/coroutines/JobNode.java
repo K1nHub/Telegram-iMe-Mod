@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class JobNode extends CompletionHandlerBase implements DisposableHandle, Incomplete {
     public JobSupport job;
 

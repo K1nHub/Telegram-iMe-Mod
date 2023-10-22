@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract apply(I)Ljava/lang/Object;
+.method public abstract applyAsLong(I)J
 .end method

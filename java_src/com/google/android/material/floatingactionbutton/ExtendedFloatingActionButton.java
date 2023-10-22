@@ -21,7 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.internal.DescendantOffsetUtils;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ExtendedFloatingActionButton extends MaterialButton implements CoordinatorLayout.AttachedBehavior {
     private int animState;
     private boolean animateShowBeforeLayout;
@@ -34,7 +34,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
     private final MotionStrategy showStrategy;
     private final MotionStrategy shrinkStrategy;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class OnChangedCallback {
     }
 
@@ -257,7 +257,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         return (getCollapsedSize() - getIconSize()) / 2;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     protected static class ExtendedFloatingActionButtonBehavior<T extends ExtendedFloatingActionButton> extends CoordinatorLayout.Behavior<T> {
         private boolean autoHideEnabled;
         private boolean autoShrinkEnabled;

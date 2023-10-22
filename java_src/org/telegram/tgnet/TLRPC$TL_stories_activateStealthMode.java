@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_stories_activateStealthMode extends TLObject {
     public static int constructor = 1471926630;
     public int flags;

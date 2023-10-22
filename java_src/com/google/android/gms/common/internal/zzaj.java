@@ -11,12 +11,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzaj extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzaj> CREATOR = new zzak();
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzaj(@SafeParcelable.Param(m796id = 1) int i) {
+    public zzaj(@SafeParcelable.Param(m1088id = 1) int i) {
         this.zza = i;
     }
 

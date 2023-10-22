@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzr extends AbstractCollection implements Serializable {
     private static final Object[] zza = new Object[0];
 

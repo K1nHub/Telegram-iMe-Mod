@@ -7,7 +7,7 @@ import com.iMe.model.twitter.TweetItem;
 import com.iMe.model.twitter.TweetsDateItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetsDiffCallback.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TweetsDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

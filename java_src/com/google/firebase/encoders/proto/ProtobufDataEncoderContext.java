@@ -15,7 +15,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final Map<Class<?>, ObjectEncoder<?>> objectEncoders;
@@ -141,25 +141,25 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C10061 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C09921 {
 
         /* renamed from: $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding */
-        static final /* synthetic */ int[] f247x531607dd;
+        static final /* synthetic */ int[] f246x531607dd;
 
         static {
             int[] iArr = new int[Protobuf.IntEncoding.values().length];
-            f247x531607dd = iArr;
+            f246x531607dd = iArr;
             try {
                 iArr[Protobuf.IntEncoding.DEFAULT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f247x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
+                f246x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f247x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
+                f246x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
         }
@@ -170,7 +170,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i2 = C10061.f247x531607dd[protobuf.intEncoding().ordinal()];
+        int i2 = C09921.f246x531607dd[protobuf.intEncoding().ordinal()];
         if (i2 == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt32(i);
@@ -194,7 +194,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i = C10061.f247x531607dd[protobuf.intEncoding().ordinal()];
+        int i = C09921.f246x531607dd[protobuf.intEncoding().ordinal()];
         if (i == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt64(j);

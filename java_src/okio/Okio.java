@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Okio {
     public static final Sink appendingSink(File file) throws FileNotFoundException {
         return Okio__JvmOkioKt.appendingSink(file);

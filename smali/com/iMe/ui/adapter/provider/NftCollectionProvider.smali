@@ -14,6 +14,8 @@
 
 
 # instance fields
+.field private final imageCornerRadius$delegate:Lkotlin/Lazy;
+
 .field private final itemViewType:I
 
 .field private final layoutId:I
@@ -31,23 +33,34 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 35
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 28
+    .line 34
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 31
+    .line 37
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_COLLECTION:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->itemViewType:I
 
-    .line 32
+    .line 38
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_nft_collection:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->layoutId:I
 
-    .line 34
+    .line 40
+    new-instance p1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$imageCornerRadius$2;
+
+    invoke-direct {p1, p0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$imageCornerRadius$2;-><init>(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)V
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->imageCornerRadius$delegate:Lkotlin/Lazy;
+
+    .line 41
     new-instance p1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$networkIconCornerSize$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$networkIconCornerSize$2;-><init>(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)V
@@ -61,10 +74,21 @@
     return-void
 .end method
 
+.method public static final synthetic access$getImageCornerRadius(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)F
+    .locals 0
+
+    .line 33
+    invoke-direct {p0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->getImageCornerRadius()F
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static final synthetic access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)F
     .locals 0
 
-    .line 27
+    .line 33
     invoke-direct {p0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->getNetworkIconCornerSize()F
 
     move-result p0
@@ -75,16 +99,35 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 27
+    .line 33
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
 .end method
 
+.method private final getImageCornerRadius()F
+    .locals 1
+
+    .line 40
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->imageCornerRadius$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private final getNetworkIconCornerSize()F
     .locals 1
 
-    .line 34
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -113,7 +156,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 45
     sget v0, Lorg/telegram/messenger/R$id;->card_nft_collection:I
 
     const/4 v1, 0x0
@@ -122,14 +165,14 @@
 
     move-result-object p1
 
-    .line 39
+    .line 46
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 40
+    .line 47
     sget v0, Lorg/telegram/messenger/R$id;->text_collection_name:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
@@ -138,7 +181,7 @@
 
     move-result-object p1
 
-    .line 41
+    .line 48
     sget v2, Lorg/telegram/messenger/R$id;->text_collection_size:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
@@ -153,12 +196,12 @@
 
     aput v2, v4, v1
 
-    .line 42
+    .line 49
     invoke-static {p1, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 43
+    .line 50
     sget v4, Lorg/telegram/messenger/R$id;->image_arrow:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -169,12 +212,12 @@
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    .line 44
+    .line 51
     invoke-static {p1, v4, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setAlpha(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 47
+    .line 54
     invoke-virtual {p2}, Lcom/chad/library/adapter/base/entity/node/BaseExpandNode;->isExpanded()Z
 
     move-result v5
@@ -188,13 +231,13 @@
     :cond_0
     const/high16 v5, 0x43870000    # 270.0f
 
-    .line 45
+    .line 52
     :goto_0
     invoke-static {p1, v4, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRotate(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 51
+    .line 58
     iget-object v4, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->nft_collection_size:I
@@ -219,17 +262,17 @@
 
     move-result-object v1
 
-    .line 49
+    .line 56
     invoke-virtual {p1, v2, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 53
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->getCollection()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
+    .line 60
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->getCollection()Lcom/iMe/storage/domain/model/crypto/nft/NftCollection;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;->getTitle()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/nft/NftCollection;->getName()Ljava/lang/String;
 
     move-result-object v1
 
@@ -237,7 +280,7 @@
 
     move-result-object p1
 
-    .line 54
+    .line 61
     sget v0, Lorg/telegram/messenger/R$id;->image_collection_image:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$1;
@@ -248,7 +291,7 @@
 
     move-result-object p1
 
-    .line 69
+    .line 88
     sget v0, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$2;
@@ -286,10 +329,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 107
     sget p3, Lorg/telegram/messenger/R$id;->image_arrow:I
 
-    .line 88
+    .line 108
     invoke-virtual {p2}, Lcom/chad/library/adapter/base/entity/node/BaseExpandNode;->isExpanded()Z
 
     move-result v0
@@ -303,13 +346,13 @@
     :cond_0
     const/high16 v0, 0x43870000    # 270.0f
 
-    .line 86
+    .line 106
     :goto_0
     invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRotate(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 90
+    .line 110
     sget p3, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
     new-instance v0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$3;
@@ -324,7 +367,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 27
+    .line 33
     check-cast p2, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/nft/NftCollectionItem;)V
@@ -335,7 +378,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 27
+    .line 33
     check-cast p2, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/nft/NftCollectionItem;Ljava/util/List;)V
@@ -346,7 +389,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 31
+    .line 37
     iget v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->itemViewType:I
 
     return v0
@@ -355,7 +398,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 32
+    .line 38
     iget v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->layoutId:I
 
     return v0

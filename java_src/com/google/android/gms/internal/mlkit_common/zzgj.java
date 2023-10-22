@@ -82,7 +82,7 @@ public final class zzgj extends zzek<String> implements zzgi, RandomAccess {
 
     @Override // com.google.android.gms.internal.mlkit_common.zzgi
     /* renamed from: a_ */
-    public final zzgi mo781a_() {
+    public final zzgi mo1073a_() {
         return zza() ? new zzik(this) : this;
     }
 
@@ -177,7 +177,7 @@ public final class zzgj extends zzek<String> implements zzgi, RandomAccess {
     static {
         zzgj zzgjVar = new zzgj();
         zza = zzgjVar;
-        zzgjVar.mo782b_();
+        zzgjVar.mo1074b_();
         zzb = zzgjVar;
     }
 }

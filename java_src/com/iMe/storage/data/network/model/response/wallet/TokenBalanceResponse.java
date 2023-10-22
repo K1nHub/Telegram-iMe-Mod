@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalanceResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenBalanceResponse {
     private final Double ratePercentageChange24h;
     private final FiatValueResponse rateToFiat;
@@ -73,9 +73,9 @@ public final class TokenBalanceResponse {
     }
 
     public int hashCode() {
-        int m718m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31;
+        int m1011m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31;
         Double d = this.ratePercentageChange24h;
-        return ((m718m + (d == null ? 0 : d.hashCode())) * 31) + this.token.hashCode();
+        return ((m1011m + (d == null ? 0 : d.hashCode())) * 31) + this.token.hashCode();
     }
 
     public String toString() {

@@ -12,7 +12,7 @@ import com.google.firebase.platforminfo.KotlinDetector;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {

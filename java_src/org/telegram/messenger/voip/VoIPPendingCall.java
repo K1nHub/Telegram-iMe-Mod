@@ -8,10 +8,10 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p043ui.Components.voip.VoIPHelper;
+import org.telegram.p042ui.Components.voip.VoIPHelper;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$UserFull;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
     private final Activity activity;
@@ -76,7 +76,7 @@ public final class VoIPPendingCall {
         MessagesController messagesController = this.accountInstance.getMessagesController();
         TLRPC$User user = messagesController.getUser(Long.valueOf(this.userId));
         if (user != null) {
-            TLRPC$UserFull userFull = messagesController.getUserFull(user.f1685id);
+            TLRPC$UserFull userFull = messagesController.getUserFull(user.f1762id);
             VoIPHelper.startCall(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
         } else if (isAirplaneMode()) {
             VoIPHelper.startCall(null, this.video, false, this.activity, null, this.accountInstance);

@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransferDataSourceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletTransferDataSourceFactory implements DataSourceFactory<BlockchainType, WalletTransferDataSource> {
     private final WalletTransferDataSource btcWalletTransferDataSource;
     private final WalletTransferDataSource evmWalletTransferDataSource;
@@ -13,7 +13,7 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
     private final WalletTransferDataSource tronWalletTransferDataSource;
 
     /* compiled from: WalletTransferDataSourceFactory.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

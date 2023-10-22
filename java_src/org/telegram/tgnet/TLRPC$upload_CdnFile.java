@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$upload_CdnFile extends TLObject {
     public NativeByteBuffer bytes;
     public byte[] request_token;

@@ -19,12 +19,12 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class zzdd extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzdd> CREATOR = new zzde();
-    @SafeParcelable.Field(defaultValueUnchecked = "null", m797id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", m1089id = 1)
     LocationRequest zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzdd(@SafeParcelable.Param(m796id = 1) LocationRequest locationRequest, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m795id = 5) List list, @SafeParcelable.RemovedParam(defaultValue = "false", m795id = 8) boolean z, @SafeParcelable.RemovedParam(defaultValue = "false", m795id = 9) boolean z2, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m795id = 10) String str, @SafeParcelable.RemovedParam(defaultValue = "false", m795id = 11) boolean z3, @SafeParcelable.RemovedParam(defaultValue = "false", m795id = 12) boolean z4, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m795id = 13) String str2, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m795id = 14) long j) {
+    public zzdd(@SafeParcelable.Param(m1088id = 1) LocationRequest locationRequest, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m1087id = 5) List list, @SafeParcelable.RemovedParam(defaultValue = "false", m1087id = 8) boolean z, @SafeParcelable.RemovedParam(defaultValue = "false", m1087id = 9) boolean z2, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m1087id = 10) String str, @SafeParcelable.RemovedParam(defaultValue = "false", m1087id = 11) boolean z3, @SafeParcelable.RemovedParam(defaultValue = "false", m1087id = 12) boolean z4, @SafeParcelable.RemovedParam(defaultValueUnchecked = "null", m1087id = 13) String str2, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m1087id = 14) long j) {
         WorkSource workSource;
         LocationRequest.Builder builder = new LocationRequest.Builder(locationRequest);
         if (list != null) {

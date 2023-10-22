@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JvmOkio.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class Okio__JvmOkioKt {
     private static final Logger logger = Logger.getLogger("okio.Okio");
 

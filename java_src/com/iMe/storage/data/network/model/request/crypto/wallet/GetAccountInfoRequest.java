@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetAccountInfoRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetAccountInfoRequest {
     private final String userId;
 

@@ -15,7 +15,7 @@ import com.google.firebase.crashlytics.internal.common.CrashlyticsReportWithSess
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform;
 import java.nio.charset.Charset;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DataTransportCrashlyticsReportSender {
     private final Transport<CrashlyticsReport> transport;
     private static final CrashlyticsReportJsonTransform TRANSFORM = new CrashlyticsReportJsonTransform();
@@ -38,9 +38,9 @@ public class DataTransportCrashlyticsReportSender {
     public static DataTransportCrashlyticsReportSender create(Context context) {
         TransportRuntime.initialize(context);
         TransportFactory newFactory = TransportRuntime.getInstance().newFactory(new CCTDestination(CRASHLYTICS_ENDPOINT, CRASHLYTICS_API_KEY));
-        Encoding m829of = Encoding.m829of("json");
+        Encoding m1121of = Encoding.m1121of("json");
         Transformer<CrashlyticsReport, byte[]> transformer = DEFAULT_TRANSFORM;
-        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m829of, transformer), transformer);
+        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m1121of, transformer), transformer);
     }
 
     DataTransportCrashlyticsReportSender(Transport<CrashlyticsReport> transport, Transformer<CrashlyticsReport, byte[]> transformer) {

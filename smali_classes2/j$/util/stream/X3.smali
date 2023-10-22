@@ -2,7 +2,7 @@
 .super Lj$/util/stream/Z3$a;
 
 # interfaces
-.implements Lj$/util/s$c;
+.implements Lj$/util/Spliterator$c;
 
 
 # instance fields
@@ -27,12 +27,12 @@
 
     check-cast p1, [J
 
-    check-cast p3, Lj$/util/function/q;
+    check-cast p3, Lj$/util/function/p;
 
     .line 1
     aget-wide v0, p1, p2
 
-    invoke-interface {p3, v0, v1}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {p3, v0, v1}, Lj$/util/function/p;->accept(J)V
 
     return-void
 .end method
@@ -40,14 +40,14 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->l(Lj$/util/s$c;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->h(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method f(Ljava/lang/Object;II)Lj$/util/t;
+.method f(Ljava/lang/Object;II)Lj$/util/Spliterator$d;
     .locals 1
 
     check-cast p1, [J
@@ -57,7 +57,7 @@
     const/16 v0, 0x410
 
     .line 1
-    invoke-static {p1, p2, p3, v0}, Lj$/util/I;->l([JIII)Lj$/util/s$c;
+    invoke-static {p1, p2, p3, v0}, Lj$/util/F;->l([JIII)Lj$/util/Spliterator$c;
 
     move-result-object p1
 
@@ -67,12 +67,12 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->d(Lj$/util/s$c;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->c(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
 
     return-void
 .end method
 
-.method h(IIII)Lj$/util/t;
+.method h(IIII)Lj$/util/Spliterator$d;
     .locals 7
 
     .line 1

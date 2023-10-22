@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zzi */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzi implements Parcelable.Creator<OnDeviceAutoMLImageLabelerOptionsParcel> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ OnDeviceAutoMLImageLabelerOptionsParcel[] newArray(int i) {

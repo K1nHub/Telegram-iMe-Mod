@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.crypto.rainbow.util.RainbowUtil;
 import org.bouncycastle.pqc.jcajce.provider.util.KeyUtil;
 import org.bouncycastle.pqc.jcajce.spec.RainbowPublicKeySpec;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCRainbowPublicKey implements PublicKey {
     private short[][] coeffquadratic;
     private short[] coeffscalar;

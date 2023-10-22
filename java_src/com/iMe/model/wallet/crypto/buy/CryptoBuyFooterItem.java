@@ -2,7 +2,7 @@ package com.iMe.model.wallet.crypto.buy;
 
 import com.iMe.model.common.NoChildNode;
 /* compiled from: CryptoBuyFooterItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBuyFooterItem extends NoChildNode {
     private final int description;
     private final int title;

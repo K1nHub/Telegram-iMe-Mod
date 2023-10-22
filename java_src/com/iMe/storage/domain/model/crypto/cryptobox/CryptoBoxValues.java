@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxValues.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxValues {
     private final BigDecimal asToken;
     private final double asUsd;
@@ -44,7 +44,7 @@ public final class CryptoBoxValues {
     }
 
     public int hashCode() {
-        return (this.asToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.asUsd);
+        return (this.asToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.asUsd);
     }
 
     public String toString() {

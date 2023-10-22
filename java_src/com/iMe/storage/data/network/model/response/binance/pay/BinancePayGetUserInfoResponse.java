@@ -2,12 +2,12 @@ package com.iMe.storage.data.network.model.response.binance.pay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayGetUserInfoResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayGetUserInfoResponse {
     private final String email;
 
     /* renamed from: id */
-    private final String f381id;
+    private final String f314id;
     private final VerificationDetails verificationDetails;
 
     public static /* synthetic */ BinancePayGetUserInfoResponse copy$default(BinancePayGetUserInfoResponse binancePayGetUserInfoResponse, String str, String str2, VerificationDetails verificationDetails, int i, Object obj) {
@@ -15,7 +15,7 @@ public final class BinancePayGetUserInfoResponse {
             str = binancePayGetUserInfoResponse.email;
         }
         if ((i & 2) != 0) {
-            str2 = binancePayGetUserInfoResponse.f381id;
+            str2 = binancePayGetUserInfoResponse.f314id;
         }
         if ((i & 4) != 0) {
             verificationDetails = binancePayGetUserInfoResponse.verificationDetails;
@@ -28,7 +28,7 @@ public final class BinancePayGetUserInfoResponse {
     }
 
     public final String component2() {
-        return this.f381id;
+        return this.f314id;
     }
 
     public final VerificationDetails component3() {
@@ -47,25 +47,25 @@ public final class BinancePayGetUserInfoResponse {
         }
         if (obj instanceof BinancePayGetUserInfoResponse) {
             BinancePayGetUserInfoResponse binancePayGetUserInfoResponse = (BinancePayGetUserInfoResponse) obj;
-            return Intrinsics.areEqual(this.email, binancePayGetUserInfoResponse.email) && Intrinsics.areEqual(this.f381id, binancePayGetUserInfoResponse.f381id) && Intrinsics.areEqual(this.verificationDetails, binancePayGetUserInfoResponse.verificationDetails);
+            return Intrinsics.areEqual(this.email, binancePayGetUserInfoResponse.email) && Intrinsics.areEqual(this.f314id, binancePayGetUserInfoResponse.f314id) && Intrinsics.areEqual(this.verificationDetails, binancePayGetUserInfoResponse.verificationDetails);
         }
         return false;
     }
 
     public int hashCode() {
         String str = this.email;
-        return ((((str == null ? 0 : str.hashCode()) * 31) + this.f381id.hashCode()) * 31) + this.verificationDetails.hashCode();
+        return ((((str == null ? 0 : str.hashCode()) * 31) + this.f314id.hashCode()) * 31) + this.verificationDetails.hashCode();
     }
 
     public String toString() {
-        return "BinancePayGetUserInfoResponse(email=" + this.email + ", id=" + this.f381id + ", verificationDetails=" + this.verificationDetails + ')';
+        return "BinancePayGetUserInfoResponse(email=" + this.email + ", id=" + this.f314id + ", verificationDetails=" + this.verificationDetails + ')';
     }
 
     public BinancePayGetUserInfoResponse(String str, String id, VerificationDetails verificationDetails) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(verificationDetails, "verificationDetails");
         this.email = str;
-        this.f381id = id;
+        this.f314id = id;
         this.verificationDetails = verificationDetails;
     }
 
@@ -74,7 +74,7 @@ public final class BinancePayGetUserInfoResponse {
     }
 
     public final String getId() {
-        return this.f381id;
+        return this.f314id;
     }
 
     public final VerificationDetails getVerificationDetails() {
@@ -82,7 +82,7 @@ public final class BinancePayGetUserInfoResponse {
     }
 
     /* compiled from: BinancePayGetUserInfoResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class VerificationDetails {
         private final String certificateStatus;
         private final boolean disabled;

@@ -190,6 +190,35 @@
     return-void
 .end method
 
+.method public static $default$getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "TV;)TV;"
+        }
+    .end annotation
+
+    invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    invoke-interface {p0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    :cond_0
+    move-object p2, v0
+
+    :cond_1
+    return-object p2
+.end method
+
 .method public static $default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -262,7 +291,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lj$/util/a;->u(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p2}, Lj$/util/k;->q(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
 
@@ -333,7 +362,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lj$/util/a;->u(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p2}, Lj$/util/k;->q(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
 

@@ -5,7 +5,7 @@ import com.google.android.gms.internal.firebase_ml.zzkm;
 import com.google.firebase.p020ml.vision.common.FirebaseVisionPoint;
 import java.util.List;
 /* renamed from: com.google.firebase.ml.vision.face.FirebaseVisionFaceContour */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionFaceContour {
     private final int type;
     private final List<FirebaseVisionPoint> zzbbq;

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract applyAsLong(I)J
+.method public abstract applyAsLong(JJ)J
 .end method

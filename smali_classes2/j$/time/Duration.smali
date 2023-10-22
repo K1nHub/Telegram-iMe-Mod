@@ -92,7 +92,7 @@
     return-object v0
 .end method
 
-.method public static b(J)Lj$/time/Duration;
+.method public static c(J)Lj$/time/Duration;
     .locals 4
 
     const-wide/32 v0, 0x3b9aca00
@@ -123,7 +123,7 @@
     return-object p0
 .end method
 
-.method public static c(J)Lj$/time/Duration;
+.method public static d(J)Lj$/time/Duration;
     .locals 1
 
     const/4 v0, 0x0
@@ -135,82 +135,25 @@
     return-object p0
 .end method
 
-.method public static d(JJ)Lj$/time/Duration;
-    .locals 12
+.method public static e(JJ)Lj$/time/Duration;
+    .locals 4
 
     const-wide/32 v0, 0x3b9aca00
 
-    .line 1
-    div-long v2, p2, v0
+    invoke-static {p2, p3, v0, v1}, Lj$/lang/d;->e(JJ)J
 
-    mul-long v4, v0, v2
+    move-result-wide v2
 
-    sub-long v4, p2, v4
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v4, v4, v6
-
-    const-wide/16 v8, 0x1
-
-    const/16 v5, 0x3f
-
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    xor-long v10, p2, v0
-
-    shr-long/2addr v10, v5
-
-    or-long/2addr v10, v8
-
-    cmp-long v4, v10, v6
-
-    if-gez v4, :cond_1
-
-    sub-long/2addr v2, v8
-
-    .line 2
-    :cond_1
-    :goto_0
     invoke-static {p0, p1, v2, v3}, Lj$/lang/d;->c(JJ)J
 
     move-result-wide p0
 
-    .line 3
-    rem-long v2, p2, v0
+    invoke-static {p2, p3, v0, v1}, Lj$/lang/d;->d(JJ)J
 
-    cmp-long v4, v2, v6
+    move-result-wide p2
 
-    if-nez v4, :cond_2
+    long-to-int p2, p2
 
-    goto :goto_2
-
-    :cond_2
-    xor-long/2addr p2, v0
-
-    shr-long/2addr p2, v5
-
-    or-long/2addr p2, v8
-
-    cmp-long p2, p2, v6
-
-    if-lez p2, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    add-long/2addr v2, v0
-
-    :goto_1
-    move-wide v6, v2
-
-    :goto_2
-    long-to-int p2, v6
-
-    .line 4
     invoke-static {p0, p1, p2}, Lj$/time/Duration;->a(JI)Lj$/time/Duration;
 
     move-result-object p0
@@ -220,6 +163,14 @@
 
 
 # virtual methods
+.method public b()J
+    .locals 2
+
+    iget-wide v0, p0, Lj$/time/Duration;->a:J
+
+    return-wide v0
+.end method
+
 .method public compareTo(Ljava/lang/Object;)I
     .locals 4
 
@@ -316,84 +267,16 @@
 .end method
 
 .method public toMillis()J
-    .locals 8
+    .locals 4
 
     iget-wide v0, p0, Lj$/time/Duration;->a:J
 
-    .line 1
-    invoke-static {v0, v1}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
+    const-wide/16 v2, 0x3e8
 
-    move-result v2
+    invoke-static {v0, v1, v2, v3}, Lj$/lang/d;->f(JJ)J
 
-    not-long v3, v0
+    move-result-wide v0
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
-
-    move-result v3
-
-    add-int/2addr v3, v2
-
-    const-wide/16 v4, 0x3e8
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
-
-    move-result v2
-
-    add-int/2addr v2, v3
-
-    const-wide/16 v6, -0x3e9
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
-
-    move-result v3
-
-    add-int/2addr v3, v2
-
-    const/16 v2, 0x41
-
-    if-le v3, v2, :cond_0
-
-    mul-long/2addr v0, v4
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v2, 0x40
-
-    if-lt v3, v2, :cond_3
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    const/4 v3, 0x0
-
-    const/4 v6, 0x1
-
-    if-ltz v2, :cond_1
-
-    move v3, v6
-
-    :cond_1
-    or-int/2addr v3, v6
-
-    if-eqz v3, :cond_3
-
-    mul-long v6, v0, v4
-
-    if-eqz v2, :cond_2
-
-    div-long v0, v6, v0
-
-    cmp-long v0, v0, v4
-
-    if-nez v0, :cond_3
-
-    :cond_2
-    move-wide v0, v6
-
-    .line 2
-    :goto_0
     iget v2, p0, Lj$/time/Duration;->b:I
 
     const v3, 0xf4240
@@ -407,14 +290,6 @@
     move-result-wide v0
 
     return-wide v0
-
-    .line 3
-    :cond_3
-    new-instance v0, Ljava/lang/ArithmeticException;
-
-    invoke-direct {v0}, Ljava/lang/ArithmeticException;-><init>()V
-
-    throw v0
 .end method
 
 .method public toString()Ljava/lang/String;

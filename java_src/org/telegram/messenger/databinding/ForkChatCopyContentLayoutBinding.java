@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkChatCopyContentLayoutBinding implements ViewBinding {
     public final AppCompatTextView buttonClose;
     private final LinearLayout rootView;
@@ -23,7 +23,6 @@ public final class ForkChatCopyContentLayoutBinding implements ViewBinding {
         this.viewDivider = view;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayout getRoot() {
         return this.rootView;
     }
@@ -33,7 +32,7 @@ public final class ForkChatCopyContentLayoutBinding implements ViewBinding {
     }
 
     public static ForkChatCopyContentLayoutBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_chat_copy_content_layout, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_chat_copy_content_layout, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,15 +41,15 @@ public final class ForkChatCopyContentLayoutBinding implements ViewBinding {
 
     public static ForkChatCopyContentLayoutBinding bind(View view) {
         View findChildViewById;
-        int i = C3473R.C3476id.button_close;
+        int i = C3630R.C3633id.button_close;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
-            i = C3473R.C3476id.nested_scroll_view;
+            i = C3630R.C3633id.nested_scroll_view;
             NestedScrollView nestedScrollView = (NestedScrollView) ViewBindings.findChildViewById(view, i);
             if (nestedScrollView != null) {
-                i = C3473R.C3476id.text_message;
+                i = C3630R.C3633id.text_message;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
-                if (appCompatTextView2 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3473R.C3476id.view_divider))) != null) {
+                if (appCompatTextView2 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3630R.C3633id.view_divider))) != null) {
                     return new ForkChatCopyContentLayoutBinding((LinearLayout) view, appCompatTextView, nestedScrollView, appCompatTextView2, findChildViewById);
                 }
             }

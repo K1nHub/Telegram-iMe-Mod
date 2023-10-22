@@ -5,11 +5,11 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CoroutineContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface CoroutineContext {
 
     /* compiled from: CoroutineContext.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface Key<E extends Element> {
     }
 
@@ -22,7 +22,7 @@ public interface CoroutineContext {
     CoroutineContext plus(CoroutineContext coroutineContext);
 
     /* compiled from: CoroutineContext.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class DefaultImpls {
         public static CoroutineContext plus(CoroutineContext coroutineContext, CoroutineContext context) {
             Intrinsics.checkNotNullParameter(context, "context");
@@ -55,15 +55,21 @@ public interface CoroutineContext {
     }
 
     /* compiled from: CoroutineContext.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface Element extends CoroutineContext {
+        @Override // kotlin.coroutines.CoroutineContext
+        <R> R fold(R r, Function2<? super R, ? super Element, ? extends R> function2);
+
         @Override // kotlin.coroutines.CoroutineContext
         <E extends Element> E get(Key<E> key);
 
         Key<?> getKey();
 
+        @Override // kotlin.coroutines.CoroutineContext
+        CoroutineContext minusKey(Key<?> key);
+
         /* compiled from: CoroutineContext.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class DefaultImpls {
             public static CoroutineContext plus(Element element, CoroutineContext context) {
                 Intrinsics.checkNotNullParameter(context, "context");

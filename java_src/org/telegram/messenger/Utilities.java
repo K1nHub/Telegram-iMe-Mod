@@ -17,11 +17,12 @@ import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Utilities {
     private static final String RANDOM_STRING_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static volatile DispatchQueue videoPlayerQueue;
@@ -37,29 +38,49 @@ public class Utilities {
     public static volatile DispatchQueue externalNetworkQueue = new DispatchQueue("externalNetworkQueue");
     protected static final char[] hexArray = "0123456789ABCDEF".toCharArray();
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface Callback<T> {
         void run(T t);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface Callback2<T, T2> {
         void run(T t, T2 t2);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
+    public interface Callback2Return<T1, T2, ReturnType> {
+        ReturnType run(T1 t1, T2 t2);
+    }
+
+    /* loaded from: classes4.dex */
     public interface Callback3<T, T2, T3> {
         void run(T t, T2 t2, T3 t3);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
+    public interface Callback3Return<T1, T2, T3, ReturnType> {
+        ReturnType run(T1 t1, T2 t2, T3 t3);
+    }
+
+    /* loaded from: classes4.dex */
     public interface Callback4<T, T2, T3, T4> {
         void run(T t, T2 t2, T3 t3, T4 t4);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
+    public interface Callback5<T, T2, T3, T4, T5> {
+        void run(T t, T2 t2, T3 t3, T4 t4, T5 t5);
+    }
+
+    /* loaded from: classes4.dex */
     public interface CallbackReturn<Arg, ReturnType> {
         ReturnType run(Arg arg);
+    }
+
+    /* loaded from: classes4.dex */
+    public interface CallbackVoidReturn<ReturnType> {
+        ReturnType run();
     }
 
     public static native void aesCbcEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, int i, int i2, int i3);
@@ -129,26 +150,26 @@ public class Utilities {
             fileInputStream.close();
             random.setSeed(bArr);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
     public static Bitmap stackBlurBitmapMax(Bitmap bitmap) {
-        int m72dp = AndroidUtilities.m72dp(20);
-        int m72dp2 = (int) ((AndroidUtilities.m72dp(20) * bitmap.getHeight()) / bitmap.getWidth());
-        Bitmap createBitmap = Bitmap.createBitmap(m72dp, m72dp2, Bitmap.Config.ARGB_8888);
+        int m102dp = AndroidUtilities.m102dp(20);
+        int m102dp2 = (int) ((AndroidUtilities.m102dp(20) * bitmap.getHeight()) / bitmap.getWidth());
+        Bitmap createBitmap = Bitmap.createBitmap(m102dp, m102dp2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(m72dp, m72dp2) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(m102dp, m102dp2) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
         return createBitmap;
     }
 
     public static Bitmap stackBlurBitmapWithScaleFactor(Bitmap bitmap, float f) {
-        int max = (int) Math.max(AndroidUtilities.m72dp(20), bitmap.getWidth() / f);
-        int max2 = (int) Math.max((AndroidUtilities.m72dp(20) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f);
+        int max = (int) Math.max(AndroidUtilities.m102dp(20), bitmap.getWidth() / f);
+        int max2 = (int) Math.max((AndroidUtilities.m102dp(20) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f);
         Bitmap createBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
@@ -358,7 +379,7 @@ public class Utilities {
             messageDigest.update(bArr, i, i2);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[20];
         }
     }
@@ -374,7 +395,7 @@ public class Utilities {
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[20];
@@ -403,7 +424,7 @@ public class Utilities {
             messageDigest.update(bArr, i, (int) j);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[32];
         }
     }
@@ -416,7 +437,7 @@ public class Utilities {
             }
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[32];
         }
     }
@@ -427,7 +448,7 @@ public class Utilities {
             messageDigest.update(bArr, 0, bArr.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[64];
         }
     }
@@ -439,7 +460,7 @@ public class Utilities {
             messageDigest.update(bArr2, 0, bArr2.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[64];
         }
     }
@@ -458,7 +479,7 @@ public class Utilities {
             messageDigest.update(bArr3, 0, bArr3.length);
             return messageDigest.digest();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new byte[64];
         }
     }
@@ -475,7 +496,7 @@ public class Utilities {
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[32];
@@ -506,7 +527,7 @@ public class Utilities {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }
@@ -604,5 +625,9 @@ public class Utilities {
             videoPlayerQueue = new DispatchQueue("playerQueue");
         }
         return videoPlayerQueue;
+    }
+
+    public static boolean isNullOrEmpty(Collection<?> collection) {
+        return collection == null || collection.isEmpty();
     }
 }

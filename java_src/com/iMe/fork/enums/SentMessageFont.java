@@ -3,7 +3,7 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityBold;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC$TL_messageEntitySpoiler;
 import org.telegram.tgnet.TLRPC$TL_messageEntityStrike;
 import org.telegram.tgnet.TLRPC$TL_messageEntityUnderline;
 /* compiled from: SentMessageFont.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum SentMessageFont {
     REGULAR(0, null),
     BOLD(1, TLRPC$TL_messageEntityBold.class),
@@ -28,7 +28,7 @@ public enum SentMessageFont {
     private final int flag;
 
     /* compiled from: SentMessageFont.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -86,31 +86,31 @@ public enum SentMessageFont {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("Regular", C3473R.string.Regular);
+                String string = LocaleController.getString("Regular", C3630R.string.Regular);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"Regular\", R.string.Regular)");
                 return string;
             case 2:
-                String string2 = LocaleController.getString("Bold", C3473R.string.Bold);
+                String string2 = LocaleController.getString("Bold", C3630R.string.Bold);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Bold\", R.string.Bold)");
                 return string2;
             case 3:
-                String string3 = LocaleController.getString("Italic", C3473R.string.Italic);
+                String string3 = LocaleController.getString("Italic", C3630R.string.Italic);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Italic\", R.string.Italic)");
                 return string3;
             case 4:
-                String string4 = LocaleController.getString("Underline", C3473R.string.Underline);
+                String string4 = LocaleController.getString("Underline", C3630R.string.Underline);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"Underline\", R.string.Underline)");
                 return string4;
             case 5:
-                String string5 = LocaleController.getString("Strike", C3473R.string.Strike);
+                String string5 = LocaleController.getString("Strike", C3630R.string.Strike);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"Strike\", R.string.Strike)");
                 return string5;
             case 6:
-                String string6 = LocaleController.getString("Mono", C3473R.string.Mono);
+                String string6 = LocaleController.getString("Mono", C3630R.string.Mono);
                 Intrinsics.checkNotNullExpressionValue(string6, "getString(\"Mono\", R.string.Mono)");
                 return string6;
             case 7:
-                String string7 = LocaleController.getString("Spoiler", C3473R.string.Spoiler);
+                String string7 = LocaleController.getString("Spoiler", C3630R.string.Spoiler);
                 Intrinsics.checkNotNullExpressionValue(string7, "getString(\"Spoiler\", R.string.Spoiler)");
                 return string7;
             default:
@@ -119,7 +119,7 @@ public enum SentMessageFont {
     }
 
     /* compiled from: SentMessageFont.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

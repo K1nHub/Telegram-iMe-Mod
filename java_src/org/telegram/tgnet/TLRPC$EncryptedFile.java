@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$EncryptedFile extends TLObject {
     public long access_hash;
     public int dc_id;
 
     /* renamed from: id */
-    public long f1535id;
+    public long f1613id;
     public int key_fingerprint;
     public long size;
 
@@ -17,7 +17,7 @@ public abstract class TLRPC$EncryptedFile extends TLObject {
 
                 @Override // org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                    this.f1535id = abstractSerializedData2.readInt64(z2);
+                    this.f1613id = abstractSerializedData2.readInt64(z2);
                     this.access_hash = abstractSerializedData2.readInt64(z2);
                     this.size = abstractSerializedData2.readInt64(z2);
                     this.dc_id = abstractSerializedData2.readInt32(z2);
@@ -27,7 +27,7 @@ public abstract class TLRPC$EncryptedFile extends TLObject {
                 @Override // org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                     abstractSerializedData2.writeInt32(constructor);
-                    abstractSerializedData2.writeInt64(this.f1535id);
+                    abstractSerializedData2.writeInt64(this.f1613id);
                     abstractSerializedData2.writeInt64(this.access_hash);
                     abstractSerializedData2.writeInt64(this.size);
                     abstractSerializedData2.writeInt32(this.dc_id);
@@ -40,7 +40,7 @@ public abstract class TLRPC$EncryptedFile extends TLObject {
 
                 @Override // org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                    this.f1535id = abstractSerializedData2.readInt64(z2);
+                    this.f1613id = abstractSerializedData2.readInt64(z2);
                     this.access_hash = abstractSerializedData2.readInt64(z2);
                     this.size = abstractSerializedData2.readInt32(z2);
                     this.dc_id = abstractSerializedData2.readInt32(z2);
@@ -50,7 +50,7 @@ public abstract class TLRPC$EncryptedFile extends TLObject {
                 @Override // org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                     abstractSerializedData2.writeInt32(constructor);
-                    abstractSerializedData2.writeInt64(this.f1535id);
+                    abstractSerializedData2.writeInt64(this.f1613id);
                     abstractSerializedData2.writeInt64(this.access_hash);
                     abstractSerializedData2.writeInt32((int) this.size);
                     abstractSerializedData2.writeInt32(this.dc_id);

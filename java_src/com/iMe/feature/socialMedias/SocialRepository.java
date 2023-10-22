@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.Result;
 import io.reactivex.Observable;
 import kotlin.coroutines.Continuation;
 /* compiled from: SocialRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface SocialRepository {
     Observable<Result<SocialDomain>> getAllSocial(ProfileData profileData);
 

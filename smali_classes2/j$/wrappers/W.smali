@@ -1,23 +1,26 @@
 .class public final synthetic Lj$/wrappers/W;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lj$/util/function/m;
+
 
 # instance fields
-.field final synthetic a:Ljava/util/function/IntToDoubleFunction;
+.field final synthetic a:Ljava/util/function/IntToLongFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/IntToDoubleFunction;)V
+.method private synthetic constructor <init>(Ljava/util/function/IntToLongFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/W;->a:Ljava/util/function/IntToDoubleFunction;
+    iput-object p1, p0, Lj$/wrappers/W;->a:Ljava/util/function/IntToLongFunction;
 
     return-void
 .end method
 
-.method public static synthetic b(Ljava/util/function/IntToDoubleFunction;)Lj$/wrappers/W;
+.method public static synthetic a(Ljava/util/function/IntToLongFunction;)Lj$/util/function/m;
     .locals 1
 
     if-nez p0, :cond_0
@@ -33,26 +36,26 @@
 
     check-cast p0, Lj$/wrappers/X;
 
-    iget-object p0, p0, Lj$/wrappers/X;->a:Lj$/wrappers/W;
+    iget-object p0, p0, Lj$/wrappers/X;->a:Lj$/util/function/m;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/W;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/W;-><init>(Ljava/util/function/IntToDoubleFunction;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/W;-><init>(Ljava/util/function/IntToLongFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a(I)D
+.method public synthetic applyAsLong(I)J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/W;->a:Ljava/util/function/IntToDoubleFunction;
+    iget-object v0, p0, Lj$/wrappers/W;->a:Ljava/util/function/IntToLongFunction;
 
-    invoke-interface {v0, p1}, Ljava/util/function/IntToDoubleFunction;->applyAsDouble(I)D
+    invoke-interface {v0, p1}, Ljava/util/function/IntToLongFunction;->applyAsLong(I)J
 
     move-result-wide v0
 

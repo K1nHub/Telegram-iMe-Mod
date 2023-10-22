@@ -6,58 +6,57 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Objects;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Internal {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    public static final ByteBuffer EMPTY_BYTE_BUFFER;
     static final Charset UTF_8;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface BooleanList extends ProtobufList<Boolean> {
         @Override // 
         ProtobufList<Boolean> mutableCopyWithCapacity(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface DoubleList extends ProtobufList<Double> {
         @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
         ProtobufList<Double> mutableCopyWithCapacity(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface EnumLite {
         int getNumber();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface EnumLiteMap<T extends EnumLite> {
         T findValueByNumber(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface EnumVerifier {
         boolean isInRange(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface FloatList extends ProtobufList<Float> {
         @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
         ProtobufList<Float> mutableCopyWithCapacity(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface IntList extends ProtobufList<Integer> {
         @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
         ProtobufList<Integer> mutableCopyWithCapacity(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface LongList extends ProtobufList<Long> {
         @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
         ProtobufList<Long> mutableCopyWithCapacity(int i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface ProtobufList<E> extends List<E>, RandomAccess {
         boolean isModifiable();
 
@@ -80,7 +79,7 @@ public final class Internal {
         Charset.forName(C0479C.ISO88591_NAME);
         byte[] bArr = new byte[0];
         EMPTY_BYTE_ARRAY = bArr;
-        EMPTY_BYTE_BUFFER = ByteBuffer.wrap(bArr);
+        ByteBuffer.wrap(bArr);
         CodedInputStream.newInstance(bArr);
     }
 

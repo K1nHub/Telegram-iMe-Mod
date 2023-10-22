@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenCommonRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenCommonRequest {
     private final TokenRequest token;
 

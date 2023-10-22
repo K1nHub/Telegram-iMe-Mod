@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class IndoorBuilding {
     private final com.google.android.gms.internal.maps.zzr zza;
     private final zze zzb;

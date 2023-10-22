@@ -1,12 +1,12 @@
 package com.google.common.math;
 
 import java.math.RoundingMode;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LongMath {
 
     /* renamed from: com.google.common.math.LongMath$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C09251 {
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class C09161 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 
         static {
@@ -75,7 +75,7 @@ public final class LongMath {
             int r9 = (int) r9
             r10 = 1
             r9 = r9 | r10
-            int[] r7 = com.google.common.math.LongMath.C09251.$SwitchMap$java$math$RoundingMode
+            int[] r7 = com.google.common.math.LongMath.C09161.$SwitchMap$java$math$RoundingMode
             int r8 = r13.ordinal()
             r7 = r7[r8]
             r8 = 0
@@ -136,11 +136,5 @@ public final class LongMath {
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.common.math.LongMath.divide(long, long, java.math.RoundingMode):long");
-    }
-
-    public static long checkedAdd(long j, long j2) {
-        long j3 = j + j2;
-        MathPreconditions.checkNoOverflow(((j ^ j2) < 0) | ((j ^ j3) >= 0), "checkedAdd", j, j2);
-        return j3;
     }
 }

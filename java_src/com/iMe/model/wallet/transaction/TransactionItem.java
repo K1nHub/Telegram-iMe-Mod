@@ -12,15 +12,15 @@ import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.ActionBar.Theme;
 /* compiled from: TransactionItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TransactionItem extends NoChildNode {
     private final Transaction transaction;
 
     /* compiled from: TransactionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -46,7 +46,7 @@ public final class TransactionItem extends NoChildNode {
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[TransactionDirection.values().length];
             try {
-                iArr2[TransactionDirection.f459IN.ordinal()] = 1;
+                iArr2[TransactionDirection.f392IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused5) {
             }
             try {
@@ -148,16 +148,16 @@ public final class TransactionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Transaction transaction = this.transaction;
         if (transaction instanceof Transaction.Unsupported) {
-            return resourceManager.getString(C3473R.string.wallet_unsupported_transaction_message);
+            return resourceManager.getString(C3630R.string.wallet_unsupported_transaction_message);
         }
         if (transaction instanceof Transaction.Crypto.Approve) {
-            return resourceManager.getString(C3473R.string.wallet_transactions_type_approve_title, transaction.getToken().getTicker());
+            return resourceManager.getString(C3630R.string.wallet_transactions_type_approve_title, transaction.getToken().getTicker());
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
             FiatCode spentFiatCode = ((Transaction.Crypto.SimplexPurchase) transaction).getSpentFiatCode();
-            return resourceManager.getString(C3473R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.format(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), Integer.valueOf(spentFiatCode.getDecimals())), spentFiatCode.getShortName(), BalanceFormatter.format(this.transaction.getAmount(), Integer.valueOf(this.transaction.getToken().getDecimals())), this.transaction.getToken().getTicker());
+            return resourceManager.getString(C3630R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.format(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), Integer.valueOf(spentFiatCode.getDecimals())), spentFiatCode.getShortName(), BalanceFormatter.format(this.transaction.getAmount(), Integer.valueOf(this.transaction.getToken().getDecimals())), this.transaction.getToken().getTicker());
         } else if (transaction instanceof Transaction.Crypto.Swap) {
-            return resourceManager.getString(C3473R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.format(((Transaction.Crypto.Swap) transaction).getInputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getInputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getInputToken().getTicker(), BalanceFormatter.format(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getOutputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getOutputToken().getTicker());
+            return resourceManager.getString(C3630R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.format(((Transaction.Crypto.Swap) transaction).getInputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getInputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getInputToken().getTicker(), BalanceFormatter.format(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getOutputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getOutputToken().getTicker());
         } else {
             return getAmountWithSymbol(true) + ' ' + this.transaction.getToken().getTicker();
         }

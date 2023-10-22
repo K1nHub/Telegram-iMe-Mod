@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.stacktrace;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MiddleOutStrategy implements StackTraceTrimmingStrategy {
     private final int trimmedSize;
 

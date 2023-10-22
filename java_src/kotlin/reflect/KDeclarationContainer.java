@@ -1,5 +1,5 @@
 package kotlin.reflect;
 /* compiled from: KDeclarationContainer.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface KDeclarationContainer {
 }

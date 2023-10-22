@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$MessageReplyHeader extends TLObject {
     public int flags;
     public boolean forum_topic;

@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.SlopSwipeRefreshLayout;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.SlopSwipeRefreshLayout;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBinding {
     public final RecyclerView recycleWalletHomeBinancePayDashboard;
     private final SlopSwipeRefreshLayout rootView;
@@ -18,7 +18,6 @@ public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBindin
         this.recycleWalletHomeBinancePayDashboard = recyclerView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public SlopSwipeRefreshLayout getRoot() {
         return this.rootView;
     }
@@ -28,7 +27,7 @@ public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletHomeBinancePayBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_home_binance_pay, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_wallet_home_binance_pay, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +35,7 @@ public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletHomeBinancePayBinding bind(View view) {
-        int i = C3473R.C3476id.recycle_wallet_home_binance_pay_dashboard;
+        int i = C3630R.C3633id.recycle_wallet_home_binance_pay_dashboard;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletHomeBinancePayBinding((SlopSwipeRefreshLayout) view, recyclerView);

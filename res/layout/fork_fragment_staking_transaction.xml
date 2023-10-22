@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <org.telegram.ui.Components.RLottieImageView android:id="@id/image_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" android:layout_marginBottom="@dimen/margin_normal_20" />
+        <TextView android:textSize="@dimen/text_size_small_upper" android:gravity="center" android:id="@id/text_header" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/margin_upper" android:layout_marginRight="@dimen/margin_upper" android:layout_marginBottom="@dimen/margin_under_upper" android:layout_weight="1.0" android:layout_marginHorizontal="@dimen/margin_upper" />
+        <LinearLayout android:orientation="vertical" android:id="@id/linear_staking_settings" android:paddingTop="@dimen/margin_under_upper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_big" android:paddingStart="@dimen/margin_under_upper" android:elevation="@dimen/wallet_card_elevation">
+            <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/margin_under_upper" />
+            <TextView android:textSize="@dimen/text_size_small_upper" android:id="@id/text_balance" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal_18" android:layout_marginEnd="@dimen/margin_under_upper" />
+            <com.iMe.ui.custom.StakingPercentageView android:id="@id/staking_percentage_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/margin_under_upper" />
+            <com.iMe.ui.custom.StakingSafeWithdrawalView android:id="@id/staking_safe_withdrawal_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/margin_under_upper" />
+            <com.iMe.ui.custom.TransactionActionButtonsView android:id="@id/button_send" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginEnd="@dimen/margin_under_upper" />
+            <com.iMe.ui.custom.StakingWithdrawalFeeView android:id="@id/staking_withdrawal_fee_view" android:paddingBottom="@dimen/padding_under_normal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingEnd="@dimen/padding_upper" />
+            <com.iMe.ui.custom.FeeView android:id="@id/view_fee" android:paddingBottom="@dimen/padding_under_normal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingEnd="@dimen/padding_under_upper" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

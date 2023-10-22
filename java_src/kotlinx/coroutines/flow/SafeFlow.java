@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Builders.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class SafeFlow<T> extends AbstractFlow<T> {
     private final Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> block;
 

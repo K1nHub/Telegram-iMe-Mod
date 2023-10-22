@@ -7,15 +7,15 @@ import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.common.GlobalStateItem;
 import com.iMe.model.twitter.TweetItem;
 import com.iMe.model.twitter.TweetsDateItem;
-import com.iMe.p031ui.adapter.provider.GlobalStateProvider;
-import com.iMe.p031ui.adapter.provider.TweetDatesProvider;
-import com.iMe.p031ui.adapter.provider.TweetProvider;
+import com.iMe.p030ui.adapter.provider.GlobalStateProvider;
+import com.iMe.p030ui.adapter.provider.TweetDatesProvider;
+import com.iMe.p030ui.adapter.provider.TweetProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 /* compiled from: TweetsRecycleAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TweetsRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final GlobalStateProvider globalStateProvider;
     private final TweetProvider tweetProvider;
@@ -34,7 +34,7 @@ public final class TweetsRecycleAdapter extends BaseNodeAdapter<BaseNode> implem
         this.tweetProvider = tweetProvider;
         this.tweetsDateProvider = tweetsDateProvider;
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3473R.C3476id.image_share, C3473R.C3476id.image_menu);
+        addChildClickViewIds(C3630R.C3633id.image_share, C3630R.C3633id.image_menu);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetsDateProvider));

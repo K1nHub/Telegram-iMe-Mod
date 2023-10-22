@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryWithCounter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CategoryWithCounter {
     private final CatalogCategory category;
     private final int total;

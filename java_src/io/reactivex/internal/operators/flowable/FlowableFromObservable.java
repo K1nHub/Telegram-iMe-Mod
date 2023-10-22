@@ -6,7 +6,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FlowableFromObservable<T> extends Flowable<T> {
     private final Observable<T> upstream;
 
@@ -19,7 +19,7 @@ public final class FlowableFromObservable<T> extends Flowable<T> {
         this.upstream.subscribe(new SubscriberObserver(subscriber));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SubscriberObserver<T> implements Observer<T>, Subscription {
         final Subscriber<? super T> downstream;
         Disposable upstream;

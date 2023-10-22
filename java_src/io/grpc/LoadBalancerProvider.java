@@ -1,13 +1,8 @@
 package io.grpc;
 
 import com.google.common.base.MoreObjects;
-import io.grpc.LoadBalancer;
-import io.grpc.NameResolver;
-import java.util.Map;
-/* loaded from: classes6.dex */
-public abstract class LoadBalancerProvider extends LoadBalancer.Factory {
-    private static final NameResolver.ConfigOrError UNKNOWN_CONFIG = NameResolver.ConfigOrError.fromConfig(new UnknownConfig());
-
+/* loaded from: classes4.dex */
+public abstract class LoadBalancerProvider extends LoadBalancer$Factory {
     public final boolean equals(Object obj) {
         return this == obj;
     }
@@ -18,8 +13,8 @@ public abstract class LoadBalancerProvider extends LoadBalancer.Factory {
 
     public abstract boolean isAvailable();
 
-    public NameResolver.ConfigOrError parseLoadBalancingPolicyConfig(Map<String, ?> map) {
-        return UNKNOWN_CONFIG;
+    static {
+        NameResolver$ConfigOrError.fromConfig(new UnknownConfig());
     }
 
     public final String toString() {
@@ -30,7 +25,7 @@ public abstract class LoadBalancerProvider extends LoadBalancer.Factory {
         return super.hashCode();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static final class UnknownConfig {
         public String toString() {
             return "service config is unused";

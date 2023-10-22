@@ -6,20 +6,10 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentTwitterSearchBinding implements ViewBinding {
-    public final RecyclerView recycleTweets;
-    private final RecyclerView rootView;
-
     private ForkFragmentTwitterSearchBinding(RecyclerView recyclerView, RecyclerView recyclerView2) {
-        this.rootView = recyclerView;
-        this.recycleTweets = recyclerView2;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public RecyclerView getRoot() {
-        return this.rootView;
     }
 
     public static ForkFragmentTwitterSearchBinding inflate(LayoutInflater layoutInflater) {
@@ -27,7 +17,7 @@ public final class ForkFragmentTwitterSearchBinding implements ViewBinding {
     }
 
     public static ForkFragmentTwitterSearchBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_twitter_search, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_twitter_search, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

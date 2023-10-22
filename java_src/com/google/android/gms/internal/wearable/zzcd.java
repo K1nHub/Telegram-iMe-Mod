@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzcd {
     static final Charset zza = Charset.forName(C0479C.ASCII_NAME);
     static final Charset zzb = Charset.forName("UTF-8");

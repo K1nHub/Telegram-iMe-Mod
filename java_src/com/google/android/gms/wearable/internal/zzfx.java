@@ -9,20 +9,20 @@ import com.google.android.gms.wearable.MessageEvent;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "MessageEventParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfx extends AbstractSafeParcelable implements MessageEvent {
     public static final Parcelable.Creator<zzfx> CREATOR = new zzfy();
-    @SafeParcelable.Field(getter = "getRequestId", m797id = 2)
+    @SafeParcelable.Field(getter = "getRequestId", m1089id = 2)
     private final int zza;
-    @SafeParcelable.Field(getter = "getPath", m797id = 3)
+    @SafeParcelable.Field(getter = "getPath", m1089id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getData", m797id = 4)
+    @SafeParcelable.Field(getter = "getData", m1089id = 4)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getSourceNodeId", m797id = 5)
+    @SafeParcelable.Field(getter = "getSourceNodeId", m1089id = 5)
     private final String zzd;
 
     @SafeParcelable.Constructor
-    public zzfx(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) byte[] bArr, @SafeParcelable.Param(m796id = 5) String str2) {
+    public zzfx(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) byte[] bArr, @SafeParcelable.Param(m1088id = 5) String str2) {
         this.zza = i;
         this.zzb = str;
         this.zzc = bArr;

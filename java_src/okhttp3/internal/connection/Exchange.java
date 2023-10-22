@@ -12,7 +12,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http.RealResponseBody;
-import okhttp3.internal.p037ws.RealWebSocket;
+import okhttp3.internal.p036ws.RealWebSocket;
 import okio.Buffer;
 import okio.ForwardingSink;
 import okio.ForwardingSource;
@@ -20,7 +20,7 @@ import okio.Okio;
 import okio.Sink;
 import okio.Source;
 /* compiled from: Exchange.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Exchange {
     private final RealCall call;
     private final ExchangeCodec codec;
@@ -197,7 +197,7 @@ public final class Exchange {
     }
 
     /* compiled from: Exchange.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private final class RequestBodySink extends ForwardingSink {
         private long bytesReceived;
         private boolean closed;
@@ -268,7 +268,7 @@ public final class Exchange {
     }
 
     /* compiled from: Exchange.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class ResponseBodySource extends ForwardingSource {
         private long bytesReceived;
         private boolean closed;

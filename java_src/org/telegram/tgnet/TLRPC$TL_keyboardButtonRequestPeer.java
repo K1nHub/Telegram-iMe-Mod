@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_keyboardButtonRequestPeer extends TLRPC$KeyboardButton {
     public static int constructor = 218842764;
     public TLRPC$RequestPeerType peer_type;

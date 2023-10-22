@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: Regex.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Regex implements Serializable {
     private final Pattern nativePattern;
 
@@ -45,6 +45,15 @@ public final class Regex implements Serializable {
     public final boolean matches(CharSequence input) {
         Intrinsics.checkNotNullParameter(input, "input");
         return this.nativePattern.matcher(input).matches();
+    }
+
+    public final MatchResult matchEntire(CharSequence input) {
+        MatchResult matchEntire;
+        Intrinsics.checkNotNullParameter(input, "input");
+        Matcher matcher = this.nativePattern.matcher(input);
+        Intrinsics.checkNotNullExpressionValue(matcher, "nativePattern.matcher(input)");
+        matchEntire = RegexKt.matchEntire(matcher, input);
+        return matchEntire;
     }
 
     public final String replace(CharSequence input, String replacement) {
@@ -85,7 +94,7 @@ public final class Regex implements Serializable {
     }
 
     /* compiled from: Regex.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

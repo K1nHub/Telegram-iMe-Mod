@@ -7,7 +7,7 @@ import com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbHandler;
 import com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class BreadcrumbAnalyticsEventReceiver implements AnalyticsEventReceiver, BreadcrumbSource {
     private BreadcrumbHandler breadcrumbHandler;
 
@@ -18,7 +18,7 @@ public class BreadcrumbAnalyticsEventReceiver implements AnalyticsEventReceiver,
             try {
                 breadcrumbHandler.handleBreadcrumb("$A$:" + serializeEvent(str, bundle));
             } catch (JSONException unused) {
-                Logger.getLogger().m738w("Unable to serialize Firebase Analytics event to breadcrumb.");
+                Logger.getLogger().m1030w("Unable to serialize Firebase Analytics event to breadcrumb.");
             }
         }
     }
@@ -26,7 +26,7 @@ public class BreadcrumbAnalyticsEventReceiver implements AnalyticsEventReceiver,
     @Override // com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource
     public void registerBreadcrumbHandler(BreadcrumbHandler breadcrumbHandler) {
         this.breadcrumbHandler = breadcrumbHandler;
-        Logger.getLogger().m746d("Registered Firebase Analytics event receiver for breadcrumbs");
+        Logger.getLogger().m1038d("Registered Firebase Analytics event receiver for breadcrumbs");
     }
 
     private static String serializeEvent(String str, Bundle bundle) throws JSONException {

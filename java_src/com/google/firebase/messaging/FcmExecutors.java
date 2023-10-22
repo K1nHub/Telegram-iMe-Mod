@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class FcmExecutors {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static ScheduledExecutorService newInitExecutor() {

@@ -1,10 +1,10 @@
 package com.iMe.storage.domain.model.music;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlaylistModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PlaylistModel {
     private final long dialogId;
     private final ArrayList<Integer> messageIds;
@@ -45,7 +45,7 @@ public final class PlaylistModel {
     }
 
     public int hashCode() {
-        return (this.messageIds.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.dialogId);
+        return (this.messageIds.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.dialogId);
     }
 
     public String toString() {

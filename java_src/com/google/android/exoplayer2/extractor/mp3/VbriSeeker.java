@@ -61,7 +61,7 @@ final class VbriSeeker implements Seeker {
         }
         long[] jArr3 = jArr;
         if (j != -1 && j != j4) {
-            Log.m814w(TAG, "VBRI data size mismatch: " + j + ", " + j4);
+            Log.m1106w(TAG, "VBRI data size mismatch: " + j + ", " + j4);
         }
         return new VbriSeeker(jArr3, jArr2, scaleLargeTimestamp, j4);
     }

@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.filters;
 /* compiled from: FilterIcon.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum FilterIcon {
     GRID_2x2,
     EYE,

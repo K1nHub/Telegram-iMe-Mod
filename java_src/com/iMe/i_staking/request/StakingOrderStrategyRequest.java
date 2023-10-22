@@ -5,7 +5,7 @@ import java.util.Locale;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOrderStrategyRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingOrderStrategyRequest {
     public static final Companion Companion = new Companion(null);
     private final String criteria;
@@ -51,7 +51,7 @@ public final class StakingOrderStrategyRequest {
     }
 
     /* compiled from: StakingOrderStrategyRequest.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

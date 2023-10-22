@@ -6,7 +6,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DispatchQueuePriority {
     private volatile CountDownLatch pauseLatch;
     ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new PriorityBlockingQueue(10, new Comparator<Runnable>(this) { // from class: org.telegram.DispatchQueuePriority.2
@@ -22,7 +22,7 @@ public class DispatchQueuePriority {
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
             }
         }
@@ -65,7 +65,7 @@ public class DispatchQueuePriority {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class PriorityRunnable implements Runnable {
         final int priority;
         final Runnable runnable;

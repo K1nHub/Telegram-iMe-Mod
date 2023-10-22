@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_pageBlockEmbedPost extends TLRPC$PageBlock {
     public static int constructor = -229005301;
     public String author;

@@ -7,7 +7,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DERSequence;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AlgorithmIdentifier extends ASN1Object {
     private ASN1ObjectIdentifier algorithm;
     private ASN1Encodable parameters;

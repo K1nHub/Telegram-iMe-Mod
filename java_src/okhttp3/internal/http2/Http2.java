@@ -5,7 +5,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import okhttp3.internal.Util;
 import okio.ByteString;
 /* compiled from: Http2.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Http2 {
     private static final String[] BINARY;
     public static final Http2 INSTANCE = new Http2();

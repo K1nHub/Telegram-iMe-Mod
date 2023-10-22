@@ -5,13 +5,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.ThreadContextElement;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ThreadContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ThreadState {
     public final CoroutineContext context;
     private final ThreadContextElement<Object>[] elements;
 
     /* renamed from: i */
-    private int f1312i;
+    private int f1401i;
     private final Object[] values;
 
     public ThreadState(CoroutineContext coroutineContext, int i) {
@@ -22,10 +22,11 @@ public final class ThreadState {
 
     public final void append(ThreadContextElement<?> threadContextElement, Object obj) {
         Object[] objArr = this.values;
-        int i = this.f1312i;
+        int i = this.f1401i;
         objArr[i] = obj;
         ThreadContextElement<Object>[] threadContextElementArr = this.elements;
-        this.f1312i = i + 1;
+        this.f1401i = i + 1;
+        Intrinsics.checkNotNull(threadContextElement, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
         threadContextElementArr[i] = threadContextElement;
     }
 

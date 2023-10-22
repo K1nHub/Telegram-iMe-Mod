@@ -16,13 +16,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class IdToken extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<IdToken> CREATOR = new zbf();
-    @SafeParcelable.Field(getter = "getAccountType", m797id = 1)
+    @SafeParcelable.Field(getter = "getAccountType", m1089id = 1)
     private final String zba;
-    @SafeParcelable.Field(getter = "getIdToken", m797id = 2)
+    @SafeParcelable.Field(getter = "getIdToken", m1089id = 2)
     private final String zbb;
 
     @SafeParcelable.Constructor
-    public IdToken(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2) {
+    public IdToken(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2) {
         Preconditions.checkArgument(!TextUtils.isEmpty(str), "account type string cannot be null or empty");
         Preconditions.checkArgument(!TextUtils.isEmpty(str2), "id token string cannot be null or empty");
         this.zba = str;

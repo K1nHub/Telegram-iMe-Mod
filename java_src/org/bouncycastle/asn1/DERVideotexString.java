@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DERVideotexString extends ASN1Primitive {
     private final byte[] string;
 

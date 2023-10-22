@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ImmutableList<E> implements List<E>, RandomAccess {
     private final List<E> immutableList;
 

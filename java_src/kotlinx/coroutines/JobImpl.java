@@ -1,6 +1,8 @@
 package kotlinx.coroutines;
+
+import kotlin.Unit;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class JobImpl extends JobSupport implements CompletableJob {
     private final boolean handlesException;
 
@@ -18,6 +20,16 @@ public class JobImpl extends JobSupport implements CompletableJob {
     @Override // kotlinx.coroutines.JobSupport
     public boolean getHandlesException$kotlinx_coroutines_core() {
         return this.handlesException;
+    }
+
+    @Override // kotlinx.coroutines.CompletableJob
+    public boolean complete() {
+        return makeCompleting$kotlinx_coroutines_core(Unit.INSTANCE);
+    }
+
+    @Override // kotlinx.coroutines.CompletableJob
+    public boolean completeExceptionally(Throwable th) {
+        return makeCompleting$kotlinx_coroutines_core(new CompletedExceptionally(th, false, 2, null));
     }
 
     private final boolean handlesException() {

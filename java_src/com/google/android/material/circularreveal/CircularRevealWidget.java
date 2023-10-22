@@ -4,7 +4,7 @@ import android.animation.TypeEvaluator;
 import android.graphics.drawable.Drawable;
 import android.util.Property;
 import com.google.android.material.math.MathUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CircularRevealWidget {
     void buildCircularRevealCache();
 
@@ -20,7 +20,7 @@ public interface CircularRevealWidget {
 
     void setRevealInfo(RevealInfo revealInfo);
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class RevealInfo {
         public float centerX;
         public float centerY;
@@ -42,7 +42,7 @@ public interface CircularRevealWidget {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CircularRevealProperty extends Property<CircularRevealWidget, RevealInfo> {
         public static final Property<CircularRevealWidget, RevealInfo> CIRCULAR_REVEAL = new CircularRevealProperty("circularReveal");
 
@@ -61,7 +61,7 @@ public interface CircularRevealWidget {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CircularRevealEvaluator implements TypeEvaluator<RevealInfo> {
         public static final TypeEvaluator<RevealInfo> CIRCULAR_REVEAL = new CircularRevealEvaluator();
         private final RevealInfo revealInfo = new RevealInfo();
@@ -73,7 +73,7 @@ public interface CircularRevealWidget {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CircularRevealScrimColorProperty extends Property<CircularRevealWidget, Integer> {
         public static final Property<CircularRevealWidget, Integer> CIRCULAR_REVEAL_SCRIM_COLOR = new CircularRevealScrimColorProperty("circularRevealScrimColor");
 

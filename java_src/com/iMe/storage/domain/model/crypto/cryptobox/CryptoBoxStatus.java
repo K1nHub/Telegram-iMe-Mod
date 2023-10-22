@@ -5,7 +5,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum CryptoBoxStatus {
     PENDING(R$string.cryptobox_status_pending_title, R$string.cryptobox_status_pending_description, R$color.cryptobox_status_pending),
     CREATED(R$string.cryptobox_status_created_title, R$string.cryptobox_status_created_description, R$color.cryptobox_status_created),
@@ -38,7 +38,7 @@ public enum CryptoBoxStatus {
     }
 
     /* compiled from: CryptoBoxStatus.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

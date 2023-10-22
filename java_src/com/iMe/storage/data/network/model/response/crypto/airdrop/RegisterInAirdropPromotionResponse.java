@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.airdrop;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RegisterInAirdropPromotionResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RegisterInAirdropPromotionResponse {
     private final String requestId;
 

@@ -5,7 +5,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CookieJar.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface CookieJar {
     public static final CookieJar NO_COOKIES;
 
@@ -14,7 +14,7 @@ public interface CookieJar {
     void saveFromResponse(HttpUrl httpUrl, List<Cookie> list);
 
     /* compiled from: CookieJar.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -24,7 +24,7 @@ public interface CookieJar {
         }
 
         /* compiled from: CookieJar.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         private static final class NoCookies implements CookieJar {
             @Override // okhttp3.CookieJar
             public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {

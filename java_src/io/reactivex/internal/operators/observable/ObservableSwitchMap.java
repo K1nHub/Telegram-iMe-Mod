@@ -14,7 +14,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableSwitchMap<T, R> extends AbstractObservableWithUpstream<T, R> {
     final int bufferSize;
     final boolean delayErrors;
@@ -35,7 +35,7 @@ public final class ObservableSwitchMap<T, R> extends AbstractObservableWithUpstr
         this.source.subscribe(new SwitchMapObserver(observer, this.mapper, this.bufferSize, this.delayErrors));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SwitchMapObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         static final SwitchMapInnerObserver<Object, Object> CANCELLED;
         final int bufferSize;
@@ -172,7 +172,7 @@ public final class ObservableSwitchMap<T, R> extends AbstractObservableWithUpstr
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class SwitchMapInnerObserver<T, R> extends AtomicReference<Disposable> implements Observer<R> {
         final int bufferSize;
         volatile boolean done;

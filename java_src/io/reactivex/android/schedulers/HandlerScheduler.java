@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposables;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class HandlerScheduler extends Scheduler {
     private final boolean async;
     private final Handler handler;
@@ -37,7 +37,7 @@ final class HandlerScheduler extends Scheduler {
         return new HandlerWorker(this.handler, this.async);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static final class HandlerWorker extends Scheduler.Worker {
         private final boolean async;
         private volatile boolean disposed;
@@ -81,7 +81,7 @@ final class HandlerScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static final class ScheduledRunnable implements Runnable, Disposable {
         private final Runnable delegate;
         private volatile boolean disposed;

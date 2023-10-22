@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import okhttp3.ResponseBody;
 import okio.Buffer;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 final class Utils {
     static final Type[] EMPTY_TYPE_ARRAY = new Type[0];
 
@@ -386,7 +386,7 @@ final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class ParameterizedTypeImpl implements ParameterizedType {
         private final Type ownerType;
         private final Type rawType;
@@ -451,7 +451,7 @@ final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class GenericArrayTypeImpl implements GenericArrayType {
         private final Type componentType;
 
@@ -478,7 +478,7 @@ final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class WildcardTypeImpl implements WildcardType {
         private final Type lowerBound;
         private final Type upperBound;

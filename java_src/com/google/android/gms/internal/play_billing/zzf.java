@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzf extends zzi implements zzg {
     public zzf() {
         super("com.android.vending.billing.IInAppBillingServiceCallback");

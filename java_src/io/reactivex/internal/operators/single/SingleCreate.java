@@ -6,10 +6,12 @@ import io.reactivex.SingleObserver;
 import io.reactivex.SingleOnSubscribe;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
+import io.reactivex.functions.Cancellable;
+import io.reactivex.internal.disposables.CancellableDisposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SingleCreate<T> extends Single<T> {
     final SingleOnSubscribe<T> source;
 
@@ -29,7 +31,7 @@ public final class SingleCreate<T> extends Single<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Emitter<T> extends AtomicReference<Disposable> implements SingleEmitter<T>, Disposable {
         final SingleObserver<? super T> downstream;
 
@@ -88,6 +90,15 @@ public final class SingleCreate<T> extends Single<T> {
                     andSet.dispose();
                 }
             }
+        }
+
+        public void setDisposable(Disposable disposable) {
+            DisposableHelper.set(this, disposable);
+        }
+
+        @Override // io.reactivex.SingleEmitter
+        public void setCancellable(Cancellable cancellable) {
+            setDisposable(new CancellableDisposable(cancellable));
         }
 
         @Override // io.reactivex.disposables.Disposable

@@ -230,7 +230,7 @@ public final class WebvttCueParser {
             webvttCueInfoBuilder.text = parseCueText(str, sb.toString(), list);
             return webvttCueInfoBuilder.build();
         } catch (NumberFormatException unused) {
-            Log.m814w(TAG, "Skipping cue with bad header: " + matcher.group());
+            Log.m1106w(TAG, "Skipping cue with bad header: " + matcher.group());
             return null;
         }
     }
@@ -252,10 +252,10 @@ public final class WebvttCueParser {
                 } else if ("vertical".equals(str2)) {
                     webvttCueInfoBuilder.verticalType = parseVerticalAttribute(str3);
                 } else {
-                    Log.m814w(TAG, "Unknown cue setting " + str2 + ":" + str3);
+                    Log.m1106w(TAG, "Unknown cue setting " + str2 + ":" + str3);
                 }
             } catch (NumberFormatException unused) {
-                Log.m814w(TAG, "Skipping bad cue setting: " + matcher.group());
+                Log.m1106w(TAG, "Skipping bad cue setting: " + matcher.group());
             }
         }
     }
@@ -313,7 +313,7 @@ public final class WebvttCueParser {
             case 3:
                 return 0;
             default:
-                Log.m814w(TAG, "Invalid anchor value: " + str);
+                Log.m1106w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -379,7 +379,7 @@ public final class WebvttCueParser {
             case 4:
                 return 2;
             default:
-                Log.m814w(TAG, "Invalid anchor value: " + str);
+                Log.m1106w(TAG, "Invalid anchor value: " + str);
                 return Integer.MIN_VALUE;
         }
     }
@@ -392,7 +392,7 @@ public final class WebvttCueParser {
         if (str.equals("rl")) {
             return 1;
         }
-        Log.m814w(TAG, "Invalid 'vertical' value: " + str);
+        Log.m1106w(TAG, "Invalid 'vertical' value: " + str);
         return Integer.MIN_VALUE;
     }
 
@@ -450,7 +450,7 @@ public final class WebvttCueParser {
             case 5:
                 return 1;
             default:
-                Log.m814w(TAG, "Invalid alignment value: " + str);
+                Log.m1106w(TAG, "Invalid alignment value: " + str);
                 return 2;
         }
     }
@@ -503,7 +503,7 @@ public final class WebvttCueParser {
                 spannableStringBuilder.append(CHAR_SPACE);
                 return;
             default:
-                Log.m814w(TAG, "ignoring unsupported entity: '&" + str + ";'");
+                Log.m1106w(TAG, "ignoring unsupported entity: '&" + str + ";'");
                 return;
         }
     }
@@ -799,7 +799,13 @@ public final class WebvttCueParser {
         }
 
         private static float derivePosition(int i) {
-            return i != 4 ? i != 5 ? 0.5f : 1.0f : BitmapDescriptorFactory.HUE_RED;
+            if (i != 4) {
+                if (i != 5) {
+                    return WebvttCueParser.DEFAULT_POSITION;
+                }
+                return 1.0f;
+            }
+            return BitmapDescriptorFactory.HUE_RED;
         }
 
         private static int derivePositionAnchor(int i) {
@@ -844,7 +850,7 @@ public final class WebvttCueParser {
                 if (i != 3) {
                     if (i != 4) {
                         if (i != 5) {
-                            Log.m814w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
+                            Log.m1106w(WebvttCueParser.TAG, "Unknown textAlignment: " + i);
                             return null;
                         }
                     }
@@ -857,7 +863,7 @@ public final class WebvttCueParser {
         private static float deriveMaxSize(int i, float f) {
             if (i != 0) {
                 if (i == 1) {
-                    return f <= 0.5f ? f * 2.0f : (1.0f - f) * 2.0f;
+                    return f <= WebvttCueParser.DEFAULT_POSITION ? f * 2.0f : (1.0f - f) * 2.0f;
                 } else if (i == 2) {
                     return f;
                 } else {

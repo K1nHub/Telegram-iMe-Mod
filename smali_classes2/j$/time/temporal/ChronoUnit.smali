@@ -2,7 +2,7 @@
 .super Ljava/lang/Enum;
 
 # interfaces
-.implements Lj$/time/temporal/l;
+.implements Lj$/time/temporal/y;
 
 
 # annotations
@@ -11,7 +11,7 @@
         "Ljava/lang/Enum<",
         "Lj$/time/temporal/ChronoUnit;",
         ">;",
-        "Lj$/time/temporal/l;"
+        "Lj$/time/temporal/y;"
     }
 .end annotation
 
@@ -66,7 +66,7 @@
 
     const-wide/16 v1, 0x1
 
-    invoke-static {v1, v2}, Lj$/time/Duration;->b(J)Lj$/time/Duration;
+    invoke-static {v1, v2}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
 
     move-result-object v3
 
@@ -84,7 +84,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    invoke-static {v6, v7}, Lj$/time/Duration;->b(J)Lj$/time/Duration;
+    invoke-static {v6, v7}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
 
     move-result-object v4
 
@@ -102,7 +102,7 @@
 
     const-wide/32 v8, 0xf4240
 
-    invoke-static {v8, v9}, Lj$/time/Duration;->b(J)Lj$/time/Duration;
+    invoke-static {v8, v9}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
 
     move-result-object v6
 
@@ -118,7 +118,7 @@
 
     new-instance v6, Lj$/time/temporal/ChronoUnit;
 
-    invoke-static {v1, v2}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v1, v2}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v1
 
@@ -136,7 +136,7 @@
 
     const-wide/16 v10, 0x3c
 
-    invoke-static {v10, v11}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v10, v11}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v2
 
@@ -154,7 +154,7 @@
 
     const-wide/16 v12, 0xe10
 
-    invoke-static {v12, v13}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v12, v13}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v10
 
@@ -172,7 +172,7 @@
 
     const-wide/32 v14, 0xa8c0
 
-    invoke-static {v14, v15}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v14, v15}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v12
 
@@ -190,7 +190,7 @@
 
     const-wide/32 v13, 0x15180
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -208,7 +208,7 @@
 
     const-wide/32 v13, 0x93a80
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -226,7 +226,7 @@
 
     const-wide/32 v13, 0x282072
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -244,7 +244,7 @@
 
     const-wide/32 v13, 0x1e18558
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -262,7 +262,7 @@
 
     const-wide/32 v13, 0x12cf3570
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -280,7 +280,7 @@
 
     const-wide v13, 0xbc181660L
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -300,7 +300,7 @@
 
     const-wide v13, 0x758f0dfc0L
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -320,7 +320,7 @@
 
     const-wide v13, 0x701ce172277000L
 
-    invoke-static {v13, v14}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v13, v14}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v13
 
@@ -346,7 +346,7 @@
 
     const-wide/32 v8, 0x3b9ac9ff
 
-    invoke-static {v13, v14, v8, v9}, Lj$/time/Duration;->d(JJ)Lj$/time/Duration;
+    invoke-static {v13, v14, v8, v9}, Lj$/time/Duration;->e(JJ)Lj$/time/Duration;
 
     move-result-object v8
 
@@ -471,6 +471,42 @@
 
 
 # virtual methods
+.method public a(Lj$/time/temporal/j;J)Lj$/time/temporal/j;
+    .locals 0
+
+    invoke-interface {p1, p2, p3, p0}, Lj$/time/temporal/j;->f(JLj$/time/temporal/y;)Lj$/time/temporal/j;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public b()Z
+    .locals 1
+
+    sget-object v0, Lj$/time/temporal/ChronoUnit;->DAYS:Lj$/time/temporal/ChronoUnit;
+
+    invoke-virtual {p0, v0}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    sget-object v0, Lj$/time/temporal/ChronoUnit;->FOREVER:Lj$/time/temporal/ChronoUnit;
+
+    if-eq p0, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public getDuration()Lj$/time/Duration;
     .locals 1
 

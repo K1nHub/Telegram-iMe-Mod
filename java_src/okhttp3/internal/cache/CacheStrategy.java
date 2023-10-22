@@ -13,7 +13,7 @@ import okhttp3.Response;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.DatesKt;
 /* compiled from: CacheStrategy.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CacheStrategy {
     public static final Companion Companion = new Companion(null);
     private final Response cacheResponse;
@@ -33,7 +33,7 @@ public final class CacheStrategy {
     }
 
     /* compiled from: CacheStrategy.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Factory {
         private int ageSeconds;
         private final Response cacheResponse;
@@ -210,7 +210,7 @@ public final class CacheStrategy {
     }
 
     /* compiled from: CacheStrategy.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

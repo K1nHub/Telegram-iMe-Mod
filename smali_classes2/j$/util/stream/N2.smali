@@ -112,7 +112,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lj$/util/j;->a()Lj$/util/j;
+    invoke-static {}, Lj$/util/h;->a()Lj$/util/h;
 
     move-result-object v0
 
@@ -121,7 +121,7 @@
     :cond_0
     iget v0, p0, Lj$/util/stream/N2;->b:I
 
-    invoke-static {v0}, Lj$/util/j;->d(I)Lj$/util/j;
+    invoke-static {v0}, Lj$/util/h;->d(I)Lj$/util/h;
 
     move-result-object v0
 
@@ -147,7 +147,7 @@
     return-void
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1
@@ -161,13 +161,13 @@
     return-object v0
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
     const/4 p1, 0x1

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_pageListOrderedItemText extends TLRPC$PageListOrderedItem {
     public static int constructor = 1577484359;
     public String num;

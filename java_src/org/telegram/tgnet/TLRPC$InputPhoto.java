@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$InputPhoto extends TLObject {
     public long access_hash;
     public byte[] file_reference;
 
     /* renamed from: id */
-    public long f1544id;
+    public long f1622id;
 
     public static TLRPC$InputPhoto TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$InputPhoto tLRPC$TL_inputPhotoEmpty;

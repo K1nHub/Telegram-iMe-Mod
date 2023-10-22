@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MessageLiteToString {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String toString(MessageLite messageLite, String str) {

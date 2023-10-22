@@ -6,5 +6,5 @@
 .method public abstract forEach(Lj$/util/function/Consumer;)V
 .end method
 
-.method public abstract spliterator()Lj$/util/s;
+.method public abstract spliterator()Lj$/util/Spliterator;
 .end method

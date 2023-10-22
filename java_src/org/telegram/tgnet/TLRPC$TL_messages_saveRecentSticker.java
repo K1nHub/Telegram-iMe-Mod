@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_saveRecentSticker extends TLObject {
     public static int constructor = 958863608;
     public boolean attached;
     public int flags;
 
     /* renamed from: id */
-    public TLRPC$InputDocument f1636id;
+    public TLRPC$InputDocument f1713id;
     public boolean unsave;
 
     @Override // org.telegram.tgnet.TLObject
@@ -20,7 +20,7 @@ public class TLRPC$TL_messages_saveRecentSticker extends TLObject {
         int i = this.attached ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        this.f1636id.serializeToStream(abstractSerializedData);
+        this.f1713id.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeBool(this.unsave);
     }
 }

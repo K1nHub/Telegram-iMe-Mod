@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BannerItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BannerItem extends NoChildNode {
     private final List<SlideItem> items;
 

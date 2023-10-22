@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.translate;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TranslationResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TranslationResponse {
     private final String detectedSourceLanguage;
     private final String translatedText;

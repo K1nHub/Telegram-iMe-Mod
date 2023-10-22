@@ -15,7 +15,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum DOUBLE uses extern
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FieldType {
     private static final /* synthetic */ FieldType[] $VALUES;
     public static final FieldType BOOL;
@@ -75,7 +75,7 @@ public final class FieldType {
     private final Class<?> elementType;
 
     /* renamed from: id */
-    private final int f309id;
+    private final int f254id;
     private final JavaType javaType;
     private final boolean primitiveScalar;
 
@@ -207,16 +207,16 @@ public final class FieldType {
         FieldType[] values = values();
         VALUES = new FieldType[values.length];
         for (FieldType fieldType52 : values) {
-            VALUES[fieldType52.f309id] = fieldType52;
+            VALUES[fieldType52.f254id] = fieldType52;
         }
     }
 
     private FieldType(String str, int i, int i2, Collection collection, JavaType javaType) {
         int i3;
-        this.f309id = i2;
+        this.f254id = i2;
         this.collection = collection;
         this.javaType = javaType;
-        int i4 = C12011.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
+        int i4 = C11221.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
         boolean z = true;
         if (i4 == 1) {
             this.elementType = javaType.getBoxedType();
@@ -225,12 +225,12 @@ public final class FieldType {
         } else {
             this.elementType = null;
         }
-        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C12011.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
+        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C11221.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     /* renamed from: com.google.protobuf.FieldType$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C12011 {
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class C11221 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType$Collection;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
 
@@ -267,8 +267,8 @@ public final class FieldType {
     }
 
     /* renamed from: id */
-    public int m725id() {
-        return this.f309id;
+    public int m1018id() {
+        return this.f254id;
     }
 
     public JavaType getJavaType() {
@@ -405,7 +405,7 @@ public final class FieldType {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     enum Collection {
         SCALAR(false),
         VECTOR(true),

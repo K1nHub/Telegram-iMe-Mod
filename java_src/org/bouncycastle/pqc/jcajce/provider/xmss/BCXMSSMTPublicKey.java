@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.crypto.util.PublicKeyFactory;
 import org.bouncycastle.pqc.crypto.util.SubjectPublicKeyInfoFactory;
 import org.bouncycastle.pqc.crypto.xmss.XMSSMTPublicKeyParameters;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCXMSSMTPublicKey implements PublicKey {
     private transient XMSSMTPublicKeyParameters keyParams;
     private transient ASN1ObjectIdentifier treeDigest;

@@ -6,18 +6,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ShortcutWidgetLayoutPreviewBinding implements ViewBinding {
-    private final LinearLayout rootView;
-
     private ShortcutWidgetLayoutPreviewBinding(LinearLayout linearLayout) {
-        this.rootView = linearLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
-        return this.rootView;
     }
 
     public static ShortcutWidgetLayoutPreviewBinding inflate(LayoutInflater layoutInflater) {
@@ -25,7 +17,7 @@ public final class ShortcutWidgetLayoutPreviewBinding implements ViewBinding {
     }
 
     public static ShortcutWidgetLayoutPreviewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.shortcut_widget_layout_preview, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.shortcut_widget_layout_preview, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

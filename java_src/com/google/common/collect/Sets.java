@@ -12,15 +12,15 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.SortedSet;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Sets {
 
     /* renamed from: com.google.common.collect.Sets$1 */
-    /* loaded from: classes4.dex */
-    class C09201 extends SetView<Object> {
+    /* loaded from: classes3.dex */
+    class C09121 extends SetView<Object> {
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static abstract class ImprovedAbstractSet<E> extends AbstractSet<E> {
         @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
         public boolean removeAll(Collection<?> collection) {
@@ -51,9 +51,9 @@ public final class Sets {
         return Collections.newSetFromMap(Maps.newIdentityHashMap());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class SetView<E> extends AbstractSet<E> {
-        /* synthetic */ SetView(C09201 c09201) {
+        /* synthetic */ SetView(C09121 c09121) {
             this();
         }
 
@@ -176,7 +176,7 @@ public final class Sets {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FilteredSet<E> extends Collections2.FilteredCollection<E> implements Set<E> {
         FilteredSet(Set<E> set, Predicate<? super E> predicate) {
             super(set, predicate);
@@ -194,7 +194,7 @@ public final class Sets {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FilteredSortedSet<E> extends FilteredSet<E> implements SortedSet<E> {
         FilteredSortedSet(SortedSet<E> sortedSet, Predicate<? super E> predicate) {
             super(sortedSet, predicate);

@@ -4,7 +4,7 @@ import android.content.pm.PackageManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.telegram.messenger.ApplicationLoader;
 /* compiled from: ExternalApp.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum ExternalApp {
     WHATSAPP("com.whatsapp"),
     WHATSAPP_BUSINESS("com.whatsapp.w4b"),
@@ -36,7 +36,7 @@ public enum ExternalApp {
     }
 
     /* compiled from: ExternalApp.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

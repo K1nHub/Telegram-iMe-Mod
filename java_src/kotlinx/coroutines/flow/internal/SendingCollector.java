@@ -6,7 +6,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.channels.SendChannel;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: SendingCollector.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SendingCollector<T> implements FlowCollector<T> {
     private final SendChannel<T> channel;
 

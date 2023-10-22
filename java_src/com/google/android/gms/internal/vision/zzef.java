@@ -10,7 +10,7 @@ import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Function;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzef<K, V> implements Serializable, Map<K, V>, p033j$.util.Map {
     private static final Map.Entry<?, ?>[] zza = new Map.Entry[0];
     private transient zzej<Map.Entry<K, V>> zzb;

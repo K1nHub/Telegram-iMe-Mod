@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzjw extends zzju {
     private static final Class<?> zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
 

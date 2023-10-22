@@ -2,11 +2,11 @@ package com.google.android.gms.maps.model;
 
 import com.google.android.gms.maps.model.StampStyle;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SpriteStyle extends StampStyle {
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends StampStyle.Builder<Builder> {
         private Builder() {
         }

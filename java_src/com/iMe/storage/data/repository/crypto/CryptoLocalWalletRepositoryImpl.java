@@ -14,7 +14,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
@@ -27,7 +27,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoLocalWalletRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletRepository {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -99,7 +99,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
                     if (!(result instanceof Result.Success)) {
                         if (result instanceof Result.Error) {
                             Result<? extends List<? extends Wallet>> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                             return error$default;
                         } else if (result instanceof Object) {
                             return result;
@@ -193,7 +193,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result<? extends String> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                         return error$default;
                     } else if (result instanceof Object) {
                         return result;
@@ -238,7 +238,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -281,7 +281,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
                     return result;
                 } else if (result instanceof Result.Error) {
                     Result<? extends Wallet> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                    Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                    Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                     return error$default;
                 } else if (result instanceof Object) {
                     return result;

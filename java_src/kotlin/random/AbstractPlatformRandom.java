@@ -1,6 +1,8 @@
 package kotlin.random;
+
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlatformRandom.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractPlatformRandom extends Random {
     public abstract java.util.Random getImpl();
 
@@ -17,5 +19,17 @@ public abstract class AbstractPlatformRandom extends Random {
     @Override // kotlin.random.Random
     public int nextInt(int i) {
         return getImpl().nextInt(i);
+    }
+
+    @Override // kotlin.random.Random
+    public long nextLong() {
+        return getImpl().nextLong();
+    }
+
+    @Override // kotlin.random.Random
+    public byte[] nextBytes(byte[] array) {
+        Intrinsics.checkNotNullParameter(array, "array");
+        getImpl().nextBytes(array);
+        return array;
     }
 }

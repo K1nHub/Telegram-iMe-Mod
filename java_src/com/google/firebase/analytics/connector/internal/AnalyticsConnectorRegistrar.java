@@ -18,7 +18,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@19.0.2 */
 @Keep
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AnalyticsConnectorRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     @Keep

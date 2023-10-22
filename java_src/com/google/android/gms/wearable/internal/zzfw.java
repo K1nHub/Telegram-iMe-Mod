@@ -22,7 +22,7 @@ import com.google.android.gms.wearable.MessageClient;
 import com.google.android.gms.wearable.MessageOptions;
 import com.google.android.gms.wearable.PutDataRequest;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfw extends MessageClient {
     public static final /* synthetic */ int zzb = 0;
     @VisibleForTesting

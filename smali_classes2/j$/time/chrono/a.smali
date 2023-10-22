@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/time/chrono/b;
+.implements Lj$/time/chrono/g;
 
 
 # direct methods
@@ -38,10 +38,164 @@
 
 
 # virtual methods
+.method a(Ljava/util/Map;Lj$/time/temporal/a;J)V
+    .locals 3
+
+    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, p3
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lj$/time/DateTimeException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Conflict found: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, " differs from "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Lj$/time/DateTimeException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p3
+
+    invoke-interface {p1, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method b(Lj$/time/chrono/b;JJJ)Lj$/time/chrono/b;
+    .locals 4
+
+    sget-object v0, Lj$/time/temporal/ChronoUnit;->MONTHS:Lj$/time/temporal/ChronoUnit;
+
+    check-cast p1, Lj$/time/d;
+
+    .line 1
+    invoke-virtual {p1, p2, p3, v0}, Lj$/time/d;->u(JLj$/time/temporal/y;)Lj$/time/d;
+
+    move-result-object p1
+
+    .line 2
+    sget-object p2, Lj$/time/temporal/ChronoUnit;->WEEKS:Lj$/time/temporal/ChronoUnit;
+
+    .line 3
+    invoke-virtual {p1, p4, p5, p2}, Lj$/time/d;->u(JLj$/time/temporal/y;)Lj$/time/d;
+
+    move-result-object p1
+
+    const-wide/16 p3, 0x7
+
+    cmp-long p5, p6, p3
+
+    const-wide/16 v0, 0x1
+
+    if-lez p5, :cond_0
+
+    sub-long/2addr p6, v0
+
+    .line 4
+    div-long v2, p6, p3
+
+    .line 5
+    invoke-virtual {p1, v2, v3, p2}, Lj$/time/d;->u(JLj$/time/temporal/y;)Lj$/time/d;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    cmp-long p5, p6, v0
+
+    if-gez p5, :cond_1
+
+    .line 6
+    invoke-static {p6, p7, p3, p4}, Lj$/lang/d;->g(JJ)J
+
+    move-result-wide v2
+
+    div-long/2addr v2, p3
+
+    .line 7
+    invoke-virtual {p1, v2, v3, p2}, Lj$/time/d;->u(JLj$/time/temporal/y;)Lj$/time/d;
+
+    move-result-object p1
+
+    const-wide/16 v2, 0x6
+
+    add-long/2addr p6, v2
+
+    .line 8
+    :goto_0
+    rem-long/2addr p6, p3
+
+    add-long/2addr p6, v0
+
+    :cond_1
+    long-to-int p2, p6
+
+    invoke-static {p2}, Lj$/time/b;->k(I)Lj$/time/b;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lj$/time/temporal/n;->d(Lj$/time/b;)Lj$/time/temporal/l;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lj$/time/d;->C(Lj$/time/temporal/l;)Lj$/time/chrono/b;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lj$/time/chrono/b;
+    check-cast p1, Lj$/time/chrono/g;
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;

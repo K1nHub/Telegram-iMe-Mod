@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.crypto.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTransactionAction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTransactionAction {
     private final CryptoBoxTransactionGas gas;
     private final CryptoBoxTransactionArgs transaction;

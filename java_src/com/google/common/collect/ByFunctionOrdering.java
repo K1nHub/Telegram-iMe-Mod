@@ -5,7 +5,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ByFunctionOrdering<F, T> extends Ordering<F> implements Serializable {
     final Function<F, ? extends T> function;
     final Ordering<T> ordering;

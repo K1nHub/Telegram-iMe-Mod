@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import com.google.android.gms.internal.icing.zzaa;
 import com.google.android.gms.internal.icing.zzak;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzq extends zzs {
     final /* synthetic */ zzc[] zza;
 

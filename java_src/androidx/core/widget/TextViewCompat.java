@@ -18,7 +18,6 @@ import android.text.TextDirectionHeuristic;
 import android.text.TextDirectionHeuristics;
 import android.text.TextPaint;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +25,6 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.core.text.PrecomputedTextCompat;
 import androidx.core.util.Preconditions;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -34,32 +32,6 @@ import java.util.List;
 import java.util.Locale;
 /* loaded from: classes.dex */
 public final class TextViewCompat {
-    private static Field sMaxModeField;
-    private static boolean sMaxModeFieldFetched;
-    private static Field sMaximumField;
-    private static boolean sMaximumFieldFetched;
-
-    private static Field retrieveField(String str) {
-        Field field = null;
-        try {
-            field = TextView.class.getDeclaredField(str);
-            field.setAccessible(true);
-            return field;
-        } catch (NoSuchFieldException unused) {
-            Log.e("TextViewCompat", "Could not retrieve " + str + " field.");
-            return field;
-        }
-    }
-
-    private static int retrieveIntFromField(Field field, TextView textView) {
-        try {
-            return field.getInt(textView);
-        } catch (IllegalAccessException unused) {
-            Log.d("TextViewCompat", "Could not retrieve value of " + field.getName() + " field.");
-            return -1;
-        }
-    }
-
     public static void setCompoundDrawablesRelative(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 18) {
@@ -74,29 +46,6 @@ public final class TextViewCompat {
         } else {
             textView.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
         }
-    }
-
-    public static int getMaxLines(TextView textView) {
-        if (Build.VERSION.SDK_INT >= 16) {
-            return Api16Impl.getMaxLines(textView);
-        }
-        if (!sMaxModeFieldFetched) {
-            sMaxModeField = retrieveField("mMaxMode");
-            sMaxModeFieldFetched = true;
-        }
-        Field field = sMaxModeField;
-        if (field == null || retrieveIntFromField(field, textView) != 1) {
-            return -1;
-        }
-        if (!sMaximumFieldFetched) {
-            sMaximumField = retrieveField("mMaximum");
-            sMaximumFieldFetched = true;
-        }
-        Field field2 = sMaximumField;
-        if (field2 != null) {
-            return retrieveIntFromField(field2, textView);
-        }
-        return -1;
     }
 
     public static void setTextAppearance(TextView textView, int i) {

@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.google.android.gms.internal.firebase_ml.zzkm;
 import com.google.firebase.p020ml.vision.common.FirebaseVisionPoint;
 /* renamed from: com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionFaceLandmark {
     private final int type;
     private final FirebaseVisionPoint zzbce;

@@ -12,19 +12,19 @@ import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaCameraCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class StreetViewPanoramaCamera extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaCamera> CREATOR = new zzp();
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final float bearing;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final float tilt;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final float zoom;
     private final StreetViewPanoramaOrientation zza;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         public float bearing;
         public float tilt;
@@ -68,7 +68,7 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable implements 
     }
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaCamera(@SafeParcelable.Param(m796id = 2) float f, @SafeParcelable.Param(m796id = 3) float f2, @SafeParcelable.Param(m796id = 4) float f3) {
+    public StreetViewPanoramaCamera(@SafeParcelable.Param(m1088id = 2) float f, @SafeParcelable.Param(m1088id = 3) float f2, @SafeParcelable.Param(m1088id = 4) float f3) {
         boolean z = false;
         if (f2 >= -90.0f && f2 <= 90.0f) {
             z = true;

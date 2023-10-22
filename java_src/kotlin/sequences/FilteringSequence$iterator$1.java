@@ -8,7 +8,7 @@ import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FilteringSequence$iterator$1<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private final Iterator<T> iterator;
     private T nextItem;

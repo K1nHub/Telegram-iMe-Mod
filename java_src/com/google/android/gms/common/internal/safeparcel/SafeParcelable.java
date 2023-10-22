@@ -31,7 +31,7 @@ public interface SafeParcelable extends Parcelable {
         String getter() default "SAFE_PARCELABLE_NULL_STRING";
 
         /* renamed from: id */
-        int m797id();
+        int m1089id();
 
         String type() default "SAFE_PARCELABLE_NULL_STRING";
     }
@@ -46,7 +46,7 @@ public interface SafeParcelable extends Parcelable {
     /* loaded from: classes.dex */
     public @interface Param {
         /* renamed from: id */
-        int m796id();
+        int m1088id();
     }
 
     /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
@@ -57,7 +57,7 @@ public interface SafeParcelable extends Parcelable {
         String defaultValueUnchecked() default "SAFE_PARCELABLE_NULL_STRING";
 
         /* renamed from: id */
-        int m795id();
+        int m1087id();
     }
 
     /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
@@ -72,7 +72,7 @@ public interface SafeParcelable extends Parcelable {
         String getter() default "SAFE_PARCELABLE_NULL_STRING";
 
         /* renamed from: id */
-        int m794id();
+        int m1086id();
 
         String type() default "SAFE_PARCELABLE_NULL_STRING";
     }

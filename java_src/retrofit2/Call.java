@@ -2,12 +2,12 @@ package retrofit2;
 
 import java.io.IOException;
 import okhttp3.Request;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public interface Call<T> extends Cloneable {
     void cancel();
 
     /* renamed from: clone */
-    Call<T> mo4391clone();
+    Call<T> mo5123clone();
 
     void enqueue(Callback<T> callback);
 

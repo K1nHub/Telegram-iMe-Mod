@@ -3,7 +3,7 @@
 
 # interfaces
 .implements Ljava/util/Set;
-.implements Lj$/util/b;
+.implements Lj$/util/Collection;
 
 
 # annotations
@@ -136,7 +136,7 @@
 .method public synthetic forEach(Ljava/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
@@ -217,26 +217,26 @@
     return-object v6
 .end method
 
-.method public synthetic k(Lj$/util/function/Predicate;)Z
-    .locals 0
+.method public synthetic parallelStream()Lj$/util/stream/Stream;
+    .locals 1
 
-    invoke-static {p0, p1}, Lj$/util/a;->h(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$parallelStream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
-    move-result p1
+    move-result-object v0
 
-    return p1
+    return-object v0
 .end method
 
 .method public synthetic parallelStream()Ljava/util/stream/Stream;
     .locals 1
 
     .line 1
-    invoke-static {p0}, Lj$/util/a;->g(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$parallelStream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
     .line 2
-    invoke-static {v0}, Lj$/wrappers/O0;->n0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
+    invoke-static {v0}, Lj$/wrappers/L0;->m0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
@@ -265,22 +265,32 @@
     return p1
 .end method
 
-.method public synthetic removeIf(Ljava/util/function/Predicate;)Z
+.method public synthetic removeIf(Lj$/util/function/Predicate;)Z
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/w0;->a(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    .line 1
-    invoke-static {p0, p1}, Lj$/util/a;->h(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public synthetic removeIf(Ljava/util/function/Predicate;)Z
+    .locals 0
+
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;->convert(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    .line 1
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public spliterator()Lj$/util/Spliterator;
     .locals 10
 
     iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$b;->a:Lj$/util/concurrent/ConcurrentHashMap;
@@ -331,11 +341,11 @@
 .method public synthetic spliterator()Ljava/util/Spliterator;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ConcurrentHashMap$i;->spliterator()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/concurrent/ConcurrentHashMap$i;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/s;)Ljava/util/Spliterator;
+    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
 
     move-result-object v0
 
@@ -345,7 +355,7 @@
 .method public synthetic stream()Lj$/util/stream/Stream;
     .locals 1
 
-    invoke-static {p0}, Lj$/util/a;->i(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
@@ -356,35 +366,37 @@
     .locals 1
 
     .line 1
-    invoke-static {p0}, Lj$/util/a;->i(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
     .line 2
-    invoke-static {v0}, Lj$/wrappers/O0;->n0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
+    invoke-static {v0}, Lj$/wrappers/L0;->m0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
-    .locals 1
+.method public synthetic toArray(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/S;->a(Ljava/util/function/IntFunction;)Lj$/util/function/m;
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$toArray(Ljava/util/Collection;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    return-object p1
+.end method
+
+.method public synthetic toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lj$/wrappers/P;->a(Ljava/util/function/IntFunction;)Lj$/util/function/IntFunction;
+
+    move-result-object p1
 
     .line 1
-    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    invoke-virtual {p0, p1}, Lj$/util/concurrent/ConcurrentHashMap$b;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$toArray(Ljava/util/Collection;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,6 +1,6 @@
 package org.orbitmvi.orbit.internal.repeatonsubscription;
 /* compiled from: Subscription.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum Subscription {
     Unsubscribed,
     Subscribed;

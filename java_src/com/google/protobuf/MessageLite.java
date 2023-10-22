@@ -1,11 +1,10 @@
 package com.google.protobuf;
 
 import java.io.IOException;
-import java.io.OutputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface MessageLite extends MessageLiteOrBuilder {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Builder extends MessageLiteOrBuilder, Cloneable {
         MessageLite build();
 
@@ -27,6 +26,4 @@ public interface MessageLite extends MessageLiteOrBuilder {
     ByteString toByteString();
 
     void writeTo(CodedOutputStream codedOutputStream) throws IOException;
-
-    void writeTo(OutputStream outputStream) throws IOException;
 }

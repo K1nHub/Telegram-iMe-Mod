@@ -11,7 +11,7 @@ import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.pqc.crypto.rainbow.util.RainbowUtil;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class RainbowPublicKey extends ASN1Object {
     private byte[][] coeffQuadratic;
     private byte[] coeffScalar;

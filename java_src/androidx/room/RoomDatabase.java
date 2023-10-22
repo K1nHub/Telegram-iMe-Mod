@@ -40,18 +40,19 @@ import p033j$.util.DesugarCollections;
 public abstract class RoomDatabase {
     private boolean mAllowMainThreadQueries;
     private AutoCloser mAutoCloser;
-    protected Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> mAutoMigrationSpecs;
     @Deprecated
     protected List<Callback> mCallbacks;
     @Deprecated
     protected volatile SupportSQLiteDatabase mDatabase;
-    private final InvalidationTracker mInvalidationTracker;
     private SupportSQLiteOpenHelper mOpenHelper;
     private Executor mQueryExecutor;
     private Executor mTransactionExecutor;
-    private final Map<Class<?>, Object> mTypeConverters;
     private final ReentrantReadWriteLock mCloseLock = new ReentrantReadWriteLock();
     private final ThreadLocal<Integer> mSuspendingTransactionId = new ThreadLocal<>();
+    private final Map<String, Object> mBackingFieldMap = DesugarCollections.synchronizedMap(new HashMap());
+    private final InvalidationTracker mInvalidationTracker = createInvalidationTracker();
+    private final Map<Class<?>, Object> mTypeConverters = new HashMap();
+    protected Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> mAutoMigrationSpecs = new HashMap();
 
     /* loaded from: classes.dex */
     public static abstract class Callback {
@@ -81,13 +82,6 @@ public abstract class RoomDatabase {
     /* JADX INFO: Access modifiers changed from: package-private */
     public Lock getCloseLock() {
         return this.mCloseLock.readLock();
-    }
-
-    public RoomDatabase() {
-        DesugarCollections.synchronizedMap(new HashMap());
-        this.mInvalidationTracker = createInvalidationTracker();
-        this.mTypeConverters = new HashMap();
-        this.mAutoMigrationSpecs = new HashMap();
     }
 
     public void init(DatabaseConfiguration databaseConfiguration) {
@@ -419,14 +413,6 @@ public abstract class RoomDatabase {
         public Builder<T> fallbackToDestructiveMigration() {
             this.mRequireMigration = false;
             this.mAllowDestructiveMigrationOnDowngrade = true;
-            return this;
-        }
-
-        public Builder<T> addCallback(Callback callback) {
-            if (this.mCallbacks == null) {
-                this.mCallbacks = new ArrayList<>();
-            }
-            this.mCallbacks.add(callback);
             return this;
         }
 

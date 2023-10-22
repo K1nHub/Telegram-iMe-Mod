@@ -2,11 +2,11 @@ package org.telegram.messenger.utils;
 
 import android.text.Spanned;
 import org.telegram.messenger.CharacterCompat;
-import org.telegram.p043ui.Components.AnimatedEmojiSpan;
-import org.telegram.p043ui.Components.TextStyleSpan;
-import org.telegram.p043ui.Components.URLSpanMono;
-import org.telegram.p043ui.Components.URLSpanReplacement;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Components.AnimatedEmojiSpan;
+import org.telegram.p042ui.Components.TextStyleSpan;
+import org.telegram.p042ui.Components.URLSpanMono;
+import org.telegram.p042ui.Components.URLSpanReplacement;
+/* loaded from: classes4.dex */
 public class CustomHtml {
     public static String toHtml(Spanned spanned) {
         StringBuilder sb = new StringBuilder();

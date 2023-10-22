@@ -14,7 +14,6 @@
         Landroidx/core/view/ViewCompat$Api17Impl;,
         Landroidx/core/view/ViewCompat$Api28Impl;,
         Landroidx/core/view/ViewCompat$Api19Impl;,
-        Landroidx/core/view/ViewCompat$Api24Impl;,
         Landroidx/core/view/ViewCompat$Api20Impl;,
         Landroidx/core/view/ViewCompat$Api23Impl;,
         Landroidx/core/view/ViewCompat$Api30Impl;,
@@ -3460,38 +3459,6 @@
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
     :goto_0
-    return-void
-.end method
-
-.method public static setPointerIcon(Landroid/view/View;Landroidx/core/view/PointerIconCompat;)V
-    .locals 2
-
-    .line 3842
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_1
-
-    if-eqz p1, :cond_0
-
-    .line 3844
-    invoke-virtual {p1}, Landroidx/core/view/PointerIconCompat;->getPointerIcon()Ljava/lang/Object;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    check-cast p1, Landroid/view/PointerIcon;
-
-    .line 3843
-    invoke-static {p0, p1}, Landroidx/core/view/ViewCompat$Api24Impl;->setPointerIcon(Landroid/view/View;Landroid/view/PointerIcon;)V
-
-    :cond_1
     return-void
 .end method
 

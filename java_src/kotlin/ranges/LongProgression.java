@@ -5,7 +5,7 @@ import kotlin.internal.ProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: Progressions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LongProgression implements Iterable<Long>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
     private final long first;
@@ -102,7 +102,7 @@ public class LongProgression implements Iterable<Long>, KMappedMarker {
     }
 
     /* compiled from: Progressions.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

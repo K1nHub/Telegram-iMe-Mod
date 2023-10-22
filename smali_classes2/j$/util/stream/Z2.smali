@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 0
 
     return-object p2

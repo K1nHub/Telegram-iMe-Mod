@@ -441,6 +441,8 @@
     <string name="debug_option_choose_wallet_environment">Виберіть середовище гаманця (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">"Після зміни середовища всі поточні дані гаманця і пов'язане з ним буде видалено"</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Ви впевнені?</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">Видалення повідомлень… Оброблено %1$d з %2$d</string>
     <string name="deleting_messages_success">Службові повідомлення видалено</string>
     <string name="dialog_promo_discussion_group_description">Світ</string>
@@ -536,7 +538,7 @@
     <string name="folder_tabs_remember_last_filter_tab_hint">Коли ви відкриєте додаток, ви опинитеся на тій же вкладці, на якій були в останній раз. Якщо цей параметр відключений, за замовчуванням відкривається перша вкладка зліва.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">"Запам'ятовувати вкладку"</string>
     <string name="folder_tabs_settings_folders_first">Ліворуч від сортувальних вкладок</string>
-    <string name="folder_tabs_settings_header">Налаштування вкладок</string>
+    <string name="folder_tabs_settings_header">Налаштування</string>
     <string name="folder_tabs_settings_hide_folders">Сховати папки</string>
     <string name="folder_tabs_sorting_settings">Вкладки за типами</string>
     <string name="folder_tabs_sorting_settings_item_title">Сортування чатів</string>
@@ -744,7 +746,6 @@
     <string name="neurobots_store_tab_free">Безкоштовні</string>
     <string name="neurobots_store_tab_my">Мої</string>
     <string name="neurobots_store_tab_popular">Популярні</string>
-    <string name="new_telegram_authorization_rules_alert">З 18.02.2023, набули чинності нові правила авторизації в Telegram, згідно з якими користувачі альтернативних клієнтів можуть отримувати код SMS тільки з офіційного клієнта Telegram. Будь ласка, встановіть Telegram і увійдіть до свого акаунта там, якщо вам потрібен код SMS, після чого зможете повторно запросити код в iMe (він прийде в сервісний чат з Telegram).</string>
     <string name="new_telegram_authorization_rules_info">Будь ласка, ознайомтеся з *новими правилами авторизації* в Telegram</string>
     <string name="nft_collection_size">Кількість NFT: %d</string>
     <string name="nft_preview_copy_token_id">Копіювати ID токена</string>
@@ -755,6 +756,7 @@
     <string name="no_unread_bots">У вас немає непрочитаних ботів</string>
     <string name="no_unread_groups">У вас немає непрочитаних груп</string>
     <string name="no_unread_personal_chats">У вас немає непрочитаних особистих чатів</string>
+    <string name="open_telegram_alert_auth">З 18.02.2023, набули чинності нові правила авторизації в Telegram, згідно з якими користувачі альтернативних клієнтів можуть отримувати код SMS тільки з офіційного клієнта Telegram. Будь ласка, встановіть Telegram і увійдіть до свого акаунта там, якщо вам потрібен код SMS, після чого зможете повторно запросити код в iMe (він прийде в сервісний чат з Telegram).</string>
     <string name="password_toggle_content_description">Показувати пароль</string>
     <string name="period_all_time">Весь час</string>
     <string name="period_last_day">Минулий день</string>

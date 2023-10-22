@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzmh extends zzme {
     @Override // com.google.android.gms.internal.vision.zzme
     final int zza(int i, byte[] bArr, int i2, int i3) {

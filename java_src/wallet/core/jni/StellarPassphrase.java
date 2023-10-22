@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum StellarPassphrase {
     STELLAR(0),
     KIN(1);
@@ -25,8 +25,8 @@ public enum StellarPassphrase {
     }
 
     /* renamed from: wallet.core.jni.StellarPassphrase$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C73141 {
+    /* loaded from: classes4.dex */
+    static /* synthetic */ class C76481 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$StellarPassphrase;
 
         static {
@@ -45,7 +45,7 @@ public enum StellarPassphrase {
 
     @Override // java.lang.Enum
     public String toString() {
-        int i = C73141.$SwitchMap$wallet$core$jni$StellarPassphrase[ordinal()];
+        int i = C76481.$SwitchMap$wallet$core$jni$StellarPassphrase[ordinal()];
         return i != 1 ? i != 2 ? "" : "Kin Mainnet ; December 2018" : "Public Global Stellar Network ; September 2015";
     }
 }

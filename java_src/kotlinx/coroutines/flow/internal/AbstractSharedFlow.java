@@ -7,7 +7,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 /* compiled from: AbstractSharedFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
     private int nCollectors;
     private int nextIndex;
@@ -42,6 +42,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
                 if (i >= sArr.length) {
                     i = 0;
                 }
+                Intrinsics.checkNotNull(s, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
             } while (!s.allocateLocked(this));
             this.nextIndex = i;
             this.nCollectors++;
@@ -59,12 +60,13 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
             if (i2 == 0) {
                 this.nextIndex = 0;
             }
+            Intrinsics.checkNotNull(s, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
             freeLocked = s.freeLocked(this);
         }
         for (Continuation<Unit> continuation : freeLocked) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
         }
     }

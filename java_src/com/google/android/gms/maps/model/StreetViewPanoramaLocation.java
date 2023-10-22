@@ -9,18 +9,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaLocationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class StreetViewPanoramaLocation extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaLocation> CREATOR = new zzr();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final StreetViewPanoramaLink[] links;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final String panoId;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final LatLng position;
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaLocation(@SafeParcelable.Param(m796id = 2) StreetViewPanoramaLink[] streetViewPanoramaLinkArr, @SafeParcelable.Param(m796id = 3) LatLng latLng, @SafeParcelable.Param(m796id = 4) String str) {
+    public StreetViewPanoramaLocation(@SafeParcelable.Param(m1088id = 2) StreetViewPanoramaLink[] streetViewPanoramaLinkArr, @SafeParcelable.Param(m1088id = 3) LatLng latLng, @SafeParcelable.Param(m1088id = 4) String str) {
         this.links = streetViewPanoramaLinkArr;
         this.position = latLng;
         this.panoId = str;

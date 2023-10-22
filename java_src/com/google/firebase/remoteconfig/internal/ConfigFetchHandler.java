@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ConfigFetchHandler {
     private final Provider<AnalyticsConnector> analyticsConnector;
     private final Clock clock;
@@ -254,7 +254,7 @@ public class ConfigFetchHandler {
         return hashMap;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FetchResponse {
         private final ConfigContainer fetchedConfigs;
         private final String lastFetchETag;

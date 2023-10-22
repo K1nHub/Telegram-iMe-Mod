@@ -148,9 +148,9 @@
 
     iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
 
-    check-cast v0, Lj$/wrappers/i0;
+    check-cast v0, Lj$/wrappers/g0;
 
-    invoke-virtual {v0, p1, p2}, Lj$/wrappers/i0;->b(J)Z
+    invoke-virtual {v0, p1, p2}, Lj$/wrappers/g0;->b(J)Z
 
     move-result v0
 
@@ -171,9 +171,9 @@
 
     iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/function/r;
+    check-cast v0, Lj$/util/function/q;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/r;->apply(J)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lj$/util/function/q;->apply(J)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -190,7 +190,7 @@
 
     invoke-direct {v0, p0}, Lj$/util/stream/W0;-><init>(Lj$/util/stream/Z0;)V
 
-    invoke-interface {p2, v0}, Lj$/util/stream/e1;->d(Lj$/util/function/q;)V
+    invoke-interface {p2, v0}, Lj$/util/stream/e1;->d(Lj$/util/function/p;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -233,9 +233,9 @@
 
     iget-object v1, v1, Lj$/util/stream/K;->m:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/k0;
+    check-cast v1, Lj$/wrappers/i0;
 
-    invoke-virtual {v1, p1, p2}, Lj$/wrappers/k0;->a(J)D
+    invoke-virtual {v1, p1, p2}, Lj$/wrappers/i0;->a(J)D
 
     move-result-wide p1
 
@@ -253,9 +253,9 @@
 
     iget-object v1, v1, Lj$/util/stream/M;->m:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/m0;
+    check-cast v1, Lj$/wrappers/k0;
 
-    invoke-virtual {v1, p1, p2}, Lj$/wrappers/m0;->a(J)I
+    invoke-virtual {v1, p1, p2}, Lj$/wrappers/k0;->a(J)I
 
     move-result p1
 
@@ -273,9 +273,9 @@
 
     iget-object v1, v1, Lj$/util/stream/L;->m:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/r;
+    check-cast v1, Lj$/util/function/q;
 
-    invoke-interface {v1, p1, p2}, Lj$/util/function/r;->apply(J)Ljava/lang/Object;
+    invoke-interface {v1, p1, p2}, Lj$/util/function/q;->apply(J)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -293,9 +293,9 @@
 
     iget-object v1, v1, Lj$/util/stream/N;->m:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/t;
+    check-cast v1, Lj$/util/function/s;
 
-    invoke-interface {v1, p1, p2}, Lj$/util/function/t;->applyAsLong(J)J
+    invoke-interface {v1, p1, p2}, Lj$/util/function/s;->applyAsLong(J)J
 
     move-result-wide p1
 
@@ -321,9 +321,9 @@
 
     iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/function/q;
+    check-cast v0, Lj$/util/function/p;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {v0, p1, p2}, Lj$/util/function/p;->accept(J)V
 
     iget-object v0, p0, Lj$/util/stream/h3;->a:Lj$/util/stream/m3;
 
@@ -343,7 +343,7 @@
     .end packed-switch
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget v0, p0, Lj$/util/stream/Z0;->b:I
@@ -358,7 +358,7 @@
     :pswitch_0
     iget-object p1, p0, Lj$/util/stream/h3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -366,7 +366,7 @@
     :pswitch_1
     iget-object p1, p0, Lj$/util/stream/h3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -374,7 +374,7 @@
     :goto_0
     iget-object v0, p0, Lj$/util/stream/h3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 

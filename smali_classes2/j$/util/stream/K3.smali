@@ -21,12 +21,12 @@
 
 
 # virtual methods
-.method public E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+.method public D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 2
 
     sget-object v0, Lj$/util/stream/d4;->SORTED:Lj$/util/stream/d4;
 
-    invoke-virtual {p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -38,7 +38,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/y2;->p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/y2;->o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -47,7 +47,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/y2;->p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/y2;->o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -69,7 +69,7 @@
     return-object p2
 .end method
 
-.method public H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method public G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 1
 
     .line 1

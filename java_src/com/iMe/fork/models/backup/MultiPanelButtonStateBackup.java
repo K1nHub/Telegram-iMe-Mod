@@ -2,7 +2,7 @@ package com.iMe.fork.models.backup;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MultiPanelButtonStateBackup.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MultiPanelButtonStateBackup {
     private boolean isEnabled;
     private int position;

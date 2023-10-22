@@ -4,7 +4,7 @@ import java.util.Map;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 /* compiled from: RemoteConfigConstants.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RemoteConfigConstants {
     public static final RemoteConfigConstants INSTANCE = new RemoteConfigConstants();
     private static final Map<String, Object> defaultValues;
@@ -22,7 +22,7 @@ public final class RemoteConfigConstants {
 
     static {
         Map<String, Object> mapOf;
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m103to("on_ona_shop_enabled", Boolean.FALSE));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to("on_ona_shop_enabled", Boolean.FALSE));
         defaultValues = mapOf;
     }
 }

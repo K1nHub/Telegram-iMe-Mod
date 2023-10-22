@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CommonUtils {
     private static final char[] HEX_VALUES = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     private static long totalRamInBytes = -1;
@@ -89,7 +89,7 @@ public class CommonUtils {
             r4.append(r5)     // Catch: java.lang.Throwable -> L59
             r4.append(r6)     // Catch: java.lang.Throwable -> L59
             java.lang.String r6 = r4.toString()     // Catch: java.lang.Throwable -> L59
-            r3.m743e(r6, r7)     // Catch: java.lang.Throwable -> L59
+            r3.m1035e(r6, r7)     // Catch: java.lang.Throwable -> L59
             goto L36
         L59:
             r6 = move-exception
@@ -107,7 +107,7 @@ public class CommonUtils {
         return Architecture.getValue().ordinal();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     enum Architecture {
         X86_32,
         X86_64,
@@ -138,7 +138,7 @@ public class CommonUtils {
         static Architecture getValue() {
             String str = Build.CPU_ABI;
             if (TextUtils.isEmpty(str)) {
-                Logger.getLogger().m740v("Architecture#getValue()::Build.CPU_ABI returned null or empty");
+                Logger.getLogger().m1032v("Architecture#getValue()::Build.CPU_ABI returned null or empty");
                 return UNKNOWN;
             }
             Architecture architecture = matcher.get(str.toLowerCase(Locale.US));
@@ -163,11 +163,11 @@ public class CommonUtils {
                             j2 = convertMemInfoToBytes(upperCase, "GB", 1073741824);
                         } else {
                             Logger logger = Logger.getLogger();
-                            logger.m738w("Unexpected meminfo format while computing RAM: " + upperCase);
+                            logger.m1030w("Unexpected meminfo format while computing RAM: " + upperCase);
                         }
                     } catch (NumberFormatException e) {
                         Logger logger2 = Logger.getLogger();
-                        logger2.m743e("Unexpected meminfo format while computing RAM: " + upperCase, e);
+                        logger2.m1035e("Unexpected meminfo format while computing RAM: " + upperCase, e);
                     }
                 }
                 totalRamInBytes = j2;
@@ -213,7 +213,7 @@ public class CommonUtils {
             return hexify(messageDigest.digest());
         } catch (NoSuchAlgorithmException e) {
             Logger logger = Logger.getLogger();
-            logger.m743e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
+            logger.m1035e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
             return "";
         }
     }
@@ -329,7 +329,7 @@ public class CommonUtils {
             try {
                 closeable.close();
             } catch (IOException e) {
-                Logger.getLogger().m743e(str, e);
+                Logger.getLogger().m1035e(str, e);
             }
         }
     }

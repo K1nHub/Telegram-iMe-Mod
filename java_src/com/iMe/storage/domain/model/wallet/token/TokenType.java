@@ -7,7 +7,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TokenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum TokenType {
     CRYPTO(R$string.wallet_account_type_crypto),
     NFT(R$string.wallet_network_type_nft);
@@ -36,7 +36,7 @@ public enum TokenType {
     }
 
     /* compiled from: TokenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

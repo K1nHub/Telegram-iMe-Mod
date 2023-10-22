@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FileLoaderPriorityQueue {
     public static final int PRIORITY_VALUE_LOW = 0;
     public static final int PRIORITY_VALUE_MAX = 1048576;

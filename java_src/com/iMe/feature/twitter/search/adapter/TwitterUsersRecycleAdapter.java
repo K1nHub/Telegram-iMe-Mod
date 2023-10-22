@@ -8,26 +8,18 @@ import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.common.GlobalStateItem;
 import com.iMe.model.twitter.TwitterInviteItem;
 import com.iMe.model.twitter.TwitterUserItem;
-import com.iMe.p031ui.adapter.provider.GlobalStateProvider;
-import com.iMe.p031ui.adapter.provider.TwitterInviteProvider;
-import com.iMe.p031ui.adapter.provider.TwitterUserProvider;
+import com.iMe.p030ui.adapter.provider.GlobalStateProvider;
+import com.iMe.p030ui.adapter.provider.TwitterInviteProvider;
+import com.iMe.p030ui.adapter.provider.TwitterUserProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterUsersRecycleAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterUsersRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final GlobalStateProvider globalStateProvider;
     private final TwitterInviteProvider twitterInviteProvider;
     private final TwitterUserProvider twitterUserProvider;
-
-    public final GlobalStateProvider getGlobalStateProvider() {
-        return this.globalStateProvider;
-    }
-
-    public final TwitterInviteProvider getTwitterInviteProvider() {
-        return this.twitterInviteProvider;
-    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TwitterUsersRecycleAdapter(GlobalStateProvider globalStateProvider, TwitterInviteProvider twitterInviteProvider, TwitterUserProvider twitterUserProvider) {

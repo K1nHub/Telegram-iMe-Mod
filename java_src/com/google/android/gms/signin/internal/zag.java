@@ -10,16 +10,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "RecordConsentByConsentResultResponseCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zag extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zag> CREATOR = new zah();
-    @SafeParcelable.Field(getter = "getGrantedScopes", m797id = 1)
+    @SafeParcelable.Field(getter = "getGrantedScopes", m1089id = 1)
     private final List zaa;
-    @SafeParcelable.Field(getter = "getToken", m797id = 2)
+    @SafeParcelable.Field(getter = "getToken", m1089id = 2)
     private final String zab;
 
     @SafeParcelable.Constructor
-    public zag(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) String str) {
+    public zag(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) String str) {
         this.zaa = list;
         this.zab = str;
     }

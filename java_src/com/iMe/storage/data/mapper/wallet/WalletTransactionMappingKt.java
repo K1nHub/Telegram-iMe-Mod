@@ -12,11 +12,11 @@ import com.iMe.storage.domain.model.wallet.transaction.TransactionType;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransactionMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletTransactionMappingKt {
 
     /* compiled from: WalletTransactionMapping.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

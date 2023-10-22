@@ -2,7 +2,7 @@ package com.trustwallet.walletconnect.extensions;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ByteArray.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ByteArrayKt {
     private static final char[] HEX_CHARS;
 

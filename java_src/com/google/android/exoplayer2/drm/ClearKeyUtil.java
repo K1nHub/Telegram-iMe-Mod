@@ -40,7 +40,7 @@ final class ClearKeyUtil {
             sb.append("]}");
             return Util.getUtf8Bytes(sb.toString());
         } catch (JSONException e) {
-            Log.m817e(TAG, "Failed to adjust response data: " + Util.fromUtf8Bytes(bArr), e);
+            Log.m1109e(TAG, "Failed to adjust response data: " + Util.fromUtf8Bytes(bArr), e);
             return bArr;
         }
     }

@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.token.FoundToken;
 import com.iMe.storage.domain.model.wallet.token.Token;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FoundTokenUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FoundTokenUiMappingKt {
     public static final FoundTokenItem mapToUi(FoundToken foundToken) {
         Intrinsics.checkNotNullParameter(foundToken, "<this>");

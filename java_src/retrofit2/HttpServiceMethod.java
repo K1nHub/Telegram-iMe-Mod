@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 import okhttp3.Call;
 import okhttp3.ResponseBody;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<ReturnT> {
     private final CallAdapter<ResponseT, ReturnT> callAdapter;
     private final Call.Factory callFactory;

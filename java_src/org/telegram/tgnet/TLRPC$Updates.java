@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$Updates extends TLObject {
     public long chat_id;
     public int date;
@@ -10,7 +10,7 @@ public abstract class TLRPC$Updates extends TLObject {
     public TLRPC$MessageFwdHeader fwd_from;
 
     /* renamed from: id */
-    public int f1684id;
+    public int f1761id;
     public TLRPC$MessageMedia media;
     public boolean media_unread;
     public boolean mentioned;

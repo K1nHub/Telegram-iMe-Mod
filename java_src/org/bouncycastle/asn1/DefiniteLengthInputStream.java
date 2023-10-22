@@ -3,8 +3,8 @@ package org.bouncycastle.asn1;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
-import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes6.dex */
+import org.bouncycastle.util.p040io.Streams;
+/* loaded from: classes4.dex */
 class DefiniteLengthInputStream extends LimitedInputStream {
     private static final byte[] EMPTY_BYTES = new byte[0];
     private final int _originalLength;

@@ -6,7 +6,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.util.NotificationLite;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BlockingObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
     public static final Object TERMINATED = new Object();
     final Queue<Object> queue;

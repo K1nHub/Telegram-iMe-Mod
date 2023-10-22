@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import java.io.IOException;
 import java.util.Arrays;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzlx {
     private static final zzlx zza = new zzlx(0, new int[0], new Object[0], false);
     private int zzb;

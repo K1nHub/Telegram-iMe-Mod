@@ -16,13 +16,13 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.Map;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite<MessageType, BuilderType> {
     private static Map<Object, GeneratedMessageLite<?, ?>> defaultInstanceMap = new ConcurrentHashMap();
     protected UnknownFieldSetLite unknownFields = UnknownFieldSetLite.getDefaultInstance();
     protected int memoizedSerializedSize = -1;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum MethodToInvoke {
         GET_MEMOIZED_IS_INITIALIZED,
         SET_MEMOIZED_IS_INITIALIZED,
@@ -196,7 +196,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         this.unknownFields = UnknownFieldSetLite.mutableCopyOf(this.unknownFields, unknownFieldSetLite);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Builder<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite.Builder<MessageType, BuilderType> {
         private final MessageType defaultInstance;
         protected MessageType instance;
@@ -234,14 +234,14 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
 
         /* renamed from: clear */
-        public final BuilderType m1155clear() {
+        public final BuilderType m1412clear() {
             this.instance = (MessageType) this.instance.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
             return this;
         }
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1143clone() {
+        public BuilderType mo1400clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -287,7 +287,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1152mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        public BuilderType mo1409mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             copyOnWrite();
             try {
                 Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, bArr, i, i + i2, new ArrayDecoders.Registers(extensionRegistryLite));
@@ -303,13 +303,13 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1151mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
-            return mo1152mergeFrom(bArr, i, i2, ExtensionRegistryLite.getEmptyRegistry());
+        public BuilderType mo1408mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
+            return mo1409mergeFrom(bArr, i, i2, ExtensionRegistryLite.getEmptyRegistry());
         }
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: mergeFrom */
-        public BuilderType mo1147mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+        public BuilderType mo1404mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
             copyOnWrite();
             try {
                 Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, CodedInputStreamReader.forCodedInput(codedInputStream), extensionRegistryLite);
@@ -323,7 +323,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class ExtendableMessage<MessageType extends ExtendableMessage<MessageType, BuilderType>, BuilderType> extends GeneratedMessageLite<MessageType, BuilderType> implements MessageLiteOrBuilder {
         protected FieldSet<ExtensionDescriptor> extensions = FieldSet.emptySet();
 
@@ -345,7 +345,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m1154clone();
+                this.extensions = this.extensions.m1411clone();
             }
             return this.extensions;
         }
@@ -359,7 +359,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return new GeneratedExtension<>(containingtype, Collections.emptyList(), messageLite, new ExtensionDescriptor(enumLiteMap, i, fieldType, true, z), cls);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class ExtensionDescriptor implements FieldSet.FieldDescriptorLite<ExtensionDescriptor> {
         final Internal.EnumLiteMap<?> enumTypeMap;
         final boolean isPacked;
@@ -442,7 +442,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class GeneratedExtension<ContainingType extends MessageLite, Type> extends ExtensionLite<ContainingType, Type> {
         final ContainingType containingTypeDefaultInstance;
         final Type defaultValue;
@@ -502,8 +502,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return isInitialized;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public static Internal.IntList emptyIntList() {
+    protected static Internal.IntList emptyIntList() {
         return IntArrayList.emptyList();
     }
 
@@ -564,7 +563,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return protobufList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     protected static class DefaultInstanceBasedParser<T extends GeneratedMessageLite<T, ?>> extends AbstractParser<T> {
         private final T defaultInstance;
 

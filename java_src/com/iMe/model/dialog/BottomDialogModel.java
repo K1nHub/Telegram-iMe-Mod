@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BottomDialogModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BottomDialogModel {
     private final Function0<Unit> buttonAction;
     private final String buttonText;

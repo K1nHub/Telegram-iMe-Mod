@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 /* compiled from: RepeatOnLifecycle.kt */
-@DebugMetadata(m102c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3", m101f = "RepeatOnLifecycle.kt", m100l = {84}, m99m = "invokeSuspend")
+@DebugMetadata(m143c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3", m142f = "RepeatOnLifecycle.kt", m141l = {84}, m140m = "invokeSuspend")
 /* loaded from: classes.dex */
 final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<CoroutineScope, Continuation<? super Unit>, Object> $block;
@@ -46,7 +46,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepeatOnLifecycle.kt */
-    @DebugMetadata(m102c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1", m101f = "RepeatOnLifecycle.kt", m100l = {166}, m99m = "invokeSuspend")
+    @DebugMetadata(m143c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1", m142f = "RepeatOnLifecycle.kt", m141l = {166}, m140m = "invokeSuspend")
     /* renamed from: androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1 */
     /* loaded from: classes.dex */
     public static final class C02241 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

@@ -26,6 +26,10 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nNftTokenProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NftTokenProvider.kt\ncom/iMe/ui/adapter/provider/NftTokenProvider$convert$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,64:1\n162#2,8:65\n*S KotlinDebug\n*F\n+ 1 NftTokenProvider.kt\ncom/iMe/ui/adapter/provider/NftTokenProvider$convert$1\n*L\n43#1:65,8\n*E\n"
+.end annotation
+
 
 # instance fields
 .field final synthetic $item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
@@ -77,26 +81,39 @@
     .line 41
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/NftToken;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/nft/NftRootView;->setNftToken(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;)V
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/nft/NftRootView;->setNftToken(Lcom/iMe/storage/domain/model/crypto/nft/NftToken;)V
 
     .line 42
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getNftType()Lcom/iMe/model/wallet/home/nft/NftType;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/nft/NftRootView;->setNftTokenType(Lcom/iMe/model/wallet/home/nft/NftType;)V
+
+    .line 44
     iget v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$leftPadding:I
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingTop()I
+    .line 45
+    iget v1, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$rightPadding:I
 
-    move-result v1
+    .line 164
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
-    iget v2, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;->$rightPadding:I
+    move-result v2
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getPaddingBottom()I
+    .line 166
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v3
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
+    .line 168
+    invoke-virtual {p1, v0, v2, v1, v3}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
 .end method

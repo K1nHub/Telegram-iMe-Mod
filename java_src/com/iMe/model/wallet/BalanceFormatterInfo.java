@@ -3,7 +3,7 @@ package com.iMe.model.wallet;
 import java.text.NumberFormat;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BalanceFormatterInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BalanceFormatterInfo {
     private final char decimalSeparator;
     private final NumberFormat numberFormat;

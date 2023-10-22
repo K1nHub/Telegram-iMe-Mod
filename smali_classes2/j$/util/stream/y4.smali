@@ -2,19 +2,19 @@
 .super Lj$/util/stream/z4;
 
 # interfaces
-.implements Lj$/util/s$c;
+.implements Lj$/util/Spliterator$c;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s$c;JJ)V
+.method constructor <init>(Lj$/util/Spliterator$c;JJ)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lj$/util/stream/z4;-><init>(Lj$/util/t;JJ)V
+    invoke-direct/range {p0 .. p5}, Lj$/util/stream/z4;-><init>(Lj$/util/Spliterator$d;JJ)V
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/s$c;JJJJ)V
+.method constructor <init>(Lj$/util/Spliterator$c;JJJJ)V
     .locals 11
 
     const/4 v10, 0x0
@@ -31,19 +31,19 @@
 
     move-wide/from16 v8, p8
 
-    invoke-direct/range {v0 .. v10}, Lj$/util/stream/z4;-><init>(Lj$/util/t;JJJJLj$/util/stream/o1;)V
+    invoke-direct/range {v0 .. v10}, Lj$/util/stream/z4;-><init>(Lj$/util/Spliterator$d;JJJJLj$/util/stream/o1;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(Lj$/util/s;JJJJ)Lj$/util/s;
+.method protected a(Lj$/util/Spliterator;JJJJ)Lj$/util/Spliterator;
     .locals 11
 
     move-object v1, p1
 
-    check-cast v1, Lj$/util/s$c;
+    check-cast v1, Lj$/util/Spliterator$c;
 
     .line 1
     new-instance v10, Lj$/util/stream/y4;
@@ -58,7 +58,7 @@
 
     move-wide/from16 v8, p8
 
-    invoke-direct/range {v0 .. v9}, Lj$/util/stream/y4;-><init>(Lj$/util/s$c;JJJJ)V
+    invoke-direct/range {v0 .. v9}, Lj$/util/stream/y4;-><init>(Lj$/util/Spliterator$c;JJJJ)V
 
     return-object v10
 .end method
@@ -66,7 +66,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->l(Lj$/util/s$c;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->h(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -84,7 +84,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->d(Lj$/util/s$c;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->c(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
 
     return-void
 .end method

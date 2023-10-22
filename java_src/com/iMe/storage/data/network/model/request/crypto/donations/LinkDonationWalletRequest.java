@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LinkDonationWalletRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LinkDonationWalletRequest {
     private final String chatId;
     private final boolean isPersonalWallet;

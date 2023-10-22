@@ -4,12 +4,12 @@ import com.iMe.storage.data.datasource.base.DataSourceFactory;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletSwapDataSourceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletSwapDataSourceFactory implements DataSourceFactory<SwapProtocol, WalletSwapDataSource> {
     private final WalletSwapDataSource dexSwapDataSource;
 
     /* compiled from: WalletSwapDataSourceFactory.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

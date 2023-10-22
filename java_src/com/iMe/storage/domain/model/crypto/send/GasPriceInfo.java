@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GasPriceInfo {
     private final int duration;
     private final double fee;
@@ -74,7 +74,7 @@ public final class GasPriceInfo {
     }
 
     public int hashCode() {
-        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.fee)) * 31) + this.feeInFiat.hashCode();
+        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fee)) * 31) + this.feeInFiat.hashCode();
     }
 
     public String toString() {

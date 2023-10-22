@@ -12,7 +12,7 @@ import com.google.firebase.FirebaseApp;
 import java.util.List;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Metadata {
     private String appVersionCode;
     private String appVersionName;

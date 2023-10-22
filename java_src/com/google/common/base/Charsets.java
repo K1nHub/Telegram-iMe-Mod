@@ -2,7 +2,7 @@ package com.google.common.base;
 
 import com.google.android.exoplayer2.C0479C;
 import java.nio.charset.Charset;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Charsets {
     public static final Charset US_ASCII = Charset.forName(C0479C.ASCII_NAME);
     public static final Charset ISO_8859_1 = Charset.forName(C0479C.ISO88591_NAME);

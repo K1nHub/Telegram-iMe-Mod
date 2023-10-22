@@ -24,6 +24,7 @@ public class JWT implements Parcelable {
             return new JWT[i];
         }
     };
+    private Map<String, String> header;
     private JWTPayload payload;
     private final String token;
 
@@ -52,7 +53,7 @@ public class JWT implements Parcelable {
 
     private void decode(String str) {
         String[] splitToken = splitToken(str);
-        Map map = (Map) parseJson(base64Decode(splitToken[0]), new TypeToken<Map<String, String>>(this) { // from class: com.auth0.android.jwt.JWT.2
+        this.header = (Map) parseJson(base64Decode(splitToken[0]), new TypeToken<Map<String, String>>(this) { // from class: com.auth0.android.jwt.JWT.2
         }.getType());
         this.payload = (JWTPayload) parseJson(base64Decode(splitToken[1]), JWTPayload.class);
         String str2 = splitToken[2];

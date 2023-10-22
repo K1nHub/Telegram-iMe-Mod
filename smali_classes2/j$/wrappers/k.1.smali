@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s$b;
+.implements Lj$/util/Spliterator$b;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/Spliterator$OfInt;)Lj$/util/s$b;
+.method public static synthetic a(Ljava/util/Spliterator$OfInt;)Lj$/util/Spliterator$b;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/l;
 
-    iget-object p0, p0, Lj$/wrappers/l;->a:Lj$/util/s$b;
+    iget-object p0, p0, Lj$/wrappers/l;->a:Lj$/util/Spliterator$b;
 
     return-object p0
 
@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
 
-    invoke-static {p1}, Lj$/wrappers/Q;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
+    invoke-static {p1}, Lj$/wrappers/O;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
 
     move-result-object p1
 
@@ -133,7 +133,7 @@
 
     iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
 
-    invoke-static {p1}, Lj$/wrappers/Q;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
+    invoke-static {p1}, Lj$/wrappers/O;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
 
     move-result-object p1
 
@@ -192,7 +192,7 @@
     return p1
 .end method
 
-.method public synthetic trySplit()Lj$/util/s$b;
+.method public synthetic trySplit()Lj$/util/Spliterator$b;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
@@ -201,30 +201,14 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/k;->a(Ljava/util/Spliterator$OfInt;)Lj$/util/s$b;
+    invoke-static {v0}, Lj$/wrappers/k;->a(Ljava/util/Spliterator$OfInt;)Lj$/util/Spliterator$b;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic trySplit()Lj$/util/s;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
-
-    invoke-interface {v0}, Ljava/util/Spliterator$OfInt;->trySplit()Ljava/util/Spliterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/g;->a(Ljava/util/Spliterator;)Lj$/util/s;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic trySplit()Lj$/util/t;
+.method public synthetic trySplit()Lj$/util/Spliterator$d;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
@@ -233,7 +217,23 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/o;->a(Ljava/util/Spliterator$OfPrimitive;)Lj$/util/t;
+    invoke-static {v0}, Lj$/wrappers/o;->a(Ljava/util/Spliterator$OfPrimitive;)Lj$/util/Spliterator$d;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic trySplit()Lj$/util/Spliterator;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/k;->a:Ljava/util/Spliterator$OfInt;
+
+    invoke-interface {v0}, Ljava/util/Spliterator$OfInt;->trySplit()Ljava/util/Spliterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/g;->a(Ljava/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v0
 

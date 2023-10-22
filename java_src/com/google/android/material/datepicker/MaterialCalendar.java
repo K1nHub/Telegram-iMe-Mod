@@ -26,7 +26,7 @@ import com.google.android.material.R$string;
 import com.google.android.material.button.MaterialButton;
 import java.util.Calendar;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MaterialCalendar<S> extends PickerFragment<S> {
     private CalendarConstraints calendarConstraints;
     private CalendarSelector calendarSelector;
@@ -44,14 +44,14 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     static final Object SELECTOR_TOGGLE_TAG = "SELECTOR_TOGGLE_TAG";
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum CalendarSelector {
         DAY,
         YEAR
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnDayClickListener {
         void onDayClick(long j);
     }

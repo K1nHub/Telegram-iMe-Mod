@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ExtractionForegroundService extends Service {
     private final IBinder zza = new zzch(this);
 

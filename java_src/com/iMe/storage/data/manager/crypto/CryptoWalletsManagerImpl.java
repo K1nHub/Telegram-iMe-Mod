@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletsManagerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     private final BlockchainCryptoWalletManager btcBlockchainCryptoWalletManagerImpl;
     private final BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager;
@@ -17,7 +17,7 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     private final BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager;
 
     /* compiled from: CryptoWalletsManagerImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

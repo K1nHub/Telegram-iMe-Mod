@@ -4,7 +4,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class CrossProcessLock {
     private final FileChannel channel;
     private final FileLock lock;

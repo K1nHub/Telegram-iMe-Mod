@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__BuildersKt;
 /* compiled from: Blocking.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BlockingKt {
     public static final <T> T runBlocking(Function1<? super Continuation<? super T>, ? extends Object> block) {
         Object runBlocking$default;

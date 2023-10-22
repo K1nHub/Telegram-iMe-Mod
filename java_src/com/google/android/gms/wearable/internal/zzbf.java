@@ -10,20 +10,20 @@ import com.google.android.gms.wearable.ChannelApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "ChannelEventParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzbf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbf> CREATOR = new zzbg();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     final zzbq zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     final int zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     final int zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     final int zzd;
 
     @SafeParcelable.Constructor
-    public zzbf(@SafeParcelable.Param(m796id = 2) zzbq zzbqVar, @SafeParcelable.Param(m796id = 3) int i, @SafeParcelable.Param(m796id = 4) int i2, @SafeParcelable.Param(m796id = 5) int i3) {
+    public zzbf(@SafeParcelable.Param(m1088id = 2) zzbq zzbqVar, @SafeParcelable.Param(m1088id = 3) int i, @SafeParcelable.Param(m1088id = 4) int i2, @SafeParcelable.Param(m1088id = 5) int i3) {
         this.zza = zzbqVar;
         this.zzb = i;
         this.zzc = i2;

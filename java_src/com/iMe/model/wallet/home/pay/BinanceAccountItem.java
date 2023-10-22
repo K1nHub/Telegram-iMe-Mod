@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceAccountItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceAccountItem extends NoChildNode {
     public static final Companion Companion = new Companion(null);
     private static final int SHORT_ID_MAX_LENGTH = 10;
@@ -80,7 +80,7 @@ public final class BinanceAccountItem extends NoChildNode {
     }
 
     /* compiled from: BinanceAccountItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

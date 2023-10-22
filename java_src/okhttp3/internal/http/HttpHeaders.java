@@ -16,7 +16,7 @@ import okhttp3.internal.platform.Platform;
 import okio.Buffer;
 import okio.ByteString;
 /* compiled from: HttpHeaders.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HttpHeaders {
     private static final ByteString QUOTED_STRING_DELIMITERS;
     private static final ByteString TOKEN_DELIMITERS;

@@ -18,7 +18,7 @@ import com.google.android.material.R$layout;
 import com.google.android.material.R$styleable;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.RelativeCornerSize;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class RadialViewGroup extends ConstraintLayout {
     private MaterialShapeDrawable background;
     private int radius;

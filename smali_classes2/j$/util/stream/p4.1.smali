@@ -230,7 +230,7 @@
     .end packed-switch
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     iget v0, p0, Lj$/util/stream/p4;->a:I
@@ -267,13 +267,13 @@
     .end packed-switch
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public synthetic n(J)V
+.method public synthetic m(J)V
     .locals 0
 
     return-void

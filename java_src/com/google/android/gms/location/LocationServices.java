@@ -10,7 +10,7 @@ import com.google.android.gms.internal.location.zzbz;
 import com.google.android.gms.internal.location.zzcc;
 import com.google.android.gms.internal.location.zzce;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LocationServices {
     @Deprecated
     public static final Api<Api.ApiOptions.NoOptions> API = zzbp.zzb;

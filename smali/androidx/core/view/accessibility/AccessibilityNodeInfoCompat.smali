@@ -2271,31 +2271,6 @@
     return-void
 .end method
 
-.method public setRoleDescription(Ljava/lang/CharSequence;)V
-    .locals 2
-
-    .line 4328
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 4329
-    iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    invoke-static {v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$Api19Impl;->getExtras(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    const-string v1, "AccessibilityNodeInfo.roleDescription"
-
-    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public setScreenReaderFocusable(Z)V
     .locals 2
 

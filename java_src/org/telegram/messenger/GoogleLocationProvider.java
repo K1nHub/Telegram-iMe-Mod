@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private FusedLocationProviderClient locationProviderClient;
     private SettingsClient settingsClient;
@@ -124,7 +124,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         return PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -148,7 +148,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private GoogleApiClient apiClient;
 

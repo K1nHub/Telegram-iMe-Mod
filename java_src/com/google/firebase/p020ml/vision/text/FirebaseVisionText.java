@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionText */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionText {
     private final List<TextBlock> zzbdq;
 
     /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionText$Element */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Element extends TextBase {
         Element(com.google.android.gms.vision.text.Element element) {
             super(element);
@@ -45,7 +45,7 @@ public class FirebaseVisionText {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionText$TextBase */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class TextBase {
         private final Float confidence;
         private final String text;
@@ -89,7 +89,7 @@ public class FirebaseVisionText {
     }
 
     /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionText$Line */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Line extends TextBase {
         private final List<Element> zzbdr;
 
@@ -112,7 +112,7 @@ public class FirebaseVisionText {
     }
 
     /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionText$TextBlock */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class TextBlock extends TextBase {
         private final List<Line> zzbds;
 

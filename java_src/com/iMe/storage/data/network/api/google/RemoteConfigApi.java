@@ -8,7 +8,7 @@ import io.reactivex.functions.Function;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RemoteConfigApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RemoteConfigApi {
     private final FirebaseRemoteConfig remoteConfig;
 

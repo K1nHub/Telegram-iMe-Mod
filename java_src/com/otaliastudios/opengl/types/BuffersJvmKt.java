@@ -5,7 +5,7 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: buffers.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BuffersJvmKt {
     public static final ByteBuffer byteBuffer(int i) {
         ByteBuffer order = ByteBuffer.allocateDirect(i * 1).order(ByteOrder.nativeOrder());

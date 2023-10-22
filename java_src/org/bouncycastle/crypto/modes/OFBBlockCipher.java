@@ -5,11 +5,11 @@ import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.DataLengthException;
 import org.bouncycastle.crypto.StreamBlockCipher;
 import org.bouncycastle.crypto.params.ParametersWithIV;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class OFBBlockCipher extends StreamBlockCipher {
 
     /* renamed from: IV */
-    private byte[] f1373IV;
+    private byte[] f1454IV;
     private final int blockSize;
     private int byteCount;
     private final BlockCipher cipher;
@@ -23,7 +23,7 @@ public class OFBBlockCipher extends StreamBlockCipher {
         }
         this.cipher = blockCipher;
         this.blockSize = i / 8;
-        this.f1373IV = new byte[blockCipher.getBlockSize()];
+        this.f1454IV = new byte[blockCipher.getBlockSize()];
         this.ofbV = new byte[blockCipher.getBlockSize()];
         this.ofbOutV = new byte[blockCipher.getBlockSize()];
     }
@@ -69,12 +69,12 @@ public class OFBBlockCipher extends StreamBlockCipher {
             ParametersWithIV parametersWithIV = (ParametersWithIV) cipherParameters;
             byte[] iv = parametersWithIV.getIV();
             int length = iv.length;
-            byte[] bArr = this.f1373IV;
+            byte[] bArr = this.f1454IV;
             if (length < bArr.length) {
                 System.arraycopy(iv, 0, bArr, bArr.length - iv.length, iv.length);
                 int i = 0;
                 while (true) {
-                    byte[] bArr2 = this.f1373IV;
+                    byte[] bArr2 = this.f1454IV;
                     if (i >= bArr2.length - iv.length) {
                         break;
                     }
@@ -108,7 +108,7 @@ public class OFBBlockCipher extends StreamBlockCipher {
 
     @Override // org.bouncycastle.crypto.BlockCipher
     public void reset() {
-        byte[] bArr = this.f1373IV;
+        byte[] bArr = this.f1454IV;
         System.arraycopy(bArr, 0, this.ofbV, 0, bArr.length);
         this.byteCount = 0;
         this.cipher.reset();

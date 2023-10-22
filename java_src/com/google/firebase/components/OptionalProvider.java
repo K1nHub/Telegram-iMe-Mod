@@ -3,7 +3,7 @@ package com.google.firebase.components;
 import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class OptionalProvider<T> implements Provider<T>, Deferred<T> {
     private volatile Provider<T> delegate;
     private Deferred.DeferredHandler<T> handler;
@@ -43,7 +43,7 @@ public class OptionalProvider<T> implements Provider<T>, Deferred<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: of */
-    public static <T> OptionalProvider<T> m747of(Provider<T> provider) {
+    public static <T> OptionalProvider<T> m1039of(Provider<T> provider) {
         return new OptionalProvider<>(null, provider);
     }
 

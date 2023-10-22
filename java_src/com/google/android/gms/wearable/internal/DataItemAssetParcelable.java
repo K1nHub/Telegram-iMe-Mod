@@ -13,12 +13,12 @@ import com.google.android.gms.wearable.DataItemAsset;
 @KeepName
 @SafeParcelable.Class(creator = "DataItemAssetParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DataItemAssetParcelable extends AbstractSafeParcelable implements DataItemAsset, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new zzdf();
-    @SafeParcelable.Field(getter = "getId", m797id = 2)
+    @SafeParcelable.Field(getter = "getId", m1089id = 2)
     private final String zza;
-    @SafeParcelable.Field(getter = "getDataItemKey", m797id = 3)
+    @SafeParcelable.Field(getter = "getDataItemKey", m1089id = 3)
     private final String zzb;
 
     public DataItemAssetParcelable(DataItemAsset dataItemAsset) {
@@ -72,7 +72,7 @@ public class DataItemAssetParcelable extends AbstractSafeParcelable implements D
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public DataItemAssetParcelable(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2) {
+    public DataItemAssetParcelable(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2) {
         this.zza = str;
         this.zzb = str2;
     }

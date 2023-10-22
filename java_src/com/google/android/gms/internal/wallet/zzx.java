@@ -7,7 +7,7 @@ import com.google.android.gms.wallet.MaskedWallet;
 import com.google.android.gms.wallet.PaymentCardRecognitionIntentResponse;
 import com.google.android.gms.wallet.PaymentData;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzx extends zzt {
     public void zzb(int i, FullWallet fullWallet, Bundle bundle) {
     }

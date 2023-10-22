@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_emojiKeywordDeleted extends TLRPC$EmojiKeyword {
     public static int constructor = 594408994;
     public ArrayList<String> emoticons = new ArrayList<>();

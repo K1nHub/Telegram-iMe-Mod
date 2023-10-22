@@ -5,7 +5,7 @@ import java.util.HashMap;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$TL_contact;
 /* compiled from: CollectionsFilteredContacts.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CollectionsFilteredContacts {
     private final ArrayList<String> sortedUsersSectionsArray;
     private final HashMap<String, ArrayList<TLRPC$TL_contact>> usersSectionsDict;

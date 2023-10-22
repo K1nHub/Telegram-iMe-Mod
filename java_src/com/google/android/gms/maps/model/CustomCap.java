@@ -1,6 +1,6 @@
 package com.google.android.gms.maps.model;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CustomCap extends Cap {
     public final BitmapDescriptor bitmapDescriptor;
     public final float refWidth;

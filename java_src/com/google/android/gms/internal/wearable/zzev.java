@@ -2,7 +2,7 @@ package com.google.android.gms.internal.wearable;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum zzev {
     INT(0),
     LONG(0L),

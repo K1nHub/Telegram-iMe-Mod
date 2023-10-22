@@ -3,7 +3,7 @@ package com.google.firebase.p020ml.vision.text;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.internal.firebase_ml.zzjb;
 /* renamed from: com.google.firebase.ml.vision.text.RecognizedLanguage */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RecognizedLanguage {
     private final String languageCode;
 

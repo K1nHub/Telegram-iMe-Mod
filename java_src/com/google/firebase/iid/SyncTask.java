@@ -12,7 +12,7 @@ import com.google.android.gms.common.util.VisibleForTesting;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SyncTask implements Runnable {
     private final FirebaseInstanceId iid;
     private final long nextDelaySeconds;
@@ -20,7 +20,7 @@ public class SyncTask implements Runnable {
 
     /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
     @VisibleForTesting
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static class ConnectivityChangeReceiver extends BroadcastReceiver {
         private SyncTask task;
 

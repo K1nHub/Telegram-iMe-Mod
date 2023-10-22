@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.ListCompositeDisposable;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ComputationScheduler extends Scheduler {
     static final int MAX_THREADS = cap(Runtime.getRuntime().availableProcessors(), Integer.getInteger("rx2.computation-threads", 0).intValue());
     static final FixedSchedulerPool NONE;
@@ -33,13 +33,13 @@ public final class ComputationScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class FixedSchedulerPool {
         final int cores;
         final PoolWorker[] eventLoops;
 
         /* renamed from: n */
-        long f560n;
+        long f473n;
 
         FixedSchedulerPool(int i, ThreadFactory threadFactory) {
             this.cores = i;
@@ -55,8 +55,8 @@ public final class ComputationScheduler extends Scheduler {
                 return ComputationScheduler.SHUTDOWN_WORKER;
             }
             PoolWorker[] poolWorkerArr = this.eventLoops;
-            long j = this.f560n;
-            this.f560n = 1 + j;
+            long j = this.f473n;
+            this.f473n = 1 + j;
             return poolWorkerArr[(int) (j % i)];
         }
 
@@ -100,7 +100,7 @@ public final class ComputationScheduler extends Scheduler {
         fixedSchedulerPool.shutdown();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EventLoopWorker extends Scheduler.Worker {
         private final ListCompositeDisposable both;
         volatile boolean disposed;
@@ -152,7 +152,7 @@ public final class ComputationScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class PoolWorker extends NewThreadWorker {
         PoolWorker(ThreadFactory threadFactory) {
             super(threadFactory);

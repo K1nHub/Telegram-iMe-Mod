@@ -11,7 +11,7 @@ import com.google.android.gms.wearable.Wearable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class MessageClient extends GoogleApi<Wearable.WearableOptions> {
     public static final String ACTION_MESSAGE_RECEIVED = "com.google.android.gms.wearable.MESSAGE_RECEIVED";
     public static final String ACTION_REQUEST_RECEIVED = "com.google.android.gms.wearable.REQUEST_RECEIVED";
@@ -20,12 +20,12 @@ public abstract class MessageClient extends GoogleApi<Wearable.WearableOptions> 
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface FilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMessageReceivedListener extends MessageApi.MessageListener {
         @Override // com.google.android.gms.wearable.MessageApi.MessageListener
         void onMessageReceived(MessageEvent messageEvent);
@@ -33,7 +33,7 @@ public abstract class MessageClient extends GoogleApi<Wearable.WearableOptions> 
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @ShowFirstParty
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface RpcService {
         Task<byte[]> onRequest(String str, String str2, byte[] bArr);
     }

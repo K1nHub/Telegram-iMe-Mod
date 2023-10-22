@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okio.Buffer;
 import okio.BufferedSink;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 final class RequestBuilder {
     private static final String PATH_SEGMENT_ALWAYS_ENCODE_SET = " \"<>^`{}|\\?#";
     private final HttpUrl baseUrl;
@@ -202,7 +202,7 @@ final class RequestBuilder {
         return this.requestBuilder.url(resolve).method(this.method, contentTypeOverridingRequestBody);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static class ContentTypeOverridingRequestBody extends RequestBody {
         private final MediaType contentType;
         private final RequestBody delegate;

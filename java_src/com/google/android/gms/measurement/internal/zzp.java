@@ -11,52 +11,52 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @SafeParcelable.Class(creator = "AppMetadataCreator")
 @SafeParcelable.Reserved({1, 17, 20})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzp extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzp> CREATOR = new zzq();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final String zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final String zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final String zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public final String zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public final long zze;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     public final long zzf;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     public final String zzg;
-    @SafeParcelable.Field(defaultValue = "true", m797id = 9)
+    @SafeParcelable.Field(defaultValue = "true", m1089id = 9)
     public final boolean zzh;
-    @SafeParcelable.Field(m797id = 10)
+    @SafeParcelable.Field(m1089id = 10)
     public final boolean zzi;
-    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MIN_VALUE", m797id = 11)
+    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MIN_VALUE", m1089id = 11)
     public final long zzj;
-    @SafeParcelable.Field(m797id = 12)
+    @SafeParcelable.Field(m1089id = 12)
     public final String zzk;
-    @SafeParcelable.Field(m797id = 13)
+    @SafeParcelable.Field(m1089id = 13)
     public final long zzl;
-    @SafeParcelable.Field(m797id = 14)
+    @SafeParcelable.Field(m1089id = 14)
     public final long zzm;
-    @SafeParcelable.Field(m797id = 15)
+    @SafeParcelable.Field(m1089id = 15)
     public final int zzn;
-    @SafeParcelable.Field(defaultValue = "true", m797id = 16)
+    @SafeParcelable.Field(defaultValue = "true", m1089id = 16)
     public final boolean zzo;
-    @SafeParcelable.Field(m797id = 18)
+    @SafeParcelable.Field(m1089id = 18)
     public final boolean zzp;
-    @SafeParcelable.Field(m797id = 19)
+    @SafeParcelable.Field(m1089id = 19)
     public final String zzq;
-    @SafeParcelable.Field(m797id = 21)
+    @SafeParcelable.Field(m1089id = 21)
     public final Boolean zzr;
-    @SafeParcelable.Field(m797id = 22)
+    @SafeParcelable.Field(m1089id = 22)
     public final long zzs;
-    @SafeParcelable.Field(m797id = 23)
+    @SafeParcelable.Field(m1089id = 23)
     public final List<String> zzt;
-    @SafeParcelable.Field(m797id = 24)
+    @SafeParcelable.Field(m1089id = 24)
     public final String zzu;
-    @SafeParcelable.Field(defaultValue = "", m797id = 25)
+    @SafeParcelable.Field(defaultValue = "", m1089id = 25)
     public final String zzv;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -116,7 +116,7 @@ public final class zzp extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzp(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2, @SafeParcelable.Param(m796id = 4) String str3, @SafeParcelable.Param(m796id = 5) String str4, @SafeParcelable.Param(m796id = 6) long j, @SafeParcelable.Param(m796id = 7) long j2, @SafeParcelable.Param(m796id = 8) String str5, @SafeParcelable.Param(m796id = 9) boolean z, @SafeParcelable.Param(m796id = 10) boolean z2, @SafeParcelable.Param(m796id = 11) long j3, @SafeParcelable.Param(m796id = 12) String str6, @SafeParcelable.Param(m796id = 13) long j4, @SafeParcelable.Param(m796id = 14) long j5, @SafeParcelable.Param(m796id = 15) int i, @SafeParcelable.Param(m796id = 16) boolean z3, @SafeParcelable.Param(m796id = 18) boolean z4, @SafeParcelable.Param(m796id = 19) String str7, @SafeParcelable.Param(m796id = 21) Boolean bool, @SafeParcelable.Param(m796id = 22) long j6, @SafeParcelable.Param(m796id = 23) List<String> list, @SafeParcelable.Param(m796id = 24) String str8, @SafeParcelable.Param(m796id = 25) String str9) {
+    public zzp(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2, @SafeParcelable.Param(m1088id = 4) String str3, @SafeParcelable.Param(m1088id = 5) String str4, @SafeParcelable.Param(m1088id = 6) long j, @SafeParcelable.Param(m1088id = 7) long j2, @SafeParcelable.Param(m1088id = 8) String str5, @SafeParcelable.Param(m1088id = 9) boolean z, @SafeParcelable.Param(m1088id = 10) boolean z2, @SafeParcelable.Param(m1088id = 11) long j3, @SafeParcelable.Param(m1088id = 12) String str6, @SafeParcelable.Param(m1088id = 13) long j4, @SafeParcelable.Param(m1088id = 14) long j5, @SafeParcelable.Param(m1088id = 15) int i, @SafeParcelable.Param(m1088id = 16) boolean z3, @SafeParcelable.Param(m1088id = 18) boolean z4, @SafeParcelable.Param(m1088id = 19) String str7, @SafeParcelable.Param(m1088id = 21) Boolean bool, @SafeParcelable.Param(m1088id = 22) long j6, @SafeParcelable.Param(m1088id = 23) List<String> list, @SafeParcelable.Param(m1088id = 24) String str8, @SafeParcelable.Param(m1088id = 25) String str9) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

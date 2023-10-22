@@ -59,7 +59,7 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
                 this.defaultVerticalPlacement = Util.constrainValue(((bArr[11] & 255) | ((bArr[10] & 255) << 8)) / i, (float) BitmapDescriptorFactory.HUE_RED, 0.95f);
                 return;
             } else {
-                this.defaultVerticalPlacement = 0.85f;
+                this.defaultVerticalPlacement = DEFAULT_VERTICAL_PLACEMENT;
                 return;
             }
         }
@@ -67,7 +67,7 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
         this.defaultColorRgba = -1;
         this.defaultFontFamily = "sans-serif";
         this.customVerticalPlacement = false;
-        this.defaultVerticalPlacement = 0.85f;
+        this.defaultVerticalPlacement = DEFAULT_VERTICAL_PLACEMENT;
         this.calculatedVideoTrackHeight = -1;
     }
 
@@ -127,13 +127,13 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
         parsableByteArray.skipBytes(1);
         int readInt = parsableByteArray.readInt();
         if (readUnsignedShort2 > spannableStringBuilder.length()) {
-            Log.m814w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
+            Log.m1106w(TAG, "Truncating styl end (" + readUnsignedShort2 + ") to cueText.length() (" + spannableStringBuilder.length() + ").");
             i = spannableStringBuilder.length();
         } else {
             i = readUnsignedShort2;
         }
         if (readUnsignedShort >= i) {
-            Log.m814w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
+            Log.m1106w(TAG, "Ignoring styl with start (" + readUnsignedShort + ") >= end (" + i + ").");
             return;
         }
         int i2 = i;

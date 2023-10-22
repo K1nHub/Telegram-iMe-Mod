@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenDetailsArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TokenDetailsArgs {
     public /* synthetic */ TokenDetailsArgs(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -17,24 +17,30 @@ public abstract class TokenDetailsArgs {
     }
 
     /* compiled from: TokenDetailsArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Crypto extends TokenDetailsArgs {
         private final AccountItem.Token token;
+        private final String walletAddress;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Crypto(AccountItem.Token token) {
+        public Crypto(AccountItem.Token token, String str) {
             super(null);
             Intrinsics.checkNotNullParameter(token, "token");
             this.token = token;
+            this.walletAddress = str;
         }
 
         public final AccountItem.Token getToken() {
             return this.token;
         }
+
+        public final String getWalletAddress() {
+            return this.walletAddress;
+        }
     }
 
     /* compiled from: TokenDetailsArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Binance extends TokenDetailsArgs {
         private final BinanceTokenBalanceInfo token;
 
@@ -51,7 +57,7 @@ public abstract class TokenDetailsArgs {
     }
 
     /* compiled from: TokenDetailsArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Staking extends TokenDetailsArgs {
         private StakingDetailsItem stakingDetails;
 
@@ -73,7 +79,7 @@ public abstract class TokenDetailsArgs {
     }
 
     /* compiled from: TokenDetailsArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoBox extends TokenDetailsArgs {
         private CryptoBoxInfo cryptoBoxInfo;
 

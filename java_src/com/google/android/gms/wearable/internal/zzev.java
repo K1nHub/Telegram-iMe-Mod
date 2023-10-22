@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzev extends com.google.android.gms.internal.wearable.zza {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzev(IBinder iBinder) {

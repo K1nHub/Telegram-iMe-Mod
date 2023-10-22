@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inputEncryptedChat extends TLObject {
     public static int constructor = -247351839;
     public long access_hash;

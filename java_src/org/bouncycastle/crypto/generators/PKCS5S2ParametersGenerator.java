@@ -7,7 +7,7 @@ import org.bouncycastle.crypto.PBEParametersGenerator;
 import org.bouncycastle.crypto.macs.HMac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.util.DigestFactory;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     private Mac hMac;
     private byte[] state;
@@ -23,7 +23,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     }
 
     /* renamed from: F */
-    private void m81F(byte[] bArr, int i, byte[] bArr2, byte[] bArr3, int i2) {
+    private void m107F(byte[] bArr, int i, byte[] bArr2, byte[] bArr3, int i2) {
         if (i == 0) {
             throw new IllegalArgumentException("iteration count must be at least 1.");
         }
@@ -65,7 +65,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
                 bArr[i2] = b;
                 i2 = b == 0 ? i2 - 1 : 3;
             }
-            m81F(this.salt, this.iterationCount, bArr, bArr2, i4);
+            m107F(this.salt, this.iterationCount, bArr, bArr2, i4);
             i4 += macSize;
         }
         return bArr2;

@@ -8,18 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class FeedWidgetItemBinding implements ViewBinding {
-    private final LinearLayout rootView;
-
     private FeedWidgetItemBinding(LinearLayout linearLayout, ImageView imageView, TextView textView, LinearLayout linearLayout2) {
-        this.rootView = linearLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
-        return this.rootView;
     }
 
     public static FeedWidgetItemBinding inflate(LayoutInflater layoutInflater) {
@@ -27,7 +19,7 @@ public final class FeedWidgetItemBinding implements ViewBinding {
     }
 
     public static FeedWidgetItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.feed_widget_item, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.feed_widget_item, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +27,10 @@ public final class FeedWidgetItemBinding implements ViewBinding {
     }
 
     public static FeedWidgetItemBinding bind(View view) {
-        int i = C3473R.C3476id.feed_widget_item_image;
+        int i = C3630R.C3633id.feed_widget_item_image;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3473R.C3476id.feed_widget_item_text;
+            i = C3630R.C3633id.feed_widget_item_text;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 LinearLayout linearLayout = (LinearLayout) view;

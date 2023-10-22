@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
     private static final String TAG = "NetworkMonitorAutoDetect";
@@ -40,7 +40,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     private String wifiSSID;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class NetworkState {
         private final boolean connected;
         private final int subtype;
@@ -77,7 +77,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
         private SimpleNetworkCallback() {
         }
@@ -120,7 +120,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class ConnectivityManagerDelegate {
         private final ConnectivityManager connectivityManager;
 
@@ -278,7 +278,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class WifiManagerDelegate {
         private final Context context;
 
@@ -299,7 +299,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class WifiDirectManagerDelegate extends BroadcastReceiver {
         private static final int WIFI_P2P_NETWORK_HANDLE = 0;
         private final Context context;

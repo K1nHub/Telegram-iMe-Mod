@@ -31,7 +31,7 @@ public final class C0540Crop implements MatrixTransformation {
     @Override // com.google.android.exoplayer2.effect.GlMatrixTransformation, com.google.android.exoplayer2.effect.GlEffect
     public /* synthetic */ SingleFrameGlTextureProcessor toGlTextureProcessor(Context context, boolean z) {
         SingleFrameGlTextureProcessor create;
-        create = MatrixTextureProcessor.create(context, ImmutableList.m761of(this), ImmutableList.m762of(), z);
+        create = MatrixTextureProcessor.create(context, ImmutableList.m1053of(this), ImmutableList.m1054of(), z);
         return create;
     }
 

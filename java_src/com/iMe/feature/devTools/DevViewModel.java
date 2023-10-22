@@ -9,7 +9,7 @@ import org.orbitmvi.orbit.ContainerHost;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 import org.orbitmvi.orbit.viewmodel.ViewModelExtensionsKt;
 /* compiled from: DevViewModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DevViewModel extends ViewModel implements ContainerHost<DevState, DevSideEffects> {
     private final Container<DevState, DevSideEffects> container;
     private final DevUseCase devUseCase;

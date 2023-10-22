@@ -14,7 +14,7 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 import kotlinx.coroutines.scheduling.Task;
 import kotlinx.coroutines.scheduling.TaskContext;
 /* compiled from: DispatchedTask.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class DispatchedTask<T> extends Task {
     public int resumeMode;
 
@@ -34,7 +34,7 @@ public abstract class DispatchedTask<T> extends Task {
         this.resumeMode = i;
     }
 
-    public final void handleFatalException(Throwable th, Throwable th2) {
+    public final void handleFatalException$kotlinx_coroutines_core(Throwable th, Throwable th2) {
         if (th == null && th2 == null) {
             return;
         }
@@ -58,8 +58,8 @@ public abstract class DispatchedTask<T> extends Task {
 
     @Override // java.lang.Runnable
     public final void run() {
-        Object m1658constructorimpl;
-        Object m1658constructorimpl2;
+        Object m1935constructorimpl;
+        Object m1935constructorimpl2;
         if (DebugKt.getASSERTIONS_ENABLED()) {
             if (!(this.resumeMode != -1)) {
                 throw new AssertionError();
@@ -67,7 +67,9 @@ public abstract class DispatchedTask<T> extends Task {
         }
         TaskContext taskContext = this.taskContext;
         try {
-            DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) getDelegate$kotlinx_coroutines_core();
+            Continuation<T> delegate$kotlinx_coroutines_core = getDelegate$kotlinx_coroutines_core();
+            Intrinsics.checkNotNull(delegate$kotlinx_coroutines_core, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T of kotlinx.coroutines.DispatchedTask>");
+            DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) delegate$kotlinx_coroutines_core;
             Continuation<T> continuation = dispatchedContinuation.continuation;
             Object obj = dispatchedContinuation.countOrElement;
             CoroutineContext context = continuation.getContext();
@@ -84,13 +86,13 @@ public abstract class DispatchedTask<T> extends Task {
                 if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
                     cancellationException = StackTraceRecoveryKt.access$recoverFromStackFrame(cancellationException, (CoroutineStackFrame) continuation);
                 }
-                continuation.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(cancellationException)));
+                continuation.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(cancellationException)));
             } else if (exceptionalResult$kotlinx_coroutines_core != null) {
                 Result.Companion companion2 = Result.Companion;
-                continuation.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(exceptionalResult$kotlinx_coroutines_core)));
+                continuation.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(exceptionalResult$kotlinx_coroutines_core)));
             } else {
                 Result.Companion companion3 = Result.Companion;
-                continuation.resumeWith(Result.m1658constructorimpl(getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core)));
+                continuation.resumeWith(Result.m1935constructorimpl(getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core)));
             }
             Unit unit = Unit.INSTANCE;
             if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
@@ -99,22 +101,22 @@ public abstract class DispatchedTask<T> extends Task {
             try {
                 Result.Companion companion4 = Result.Companion;
                 taskContext.afterTask();
-                m1658constructorimpl2 = Result.m1658constructorimpl(unit);
+                m1935constructorimpl2 = Result.m1935constructorimpl(unit);
             } catch (Throwable th) {
                 Result.Companion companion5 = Result.Companion;
-                m1658constructorimpl2 = Result.m1658constructorimpl(ResultKt.createFailure(th));
+                m1935constructorimpl2 = Result.m1935constructorimpl(ResultKt.createFailure(th));
             }
-            handleFatalException(null, Result.m1659exceptionOrNullimpl(m1658constructorimpl2));
+            handleFatalException$kotlinx_coroutines_core(null, Result.m1938exceptionOrNullimpl(m1935constructorimpl2));
         } catch (Throwable th2) {
             try {
                 Result.Companion companion6 = Result.Companion;
                 taskContext.afterTask();
-                m1658constructorimpl = Result.m1658constructorimpl(Unit.INSTANCE);
+                m1935constructorimpl = Result.m1935constructorimpl(Unit.INSTANCE);
             } catch (Throwable th3) {
                 Result.Companion companion7 = Result.Companion;
-                m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th3));
+                m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th3));
             }
-            handleFatalException(th2, Result.m1659exceptionOrNullimpl(m1658constructorimpl));
+            handleFatalException$kotlinx_coroutines_core(th2, Result.m1938exceptionOrNullimpl(m1935constructorimpl));
         }
     }
 }

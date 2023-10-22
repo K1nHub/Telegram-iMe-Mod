@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdg {
     public static String zza(@NullableDecl String str) {
         return zzda.zza(str);

@@ -9,7 +9,7 @@ import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: DonationsRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface DonationsRepository {
     Observable<Result<Boolean>> disableDonation(long j);
 

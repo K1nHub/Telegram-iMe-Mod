@@ -152,7 +152,7 @@
     .line 1
     check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/m2;->l(Ljava/lang/Long;)V
+    invoke-virtual {p0, p1}, Lj$/util/stream/m2;->r(Ljava/lang/Long;)V
 
     return-void
 .end method
@@ -167,29 +167,21 @@
     return-object p1
 .end method
 
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public f(Lj$/util/function/p;)Lj$/util/function/p;
     .locals 1
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 .end method
 
-.method public synthetic l(Ljava/lang/Long;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->c(Lj$/util/stream/l3;Ljava/lang/Long;)V
-
-    return-void
-.end method
-
-.method public m()V
+.method public l()V
     .locals 4
 
     iget v0, p0, Lj$/util/stream/l2;->b:I
@@ -242,7 +234,7 @@
     throw v0
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/l2;->a:[J
@@ -303,6 +295,14 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public synthetic r(Ljava/lang/Long;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->c(Lj$/util/stream/l3;Ljava/lang/Long;)V
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

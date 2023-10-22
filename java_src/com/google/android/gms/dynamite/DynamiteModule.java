@@ -10,6 +10,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Objects;
@@ -638,7 +639,7 @@ public final class DynamiteModule {
             Boolean valueOf = Boolean.valueOf(z);
             zzf = valueOf;
             z = valueOf.booleanValue();
-            if (z && resolveContentProvider != null && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & 129) == 0) {
+            if (z && resolveContentProvider != null && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & TsExtractor.TS_STREAM_TYPE_AC3) == 0) {
                 Log.i("DynamiteModule", "Non-system-image GmsCore APK, forcing V1");
                 zzd = true;
             }

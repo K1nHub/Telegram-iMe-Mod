@@ -1,6 +1,6 @@
 package com.iMe.fork.enums;
 /* compiled from: FilterActivityType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum FilterActivityType {
     FILTER(24, 16),
     TOPIC(40, 6);

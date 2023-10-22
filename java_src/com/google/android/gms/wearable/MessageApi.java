@@ -9,7 +9,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface MessageApi {
     public static final String ACTION_MESSAGE_RECEIVED = "com.google.android.gms.wearable.MESSAGE_RECEIVED";
     public static final int FILTER_LITERAL = 0;
@@ -18,20 +18,20 @@ public interface MessageApi {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface FilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface MessageListener {
         void onMessageReceived(MessageEvent messageEvent);
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface SendMessageResult extends Result {
         int getRequestId();
     }

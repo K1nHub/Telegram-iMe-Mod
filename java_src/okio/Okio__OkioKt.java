@@ -2,7 +2,7 @@ package okio;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Okio.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class Okio__OkioKt {
     public static final BufferedSource buffer(Source buffer) {
         Intrinsics.checkNotNullParameter(buffer, "$this$buffer");

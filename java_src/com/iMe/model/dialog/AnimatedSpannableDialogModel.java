@@ -3,7 +3,7 @@ package com.iMe.model.dialog;
 import android.text.SpannableStringBuilder;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AnimatedSpannableDialogModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AnimatedSpannableDialogModel {
     private final int animatedIcon;
     private final CharSequence buttonText;

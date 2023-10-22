@@ -9,8 +9,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DevToolRepository.kt */
-@DebugMetadata(m102c = "com.iMe.feature.devTools.DevToolRepository$getRepoName$2", m101f = "DevToolRepository.kt", m100l = {}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+@DebugMetadata(m143c = "com.iMe.feature.devTools.DevToolRepository$getRepoName$2", m142f = "DevToolRepository.kt", m141l = {}, m140m = "invokeSuspend")
+/* loaded from: classes3.dex */
 final class DevToolRepository$getRepoName$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
     int label;
 

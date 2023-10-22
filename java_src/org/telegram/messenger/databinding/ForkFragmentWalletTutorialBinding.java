@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.ActionButton;
-import com.iMe.p031ui.custom.WrapContentViewPager;
+import com.iMe.p030ui.custom.ActionButton;
+import com.iMe.p030ui.custom.WrapContentViewPager;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     public final ActionButton buttonAction;
     public final DotsIndicator dotsIndicatorTutorial;
@@ -24,7 +24,6 @@ public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
         this.viewPagerTutorial = wrapContentViewPager;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public NestedScrollView getRoot() {
         return this.rootView;
     }
@@ -34,7 +33,7 @@ public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletTutorialBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_tutorial, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_wallet_tutorial, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,13 +41,13 @@ public final class ForkFragmentWalletTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletTutorialBinding bind(View view) {
-        int i = C3473R.C3476id.button_action;
+        int i = C3630R.C3633id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3473R.C3476id.dots_indicator_tutorial;
+            i = C3630R.C3633id.dots_indicator_tutorial;
             DotsIndicator dotsIndicator = (DotsIndicator) ViewBindings.findChildViewById(view, i);
             if (dotsIndicator != null) {
-                i = C3473R.C3476id.view_pager_tutorial;
+                i = C3630R.C3633id.view_pager_tutorial;
                 WrapContentViewPager wrapContentViewPager = (WrapContentViewPager) ViewBindings.findChildViewById(view, i);
                 if (wrapContentViewPager != null) {
                     return new ForkFragmentWalletTutorialBinding((NestedScrollView) view, actionButton, dotsIndicator, wrapContentViewPager);

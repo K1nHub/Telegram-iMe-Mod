@@ -25,12 +25,12 @@ import org.telegram.messenger.support.customtabs.CustomTabsSession;
 import org.telegram.messenger.support.customtabsclient.shared.CustomTabsHelper;
 import org.telegram.messenger.support.customtabsclient.shared.ServiceConnection;
 import org.telegram.messenger.support.customtabsclient.shared.ServiceConnectionCallback;
-import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p042ui.ActionBar.AlertDialog;
+import org.telegram.p042ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Browser {
     private static WeakReference<Activity> currentCustomTabsActivity;
     private static CustomTabsClient customTabsClient;
@@ -82,7 +82,7 @@ public class Browser {
                     try {
                         Browser.customTabsClient.warmup(0L);
                     } catch (Exception e) {
-                        FileLog.m67e(e);
+                        FileLog.m97e(e);
                     }
                 }
 
@@ -97,7 +97,7 @@ public class Browser {
             }
             customTabsServiceConnection = null;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -118,7 +118,7 @@ public class Browser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class NavigationCallback extends CustomTabsCallback {
         @Override // org.telegram.messenger.support.customtabs.CustomTabsCallback
         public void onNavigationEvent(int i, Bundle bundle) {
@@ -195,7 +195,7 @@ public class Browser {
         return isTelegraphUrl(str, false, true) || str.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || str.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || str.matches("^(https://)?fragment\\.com(/.*|$)");
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Progress {
         private Runnable onCancelListener;
 
@@ -242,7 +242,7 @@ public class Browser {
         r0 = e;
      */
     /* JADX WARN: Code restructure failed: missing block: B:122:0x034e, code lost:
-        org.telegram.messenger.FileLog.m67e(r0);
+        org.telegram.messenger.FileLog.m97e(r0);
      */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0281  */
     /* JADX WARN: Removed duplicated region for block: B:109:0x02ba A[ADDED_TO_REGION] */
@@ -283,7 +283,7 @@ public class Browser {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$openUrl$0(org.telegram.messenger.browser.Browser.Progress r2, org.telegram.p043ui.ActionBar.AlertDialog[] r3, org.telegram.tgnet.TLObject r4, int r5, android.net.Uri r6, android.content.Context r7, boolean r8) {
+    public static /* synthetic */ void lambda$openUrl$0(org.telegram.messenger.browser.Browser.Progress r2, org.telegram.p042ui.ActionBar.AlertDialog[] r3, org.telegram.tgnet.TLObject r4, int r5, android.net.Uri r6, android.content.Context r7, boolean r8) {
         /*
             r0 = 0
             if (r2 == 0) goto L7

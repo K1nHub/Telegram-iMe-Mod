@@ -18,7 +18,7 @@
 
 .field private final layoutId:I
 
-.field private spacing:I
+.field private final spacing:I
 
 .field private spanCount:I
 
@@ -27,22 +27,13 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 18
+    .line 21
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
     const/4 v0, 0x4
 
-    .line 21
+    .line 23
     iput v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->spanCount:I
-
-    const/16 v0, 0x10
-
-    .line 22
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->spacing:I
 
     .line 25
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->NFT_AVATAR:I
@@ -53,6 +44,15 @@
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_nft_token:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->layoutId:I
+
+    const/16 v0, 0x10
+
+    .line 28
+    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->getDpToPx(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->spacing:I
 
     return-void
 .end method
@@ -71,15 +71,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 31
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getCollection()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getItemIndex()I
 
     move-result v0
 
@@ -130,7 +122,7 @@
 
     move-result-object p1
 
-    .line 44
+    .line 48
     sget v0, Lorg/telegram/messenger/R$id;->image_nft_image:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;
@@ -145,7 +137,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 18
+    .line 21
     check-cast p2, Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/nft/NftTokenItem;)V
@@ -174,7 +166,7 @@
 .method public final setSpanCount(I)V
     .locals 0
 
-    .line 21
+    .line 23
     iput p1, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->spanCount:I
 
     return-void

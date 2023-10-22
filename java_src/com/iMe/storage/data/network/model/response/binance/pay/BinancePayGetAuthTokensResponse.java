@@ -1,9 +1,9 @@
 package com.iMe.storage.data.network.model.response.binance.pay;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayGetAuthTokensResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayGetAuthTokensResponse {
     private final String accessToken;
     private final long expiresIn;
@@ -73,7 +73,7 @@ public final class BinancePayGetAuthTokensResponse {
     }
 
     public int hashCode() {
-        return (((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + this.scope.hashCode()) * 31) + this.tokenType.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.expiresIn);
+        return (((((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + this.scope.hashCode()) * 31) + this.tokenType.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.expiresIn);
     }
 
     public String toString() {

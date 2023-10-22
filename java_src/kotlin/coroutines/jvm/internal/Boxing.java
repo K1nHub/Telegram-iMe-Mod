@@ -1,6 +1,6 @@
 package kotlin.coroutines.jvm.internal;
 /* compiled from: boxing.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Boxing {
     public static final Boolean boxBoolean(boolean z) {
         return Boolean.valueOf(z);
@@ -10,7 +10,7 @@ public final class Boxing {
         return new Integer(i);
     }
 
-    public static final Float boxFloat(float f) {
-        return new Float(f);
+    public static final Long boxLong(long j) {
+        return new Long(j);
     }
 }

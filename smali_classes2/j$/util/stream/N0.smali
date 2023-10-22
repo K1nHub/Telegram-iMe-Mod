@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/w;
+.implements Lj$/util/function/v;
 
 
 # static fields
@@ -35,9 +35,9 @@
 .method public final accept(Ljava/lang/Object;J)V
     .locals 0
 
-    check-cast p1, Lj$/util/h;
+    check-cast p1, Lj$/util/f;
 
-    invoke-virtual {p1, p2, p3}, Lj$/util/h;->accept(J)V
+    invoke-virtual {p1, p2, p3}, Lj$/util/f;->accept(J)V
 
     return-void
 .end method

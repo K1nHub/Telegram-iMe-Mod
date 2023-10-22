@@ -2,7 +2,7 @@ package com.stripe.android.util;
 
 import com.stripe.android.model.Card;
 import com.stripe.android.model.Token;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StripeTextUtils {
     public static boolean hasAnyPrefix(String str, String... strArr) {
         if (str == null) {

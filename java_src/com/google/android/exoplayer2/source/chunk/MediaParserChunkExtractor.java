@@ -46,7 +46,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         if (!MimeTypes.isText(format.containerMimeType)) {
             return new MediaParserChunkExtractor(i, format, list, playerId);
         }
-        Log.m814w(TAG, "Ignoring an unsupported text track.");
+        Log.m1106w(TAG, "Ignoring an unsupported text track.");
         return null;
     }
 

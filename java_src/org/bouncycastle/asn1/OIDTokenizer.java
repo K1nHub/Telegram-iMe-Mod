@@ -1,5 +1,5 @@
 package org.bouncycastle.asn1;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class OIDTokenizer {
     private int index = 0;
     private String oid;

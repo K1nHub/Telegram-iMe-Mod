@@ -1,11 +1,13 @@
 package com.iMe.model.wallet.home;
 /* compiled from: ServicesCategory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum ServicesCategory {
-    CHANNELS,
     CRYPTOBOXES,
     STAKING,
-    ADS,
+    CHANNELS,
     NEUROBOTS,
+    TELEGRAM_PREMIUM,
+    TELEGRAM_USERNAMES,
+    ADS,
     PREMIUM
 }

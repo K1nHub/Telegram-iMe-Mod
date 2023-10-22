@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import com.google.android.gms.wearable.internal.zzfx;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzr implements Runnable {
     final /* synthetic */ zzfx zza;
     final /* synthetic */ zzaa zzb;

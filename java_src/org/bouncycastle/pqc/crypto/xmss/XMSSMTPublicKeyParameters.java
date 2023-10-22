@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.util.Objects;
 import org.bouncycastle.util.Encodable;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class XMSSMTPublicKeyParameters extends XMSSMTKeyParameters implements Encodable {
     private final int oid;
     private final XMSSMTParameters params;
     private final byte[] publicSeed;
     private final byte[] root;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final XMSSMTParameters params;
         private byte[] root = null;

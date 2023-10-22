@@ -20,8 +20,8 @@ import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.model.wallet.token.Token;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.trustwallet.walletconnect.extensions.ByteArrayKt;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -33,7 +33,7 @@ import wallet.core.java.AnySigner;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.proto.Tron;
 /* compiled from: TRONWalletTransferDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TRONWalletTransferDataSourceImpl implements WalletTransferDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;
@@ -72,24 +72,24 @@ public final class TRONWalletTransferDataSourceImpl implements WalletTransferDat
     }
 
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
-    public Observable<Result<Boolean>> transfer(TransactionArgs args, final String networkId) {
+    public Observable<Result<String>> transfer(TransactionArgs args, final String networkId) {
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.data.datasource.transfer.impl.TRONWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends String>>>() { // from class: com.iMe.storage.data.datasource.transfer.impl.TRONWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends String> result) {
+            public final ObservableSource<? extends Result<? extends String>> invoke(Result<? extends String> result) {
                 CryptoWalletApi cryptoWalletApi;
                 final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
                 Intrinsics.checkNotNullParameter(result, "result");
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -101,18 +101,18 @@ public final class TRONWalletTransferDataSourceImpl implements WalletTransferDat
                 }
                 Observable<ApiBaseResponse<TransactionResponse>> sendCryptoTransferTransaction = cryptoWalletApi.sendCryptoTransferTransaction(new SendTransferTransactionRequest(data, networkId));
                 firebaseFunctionsErrorHandler = TRONWalletTransferDataSourceImpl.this.firebaseErrorHandler;
-                ObservableSource map = sendCryptoTransferTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<TransactionResponse>, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.datasource.transfer.impl.TRONWalletTransferDataSourceImpl$transfer$lambda$2$$inlined$mapSuccess$1
+                ObservableSource map = sendCryptoTransferTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<TransactionResponse>, Result<? extends String>>() { // from class: com.iMe.storage.data.datasource.transfer.impl.TRONWalletTransferDataSourceImpl$transfer$lambda$2$$inlined$mapSuccess$1
                     {
                         super(1);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
-                    public final Result<Boolean> invoke(ApiBaseResponse<TransactionResponse> response) {
+                    public final Result<String> invoke(ApiBaseResponse<TransactionResponse> response) {
                         Intrinsics.checkNotNullParameter(response, "response");
                         if (!response.isSuccess()) {
                             return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
                         }
-                        return Result.Companion.success(Boolean.TRUE);
+                        return Result.Companion.success(response.getPayload().getTransactionHash());
                     }
                 }));
                 Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");

@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LazyJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class SafePublicationLazyImpl<T> implements Lazy<T>, Serializable {
     private static final AtomicReferenceFieldUpdater<SafePublicationLazyImpl<?>, Object> valueUpdater;
     private volatile Object _value;
@@ -46,7 +46,7 @@ final class SafePublicationLazyImpl<T> implements Lazy<T>, Serializable {
     }
 
     /* compiled from: LazyJVM.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

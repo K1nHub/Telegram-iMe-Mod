@@ -16,7 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AutoResolveHelper {
     public static final int RESULT_ERROR = 1;
     private static final long zzb = TimeUnit.MINUTES.toMillis(10);

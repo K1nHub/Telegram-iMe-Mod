@@ -1,19 +1,19 @@
 package com.iMe.model.twitter;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterInviteItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterInviteItem extends NoChildNode {
 
     /* renamed from: id */
-    private final long f362id;
+    private final long f295id;
     private final String nickname;
 
     public static /* synthetic */ TwitterInviteItem copy$default(TwitterInviteItem twitterInviteItem, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = twitterInviteItem.f362id;
+            j = twitterInviteItem.f295id;
         }
         if ((i & 2) != 0) {
             str = twitterInviteItem.nickname;
@@ -22,7 +22,7 @@ public final class TwitterInviteItem extends NoChildNode {
     }
 
     public final long component1() {
-        return this.f362id;
+        return this.f295id;
     }
 
     public final String component2() {
@@ -40,21 +40,21 @@ public final class TwitterInviteItem extends NoChildNode {
         }
         if (obj instanceof TwitterInviteItem) {
             TwitterInviteItem twitterInviteItem = (TwitterInviteItem) obj;
-            return this.f362id == twitterInviteItem.f362id && Intrinsics.areEqual(this.nickname, twitterInviteItem.nickname);
+            return this.f295id == twitterInviteItem.f295id && Intrinsics.areEqual(this.nickname, twitterInviteItem.nickname);
         }
         return false;
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f362id) * 31) + this.nickname.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.f295id) * 31) + this.nickname.hashCode();
     }
 
     public String toString() {
-        return "TwitterInviteItem(id=" + this.f362id + ", nickname=" + this.nickname + ')';
+        return "TwitterInviteItem(id=" + this.f295id + ", nickname=" + this.nickname + ')';
     }
 
     public final long getId() {
-        return this.f362id;
+        return this.f295id;
     }
 
     public final String getNickname() {
@@ -63,7 +63,7 @@ public final class TwitterInviteItem extends NoChildNode {
 
     public TwitterInviteItem(long j, String nickname) {
         Intrinsics.checkNotNullParameter(nickname, "nickname");
-        this.f362id = j;
+        this.f295id = j;
         this.nickname = nickname;
     }
 }

@@ -1,8 +1,8 @@
 package com.iMe.storage.data.repository.crypto.wallet_connect;
 
 import com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource;
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletConnectSessionsDao;
-import com.iMe.storage.data.locale.p027db.model.wallet.WalletConnectSessionDb;
+import com.iMe.storage.data.locale.p026db.dao.minor.wallet.WalletConnectSessionsDao;
+import com.iMe.storage.data.locale.p026db.model.wallet.WalletConnectSessionDb;
 import com.iMe.storage.data.mapper.crypto.CryptoWalletMappingKt;
 import com.iMe.storage.data.mapper.wallet.WalletConnectSessionMappingKt;
 import com.iMe.storage.data.network.api.own.WalletConnectApi;
@@ -34,7 +34,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectRepositoryImpl implements WalletConnectRepository {
     private final ApiErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;

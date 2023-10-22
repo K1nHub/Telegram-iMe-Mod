@@ -1,11 +1,11 @@
 package com.iMe.storage.data.locale.prefs.model;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletInformationMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoWalletInformationMetadata {
     private final long lastUpdateMillis;
     private final CryptoWalletsInfo walletInfo;
@@ -26,9 +26,9 @@ public final class CryptoWalletInformationMetadata {
     }
 
     public int hashCode() {
-        int m724m = BotsDbModel$$ExternalSyntheticBackport0.m724m(this.lastUpdateMillis) * 31;
+        int m1017m = ProfileData$$ExternalSyntheticBackport0.m1017m(this.lastUpdateMillis) * 31;
         CryptoWalletsInfo cryptoWalletsInfo = this.walletInfo;
-        return m724m + (cryptoWalletsInfo == null ? 0 : cryptoWalletsInfo.hashCode());
+        return m1017m + (cryptoWalletsInfo == null ? 0 : cryptoWalletsInfo.hashCode());
     }
 
     public String toString() {

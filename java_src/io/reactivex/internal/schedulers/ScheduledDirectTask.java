@@ -1,7 +1,7 @@
 package io.reactivex.internal.schedulers;
 
 import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ScheduledDirectTask extends AbstractDirectTask implements Callable<Void> {
     public ScheduledDirectTask(Runnable runnable) {
         super(runnable);

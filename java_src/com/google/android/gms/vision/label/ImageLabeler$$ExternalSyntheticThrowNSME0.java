@@ -1,8 +1,8 @@
 package com.google.android.gms.vision.label;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class ImageLabeler$$ExternalSyntheticThrowNSME0 {
     /* renamed from: m */
-    public static /* synthetic */ NoSuchMethodError m768m() {
+    public static /* synthetic */ NoSuchMethodError m1060m() {
         throw new NoSuchMethodError();
     }
 }

@@ -12,11 +12,12 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.airdrop.AirdropVersion;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxOrderType;
+import com.iMe.storage.domain.model.crypto.ton.TonFragmentProductsSortingType;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import java.util.List;
 /* compiled from: CryptoPreferenceHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     public static final Keys Keys = Keys.$$INSTANCE;
 
@@ -70,6 +71,8 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     String getTonConfigJsonString();
 
+    TonFragmentProductsSortingType getTonFragmentProductsSortingType();
+
     PreferenceBlockchainMappedData<String> getWalletCreationDates();
 
     CryptoWalletInformationMetadata getWalletInfoMetadata();
@@ -92,9 +95,13 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     boolean isBannersVisible();
 
+    boolean isBinanceTokensPositiveBalances();
+
     boolean isLocalEncryptionCompleted();
 
     boolean isQuotationsVisible();
+
+    boolean isTokensPositiveBalances();
 
     void resetAllTokensSettings();
 
@@ -128,6 +135,8 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void setBinanceTokensOrderType(TokenOrderType tokenOrderType);
 
+    void setBinanceTokensPositiveBalances(boolean z);
+
     void setBinanceTokensSettings(List<TokenDisplaySettings.Binance> list);
 
     void setBinanceUserInfo(BinanceUserInfoMetadata binanceUserInfoMetadata);
@@ -158,7 +167,9 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void setTokensOrderType(TokenOrderType tokenOrderType);
 
-    void setTonConfigJsonString(String str);
+    void setTokensPositiveBalances(boolean z);
+
+    void setTonFragmentProductsSortingType(TonFragmentProductsSortingType tonFragmentProductsSortingType);
 
     void setWalletInfoMetadata(CryptoWalletInformationMetadata cryptoWalletInformationMetadata);
 
@@ -174,7 +185,7 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     /* compiled from: CryptoPreferenceHelper.kt */
     /* renamed from: com.iMe.storage.domain.storage.CryptoPreferenceHelper$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         static {
             Keys keys = CryptoPreferenceHelper.Keys;
@@ -192,7 +203,7 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     }
 
     /* compiled from: CryptoPreferenceHelper.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Keys {
         static final /* synthetic */ Keys $$INSTANCE = new Keys();
         private static final String KEY_AIRDROP_METADATA = "airdrop_metadata_" + AirdropVersion.VERSION_1.getValue();

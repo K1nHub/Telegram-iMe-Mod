@@ -6,14 +6,14 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
     private static Loggable loggable;
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -54,7 +54,7 @@ public class Logging {
     }
 
     @Deprecated
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum TraceLevel {
         TRACE_NONE(0),
         TRACE_STATEINFO(1),
@@ -110,7 +110,7 @@ public class Logging {
         } else if (loggingEnabled) {
             nativeLog(severity.ordinal(), str, str2);
         } else {
-            int i = C72601.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
+            int i = C75951.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
             if (i == 1) {
                 level = Level.SEVERE;
             } else if (i == 2) {
@@ -127,8 +127,8 @@ public class Logging {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.Logging$1 */
-    /* loaded from: classes7.dex */
-    public static /* synthetic */ class C72601 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C75951 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$Logging$Severity;
 
         static {

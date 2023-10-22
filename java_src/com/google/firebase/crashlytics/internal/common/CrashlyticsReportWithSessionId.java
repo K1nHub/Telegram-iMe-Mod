@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.common;
 import com.google.auto.value.AutoValue;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 @AutoValue
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CrashlyticsReportWithSessionId {
     public abstract CrashlyticsReport getReport();
 

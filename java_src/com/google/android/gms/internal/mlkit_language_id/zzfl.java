@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzfl extends zzfj {
     private static final Class<?> zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
 
@@ -18,14 +18,14 @@ final class zzfl extends zzfj {
         Object unmodifiableList;
         List list = (List) zzhn.zzf(obj, j);
         if (list instanceof zzfg) {
-            unmodifiableList = ((zzfg) list).mo779a_();
+            unmodifiableList = ((zzfg) list).mo1071a_();
         } else if (zza.isAssignableFrom(list.getClass())) {
             return;
         } else {
             if ((list instanceof zzgi) && (list instanceof zzew)) {
                 zzew zzewVar = (zzew) list;
                 if (zzewVar.zza()) {
-                    zzewVar.mo780b_();
+                    zzewVar.mo1072b_();
                     return;
                 }
                 return;

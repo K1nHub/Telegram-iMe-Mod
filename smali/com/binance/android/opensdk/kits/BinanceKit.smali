@@ -3,6 +3,33 @@
 .source ""
 
 
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u0010\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0010\u0012\n\u0002\u0008\u0002\u001a\u0010\u0010\u0002\u001a\u00020\u00002\u0006\u0010\u0001\u001a\u00020\u0000H\u0007\u001a\u0010\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0001\u001a\u00020\u0000H\u0002\u00a8\u0006\u0005"
+    }
+    d2 = {
+        "",
+        "code_verifier",
+        "generateCodeChallenge",
+        "",
+        "sha256",
+        "app_release"
+    }
+    k = 0x2
+    mv = {
+        0x1,
+        0x4,
+        0x0
+    }
+.end annotation
+
+
 # direct methods
 .method private static final a(Ljava/lang/String;)[B
     .locals 2

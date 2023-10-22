@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_draftMessageEmpty extends TLRPC$DraftMessage {
     public static int constructor = 453805082;
 

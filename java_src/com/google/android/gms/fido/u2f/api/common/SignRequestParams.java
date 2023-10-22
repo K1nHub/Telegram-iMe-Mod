@@ -20,19 +20,19 @@ import java.util.Set;
 public class SignRequestParams extends RequestParams {
     public static final Parcelable.Creator<SignRequestParams> CREATOR = new zzk();
     public static final int MAX_DISPLAY_HINT_LENGTH = 80;
-    @SafeParcelable.Field(getter = "getRequestId", m797id = 2)
+    @SafeParcelable.Field(getter = "getRequestId", m1089id = 2)
     private final Integer zza;
-    @SafeParcelable.Field(getter = "getTimeoutSeconds", m797id = 3)
+    @SafeParcelable.Field(getter = "getTimeoutSeconds", m1089id = 3)
     private final Double zzb;
-    @SafeParcelable.Field(getter = "getAppId", m797id = 4)
+    @SafeParcelable.Field(getter = "getAppId", m1089id = 4)
     private final Uri zzc;
-    @SafeParcelable.Field(getter = "getDefaultSignChallenge", m797id = 5)
+    @SafeParcelable.Field(getter = "getDefaultSignChallenge", m1089id = 5)
     private final byte[] zzd;
-    @SafeParcelable.Field(getter = "getRegisteredKeys", m797id = 6)
+    @SafeParcelable.Field(getter = "getRegisteredKeys", m1089id = 6)
     private final List zze;
-    @SafeParcelable.Field(getter = "getChannelIdValue", m797id = 7)
+    @SafeParcelable.Field(getter = "getChannelIdValue", m1089id = 7)
     private final ChannelIdValue zzf;
-    @SafeParcelable.Field(getter = "getDisplayHint", m797id = 8)
+    @SafeParcelable.Field(getter = "getDisplayHint", m1089id = 8)
     private final String zzg;
     private final Set zzh;
 
@@ -89,7 +89,7 @@ public class SignRequestParams extends RequestParams {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SignRequestParams(@SafeParcelable.Param(m796id = 2) Integer num, @SafeParcelable.Param(m796id = 3) Double d, @SafeParcelable.Param(m796id = 4) Uri uri, @SafeParcelable.Param(m796id = 5) byte[] bArr, @SafeParcelable.Param(m796id = 6) List list, @SafeParcelable.Param(m796id = 7) ChannelIdValue channelIdValue, @SafeParcelable.Param(m796id = 8) String str) {
+    public SignRequestParams(@SafeParcelable.Param(m1088id = 2) Integer num, @SafeParcelable.Param(m1088id = 3) Double d, @SafeParcelable.Param(m1088id = 4) Uri uri, @SafeParcelable.Param(m1088id = 5) byte[] bArr, @SafeParcelable.Param(m1088id = 6) List list, @SafeParcelable.Param(m1088id = 7) ChannelIdValue channelIdValue, @SafeParcelable.Param(m1088id = 8) String str) {
         this.zza = num;
         this.zzb = d;
         this.zzc = uri;

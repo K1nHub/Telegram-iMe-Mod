@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzlb<E> extends zzhj<E> implements RandomAccess {
     private static final zzlb<Object> zza;
     private E[] zzb;

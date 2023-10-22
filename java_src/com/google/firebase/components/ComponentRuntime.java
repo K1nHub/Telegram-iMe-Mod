@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ComponentRuntime extends AbstractComponentContainer implements ComponentLoader {
     private static final Provider<Set<Object>> EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
         @Override // com.google.firebase.inject.Provider
@@ -56,8 +56,8 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         EventBus eventBus = new EventBus(executor);
         this.eventBus = eventBus;
         ArrayList arrayList = new ArrayList();
-        arrayList.add(Component.m748of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
-        arrayList.add(Component.m748of(this, ComponentLoader.class, new Class[0]));
+        arrayList.add(Component.m1040of(eventBus, EventBus.class, Subscriber.class, Publisher.class));
+        arrayList.add(Component.m1040of(this, ComponentLoader.class, new Class[0]));
         for (Component<?> component : collection) {
             if (component != null) {
                 arrayList.add(component);
@@ -216,7 +216,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         if (provider instanceof OptionalProvider) {
             return (OptionalProvider) provider;
         }
-        return OptionalProvider.m747of(provider);
+        return OptionalProvider.m1039of(provider);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
@@ -267,7 +267,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final Executor defaultExecutor;
         private final List<Provider<ComponentRegistrar>> lazyRegistrars = new ArrayList();

@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class BasicContainer implements Container, Iterator<Box>, Closeable, p033j$.util.Iterator {
     private static final Box EOF = new AbstractBox("eof ") { // from class: com.googlecode.mp4parser.BasicContainer.1
         @Override // com.googlecode.mp4parser.AbstractBox

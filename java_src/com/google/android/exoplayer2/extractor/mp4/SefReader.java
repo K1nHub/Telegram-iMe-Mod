@@ -34,8 +34,8 @@ final class SefReader {
     private final List<DataReference> dataReferences = new ArrayList();
     private int readerState = 0;
     private int tailLength;
-    private static final Splitter COLON_SPLITTER = Splitter.m764on(':');
-    private static final Splitter ASTERISK_SPLITTER = Splitter.m764on('*');
+    private static final Splitter COLON_SPLITTER = Splitter.m1056on(':');
+    private static final Splitter ASTERISK_SPLITTER = Splitter.m1056on('*');
 
     @Target({ElementType.TYPE_USE})
     @Documented

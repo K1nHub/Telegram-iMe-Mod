@@ -1,7 +1,7 @@
 package com.iMe.utils.helper.reaction;
 
 import android.app.Activity;
-import com.iMe.fork.p024ui.fragment.CreateReactionButtonsActivity;
+import com.iMe.fork.p023ui.fragment.CreateReactionButtonsActivity;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.storage.common.AppConfiguration$Reaction;
@@ -9,19 +9,20 @@ import com.iMe.utils.dialogs.DialogUtils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.ActionBar.BaseFragment;
 import org.telegram.tgnet.TLRPC$Dialog;
 /* compiled from: ReactionHelper.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ReactionHelper {
     public static final ReactionHelper INSTANCE = new ReactionHelper();
 
@@ -39,7 +40,7 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3473R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3473R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3473R.string.common_cancel), LocaleController.getInternalString(C3473R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3630R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3630R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);
@@ -64,7 +65,7 @@ public final class ReactionHelper {
                 if (!it.hasNext()) {
                     break;
                 }
-                if (((TLRPC$Dialog) it.next()).f1528id == AppConfiguration$Reaction.getBotId()) {
+                if (((TLRPC$Dialog) it.next()).f1606id == AppConfiguration$Reaction.getBotId()) {
                     z = true;
                     continue;
                 } else {
@@ -94,7 +95,7 @@ public final class ReactionHelper {
         Intrinsics.checkNotNull(firstOrNull, "null cannot be cast to non-null type java.util.ArrayList<*>{ kotlin.collections.TypeAliasesKt.ArrayList<*> }");
         ArrayList arrayList = (ArrayList) firstOrNull;
         if (!arrayList.isEmpty()) {
-            Object firstOrNull2 = CollectionsKt.firstOrNull(arrayList);
+            Object firstOrNull2 = CollectionsKt.firstOrNull((List<? extends Object>) arrayList);
             String str = null;
             MessageObject messageObject2 = firstOrNull2 instanceof MessageObject ? (MessageObject) firstOrNull2 : null;
             if (messageObject2 != null) {

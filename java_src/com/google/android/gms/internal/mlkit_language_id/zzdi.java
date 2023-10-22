@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class zzdi<E> extends AbstractList<E> implements zzew<E> {
     private boolean zza = true;
 
@@ -80,7 +80,7 @@ abstract class zzdi<E> extends AbstractList<E> implements zzew<E> {
 
     @Override // com.google.android.gms.internal.mlkit_language_id.zzew
     /* renamed from: b_ */
-    public final void mo780b_() {
+    public final void mo1072b_() {
         this.zza = false;
     }
 

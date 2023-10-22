@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_emojiList extends TLRPC$EmojiList {
     public static int constructor = 2048790993;
     public ArrayList<Long> document_id = new ArrayList<>();

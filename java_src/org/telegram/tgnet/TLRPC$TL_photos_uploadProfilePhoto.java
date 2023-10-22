@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_photos_uploadProfilePhoto extends TLObject {
     public static int constructor = 59286453;
     public TLRPC$InputUser bot;

@@ -8,17 +8,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.zat;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "SignInRequestCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zai extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zai> CREATOR = new zaj();
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getResolveAccountRequest", m797id = 2)
+    @SafeParcelable.Field(getter = "getResolveAccountRequest", m1089id = 2)
     final zat zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zai(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) zat zatVar) {
+    public zai(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) zat zatVar) {
         this.zaa = i;
         this.zab = zatVar;
     }

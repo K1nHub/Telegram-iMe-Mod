@@ -9,18 +9,10 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletSingleCreateActionBinding implements ViewBinding {
-    private final FrameLayout rootView;
-
     private ForkRecycleItemWalletSingleCreateActionBinding(FrameLayout frameLayout, CardView cardView, FrameLayout frameLayout2, AppCompatImageView appCompatImageView, AppCompatTextView appCompatTextView) {
-        this.rootView = frameLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletSingleCreateActionBinding inflate(LayoutInflater layoutInflater) {
@@ -28,7 +20,7 @@ public final class ForkRecycleItemWalletSingleCreateActionBinding implements Vie
     }
 
     public static ForkRecycleItemWalletSingleCreateActionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_single_create_action, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_single_create_action, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,14 +28,14 @@ public final class ForkRecycleItemWalletSingleCreateActionBinding implements Vie
     }
 
     public static ForkRecycleItemWalletSingleCreateActionBinding bind(View view) {
-        int i = C3473R.C3476id.card_empty_account;
+        int i = C3630R.C3633id.card_empty_account;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;
-            i = C3473R.C3476id.image_empty_icon;
+            i = C3630R.C3633id.image_empty_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3473R.C3476id.text_empty_title;
+                i = C3630R.C3633id.text_empty_title;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
                     return new ForkRecycleItemWalletSingleCreateActionBinding(frameLayout, cardView, frameLayout, appCompatImageView, appCompatTextView);

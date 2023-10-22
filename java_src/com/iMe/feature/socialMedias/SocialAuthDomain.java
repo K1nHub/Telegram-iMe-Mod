@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialDomain.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialAuthDomain implements Parcelable {
     public static final Parcelable.Creator<SocialAuthDomain> CREATOR = new Creator();
     private final String authToken;
@@ -13,7 +13,7 @@ public final class SocialAuthDomain implements Parcelable {
     private final SocialType socialType;
 
     /* compiled from: SocialDomain.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creator implements Parcelable.Creator<SocialAuthDomain> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

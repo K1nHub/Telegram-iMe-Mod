@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/y;
+.implements Ljava/util/function/ToDoubleFunction;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/Supplier;
+.field final synthetic a:Lj$/util/function/ToDoubleFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/Supplier;)V
+.method private synthetic constructor <init>(Lj$/util/function/ToDoubleFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/y0;->a:Ljava/util/function/Supplier;
+    iput-object p1, p0, Lj$/wrappers/y0;->a:Lj$/util/function/ToDoubleFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/Supplier;)Lj$/util/function/y;
+.method public static synthetic a(Lj$/util/function/ToDoubleFunction;)Ljava/util/function/ToDoubleFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,34 +30,34 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/z0;
+    instance-of v0, p0, Lj$/wrappers/x0;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/z0;
+    check-cast p0, Lj$/wrappers/x0;
 
-    iget-object p0, p0, Lj$/wrappers/z0;->a:Lj$/util/function/y;
+    iget-object p0, p0, Lj$/wrappers/x0;->a:Ljava/util/function/ToDoubleFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/y0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/y0;-><init>(Ljava/util/function/Supplier;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/y0;-><init>(Lj$/util/function/ToDoubleFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public synthetic applyAsDouble(Ljava/lang/Object;)D
+    .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/y0;->a:Ljava/util/function/Supplier;
+    iget-object v0, p0, Lj$/wrappers/y0;->a:Lj$/util/function/ToDoubleFunction;
 
-    invoke-interface {v0}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lj$/util/function/ToDoubleFunction;->applyAsDouble(Ljava/lang/Object;)D
 
-    move-result-object v0
+    move-result-wide v0
 
-    return-object v0
+    return-wide v0
 .end method

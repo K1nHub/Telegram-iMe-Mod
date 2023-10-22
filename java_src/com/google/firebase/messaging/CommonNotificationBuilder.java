@@ -24,16 +24,16 @@ import com.google.android.gms.cloudmessaging.CloudMessagingReceiver;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CommonNotificationBuilder {
     private static final AtomicInteger requestCodeProvider = new AtomicInteger((int) SystemClock.elapsedRealtime());
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class DisplayNotificationInfo {
 
         /* renamed from: id */
-        public final int f283id = 0;
+        public final int f251id = 0;
         public final NotificationCompat.Builder notificationBuilder;
         public final String tag;
 

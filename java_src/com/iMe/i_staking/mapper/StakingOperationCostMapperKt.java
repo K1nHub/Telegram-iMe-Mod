@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.staking.StakingOperationCost;
 import com.iMe.storage.domain.model.staking.StakingValues;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCostMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingOperationCostMapperKt {
     public static final StakingOperationCost mapToDomain(StakingOperationCostResponse stakingOperationCostResponse) {
         Intrinsics.checkNotNullParameter(stakingOperationCostResponse, "<this>");

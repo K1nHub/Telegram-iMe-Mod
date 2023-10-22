@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_chatlists_chatlistInvite extends TLRPC$chatlist_ChatlistInvite {
     public static int constructor = 500007837;
     public String emoticon;

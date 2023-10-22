@@ -3,7 +3,7 @@ package com.iMe.model.staking;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: StakingDashboardItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class StakingDashboardItem extends NoChildNode {
     public /* synthetic */ StakingDashboardItem(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -13,7 +13,7 @@ public abstract class StakingDashboardItem extends NoChildNode {
     }
 
     /* compiled from: StakingDashboardItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Data extends StakingDashboardItem {
         private final float profit;
         private final float staked;
@@ -34,7 +34,7 @@ public abstract class StakingDashboardItem extends NoChildNode {
     }
 
     /* compiled from: StakingDashboardItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Loading extends StakingDashboardItem {
         public static final Loading INSTANCE = new Loading();
 

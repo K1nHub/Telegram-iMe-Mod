@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
     public static int constructor = -745541182;
 
@@ -11,8 +11,8 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.supports_streaming = (readInt32 & 2) != 0;
         this.nosound = (readInt32 & 8) != 0;
         this.duration = abstractSerializedData.readDouble(z);
-        this.f1533w = abstractSerializedData.readInt32(z);
-        this.f1532h = abstractSerializedData.readInt32(z);
+        this.f1611w = abstractSerializedData.readInt32(z);
+        this.f1610h = abstractSerializedData.readInt32(z);
         if ((this.flags & 4) != 0) {
             this.preload_prefix_size = abstractSerializedData.readInt32(z);
         }
@@ -29,8 +29,8 @@ public class TLRPC$TL_documentAttributeVideo extends TLRPC$DocumentAttribute {
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
         abstractSerializedData.writeDouble(this.duration);
-        abstractSerializedData.writeInt32(this.f1533w);
-        abstractSerializedData.writeInt32(this.f1532h);
+        abstractSerializedData.writeInt32(this.f1611w);
+        abstractSerializedData.writeInt32(this.f1610h);
         if ((this.flags & 4) != 0) {
             abstractSerializedData.writeInt32(this.preload_prefix_size);
         }

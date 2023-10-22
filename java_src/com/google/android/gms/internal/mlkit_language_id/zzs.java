@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Vector;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzs {
     private final ConcurrentHashMap<zzv, List<Throwable>> zza = new ConcurrentHashMap<>(16, 0.75f, 10);
     private final ReferenceQueue<Throwable> zzb = new ReferenceQueue<>();

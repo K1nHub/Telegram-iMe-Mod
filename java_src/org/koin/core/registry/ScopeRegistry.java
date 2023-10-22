@@ -11,12 +11,12 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.qualifier.QualifierKt;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: ScopeRegistry.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ScopeRegistry {
     public static final Companion Companion = new Companion(null);
-    private static final StringQualifier rootScopeQualifier = QualifierKt.m78_q("_root_");
+    private static final StringQualifier rootScopeQualifier = QualifierKt.m104_q("_root_");
     private final Koin _koin;
     private final HashSet<Qualifier> _scopeDefinitions;
     private final Map<String, Scope> _scopes;
@@ -50,7 +50,7 @@ public final class ScopeRegistry {
     }
 
     /* compiled from: ScopeRegistry.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

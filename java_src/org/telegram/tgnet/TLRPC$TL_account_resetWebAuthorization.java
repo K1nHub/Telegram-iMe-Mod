@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_resetWebAuthorization extends TLObject {
     public static int constructor = 755087855;
     public long hash;

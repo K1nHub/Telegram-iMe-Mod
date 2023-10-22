@@ -863,12 +863,6 @@ public class AccessibilityNodeInfoCompat {
         }
     }
 
-    public void setRoleDescription(CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 19) {
-            Api19Impl.getExtras(this.mInfo).putCharSequence("AccessibilityNodeInfo.roleDescription", charSequence);
-        }
-    }
-
     public int hashCode() {
         AccessibilityNodeInfo accessibilityNodeInfo = this.mInfo;
         if (accessibilityNodeInfo == null) {

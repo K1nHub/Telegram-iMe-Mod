@@ -1,16 +1,14 @@
 package kotlin.text;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
-import kotlin.collections.CollectionsKt__CollectionsJVMKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.sequences.Sequence;
+import kotlin.sequences.SequencesKt__SequencesKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Strings.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     public static char first(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
@@ -18,6 +16,18 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
             throw new NoSuchElementException("Char sequence is empty.");
         }
         return charSequence.charAt(0);
+    }
+
+    public static Character getOrNull(CharSequence charSequence, int i) {
+        int lastIndex;
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        if (i >= 0) {
+            lastIndex = StringsKt__StringsKt.getLastIndex(charSequence);
+            if (i <= lastIndex) {
+                return Character.valueOf(charSequence.charAt(i));
+            }
+        }
+        return null;
     }
 
     public static char last(CharSequence charSequence) {
@@ -28,6 +38,18 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
         }
         lastIndex = StringsKt__StringsKt.getLastIndex(charSequence);
         return charSequence.charAt(lastIndex);
+    }
+
+    public static char single(CharSequence charSequence) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        int length = charSequence.length();
+        if (length != 0) {
+            if (length == 1) {
+                return charSequence.charAt(0);
+            }
+            throw new IllegalArgumentException("Char sequence has more than one element.");
+        }
+        throw new NoSuchElementException("Char sequence is empty.");
     }
 
     public static String drop(String str, int i) {
@@ -66,33 +88,33 @@ public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
         return substring;
     }
 
-    public static final <C extends Collection<? super Character>> C toCollection(CharSequence charSequence, C destination) {
-        Intrinsics.checkNotNullParameter(charSequence, "<this>");
-        Intrinsics.checkNotNullParameter(destination, "destination");
-        for (int i = 0; i < charSequence.length(); i++) {
-            destination.add(Character.valueOf(charSequence.charAt(i)));
+    public static String takeLast(String str, int i) {
+        int coerceAtMost;
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        if (!(i >= 0)) {
+            throw new IllegalArgumentException(("Requested character count " + i + " is less than zero.").toString());
         }
-        return destination;
+        int length = str.length();
+        coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, length);
+        String substring = str.substring(length - coerceAtMost);
+        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
+        return substring;
     }
 
-    public static List<Character> toList(CharSequence charSequence) {
-        List<Character> emptyList;
-        List<Character> listOf;
+    public static Sequence<Character> asSequence(final CharSequence charSequence) {
+        Sequence<Character> emptySequence;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
-        int length = charSequence.length();
-        if (length == 0) {
-            emptyList = CollectionsKt__CollectionsKt.emptyList();
-            return emptyList;
-        } else if (length == 1) {
-            listOf = CollectionsKt__CollectionsJVMKt.listOf(Character.valueOf(charSequence.charAt(0)));
-            return listOf;
-        } else {
-            return toMutableList(charSequence);
+        if (charSequence instanceof String) {
+            if (charSequence.length() == 0) {
+                emptySequence = SequencesKt__SequencesKt.emptySequence();
+                return emptySequence;
+            }
         }
-    }
-
-    public static final List<Character> toMutableList(CharSequence charSequence) {
-        Intrinsics.checkNotNullParameter(charSequence, "<this>");
-        return (List) toCollection(charSequence, new ArrayList(charSequence.length()));
+        return new Sequence<Character>() { // from class: kotlin.text.StringsKt___StringsKt$asSequence$$inlined$Sequence$1
+            @Override // kotlin.sequences.Sequence
+            public Iterator<Character> iterator() {
+                return StringsKt__StringsKt.iterator(charSequence);
+            }
+        };
     }
 }

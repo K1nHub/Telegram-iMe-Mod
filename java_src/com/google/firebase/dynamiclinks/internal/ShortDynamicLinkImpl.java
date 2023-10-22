@@ -8,18 +8,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import java.util.ArrayList;
 import java.util.List;
 @SafeParcelable.Class(creator = "ShortDynamicLinkImplCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShortDynamicLinkImpl> CREATOR = new ShortDynamicLinkImplCreator();
-    @SafeParcelable.Field(getter = "getPreviewLink", m797id = 2)
+    @SafeParcelable.Field(getter = "getPreviewLink", m1089id = 2)
     private final Uri previewLink;
-    @SafeParcelable.Field(getter = "getShortLink", m797id = 1)
+    @SafeParcelable.Field(getter = "getShortLink", m1089id = 1)
     private final Uri shortLink;
-    @SafeParcelable.Field(getter = "getWarnings", m797id = 3)
+    @SafeParcelable.Field(getter = "getWarnings", m1089id = 3)
     private final List<WarningImpl> warnings;
 
     @SafeParcelable.Constructor
-    public ShortDynamicLinkImpl(@SafeParcelable.Param(m796id = 1) Uri uri, @SafeParcelable.Param(m796id = 2) Uri uri2, @SafeParcelable.Param(m796id = 3) List<WarningImpl> list) {
+    public ShortDynamicLinkImpl(@SafeParcelable.Param(m1088id = 1) Uri uri, @SafeParcelable.Param(m1088id = 2) Uri uri2, @SafeParcelable.Param(m1088id = 3) List<WarningImpl> list) {
         this.shortLink = uri;
         this.previewLink = uri2;
         this.warnings = list == null ? new ArrayList<>() : list;
@@ -43,15 +43,15 @@ public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Class(creator = "WarningImplCreator")
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class WarningImpl extends AbstractSafeParcelable {
         public static final Parcelable.Creator<WarningImpl> CREATOR = new WarningImplCreator();
-        @SafeParcelable.Field(getter = "getMessage", m797id = 2)
+        @SafeParcelable.Field(getter = "getMessage", m1089id = 2)
         @SafeParcelable.Reserved({1})
         private final String message;
 
         @SafeParcelable.Constructor
-        public WarningImpl(@SafeParcelable.Param(m796id = 2) String str) {
+        public WarningImpl(@SafeParcelable.Param(m1088id = 2) String str) {
             this.message = str;
         }
 

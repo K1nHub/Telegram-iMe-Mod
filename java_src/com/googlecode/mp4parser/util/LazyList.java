@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LazyList<E> extends AbstractList<E> {
     private static final Logger LOG = Logger.getLogger(LazyList.class);
     Iterator<E> elementSource;
@@ -38,15 +38,15 @@ public class LazyList<E> extends AbstractList<E> {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public Iterator<E> iterator() {
-        return new C12361();
+        return new C11511();
     }
 
     /* renamed from: com.googlecode.mp4parser.util.LazyList$1 */
-    /* loaded from: classes4.dex */
-    class C12361 implements Iterator<E>, p033j$.util.Iterator {
+    /* loaded from: classes3.dex */
+    class C11511 implements Iterator<E>, p033j$.util.Iterator {
         int pos = 0;
 
-        C12361() {
+        C11511() {
         }
 
         @Override // p033j$.util.Iterator

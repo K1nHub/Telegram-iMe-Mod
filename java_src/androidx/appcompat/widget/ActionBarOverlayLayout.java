@@ -386,7 +386,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
                 this.mInnerInsets = this.mInnerInsets.inset(0, measuredHeight, 0, 0);
             }
         } else if (i3 >= 21) {
-            this.mInnerInsets = new WindowInsetsCompat.Builder(this.mInnerInsets).setSystemWindowInsets(Insets.m862of(this.mInnerInsets.getSystemWindowInsetLeft(), this.mInnerInsets.getSystemWindowInsetTop() + measuredHeight, this.mInnerInsets.getSystemWindowInsetRight(), this.mInnerInsets.getSystemWindowInsetBottom() + 0)).build();
+            this.mInnerInsets = new WindowInsetsCompat.Builder(this.mInnerInsets).setSystemWindowInsets(Insets.m1154of(this.mInnerInsets.getSystemWindowInsetLeft(), this.mInnerInsets.getSystemWindowInsetTop() + measuredHeight, this.mInnerInsets.getSystemWindowInsetRight(), this.mInnerInsets.getSystemWindowInsetBottom() + 0)).build();
         } else {
             Rect rect2 = this.mInnerInsetsRect;
             rect2.top += measuredHeight;

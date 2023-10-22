@@ -44,7 +44,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lj$/util/j;->d(I)Lj$/util/j;
+    invoke-static {v0}, Lj$/util/h;->d(I)Lj$/util/h;
 
     move-result-object v0
 
@@ -57,7 +57,7 @@
     return-object v0
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1

@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import java.util.concurrent.CancellationException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Exceptions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class JobCancellationException extends CancellationException implements CopyableThrowable<JobCancellationException> {
     public final transient Job job;
 

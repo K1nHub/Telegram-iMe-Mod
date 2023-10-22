@@ -10,29 +10,29 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.core.util.Consumer;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface IMapsProvider {
     public static final int MAP_TYPE_HYBRID = 2;
     public static final int MAP_TYPE_NORMAL = 0;
     public static final int MAP_TYPE_SATELLITE = 1;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ICallableMethod<R, A> {
         R call(A a);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ICameraUpdate {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ICancelableCallback {
         void onCancel();
 
         void onFinish();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ICircle {
         double getRadius();
 
@@ -47,7 +47,7 @@ public interface IMapsProvider {
         void setStrokeColor(int i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ICircleOptions {
         ICircleOptions center(LatLng latLng);
 
@@ -62,19 +62,19 @@ public interface IMapsProvider {
         ICircleOptions strokeWidth(int i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ILatLngBounds {
         LatLng getCenter();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ILatLngBoundsBuilder {
         ILatLngBounds build();
 
         ILatLngBoundsBuilder include(LatLng latLng);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IMap {
         ICircle addCircle(ICircleOptions iCircleOptions);
 
@@ -119,15 +119,15 @@ public interface IMapsProvider {
         void setPadding(int i, int i2, int i3, int i4);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IMapStyleOptions {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IMapView {
 
         /* renamed from: org.telegram.messenger.IMapsProvider$IMapView$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public final /* synthetic */ class CC {
             public static GLSurfaceView $default$getGlSurfaceView(IMapView iMapView) {
                 return null;
@@ -157,7 +157,7 @@ public interface IMapsProvider {
         void setOnLayoutListener(Runnable runnable);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IMarker {
         LatLng getPosition();
 
@@ -176,7 +176,7 @@ public interface IMapsProvider {
         void setTag(Object obj);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IMarkerOptions {
         IMarkerOptions anchor(float f, float f2);
 
@@ -193,17 +193,17 @@ public interface IMapsProvider {
         IMarkerOptions title(String str);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IProjection {
         Point toScreenLocation(LatLng latLng);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ITouchInterceptor {
         boolean onInterceptTouchEvent(MotionEvent motionEvent, ICallableMethod<Boolean, MotionEvent> iCallableMethod);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IUISettings {
         void setCompassEnabled(boolean z);
 
@@ -212,7 +212,7 @@ public interface IMapsProvider {
         void setZoomControlsEnabled(boolean z);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnCameraMoveStartedListener {
         public static final int REASON_API_ANIMATION = 2;
         public static final int REASON_DEVELOPER_ANIMATION = 3;
@@ -221,7 +221,7 @@ public interface IMapsProvider {
         void onCameraMoveStarted(int i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface OnMarkerClickListener {
         boolean onClick(IMarker iMarker);
     }
@@ -248,10 +248,10 @@ public interface IMapsProvider {
 
     IMarkerOptions onCreateMarkerOptions();
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class PatternItem {
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class Gap extends PatternItem {
             public final int length;
 
@@ -260,7 +260,7 @@ public interface IMapsProvider {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class Dash extends PatternItem {
             public final int length;
 
@@ -270,7 +270,7 @@ public interface IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class CameraPosition {
         public final LatLng target;
         public final float zoom;
@@ -281,7 +281,7 @@ public interface IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class LatLng {
         public final double latitude;
         public final double longitude;

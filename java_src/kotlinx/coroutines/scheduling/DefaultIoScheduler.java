@@ -9,12 +9,12 @@ import kotlinx.coroutines.ExecutorCoroutineDispatcher;
 import kotlinx.coroutines.internal.SystemPropsKt;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 /* compiled from: Dispatcher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implements Executor {
     public static final DefaultIoScheduler INSTANCE = new DefaultIoScheduler();
 
     /* renamed from: default  reason: not valid java name */
-    private static final CoroutineDispatcher f1987default;
+    private static final CoroutineDispatcher f2161default;
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public String toString() {
@@ -30,18 +30,23 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
         UnlimitedIoScheduler unlimitedIoScheduler = UnlimitedIoScheduler.INSTANCE;
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(64, SystemPropsKt.getAVAILABLE_PROCESSORS());
         systemProp$default = SystemPropsKt__SystemProps_commonKt.systemProp$default("kotlinx.coroutines.io.parallelism", coerceAtLeast, 0, 0, 12, (Object) null);
-        f1987default = unlimitedIoScheduler.limitedParallelism(systemProp$default);
+        f2161default = unlimitedIoScheduler.limitedParallelism(systemProp$default);
     }
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        mo1688dispatch(EmptyCoroutineContext.INSTANCE, runnable);
+        mo2114dispatch(EmptyCoroutineContext.INSTANCE, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        f1987default.mo1688dispatch(coroutineContext, runnable);
+    public void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        f2161default.mo2114dispatch(coroutineContext, runnable);
+    }
+
+    @Override // kotlinx.coroutines.CoroutineDispatcher
+    public void dispatchYield(CoroutineContext coroutineContext, Runnable runnable) {
+        f2161default.dispatchYield(coroutineContext, runnable);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

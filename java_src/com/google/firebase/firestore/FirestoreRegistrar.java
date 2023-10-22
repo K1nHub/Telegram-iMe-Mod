@@ -17,7 +17,7 @@ import com.google.firebase.platforminfo.UserAgentPublisher;
 import java.util.Arrays;
 import java.util.List;
 @Keep
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirestoreRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     @Keep

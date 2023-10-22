@@ -1,7 +1,7 @@
 package org.apache.commons.codec.binary;
 
 import java.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseNCodec {
     private final int chunkSeparatorLength;
     private final int encodedBlockSize;
@@ -20,7 +20,7 @@ public abstract class BaseNCodec {
     protected abstract boolean isInAlphabet(byte b);
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Context {
         byte[] buffer;
         int currentLinePos;

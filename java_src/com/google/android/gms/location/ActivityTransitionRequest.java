@@ -17,17 +17,17 @@ import java.util.TreeSet;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionRequestCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ActivityTransitionRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionRequest> CREATOR = new zzh();
     public static final Comparator<ActivityTransition> IS_SAME_TRANSITION = new zzg();
-    @SafeParcelable.Field(getter = "getActivityTransitions", m797id = 1)
+    @SafeParcelable.Field(getter = "getActivityTransitions", m1089id = 1)
     private final List zza;
-    @SafeParcelable.Field(getter = "getTag", m797id = 2)
+    @SafeParcelable.Field(getter = "getTag", m1089id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getClients", m797id = 3)
+    @SafeParcelable.Field(getter = "getClients", m1089id = 3)
     private final List zzc;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getContextAttributionTag", m797id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getContextAttributionTag", m1089id = 4)
     private String zzd;
 
     public ActivityTransitionRequest(List<ActivityTransition> list) {
@@ -87,7 +87,7 @@ public class ActivityTransitionRequest extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public ActivityTransitionRequest(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) List list2, @SafeParcelable.Param(m796id = 4) String str2) {
+    public ActivityTransitionRequest(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) List list2, @SafeParcelable.Param(m1088id = 4) String str2) {
         List unmodifiableList;
         Preconditions.checkNotNull(list, "transitions can't be null");
         Preconditions.checkArgument(list.size() > 0, "transitions can't be empty.");

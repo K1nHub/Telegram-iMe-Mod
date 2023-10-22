@@ -4,13 +4,13 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class AbstractIterator<T> implements Iterator<T>, p033j$.util.Iterator {
     private T next;
     private State state = State.NOT_READY;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum State {
         READY,
         NOT_READY,
@@ -33,8 +33,8 @@ abstract class AbstractIterator<T> implements Iterator<T>, p033j$.util.Iterator 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.base.AbstractIterator$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C08911 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C08851 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$base$AbstractIterator$State;
 
         static {
@@ -54,7 +54,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p033j$.util.Iterator 
     @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         Preconditions.checkState(this.state != State.FAILED);
-        int i = C08911.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
+        int i = C08851.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return tryToComputeNext();

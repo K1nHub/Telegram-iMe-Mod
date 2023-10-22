@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzbe extends zzam {
     private static final Logger zzb = Logger.getLogger(zzbe.class.getName());
     private static final boolean zzc = zzeo.zzx();

@@ -3,7 +3,7 @@ package com.iMe.i_staking.response;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingProgrammesResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingProgrammesResponse {
     private final List<StakingMetadataResponse> programmes;
     private final int total;

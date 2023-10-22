@@ -7,9 +7,9 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.Components.PasscodeView;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.Components.PasscodeView;
+/* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     public final AppCompatImageView imageBack;
     public final PasscodeView passcodeView;
@@ -21,7 +21,6 @@ public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
         this.passcodeView = passcodeView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public FrameLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthEnterPinBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_eth_enter_pin, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_wallet_eth_enter_pin, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +38,10 @@ public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthEnterPinBinding bind(View view) {
-        int i = C3473R.C3476id.image_back;
+        int i = C3630R.C3633id.image_back;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3473R.C3476id.passcode_view;
+            i = C3630R.C3633id.passcode_view;
             PasscodeView passcodeView = (PasscodeView) ViewBindings.findChildViewById(view, i);
             if (passcodeView != null) {
                 return new ForkFragmentWalletEthEnterPinBinding((FrameLayout) view, appCompatImageView, passcodeView);

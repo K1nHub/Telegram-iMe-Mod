@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.token;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Token.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Token {
     private final String address;
     private final String networkId;

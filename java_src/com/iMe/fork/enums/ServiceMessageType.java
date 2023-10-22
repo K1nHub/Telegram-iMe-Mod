@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken;
 import org.telegram.tgnet.TLRPC$TL_messageActionSetMessagesTTL;
 import org.telegram.tgnet.TLRPC$TL_messageActionTTLChange;
 /* compiled from: ServiceMessageType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum ServiceMessageType {
     ALL(-1, -1, TLRPC$MessageAction.class),
     CHAT_CREATED(0, null, TLRPC$TL_messageActionChatCreate.class),
@@ -82,7 +82,7 @@ public enum ServiceMessageType {
     }
 
     /* compiled from: ServiceMessageType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

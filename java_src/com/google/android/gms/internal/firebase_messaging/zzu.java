@@ -294,7 +294,7 @@ final class zzu implements ObjectEncoderContext {
     }
 
     public final ObjectEncoderContext nested(String str) throws IOException {
-        return nested(FieldDescriptor.m736of(str));
+        return nested(FieldDescriptor.m1028of(str));
     }
 
     @Override // com.google.firebase.encoders.ObjectEncoderContext
@@ -322,27 +322,27 @@ final class zzu implements ObjectEncoderContext {
     }
 
     public final ObjectEncoderContext add(String str, double d) throws IOException {
-        zza(FieldDescriptor.m736of(str), d, true);
+        zza(FieldDescriptor.m1028of(str), d, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, int i) throws IOException {
-        zzd(FieldDescriptor.m736of(str), i, true);
+        zzd(FieldDescriptor.m1028of(str), i, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, long j) throws IOException {
-        zze(FieldDescriptor.m736of(str), j, true);
+        zze(FieldDescriptor.m1028of(str), j, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, Object obj) throws IOException {
-        zzc(FieldDescriptor.m736of(str), obj, true);
+        zzc(FieldDescriptor.m1028of(str), obj, true);
         return this;
     }
 
     public final ObjectEncoderContext add(String str, boolean z) throws IOException {
-        zzd(FieldDescriptor.m736of(str), z ? 1 : 0, true);
+        zzd(FieldDescriptor.m1028of(str), z ? 1 : 0, true);
         return this;
     }
 }

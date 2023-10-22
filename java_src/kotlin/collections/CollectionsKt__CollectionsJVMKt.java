@@ -4,15 +4,25 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import kotlin.collections.builders.ListBuilder;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CollectionsJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CollectionsKt__CollectionsJVMKt {
     public static <T> List<T> listOf(T t) {
         List<T> singletonList = Collections.singletonList(t);
         Intrinsics.checkNotNullExpressionValue(singletonList, "singletonList(element)");
         return singletonList;
+    }
+
+    public static <E> List<E> createListBuilder() {
+        return new ListBuilder();
+    }
+
+    public static <E> List<E> build(List<E> builder) {
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        return ((ListBuilder) builder).build();
     }
 
     public static <T> List<T> shuffled(Iterable<? extends T> iterable) {

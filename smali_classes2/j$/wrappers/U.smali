@@ -3,21 +3,21 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/IntPredicate;
+.field final synthetic a:Ljava/util/function/IntToDoubleFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/IntPredicate;)V
+.method private synthetic constructor <init>(Ljava/util/function/IntToDoubleFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/U;->a:Ljava/util/function/IntPredicate;
+    iput-object p1, p0, Lj$/wrappers/U;->a:Ljava/util/function/IntToDoubleFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/IntPredicate;)Lj$/wrappers/U;
+.method public static synthetic b(Ljava/util/function/IntToDoubleFunction;)Lj$/wrappers/U;
     .locals 1
 
     if-nez p0, :cond_0
@@ -40,21 +40,21 @@
     :cond_1
     new-instance v0, Lj$/wrappers/U;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/U;-><init>(Ljava/util/function/IntPredicate;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/U;-><init>(Ljava/util/function/IntToDoubleFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public b(I)Z
-    .locals 1
+.method public a(I)D
+    .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/U;->a:Ljava/util/function/IntPredicate;
+    iget-object v0, p0, Lj$/wrappers/U;->a:Ljava/util/function/IntToDoubleFunction;
 
-    invoke-interface {v0, p1}, Ljava/util/function/IntPredicate;->test(I)Z
+    invoke-interface {v0, p1}, Ljava/util/function/IntToDoubleFunction;->applyAsDouble(I)D
 
-    move-result p1
+    move-result-wide v0
 
-    return p1
+    return-wide v0
 .end method

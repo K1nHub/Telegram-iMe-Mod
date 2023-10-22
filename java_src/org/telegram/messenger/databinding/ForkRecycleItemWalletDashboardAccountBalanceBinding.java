@@ -7,18 +7,10 @@ import android.widget.FrameLayout;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDashboardAccountBalanceBinding implements ViewBinding {
-    private final FrameLayout rootView;
-
     private ForkRecycleItemWalletDashboardAccountBalanceBinding(FrameLayout frameLayout, CardView cardView, FrameLayout frameLayout2) {
-        this.rootView = frameLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletDashboardAccountBalanceBinding inflate(LayoutInflater layoutInflater) {
@@ -26,7 +18,7 @@ public final class ForkRecycleItemWalletDashboardAccountBalanceBinding implement
     }
 
     public static ForkRecycleItemWalletDashboardAccountBalanceBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_dashboard_account_balance, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_dashboard_account_balance, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -34,7 +26,7 @@ public final class ForkRecycleItemWalletDashboardAccountBalanceBinding implement
     }
 
     public static ForkRecycleItemWalletDashboardAccountBalanceBinding bind(View view) {
-        int i = C3473R.C3476id.card_account_balance;
+        int i = C3630R.C3633id.card_account_balance;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;

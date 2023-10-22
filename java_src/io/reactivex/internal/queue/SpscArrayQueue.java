@@ -5,7 +5,7 @@ import io.reactivex.internal.util.Pow2;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SpscArrayQueue<E> extends AtomicReferenceArray<E> implements SimplePlainQueue<E> {
     private static final Integer MAX_LOOK_AHEAD_STEP = Integer.getInteger("jctools.spsc.max.lookahead.step", 4096);
     final AtomicLong consumerIndex;

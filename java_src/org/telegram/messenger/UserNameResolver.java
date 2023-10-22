@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.Components.BulletinFactory;
-import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.Components.BulletinFactory;
+import org.telegram.p042ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC$TL_contacts_resolveUsername;
 import org.telegram.tgnet.TLRPC$TL_contacts_resolvedPeer;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$User;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
     private final int currentAccount;
@@ -35,7 +35,7 @@ public class UserNameResolver {
         if (cachedPeer != null) {
             if (System.currentTimeMillis() - cachedPeer.time < CACHE_TIME) {
                 consumer.accept(Long.valueOf(cachedPeer.peerId));
-                FileLog.m70d("resolve username from cache " + str + " " + cachedPeer.peerId);
+                FileLog.m100d("resolve username from cache " + str + " " + cachedPeer.peerId);
                 return;
             }
             this.resolvedCache.remove(str);
@@ -92,7 +92,7 @@ public class UserNameResolver {
             if (str2 == null || !str2.contains("FLOOD_WAIT") || (lastFragment = LaunchActivity.getLastFragment()) == null) {
                 return;
             }
-            BulletinFactory.m32of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3473R.string.FloodWait)).show();
+            BulletinFactory.m61of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3630R.string.FloodWait)).show();
             return;
         }
         TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
@@ -115,7 +115,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$User.username);
         String str2 = tLRPC$User2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1685id));
+            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1762id));
         }
     }
 
@@ -127,12 +127,12 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$Chat.username);
         String str2 = tLRPC$Chat2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1522id));
+            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1600id));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();

@@ -2,10 +2,10 @@ package com.iMe.navigation.common.router.base;
 
 import com.iMe.model.common.NavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
-import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p030ui.base.mvp.MvpFragment;
 import java.util.List;
 /* compiled from: NavigationRouter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface NavigationRouter<T extends MvpFragment> {
     void clean();
 

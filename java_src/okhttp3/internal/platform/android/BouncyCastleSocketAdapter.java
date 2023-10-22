@@ -12,7 +12,7 @@ import okhttp3.internal.platform.android.DeferredSocketAdapter;
 import org.bouncycastle.jsse.BCSSLParameters;
 import org.bouncycastle.jsse.BCSSLSocket;
 /* compiled from: BouncyCastleSocketAdapter.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BouncyCastleSocketAdapter implements SocketAdapter {
     public static final Companion Companion = new Companion(null);
     private static final DeferredSocketAdapter.Factory factory = new DeferredSocketAdapter.Factory() { // from class: okhttp3.internal.platform.android.BouncyCastleSocketAdapter$Companion$factory$1
@@ -66,7 +66,7 @@ public final class BouncyCastleSocketAdapter implements SocketAdapter {
     }
 
     /* compiled from: BouncyCastleSocketAdapter.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

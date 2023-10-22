@@ -2,14 +2,14 @@ package com.iMe.feature.devTools;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: DevSideEffects.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class DevSideEffects {
     public /* synthetic */ DevSideEffects(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: DevSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ShowError extends DevSideEffects {
         public static final ShowError INSTANCE = new ShowError();
 
@@ -22,7 +22,7 @@ public abstract class DevSideEffects {
     }
 
     /* compiled from: DevSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class NavigateToChat extends DevSideEffects {
         public static final NavigateToChat INSTANCE = new NavigateToChat();
 

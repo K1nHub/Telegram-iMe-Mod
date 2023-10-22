@@ -25,7 +25,7 @@ import java.util.concurrent.Executor;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteConfig {
     private final ConfigCacheClient activatedConfigsCache;
     private final ConfigCacheClient defaultConfigsCache;

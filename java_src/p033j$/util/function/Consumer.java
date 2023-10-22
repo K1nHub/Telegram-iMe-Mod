@@ -1,7 +1,7 @@
 package p033j$.util.function;
 
 import java.util.Objects;
-import p033j$.util.concurrent.C2863a;
+import p033j$.util.concurrent.C2804a;
 /* renamed from: j$.util.function.Consumer */
 /* loaded from: classes2.dex */
 public interface Consumer<T> {
@@ -11,7 +11,7 @@ public interface Consumer<T> {
     public final /* synthetic */ class CC {
         public static Consumer $default$andThen(Consumer consumer, Consumer consumer2) {
             Objects.requireNonNull(consumer2);
-            return new C2863a(consumer, consumer2);
+            return new C2804a(consumer, consumer2);
         }
     }
 

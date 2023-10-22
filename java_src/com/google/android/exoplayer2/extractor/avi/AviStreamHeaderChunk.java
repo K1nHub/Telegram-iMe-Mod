@@ -45,7 +45,7 @@ final class AviStreamHeaderChunk implements AviChunk {
         if (i != 1935960438) {
             if (i != 1935963489) {
                 if (i != 1937012852) {
-                    Log.m814w(TAG, "Found unsupported streamType fourCC: " + Integer.toHexString(this.streamType));
+                    Log.m1106w(TAG, "Found unsupported streamType fourCC: " + Integer.toHexString(this.streamType));
                     return -1;
                 }
                 return 3;

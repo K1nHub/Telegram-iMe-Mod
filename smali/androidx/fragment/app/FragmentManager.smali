@@ -5477,22 +5477,6 @@
     return-void
 .end method
 
-.method public executePendingTransactions()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 623
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z
-
-    move-result v0
-
-    .line 624
-    invoke-direct {p0}, Landroidx/fragment/app/FragmentManager;->forcePostponedTransactions()V
-
-    return v0
-.end method
-
 .method findActiveFragment(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
     .locals 1
 

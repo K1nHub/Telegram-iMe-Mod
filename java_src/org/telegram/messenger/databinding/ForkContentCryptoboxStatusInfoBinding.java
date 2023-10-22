@@ -8,9 +8,9 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.BigActionButton;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.BigActionButton;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentCryptoboxStatusInfoBinding implements ViewBinding {
     public final BigActionButton buttonOk;
     public final RecyclerView recyclerStatuses;
@@ -24,7 +24,6 @@ public final class ForkContentCryptoboxStatusInfoBinding implements ViewBinding 
         this.textTitle = appCompatTextView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public NestedScrollView getRoot() {
         return this.rootView;
     }
@@ -34,7 +33,7 @@ public final class ForkContentCryptoboxStatusInfoBinding implements ViewBinding 
     }
 
     public static ForkContentCryptoboxStatusInfoBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_cryptobox_status_info, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_cryptobox_status_info, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,13 +41,13 @@ public final class ForkContentCryptoboxStatusInfoBinding implements ViewBinding 
     }
 
     public static ForkContentCryptoboxStatusInfoBinding bind(View view) {
-        int i = C3473R.C3476id.button_ok;
+        int i = C3630R.C3633id.button_ok;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3473R.C3476id.recycler_statuses;
+            i = C3630R.C3633id.recycler_statuses;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
-                i = C3473R.C3476id.text_title;
+                i = C3630R.C3633id.text_title;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
                     return new ForkContentCryptoboxStatusInfoBinding((NestedScrollView) view, bigActionButton, recyclerView, appCompatTextView);

@@ -4,14 +4,13 @@ import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Call;
-import okhttp3.Connection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.internal.connection.Exchange;
 import okhttp3.internal.connection.RealCall;
 /* compiled from: RealInterceptorChain.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealInterceptorChain implements Interceptor.Chain {
     private final RealCall call;
     private int calls;
@@ -91,15 +90,6 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     public final RealInterceptorChain copy$okhttp(int i, Exchange exchange, Request request, int i2, int i3, int i4) {
         Intrinsics.checkNotNullParameter(request, "request");
         return new RealInterceptorChain(this.call, this.interceptors, i, exchange, request, i2, i3, i4);
-    }
-
-    @Override // okhttp3.Interceptor.Chain
-    public Connection connection() {
-        Exchange exchange = this.exchange;
-        if (exchange != null) {
-            return exchange.getConnection$okhttp();
-        }
-        return null;
     }
 
     public int readTimeoutMillis() {

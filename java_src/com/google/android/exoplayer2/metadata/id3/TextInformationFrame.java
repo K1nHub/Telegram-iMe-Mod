@@ -40,7 +40,7 @@ public final class TextInformationFrame extends Id3Frame {
 
     @Deprecated
     public TextInformationFrame(String str, String str2, String str3) {
-        this(str, str2, ImmutableList.m761of(str3));
+        this(str, str2, ImmutableList.m1053of(str3));
     }
 
     private TextInformationFrame(Parcel parcel) {

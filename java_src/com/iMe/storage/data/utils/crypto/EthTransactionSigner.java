@@ -1,13 +1,13 @@
 package com.iMe.storage.data.utils.crypto;
 
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.java.AnySigner;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: EthTransactionSigner.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class EthTransactionSigner {
     public static final EthTransactionSigner INSTANCE = new EthTransactionSigner();
 

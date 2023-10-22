@@ -1,10 +1,10 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_faveSticker extends TLObject {
     public static int constructor = -1174420133;
 
     /* renamed from: id */
-    public TLRPC$InputDocument f1617id;
+    public TLRPC$InputDocument f1694id;
     public boolean unfave;
 
     @Override // org.telegram.tgnet.TLObject
@@ -15,7 +15,7 @@ public class TLRPC$TL_messages_faveSticker extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        this.f1617id.serializeToStream(abstractSerializedData);
+        this.f1694id.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeBool(this.unfave);
     }
 }

@@ -21,7 +21,7 @@ import com.google.android.gms.wearable.ChannelClient;
 import java.io.InputStream;
 import java.io.OutputStream;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzbd extends ChannelClient {
     public static final /* synthetic */ int zza = 0;
     private final zzau zzb;

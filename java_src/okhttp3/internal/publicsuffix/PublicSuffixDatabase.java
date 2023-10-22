@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
+import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
@@ -25,7 +26,8 @@ import okio.BufferedSource;
 import okio.GzipSource;
 import okio.Okio;
 /* compiled from: PublicSuffixDatabase.kt */
-/* loaded from: classes6.dex */
+@Metadata(m152bv = {1, 0, 3}, m151d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\u0018\u0000 \u00042\u00020\u0001:\u0001\u0004B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0005"}, m150d2 = {"Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;", "", "<init>", "()V", "Companion", "okhttp"}, m149k = 1, m148mv = {1, 4, 0})
+/* loaded from: classes4.dex */
 public final class PublicSuffixDatabase {
     private static final List<String> PREVAILING_RULE;
     private static final PublicSuffixDatabase instance;
@@ -67,17 +69,17 @@ public final class PublicSuffixDatabase {
         List<String> split$default;
         List<String> dropLast;
         split$default = StringsKt__StringsKt.split$default((CharSequence) str, new char[]{'.'}, false, 0, 6, (Object) null);
-        if (Intrinsics.areEqual((String) CollectionsKt.last(split$default), "")) {
+        if (Intrinsics.areEqual((String) CollectionsKt.last((List<? extends Object>) split$default), "")) {
             dropLast = CollectionsKt___CollectionsKt.dropLast(split$default, 1);
             return dropLast;
         }
         return split$default;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e3, code lost:
         r4 = kotlin.text.StringsKt__StringsKt.split$default((java.lang.CharSequence) r8, new char[]{'.'}, false, 0, 6, (java.lang.Object) null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00fa, code lost:
         r1 = kotlin.text.StringsKt__StringsKt.split$default((java.lang.CharSequence) r5, new char[]{'.'}, false, 0, 6, (java.lang.Object) null);
      */
     /*
@@ -86,7 +88,7 @@ public final class PublicSuffixDatabase {
     */
     private final java.util.List<java.lang.String> findMatchingRule(java.util.List<java.lang.String> r18) {
         /*
-            Method dump skipped, instructions count: 295
+            Method dump skipped, instructions count: 296
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.publicsuffix.PublicSuffixDatabase.findMatchingRule(java.util.List):java.util.List");
@@ -145,7 +147,7 @@ public final class PublicSuffixDatabase {
     }
 
     /* compiled from: PublicSuffixDatabase.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

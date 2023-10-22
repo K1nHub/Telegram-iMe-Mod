@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CapabilityApi {
     public static final String ACTION_CAPABILITY_CHANGED = "com.google.android.gms.wearable.CAPABILITY_CHANGED";
     public static final int FILTER_ALL = 0;
@@ -20,46 +20,46 @@ public interface CapabilityApi {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface AddLocalCapabilityResult extends Result {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface CapabilityFilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface CapabilityListener {
         void onCapabilityChanged(CapabilityInfo capabilityInfo);
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface GetAllCapabilitiesResult extends Result {
         Map<String, CapabilityInfo> getAllCapabilities();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface GetCapabilityResult extends Result {
         CapabilityInfo getCapability();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface NodeFilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface RemoveLocalCapabilityResult extends Result {
     }
 

@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Result.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Result<T> {
     public static final Companion Companion = new Companion(null);
     private final T data;
@@ -126,7 +126,7 @@ public abstract class Result<T> {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -179,7 +179,7 @@ public abstract class Result<T> {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Success<T> extends Result<T> {
         private final T data;
 
@@ -229,7 +229,7 @@ public abstract class Result<T> {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Loading<T> extends Result<T> {
         private final T data;
 
@@ -287,7 +287,7 @@ public abstract class Result<T> {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Fail<T> extends Result<T> {
         private final T data;
         private final Throwable throwable;
@@ -358,7 +358,7 @@ public abstract class Result<T> {
     }
 
     /* compiled from: Result.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Error<T> extends Result<T> {
         private final T data;
         private final ErrorModel error;

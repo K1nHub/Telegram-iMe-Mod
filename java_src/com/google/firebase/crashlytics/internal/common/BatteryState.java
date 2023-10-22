@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import com.google.firebase.crashlytics.internal.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class BatteryState {
     private final Float level;
     private final boolean powerConnected;
@@ -36,7 +36,7 @@ class BatteryState {
                 f = getLevel(registerReceiver);
             }
         } catch (IllegalStateException e) {
-            Logger.getLogger().m743e("An error occurred getting battery state.", e);
+            Logger.getLogger().m1035e("An error occurred getting battery state.", e);
         }
         return new BatteryState(f, z);
     }

@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.model.RuntimeRemoteException;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzl implements LocationSource.OnLocationChangedListener {
     final /* synthetic */ com.google.android.gms.maps.internal.zzaj zza;
 

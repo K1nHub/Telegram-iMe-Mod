@@ -3,18 +3,18 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/y2;Lj$/util/function/y;Z)V
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/function/y;Z)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/function/x;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/function/x;Z)V
 
     return-void
 .end method
@@ -178,9 +178,9 @@
 
     invoke-direct {v1, p1}, Lj$/util/stream/K4;-><init>(Lj$/util/function/Consumer;)V
 
-    iget-object p1, p0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object p1, p0, Lj$/util/stream/f4;->d:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, v1, p1}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+    invoke-virtual {v0, v1, p1}, Lj$/util/stream/y2;->t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 
     const/4 p1, 0x1
 
@@ -214,7 +214,7 @@
 
     invoke-direct {v2, v0}, Lj$/util/stream/K4;-><init>(Lj$/util/stream/a4;)V
 
-    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v0
 
@@ -229,7 +229,7 @@
     return-void
 .end method
 
-.method l(Lj$/util/s;)Lj$/util/stream/f4;
+.method k(Lj$/util/Spliterator;)Lj$/util/stream/f4;
     .locals 3
 
     .line 1
@@ -239,7 +239,7 @@
 
     iget-boolean v2, p0, Lj$/util/stream/f4;->a:Z
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/L4;-><init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/L4;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
 
     return-object v0
 .end method

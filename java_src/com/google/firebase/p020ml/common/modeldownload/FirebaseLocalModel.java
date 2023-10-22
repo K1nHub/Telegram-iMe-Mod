@@ -2,12 +2,11 @@ package com.google.firebase.p020ml.common.modeldownload;
 
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.firebase_ml.zzlu;
 import com.google.android.gms.internal.firebase_ml.zzor;
 import com.google.android.gms.internal.firebase_ml.zzuu;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseLocalModel */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseLocalModel {
     private final String zzauc;
     private final String zzawg;
@@ -25,45 +24,6 @@ public class FirebaseLocalModel {
     @KeepForSdk
     public String getAssetFilePath() {
         return this.zzawh;
-    }
-
-    private FirebaseLocalModel(String str, String str2, String str3) {
-        this.zzauc = str;
-        this.zzawg = str2;
-        this.zzawh = str3;
-    }
-
-    /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseLocalModel$Builder */
-    /* loaded from: classes4.dex */
-    public static class Builder {
-        private final String zzauc;
-        private String zzawg = null;
-        private String zzawl = null;
-
-        public Builder(String str) {
-            Preconditions.checkNotEmpty(str, "Model name can not be empty");
-            this.zzauc = str;
-        }
-
-        public Builder setFilePath(String str) {
-            Preconditions.checkNotEmpty(str, "Model Source file path can not be empty");
-            Preconditions.checkArgument(this.zzawl == null, "A local model source is either from local file or for asset, you can not set both.");
-            this.zzawg = str;
-            return this;
-        }
-
-        public Builder setAssetFilePath(String str) {
-            Preconditions.checkNotEmpty(str, "Model Source file path can not be empty");
-            Preconditions.checkArgument(this.zzawg == null, "A local model source is either from local file or for asset, you can not set both.");
-            this.zzawl = str;
-            return this;
-        }
-
-        public FirebaseLocalModel build() {
-            String str = this.zzawg;
-            Preconditions.checkArgument((str != null && this.zzawl == null) || (str == null && this.zzawl != null), "Set either filePath or assetFilePath.");
-            return new FirebaseLocalModel(this.zzauc, this.zzawg, this.zzawl);
-        }
     }
 
     public boolean equals(Object obj) {

@@ -3,6 +3,7 @@ package kotlin.collections;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.RandomAccess;
 import java.util.Set;
 import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.Random;
@@ -19,7 +21,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.Sequence;
 import kotlin.text.StringsKt__AppendableKt;
 /* compiled from: _Collections.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJvmKt {
     public static <T> boolean contains(Iterable<? extends T> iterable, T t) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
@@ -100,6 +102,22 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return list.get(0);
     }
 
+    public static <T> T firstOrNull(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof List) {
+            List list = (List) iterable;
+            if (list.isEmpty()) {
+                return null;
+            }
+            return (T) list.get(0);
+        }
+        Iterator<? extends T> it = iterable.iterator();
+        if (it.hasNext()) {
+            return it.next();
+        }
+        return null;
+    }
+
     public static <T> T firstOrNull(List<? extends T> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         if (list.isEmpty()) {
@@ -141,6 +159,22 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     public static <T> int indexOf(List<? extends T> list, T t) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         return list.indexOf(t);
+    }
+
+    public static <T> T last(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof List) {
+            return (T) CollectionsKt.last((List<? extends Object>) iterable);
+        }
+        Iterator<? extends T> it = iterable.iterator();
+        if (!it.hasNext()) {
+            throw new NoSuchElementException("Collection is empty.");
+        }
+        T next = it.next();
+        while (it.hasNext()) {
+            next = it.next();
+        }
+        return next;
     }
 
     public static <T> T last(List<? extends T> list) {
@@ -193,7 +227,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     public static <T> T single(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         if (iterable instanceof List) {
-            return (T) single((List<? extends Object>) iterable);
+            return (T) CollectionsKt.single((List<? extends Object>) iterable);
         }
         Iterator<? extends T> it = iterable.iterator();
         if (!it.hasNext()) {
@@ -206,7 +240,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return next;
     }
 
-    public static final <T> T single(List<? extends T> list) {
+    public static <T> T single(List<? extends T> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         int size = list.size();
         if (size != 0) {
@@ -216,6 +250,90 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
             throw new IllegalArgumentException("List has more than one element.");
         }
         throw new NoSuchElementException("List is empty.");
+    }
+
+    public static <T> T singleOrNull(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof List) {
+            List list = (List) iterable;
+            if (list.size() == 1) {
+                return (T) list.get(0);
+            }
+            return null;
+        }
+        Iterator<? extends T> it = iterable.iterator();
+        if (it.hasNext()) {
+            T next = it.next();
+            if (it.hasNext()) {
+                return null;
+            }
+            return next;
+        }
+        return null;
+    }
+
+    public static <T> T singleOrNull(List<? extends T> list) {
+        Intrinsics.checkNotNullParameter(list, "<this>");
+        if (list.size() == 1) {
+            return list.get(0);
+        }
+        return null;
+    }
+
+    public static <T> List<T> drop(Iterable<? extends T> iterable, int i) {
+        ArrayList arrayList;
+        List<T> optimizeReadOnlyList;
+        List<T> listOf;
+        List<T> emptyList;
+        List<T> list;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        int i2 = 0;
+        if (!(i >= 0)) {
+            throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
+        } else if (i == 0) {
+            list = toList(iterable);
+            return list;
+        } else {
+            if (iterable instanceof Collection) {
+                Collection collection = (Collection) iterable;
+                int size = collection.size() - i;
+                if (size <= 0) {
+                    emptyList = CollectionsKt__CollectionsKt.emptyList();
+                    return emptyList;
+                } else if (size == 1) {
+                    listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.last(iterable));
+                    return listOf;
+                } else {
+                    arrayList = new ArrayList(size);
+                    if (iterable instanceof List) {
+                        if (iterable instanceof RandomAccess) {
+                            int size2 = collection.size();
+                            while (i < size2) {
+                                arrayList.add(((List) iterable).get(i));
+                                i++;
+                            }
+                        } else {
+                            ListIterator listIterator = ((List) iterable).listIterator(i);
+                            while (listIterator.hasNext()) {
+                                arrayList.add(listIterator.next());
+                            }
+                        }
+                        return arrayList;
+                    }
+                }
+            } else {
+                arrayList = new ArrayList();
+            }
+            for (T t : iterable) {
+                if (i2 >= i) {
+                    arrayList.add(t);
+                } else {
+                    i2++;
+                }
+            }
+            optimizeReadOnlyList = CollectionsKt__CollectionsKt.optimizeReadOnlyList(arrayList);
+            return optimizeReadOnlyList;
+        }
     }
 
     public static <T> List<T> dropLast(List<? extends T> list, int i) {
@@ -228,6 +346,20 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(list.size() - i, 0);
         take = take(list, coerceAtLeast);
         return take;
+    }
+
+    public static <T> List<T> filter(Iterable<? extends T> iterable, Function1<? super T, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(predicate, "predicate");
+        ArrayList arrayList = new ArrayList();
+        Iterator<? extends T> it = iterable.iterator();
+        while (it.hasNext()) {
+            Object obj = (T) it.next();
+            if (predicate.invoke(obj).booleanValue()) {
+                arrayList.add(obj);
+            }
+        }
+        return arrayList;
     }
 
     public static <T> List<T> filterNotNull(Iterable<? extends T> iterable) {
@@ -297,7 +429,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                 list2 = toList(list);
                 return list2;
             } else if (i == 1) {
-                listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.last(list));
+                listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.last((List<? extends Object>) list));
                 return listOf;
             } else {
                 ArrayList arrayList = new ArrayList(i);
@@ -373,6 +505,17 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return mutableList;
     }
 
+    public static boolean[] toBooleanArray(Collection<Boolean> collection) {
+        Intrinsics.checkNotNullParameter(collection, "<this>");
+        boolean[] zArr = new boolean[collection.size()];
+        int i = 0;
+        for (Boolean bool : collection) {
+            zArr[i] = bool.booleanValue();
+            i++;
+        }
+        return zArr;
+    }
+
     public static byte[] toByteArray(Collection<Byte> collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
         byte[] bArr = new byte[collection.size()];
@@ -402,6 +545,15 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
             destination.add(t);
         }
         return destination;
+    }
+
+    public static <T> HashSet<T> toHashSet(Iterable<? extends T> iterable) {
+        int collectionSizeOrDefault;
+        int mapCapacity;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 12);
+        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault);
+        return (HashSet) toCollection(iterable, new HashSet(mapCapacity));
     }
 
     public static <T> List<T> toList(Iterable<? extends T> iterable) {
@@ -469,6 +621,36 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return optimizeReadOnlySet;
     }
 
+    public static <T, R> List<R> map(Iterable<? extends T> iterable, Function1<? super T, ? extends R> transform) {
+        int collectionSizeOrDefault;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
+        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+        Iterator<? extends T> it = iterable.iterator();
+        while (it.hasNext()) {
+            arrayList.add(transform.invoke((T) it.next()));
+        }
+        return arrayList;
+    }
+
+    public static <T> Iterable<IndexedValue<T>> withIndex(final Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        return new IndexingIterable(new Function0<Iterator<? extends T>>() { // from class: kotlin.collections.CollectionsKt___CollectionsKt$withIndex$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final Iterator<T> invoke() {
+                return iterable.iterator();
+            }
+        });
+    }
+
     public static <T> List<T> distinct(Iterable<? extends T> iterable) {
         Set mutableSet;
         List<T> list;
@@ -499,6 +681,30 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
     public static <T> Set<T> toMutableSet(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         return iterable instanceof Collection ? new LinkedHashSet((Collection) iterable) : (Set) toCollection(iterable, new LinkedHashSet());
+    }
+
+    public static <T> Set<T> union(Iterable<? extends T> iterable, Iterable<? extends T> other) {
+        Set<T> mutableSet;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(other, "other");
+        mutableSet = toMutableSet(iterable);
+        CollectionsKt__MutableCollectionsKt.addAll(mutableSet, other);
+        return mutableSet;
+    }
+
+    public static <T> boolean all(Iterable<? extends T> iterable, Function1<? super T, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(predicate, "predicate");
+        if ((iterable instanceof Collection) && ((Collection) iterable).isEmpty()) {
+            return true;
+        }
+        Iterator<? extends T> it = iterable.iterator();
+        while (it.hasNext()) {
+            if (!predicate.invoke((T) it.next()).booleanValue()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static <T extends Comparable<? super T>> T maxOrNull(Iterable<? extends T> iterable) {
@@ -533,11 +739,6 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return null;
     }
 
-    public static <T> List<List<T>> chunked(Iterable<? extends T> iterable, int i) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        return windowed(iterable, i, i, true);
-    }
-
     public static <T> List<T> minus(Iterable<? extends T> iterable, T t) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(iterable, "<this>");
@@ -554,6 +755,19 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                 arrayList.add(t2);
             }
         }
+        return arrayList;
+    }
+
+    public static <T> List<T> plus(Iterable<? extends T> iterable, T t) {
+        List<T> plus;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof Collection) {
+            plus = plus((Collection<? extends Object>) ((Collection) ((Collection) iterable)), (Object) t);
+            return plus;
+        }
+        ArrayList arrayList = new ArrayList();
+        CollectionsKt__MutableCollectionsKt.addAll(arrayList, iterable);
+        arrayList.add(t);
         return arrayList;
     }
 
@@ -574,6 +788,20 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return arrayList;
     }
 
+    public static <T> List<T> plus(Iterable<? extends T> iterable, Iterable<? extends T> elements) {
+        List<T> plus;
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        if (iterable instanceof Collection) {
+            plus = plus((Collection) ((Collection) iterable), (Iterable) elements);
+            return plus;
+        }
+        ArrayList arrayList = new ArrayList();
+        CollectionsKt__MutableCollectionsKt.addAll(arrayList, iterable);
+        CollectionsKt__MutableCollectionsKt.addAll(arrayList, elements);
+        return arrayList;
+    }
+
     public static <T> List<T> plus(Collection<? extends T> collection, Iterable<? extends T> elements) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
         Intrinsics.checkNotNullParameter(elements, "elements");
@@ -589,86 +817,6 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return arrayList2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0031, code lost:
-        r5 = kotlin.ranges.RangesKt___RangesKt.coerceAtMost(r10, r0 - r2);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public static final <T> java.util.List<java.util.List<T>> windowed(java.lang.Iterable<? extends T> r9, int r10, int r11, boolean r12) {
-        /*
-            java.lang.String r0 = "<this>"
-            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, r0)
-            kotlin.collections.SlidingWindowKt.checkWindowSizeStep(r10, r11)
-            boolean r0 = r9 instanceof java.util.RandomAccess
-            r1 = 0
-            if (r0 == 0) goto L55
-            boolean r0 = r9 instanceof java.util.List
-            if (r0 == 0) goto L55
-            java.util.List r9 = (java.util.List) r9
-            int r0 = r9.size()
-            int r2 = r0 / r11
-            int r3 = r0 % r11
-            r4 = 1
-            if (r3 != 0) goto L20
-            r3 = r1
-            goto L21
-        L20:
-            r3 = r4
-        L21:
-            int r2 = r2 + r3
-            java.util.ArrayList r3 = new java.util.ArrayList
-            r3.<init>(r2)
-            r2 = r1
-        L28:
-            if (r2 < 0) goto L2e
-            if (r2 >= r0) goto L2e
-            r5 = r4
-            goto L2f
-        L2e:
-            r5 = r1
-        L2f:
-            if (r5 == 0) goto L54
-            int r5 = r0 - r2
-            int r5 = kotlin.ranges.RangesKt.coerceAtMost(r10, r5)
-            if (r5 >= r10) goto L3b
-            if (r12 == 0) goto L54
-        L3b:
-            java.util.ArrayList r6 = new java.util.ArrayList
-            r6.<init>(r5)
-            r7 = r1
-        L41:
-            if (r7 >= r5) goto L4f
-            int r8 = r7 + r2
-            java.lang.Object r8 = r9.get(r8)
-            r6.add(r8)
-            int r7 = r7 + 1
-            goto L41
-        L4f:
-            r3.add(r6)
-            int r2 = r2 + r11
-            goto L28
-        L54:
-            return r3
-        L55:
-            java.util.ArrayList r0 = new java.util.ArrayList
-            r0.<init>()
-            java.util.Iterator r9 = r9.iterator()
-            java.util.Iterator r9 = kotlin.collections.SlidingWindowKt.windowedIterator(r9, r10, r11, r12, r1)
-        L62:
-            boolean r10 = r9.hasNext()
-            if (r10 == 0) goto L72
-            java.lang.Object r10 = r9.next()
-            java.util.List r10 = (java.util.List) r10
-            r0.add(r10)
-            goto L62
-        L72:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections.CollectionsKt___CollectionsKt.windowed(java.lang.Iterable, int, int, boolean):java.util.List");
-    }
-
     public static <T, R> List<Pair<T, R>> zip(Iterable<? extends T> iterable, Iterable<? extends R> other) {
         int collectionSizeOrDefault;
         int collectionSizeOrDefault2;
@@ -680,27 +828,13 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m103to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m144to(it.next(), it2.next()));
         }
         return arrayList;
     }
 
-    public static <T> List<Pair<T, T>> zipWithNext(Iterable<? extends T> iterable) {
-        List<Pair<T, T>> emptyList;
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Iterator<? extends T> it = iterable.iterator();
-        if (!it.hasNext()) {
-            emptyList = CollectionsKt__CollectionsKt.emptyList();
-            return emptyList;
-        }
-        ArrayList arrayList = new ArrayList();
-        T next = it.next();
-        while (it.hasNext()) {
-            T next2 = it.next();
-            arrayList.add(TuplesKt.m103to(next, next2));
-            next = next2;
-        }
-        return arrayList;
+    public static /* synthetic */ Appendable joinTo$default(Iterable iterable, Appendable appendable, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
+        return joinTo(iterable, appendable, (i2 & 2) != 0 ? ", " : charSequence, (i2 & 4) != 0 ? "" : charSequence2, (i2 & 8) == 0 ? charSequence3 : "", (i2 & 16) != 0 ? -1 : i, (i2 & 32) != 0 ? "..." : charSequence4, (i2 & 64) != 0 ? null : function1);
     }
 
     public static final <T, A extends Appendable> A joinTo(Iterable<? extends T> iterable, A buffer, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1<? super T, ? extends CharSequence> function1) {

@@ -6,7 +6,7 @@ import io.reactivex.internal.fuseable.SimplePlainQueue;
 import io.reactivex.internal.fuseable.SimpleQueue;
 import io.reactivex.internal.queue.SpscArrayQueue;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class QueueDrainHelper {
     public static <T, U> void drainLoop(SimplePlainQueue<T> simplePlainQueue, Observer<? super U> observer, boolean z, Disposable disposable, ObservableQueueDrain<T, U> observableQueueDrain) {
         int i = 1;

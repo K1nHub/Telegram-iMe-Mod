@@ -126,7 +126,7 @@
     throw p0
 .end method
 
-.method public static g(Lj$/util/stream/z1;Lj$/util/function/m;)[Ljava/lang/Object;
+.method public static g(Lj$/util/stream/z1;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
     .locals 4
 
     sget-boolean v0, Lj$/util/stream/Q4;->a:Z
@@ -149,7 +149,7 @@
 
     long-to-int v0, v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/IntFunction;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -355,13 +355,13 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$a;
+    check-cast p0, Lj$/util/Spliterator$a;
 
-    invoke-interface {p0, p1}, Lj$/util/s$a;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {p0, p1}, Lj$/util/Spliterator$a;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     :goto_0
     return-void
@@ -398,13 +398,13 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$b;
+    check-cast p0, Lj$/util/Spliterator$b;
 
-    invoke-interface {p0, p1}, Lj$/util/s$b;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {p0, p1}, Lj$/util/Spliterator$b;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     :goto_0
     return-void
@@ -426,11 +426,11 @@
 .method public static m(Lj$/util/stream/y1;Lj$/util/function/Consumer;)V
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/q;
+    instance-of v0, p1, Lj$/util/function/p;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/q;
+    check-cast p1, Lj$/util/function/p;
 
     invoke-interface {p0, p1}, Lj$/util/stream/z1;->g(Ljava/lang/Object;)V
 
@@ -441,13 +441,13 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$c;
+    check-cast p0, Lj$/util/Spliterator$c;
 
-    invoke-interface {p0, p1}, Lj$/util/s$c;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {p0, p1}, Lj$/util/Spliterator$c;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     :goto_0
     return-void
@@ -466,7 +466,7 @@
     throw p0
 .end method
 
-.method public static n(Lj$/util/stream/u1;JJLj$/util/function/m;)Lj$/util/stream/u1;
+.method public static n(Lj$/util/stream/u1;JJLj$/util/function/IntFunction;)Lj$/util/stream/u1;
     .locals 4
 
     const-wide/16 v0, 0x0
@@ -488,17 +488,17 @@
     :cond_0
     sub-long/2addr p3, p1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$a;
+    check-cast p0, Lj$/util/Spliterator$a;
 
     invoke-static {p3, p4}, Lj$/util/stream/x2;->j(J)Lj$/util/stream/p1;
 
     move-result-object p5
 
-    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->m(J)V
 
     const/4 v0, 0x0
 
@@ -513,7 +513,7 @@
 
     sget-object v2, Lj$/util/stream/t1;->a:Lj$/util/stream/t1;
 
-    invoke-interface {p0, v2}, Lj$/util/s$a;->k(Lj$/util/function/f;)Z
+    invoke-interface {p0, v2}, Lj$/util/Spliterator$a;->n(Lj$/util/function/f;)Z
 
     move-result v2
 
@@ -531,7 +531,7 @@
 
     if-gez p1, :cond_2
 
-    invoke-interface {p0, p5}, Lj$/util/s$a;->k(Lj$/util/function/f;)Z
+    invoke-interface {p0, p5}, Lj$/util/Spliterator$a;->n(Lj$/util/function/f;)Z
 
     move-result p1
 
@@ -542,7 +542,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {p5}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p5}, Lj$/util/stream/m3;->l()V
 
     invoke-interface {p5}, Lj$/util/stream/p1;->a()Lj$/util/stream/u1;
 
@@ -551,7 +551,7 @@
     return-object p0
 .end method
 
-.method public static o(Lj$/util/stream/w1;JJLj$/util/function/m;)Lj$/util/stream/w1;
+.method public static o(Lj$/util/stream/w1;JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
     .locals 4
 
     const-wide/16 v0, 0x0
@@ -573,17 +573,17 @@
     :cond_0
     sub-long/2addr p3, p1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$b;
+    check-cast p0, Lj$/util/Spliterator$b;
 
     invoke-static {p3, p4}, Lj$/util/stream/x2;->p(J)Lj$/util/stream/q1;
 
     move-result-object p5
 
-    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->m(J)V
 
     const/4 v0, 0x0
 
@@ -598,7 +598,7 @@
 
     sget-object v2, Lj$/util/stream/v1;->a:Lj$/util/stream/v1;
 
-    invoke-interface {p0, v2}, Lj$/util/s$b;->g(Lj$/util/function/l;)Z
+    invoke-interface {p0, v2}, Lj$/util/Spliterator$b;->g(Lj$/util/function/l;)Z
 
     move-result v2
 
@@ -616,7 +616,7 @@
 
     if-gez p1, :cond_2
 
-    invoke-interface {p0, p5}, Lj$/util/s$b;->g(Lj$/util/function/l;)Z
+    invoke-interface {p0, p5}, Lj$/util/Spliterator$b;->g(Lj$/util/function/l;)Z
 
     move-result p1
 
@@ -627,7 +627,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {p5}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p5}, Lj$/util/stream/m3;->l()V
 
     invoke-interface {p5}, Lj$/util/stream/q1;->a()Lj$/util/stream/w1;
 
@@ -636,7 +636,7 @@
     return-object p0
 .end method
 
-.method public static p(Lj$/util/stream/y1;JJLj$/util/function/m;)Lj$/util/stream/y1;
+.method public static p(Lj$/util/stream/y1;JJLj$/util/function/IntFunction;)Lj$/util/stream/y1;
     .locals 4
 
     const-wide/16 v0, 0x0
@@ -658,17 +658,17 @@
     :cond_0
     sub-long/2addr p3, p1
 
-    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {p0}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/s$c;
+    check-cast p0, Lj$/util/Spliterator$c;
 
     invoke-static {p3, p4}, Lj$/util/stream/x2;->q(J)Lj$/util/stream/r1;
 
     move-result-object p5
 
-    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->m(J)V
 
     const/4 v0, 0x0
 
@@ -683,7 +683,7 @@
 
     sget-object v2, Lj$/util/stream/x1;->a:Lj$/util/stream/x1;
 
-    invoke-interface {p0, v2}, Lj$/util/s$c;->i(Lj$/util/function/q;)Z
+    invoke-interface {p0, v2}, Lj$/util/Spliterator$c;->i(Lj$/util/function/p;)Z
 
     move-result v2
 
@@ -701,7 +701,7 @@
 
     if-gez p1, :cond_2
 
-    invoke-interface {p0, p5}, Lj$/util/s$c;->i(Lj$/util/function/q;)Z
+    invoke-interface {p0, p5}, Lj$/util/Spliterator$c;->i(Lj$/util/function/p;)Z
 
     move-result p1
 
@@ -712,7 +712,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {p5}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p5}, Lj$/util/stream/m3;->l()V
 
     invoke-interface {p5}, Lj$/util/stream/r1;->a()Lj$/util/stream/y1;
 
@@ -721,7 +721,7 @@
     return-object p0
 .end method
 
-.method public static q(Lj$/util/stream/A1;JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public static q(Lj$/util/stream/A1;JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 4
 
     const-wide/16 v0, 0x0
@@ -741,17 +741,17 @@
     return-object p0
 
     :cond_0
-    invoke-interface {p0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {p0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object p0
 
     sub-long/2addr p3, p1
 
-    invoke-static {p3, p4, p5}, Lj$/util/stream/x2;->d(JLj$/util/function/m;)Lj$/util/stream/s1;
+    invoke-static {p3, p4, p5}, Lj$/util/stream/x2;->d(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 
     move-result-object p5
 
-    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p5, p3, p4}, Lj$/util/stream/m3;->m(J)V
 
     const/4 v0, 0x0
 
@@ -766,7 +766,7 @@
 
     sget-object v2, Lj$/util/stream/n1;->a:Lj$/util/stream/n1;
 
-    invoke-interface {p0, v2}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {p0, v2}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result v2
 
@@ -784,7 +784,7 @@
 
     if-gez p1, :cond_2
 
-    invoke-interface {p0, p5}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {p0, p5}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -795,7 +795,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {p5}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p5}, Lj$/util/stream/m3;->l()V
 
     invoke-interface {p5}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
 
@@ -804,49 +804,49 @@
     return-object p0
 .end method
 
-.method public static r(Lj$/util/s$a;Z)Lj$/util/stream/U;
+.method public static r(Lj$/util/Spliterator$a;Z)Lj$/util/stream/U;
     .locals 2
 
     new-instance v0, Lj$/util/stream/P;
 
-    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/s;)I
+    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/Spliterator;)I
 
     move-result v1
 
-    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/P;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/P;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-object v0
 .end method
 
-.method public static s(Lj$/util/s$b;Z)Lj$/util/stream/IntStream;
+.method public static s(Lj$/util/Spliterator$b;Z)Lj$/util/stream/IntStream;
     .locals 2
 
     new-instance v0, Lj$/util/stream/I0;
 
-    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/s;)I
+    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/Spliterator;)I
 
     move-result v1
 
-    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/I0;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/I0;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-object v0
 .end method
 
-.method public static t(Lj$/util/s$c;Z)Lj$/util/stream/e1;
+.method public static t(Lj$/util/Spliterator$c;Z)Lj$/util/stream/e1;
     .locals 2
 
     new-instance v0, Lj$/util/stream/a1;
 
-    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/s;)I
+    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/Spliterator;)I
 
     move-result v1
 
-    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/a1;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/a1;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-object v0
 .end method
 
-.method public static u(Lj$/wrappers/D;Lj$/util/stream/k1;)Lj$/util/stream/N4;
+.method public static u(Lj$/wrappers/C;Lj$/util/stream/k1;)Lj$/util/stream/N4;
     .locals 3
 
     .line 1
@@ -861,14 +861,14 @@
 
     new-instance v2, Lj$/util/stream/o;
 
-    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/D;)V
+    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/C;)V
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/y;)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/x;)V
 
     return-object v0
 .end method
 
-.method public static v(Lj$/wrappers/U;Lj$/util/stream/k1;)Lj$/util/stream/N4;
+.method public static v(Lj$/wrappers/S;Lj$/util/stream/k1;)Lj$/util/stream/N4;
     .locals 3
 
     .line 1
@@ -883,14 +883,14 @@
 
     new-instance v2, Lj$/util/stream/o;
 
-    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/U;)V
+    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/S;)V
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/y;)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/x;)V
 
     return-object v0
 .end method
 
-.method public static w(Lj$/wrappers/i0;Lj$/util/stream/k1;)Lj$/util/stream/N4;
+.method public static w(Lj$/wrappers/g0;Lj$/util/stream/k1;)Lj$/util/stream/N4;
     .locals 3
 
     .line 1
@@ -905,9 +905,9 @@
 
     new-instance v2, Lj$/util/stream/o;
 
-    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/i0;)V
+    invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/wrappers/g0;)V
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/y;)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/x;)V
 
     return-object v0
 .end method
@@ -929,12 +929,12 @@
 
     invoke-direct {v2, p1, p0}, Lj$/util/stream/o;-><init>(Lj$/util/stream/k1;Lj$/util/function/Predicate;)V
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/y;)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/l1;-><init>(Lj$/util/stream/e4;Lj$/util/stream/k1;Lj$/util/function/x;)V
 
     return-object v0
 .end method
 
-.method public static y(Lj$/util/s;Z)Lj$/util/stream/Stream;
+.method public static y(Lj$/util/Spliterator;Z)Lj$/util/stream/Stream;
     .locals 2
 
     .line 1
@@ -943,11 +943,11 @@
     .line 2
     new-instance v0, Lj$/util/stream/b3;
 
-    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/s;)I
+    invoke-static {p0}, Lj$/util/stream/d4;->c(Lj$/util/Spliterator;)I
 
     move-result v1
 
-    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/b3;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {v0, p0, v1, p1}, Lj$/util/stream/b3;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-object v0
 .end method

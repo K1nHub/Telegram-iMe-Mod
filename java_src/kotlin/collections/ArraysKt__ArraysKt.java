@@ -1,5 +1,5 @@
 package kotlin.collections;
 /* compiled from: Arrays.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
 }

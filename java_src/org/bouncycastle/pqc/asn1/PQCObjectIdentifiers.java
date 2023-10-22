@@ -2,8 +2,8 @@ package org.bouncycastle.pqc.asn1;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.p038bc.BCObjectIdentifiers;
-/* loaded from: classes6.dex */
+import org.bouncycastle.asn1.p037bc.BCObjectIdentifiers;
+/* loaded from: classes4.dex */
 public interface PQCObjectIdentifiers {
     public static final ASN1ObjectIdentifier gmss;
     public static final ASN1ObjectIdentifier mcEliece;

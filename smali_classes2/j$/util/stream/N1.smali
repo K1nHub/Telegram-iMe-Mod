@@ -5,24 +5,24 @@
 # instance fields
 .field protected final h:Lj$/util/stream/y2;
 
-.field protected final i:Lj$/util/function/r;
+.field protected final i:Lj$/util/function/q;
 
 .field protected final j:Lj$/util/function/b;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/N1;Lj$/util/s;)V
+.method constructor <init>(Lj$/util/stream/N1;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
 
     iget-object p2, p1, Lj$/util/stream/N1;->h:Lj$/util/stream/y2;
 
     iput-object p2, p0, Lj$/util/stream/N1;->h:Lj$/util/stream/y2;
 
-    iget-object p2, p1, Lj$/util/stream/N1;->i:Lj$/util/function/r;
+    iget-object p2, p1, Lj$/util/stream/N1;->i:Lj$/util/function/q;
 
-    iput-object p2, p0, Lj$/util/stream/N1;->i:Lj$/util/function/r;
+    iput-object p2, p0, Lj$/util/stream/N1;->i:Lj$/util/function/q;
 
     iget-object p1, p1, Lj$/util/stream/N1;->j:Lj$/util/function/b;
 
@@ -31,14 +31,14 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/r;Lj$/util/function/b;)V
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/q;Lj$/util/function/b;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     iput-object p1, p0, Lj$/util/stream/N1;->h:Lj$/util/stream/y2;
 
-    iput-object p3, p0, Lj$/util/stream/N1;->i:Lj$/util/function/r;
+    iput-object p3, p0, Lj$/util/stream/N1;->i:Lj$/util/function/q;
 
     iput-object p4, p0, Lj$/util/stream/N1;->j:Lj$/util/function/b;
 
@@ -51,17 +51,17 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lj$/util/stream/N1;->i:Lj$/util/function/r;
+    iget-object v0, p0, Lj$/util/stream/N1;->i:Lj$/util/function/q;
 
     iget-object v1, p0, Lj$/util/stream/N1;->h:Lj$/util/stream/y2;
 
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v1
 
-    invoke-interface {v0, v1, v2}, Lj$/util/function/r;->apply(J)Ljava/lang/Object;
+    invoke-interface {v0, v1, v2}, Lj$/util/function/q;->apply(J)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -69,9 +69,9 @@
 
     iget-object v1, p0, Lj$/util/stream/N1;->h:Lj$/util/stream/y2;
 
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v1, v0, v2}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+    invoke-virtual {v1, v0, v2}, Lj$/util/stream/y2;->t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 
     invoke-interface {v0}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
 
@@ -80,13 +80,13 @@
     return-object v0
 .end method
 
-.method protected f(Lj$/util/s;)Lj$/util/stream/f;
+.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
     .locals 1
 
     .line 1
     new-instance v0, Lj$/util/stream/N1;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/N1;Lj$/util/s;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/N1;Lj$/util/Spliterator;)V
 
     return-object v0
 .end method
@@ -134,7 +134,7 @@
     const/4 p1, 0x0
 
     .line 1
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 

@@ -7,7 +7,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOrderType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum StakingOrderType {
     ALPHABET(R$string.choose_tokens_order_alphabet),
     INTEREST(R$string.choose_staking_order_interest_rate),
@@ -25,7 +25,7 @@ public enum StakingOrderType {
     }
 
     /* compiled from: StakingOrderType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

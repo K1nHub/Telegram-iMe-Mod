@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import com.google.android.material.circularreveal.CircularRevealWidget;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CircularRevealFrameLayout extends FrameLayout implements CircularRevealWidget {
     @Override // com.google.android.material.circularreveal.CircularRevealWidget
     public void buildCircularRevealCache() {

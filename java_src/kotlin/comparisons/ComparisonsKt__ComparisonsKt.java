@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Comparisons.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ComparisonsKt__ComparisonsKt {
     private static final <T> int compareValuesByImpl$ComparisonsKt__ComparisonsKt(T t, T t2, Function1<? super T, ? extends Comparable<?>>[] function1Arr) {
         for (Function1<? super T, ? extends Comparable<?>> function1 : function1Arr) {

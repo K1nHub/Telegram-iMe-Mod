@@ -10,15 +10,15 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StampStyleCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class StampStyle extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StampStyle> CREATOR = new zzo();
-    @SafeParcelable.Field(getter = "getWrappedStampBinder", m797id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getWrappedStampBinder", m1089id = 2, type = "android.os.IBinder")
     protected final BitmapDescriptor zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Builder<T extends Builder<T>> {
         BitmapDescriptor zza;
 
@@ -32,7 +32,7 @@ public class StampStyle extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public StampStyle(@SafeParcelable.Param(m796id = 2) IBinder iBinder) {
+    public StampStyle(@SafeParcelable.Param(m1088id = 2) IBinder iBinder) {
         this.zza = new BitmapDescriptor(IObjectWrapper.Stub.asInterface(iBinder));
     }
 

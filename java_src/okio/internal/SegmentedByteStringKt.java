@@ -3,7 +3,7 @@ package okio.internal;
 import kotlin.jvm.internal.Intrinsics;
 import okio.SegmentedByteString;
 /* compiled from: SegmentedByteString.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SegmentedByteStringKt {
     public static final int binarySearch(int[] binarySearch, int i, int i2, int i3) {
         Intrinsics.checkNotNullParameter(binarySearch, "$this$binarySearch");

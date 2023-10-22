@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import java.util.Objects;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzbn extends AssetPackState {
     private final String zza;
     private final int zzb;

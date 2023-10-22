@@ -2,7 +2,7 @@ package com.google.firebase.messaging;
 
 import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class FcmBroadcastProcessor$$ExternalSyntheticLambda4 implements Executor {
     public static final /* synthetic */ FcmBroadcastProcessor$$ExternalSyntheticLambda4 INSTANCE = new FcmBroadcastProcessor$$ExternalSyntheticLambda4();
 

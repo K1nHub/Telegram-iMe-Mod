@@ -168,7 +168,7 @@ public final class RtspClient implements Closeable {
     /* JADX INFO: Access modifiers changed from: private */
     public void maybeLogMessage(List<String> list) {
         if (this.debugLoggingEnabled) {
-            Log.m820d(TAG, Joiner.m765on("\n").join(list));
+            Log.m1112d(TAG, Joiner.m1057on("\n").join(list));
         }
     }
 
@@ -219,16 +219,16 @@ public final class RtspClient implements Closeable {
         }
 
         public void sendOptionsRequest(Uri uri, String str) {
-            sendRequest(getRequestWithCommonHeaders(4, str, ImmutableMap.m755of(), uri));
+            sendRequest(getRequestWithCommonHeaders(4, str, ImmutableMap.m1047of(), uri));
         }
 
         public void sendDescribeRequest(Uri uri, String str) {
-            sendRequest(getRequestWithCommonHeaders(2, str, ImmutableMap.m755of(), uri));
+            sendRequest(getRequestWithCommonHeaders(2, str, ImmutableMap.m1047of(), uri));
         }
 
         public void sendSetupRequest(Uri uri, String str, String str2) {
             RtspClient.this.rtspState = 0;
-            sendRequest(getRequestWithCommonHeaders(10, str2, ImmutableMap.m754of(RtspHeaders.TRANSPORT, str), uri));
+            sendRequest(getRequestWithCommonHeaders(10, str2, ImmutableMap.m1046of(RtspHeaders.TRANSPORT, str), uri));
         }
 
         public void sendPlayRequest(Uri uri, long j, String str) {
@@ -237,7 +237,7 @@ public final class RtspClient implements Closeable {
                 z = false;
             }
             Assertions.checkState(z);
-            sendRequest(getRequestWithCommonHeaders(6, str, ImmutableMap.m754of(RtspHeaders.RANGE, RtspSessionTiming.getOffsetStartTimeTiming(j)), uri));
+            sendRequest(getRequestWithCommonHeaders(6, str, ImmutableMap.m1046of(RtspHeaders.RANGE, RtspSessionTiming.getOffsetStartTimeTiming(j)), uri));
         }
 
         public void sendTeardownRequest(Uri uri, String str) {
@@ -245,12 +245,12 @@ public final class RtspClient implements Closeable {
                 return;
             }
             RtspClient.this.rtspState = 0;
-            sendRequest(getRequestWithCommonHeaders(12, str, ImmutableMap.m755of(), uri));
+            sendRequest(getRequestWithCommonHeaders(12, str, ImmutableMap.m1047of(), uri));
         }
 
         public void sendPauseRequest(Uri uri, String str) {
             Assertions.checkState(RtspClient.this.rtspState == 2);
-            sendRequest(getRequestWithCommonHeaders(5, str, ImmutableMap.m755of(), uri));
+            sendRequest(getRequestWithCommonHeaders(5, str, ImmutableMap.m1047of(), uri));
             RtspClient.this.hasPendingPauseRequest = true;
         }
 
@@ -350,7 +350,7 @@ public final class RtspClient implements Closeable {
 
         private void handleRtspResponse(List<String> list) {
             RtspSessionTiming parseTiming;
-            ImmutableList<RtspTrackTiming> m762of;
+            ImmutableList<RtspTrackTiming> m1054of;
             RtspResponse parseResponse = RtspMessageUtil.parseResponse(list);
             int parseInt = Integer.parseInt((String) Assertions.checkNotNull(parseResponse.headers.get(RtspHeaders.CSEQ)));
             RtspRequest rtspRequest = (RtspRequest) RtspClient.this.pendingRequests.get(parseInt);
@@ -425,14 +425,14 @@ public final class RtspClient implements Closeable {
                         try {
                             String str3 = parseResponse.headers.get(RtspHeaders.RTP_INFO);
                             if (str3 != null) {
-                                m762of = RtspTrackTiming.parseTrackTiming(str3, RtspClient.this.uri);
+                                m1054of = RtspTrackTiming.parseTrackTiming(str3, RtspClient.this.uri);
                             } else {
-                                m762of = ImmutableList.m762of();
+                                m1054of = ImmutableList.m1054of();
                             }
                         } catch (ParserException unused) {
-                            m762of = ImmutableList.m762of();
+                            m1054of = ImmutableList.m1054of();
                         }
-                        onPlayResponseReceived(new RtspPlayResponse(parseResponse.status, parseTiming, m762of));
+                        onPlayResponseReceived(new RtspPlayResponse(parseResponse.status, parseTiming, m1054of));
                         return;
                     case 10:
                         String str4 = parseResponse.headers.get(RtspHeaders.SESSION);

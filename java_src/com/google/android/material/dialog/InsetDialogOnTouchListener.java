@@ -7,7 +7,7 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class InsetDialogOnTouchListener implements View.OnTouchListener {
     private final Dialog dialog;
     private final int leftInset;

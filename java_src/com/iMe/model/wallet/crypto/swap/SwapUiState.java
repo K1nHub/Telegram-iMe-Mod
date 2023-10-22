@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapUiState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SwapUiState {
     public /* synthetic */ SwapUiState(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -18,7 +18,7 @@ public abstract class SwapUiState {
     }
 
     /* compiled from: SwapUiState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ApprovalPending extends SwapUiState {
         public static final ApprovalPending INSTANCE = new ApprovalPending();
 
@@ -28,7 +28,7 @@ public abstract class SwapUiState {
     }
 
     /* compiled from: SwapUiState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Approval extends SwapUiState {
         private final FeeType feeType;
         private final TokenDetailed token;
@@ -51,7 +51,7 @@ public abstract class SwapUiState {
     }
 
     /* compiled from: SwapUiState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Loading extends SwapUiState {
         public static final Loading INSTANCE = new Loading();
 
@@ -61,7 +61,7 @@ public abstract class SwapUiState {
     }
 
     /* compiled from: SwapUiState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Idle extends SwapUiState {
         private final boolean isReset;
         private final SwapSide keepSide;
@@ -90,7 +90,7 @@ public abstract class SwapUiState {
     }
 
     /* compiled from: SwapUiState.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Swap extends SwapUiState {
         public /* synthetic */ Swap(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -101,7 +101,7 @@ public abstract class SwapUiState {
         }
 
         /* compiled from: SwapUiState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Crypto extends Swap {
             private final FeeType feeType;
             private final CryptoSwapMetadata metadata;
@@ -131,7 +131,7 @@ public abstract class SwapUiState {
         }
 
         /* compiled from: SwapUiState.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Binance extends Swap {
             private final BinanceConvertQuote quote;
 

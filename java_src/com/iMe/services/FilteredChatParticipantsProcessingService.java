@@ -26,7 +26,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -47,7 +47,7 @@ import org.telegram.tgnet.TLRPC$TL_chatBannedRights;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: FilteredChatParticipantsProcessingService.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FilteredChatParticipantsProcessingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private NotificationCompat.Builder builder;
     private final Lazy chat$delegate;
@@ -69,7 +69,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: FilteredChatParticipantsProcessingService.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum State {
         LOADING,
         DELETING,
@@ -77,7 +77,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
     }
 
     /* compiled from: FilteredChatParticipantsProcessingService.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -259,7 +259,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3473R.C3475drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3630R.C3632drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -275,7 +275,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             tLRPC$TL_channels_getParticipants.channel = messagesController.getInputChannel(this.chatId);
             TLRPC$ChannelParticipantsFilter serverFilter = this.participantsFilter.getServerFilter();
             tLRPC$TL_channels_getParticipants.filter = serverFilter;
-            serverFilter.f1521q = "";
+            serverFilter.f1599q = "";
             tLRPC$TL_channels_getParticipants.limit = 200;
             this.req = tLRPC$TL_channels_getParticipants;
         }
@@ -313,7 +313,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             this$0.onParticipantsPartLoaded(arrayList);
             return;
         }
-        this$0.stopServiceWithToast(C3473R.string.loading_participants_error);
+        this$0.stopServiceWithToast(C3630R.string.loading_participants_error);
     }
 
     private final void onParticipantsPartLoaded(List<? extends TLRPC$ChannelParticipant> list) {
@@ -372,13 +372,13 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
                 }
             });
         } else {
-            stopServiceWithToast(C3473R.string.processing_participants_success);
+            stopServiceWithToast(C3630R.string.processing_participants_success);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void processNextChatParticipantsPart$lambda$4(FilteredChatParticipantsProcessingService this$0) {
-        Function0<Unit> c1641x25afaff6;
+        Function0<Unit> c1538x25afaff6;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.updateNotification(true, State.DELETING);
         int size = this$0.participants.size();
@@ -387,15 +387,15 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         this$0.processedParticipantsCount += subList.size();
         int i = WhenMappings.$EnumSwitchMapping$0[this$0.participantsActionType.ordinal()];
         if (i == 1) {
-            c1641x25afaff6 = new C1641x25afaff6(this$0);
+            c1538x25afaff6 = new C1538x25afaff6(this$0);
         } else if (i == 2) {
-            c1641x25afaff6 = new C1642x25afaff7(this$0);
+            c1538x25afaff6 = new C1539x25afaff7(this$0);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            c1641x25afaff6 = new C1643x25afaff8(this$0);
+            c1538x25afaff6 = new C1540x25afaff8(this$0);
         }
-        this$0.processParticipantsPartBySingleRequests(c1641x25afaff6);
+        this$0.processParticipantsPartBySingleRequests(c1538x25afaff6);
         this$0.participants.removeAll(this$0.processingParticipants);
     }
 
@@ -416,7 +416,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             Intrinsics.throwUninitializedPropertyAccessException("messagesController");
             messagesController = null;
         }
-        messagesController.deleteParticipantFromChat(this.chatId, (TLRPC$User) CollectionsKt.last(this.processingParticipants));
+        messagesController.deleteParticipantFromChat(this.chatId, (TLRPC$User) CollectionsKt.last((List<? extends Object>) this.processingParticipants));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -426,7 +426,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             Intrinsics.throwUninitializedPropertyAccessException("messagesController");
             messagesController = null;
         }
-        messagesController.setParticipantBannedRole(this.chatId, (TLRPC$User) CollectionsKt.last(this.processingParticipants), getChat(), new TLRPC$TL_chatBannedRights(), getChat().isChannel(), null);
+        messagesController.setParticipantBannedRole(this.chatId, (TLRPC$User) CollectionsKt.last((List<? extends Object>) this.processingParticipants), getChat(), new TLRPC$TL_chatBannedRights(), getChat().isChannel(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -436,7 +436,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             Intrinsics.throwUninitializedPropertyAccessException("messagesController");
             messagesController = null;
         }
-        messagesController.addUserToChat(this.chatId, (TLRPC$User) CollectionsKt.last(this.processingParticipants), 100, null, null, null);
+        messagesController.addUserToChat(this.chatId, (TLRPC$User) CollectionsKt.last((List<? extends Object>) this.processingParticipants), 100, null, null, null);
     }
 
     private final void onConnectionStateChanged() {
@@ -459,11 +459,11 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         }
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3473R.string.loading_participants, Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3630R.string.loading_participants, Integer.valueOf(this.participants.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3473R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3630R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3473R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3630R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {
@@ -487,7 +487,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
     }
 
     /* compiled from: FilteredChatParticipantsProcessingService.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

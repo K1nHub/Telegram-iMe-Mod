@@ -1049,7 +1049,7 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
     }
 
     private static DummyTrackOutput createFakeTrackOutput(int i, int i2) {
-        Log.m814w(TAG, "Unmapped track with id " + i + " of type " + i2);
+        Log.m1106w(TAG, "Unmapped track with id " + i + " of type " + i2);
         return new DummyTrackOutput();
     }
 
@@ -1201,12 +1201,12 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 if (MimeTypes.APPLICATION_EMSG.equals(this.format.sampleMimeType)) {
                     EventMessage decode = this.emsgDecoder.decode(sampleAndTrimBuffer);
                     if (!emsgContainsExpectedWrappedFormat(decode)) {
-                        Log.m814w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
+                        Log.m1106w(HlsSampleStreamWrapper.TAG, String.format("Ignoring EMSG. Expected it to contain wrapped %s but actual wrapped format: %s", this.delegateFormat.sampleMimeType, decode.getWrappedMetadataFormat()));
                         return;
                     }
                     sampleAndTrimBuffer = new ParsableByteArray((byte[]) Assertions.checkNotNull(decode.getWrappedMetadataBytes()));
                 } else {
-                    Log.m814w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
+                    Log.m1106w(HlsSampleStreamWrapper.TAG, "Ignoring sample for unsupported format: " + this.format.sampleMimeType);
                     return;
                 }
             }

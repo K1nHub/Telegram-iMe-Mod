@@ -9,7 +9,7 @@ import java.util.TreeSet;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _CollectionsJvm.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CollectionsKt___CollectionsJvmKt extends CollectionsKt__ReversedViewsKt {
     public static <R> List<R> filterIsInstance(Iterable<?> iterable, Class<R> klass) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");

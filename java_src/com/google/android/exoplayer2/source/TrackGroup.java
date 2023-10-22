@@ -108,7 +108,7 @@ public final class TrackGroup implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_FORMATS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m762of();
+            fromBundleList = ImmutableList.m1054of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Format.CREATOR, parcelableArrayList);
         }
@@ -142,6 +142,6 @@ public final class TrackGroup implements Bundleable {
     }
 
     private static void logErrorMessage(String str, String str2, String str3, int i) {
-        Log.m817e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
+        Log.m1109e(TAG, "", new IllegalStateException("Different " + str + " combined in one TrackGroup: '" + str2 + "' (track 0) and '" + str3 + "' (track " + i + ")"));
     }
 }

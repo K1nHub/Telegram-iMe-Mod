@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.util.Objects;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ASN1EncodableVector {
     static final ASN1Encodable[] EMPTY_ELEMENTS = new ASN1Encodable[0];
     private boolean copyOnWrite;

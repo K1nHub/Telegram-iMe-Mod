@@ -7,7 +7,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ICameraUpdateFactoryDelegate extends IInterface {
     IObjectWrapper newCameraPosition(CameraPosition cameraPosition) throws RemoteException;
 

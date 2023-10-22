@@ -5,7 +5,7 @@ import com.google.android.gms.common.util.DefaultClock;
 import com.google.android.gms.internal.location.zzdh;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Geofence {
     public static final int GEOFENCE_TRANSITION_DWELL = 4;
     public static final int GEOFENCE_TRANSITION_ENTER = 1;
@@ -13,7 +13,7 @@ public interface Geofence {
     public static final long NEVER_EXPIRE = -1;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private double zze;
         private double zzf;
@@ -94,12 +94,12 @@ public interface Geofence {
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface GeofenceTransition {
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface TransitionTypes {
     }
 

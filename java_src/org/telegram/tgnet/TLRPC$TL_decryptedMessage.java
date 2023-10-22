@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import org.telegram.messenger.BuildVars;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_decryptedMessage extends TLRPC$DecryptedMessage {
     public static int constructor = -1848883596;
 

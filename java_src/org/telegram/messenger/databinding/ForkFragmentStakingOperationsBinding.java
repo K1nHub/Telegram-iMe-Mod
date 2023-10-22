@@ -4,10 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
-import com.iMe.fork.p024ui.view.TabbedViewPager;
+import com.iMe.fork.p023ui.view.TabbedViewPager;
 import java.util.Objects;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentStakingOperationsBinding implements ViewBinding {
     public final TabbedViewPager operationsPager;
     private final TabbedViewPager rootView;
@@ -17,7 +17,6 @@ public final class ForkFragmentStakingOperationsBinding implements ViewBinding {
         this.operationsPager = tabbedViewPager2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public TabbedViewPager getRoot() {
         return this.rootView;
     }
@@ -27,7 +26,7 @@ public final class ForkFragmentStakingOperationsBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingOperationsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_staking_operations, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_staking_operations, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

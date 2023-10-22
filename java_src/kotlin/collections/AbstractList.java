@@ -12,7 +12,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: AbstractList.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
     public static final Companion Companion = new Companion(null);
 
@@ -60,7 +60,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     /* compiled from: AbstractList.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static final class SubList<E> extends AbstractList<E> implements RandomAccess {
         private int _size;
         private final int fromIndex;
@@ -105,7 +105,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AbstractList.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public class IteratorImpl implements Iterator<E>, KMappedMarker, p033j$.util.Iterator {
         private int index;
 
@@ -148,7 +148,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     /* compiled from: AbstractList.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private class ListIteratorImpl extends AbstractList<E>.IteratorImpl implements ListIterator<E> {
         @Override // java.util.ListIterator
         public void add(E e) {
@@ -193,7 +193,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     /* compiled from: AbstractList.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -220,6 +220,15 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             } else if (i <= i2) {
             } else {
                 throw new IllegalArgumentException("fromIndex: " + i + " > toIndex: " + i2);
+            }
+        }
+
+        public final void checkBoundsIndexes$kotlin_stdlib(int i, int i2, int i3) {
+            if (i < 0 || i2 > i3) {
+                throw new IndexOutOfBoundsException("startIndex: " + i + ", endIndex: " + i2 + ", size: " + i3);
+            } else if (i <= i2) {
+            } else {
+                throw new IllegalArgumentException("startIndex: " + i + " > endIndex: " + i2);
             }
         }
 

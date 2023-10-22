@@ -1,10 +1,10 @@
 package com.iMe.storage.domain.model.catalog;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Campaign.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Campaign {
     private final CatalogCategory category;
     private final Channel channel;
@@ -12,7 +12,7 @@ public final class Campaign {
     private final String createdAt;
 
     /* renamed from: id */
-    private final long f406id;
+    private final long f339id;
     private final String invalidReason;
     private final CatalogLanguage language;
     private final CampaignStatus status;
@@ -35,7 +35,7 @@ public final class Campaign {
     }
 
     public final long component5() {
-        return this.f406id;
+        return this.f339id;
     }
 
     public final String component6() {
@@ -72,17 +72,17 @@ public final class Campaign {
         }
         if (obj instanceof Campaign) {
             Campaign campaign = (Campaign) obj;
-            return Intrinsics.areEqual(this.category, campaign.category) && Intrinsics.areEqual(this.channel, campaign.channel) && Intrinsics.areEqual(this.countries, campaign.countries) && Intrinsics.areEqual(this.createdAt, campaign.createdAt) && this.f406id == campaign.f406id && Intrinsics.areEqual(this.invalidReason, campaign.invalidReason) && Intrinsics.areEqual(this.language, campaign.language) && this.status == campaign.status && Intrinsics.areEqual(this.tags, campaign.tags);
+            return Intrinsics.areEqual(this.category, campaign.category) && Intrinsics.areEqual(this.channel, campaign.channel) && Intrinsics.areEqual(this.countries, campaign.countries) && Intrinsics.areEqual(this.createdAt, campaign.createdAt) && this.f339id == campaign.f339id && Intrinsics.areEqual(this.invalidReason, campaign.invalidReason) && Intrinsics.areEqual(this.language, campaign.language) && this.status == campaign.status && Intrinsics.areEqual(this.tags, campaign.tags);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f406id)) * 31) + this.invalidReason.hashCode()) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
+        return (((((((((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f339id)) * 31) + this.invalidReason.hashCode()) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
     }
 
     public String toString() {
-        return "Campaign(category=" + this.category + ", channel=" + this.channel + ", countries=" + this.countries + ", createdAt=" + this.createdAt + ", id=" + this.f406id + ", invalidReason=" + this.invalidReason + ", language=" + this.language + ", status=" + this.status + ", tags=" + this.tags + ')';
+        return "Campaign(category=" + this.category + ", channel=" + this.channel + ", countries=" + this.countries + ", createdAt=" + this.createdAt + ", id=" + this.f339id + ", invalidReason=" + this.invalidReason + ", language=" + this.language + ", status=" + this.status + ", tags=" + this.tags + ')';
     }
 
     public Campaign(CatalogCategory category, Channel channel, List<ChannelCountry> countries, String createdAt, long j, String invalidReason, CatalogLanguage language, CampaignStatus status, List<ChannelTag> tags) {
@@ -98,7 +98,7 @@ public final class Campaign {
         this.channel = channel;
         this.countries = countries;
         this.createdAt = createdAt;
-        this.f406id = j;
+        this.f339id = j;
         this.invalidReason = invalidReason;
         this.language = language;
         this.status = status;
@@ -122,7 +122,7 @@ public final class Campaign {
     }
 
     public final long getId() {
-        return this.f406id;
+        return this.f339id;
     }
 
     public final String getInvalidReason() {

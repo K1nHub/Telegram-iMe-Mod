@@ -6,7 +6,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EndConsumerHelper {
     public static boolean validate(Disposable disposable, Disposable disposable2, Class<?> cls) {
         ObjectHelper.requireNonNull(disposable2, "next is null");

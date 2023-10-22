@@ -4,8 +4,8 @@ import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.HiddenChatsController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p027db.dao.main.HiddenChatsDao;
-import com.iMe.storage.data.locale.p027db.model.hidden_chats.HiddenChatsDb;
+import com.iMe.storage.data.locale.p026db.dao.main.HiddenChatsDao;
+import com.iMe.storage.data.locale.p026db.model.hidden_chats.HiddenChatsDb;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +24,7 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.DialogObject;
@@ -34,7 +34,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: HiddenChatsController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class HiddenChatsController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, HiddenChatsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -210,7 +210,7 @@ public final class HiddenChatsController extends BaseController implements KoinC
     }
 
     /* compiled from: HiddenChatsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

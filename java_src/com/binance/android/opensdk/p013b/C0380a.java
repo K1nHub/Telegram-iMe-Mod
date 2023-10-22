@@ -48,7 +48,7 @@ public final class C0380a implements BinanceAPI {
 
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            C0380a.this.m854a();
+            C0380a.this.m1146a();
         }
     }
 
@@ -81,7 +81,7 @@ public final class C0380a implements BinanceAPI {
 
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            C0380a.this.m849a(this.f72b, this.f73c, this.f74d);
+            C0380a.this.m1141a(this.f72b, this.f73c, this.f74d);
         }
     }
 
@@ -93,7 +93,7 @@ public final class C0380a implements BinanceAPI {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
-    public final void m854a() {
+    public final void m1146a() {
         Locale local = Locale.getDefault();
         Intrinsics.checkExpressionValueIsNotNull(local, "local");
         String language = local.getLanguage();
@@ -106,18 +106,18 @@ public final class C0380a implements BinanceAPI {
     }
 
     /* renamed from: a */
-    private final void m853a(OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener, boolean z) {
+    private final void m1145a(OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener, boolean z) {
         int i;
-        String m838b = C0384a.m838b(this.f69c);
-        if (m838b == null || !C0384a.m839a(m838b)) {
+        String m1130b = C0384a.m1130b(this.f69c);
+        if (m1130b == null || !C0384a.m1131a(m1130b)) {
             i = XiaomiUtilities.OP_BLUETOOTH_CHANGE;
-        } else if (C0384a.m840a(oAuthParams)) {
-            AppStatus m842a = C0384a.m842a(this.f69c);
-            if (m842a != AppStatus.Supported || z) {
-                new DialogC0376a(this.f69c, Integer.valueOf(z ? R$string.binance_opensdk_login_failed_tips : R$string.binance_opensdk_login_to_connect), m842a == AppStatus.UnInstalled ? R$string.binance_opensdk_download : R$string.binance_opensdk_upgrade, new C0381a(), new C0382b(m838b, oAuthParams, challengeParams)).show();
+        } else if (C0384a.m1132a(oAuthParams)) {
+            AppStatus m1134a = C0384a.m1134a(this.f69c);
+            if (m1134a != AppStatus.Supported || z) {
+                new DialogC0376a(this.f69c, Integer.valueOf(z ? R$string.binance_opensdk_login_failed_tips : R$string.binance_opensdk_login_to_connect), m1134a == AppStatus.UnInstalled ? R$string.binance_opensdk_download : R$string.binance_opensdk_upgrade, new C0381a(), new C0382b(m1130b, oAuthParams, challengeParams)).show();
                 return;
             } else {
-                m848a(m838b, oAuthParams, challengeParams, binanceListener);
+                m1140a(m1130b, oAuthParams, challengeParams, binanceListener);
                 return;
             }
         } else {
@@ -127,32 +127,32 @@ public final class C0380a implements BinanceAPI {
     }
 
     /* renamed from: a */
-    static /* synthetic */ void m851a(C0380a c0380a, OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener, boolean z, int i, Object obj) {
+    static /* synthetic */ void m1143a(C0380a c0380a, OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener, boolean z, int i, Object obj) {
         if ((i & 8) != 0) {
             z = false;
         }
-        c0380a.m853a(oAuthParams, challengeParams, binanceListener, z);
+        c0380a.m1145a(oAuthParams, challengeParams, binanceListener, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
-    public final void m849a(String str, OAuthParams oAuthParams, ChallengeParams challengeParams) {
-        String m844b;
-        String m845b;
+    public final void m1141a(String str, OAuthParams oAuthParams, ChallengeParams challengeParams) {
+        String m1136b;
+        String m1137b;
         StringBuilder sb = new StringBuilder();
         sb.append("https://accounts.binance.com/");
-        sb.append(C0384a.m843a());
+        sb.append(C0384a.m1135a());
         sb.append("/oauth/authorize?response_type=code&client_id=");
         sb.append(str);
-        m844b = C0383b.m844b(oAuthParams);
-        sb.append(m844b);
-        m845b = C0383b.m845b(challengeParams);
-        sb.append(m845b);
+        m1136b = C0383b.m1136b(oAuthParams);
+        sb.append(m1136b);
+        m1137b = C0383b.m1137b(challengeParams);
+        sb.append(m1137b);
         this.f69c.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(sb.toString())));
     }
 
     /* renamed from: a */
-    private final void m848a(String str, OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener) {
+    private final void m1140a(String str, OAuthParams oAuthParams, ChallengeParams challengeParams, BinanceListener binanceListener) {
         this.f68b = binanceListener;
         Intent intent = new Intent();
         intent.putExtra("binance_opensdk_client_id", str);
@@ -161,7 +161,7 @@ public final class C0380a implements BinanceAPI {
         intent.putExtra("binance_opensdk_state", oAuthParams.getState());
         intent.setClassName("com.binance.dev", "com.binance.dev.open.BinanceEntryActivity");
         intent.putExtra("binance_opensdk_package_name", this.f69c.getPackageName());
-        intent.putExtra("binance_opensdk_signature", C0387d.m834a(this.f69c));
+        intent.putExtra("binance_opensdk_signature", C0387d.m1126a(this.f69c));
         Activity activity = this.f69c;
         if (activity == null) {
             throw new TypeCastException("null cannot be cast to non-null type android.app.Activity");
@@ -173,6 +173,6 @@ public final class C0380a implements BinanceAPI {
     public void authorize(OAuthParams oauthParams, BinanceListener listener) {
         Intrinsics.checkParameterIsNotNull(oauthParams, "oauthParams");
         Intrinsics.checkParameterIsNotNull(listener, "listener");
-        m851a(this, oauthParams, null, listener, false, 8, null);
+        m1143a(this, oauthParams, null, listener, false, 8, null);
     }
 }

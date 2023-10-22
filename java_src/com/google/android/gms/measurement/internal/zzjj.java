@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import android.content.ComponentName;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzjj implements Runnable {
     final /* synthetic */ ComponentName zza;
     final /* synthetic */ zzjn zzb;

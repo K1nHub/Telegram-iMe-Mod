@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CodedOutputStreamWriter implements Writer {
     private final CodedOutputStream output;
 
@@ -508,8 +508,8 @@ public final class CodedOutputStreamWriter implements Writer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.CodedOutputStreamWriter$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11981 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C11191 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -567,7 +567,7 @@ public final class CodedOutputStreamWriter implements Writer {
     }
 
     private <K, V> void writeDeterministicMap(int i, MapEntryLite.Metadata<K, V> metadata, Map<K, V> map) throws IOException {
-        switch (C11981.$SwitchMap$com$google$protobuf$WireFormat$FieldType[metadata.keyType.ordinal()]) {
+        switch (C11191.$SwitchMap$com$google$protobuf$WireFormat$FieldType[metadata.keyType.ordinal()]) {
             case 1:
                 V v = map.get(Boolean.FALSE);
                 if (v != null) {

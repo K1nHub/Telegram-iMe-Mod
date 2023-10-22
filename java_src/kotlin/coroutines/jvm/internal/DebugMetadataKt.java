@@ -3,7 +3,7 @@ package kotlin.coroutines.jvm.internal;
 import java.lang.reflect.Field;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DebugMetadata.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DebugMetadataKt {
     public static final StackTraceElement getStackTraceElement(BaseContinuationImpl baseContinuationImpl) {
         String str;
@@ -12,16 +12,16 @@ public final class DebugMetadataKt {
         if (debugMetadataAnnotation == null) {
             return null;
         }
-        checkDebugMetadataVersion(1, debugMetadataAnnotation.m98v());
+        checkDebugMetadataVersion(1, debugMetadataAnnotation.m139v());
         int label = getLabel(baseContinuationImpl);
-        int i = label < 0 ? -1 : debugMetadataAnnotation.m100l()[label];
+        int i = label < 0 ? -1 : debugMetadataAnnotation.m141l()[label];
         String moduleName = ModuleNameRetriever.INSTANCE.getModuleName(baseContinuationImpl);
         if (moduleName == null) {
-            str = debugMetadataAnnotation.m102c();
+            str = debugMetadataAnnotation.m143c();
         } else {
-            str = moduleName + '/' + debugMetadataAnnotation.m102c();
+            str = moduleName + '/' + debugMetadataAnnotation.m143c();
         }
-        return new StackTraceElement(str, debugMetadataAnnotation.m99m(), debugMetadataAnnotation.m101f(), i);
+        return new StackTraceElement(str, debugMetadataAnnotation.m140m(), debugMetadataAnnotation.m142f(), i);
     }
 
     private static final DebugMetadata getDebugMetadataAnnotation(BaseContinuationImpl baseContinuationImpl) {

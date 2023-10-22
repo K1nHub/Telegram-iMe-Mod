@@ -2,7 +2,7 @@ package com.google.android.gms.wearable.internal;
 
 import com.google.android.gms.common.api.internal.BaseImplementation;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class zzhn extends zza {
     private BaseImplementation.ResultHolder zza;
 

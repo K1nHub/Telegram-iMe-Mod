@@ -3,7 +3,7 @@ package kotlin.sequences;
 import java.util.Iterator;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DropSequence<T> implements Sequence<T>, DropTakeSequence<T> {
     private final int count;
     private final Sequence<T> sequence;

@@ -32,7 +32,7 @@ import okhttp3.internal.http.RealInterceptorChain;
 import okhttp3.internal.platform.Platform;
 import okio.AsyncTimeout;
 /* compiled from: RealCall.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealCall implements Call {
     private Object callStackTrace;
     private volatile boolean canceled;
@@ -164,7 +164,7 @@ public final class RealCall implements Call {
         this.eventListener.callStart(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -232,27 +232,27 @@ public final class RealCall implements Call {
             throw r2     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
         L8a:
             r2 = move-exception
-            goto La1
+            goto La2
         L8c:
             r0 = move-exception
             r2 = 1
-            java.io.IOException r0 = r11.noMoreExchanges$okhttp(r0)     // Catch: java.lang.Throwable -> L9d
-            if (r0 != 0) goto L9c
-            java.lang.NullPointerException r0 = new java.lang.NullPointerException     // Catch: java.lang.Throwable -> L9d
+            java.io.IOException r0 = r11.noMoreExchanges$okhttp(r0)     // Catch: java.lang.Throwable -> L9e
+            if (r0 != 0) goto L9d
+            java.lang.NullPointerException r0 = new java.lang.NullPointerException     // Catch: java.lang.Throwable -> L9e
             java.lang.String r3 = "null cannot be cast to non-null type kotlin.Throwable"
-            r0.<init>(r3)     // Catch: java.lang.Throwable -> L9d
-            throw r0     // Catch: java.lang.Throwable -> L9d
-        L9c:
-            throw r0     // Catch: java.lang.Throwable -> L9d
+            r0.<init>(r3)     // Catch: java.lang.Throwable -> L9e
+            throw r0     // Catch: java.lang.Throwable -> L9e
         L9d:
+            throw r0     // Catch: java.lang.Throwable -> L9e
+        L9e:
             r0 = move-exception
             r10 = r2
             r2 = r0
             r0 = r10
-        La1:
-            if (r0 != 0) goto La6
+        La2:
+            if (r0 != 0) goto La7
             r11.noMoreExchanges$okhttp(r1)
-        La6:
+        La7:
             throw r2
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp():okhttp3.Response");
@@ -514,7 +514,7 @@ public final class RealCall implements Call {
     }
 
     /* compiled from: RealCall.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class AsyncCall implements Runnable {
         private volatile AtomicInteger callsPerHost;
         private final Callback responseCallback;
@@ -626,7 +626,7 @@ public final class RealCall implements Call {
     }
 
     /* compiled from: RealCall.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class CallReference extends WeakReference<RealCall> {
         private final Object callStackTrace;
 

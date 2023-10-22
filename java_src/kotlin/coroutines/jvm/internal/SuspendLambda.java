@@ -5,7 +5,7 @@ import kotlin.jvm.internal.FunctionBase;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 /* compiled from: ContinuationImpl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class SuspendLambda extends ContinuationImpl implements FunctionBase<Object> {
     private final int arity;
 

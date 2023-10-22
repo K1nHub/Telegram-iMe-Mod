@@ -1,11 +1,11 @@
 package kotlinx.coroutines;
 
-import kotlinx.coroutines.internal.ArrayQueue;
+import kotlin.collections.ArrayDeque;
 /* compiled from: EventLoop.common.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class EventLoop extends CoroutineDispatcher {
     private boolean shared;
-    private ArrayQueue<DispatchedTask<?>> unconfinedQueue;
+    private ArrayDeque<DispatchedTask<?>> unconfinedQueue;
     private long useCount;
 
     private final long delta(boolean z) {
@@ -25,14 +25,14 @@ public abstract class EventLoop extends CoroutineDispatcher {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public long getNextTime() {
-        ArrayQueue<DispatchedTask<?>> arrayQueue = this.unconfinedQueue;
-        return (arrayQueue == null || arrayQueue.isEmpty()) ? Long.MAX_VALUE : 0L;
+        ArrayDeque<DispatchedTask<?>> arrayDeque = this.unconfinedQueue;
+        return (arrayDeque == null || arrayDeque.isEmpty()) ? Long.MAX_VALUE : 0L;
     }
 
     public final boolean processUnconfinedEvent() {
         DispatchedTask<?> removeFirstOrNull;
-        ArrayQueue<DispatchedTask<?>> arrayQueue = this.unconfinedQueue;
-        if (arrayQueue == null || (removeFirstOrNull = arrayQueue.removeFirstOrNull()) == null) {
+        ArrayDeque<DispatchedTask<?>> arrayDeque = this.unconfinedQueue;
+        if (arrayDeque == null || (removeFirstOrNull = arrayDeque.removeFirstOrNull()) == null) {
             return false;
         }
         removeFirstOrNull.run();
@@ -40,12 +40,12 @@ public abstract class EventLoop extends CoroutineDispatcher {
     }
 
     public final void dispatchUnconfined(DispatchedTask<?> dispatchedTask) {
-        ArrayQueue<DispatchedTask<?>> arrayQueue = this.unconfinedQueue;
-        if (arrayQueue == null) {
-            arrayQueue = new ArrayQueue<>();
-            this.unconfinedQueue = arrayQueue;
+        ArrayDeque<DispatchedTask<?>> arrayDeque = this.unconfinedQueue;
+        if (arrayDeque == null) {
+            arrayDeque = new ArrayDeque<>();
+            this.unconfinedQueue = arrayDeque;
         }
-        arrayQueue.addLast(dispatchedTask);
+        arrayDeque.addLast(dispatchedTask);
     }
 
     public final boolean isUnconfinedLoopActive() {
@@ -53,9 +53,9 @@ public abstract class EventLoop extends CoroutineDispatcher {
     }
 
     public final boolean isUnconfinedQueueEmpty() {
-        ArrayQueue<DispatchedTask<?>> arrayQueue = this.unconfinedQueue;
-        if (arrayQueue != null) {
-            return arrayQueue.isEmpty();
+        ArrayDeque<DispatchedTask<?>> arrayDeque = this.unconfinedQueue;
+        if (arrayDeque != null) {
+            return arrayDeque.isEmpty();
         }
         return true;
     }

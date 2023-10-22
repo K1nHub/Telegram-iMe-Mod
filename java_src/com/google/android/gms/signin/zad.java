@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ShowFirstParty;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zad {
     public static final Api.ClientKey zaa;
     @ShowFirstParty
@@ -26,7 +26,7 @@ public final class zad {
         zac = zaaVar;
         zab zabVar = new zab();
         zad = zabVar;
-        zae = new Scope(Scopes.PROFILE);
+        zae = new Scope("profile");
         zaf = new Scope(Scopes.EMAIL);
         zag = new Api("SignIn.API", zaaVar, clientKey);
         zah = new Api("SignIn.INTERNAL_API", zabVar, clientKey2);

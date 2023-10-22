@@ -4,7 +4,7 @@ import com.google.android.gms.wearable.CapabilityInfo;
 import com.google.android.gms.wearable.Node;
 import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzac implements CapabilityInfo {
     private final String zza;
     private final Set zzb;

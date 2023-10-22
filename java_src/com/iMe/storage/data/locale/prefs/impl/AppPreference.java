@@ -5,14 +5,15 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.iMe.storage.data.locale.prefs.model.RequestAppReviewMetadata;
 import com.iMe.storage.data.locale.prefs.model.RequestAppUpdateMetadata;
+import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.model.common.Environment;
 import com.iMe.storage.domain.storage.BasePreferenceHelper;
 import com.iMe.storage.domain.storage.PreferenceHelper;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppPreference.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AppPreference extends BasePreference implements PreferenceHelper {
     private final Gson gson;
 
@@ -131,6 +132,26 @@ public final class AppPreference extends BasePreference implements PreferenceHel
     public void setRequestAppUpdateMetadata(RequestAppUpdateMetadata value) {
         Intrinsics.checkNotNullParameter(value, "value");
         getMPref().edit().putString("app_update_metadata", this.gson.toJson(value)).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.PreferenceHelper
+    public long getLastMarkActivityTime() {
+        return getMPref().getLong(BasePreferenceHelper.CC.withTgAccount$default(this, "last_mark_activity_time", null, 2, null), DateExtKt.now());
+    }
+
+    @Override // com.iMe.storage.domain.storage.PreferenceHelper
+    public void setLastMarkActivityTime(long j) {
+        getMPref().edit().putLong(BasePreferenceHelper.CC.withTgAccount$default(this, "last_mark_activity_time", null, 2, null), j).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.PreferenceHelper
+    public boolean isNewsBotActivated() {
+        return getMPref().getBoolean(BasePreferenceHelper.CC.withTgAccount$default(this, "news_bot_activated", null, 2, null), false);
+    }
+
+    @Override // com.iMe.storage.domain.storage.PreferenceHelper
+    public void setNewsBotActivated(boolean z) {
+        getMPref().edit().putBoolean(BasePreferenceHelper.CC.withTgAccount$default(this, "news_bot_activated", null, 2, null), z).apply();
     }
 
     @Override // com.iMe.storage.domain.storage.PreferenceHelper

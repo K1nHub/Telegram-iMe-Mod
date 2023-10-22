@@ -3,7 +3,7 @@ package com.iMe.storage.domain.gateway;
 import java.io.File;
 import java.util.ArrayList;
 /* compiled from: TelegramGateway.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface TelegramGateway {
     ArrayList<CharSequence> cutInBlocks(CharSequence charSequence, int i);
 

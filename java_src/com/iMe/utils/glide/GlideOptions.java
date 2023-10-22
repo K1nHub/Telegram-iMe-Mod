@@ -10,7 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class GlideOptions extends RequestOptions {
     @Override // com.bumptech.glide.request.BaseRequestOptions
     public /* bridge */ /* synthetic */ RequestOptions apply(BaseRequestOptions baseRequestOptions) {
@@ -79,8 +79,8 @@ public final class GlideOptions extends RequestOptions {
 
     @Override // com.bumptech.glide.request.BaseRequestOptions
     /* renamed from: clone  reason: avoid collision after fix types in other method */
-    public RequestOptions mo903clone() {
-        return (GlideOptions) super.mo903clone();
+    public RequestOptions mo1197clone() {
+        return (GlideOptions) super.mo1197clone();
     }
 
     @Override // com.bumptech.glide.request.BaseRequestOptions

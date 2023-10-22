@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_help_appConfig extends TLRPC$help_AppConfig {
     public static int constructor = -585598930;
     public TLRPC$JSONValue config;

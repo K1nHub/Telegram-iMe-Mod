@@ -20,7 +20,7 @@ import io.reactivex.Observable;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BoostRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BoostRepositoryImpl implements BoostRepository {
     private final BoostApi boostApi;
     private final WalletBoostDataSourceFactory boostDataSourceFactory;

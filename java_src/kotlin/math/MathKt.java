@@ -1,4 +1,4 @@
 package kotlin.math;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class MathKt extends MathKt__MathJVMKt {
 }

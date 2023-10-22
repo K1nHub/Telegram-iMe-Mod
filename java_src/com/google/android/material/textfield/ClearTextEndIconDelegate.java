@@ -16,7 +16,7 @@ import com.google.android.material.R$string;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ClearTextEndIconDelegate extends EndIconDelegate {
     private final TextWatcher clearTextEndIconTextWatcher;
     private final TextInputLayout.OnEditTextAttachedListener clearTextOnEditTextAttachedListener;

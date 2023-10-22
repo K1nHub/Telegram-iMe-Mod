@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableWindow<T> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int capacityHint;
     final long count;
@@ -32,7 +32,7 @@ public final class ObservableWindow<T> extends AbstractObservableWithUpstream<T,
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class WindowExactObserver<T> extends AtomicInteger implements Observer<T>, Disposable, Runnable {
         volatile boolean cancelled;
         final int capacityHint;
@@ -117,7 +117,7 @@ public final class ObservableWindow<T> extends AbstractObservableWithUpstream<T,
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class WindowSkipObserver<T> extends AtomicBoolean implements Observer<T>, Disposable, Runnable {
         volatile boolean cancelled;
         final int capacityHint;

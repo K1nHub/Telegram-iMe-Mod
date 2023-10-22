@@ -2,10 +2,10 @@ package kotlinx.coroutines;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CancelledContinuation extends CompletedExceptionally {
-    private static final /* synthetic */ AtomicIntegerFieldUpdater _resumed$FU = AtomicIntegerFieldUpdater.newUpdater(CancelledContinuation.class, "_resumed");
-    private volatile /* synthetic */ int _resumed;
+    private static final AtomicIntegerFieldUpdater _resumed$FU = AtomicIntegerFieldUpdater.newUpdater(CancelledContinuation.class, "_resumed");
+    private volatile int _resumed;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*

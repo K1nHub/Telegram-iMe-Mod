@@ -12,7 +12,6 @@ import io.reactivex.internal.operators.completable.CompletableAndThenCompletable
 import io.reactivex.internal.operators.completable.CompletableCreate;
 import io.reactivex.internal.operators.completable.CompletableDoFinally;
 import io.reactivex.internal.operators.completable.CompletableEmpty;
-import io.reactivex.internal.operators.completable.CompletableError;
 import io.reactivex.internal.operators.completable.CompletableFromAction;
 import io.reactivex.internal.operators.completable.CompletableFromCallable;
 import io.reactivex.internal.operators.completable.CompletableObserveOn;
@@ -21,7 +20,7 @@ import io.reactivex.internal.operators.completable.CompletableSubscribeOn;
 import io.reactivex.internal.operators.mixed.CompletableAndThenObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Completable implements CompletableSource {
     protected abstract void subscribeActual(CompletableObserver completableObserver);
 
@@ -32,11 +31,6 @@ public abstract class Completable implements CompletableSource {
     public static Completable create(CompletableOnSubscribe completableOnSubscribe) {
         ObjectHelper.requireNonNull(completableOnSubscribe, "source is null");
         return RxJavaPlugins.onAssembly(new CompletableCreate(completableOnSubscribe));
-    }
-
-    public static Completable error(Throwable th) {
-        ObjectHelper.requireNonNull(th, "error is null");
-        return RxJavaPlugins.onAssembly(new CompletableError(th));
     }
 
     public static Completable fromAction(Action action) {
@@ -63,13 +57,6 @@ public abstract class Completable implements CompletableSource {
     public final Completable andThen(CompletableSource completableSource) {
         ObjectHelper.requireNonNull(completableSource, "next is null");
         return RxJavaPlugins.onAssembly(new CompletableAndThenCompletable(this, completableSource));
-    }
-
-    public final Completable doOnComplete(Action action) {
-        Consumer<? super Disposable> emptyConsumer = Functions.emptyConsumer();
-        Consumer<? super Throwable> emptyConsumer2 = Functions.emptyConsumer();
-        Action action2 = Functions.EMPTY_ACTION;
-        return doOnLifecycle(emptyConsumer, emptyConsumer2, action, action2, action2, action2);
     }
 
     private Completable doOnLifecycle(Consumer<? super Disposable> consumer, Consumer<? super Throwable> consumer2, Action action, Action action2, Action action3, Action action4) {

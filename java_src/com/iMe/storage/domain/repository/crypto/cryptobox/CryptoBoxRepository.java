@@ -14,7 +14,7 @@ import io.reactivex.Observable;
 import java.math.BigDecimal;
 import java.util.List;
 /* compiled from: CryptoBoxRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoBoxRepository {
     Observable<Result<CryptoBoxTokenApprovalInfo>> getApprovalInfo(String str, String str2);
 

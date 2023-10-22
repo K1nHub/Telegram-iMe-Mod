@@ -7,14 +7,14 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
 import org.bouncycastle.util.Arrays;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ASN1ObjectIdentifier extends ASN1Primitive {
     private static final ConcurrentMap<OidHandle, ASN1ObjectIdentifier> pool = new ConcurrentHashMap();
     private byte[] body;
     private final String identifier;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class OidHandle {
         private final byte[] enc;
         private final int key;
@@ -307,7 +307,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
     }
 
     /* renamed from: on */
-    public boolean m88on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+    public boolean m114on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         String id = getId();
         String id2 = aSN1ObjectIdentifier.getId();
         return id.length() > id2.length() && id.charAt(id2.length()) == '.' && id.startsWith(id2);

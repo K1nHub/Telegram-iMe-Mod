@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzbi<T> {
     private static volatile zzbr zzb = null;
     private static volatile boolean zzc = false;

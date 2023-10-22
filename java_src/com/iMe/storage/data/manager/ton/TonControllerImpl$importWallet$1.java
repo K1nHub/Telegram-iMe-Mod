@@ -1,90 +1,76 @@
 package com.iMe.storage.data.manager.ton;
 
+import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
-import drinkless.org.ton.TonApi;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.util.List;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
+import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.api.pub.PublicKeyEd25519;
+import org.ton.block.MsgAddressInt;
+import org.ton.contract.wallet.WalletContract;
+import org.ton.mnemonic.Mnemonic;
 /* compiled from: TonControllerImpl.kt */
-/* loaded from: classes4.dex */
-final class TonControllerImpl$importWallet$1 extends Lambda implements Function1<Boolean, ObservableSource<? extends Result<? extends Wallet.TON>>> {
-    final /* synthetic */ List<String> $words;
+@DebugMetadata(m143c = "com.iMe.storage.data.manager.ton.TonControllerImpl$importWallet$1", m142f = "TonControllerImpl.kt", m141l = {91}, m140m = "invokeSuspend")
+/* loaded from: classes3.dex */
+final class TonControllerImpl$importWallet$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends Wallet.TON>>, Object> {
+    final /* synthetic */ List<String> $mnemonic;
+    int label;
     final /* synthetic */ TonControllerImpl this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TonControllerImpl$importWallet$1(TonControllerImpl tonControllerImpl, List<String> list) {
-        super(1);
+    public TonControllerImpl$importWallet$1(TonControllerImpl tonControllerImpl, List<String> list, Continuation<? super TonControllerImpl$importWallet$1> continuation) {
+        super(2, continuation);
         this.this$0 = tonControllerImpl;
-        this.$words = list;
+        this.$mnemonic = list;
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final ObservableSource<? extends Result<Wallet.TON>> invoke(Boolean initResult) {
-        Observable sendRequest;
-        SchedulersProvider schedulersProvider;
-        Intrinsics.checkNotNullParameter(initResult, "initResult");
-        if (!initResult.booleanValue()) {
-            Observable just = Observable.just(TonControllerImpl.getTonApiErrorResult$default(this.this$0, null, 1, null));
-            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-            return just;
-        }
-        sendRequest = this.this$0.sendRequest(new TonApi.DeleteAllKeys());
-        schedulersProvider = this.this$0.schedulersProvider;
-        Observable subscribeOn = sendRequest.subscribeOn(schedulersProvider.mo717io());
-        final TonControllerImpl tonControllerImpl = this.this$0;
-        final List<String> list = this.$words;
-        return subscribeOn.flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$importWallet$1$$ExternalSyntheticLambda0
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                ObservableSource invoke$lambda$1;
-                invoke$lambda$1 = TonControllerImpl$importWallet$1.invoke$lambda$1(TonControllerImpl.this, list, obj);
-                return invoke$lambda$1;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new TonControllerImpl$importWallet$1(this.this$0, this.$mnemonic, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Object invoke(CoroutineScope coroutineScope, Continuation<? super Result<? extends Wallet.TON>> continuation) {
+        return invoke2(coroutineScope, (Continuation<? super Result<Wallet.TON>>) continuation);
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final Object invoke2(CoroutineScope coroutineScope, Continuation<? super Result<Wallet.TON>> continuation) {
+        return ((TonControllerImpl$importWallet$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended;
+        PrivateKeyEd25519 privateKeySafe;
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.label;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            this.this$0.privateKey = PrivateKeyEd25519.Companion.m49of(Mnemonic.toSeed$default(this.$mnemonic, null, 2, null));
+            TonControllerImpl tonControllerImpl = this.this$0;
+            this.label = 1;
+            obj = tonControllerImpl.initWallet(this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
             }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource invoke$lambda$1(final TonControllerImpl this$0, final List words, Object it) {
-        Observable sendRequest;
-        SchedulersProvider schedulersProvider;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(words, "$words");
-        Intrinsics.checkNotNullParameter(it, "it");
-        sendRequest = this$0.sendRequest(new TonApi.ImportKey(new byte[0], new byte[0], new TonApi.ExportedKey((String[]) words.toArray(new String[0]))));
-        schedulersProvider = this$0.schedulersProvider;
-        return sendRequest.subscribeOn(schedulersProvider.mo717io()).flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$importWallet$1$$ExternalSyntheticLambda1
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                ObservableSource invoke$lambda$1$lambda$0;
-                invoke$lambda$1$lambda$0 = TonControllerImpl$importWallet$1.invoke$lambda$1$lambda$0(TonControllerImpl.this, words, obj);
-                return invoke$lambda$1$lambda$0;
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource invoke$lambda$1$lambda$0(TonControllerImpl this$0, List words, Object keyResult) {
-        Result.Error tonApiErrorResult;
-        Observable processInputKey;
-        SchedulersProvider schedulersProvider;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(words, "$words");
-        Intrinsics.checkNotNullParameter(keyResult, "keyResult");
-        if (keyResult instanceof TonApi.Key) {
-            processInputKey = this$0.processInputKey((TonApi.Key) keyResult, words);
-            schedulersProvider = this$0.schedulersProvider;
-            return processInputKey.subscribeOn(schedulersProvider.mo717io());
+        } else if (i != 1) {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        } else {
+            ResultKt.throwOnFailure(obj);
         }
-        tonApiErrorResult = this$0.getTonApiErrorResult(keyResult);
-        Observable just = Observable.just(tonApiErrorResult);
-        Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-        return just;
+        String joinBySpace = StringExtKt.joinBySpace(this.$mnemonic);
+        String string$default = MsgAddressInt.Companion.toString$default(MsgAddressInt.Companion, ((WalletContract) obj).getAddress(), false, false, false, false, 30, null);
+        privateKeySafe = this.this$0.getPrivateKeySafe();
+        return Result.Companion.success(new Wallet.TON("", joinBySpace, string$default, PublicKeyEd25519.Companion.m48of(privateKeySafe).getKey().encodeHex()));
     }
 }

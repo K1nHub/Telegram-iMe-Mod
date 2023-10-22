@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
@@ -12,7 +12,7 @@ import okhttp3.Headers;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;
 /* compiled from: Request.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Request {
     private final RequestBody body;
     private final Headers headers;
@@ -93,7 +93,7 @@ public final class Request {
             for (Pair<? extends String, ? extends String> pair : this.headers) {
                 int i2 = i + 1;
                 if (i < 0) {
-                    CollectionsKt.throwIndexOverflow();
+                    CollectionsKt__CollectionsKt.throwIndexOverflow();
                 }
                 Pair<? extends String, ? extends String> pair2 = pair;
                 String component1 = pair2.component1();
@@ -119,7 +119,7 @@ public final class Request {
     }
 
     /* compiled from: Request.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private RequestBody body;
         private Headers.Builder headers;

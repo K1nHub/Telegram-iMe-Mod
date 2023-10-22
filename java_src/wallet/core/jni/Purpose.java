@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum Purpose {
     BIP44(44),
     BIP49(49),

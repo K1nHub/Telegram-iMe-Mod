@@ -6,7 +6,7 @@ import com.iMe.fork.utils.CollectionsUtilsKt;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.manager.TelegramApi;
 import com.iMe.manager.contacts.SelectedContactsDataStore;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.CompletableSource;
 import io.reactivex.Single;
@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: ContactsInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ContactsInteractor {
     private final SchedulersProvider schedulersProvider;
     private final SelectedContactsDataStore selectedContactsDataStore;
@@ -99,7 +99,7 @@ public final class ContactsInteractor {
                 deleteUsersById$lambda$0 = ContactsInteractor.deleteUsersById$lambda$0(Function1.this, obj);
                 return deleteUsersById$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo717io());
+        }).subscribeOn(this.schedulersProvider.mo1010io());
         final Function1<List<? extends TLRPC$User>, CompletableSource> function12 = new Function1<List<? extends TLRPC$User>, CompletableSource>() { // from class: com.iMe.domain.contacts.ContactsInteractor$deleteUsersById$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {

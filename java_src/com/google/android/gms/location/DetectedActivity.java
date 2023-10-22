@@ -12,7 +12,7 @@ import java.util.Comparator;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "DetectedActivityCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DetectedActivity extends AbstractSafeParcelable {
     public static final int IN_VEHICLE = 0;
     public static final int ON_BICYCLE = 1;
@@ -22,15 +22,15 @@ public class DetectedActivity extends AbstractSafeParcelable {
     public static final int TILTING = 5;
     public static final int UNKNOWN = 4;
     public static final int WALKING = 7;
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     int zzb;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     int zzc;
     public static final Comparator zza = new zzk();
     public static final Parcelable.Creator<DetectedActivity> CREATOR = new zzl();
 
     @SafeParcelable.Constructor
-    public DetectedActivity(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2) {
+    public DetectedActivity(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2) {
         this.zzb = i;
         this.zzc = i2;
     }

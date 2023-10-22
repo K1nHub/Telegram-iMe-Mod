@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SpreadBuilder {
     private final ArrayList<Object> list;
 

@@ -38,7 +38,7 @@ import com.google.android.material.ripple.RippleUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Callback, TextDrawableHelper.TextDrawableDelegate {
     private static final int[] DEFAULT_STATE = {16842910};
     private static final ShapeDrawable closeIconRippleMask = new ShapeDrawable(new OvalShape());
@@ -105,7 +105,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Call
     private TextUtils.TruncateAt truncateAt;
     private boolean useCompatRipple;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Delegate {
         void onChipDrawableSizeChange();
     }

@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Float;
     .locals 2
 
-    .line 30
+    .line 28
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$networkIconCornerSize$2;->$resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$dimen;->icon_size_default:I
@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 29
+    .line 27
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$networkIconCornerSize$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

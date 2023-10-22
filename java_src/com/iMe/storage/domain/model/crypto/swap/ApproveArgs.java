@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto.swap;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
@@ -8,7 +8,7 @@ import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ApproveArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ApproveArgs implements TransactionArgs {
     private final BlockchainType blockchainType;
     private final Number value;
@@ -31,7 +31,7 @@ public abstract class ApproveArgs implements TransactionArgs {
     }
 
     /* compiled from: ApproveArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Dex extends ApproveArgs {
         private final BlockchainType blockchainType;
         private final long chainId;
@@ -109,7 +109,7 @@ public abstract class ApproveArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            return (((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
+            return (((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
         }
 
         public String toString() {

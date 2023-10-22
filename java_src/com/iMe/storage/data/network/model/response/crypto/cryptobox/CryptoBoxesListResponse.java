@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxesListResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxesListResponse {
     private final List<CryptoBoxInfoResponse> cryptoboxes;
 

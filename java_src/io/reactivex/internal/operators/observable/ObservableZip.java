@@ -13,7 +13,7 @@ import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableZip<T, R> extends Observable<R> {
     final int bufferSize;
     final boolean delayError;
@@ -55,7 +55,7 @@ public final class ObservableZip<T, R> extends Observable<R> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ZipCoordinator<T, R> extends AtomicInteger implements Disposable {
         volatile boolean cancelled;
         final boolean delayError;
@@ -212,7 +212,7 @@ public final class ObservableZip<T, R> extends Observable<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ZipObserver<T, R> implements Observer<T> {
         volatile boolean done;
         Throwable error;

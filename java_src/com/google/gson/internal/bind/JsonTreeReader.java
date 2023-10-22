@@ -13,7 +13,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class JsonTreeReader extends JsonReader {
     private int[] pathIndices;
     private String[] pathNames;
@@ -285,8 +285,8 @@ public final class JsonTreeReader extends JsonReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.JsonTreeReader$2 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11382 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C10602 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -313,7 +313,7 @@ public final class JsonTreeReader extends JsonReader {
 
     @Override // com.google.gson.stream.JsonReader
     public void skipValue() throws IOException {
-        int i = C11382.$SwitchMap$com$google$gson$stream$JsonToken[peek().ordinal()];
+        int i = C10602.$SwitchMap$com$google$gson$stream$JsonToken[peek().ordinal()];
         if (i == 1) {
             nextName(true);
         } else if (i == 2) {

@@ -10,16 +10,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @ShowFirstParty
 @SafeParcelable.Class(creator = "GetSaveInstrumentDetailsResponseCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzq> CREATOR = new zzr();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     String[] zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     int[] zzb;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     RemoteViews zzc;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     byte[] zzd;
 
     private zzq() {
@@ -36,7 +36,7 @@ public final class zzq extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzq(@SafeParcelable.Param(m796id = 1) String[] strArr, @SafeParcelable.Param(m796id = 2) int[] iArr, @SafeParcelable.Param(m796id = 3) RemoteViews remoteViews, @SafeParcelable.Param(m796id = 4) byte[] bArr) {
+    public zzq(@SafeParcelable.Param(m1088id = 1) String[] strArr, @SafeParcelable.Param(m1088id = 2) int[] iArr, @SafeParcelable.Param(m1088id = 3) RemoteViews remoteViews, @SafeParcelable.Param(m1088id = 4) byte[] bArr) {
         this.zza = strArr;
         this.zzb = iArr;
         this.zzc = remoteViews;

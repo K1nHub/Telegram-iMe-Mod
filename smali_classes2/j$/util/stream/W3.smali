@@ -24,7 +24,7 @@
 
 
 # virtual methods
-.method public B()Lj$/util/s$b;
+.method public A()Lj$/util/Spliterator$b;
     .locals 7
 
     new-instance v6, Lj$/util/stream/V3;
@@ -49,7 +49,7 @@
 .method public accept(I)V
     .locals 3
 
-    invoke-virtual {p0}, Lj$/util/stream/Z3;->A()V
+    invoke-virtual {p0}, Lj$/util/stream/Z3;->z()V
 
     iget-object v0, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
 
@@ -93,11 +93,11 @@
 
     if-nez v0, :cond_1
 
-    invoke-virtual {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
+    invoke-virtual {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/s$b;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$b;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     :goto_0
     return-void
@@ -120,18 +120,18 @@
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
+    invoke-virtual {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/I;->g(Lj$/util/s$b;)Lj$/util/o$a;
+    invoke-static {v0}, Lj$/util/F;->g(Lj$/util/Spliterator$b;)Lj$/util/n$a;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1
@@ -145,17 +145,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic spliterator()Lj$/util/s;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected t(Ljava/lang/Object;IILjava/lang/Object;)V
+.method protected s(Ljava/lang/Object;IILjava/lang/Object;)V
     .locals 1
 
     check-cast p1, [I
@@ -176,6 +166,27 @@
 
     :cond_0
     return-void
+.end method
+
+.method public bridge synthetic spliterator()Lj$/util/Spliterator;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected t(Ljava/lang/Object;)I
+    .locals 0
+
+    check-cast p1, [I
+
+    .line 1
+    array-length p1, p1
+
+    return p1
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -293,18 +304,7 @@
     return-object v0
 .end method
 
-.method protected u(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, [I
-
-    .line 1
-    array-length p1, p1
-
-    return p1
-.end method
-
-.method protected z(I)[Ljava/lang/Object;
+.method protected y(I)[Ljava/lang/Object;
     .locals 0
 
     .line 1

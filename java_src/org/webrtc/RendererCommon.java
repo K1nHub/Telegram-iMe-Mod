@@ -3,11 +3,11 @@ package org.webrtc;
 import android.graphics.Point;
 import android.opengl.Matrix;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class RendererCommon {
     private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface GlDrawer {
         void drawOes(int i, int i2, int i3, int i4, int i5, float[] fArr, int i6, int i7, int i8, int i9, int i10, int i11, boolean z);
 
@@ -18,21 +18,21 @@ public class RendererCommon {
         void release();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface RendererEvents {
         void onFirstFrameRendered();
 
         void onFrameResolutionChanged(int i, int i2, int i3);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum ScalingType {
         SCALE_ASPECT_FIT,
         SCALE_ASPECT_FILL,
         SCALE_ASPECT_BALANCED
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class VideoLayoutMeasure {
         private float visibleFractionMatchOrientation;
         private float visibleFractionMismatchOrientation;
@@ -185,8 +185,8 @@ public class RendererCommon {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.RendererCommon$1 */
-    /* loaded from: classes7.dex */
-    public static /* synthetic */ class C72741 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C76091 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$RendererCommon$ScalingType;
 
         static {
@@ -209,7 +209,7 @@ public class RendererCommon {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static float convertScalingTypeToVisibleFraction(ScalingType scalingType) {
-        int i = C72741.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
+        int i = C76091.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {

@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 import timber.log.Timber;
 /* compiled from: CoroutineExceptionHandler.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ErrorHandler$settings$$inlined$CoroutineExceptionHandler$1 extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
     public ErrorHandler$settings$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key key) {
         super(key);

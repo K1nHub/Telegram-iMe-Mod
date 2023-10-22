@@ -2,7 +2,7 @@ package com.google.firebase.p020ml.vision.common;
 
 import com.google.android.gms.common.internal.Preconditions;
 /* renamed from: com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionImageMetadata {
     private final int format;
     private final int height;
@@ -10,7 +10,7 @@ public class FirebaseVisionImageMetadata {
     private final int width;
 
     /* renamed from: com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata$Builder */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private int format;
         private int height;

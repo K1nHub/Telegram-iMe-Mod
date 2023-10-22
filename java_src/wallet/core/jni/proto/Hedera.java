@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Hedera {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         TransactionBody getBody();
 
@@ -30,7 +30,7 @@ public final class Hedera {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -41,7 +41,7 @@ public final class Hedera {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TimestampOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -54,7 +54,7 @@ public final class Hedera {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionBodyOrBuilder extends MessageLiteOrBuilder {
         TransactionBody.DataCase getDataCase();
 
@@ -85,7 +85,7 @@ public final class Hedera {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionIDOrBuilder extends MessageLiteOrBuilder {
         String getAccountID();
 
@@ -106,7 +106,7 @@ public final class Hedera {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransferMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -131,7 +131,7 @@ public final class Hedera {
     private Hedera() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> implements TimestampOrBuilder {
         private static final Timestamp DEFAULT_INSTANCE;
         public static final int NANOS_FIELD_NUMBER = 2;
@@ -229,9 +229,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Timestamp, Builder> implements TimestampOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -276,7 +276,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Timestamp();
                 case 2:
@@ -322,47 +322,47 @@ public final class Hedera {
     }
 
     /* renamed from: wallet.core.jni.proto.Hedera$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73381 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76721 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1954xa1df5c61;
+        static final /* synthetic */ int[] f2128xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1954xa1df5c61 = iArr;
+            f2128xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1954xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2128xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionID extends GeneratedMessageLite<TransactionID, Builder> implements TransactionIDOrBuilder {
         public static final int ACCOUNTID_FIELD_NUMBER = 2;
         private static final TransactionID DEFAULT_INSTANCE;
@@ -524,9 +524,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionID, Builder> implements TransactionIDOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -633,7 +633,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionID();
                 case 2:
@@ -678,7 +678,7 @@ public final class Hedera {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransferMessage extends GeneratedMessageLite<TransferMessage, Builder> implements TransferMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         private static final TransferMessage DEFAULT_INSTANCE;
@@ -817,9 +817,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferMessage, Builder> implements TransferMessageOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -903,7 +903,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferMessage();
                 case 2:
@@ -948,7 +948,7 @@ public final class Hedera {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionBody extends GeneratedMessageLite<TransactionBody, Builder> implements TransactionBodyOrBuilder {
         private static final TransactionBody DEFAULT_INSTANCE;
         public static final int MEMO_FIELD_NUMBER = 5;
@@ -969,7 +969,7 @@ public final class Hedera {
         private TransactionBody() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum DataCase {
             TRANSFER(6),
             DATA_NOT_SET(0);
@@ -1223,9 +1223,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionBody, Builder> implements TransactionBodyOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -1405,7 +1405,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionBody();
                 case 2:
@@ -1450,7 +1450,7 @@ public final class Hedera {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int BODY_FIELD_NUMBER = 2;
         private static final SigningInput DEFAULT_INSTANCE;
@@ -1567,9 +1567,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -1631,7 +1631,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1676,7 +1676,7 @@ public final class Hedera {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -1758,9 +1758,9 @@ public final class Hedera {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73381 c73381) {
+            /* synthetic */ Builder(C76721 c76721) {
                 this();
             }
 
@@ -1788,7 +1788,7 @@ public final class Hedera {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73381.f1954xa1df5c61[method.ordinal()]) {
+            switch (C76721.f2128xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

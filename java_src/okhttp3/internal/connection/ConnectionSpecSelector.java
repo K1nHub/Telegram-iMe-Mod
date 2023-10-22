@@ -14,7 +14,7 @@ import javax.net.ssl.SSLSocket;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.ConnectionSpec;
 /* compiled from: ConnectionSpecSelector.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ConnectionSpecSelector {
     private final List<ConnectionSpec> connectionSpecs;
     private boolean isFallback;

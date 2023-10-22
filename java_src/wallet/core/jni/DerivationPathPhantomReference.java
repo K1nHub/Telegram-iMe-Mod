@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: DerivationPath.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class DerivationPathPhantomReference extends PhantomReference<DerivationPath> {
     private long nativeHandle;
     private static Set<DerivationPathPhantomReference> references = new HashSet();

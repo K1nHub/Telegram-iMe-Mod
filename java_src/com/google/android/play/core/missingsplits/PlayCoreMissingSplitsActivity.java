@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.google.android.play.core.internal.zzag;
 import com.google.android.play.core.internal.zzch;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class PlayCoreMissingSplitsActivity extends Activity implements DialogInterface.OnClickListener {
     private final String zza() {
         return getApplicationInfo().loadLabel(getPackageManager()).toString();

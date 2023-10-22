@@ -2,7 +2,7 @@
 .super Lj$/util/stream/j4;
 
 # interfaces
-.implements Lj$/util/function/q;
+.implements Lj$/util/function/p;
 
 
 # instance fields
@@ -43,7 +43,7 @@
 .method public b(Ljava/lang/Object;J)V
     .locals 4
 
-    check-cast p1, Lj$/util/function/q;
+    check-cast p1, Lj$/util/function/p;
 
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
 
     aget-wide v2, v1, v0
 
-    invoke-interface {p1, v2, v3}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {p1, v2, v3}, Lj$/util/function/p;->accept(J)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -69,16 +69,16 @@
     return-void
 .end method
 
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public f(Lj$/util/function/p;)Lj$/util/function/p;
     .locals 1
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 .end method

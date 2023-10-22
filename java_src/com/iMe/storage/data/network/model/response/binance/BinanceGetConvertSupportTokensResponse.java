@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.binance;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceGetConvertSupportTokensResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceGetConvertSupportTokensResponse {
     private final String assetCode;
     private final String assetName;

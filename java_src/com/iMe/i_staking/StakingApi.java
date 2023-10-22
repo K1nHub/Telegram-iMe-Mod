@@ -20,7 +20,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: StakingApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface StakingApi {
     @POST("staking/approval/info")
     Observable<ApiBaseResponse<StakingApprovalInfoResponse>> getApprovalInfo(@Body StakingIdRequest stakingIdRequest);

@@ -36,7 +36,7 @@ public final class MatrixTextureProcessor extends SingleFrameGlTextureProcessor 
     private final float[][] transformationMatrixCache;
     private final boolean useHdr;
     private ImmutableList<float[]> visiblePolygon;
-    private static final ImmutableList<float[]> NDC_SQUARE = ImmutableList.m758of(new float[]{-1.0f, -1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{-1.0f, 1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{1.0f, 1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{1.0f, -1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f});
+    private static final ImmutableList<float[]> NDC_SQUARE = ImmutableList.m1050of(new float[]{-1.0f, -1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{-1.0f, 1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{1.0f, 1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f}, new float[]{1.0f, -1.0f, BitmapDescriptorFactory.HUE_RED, 1.0f});
     private static final float[] BT2020_FULL_RANGE_YUV_TO_RGB_COLOR_TRANSFORM_MATRIX = {1.0f, 1.0f, 1.0f, BitmapDescriptorFactory.HUE_RED, -0.1646f, 1.8814f, 1.4746f, -0.5714f, BitmapDescriptorFactory.HUE_RED};
     private static final float[] BT2020_LIMITED_RANGE_YUV_TO_RGB_COLOR_TRANSFORM_MATRIX = {1.1689f, 1.1689f, 1.1689f, BitmapDescriptorFactory.HUE_RED, -0.1881f, 2.1502f, 1.6853f, -0.653f, BitmapDescriptorFactory.HUE_RED};
 

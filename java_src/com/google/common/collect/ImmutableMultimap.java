@@ -8,12 +8,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V> implements Serializable {
     final transient ImmutableMap<K, ? extends ImmutableCollection<V>> map;
     final transient int size;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder<K, V> {
         final Map<K, Collection<V>> builderMap = Platform.preservesInsertionOrderOnPutsMap();
         Comparator<? super K> keyComparator;
@@ -146,7 +146,7 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class EntryCollection<K, V> extends ImmutableCollection<Map.Entry<K, V>> {
         final ImmutableMultimap<K, V> multimap;
 
@@ -243,7 +243,7 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Values<K, V> extends ImmutableCollection<V> {
         private final transient ImmutableMultimap<K, V> multimap;
 

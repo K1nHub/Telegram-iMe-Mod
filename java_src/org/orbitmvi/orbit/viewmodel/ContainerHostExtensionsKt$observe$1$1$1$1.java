@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
 import org.orbitmvi.orbit.ContainerHost;
 /* compiled from: ContainerHostExtensions.kt */
-@DebugMetadata(m102c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1$1$1", m101f = "ContainerHostExtensions.kt", m100l = {51}, m99m = "invokeSuspend")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1$1$1", m142f = "ContainerHostExtensions.kt", m141l = {51}, m140m = "invokeSuspend")
+/* loaded from: classes4.dex */
 final class ContainerHostExtensionsKt$observe$1$1$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<STATE, Continuation<? super Unit>, Object> $state;
     final /* synthetic */ ContainerHost<STATE, SIDE_EFFECT> $this_observe;

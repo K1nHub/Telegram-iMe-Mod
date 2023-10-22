@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import io.reactivex.Observable;
 /* compiled from: BoostRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface BoostRepository {
     Observable<Result<String>> boost(String str, String str2);
 

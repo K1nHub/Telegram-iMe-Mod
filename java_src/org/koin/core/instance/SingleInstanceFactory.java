@@ -4,9 +4,9 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.definition.BeanDefinition;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: SingleInstanceFactory.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SingleInstanceFactory<T> extends InstanceFactory<T> {
     private T value;
 
@@ -40,7 +40,7 @@ public final class SingleInstanceFactory<T> extends InstanceFactory<T> {
     @Override // org.koin.core.instance.InstanceFactory
     public T get(final InstanceContext context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        KoinPlatformTools.INSTANCE.m1696synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.SingleInstanceFactory$get$1
+        KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.SingleInstanceFactory$get$1
             final /* synthetic */ SingleInstanceFactory<T> this$0;
 
             /* JADX INFO: Access modifiers changed from: package-private */

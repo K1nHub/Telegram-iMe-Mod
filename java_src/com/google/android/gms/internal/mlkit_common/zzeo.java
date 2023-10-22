@@ -1,9 +1,10 @@
 package com.google.android.gms.internal.mlkit_common;
 
 import java.util.NoSuchElementException;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 /* loaded from: classes.dex */
-final class zzeo extends zzeq {
+public final class zzeo extends zzeq {
     private int zza = 0;
     private final int zzb;
     private final /* synthetic */ zzep zzc;

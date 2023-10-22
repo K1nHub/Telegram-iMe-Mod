@@ -13,7 +13,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BlockingObservableLatest<T> implements Iterable<T> {
     final ObservableSource<T> source;
 
@@ -28,7 +28,7 @@ public final class BlockingObservableLatest<T> implements Iterable<T> {
         return blockingObservableLatestIterator;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class BlockingObservableLatestIterator<T> extends DisposableObserver<Notification<T>> implements Iterator<T>, p033j$.util.Iterator {
         Notification<T> iteratorNotification;
         final Semaphore notify = new Semaphore(0);

@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInfoResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxInfoResponse {
     private final int capacity;
     private final CryptoBoxChatResponse chat;
@@ -14,7 +14,7 @@ public final class CryptoBoxInfoResponse {
     private final String description;
 
     /* renamed from: id */
-    private final String f391id;
+    private final String f324id;
     private final String name;
     private final String network;
     private final String ownerAddress;
@@ -24,7 +24,7 @@ public final class CryptoBoxInfoResponse {
     private final String status;
 
     public final String component1() {
-        return this.f391id;
+        return this.f324id;
     }
 
     public final TokenDetailedResponse component10() {
@@ -101,17 +101,17 @@ public final class CryptoBoxInfoResponse {
         }
         if (obj instanceof CryptoBoxInfoResponse) {
             CryptoBoxInfoResponse cryptoBoxInfoResponse = (CryptoBoxInfoResponse) obj;
-            return Intrinsics.areEqual(this.f391id, cryptoBoxInfoResponse.f391id) && Intrinsics.areEqual(this.chat, cryptoBoxInfoResponse.chat) && Intrinsics.areEqual(this.status, cryptoBoxInfoResponse.status) && Intrinsics.areEqual(this.network, cryptoBoxInfoResponse.network) && Intrinsics.areEqual(this.name, cryptoBoxInfoResponse.name) && Intrinsics.areEqual(this.description, cryptoBoxInfoResponse.description) && Intrinsics.areEqual(this.ownerAddress, cryptoBoxInfoResponse.ownerAddress) && Intrinsics.areEqual(this.contractAddress, cryptoBoxInfoResponse.contractAddress) && Intrinsics.areEqual(this.contractUrl, cryptoBoxInfoResponse.contractUrl) && Intrinsics.areEqual(this.rewardToken, cryptoBoxInfoResponse.rewardToken) && Intrinsics.areEqual(this.rewardValue, cryptoBoxInfoResponse.rewardValue) && this.capacity == cryptoBoxInfoResponse.capacity && this.participants == cryptoBoxInfoResponse.participants && Intrinsics.areEqual(this.createdAt, cryptoBoxInfoResponse.createdAt);
+            return Intrinsics.areEqual(this.f324id, cryptoBoxInfoResponse.f324id) && Intrinsics.areEqual(this.chat, cryptoBoxInfoResponse.chat) && Intrinsics.areEqual(this.status, cryptoBoxInfoResponse.status) && Intrinsics.areEqual(this.network, cryptoBoxInfoResponse.network) && Intrinsics.areEqual(this.name, cryptoBoxInfoResponse.name) && Intrinsics.areEqual(this.description, cryptoBoxInfoResponse.description) && Intrinsics.areEqual(this.ownerAddress, cryptoBoxInfoResponse.ownerAddress) && Intrinsics.areEqual(this.contractAddress, cryptoBoxInfoResponse.contractAddress) && Intrinsics.areEqual(this.contractUrl, cryptoBoxInfoResponse.contractUrl) && Intrinsics.areEqual(this.rewardToken, cryptoBoxInfoResponse.rewardToken) && Intrinsics.areEqual(this.rewardValue, cryptoBoxInfoResponse.rewardValue) && this.capacity == cryptoBoxInfoResponse.capacity && this.participants == cryptoBoxInfoResponse.participants && Intrinsics.areEqual(this.createdAt, cryptoBoxInfoResponse.createdAt);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((this.f391id.hashCode() * 31) + this.chat.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.ownerAddress.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.contractUrl.hashCode()) * 31) + this.rewardToken.hashCode()) * 31) + this.rewardValue.hashCode()) * 31) + this.capacity) * 31) + this.participants) * 31) + this.createdAt.hashCode();
+        return (((((((((((((((((((((((((this.f324id.hashCode() * 31) + this.chat.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.ownerAddress.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.contractUrl.hashCode()) * 31) + this.rewardToken.hashCode()) * 31) + this.rewardValue.hashCode()) * 31) + this.capacity) * 31) + this.participants) * 31) + this.createdAt.hashCode();
     }
 
     public String toString() {
-        return "CryptoBoxInfoResponse(id=" + this.f391id + ", chat=" + this.chat + ", status=" + this.status + ", network=" + this.network + ", name=" + this.name + ", description=" + this.description + ", ownerAddress=" + this.ownerAddress + ", contractAddress=" + this.contractAddress + ", contractUrl=" + this.contractUrl + ", rewardToken=" + this.rewardToken + ", rewardValue=" + this.rewardValue + ", capacity=" + this.capacity + ", participants=" + this.participants + ", createdAt=" + this.createdAt + ')';
+        return "CryptoBoxInfoResponse(id=" + this.f324id + ", chat=" + this.chat + ", status=" + this.status + ", network=" + this.network + ", name=" + this.name + ", description=" + this.description + ", ownerAddress=" + this.ownerAddress + ", contractAddress=" + this.contractAddress + ", contractUrl=" + this.contractUrl + ", rewardToken=" + this.rewardToken + ", rewardValue=" + this.rewardValue + ", capacity=" + this.capacity + ", participants=" + this.participants + ", createdAt=" + this.createdAt + ')';
     }
 
     public CryptoBoxInfoResponse(String id, CryptoBoxChatResponse chat, String status, String network, String name, String description, String ownerAddress, String contractAddress, String contractUrl, TokenDetailedResponse rewardToken, BigDecimal rewardValue, int i, int i2, String createdAt) {
@@ -127,7 +127,7 @@ public final class CryptoBoxInfoResponse {
         Intrinsics.checkNotNullParameter(rewardToken, "rewardToken");
         Intrinsics.checkNotNullParameter(rewardValue, "rewardValue");
         Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-        this.f391id = id;
+        this.f324id = id;
         this.chat = chat;
         this.status = status;
         this.network = network;
@@ -144,7 +144,7 @@ public final class CryptoBoxInfoResponse {
     }
 
     public final String getId() {
-        return this.f391id;
+        return this.f324id;
     }
 
     public final CryptoBoxChatResponse getChat() {

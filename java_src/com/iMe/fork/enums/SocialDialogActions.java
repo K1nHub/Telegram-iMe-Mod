@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OPEN uses external variables
@@ -24,7 +24,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OPEN uses external
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: SocialDialogActions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialDialogActions {
     private static final /* synthetic */ SocialDialogActions[] $VALUES;
     public static final SocialDialogActions COPY;
@@ -64,16 +64,16 @@ public final class SocialDialogActions {
     }
 
     static {
-        int i = C3473R.C3475drawable.msg_openin;
-        String string = LocaleController.getString("Open", C3473R.string.Open);
+        int i = C3630R.C3632drawable.msg_openin;
+        String string = LocaleController.getString("Open", C3630R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
         OPEN = new SocialDialogActions("OPEN", 0, i, string);
-        int i2 = C3473R.C3475drawable.msg_copy;
-        String string2 = LocaleController.getString("Copy", C3473R.string.Copy);
+        int i2 = C3630R.C3632drawable.msg_copy;
+        String string2 = LocaleController.getString("Copy", C3630R.string.Copy);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Copy\", R.string.Copy)");
         COPY = new SocialDialogActions("COPY", 1, i2, string2);
-        int i3 = C3473R.C3475drawable.msg_delete;
-        String string3 = LocaleController.getString("Reset", C3473R.string.Reset);
+        int i3 = C3630R.C3632drawable.msg_delete;
+        String string3 = LocaleController.getString("Reset", C3630R.string.Reset);
         Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Reset\", R.string.Reset)");
         RESET = new SocialDialogActions("RESET", 2, i3, string3);
         $VALUES = $values();
@@ -81,7 +81,7 @@ public final class SocialDialogActions {
     }
 
     /* compiled from: SocialDialogActions.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

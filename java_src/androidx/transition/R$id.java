@@ -1,8 +1,8 @@
 package androidx.transition;
 /* loaded from: classes.dex */
 public final class R$id {
-    public static final int save_non_transition_alpha = 2131297056;
-    public static final int save_overlay_view = 2131297057;
-    public static final int transition_current_scene = 2131297399;
-    public static final int transition_layout_save = 2131297400;
+    public static final int save_non_transition_alpha = 2131297008;
+    public static final int save_overlay_view = 2131297009;
+    public static final int transition_current_scene = 2131297339;
+    public static final int transition_layout_save = 2131297340;
 }

@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 /* compiled from: TweetInfoUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TweetInfoUiMappingKt {
     public static final BaseNode mapToUi(TweetInfo tweetInfo) {
         Intrinsics.checkNotNullParameter(tweetInfo, "<this>");
@@ -23,6 +23,6 @@ public final class TweetInfoUiMappingKt {
         Intrinsics.checkNotNullExpressionValue(formatWholeNumber2, "formatWholeNumber(quotesCount)");
         String formatWholeNumber3 = AndroidUtilities.formatWholeNumber(tweetInfo.getRetweetsCount());
         Intrinsics.checkNotNullExpressionValue(formatWholeNumber3, "formatWholeNumber(retweetsCount)");
-        return new TweetItem(id, authorName, str, avatarUrl, formatWholeNumber, formatWholeNumber2, formatWholeNumber3, tweetInfo.getText(), DateFormatter.format$default(DateFormatter.DateType.ONLY_TIME, new Date(TimeUnit.SECONDS.toMillis(tweetInfo.getCreatedAt())), null, 4, null), tweetInfo.isLiked(), tweetInfo.getMediaInfo());
+        return new TweetItem(id, authorName, str, avatarUrl, formatWholeNumber, formatWholeNumber2, formatWholeNumber3, tweetInfo.getText(), DateFormatter.format$default(DateFormatter.DateType.ONLY_TIME, new Date(TimeUnit.SECONDS.toMillis(tweetInfo.getCreatedAt())), null, null, 12, null), tweetInfo.isLiked(), tweetInfo.getMediaInfo());
     }
 }

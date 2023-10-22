@@ -6,6 +6,7 @@ import android.content.res.XmlResourceParser;
 import android.util.AttributeSet;
 import android.util.Xml;
 import com.fxn.bubbletabbar.R$styleable;
+import com.iMe.storage.domain.model.analytics.AnalyticsEvent;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -53,7 +54,7 @@ public final class MenuParser {
             }
         }
         String name = xmlResourceParser.getName();
-        if (Intrinsics.areEqual(name, "menu")) {
+        if (Intrinsics.areEqual(name, AnalyticsEvent.OpenWalletScreen.sourceMenu)) {
             return;
         }
         throw new IllegalArgumentException(("Expecting menu, got " + name).toString());
@@ -67,7 +68,7 @@ public final class MenuParser {
             String name = xmlResourceParser.getName();
             if (eventType == 2 && Intrinsics.areEqual(name, "item")) {
                 arrayList.add(parseMenuItem(attributeSet));
-            } else if (eventType == 3 && Intrinsics.areEqual(name, "menu")) {
+            } else if (eventType == 3 && Intrinsics.areEqual(name, AnalyticsEvent.OpenWalletScreen.sourceMenu)) {
                 z = true;
             } else if (eventType == 1) {
                 throw new RuntimeException("Unexpected end of document");

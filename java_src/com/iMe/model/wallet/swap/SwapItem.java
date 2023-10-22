@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.swap.Exchange;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SwapItem {
     private final Exchange info;
     private final boolean isEnabled;

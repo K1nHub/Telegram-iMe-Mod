@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class UrlTileProvider implements TileProvider {
     private final int zza;
     private final int zzb;

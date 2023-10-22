@@ -14,7 +14,7 @@ import com.google.firebase.messaging.WithinAppServiceBinder;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class EnhancedIntentService extends Service {
     private Binder binder;
     private int lastStartId;
@@ -44,7 +44,7 @@ public abstract class EnhancedIntentService extends Service {
         this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EnhancedIntentService.this.m733x624ce8b2(intent, taskCompletionSource);
+                EnhancedIntentService.this.m1026x624ce8b2(intent, taskCompletionSource);
             }
         });
         return taskCompletionSource.getTask();
@@ -60,13 +60,13 @@ public abstract class EnhancedIntentService extends Service {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onStartCommand$1$com-google-firebase-messaging-EnhancedIntentService */
-    public /* synthetic */ void m734x83fa35aa(Intent intent, Task task) {
+    public /* synthetic */ void m1027x83fa35aa(Intent intent, Task task) {
         finishTask(intent);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$processIntent$0$com-google-firebase-messaging-EnhancedIntentService */
-    public /* synthetic */ void m733x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
+    public /* synthetic */ void m1026x624ce8b2(Intent intent, TaskCompletionSource taskCompletionSource) {
         try {
             handleIntent(intent);
         } finally {
@@ -121,7 +121,7 @@ public abstract class EnhancedIntentService extends Service {
         }, new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                EnhancedIntentService.this.m734x83fa35aa(intent, task);
+                EnhancedIntentService.this.m1027x83fa35aa(intent, task);
             }
         });
         return 3;

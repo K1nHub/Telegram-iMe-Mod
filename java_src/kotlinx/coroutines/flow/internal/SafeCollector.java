@@ -10,12 +10,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__IndentKt;
 import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: SafeCollector.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SafeCollector<T> extends ContinuationImpl implements FlowCollector<T> {
     public final CoroutineContext collectContext;
     public final int collectContextSize;
@@ -63,9 +64,9 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public Object invokeSuspend(Object obj) {
         Object coroutine_suspended;
-        Throwable m1659exceptionOrNullimpl = Result.m1659exceptionOrNullimpl(obj);
-        if (m1659exceptionOrNullimpl != null) {
-            this.lastEmissionContext = new DownstreamExceptionContext(m1659exceptionOrNullimpl, getContext());
+        Throwable m1938exceptionOrNullimpl = Result.m1938exceptionOrNullimpl(obj);
+        if (m1938exceptionOrNullimpl != null) {
+            this.lastEmissionContext = new DownstreamExceptionContext(m1938exceptionOrNullimpl, getContext());
         }
         Continuation<? super Unit> continuation = this.completion;
         if (continuation != null) {
@@ -108,7 +109,11 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
             this.lastEmissionContext = context;
         }
         this.completion = continuation;
-        Object invoke = SafeCollectorKt.access$getEmitFun$p().invoke(this.collector, t, this);
+        Function3 access$getEmitFun$p = SafeCollectorKt.access$getEmitFun$p();
+        FlowCollector<T> flowCollector = this.collector;
+        Intrinsics.checkNotNull(flowCollector, "null cannot be cast to non-null type kotlinx.coroutines.flow.FlowCollector<kotlin.Any?>");
+        Intrinsics.checkNotNull(this, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Unit>");
+        Object invoke = access$getEmitFun$p.invoke(flowCollector, t, this);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (!Intrinsics.areEqual(invoke, coroutine_suspended)) {
             this.completion = null;
@@ -125,7 +130,7 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
 
     private final void exceptionTransparencyViolated(DownstreamExceptionContext downstreamExceptionContext, Object obj) {
         String trimIndent;
-        trimIndent = StringsKt__IndentKt.trimIndent("\n            Flow exception transparency is violated:\n                Previous 'emit' call has thrown exception " + downstreamExceptionContext.f1310e + ", but then emission attempt of value '" + obj + "' has been detected.\n                Emissions from 'catch' blocks are prohibited in order to avoid unspecified behaviour, 'Flow.catch' operator can be used instead.\n                For a more detailed explanation, please refer to Flow documentation.\n            ");
+        trimIndent = StringsKt__IndentKt.trimIndent("\n            Flow exception transparency is violated:\n                Previous 'emit' call has thrown exception " + downstreamExceptionContext.f1398e + ", but then emission attempt of value '" + obj + "' has been detected.\n                Emissions from 'catch' blocks are prohibited in order to avoid unspecified behaviour, 'Flow.catch' operator can be used instead.\n                For a more detailed explanation, please refer to Flow documentation.\n            ");
         throw new IllegalStateException(trimIndent.toString());
     }
 }

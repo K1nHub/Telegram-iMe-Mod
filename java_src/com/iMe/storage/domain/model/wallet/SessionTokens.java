@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SessionTokens.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SessionTokens {
     private final String refreshToken;
     private final String token;

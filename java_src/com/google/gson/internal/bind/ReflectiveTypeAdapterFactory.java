@@ -35,7 +35,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
     private final Excluder excluder;
@@ -185,7 +185,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class BoundField {
         final boolean deserialized;
         final String fieldName;
@@ -206,7 +206,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Adapter<T, A> extends TypeAdapter<T> {
         final Map<String, BoundField> boundFields;
 
@@ -263,7 +263,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class FieldReflectionAdapter<T> extends Adapter<T, T> {
         private final ObjectConstructor<T> constructor;
 
@@ -288,7 +288,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class RecordAdapter<T> extends Adapter<T, Object[]> {
         static final Map<Class<?>, Object> PRIMITIVE_DEFAULTS = primitiveDefaults();
         private final Map<String, Integer> componentIndices;

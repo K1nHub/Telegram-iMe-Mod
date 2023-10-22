@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.ThreadContextKt;
 /* compiled from: DispatchedTask.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DispatchedTaskKt {
     public static final boolean isCancellableMode(int i) {
         return i == 1 || i == 2;
@@ -30,7 +31,7 @@ public final class DispatchedTaskKt {
             CoroutineDispatcher coroutineDispatcher = ((DispatchedContinuation) delegate$kotlinx_coroutines_core).dispatcher;
             CoroutineContext context = delegate$kotlinx_coroutines_core.getContext();
             if (coroutineDispatcher.isDispatchNeeded(context)) {
-                coroutineDispatcher.mo1688dispatch(context, dispatchedTask);
+                coroutineDispatcher.mo2114dispatch(context, dispatchedTask);
                 return;
             } else {
                 resumeUnconfined(dispatchedTask);
@@ -52,8 +53,9 @@ public final class DispatchedTaskKt {
             Result.Companion companion2 = Result.Companion;
             successfulResult$kotlinx_coroutines_core = dispatchedTask.getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core);
         }
-        Object m1658constructorimpl = Result.m1658constructorimpl(successfulResult$kotlinx_coroutines_core);
+        Object m1935constructorimpl = Result.m1935constructorimpl(successfulResult$kotlinx_coroutines_core);
         if (z) {
+            Intrinsics.checkNotNull(continuation, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T of kotlinx.coroutines.DispatchedTaskKt.resume>");
             DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) continuation;
             Continuation<T> continuation2 = dispatchedContinuation.continuation;
             Object obj = dispatchedContinuation.countOrElement;
@@ -61,7 +63,7 @@ public final class DispatchedTaskKt {
             Object updateThreadContext = ThreadContextKt.updateThreadContext(context, obj);
             UndispatchedCoroutine<?> updateUndispatchedCompletion = updateThreadContext != ThreadContextKt.NO_THREAD_ELEMENTS ? CoroutineContextKt.updateUndispatchedCompletion(continuation2, context, updateThreadContext) : null;
             try {
-                dispatchedContinuation.continuation.resumeWith(m1658constructorimpl);
+                dispatchedContinuation.continuation.resumeWith(m1935constructorimpl);
                 Unit unit = Unit.INSTANCE;
                 if (updateUndispatchedCompletion != null) {
                     if (!clearThreadContext) {
@@ -75,7 +77,7 @@ public final class DispatchedTaskKt {
                 }
             }
         }
-        continuation.resumeWith(m1658constructorimpl);
+        continuation.resumeWith(m1935constructorimpl);
     }
 
     private static final void resumeUnconfined(DispatchedTask<?> dispatchedTask) {

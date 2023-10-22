@@ -7,16 +7,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import kotlin.Pair;
-import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.SetsKt__SetsKt;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__AppendableKt;
 /* compiled from: _Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     public static <T> T firstOrNull(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
@@ -117,6 +115,12 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
         return optimizeReadOnlySet;
     }
 
+    public static <T, R> Sequence<R> flatMap(Sequence<? extends T> sequence, Function1<? super T, ? extends Sequence<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        return new FlatteningSequence(sequence, transform, SequencesKt___SequencesKt$flatMap$2.INSTANCE);
+    }
+
     public static <T, R> Sequence<R> map(Sequence<? extends T> sequence, Function1<? super T, ? extends R> transform) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(transform, "transform");
@@ -131,20 +135,37 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
         return filterNotNull;
     }
 
-    public static <T> Sequence<Pair<T, T>> zipWithNext(Sequence<? extends T> sequence) {
+    public static <T> int count(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
-        return zipWithNext(sequence, new Function2<T, T, Pair<? extends T, ? extends T>>() { // from class: kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$1
-            @Override // kotlin.jvm.functions.Function2
-            public final Pair<T, T> invoke(T t, T t2) {
-                return TuplesKt.m103to(t, t2);
+        Iterator<? extends T> it = sequence.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            it.next();
+            i++;
+            if (i < 0) {
+                CollectionsKt__CollectionsKt.throwCountOverflow();
             }
-        });
+        }
+        return i;
     }
 
-    public static final <T, R> Sequence<R> zipWithNext(Sequence<? extends T> sequence, Function2<? super T, ? super T, ? extends R> transform) {
+    public static <T> Sequence<T> plus(Sequence<? extends T> sequence, T t) {
+        Sequence sequenceOf;
+        Sequence sequenceOf2;
         Intrinsics.checkNotNullParameter(sequence, "<this>");
-        Intrinsics.checkNotNullParameter(transform, "transform");
-        return SequencesKt__SequenceBuilderKt.sequence(new SequencesKt___SequencesKt$zipWithNext$2(sequence, transform, null));
+        sequenceOf = SequencesKt__SequencesKt.sequenceOf(t);
+        sequenceOf2 = SequencesKt__SequencesKt.sequenceOf(sequence, sequenceOf);
+        return SequencesKt__SequencesKt.flatten(sequenceOf2);
+    }
+
+    public static <T> Sequence<T> plus(Sequence<? extends T> sequence, Iterable<? extends T> elements) {
+        Sequence asSequence;
+        Sequence sequenceOf;
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        asSequence = CollectionsKt___CollectionsKt.asSequence(elements);
+        sequenceOf = SequencesKt__SequencesKt.sequenceOf(sequence, asSequence);
+        return SequencesKt__SequencesKt.flatten(sequenceOf);
     }
 
     public static final <T, A extends Appendable> A joinTo(Sequence<? extends T> sequence, A buffer, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1<? super T, ? extends CharSequence> function1) {

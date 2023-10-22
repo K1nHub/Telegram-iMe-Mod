@@ -27,7 +27,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RemoteConfigComponent {
     private static final Clock DEFAULT_CLOCK = DefaultClock.getInstance();
     private static final Random DEFAULT_RANDOM = new Random();

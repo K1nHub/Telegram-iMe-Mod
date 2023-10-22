@@ -11,15 +11,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Reserved({1})
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LabelOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelOptions> CREATOR = new zzh();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     @Deprecated
     public final int zzej;
 
     @SafeParcelable.Constructor
-    public LabelOptions(@SafeParcelable.Param(m796id = 2) int i) {
+    public LabelOptions(@SafeParcelable.Param(m1088id = 2) int i) {
         this.zzej = i;
     }
 

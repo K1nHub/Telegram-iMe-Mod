@@ -2,7 +2,7 @@ package com.iMe.i_staking.response;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingStatsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingStatsResponse {
     private final StakingValuesResponse debt;
     private final boolean participated;

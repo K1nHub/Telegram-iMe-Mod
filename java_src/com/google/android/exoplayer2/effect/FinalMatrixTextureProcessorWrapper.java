@@ -278,7 +278,7 @@ final class FinalMatrixTextureProcessorWrapper implements ExternalTextureProcess
                 }
             });
         } catch (FrameProcessingException | GlUtil.GlException e) {
-            Log.m819d(TAG, "Error rendering to debug preview", e);
+            Log.m1111d(TAG, "Error rendering to debug preview", e);
         }
     }
 

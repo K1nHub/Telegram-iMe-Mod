@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionActionToFeeUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingTransactionActionToFeeUiMappingKt {
     public static final FeeType mapToUi(StakingTransactionAction stakingTransactionAction, DialogModel model) {
         Intrinsics.checkNotNullParameter(stakingTransactionAction, "<this>");

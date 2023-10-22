@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/y;
+.implements Lj$/util/function/x;
 
 
 # static fields
@@ -35,9 +35,9 @@
 .method public final get()Ljava/lang/Object;
     .locals 1
 
-    new-instance v0, Lj$/util/g;
+    new-instance v0, Lj$/util/e;
 
-    invoke-direct {v0}, Lj$/util/g;-><init>()V
+    invoke-direct {v0}, Lj$/util/e;-><init>()V
 
     return-object v0
 .end method

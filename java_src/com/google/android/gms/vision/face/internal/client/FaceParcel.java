@@ -11,44 +11,44 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @UsedByNative("wrapper.cc")
 @SafeParcelable.Class(creator = "FaceParcelCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FaceParcel extends AbstractSafeParcelable {
     @RecentlyNonNull
     public static final Parcelable.Creator<FaceParcel> CREATOR = new zzd();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final float zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final float zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public final float zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public final float zze;
-    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m797id = 7)
+    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m1089id = 7)
     public final float zzf;
-    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m797id = 8)
+    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m1089id = 8)
     public final float zzg;
-    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m797id = 14)
+    @SafeParcelable.Field(defaultValue = "3.4028235E38f", m1089id = 14)
     public final float zzh;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     public final LandmarkParcel[] zzi;
-    @SafeParcelable.Field(m797id = 10)
+    @SafeParcelable.Field(m1089id = 10)
     public final float zzj;
-    @SafeParcelable.Field(m797id = 11)
+    @SafeParcelable.Field(m1089id = 11)
     public final float zzk;
-    @SafeParcelable.Field(m797id = 12)
+    @SafeParcelable.Field(m1089id = 12)
     public final float zzl;
-    @SafeParcelable.Field(m797id = 13)
+    @SafeParcelable.Field(m1089id = 13)
     public final zza[] zzm;
-    @SafeParcelable.Field(defaultValue = "-1.0f", m797id = 15)
+    @SafeParcelable.Field(defaultValue = "-1.0f", m1089id = 15)
     public final float zzn;
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     private final int zzo;
 
     @SafeParcelable.Constructor
-    public FaceParcel(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) float f, @SafeParcelable.Param(m796id = 4) float f2, @SafeParcelable.Param(m796id = 5) float f3, @SafeParcelable.Param(m796id = 6) float f4, @SafeParcelable.Param(m796id = 7) float f5, @SafeParcelable.Param(m796id = 8) float f6, @SafeParcelable.Param(m796id = 14) float f7, @SafeParcelable.Param(m796id = 9) LandmarkParcel[] landmarkParcelArr, @SafeParcelable.Param(m796id = 10) float f8, @SafeParcelable.Param(m796id = 11) float f9, @SafeParcelable.Param(m796id = 12) float f10, @SafeParcelable.Param(m796id = 13) zza[] zzaVarArr, @SafeParcelable.Param(m796id = 15) float f11) {
+    public FaceParcel(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) float f, @SafeParcelable.Param(m1088id = 4) float f2, @SafeParcelable.Param(m1088id = 5) float f3, @SafeParcelable.Param(m1088id = 6) float f4, @SafeParcelable.Param(m1088id = 7) float f5, @SafeParcelable.Param(m1088id = 8) float f6, @SafeParcelable.Param(m1088id = 14) float f7, @SafeParcelable.Param(m1088id = 9) LandmarkParcel[] landmarkParcelArr, @SafeParcelable.Param(m1088id = 10) float f8, @SafeParcelable.Param(m1088id = 11) float f9, @SafeParcelable.Param(m1088id = 12) float f10, @SafeParcelable.Param(m1088id = 13) zza[] zzaVarArr, @SafeParcelable.Param(m1088id = 15) float f11) {
         this.zzo = i;
         this.zza = i2;
         this.zzb = f;
@@ -67,7 +67,7 @@ public class FaceParcel extends AbstractSafeParcelable {
     }
 
     @UsedByNative("wrapper.cc")
-    public FaceParcel(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) float f, @SafeParcelable.Param(m796id = 4) float f2, @SafeParcelable.Param(m796id = 5) float f3, @SafeParcelable.Param(m796id = 6) float f4, @SafeParcelable.Param(m796id = 7) float f5, @SafeParcelable.Param(m796id = 8) float f6, @RecentlyNonNull @SafeParcelable.Param(m796id = 9) LandmarkParcel[] landmarkParcelArr, @SafeParcelable.Param(m796id = 10) float f7, @SafeParcelable.Param(m796id = 11) float f8, @SafeParcelable.Param(m796id = 12) float f9) {
+    public FaceParcel(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) float f, @SafeParcelable.Param(m1088id = 4) float f2, @SafeParcelable.Param(m1088id = 5) float f3, @SafeParcelable.Param(m1088id = 6) float f4, @SafeParcelable.Param(m1088id = 7) float f5, @SafeParcelable.Param(m1088id = 8) float f6, @RecentlyNonNull @SafeParcelable.Param(m1088id = 9) LandmarkParcel[] landmarkParcelArr, @SafeParcelable.Param(m1088id = 10) float f7, @SafeParcelable.Param(m1088id = 11) float f8, @SafeParcelable.Param(m1088id = 12) float f9) {
         this(i, i2, f, f2, f3, f4, f5, f6, BitmapDescriptorFactory.HUE_RED, landmarkParcelArr, f7, f8, f9, new zza[0], -1.0f);
     }
 

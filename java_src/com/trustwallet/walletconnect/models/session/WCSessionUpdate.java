@@ -3,7 +3,7 @@ package com.trustwallet.walletconnect.models.session;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSessionUpdate.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCSessionUpdate {
     private final List<String> accounts;
     private final boolean approved;

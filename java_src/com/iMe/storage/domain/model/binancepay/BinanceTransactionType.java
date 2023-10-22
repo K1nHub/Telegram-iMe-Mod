@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.binancepay;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTransactionType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum BinanceTransactionType {
     BINANCE_PAY_TRANSFER,
     CONVERT_COINS,
@@ -12,7 +12,7 @@ public enum BinanceTransactionType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: BinanceTransactionType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

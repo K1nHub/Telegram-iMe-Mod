@@ -4,11 +4,11 @@ import com.google.auto.value.AutoValue;
 import com.google.firebase.installations.local.AutoValue_PersistedInstallationEntry;
 import com.google.firebase.installations.local.PersistedInstallation;
 @AutoValue
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class PersistedInstallationEntry {
 
     @AutoValue.Builder
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Builder {
         public abstract PersistedInstallationEntry build();
 

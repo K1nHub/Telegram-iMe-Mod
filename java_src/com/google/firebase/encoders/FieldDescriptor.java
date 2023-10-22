@@ -4,7 +4,7 @@ import java.lang.annotation.Annotation;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FieldDescriptor {
     private final String name;
     private final Map<Class<?>, Object> properties;
@@ -23,7 +23,7 @@ public final class FieldDescriptor {
     }
 
     /* renamed from: of */
-    public static FieldDescriptor m736of(String str) {
+    public static FieldDescriptor m1028of(String str) {
         return new FieldDescriptor(str, Collections.emptyMap());
     }
 
@@ -50,7 +50,7 @@ public final class FieldDescriptor {
         return "FieldDescriptor{name=" + this.name + ", properties=" + this.properties.values() + "}";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final String name;
         private Map<Class<?>, Object> properties = null;

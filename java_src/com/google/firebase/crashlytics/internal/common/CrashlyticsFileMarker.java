@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import java.io.File;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CrashlyticsFileMarker {
     private final FileStore fileStore;
     private final String markerName;
@@ -20,7 +20,7 @@ public class CrashlyticsFileMarker {
             return getMarkerFile().createNewFile();
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m743e("Error creating marker: " + this.markerName, e);
+            logger.m1035e("Error creating marker: " + this.markerName, e);
             return false;
         }
     }

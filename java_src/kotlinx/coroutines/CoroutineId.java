@@ -1,36 +1,41 @@
 package kotlinx.coroutines;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.coroutines.AbstractCoroutineContextElement;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: CoroutineContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineId extends AbstractCoroutineContextElement implements ThreadContextElement<String> {
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1307id;
+    private final long f1395id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1307id == ((CoroutineId) obj).f1307id;
+        return (obj instanceof CoroutineId) && this.f1395id == ((CoroutineId) obj).f1395id;
     }
 
     public int hashCode() {
-        return BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f1307id);
+        return ProfileData$$ExternalSyntheticBackport0.m1017m(this.f1395id);
     }
 
     public final long getId() {
-        return this.f1307id;
+        return this.f1395id;
+    }
+
+    public CoroutineId(long j) {
+        super(Key);
+        this.f1395id = j;
     }
 
     /* compiled from: CoroutineContext.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Key implements CoroutineContext.Key<CoroutineId> {
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -40,13 +45,8 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
         }
     }
 
-    public CoroutineId(long j) {
-        super(Key);
-        this.f1307id = j;
-    }
-
     public String toString() {
-        return "CoroutineId(" + this.f1307id + ')';
+        return "CoroutineId(" + this.f1395id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement
@@ -67,7 +67,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
         sb.append(" @");
         sb.append(str);
         sb.append('#');
-        sb.append(this.f1307id);
+        sb.append(this.f1395id);
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
         currentThread.setName(sb2);

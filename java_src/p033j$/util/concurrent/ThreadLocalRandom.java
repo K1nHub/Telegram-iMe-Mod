@@ -11,45 +11,45 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import p033j$.util.AbstractC2835a;
-import p033j$.util.InterfaceC2908s;
+import p033j$.util.AbstractC2839k;
+import p033j$.util.Spliterator;
 import p033j$.util.function.Consumer;
-import p033j$.util.function.InterfaceC2875f;
-import p033j$.util.function.InterfaceC2881l;
-import p033j$.util.function.InterfaceC2886q;
-import p033j$.util.stream.AbstractC3145o1;
+import p033j$.util.function.InterfaceC2816f;
+import p033j$.util.function.InterfaceC2822l;
+import p033j$.util.function.InterfaceC2826p;
+import p033j$.util.stream.AbstractC3082o1;
 import p033j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$WRP;
-import p033j$.wrappers.C3245L0;
-import p033j$.wrappers.C3249N0;
+import p033j$.wrappers.C3176I0;
+import p033j$.wrappers.C3180K0;
 /* renamed from: j$.util.concurrent.ThreadLocalRandom */
 /* loaded from: classes2.dex */
 public class ThreadLocalRandom extends Random {
 
     /* renamed from: d */
-    private static final AtomicInteger f711d = new AtomicInteger();
+    private static final AtomicInteger f757d = new AtomicInteger();
 
     /* renamed from: e */
-    private static final AtomicLong f712e;
+    private static final AtomicLong f758e;
 
     /* renamed from: f */
-    private static final ThreadLocal f713f;
+    private static final ThreadLocal f759f;
 
     /* renamed from: g */
-    private static final ThreadLocal f714g;
+    private static final ThreadLocal f760g;
 
     /* renamed from: a */
-    long f715a;
+    long f761a;
 
     /* renamed from: b */
-    int f716b;
+    int f762b;
 
     /* renamed from: c */
-    boolean f717c = true;
+    boolean f763c = true;
 
     /* renamed from: j$.util.concurrent.ThreadLocalRandom$a */
     /* loaded from: classes2.dex */
-    class C2859a extends ThreadLocal<ThreadLocalRandom> {
-        C2859a() {
+    class C2800a extends ThreadLocal<ThreadLocalRandom> {
+        C2800a() {
         }
 
         @Override // java.lang.ThreadLocal
@@ -60,101 +60,101 @@ public class ThreadLocalRandom extends Random {
 
     /* renamed from: j$.util.concurrent.ThreadLocalRandom$b */
     /* loaded from: classes2.dex */
-    static final class C2860b implements InterfaceC2908s.InterfaceC2909a {
+    static final class C2801b implements Spliterator.InterfaceC2772a {
 
         /* renamed from: a */
-        long f718a;
+        long f764a;
 
         /* renamed from: b */
-        final long f719b;
+        final long f765b;
 
         /* renamed from: c */
-        final double f720c;
+        final double f766c;
 
         /* renamed from: d */
-        final double f721d;
+        final double f767d;
 
-        C2860b(long j, long j2, double d, double d2) {
-            this.f718a = j;
-            this.f719b = j2;
-            this.f720c = d;
-            this.f721d = d2;
+        C2801b(long j, long j2, double d, double d2) {
+            this.f764a = j;
+            this.f765b = j2;
+            this.f766c = d;
+            this.f767d = d2;
         }
 
-        @Override // p033j$.util.InterfaceC3215t, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         /* renamed from: a */
-        public C2860b trySplit() {
-            long j = this.f718a;
-            long j2 = (this.f719b + j) >>> 1;
+        public C2801b trySplit() {
+            long j = this.f764a;
+            long j2 = (this.f765b + j) >>> 1;
             if (j2 <= j) {
                 return null;
             }
-            this.f718a = j2;
-            return new C2860b(j, j2, this.f720c, this.f721d);
+            this.f764a = j2;
+            return new C2801b(j, j2, this.f766c, this.f767d);
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2909a, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2772a, p033j$.util.Spliterator
         /* renamed from: b */
-        public /* synthetic */ boolean mo131b(Consumer consumer) {
-            return AbstractC2835a.m619j(this, consumer);
+        public /* synthetic */ boolean mo178b(Consumer consumer) {
+            return AbstractC2839k.m599f(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public int characteristics() {
             return 17728;
         }
 
-        @Override // p033j$.util.InterfaceC3215t
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
         /* renamed from: e */
-        public void forEachRemaining(InterfaceC2875f interfaceC2875f) {
-            Objects.requireNonNull(interfaceC2875f);
-            long j = this.f718a;
-            long j2 = this.f719b;
+        public void forEachRemaining(InterfaceC2816f interfaceC2816f) {
+            Objects.requireNonNull(interfaceC2816f);
+            long j = this.f764a;
+            long j2 = this.f765b;
             if (j < j2) {
-                this.f718a = j2;
-                double d = this.f720c;
-                double d2 = this.f721d;
+                this.f764a = j2;
+                double d = this.f766c;
+                double d2 = this.f767d;
                 ThreadLocalRandom current = ThreadLocalRandom.current();
                 do {
-                    interfaceC2875f.accept(current.m571c(d, d2));
+                    interfaceC2816f.accept(current.m634c(d, d2));
                     j++;
                 } while (j < j2);
             }
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public long estimateSize() {
-            return this.f719b - this.f718a;
+            return this.f765b - this.f764a;
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2909a, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2772a, p033j$.util.Spliterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
-            AbstractC2835a.m627b(this, consumer);
+            AbstractC2839k.m604a(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2835a.m624e(this);
+            return AbstractC2839k.m601d(this);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2835a.m623f(this, i);
+            return AbstractC2839k.m600e(this, i);
         }
 
-        @Override // p033j$.util.InterfaceC3215t
-        /* renamed from: k */
-        public boolean tryAdvance(InterfaceC2875f interfaceC2875f) {
-            Objects.requireNonNull(interfaceC2875f);
-            long j = this.f718a;
-            if (j < this.f719b) {
-                interfaceC2875f.accept(ThreadLocalRandom.current().m571c(this.f720c, this.f721d));
-                this.f718a = j + 1;
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
+        /* renamed from: n */
+        public boolean tryAdvance(InterfaceC2816f interfaceC2816f) {
+            Objects.requireNonNull(interfaceC2816f);
+            long j = this.f764a;
+            if (j < this.f765b) {
+                interfaceC2816f.accept(ThreadLocalRandom.current().m634c(this.f766c, this.f767d));
+                this.f764a = j + 1;
                 return true;
             }
             return false;
@@ -163,204 +163,204 @@ public class ThreadLocalRandom extends Random {
 
     /* renamed from: j$.util.concurrent.ThreadLocalRandom$c */
     /* loaded from: classes2.dex */
-    static final class C2861c implements InterfaceC2908s.InterfaceC2910b {
+    static final class C2802c implements Spliterator.InterfaceC2773b {
 
         /* renamed from: a */
-        long f722a;
+        long f768a;
 
         /* renamed from: b */
-        final long f723b;
+        final long f769b;
 
         /* renamed from: c */
-        final int f724c;
+        final int f770c;
 
         /* renamed from: d */
-        final int f725d;
+        final int f771d;
 
-        C2861c(long j, long j2, int i, int i2) {
-            this.f722a = j;
-            this.f723b = j2;
-            this.f724c = i;
-            this.f725d = i2;
+        C2802c(long j, long j2, int i, int i2) {
+            this.f768a = j;
+            this.f769b = j2;
+            this.f770c = i;
+            this.f771d = i2;
         }
 
-        @Override // p033j$.util.InterfaceC3215t, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         /* renamed from: a */
-        public C2861c trySplit() {
-            long j = this.f722a;
-            long j2 = (this.f723b + j) >>> 1;
+        public C2802c trySplit() {
+            long j = this.f768a;
+            long j2 = (this.f769b + j) >>> 1;
             if (j2 <= j) {
                 return null;
             }
-            this.f722a = j2;
-            return new C2861c(j, j2, this.f724c, this.f725d);
+            this.f768a = j2;
+            return new C2802c(j, j2, this.f770c, this.f771d);
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2910b, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2773b, p033j$.util.Spliterator
         /* renamed from: b */
-        public /* synthetic */ boolean mo131b(Consumer consumer) {
-            return AbstractC2835a.m618k(this, consumer);
+        public /* synthetic */ boolean mo178b(Consumer consumer) {
+            return AbstractC2839k.m598g(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC3215t
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
         /* renamed from: c */
-        public void forEachRemaining(InterfaceC2881l interfaceC2881l) {
-            Objects.requireNonNull(interfaceC2881l);
-            long j = this.f722a;
-            long j2 = this.f723b;
+        public void forEachRemaining(InterfaceC2822l interfaceC2822l) {
+            Objects.requireNonNull(interfaceC2822l);
+            long j = this.f768a;
+            long j2 = this.f769b;
             if (j < j2) {
-                this.f722a = j2;
-                int i = this.f724c;
-                int i2 = this.f725d;
+                this.f768a = j2;
+                int i = this.f770c;
+                int i2 = this.f771d;
                 ThreadLocalRandom current = ThreadLocalRandom.current();
                 do {
-                    interfaceC2881l.accept(current.m570d(i, i2));
+                    interfaceC2822l.accept(current.m633d(i, i2));
                     j++;
                 } while (j < j2);
             }
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public int characteristics() {
             return 17728;
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public long estimateSize() {
-            return this.f723b - this.f722a;
+            return this.f769b - this.f768a;
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2910b, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2773b, p033j$.util.Spliterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
-            AbstractC2835a.m626c(this, consumer);
+            AbstractC2839k.m603b(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC3215t
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
         /* renamed from: g */
-        public boolean tryAdvance(InterfaceC2881l interfaceC2881l) {
-            Objects.requireNonNull(interfaceC2881l);
-            long j = this.f722a;
-            if (j < this.f723b) {
-                interfaceC2881l.accept(ThreadLocalRandom.current().m570d(this.f724c, this.f725d));
-                this.f722a = j + 1;
+        public boolean tryAdvance(InterfaceC2822l interfaceC2822l) {
+            Objects.requireNonNull(interfaceC2822l);
+            long j = this.f768a;
+            if (j < this.f769b) {
+                interfaceC2822l.accept(ThreadLocalRandom.current().m633d(this.f770c, this.f771d));
+                this.f768a = j + 1;
                 return true;
             }
             return false;
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2835a.m624e(this);
+            return AbstractC2839k.m601d(this);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2835a.m623f(this, i);
+            return AbstractC2839k.m600e(this, i);
         }
     }
 
     /* renamed from: j$.util.concurrent.ThreadLocalRandom$d */
     /* loaded from: classes2.dex */
-    static final class C2862d implements InterfaceC2908s.InterfaceC2911c {
+    static final class C2803d implements Spliterator.InterfaceC2774c {
 
         /* renamed from: a */
-        long f726a;
+        long f772a;
 
         /* renamed from: b */
-        final long f727b;
+        final long f773b;
 
         /* renamed from: c */
-        final long f728c;
+        final long f774c;
 
         /* renamed from: d */
-        final long f729d;
+        final long f775d;
 
-        C2862d(long j, long j2, long j3, long j4) {
-            this.f726a = j;
-            this.f727b = j2;
-            this.f728c = j3;
-            this.f729d = j4;
+        C2803d(long j, long j2, long j3, long j4) {
+            this.f772a = j;
+            this.f773b = j2;
+            this.f774c = j3;
+            this.f775d = j4;
         }
 
-        @Override // p033j$.util.InterfaceC3215t, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         /* renamed from: a */
-        public C2862d trySplit() {
-            long j = this.f726a;
-            long j2 = (this.f727b + j) >>> 1;
+        public C2803d trySplit() {
+            long j = this.f772a;
+            long j2 = (this.f773b + j) >>> 1;
             if (j2 <= j) {
                 return null;
             }
-            this.f726a = j2;
-            return new C2862d(j, j2, this.f728c, this.f729d);
+            this.f772a = j2;
+            return new C2803d(j, j2, this.f774c, this.f775d);
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2911c, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2774c, p033j$.util.Spliterator
         /* renamed from: b */
-        public /* synthetic */ boolean mo131b(Consumer consumer) {
-            return AbstractC2835a.m617l(this, consumer);
+        public /* synthetic */ boolean mo178b(Consumer consumer) {
+            return AbstractC2839k.m597h(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public int characteristics() {
             return 17728;
         }
 
-        @Override // p033j$.util.InterfaceC3215t
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
         /* renamed from: d */
-        public void forEachRemaining(InterfaceC2886q interfaceC2886q) {
-            Objects.requireNonNull(interfaceC2886q);
-            long j = this.f726a;
-            long j2 = this.f727b;
+        public void forEachRemaining(InterfaceC2826p interfaceC2826p) {
+            Objects.requireNonNull(interfaceC2826p);
+            long j = this.f772a;
+            long j2 = this.f773b;
             if (j < j2) {
-                this.f726a = j2;
-                long j3 = this.f728c;
-                long j4 = this.f729d;
+                this.f772a = j2;
+                long j3 = this.f774c;
+                long j4 = this.f775d;
                 ThreadLocalRandom current = ThreadLocalRandom.current();
                 do {
-                    interfaceC2886q.accept(current.m569e(j3, j4));
+                    interfaceC2826p.accept(current.m632e(j3, j4));
                     j++;
                 } while (j < j2);
             }
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public long estimateSize() {
-            return this.f727b - this.f726a;
+            return this.f773b - this.f772a;
         }
 
-        @Override // p033j$.util.InterfaceC2908s.InterfaceC2911c, p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator.InterfaceC2774c, p033j$.util.Spliterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
-            AbstractC2835a.m625d(this, consumer);
+            AbstractC2839k.m602c(this, consumer);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public Comparator getComparator() {
             throw new IllegalStateException();
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ long getExactSizeIfKnown() {
-            return AbstractC2835a.m624e(this);
+            return AbstractC2839k.m601d(this);
         }
 
-        @Override // p033j$.util.InterfaceC2908s
+        @Override // p033j$.util.Spliterator
         public /* synthetic */ boolean hasCharacteristics(int i) {
-            return AbstractC2835a.m623f(this, i);
+            return AbstractC2839k.m600e(this, i);
         }
 
-        @Override // p033j$.util.InterfaceC3215t
+        @Override // p033j$.util.Spliterator.InterfaceC2775d
         /* renamed from: i */
-        public boolean tryAdvance(InterfaceC2886q interfaceC2886q) {
-            Objects.requireNonNull(interfaceC2886q);
-            long j = this.f726a;
-            if (j < this.f727b) {
-                interfaceC2886q.accept(ThreadLocalRandom.current().m569e(this.f728c, this.f729d));
-                this.f726a = j + 1;
+        public boolean tryAdvance(InterfaceC2826p interfaceC2826p) {
+            Objects.requireNonNull(interfaceC2826p);
+            long j = this.f772a;
+            if (j < this.f773b) {
+                interfaceC2826p.accept(ThreadLocalRandom.current().m632e(this.f774c, this.f775d));
+                this.f772a = j + 1;
                 return true;
             }
             return false;
@@ -368,78 +368,78 @@ public class ThreadLocalRandom extends Random {
     }
 
     static {
-        long m566h;
-        if (((Boolean) AccessController.doPrivileged(new C2866d())).booleanValue()) {
+        long m629h;
+        if (((Boolean) AccessController.doPrivileged(new C2807d())).booleanValue()) {
             byte[] seed = SecureRandom.getSeed(8);
-            m566h = seed[0] & 255;
+            m629h = seed[0] & 255;
             for (int i = 1; i < 8; i++) {
-                m566h = (m566h << 8) | (seed[i] & 255);
+                m629h = (m629h << 8) | (seed[i] & 255);
             }
         } else {
-            m566h = m566h(System.nanoTime()) ^ m566h(System.currentTimeMillis());
+            m629h = m629h(System.nanoTime()) ^ m629h(System.currentTimeMillis());
         }
-        f712e = new AtomicLong(m566h);
-        f713f = new ThreadLocal();
-        f714g = new C2859a();
+        f758e = new AtomicLong(m629h);
+        f759f = new ThreadLocal();
+        f760g = new C2800a();
         new ObjectStreamField("rnd", Long.TYPE);
         new ObjectStreamField("initialized", Boolean.TYPE);
     }
 
-    ThreadLocalRandom(C2866d c2866d) {
+    ThreadLocalRandom(C2807d c2807d) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a */
-    public static final int m573a(int i) {
+    public static final int m636a(int i) {
         int i2 = i ^ (i << 13);
         int i3 = i2 ^ (i2 >>> 17);
         int i4 = i3 ^ (i3 << 5);
-        ((ThreadLocalRandom) f714g.get()).f716b = i4;
+        ((ThreadLocalRandom) f760g.get()).f762b = i4;
         return i4;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: b */
-    public static final int m572b() {
-        return ((ThreadLocalRandom) f714g.get()).f716b;
+    public static final int m635b() {
+        return ((ThreadLocalRandom) f760g.get()).f762b;
     }
 
     public static ThreadLocalRandom current() {
-        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f714g.get();
-        if (threadLocalRandom.f716b == 0) {
-            m568f();
+        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f760g.get();
+        if (threadLocalRandom.f762b == 0) {
+            m631f();
         }
         return threadLocalRandom;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: f */
-    public static final void m568f() {
-        int addAndGet = f711d.addAndGet(-1640531527);
+    public static final void m631f() {
+        int addAndGet = f757d.addAndGet(-1640531527);
         if (addAndGet == 0) {
             addAndGet = 1;
         }
-        long m566h = m566h(f712e.getAndAdd(-4942790177534073029L));
-        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f714g.get();
-        threadLocalRandom.f715a = m566h;
-        threadLocalRandom.f716b = addAndGet;
+        long m629h = m629h(f758e.getAndAdd(-4942790177534073029L));
+        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f760g.get();
+        threadLocalRandom.f761a = m629h;
+        threadLocalRandom.f762b = addAndGet;
     }
 
     /* renamed from: g */
-    private static int m567g(long j) {
+    private static int m630g(long j) {
         long j2 = (j ^ (j >>> 33)) * (-49064778989728563L);
         return (int) (((j2 ^ (j2 >>> 33)) * (-4265267296055464877L)) >>> 32);
     }
 
     /* renamed from: h */
-    private static long m566h(long j) {
+    private static long m629h(long j) {
         long j2 = (j ^ (j >>> 33)) * (-49064778989728563L);
         long j3 = (j2 ^ (j2 >>> 33)) * (-4265267296055464877L);
         return j3 ^ (j3 >>> 33);
     }
 
     /* renamed from: c */
-    final double m571c(double d, double d2) {
+    final double m634c(double d, double d2) {
         double nextLong = (nextLong() >>> 11) * 1.1102230246251565E-16d;
         if (d < d2) {
             double d3 = ((d2 - d) * nextLong) + d;
@@ -449,113 +449,113 @@ public class ThreadLocalRandom extends Random {
     }
 
     /* renamed from: d */
-    final int m570d(int i, int i2) {
+    final int m633d(int i, int i2) {
         int i3;
-        int m567g = m567g(m565i());
+        int m630g = m630g(m628i());
         if (i < i2) {
             int i4 = i2 - i;
             int i5 = i4 - 1;
             if ((i4 & i5) == 0) {
-                i3 = m567g & i5;
+                i3 = m630g & i5;
             } else if (i4 > 0) {
-                int i6 = m567g >>> 1;
+                int i6 = m630g >>> 1;
                 while (true) {
                     int i7 = i6 + i5;
                     i3 = i6 % i4;
                     if (i7 - i3 >= 0) {
                         break;
                     }
-                    i6 = m567g(m565i()) >>> 1;
+                    i6 = m630g(m628i()) >>> 1;
                 }
             } else {
                 while (true) {
-                    if (m567g >= i && m567g < i2) {
-                        return m567g;
+                    if (m630g >= i && m630g < i2) {
+                        return m630g;
                     }
-                    m567g = m567g(m565i());
+                    m630g = m630g(m628i());
                 }
             }
             return i3 + i;
         }
-        return m567g;
+        return m630g;
     }
 
     @Override // java.util.Random
     public DoubleStream doubles() {
-        return C3245L0.m206n0(AbstractC3145o1.m360r(new C2860b(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d), false));
+        return C3176I0.m258m0(AbstractC3082o1.m405r(new C2801b(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d), false));
     }
 
     /* renamed from: e */
-    final long m569e(long j, long j2) {
-        long m566h = m566h(m565i());
+    final long m632e(long j, long j2) {
+        long m629h = m629h(m628i());
         if (j >= j2) {
-            return m566h;
+            return m629h;
         }
         long j3 = j2 - j;
         long j4 = j3 - 1;
         if ((j3 & j4) == 0) {
-            return (m566h & j4) + j;
+            return (m629h & j4) + j;
         }
         if (j3 > 0) {
             while (true) {
-                long j5 = m566h >>> 1;
+                long j5 = m629h >>> 1;
                 long j6 = j5 + j4;
                 long j7 = j5 % j3;
                 if (j6 - j7 >= 0) {
                     return j7 + j;
                 }
-                m566h = m566h(m565i());
+                m629h = m629h(m628i());
             }
         } else {
             while (true) {
-                if (m566h >= j && m566h < j2) {
-                    return m566h;
+                if (m629h >= j && m629h < j2) {
+                    return m629h;
                 }
-                m566h = m566h(m565i());
+                m629h = m629h(m628i());
             }
         }
     }
 
     /* renamed from: i */
-    final long m565i() {
-        long j = this.f715a - 7046029254386353131L;
-        this.f715a = j;
+    final long m628i() {
+        long j = this.f761a - 7046029254386353131L;
+        this.f761a = j;
         return j;
     }
 
     @Override // java.util.Random
     public IntStream ints() {
-        return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3145o1.m359s(new C2861c(0L, Long.MAX_VALUE, Integer.MAX_VALUE, 0), false));
+        return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3082o1.m404s(new C2802c(0L, Long.MAX_VALUE, Integer.MAX_VALUE, 0), false));
     }
 
     @Override // java.util.Random
     public LongStream longs() {
-        return C3249N0.m187n0(AbstractC3145o1.m358t(new C2862d(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L), false));
+        return C3180K0.m239m0(AbstractC3082o1.m403t(new C2803d(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L), false));
     }
 
     @Override // java.util.Random
     protected int next(int i) {
-        return (int) (m566h(m565i()) >>> (64 - i));
+        return (int) (m629h(m628i()) >>> (64 - i));
     }
 
     @Override // java.util.Random
     public boolean nextBoolean() {
-        return m567g(m565i()) < 0;
+        return m630g(m628i()) < 0;
     }
 
     @Override // java.util.Random
     public double nextDouble() {
-        return (m566h(m565i()) >>> 11) * 1.1102230246251565E-16d;
+        return (m629h(m628i()) >>> 11) * 1.1102230246251565E-16d;
     }
 
     @Override // java.util.Random
     public float nextFloat() {
-        return (m567g(m565i()) >>> 8) * 5.9604645E-8f;
+        return (m630g(m628i()) >>> 8) * 5.9604645E-8f;
     }
 
     @Override // java.util.Random
     public double nextGaussian() {
-        ThreadLocal threadLocal = f713f;
+        ThreadLocal threadLocal = f759f;
         Double d = (Double) threadLocal.get();
         if (d != null) {
             threadLocal.set(null);
@@ -567,7 +567,7 @@ public class ThreadLocalRandom extends Random {
             double d2 = (nextDouble2 * nextDouble2) + (nextDouble * nextDouble);
             if (d2 < 1.0d && d2 != 0.0d) {
                 double sqrt = StrictMath.sqrt((StrictMath.log(d2) * (-2.0d)) / d2);
-                f713f.set(new Double(nextDouble2 * sqrt));
+                f759f.set(new Double(nextDouble2 * sqrt));
                 return nextDouble * sqrt;
             }
         }
@@ -575,7 +575,7 @@ public class ThreadLocalRandom extends Random {
 
     @Override // java.util.Random
     public int nextInt() {
-        return m567g(m565i());
+        return m630g(m628i());
     }
 
     @Override // java.util.Random
@@ -583,37 +583,37 @@ public class ThreadLocalRandom extends Random {
         if (i <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        int m567g = m567g(m565i());
+        int m630g = m630g(m628i());
         int i2 = i - 1;
         if ((i & i2) == 0) {
-            return m567g & i2;
+            return m630g & i2;
         }
         while (true) {
-            int i3 = m567g >>> 1;
+            int i3 = m630g >>> 1;
             int i4 = i3 + i2;
             int i5 = i3 % i;
             if (i4 - i5 >= 0) {
                 return i5;
             }
-            m567g = m567g(m565i());
+            m630g = m630g(m628i());
         }
     }
 
     public int nextInt(int i, int i2) {
         if (i < i2) {
-            return m570d(i, i2);
+            return m633d(i, i2);
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
 
     @Override // java.util.Random
     public long nextLong() {
-        return m566h(m565i());
+        return m629h(m628i());
     }
 
     @Override // java.util.Random
     public void setSeed(long j) {
-        if (this.f717c) {
+        if (this.f763c) {
             throw new UnsupportedOperationException();
         }
     }
@@ -621,7 +621,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public DoubleStream doubles(double d, double d2) {
         if (d < d2) {
-            return C3245L0.m206n0(AbstractC3145o1.m360r(new C2860b(0L, Long.MAX_VALUE, d, d2), false));
+            return C3176I0.m258m0(AbstractC3082o1.m405r(new C2801b(0L, Long.MAX_VALUE, d, d2), false));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -629,7 +629,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public IntStream ints(int i, int i2) {
         if (i < i2) {
-            return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3145o1.m359s(new C2861c(0L, Long.MAX_VALUE, i, i2), false));
+            return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3082o1.m404s(new C2802c(0L, Long.MAX_VALUE, i, i2), false));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -637,7 +637,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public LongStream longs(long j) {
         if (j >= 0) {
-            return C3249N0.m187n0(AbstractC3145o1.m358t(new C2862d(0L, j, Long.MAX_VALUE, 0L), false));
+            return C3180K0.m239m0(AbstractC3082o1.m403t(new C2803d(0L, j, Long.MAX_VALUE, 0L), false));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
@@ -645,7 +645,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public DoubleStream doubles(long j) {
         if (j >= 0) {
-            return C3245L0.m206n0(AbstractC3145o1.m360r(new C2860b(0L, j, Double.MAX_VALUE, 0.0d), false));
+            return C3176I0.m258m0(AbstractC3082o1.m405r(new C2801b(0L, j, Double.MAX_VALUE, 0.0d), false));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
@@ -653,7 +653,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public IntStream ints(long j) {
         if (j >= 0) {
-            return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3145o1.m359s(new C2861c(0L, j, Integer.MAX_VALUE, 0), false));
+            return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3082o1.m404s(new C2802c(0L, j, Integer.MAX_VALUE, 0), false));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
@@ -661,7 +661,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public LongStream longs(long j, long j2) {
         if (j < j2) {
-            return C3249N0.m187n0(AbstractC3145o1.m358t(new C2862d(0L, Long.MAX_VALUE, j, j2), false));
+            return C3180K0.m239m0(AbstractC3082o1.m403t(new C2803d(0L, Long.MAX_VALUE, j, j2), false));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -670,7 +670,7 @@ public class ThreadLocalRandom extends Random {
     public DoubleStream doubles(long j, double d, double d2) {
         if (j >= 0) {
             if (d < d2) {
-                return C3245L0.m206n0(AbstractC3145o1.m360r(new C2860b(0L, j, d, d2), false));
+                return C3176I0.m258m0(AbstractC3082o1.m405r(new C2801b(0L, j, d, d2), false));
             }
             throw new IllegalArgumentException("bound must be greater than origin");
         }
@@ -681,7 +681,7 @@ public class ThreadLocalRandom extends Random {
     public IntStream ints(long j, int i, int i2) {
         if (j >= 0) {
             if (i < i2) {
-                return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3145o1.m359s(new C2861c(0L, j, i, i2), false));
+                return C$r8$wrapper$java$util$stream$IntStream$WRP.convert(AbstractC3082o1.m404s(new C2802c(0L, j, i, i2), false));
             }
             throw new IllegalArgumentException("bound must be greater than origin");
         }
@@ -692,7 +692,7 @@ public class ThreadLocalRandom extends Random {
     public LongStream longs(long j, long j2, long j3) {
         if (j >= 0) {
             if (j2 < j3) {
-                return C3249N0.m187n0(AbstractC3145o1.m358t(new C2862d(0L, j, j2, j3), false));
+                return C3180K0.m239m0(AbstractC3082o1.m403t(new C2803d(0L, j, j2, j3), false));
             }
             throw new IllegalArgumentException("bound must be greater than origin");
         }

@@ -183,7 +183,7 @@ public class DefaultLoadControl implements LoadControl {
             }
             this.isLoading = z;
             if (!z && j2 < 500000) {
-                Log.m814w("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
+                Log.m1106w("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
             }
         } else if (j2 >= this.maxBufferUs || z2) {
             this.isLoading = false;

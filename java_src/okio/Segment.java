@@ -5,7 +5,7 @@ import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Segment.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Segment {
     public final byte[] data;
     public int limit;
@@ -154,7 +154,7 @@ public final class Segment {
     }
 
     /* compiled from: Segment.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

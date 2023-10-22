@@ -5,7 +5,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCPeerMeta.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCPeerMeta {
     private final String description;
     private final List<String> icons;

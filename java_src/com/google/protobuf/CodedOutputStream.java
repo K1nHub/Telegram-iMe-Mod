@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CodedOutputStream extends ByteOutput {
     private boolean serializationDeterministic;
     CodedOutputStreamWriter wrapper;
@@ -391,7 +391,7 @@ public abstract class CodedOutputStream extends ByteOutput {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class OutOfSpaceException extends IOException {
         OutOfSpaceException(Throwable th) {
             super("CodedOutputStream was writing to a flat byte array and ran out of space.", th);
@@ -455,7 +455,7 @@ public abstract class CodedOutputStream extends ByteOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class ArrayEncoder extends CodedOutputStream {
         private final byte[] buffer;
         private final int limit;
@@ -764,7 +764,7 @@ public abstract class CodedOutputStream extends ByteOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class AbstractBufferedEncoder extends CodedOutputStream {
         final byte[] buffer;
         final int limit;
@@ -917,7 +917,7 @@ public abstract class CodedOutputStream extends ByteOutput {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class OutputStreamEncoder extends AbstractBufferedEncoder {
         private final OutputStream out;
 

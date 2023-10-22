@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.swap;
 import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetQuoteToSwapRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetQuoteToSwapRequest {
     private final String amount;
     private final String defiProtocol;

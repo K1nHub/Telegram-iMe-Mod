@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import io.reactivex.Observable;
 import java.util.Map;
 /* compiled from: CryptoWalletRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoWalletRepository {
     Observable<Result<Boolean>> clearAllTokensData();
 

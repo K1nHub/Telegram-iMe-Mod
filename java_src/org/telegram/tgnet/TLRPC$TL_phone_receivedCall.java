@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_phone_receivedCall extends TLObject {
     public static int constructor = 399855457;
     public TLRPC$TL_inputPhoneCall peer;

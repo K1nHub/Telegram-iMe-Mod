@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzbg extends zzah implements RandomAccess, zzdj {
     private static final zzbg zza;
     private double[] zzb;

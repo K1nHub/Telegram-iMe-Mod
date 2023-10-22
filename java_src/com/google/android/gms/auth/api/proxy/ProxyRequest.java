@@ -21,17 +21,17 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public class ProxyRequest extends AbstractSafeParcelable {
     public static final int VERSION_CODE = 2;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final byte[] body;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int httpMethod;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final long timeoutMillis;
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     public final String url;
-    @SafeParcelable.VersionField(m794id = 1000)
+    @SafeParcelable.VersionField(m1086id = 1000)
     final int zza;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     Bundle zzb;
     public static final Parcelable.Creator<ProxyRequest> CREATOR = new zza();
     public static final int HTTP_METHOD_GET = 0;
@@ -105,7 +105,7 @@ public class ProxyRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ProxyRequest(@SafeParcelable.Param(m796id = 1000) int i, @SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) long j, @SafeParcelable.Param(m796id = 4) byte[] bArr, @SafeParcelable.Param(m796id = 5) Bundle bundle) {
+    public ProxyRequest(@SafeParcelable.Param(m1088id = 1000) int i, @SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) long j, @SafeParcelable.Param(m1088id = 4) byte[] bArr, @SafeParcelable.Param(m1088id = 5) Bundle bundle) {
         this.zza = i;
         this.url = str;
         this.httpMethod = i2;

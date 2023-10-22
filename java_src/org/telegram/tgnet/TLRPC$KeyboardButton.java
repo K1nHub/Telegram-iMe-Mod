@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$KeyboardButton extends TLObject {
     public TLRPC$InputUser bot;
     public int button_id;
@@ -277,22 +277,7 @@ public abstract class TLRPC$KeyboardButton extends TLObject {
                 };
                 break;
             case 629866245:
-                tLRPC$KeyboardButton = new TLRPC$KeyboardButton() { // from class: org.telegram.tgnet.TLRPC$TL_keyboardButtonUrl
-                    public static int constructor = 629866245;
-
-                    @Override // org.telegram.tgnet.TLObject
-                    public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.text = abstractSerializedData2.readString(z2);
-                        this.url = abstractSerializedData2.readString(z2);
-                    }
-
-                    @Override // org.telegram.tgnet.TLObject
-                    public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeString(this.text);
-                        abstractSerializedData2.writeString(this.url);
-                    }
-                };
+                tLRPC$KeyboardButton = new TLRPC$TL_keyboardButtonUrl();
                 break;
             case 814112961:
                 tLRPC$KeyboardButton = new TLRPC$KeyboardButton() { // from class: org.telegram.tgnet.TLRPC$TL_keyboardButtonUserProfile

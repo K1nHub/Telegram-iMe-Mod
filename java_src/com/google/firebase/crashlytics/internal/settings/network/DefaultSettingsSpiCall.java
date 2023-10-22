@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DefaultSettingsSpiCall implements SettingsSpiCall {
     private final Logger logger;
     private final HttpRequestFactory requestFactory;
@@ -49,12 +49,12 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
             Map<String, String> queryParamsFor = getQueryParamsFor(settingsRequest);
             HttpGetRequest applyHeadersTo = applyHeadersTo(createHttpGetRequest(queryParamsFor), settingsRequest);
             Logger logger = this.logger;
-            logger.m746d("Requesting settings from " + this.url);
+            logger.m1038d("Requesting settings from " + this.url);
             Logger logger2 = this.logger;
-            logger2.m740v("Settings query params were: " + queryParamsFor);
+            logger2.m1032v("Settings query params were: " + queryParamsFor);
             return handleResponse(applyHeadersTo.execute());
         } catch (IOException e) {
-            this.logger.m743e("Settings request failed.", e);
+            this.logger.m1035e("Settings request failed.", e);
             return null;
         }
     }
@@ -62,12 +62,12 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
     JSONObject handleResponse(HttpResponse httpResponse) {
         int code = httpResponse.code();
         Logger logger = this.logger;
-        logger.m740v("Settings response code was: " + code);
+        logger.m1032v("Settings response code was: " + code);
         if (requestWasSuccessful(code)) {
             return getJsonObjectFrom(httpResponse.body());
         }
         Logger logger2 = this.logger;
-        logger2.m744e("Settings request failed; (status: " + code + ") from " + this.url);
+        logger2.m1036e("Settings request failed; (status: " + code + ") from " + this.url);
         return null;
     }
 
@@ -76,9 +76,9 @@ public class DefaultSettingsSpiCall implements SettingsSpiCall {
             return new JSONObject(str);
         } catch (Exception e) {
             Logger logger = this.logger;
-            logger.m737w("Failed to parse settings JSON from " + this.url, e);
+            logger.m1029w("Failed to parse settings JSON from " + this.url, e);
             Logger logger2 = this.logger;
-            logger2.m738w("Settings response " + str);
+            logger2.m1030w("Settings response " + str);
             return null;
         }
     }

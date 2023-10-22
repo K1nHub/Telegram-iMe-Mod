@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingValues.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingValues {
     private final FiatValue asFiat;
     private final BigDecimal asToken;

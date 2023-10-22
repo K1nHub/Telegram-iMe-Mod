@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzr extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzr> CREATOR = new zzs();
-    @SafeParcelable.Field(getter = "getDevicePublicKey", m797id = 1)
+    @SafeParcelable.Field(getter = "getDevicePublicKey", m1089id = 1)
     private final boolean zza;
 
     @SafeParcelable.Constructor
-    public zzr(@SafeParcelable.Param(m796id = 1) boolean z) {
+    public zzr(@SafeParcelable.Param(m1088id = 1) boolean z) {
         this.zza = ((Boolean) Preconditions.checkNotNull(Boolean.valueOf(z))).booleanValue();
     }
 

@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.crypto.simplex;
 
 import com.iMe.storage.R$string;
 /* compiled from: FiatCurrency.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum FiatCurrency implements Currency {
     USD(R$string.currency_short_dollar);
     

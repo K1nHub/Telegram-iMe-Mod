@@ -8,9 +8,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.DividerView;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     public final DividerView divider;
     public final AppCompatImageView imageIcon;
@@ -26,7 +26,6 @@ public final class ForkContentDetailsIconCellBinding implements ViewBinding {
         this.textValue = appCompatTextView2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -36,7 +35,7 @@ public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     }
 
     public static ForkContentDetailsIconCellBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_details_icon_cell, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_details_icon_cell, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -44,16 +43,16 @@ public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     }
 
     public static ForkContentDetailsIconCellBinding bind(View view) {
-        int i = C3473R.C3476id.divider;
+        int i = C3630R.C3633id.divider;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
-            i = C3473R.C3476id.image_icon;
+            i = C3630R.C3633id.image_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3473R.C3476id.text_title;
+                i = C3630R.C3633id.text_title;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3473R.C3476id.text_value;
+                    i = C3630R.C3633id.text_value;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkContentDetailsIconCellBinding((ConstraintLayout) view, dividerView, appCompatImageView, appCompatTextView, appCompatTextView2);

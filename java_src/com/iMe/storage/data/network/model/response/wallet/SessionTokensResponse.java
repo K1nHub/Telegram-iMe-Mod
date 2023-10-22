@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SessionTokensResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SessionTokensResponse {
     private final String refreshToken;
     private final String token;

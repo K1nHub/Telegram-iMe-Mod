@@ -1,9 +1,9 @@
 package com.iMe.storage.data.locale.prefs.model;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: RequestAppReviewMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RequestAppReviewMetadata {
     private int count;
     private long lastRequestTime;
@@ -24,7 +24,7 @@ public final class RequestAppReviewMetadata {
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.lastRequestTime) * 31) + this.count;
+        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.lastRequestTime) * 31) + this.count;
     }
 
     public String toString() {

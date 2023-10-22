@@ -17,7 +17,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum INITIAL uses exter
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: BinanceTransactionStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceTransactionStatus {
     private static final /* synthetic */ BinanceTransactionStatus[] $VALUES;
     public static final Companion Companion;
@@ -56,7 +56,7 @@ public final class BinanceTransactionStatus {
     }
 
     /* compiled from: BinanceTransactionStatus.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

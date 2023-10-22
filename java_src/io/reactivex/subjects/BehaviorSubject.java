@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BehaviorSubject<T> extends Subject<T> {
     long index;
     final ReadWriteLock lock;
@@ -172,7 +172,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BehaviorDisposable<T> implements Disposable, AppendOnlyLinkedArrayList.NonThrowingPredicate<Object> {
         volatile boolean cancelled;
         final Observer<? super T> downstream;

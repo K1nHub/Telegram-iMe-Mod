@@ -3,10 +3,12 @@ package kotlinx.coroutines;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlinx.coroutines.EventLoopImplBase;
 /* compiled from: DefaultExecutor.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DefaultExecutor extends EventLoopImplBase implements Runnable {
     public static final DefaultExecutor INSTANCE;
     private static final long KEEP_ALIVE_NANOS;
@@ -66,6 +68,11 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
     public void shutdown() {
         debugStatus = 4;
         super.shutdown();
+    }
+
+    @Override // kotlinx.coroutines.EventLoopImplBase, kotlinx.coroutines.Delay
+    public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
+        return scheduleInvokeOnTimeout(j, runnable);
     }
 
     @Override // java.lang.Runnable
@@ -147,6 +154,7 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
             return false;
         }
         debugStatus = 1;
+        Intrinsics.checkNotNull(this, "null cannot be cast to non-null type java.lang.Object");
         notifyAll();
         return true;
     }
@@ -155,6 +163,7 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
         if (isShutdownRequested()) {
             debugStatus = 3;
             resetAll();
+            Intrinsics.checkNotNull(this, "null cannot be cast to non-null type java.lang.Object");
             notifyAll();
         }
     }

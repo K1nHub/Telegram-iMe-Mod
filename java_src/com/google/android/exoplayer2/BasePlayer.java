@@ -28,17 +28,17 @@ public abstract class BasePlayer implements Player {
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem) {
-        setMediaItems(ImmutableList.m761of(mediaItem));
+        setMediaItems(ImmutableList.m1053of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem, long j) {
-        setMediaItems(ImmutableList.m761of(mediaItem), 0, j);
+        setMediaItems(ImmutableList.m1053of(mediaItem), 0, j);
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void setMediaItem(MediaItem mediaItem, boolean z) {
-        setMediaItems(ImmutableList.m761of(mediaItem), z);
+        setMediaItems(ImmutableList.m1053of(mediaItem), z);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -48,12 +48,12 @@ public abstract class BasePlayer implements Player {
 
     @Override // com.google.android.exoplayer2.Player
     public final void addMediaItem(int i, MediaItem mediaItem) {
-        addMediaItems(i, ImmutableList.m761of(mediaItem));
+        addMediaItems(i, ImmutableList.m1053of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player
     public final void addMediaItem(MediaItem mediaItem) {
-        addMediaItems(ImmutableList.m761of(mediaItem));
+        addMediaItems(ImmutableList.m1053of(mediaItem));
     }
 
     @Override // com.google.android.exoplayer2.Player

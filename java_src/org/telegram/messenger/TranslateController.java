@@ -26,8 +26,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
-import org.telegram.p043ui.Components.TranslateAlert2;
-import org.telegram.p043ui.RestrictedLanguagesSelectActivity;
+import org.telegram.p042ui.Components.TranslateAlert2;
+import org.telegram.p042ui.RestrictedLanguagesSelectActivity;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$ChatFull;
@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC$TL_textWithEntities;
 import org.telegram.tgnet.TLRPC$UserFull;
 import p033j$.util.Comparator;
 import p033j$.util.function.Function;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class TranslateController extends BaseController {
     private static final int GROUPING_TRANSLATIONS_TIMEOUT = 80;
     private static final int MAX_MESSAGES_PER_REQUEST = 20;
@@ -72,18 +72,18 @@ public class TranslateController extends BaseController {
     private static List<String> allLanguages = Arrays.asList("af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "zh-cn", "zh", "zh-tw", "co", "hr", "cs", "da", "nl", "en", "eo", "et", "fi", "fr", "fy", "gl", "ka", "de", "el", "gu", "ht", "ha", "haw", "he", "iw", "hi", "hmn", "hu", "is", "ig", TtmlNode.ATTR_ID, "ga", "it", "ja", "jv", "kn", "kk", "km", "rw", "ko", "ku", "ky", "lo", "la", "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "ny", "or", "ps", "fa", "pl", "pt", "pa", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tl", "tg", "ta", TtmlNode.TAG_TT, "te", "th", "tr", "tk", "uk", "ur", "ug", "uz", "vi", "cy", "xh", "yi", "yo", "zu");
     private static LinkedHashSet<String> suggestedLanguageCodes = null;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Language {
         public String code;
         public String displayName;
         public String ownDisplayName;
 
         /* renamed from: q */
-        public String f1494q;
+        public String f1572q;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class TranslatableDecision {
         Set<Integer> certainlyTranslatable = new HashSet();
         Set<Integer> unknown = new HashSet();
@@ -334,7 +334,7 @@ public class TranslateController extends BaseController {
                     str2 = "";
                 }
                 sb.append(str2);
-                language.f1494q = sb.toString().toLowerCase();
+                language.f1572q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
         }
@@ -385,17 +385,17 @@ public class TranslateController extends BaseController {
         try {
             linkedHashSet.add(LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         try {
             linkedHashSet.add(Resources.getSystem().getConfiguration().locale.getLanguage());
         } catch (Exception e2) {
-            FileLog.m67e(e2);
+            FileLog.m97e(e2);
         }
         try {
             linkedHashSet.addAll(RestrictedLanguagesSelectActivity.getRestrictedLanguages());
         } catch (Exception e3) {
-            FileLog.m67e(e3);
+            FileLog.m97e(e3);
         }
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
@@ -413,7 +413,7 @@ public class TranslateController extends BaseController {
                 }
             }
         } catch (Exception e4) {
-            FileLog.m67e(e4);
+            FileLog.m97e(e4);
         }
         suggestedLanguageCodes = linkedHashSet;
     }
@@ -439,7 +439,7 @@ public class TranslateController extends BaseController {
                     language.displayName = TranslateAlert2.capitalFirst(TranslateAlert2.languageName(language.code));
                     language.ownDisplayName = TranslateAlert2.capitalFirst(TranslateAlert2.systemLanguageName(language.code, true));
                     if (language.displayName != null) {
-                        language.f1494q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
+                        language.f1572q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
                     }
                 }
@@ -826,7 +826,7 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class PendingTranslation {
         ArrayList<Utilities.Callback2<TLRPC$TL_textWithEntities, String>> callbacks;
         int delay;
@@ -935,7 +935,7 @@ public class TranslateController extends BaseController {
         TLRPC$TL_messages_translateText tLRPC$TL_messages_translateText = new TLRPC$TL_messages_translateText();
         tLRPC$TL_messages_translateText.flags |= 1;
         tLRPC$TL_messages_translateText.peer = getMessagesController().getInputPeer(j);
-        tLRPC$TL_messages_translateText.f1643id = pendingTranslation.messageIds;
+        tLRPC$TL_messages_translateText.f1720id = pendingTranslation.messageIds;
         tLRPC$TL_messages_translateText.to_lang = pendingTranslation.language;
         int sendRequest = getConnectionsManager().sendRequest(tLRPC$TL_messages_translateText, new RequestDelegate() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda32
             @Override // org.telegram.tgnet.RequestDelegate
@@ -976,7 +976,7 @@ public class TranslateController extends BaseController {
             }
         } else if (tLRPC$TL_error != null && "TO_LANG_INVALID".equals(tLRPC$TL_error.text)) {
             toggleTranslatingDialog(j, false);
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3473R.string.TranslationFailedAlert2));
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3630R.string.TranslationFailedAlert2));
         } else {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 arrayList2.get(i2).run(null, pendingTranslation.language);
@@ -1131,7 +1131,7 @@ public class TranslateController extends BaseController {
                     try {
                         this.hideTranslateDialogs.add(Long.valueOf(Long.parseLong(str4)));
                     } catch (Exception e) {
-                        FileLog.m67e(e);
+                        FileLog.m97e(e);
                     }
                 }
             }
@@ -1173,7 +1173,7 @@ public class TranslateController extends BaseController {
             try {
                 hashSet.add("" + it.next());
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
         MessagesController.getMainSettings(this.currentAccount).edit().putString("translating_dialog_languages2", sb.toString()).putStringSet("hidden_translation_at", hashSet).apply();
@@ -1347,14 +1347,14 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class StoryKey {
         public long dialogId;
         public int storyId;
 
         public StoryKey(TLRPC$StoryItem tLRPC$StoryItem) {
             this.dialogId = tLRPC$StoryItem.dialogId;
-            this.storyId = tLRPC$StoryItem.f1557id;
+            this.storyId = tLRPC$StoryItem.f1635id;
         }
     }
 
@@ -1428,10 +1428,10 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x002b, code lost:
-        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.p043ui.Components.TranslateAlert2.getToLanguage()) != false) goto L17;
+        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.p042ui.Components.TranslateAlert2.getToLanguage()) != false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x003b, code lost:
-        if (org.telegram.p043ui.RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(r3.messageOwner.originalLanguage) == false) goto L17;
+        if (org.telegram.p042ui.RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(r3.messageOwner.originalLanguage) == false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x003f, code lost:
         if (r3.translated != false) goto L24;
@@ -1464,12 +1464,12 @@ public class TranslateController extends BaseController {
             org.telegram.tgnet.TLRPC$TL_textWithEntities r1 = r0.translatedText
             if (r1 == 0) goto L2d
             java.lang.String r0 = r0.translatedToLanguage
-            java.lang.String r1 = org.telegram.p043ui.Components.TranslateAlert2.getToLanguage()
+            java.lang.String r1 = org.telegram.p042ui.Components.TranslateAlert2.getToLanguage()
             boolean r0 = android.text.TextUtils.equals(r0, r1)
             if (r0 != 0) goto L3d
         L2d:
             if (r4 == 0) goto L43
-            java.util.HashSet r4 = org.telegram.p043ui.RestrictedLanguagesSelectActivity.getRestrictedLanguages()
+            java.util.HashSet r4 = org.telegram.p042ui.RestrictedLanguagesSelectActivity.getRestrictedLanguages()
             org.telegram.tgnet.TLRPC$Message r0 = r3.messageOwner
             java.lang.String r0 = r0.originalLanguage
             boolean r4 = r4.contains(r0)
@@ -1593,16 +1593,16 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class MessageKey {
         public long dialogId;
 
         /* renamed from: id */
-        public int f1495id;
+        public int f1573id;
 
         public MessageKey(MessageObject messageObject) {
             this.dialogId = messageObject.getDialogId();
-            this.f1495id = messageObject.getId();
+            this.f1573id = messageObject.getId();
         }
     }
 }

@@ -1,4 +1,4 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$EmailVerification extends TLObject {
 }

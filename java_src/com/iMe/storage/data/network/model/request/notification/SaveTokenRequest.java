@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SaveTokenRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SaveTokenRequest {
     private final List<String> allowances;
     private final String platform;

@@ -2,7 +2,7 @@ package retrofit2.adapter.rxjava2;
 
 import java.util.Objects;
 import retrofit2.Response;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class Result<T> {
     private final Throwable error;
     private final Response<T> response;

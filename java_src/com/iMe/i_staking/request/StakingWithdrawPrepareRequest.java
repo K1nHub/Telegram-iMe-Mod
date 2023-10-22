@@ -1,10 +1,10 @@
 package com.iMe.i_staking.request;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingWithdrawPrepareRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingWithdrawPrepareRequest {
     private final BigDecimal amount;
     private final boolean safe;
@@ -53,13 +53,13 @@ public final class StakingWithdrawPrepareRequest {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.stakingId) * 31) + this.amount.hashCode()) * 31;
+        int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.amount.hashCode()) * 31;
         boolean z = this.safe;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m724m + i;
+        return m1017m + i;
     }
 
     public String toString() {

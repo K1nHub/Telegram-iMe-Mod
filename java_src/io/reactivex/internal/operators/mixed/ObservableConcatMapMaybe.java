@@ -16,7 +16,7 @@ import io.reactivex.internal.util.ErrorMode;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
     final ErrorMode errorMode;
     final Function<? super T, ? extends MaybeSource<? extends R>> mapper;
@@ -38,7 +38,7 @@ public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
         this.source.subscribe(new ConcatMapMaybeMainObserver(observer, this.mapper, this.prefetch, this.errorMode));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ConcatMapMaybeMainObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         volatile boolean cancelled;
         volatile boolean done;
@@ -192,7 +192,7 @@ public final class ObservableConcatMapMaybe<T, R> extends Observable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class ConcatMapMaybeObserver<R> extends AtomicReference<Disposable> implements MaybeObserver<R> {
             final ConcatMapMaybeMainObserver<?, R> parent;
 

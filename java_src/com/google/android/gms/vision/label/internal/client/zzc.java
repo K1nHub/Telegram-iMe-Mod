@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.vision.label.ImageLabeler$$ExternalSyntheticThrowNSME0;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzc extends com.google.android.gms.internal.vision.zzb implements zzb {
     public zzc() {
         super("com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator");
@@ -30,6 +30,6 @@ public abstract class zzc extends com.google.android.gms.internal.vision.zzb imp
         }
         IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
         Parcelable.Creator<ImageLabelerOptions> creator = ImageLabelerOptions.CREATOR;
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m768m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1060m();
     }
 }

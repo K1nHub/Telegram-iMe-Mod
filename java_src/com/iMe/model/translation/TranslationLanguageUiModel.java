@@ -4,9 +4,9 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import java.util.Locale;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 /* compiled from: TranslationLanguageUiModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TranslationLanguageUiModel {
     public static final Companion Companion = new Companion(null);
     private final String displayLanguage;
@@ -74,7 +74,7 @@ public final class TranslationLanguageUiModel {
     }
 
     /* compiled from: TranslationLanguageUiModel.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -85,7 +85,7 @@ public final class TranslationLanguageUiModel {
 
         public final TranslationLanguageUiModel getAutoDetectionLanguage(ResourceManager resourceManager) {
             Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-            return new TranslationLanguageUiModel(null, resourceManager.getString(C3473R.string.translation_dialog_auto_language));
+            return new TranslationLanguageUiModel(null, resourceManager.getString(C3630R.string.translation_dialog_auto_language));
         }
 
         public final TranslationLanguageUiModel createByLangCode(String languageCode, String displayLangCode) {

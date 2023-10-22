@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.concurrent.Callable;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzkn implements Callable<String> {
     final /* synthetic */ zzp zza;
     final /* synthetic */ zzks zzb;

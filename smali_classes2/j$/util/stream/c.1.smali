@@ -18,7 +18,7 @@
 
 .field private f:I
 
-.field private g:Lj$/util/s;
+.field private g:Lj$/util/Spliterator;
 
 .field private h:Z
 
@@ -30,7 +30,7 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;IZ)V
+.method constructor <init>(Lj$/util/Spliterator;IZ)V
     .locals 1
 
     invoke-direct {p0}, Lj$/util/stream/y2;-><init>()V
@@ -39,7 +39,7 @@
 
     iput-object v0, p0, Lj$/util/stream/c;->b:Lj$/util/stream/c;
 
-    iput-object p1, p0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     iput-object p0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
 
@@ -103,7 +103,7 @@
 
     iput-object p2, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->G0()Z
+    invoke-virtual {p0}, Lj$/util/stream/c;->F0()Z
 
     move-result v1
 
@@ -130,18 +130,18 @@
     throw p1
 .end method
 
-.method private I0(I)Lj$/util/s;
+.method private H0(I)Lj$/util/Spliterator;
     .locals 7
 
     iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
 
-    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     if-eqz v1, :cond_5
 
     const/4 v2, 0x0
 
-    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     .line 1
     iget-boolean v2, v0, Lj$/util/stream/c;->k:Z
@@ -162,7 +162,7 @@
 
     iget v4, v2, Lj$/util/stream/c;->c:I
 
-    invoke-virtual {v2}, Lj$/util/stream/c;->G0()Z
+    invoke-virtual {v2}, Lj$/util/stream/c;->F0()Z
 
     move-result v5
 
@@ -185,13 +185,13 @@
     and-int/2addr v4, v5
 
     :cond_0
-    invoke-virtual {v2, v0, v1}, Lj$/util/stream/c;->F0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/s;
+    invoke-virtual {v2, v0, v1}, Lj$/util/stream/c;->E0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v1
 
     const/16 v5, 0x40
 
-    invoke-interface {v1, v5}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {v1, v5}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v5
 
@@ -270,13 +270,10 @@
 
 
 # virtual methods
-.method abstract A0(Lj$/util/s;Lj$/util/stream/m3;)V
+.method abstract A0()Lj$/util/stream/e4;
 .end method
 
-.method abstract B0()Lj$/util/stream/e4;
-.end method
-
-.method final C0()Z
+.method final B0()Z
     .locals 2
 
     sget-object v0, Lj$/util/stream/d4;->ORDERED:Lj$/util/stream/d4;
@@ -290,19 +287,19 @@
     return v0
 .end method
 
-.method public synthetic D0()Lj$/util/s;
+.method public synthetic C0()Lj$/util/Spliterator;
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lj$/util/stream/c;->I0(I)Lj$/util/s;
+    invoke-direct {p0, v0}, Lj$/util/stream/c;->H0(I)Lj$/util/Spliterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+.method D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -314,29 +311,29 @@
     throw p1
 .end method
 
-.method F0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/s;
+.method E0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/Spliterator;
     .locals 1
 
     sget-object v0, Lj$/util/stream/a;->a:Lj$/util/stream/a;
 
-    invoke-virtual {p0, p1, p2, v0}, Lj$/util/stream/c;->E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p0, p1, p2, v0}, Lj$/util/stream/c;->D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {p1}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method abstract G0()Z
+.method abstract F0()Z
 .end method
 
-.method abstract H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method abstract G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
 .end method
 
-.method final J0()Lj$/util/s;
+.method final I0()Lj$/util/Spliterator;
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
@@ -351,13 +348,13 @@
 
     iput-boolean v1, p0, Lj$/util/stream/c;->h:Z
 
-    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     return-object v1
 
@@ -387,7 +384,7 @@
     throw v0
 .end method
 
-.method abstract K0(Lj$/util/stream/y2;Lj$/util/function/y;Z)Lj$/util/s;
+.method abstract J0(Lj$/util/stream/y2;Lj$/util/function/x;Z)Lj$/util/Spliterator;
 .end method
 
 .method public close()V
@@ -399,7 +396,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     iget-object v1, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
 
@@ -425,7 +422,7 @@
     return v0
 .end method
 
-.method final n0(Lj$/util/stream/m3;Lj$/util/s;)V
+.method final m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
     .locals 2
 
     .line 1
@@ -444,26 +441,26 @@
 
     if-nez v0, :cond_0
 
-    invoke-interface {p2}, Lj$/util/s;->getExactSizeIfKnown()J
+    invoke-interface {p2}, Lj$/util/Spliterator;->getExactSizeIfKnown()J
 
     move-result-wide v0
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
-    invoke-interface {p2, p1}, Lj$/util/s;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {p2, p1}, Lj$/util/Spliterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p1}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p1}, Lj$/util/stream/m3;->l()V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/c;->o0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     :goto_0
     return-void
 .end method
 
-.method final o0(Lj$/util/stream/m3;Lj$/util/s;)V
+.method final n0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
     .locals 3
 
     move-object v0, p0
@@ -478,17 +475,61 @@
     goto :goto_0
 
     :cond_0
-    invoke-interface {p2}, Lj$/util/s;->getExactSizeIfKnown()J
+    invoke-interface {p2}, Lj$/util/Spliterator;->getExactSizeIfKnown()J
 
     move-result-wide v1
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->m(J)V
 
-    invoke-virtual {v0, p2, p1}, Lj$/util/stream/c;->A0(Lj$/util/s;Lj$/util/stream/m3;)V
+    invoke-virtual {v0, p2, p1}, Lj$/util/stream/c;->z0(Lj$/util/Spliterator;Lj$/util/stream/m3;)V
 
-    invoke-interface {p1}, Lj$/util/stream/m3;->m()V
+    invoke-interface {p1}, Lj$/util/stream/m3;->l()V
 
     return-void
+.end method
+
+.method final o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
+
+    iget-boolean v0, v0, Lj$/util/stream/c;->k:Z
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0, p0, p1, p2, p3}, Lj$/util/stream/c;->y0(Lj$/util/stream/y2;Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lj$/util/stream/c;->p0(Lj$/util/Spliterator;)J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, v0, v1, p3}, Lj$/util/stream/y2;->s0(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
+
+    move-result-object p2
+
+    .line 3
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    invoke-virtual {p0, p2}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+
+    move-result-object p3
+
+    invoke-virtual {p0, p3, p1}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
+
+    .line 5
+    invoke-interface {p2}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public onClose(Ljava/lang/Runnable;)Lj$/util/stream/g;
@@ -517,63 +558,7 @@
     return-object p0
 .end method
 
-.method final p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
-
-    iget-boolean v0, v0, Lj$/util/stream/c;->k:Z
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-virtual {p0, p0, p1, p2, p3}, Lj$/util/stream/c;->z0(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lj$/util/stream/c;->q0(Lj$/util/s;)J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, v0, v1, p3}, Lj$/util/stream/y2;->t0(JLj$/util/function/m;)Lj$/util/stream/s1;
-
-    move-result-object p2
-
-    .line 3
-    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    invoke-virtual {p0, p2}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
-
-    move-result-object p3
-
-    invoke-virtual {p0, p3, p1}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
-
-    .line 5
-    invoke-interface {p2}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final parallel()Lj$/util/stream/g;
-    .locals 2
-
-    iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lj$/util/stream/c;->k:Z
-
-    return-object p0
-.end method
-
-.method final q0(Lj$/util/s;)J
+.method final p0(Lj$/util/Spliterator;)J
     .locals 2
 
     sget-object v0, Lj$/util/stream/d4;->SIZED:Lj$/util/stream/d4;
@@ -588,7 +573,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-interface {p1}, Lj$/util/s;->getExactSizeIfKnown()J
+    invoke-interface {p1}, Lj$/util/Spliterator;->getExactSizeIfKnown()J
 
     move-result-wide v0
 
@@ -601,7 +586,19 @@
     return-wide v0
 .end method
 
-.method final r0()Lj$/util/stream/e4;
+.method public final parallel()Lj$/util/stream/g;
+    .locals 2
+
+    iget-object v0, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lj$/util/stream/c;->k:Z
+
+    return-object p0
+.end method
+
+.method final q0()Lj$/util/stream/e4;
     .locals 2
 
     move-object v0, p0
@@ -616,14 +613,14 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lj$/util/stream/c;->B0()Lj$/util/stream/e4;
+    invoke-virtual {v0}, Lj$/util/stream/c;->A0()Lj$/util/stream/e4;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method final s0()I
+.method final r0()I
     .locals 1
 
     iget v0, p0, Lj$/util/stream/c;->f:I
@@ -643,7 +640,7 @@
     return-object p0
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public spliterator()Lj$/util/Spliterator;
     .locals 3
 
     iget-boolean v0, p0, Lj$/util/stream/c;->h:Z
@@ -658,13 +655,13 @@
 
     if-ne p0, v0, :cond_1
 
-    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iget-object v1, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/s;
+    iput-object v2, v0, Lj$/util/stream/c;->g:Lj$/util/Spliterator;
 
     return-object v1
 
@@ -686,7 +683,7 @@
     iget-boolean v0, v0, Lj$/util/stream/c;->k:Z
 
     .line 2
-    invoke-virtual {p0, p0, v1, v0}, Lj$/util/stream/c;->K0(Lj$/util/stream/y2;Lj$/util/function/y;Z)Lj$/util/s;
+    invoke-virtual {p0, p0, v1, v0}, Lj$/util/stream/c;->J0(Lj$/util/stream/y2;Lj$/util/function/x;Z)Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -702,23 +699,23 @@
     throw v0
 .end method
 
-.method final u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+.method final t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
     .locals 1
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {p0, p1}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {p0, p1}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0, p2}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {p0, v0, p2}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     return-object p1
 .end method
 
-.method final v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+.method final u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 2
 
     .line 1
@@ -736,7 +733,7 @@
 
     iget v1, v1, Lj$/util/stream/c;->f:I
 
-    invoke-virtual {v0, v1, p1}, Lj$/util/stream/c;->H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v0, v1, p1}, Lj$/util/stream/c;->G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object p1
 
@@ -748,7 +745,7 @@
     return-object p1
 .end method
 
-.method final w0(Lj$/util/s;)Lj$/util/s;
+.method final v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
     .locals 1
 
     iget v0, p0, Lj$/util/stream/c;->e:I
@@ -760,7 +757,7 @@
     :cond_0
     new-instance v0, Lj$/util/stream/b;
 
-    invoke-direct {v0, p1}, Lj$/util/stream/b;-><init>(Lj$/util/s;)V
+    invoke-direct {v0, p1}, Lj$/util/stream/b;-><init>(Lj$/util/Spliterator;)V
 
     .line 1
     iget-object p1, p0, Lj$/util/stream/c;->a:Lj$/util/stream/c;
@@ -768,14 +765,14 @@
     iget-boolean p1, p1, Lj$/util/stream/c;->k:Z
 
     .line 2
-    invoke-virtual {p0, p0, v0, p1}, Lj$/util/stream/c;->K0(Lj$/util/stream/y2;Lj$/util/function/y;Z)Lj$/util/s;
+    invoke-virtual {p0, p0, v0, p1}, Lj$/util/stream/c;->J0(Lj$/util/stream/y2;Lj$/util/function/x;Z)Lj$/util/Spliterator;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method final x0(Lj$/util/stream/N4;)Ljava/lang/Object;
+.method final w0(Lj$/util/stream/N4;)Ljava/lang/Object;
     .locals 1
 
     iget-boolean v0, p0, Lj$/util/stream/c;->h:Z
@@ -798,11 +795,11 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Lj$/util/stream/c;->I0(I)Lj$/util/s;
+    invoke-direct {p0, v0}, Lj$/util/stream/c;->H0(I)Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-interface {p1, p0, v0}, Lj$/util/stream/N4;->c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+    invoke-interface {p1, p0, v0}, Lj$/util/stream/N4;->c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -813,11 +810,11 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Lj$/util/stream/c;->I0(I)Lj$/util/s;
+    invoke-direct {p0, v0}, Lj$/util/stream/c;->H0(I)Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-interface {p1, p0, v0}, Lj$/util/stream/N4;->d(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+    invoke-interface {p1, p0, v0}, Lj$/util/stream/N4;->d(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -834,7 +831,7 @@
     throw p1
 .end method
 
-.method final y0(Lj$/util/function/m;)Lj$/util/stream/A1;
+.method final x0(Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 3
 
     iget-boolean v0, p0, Lj$/util/stream/c;->h:Z
@@ -859,7 +856,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->G0()Z
+    invoke-virtual {p0}, Lj$/util/stream/c;->F0()Z
 
     move-result v1
 
@@ -869,22 +866,22 @@
 
     iget-object v0, p0, Lj$/util/stream/c;->b:Lj$/util/stream/c;
 
-    invoke-direct {v0, v2}, Lj$/util/stream/c;->I0(I)Lj$/util/s;
+    invoke-direct {v0, v2}, Lj$/util/stream/c;->H0(I)Lj$/util/Spliterator;
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1, p1}, Lj$/util/stream/c;->E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p0, v0, v1, p1}, Lj$/util/stream/c;->D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
     return-object p1
 
     :cond_0
-    invoke-direct {p0, v2}, Lj$/util/stream/c;->I0(I)Lj$/util/s;
+    invoke-direct {p0, v2}, Lj$/util/stream/c;->H0(I)Lj$/util/Spliterator;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v0, p1}, Lj$/util/stream/c;->p0(Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-virtual {p0, v1, v0, p1}, Lj$/util/stream/c;->o0(Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p1
 
@@ -900,5 +897,8 @@
     throw p1
 .end method
 
-.method abstract z0(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+.method abstract y0(Lj$/util/stream/y2;Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
+.end method
+
+.method abstract z0(Lj$/util/Spliterator;Lj$/util/stream/m3;)V
 .end method

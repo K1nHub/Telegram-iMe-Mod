@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_groupCallDiscarded extends TLRPC$GroupCall {
     public static int constructor = 2004925620;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1537id = abstractSerializedData.readInt64(z);
+        this.f1615id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.duration = abstractSerializedData.readInt32(z);
     }
@@ -13,7 +13,7 @@ public class TLRPC$TL_groupCallDiscarded extends TLRPC$GroupCall {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1537id);
+        abstractSerializedData.writeInt64(this.f1615id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.duration);
     }

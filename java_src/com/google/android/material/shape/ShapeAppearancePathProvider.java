@@ -6,7 +6,7 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.os.Build;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ShapeAppearancePathProvider {
     private final ShapePath[] cornerPaths = new ShapePath[4];
     private final Matrix[] cornerTransforms = new Matrix[4];
@@ -21,13 +21,12 @@ public class ShapeAppearancePathProvider {
     private final Path cornerPath = new Path();
     private boolean edgeIntersectionCheckEnabled = true;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
-    public static class Lazy {
+    /* loaded from: classes3.dex */
+    private static class Lazy {
         static final ShapeAppearancePathProvider INSTANCE = new ShapeAppearancePathProvider();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface PathListener {
         void onCornerPathCreated(ShapePath shapePath, Matrix matrix, int i);
 
@@ -234,7 +233,7 @@ public class ShapeAppearancePathProvider {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ShapeAppearancePathSpec {
         public final RectF bounds;
         public final float interpolation;

@@ -2,7 +2,7 @@ package io.reactivex.internal.disposables;
 
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SequentialDisposable extends AtomicReference<Disposable> implements Disposable {
     public SequentialDisposable() {
     }

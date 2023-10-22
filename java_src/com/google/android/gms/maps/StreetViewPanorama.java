@@ -13,30 +13,30 @@ import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 import com.google.android.gms.maps.model.StreetViewSource;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class StreetViewPanorama {
     private final IStreetViewPanoramaDelegate zza;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnStreetViewPanoramaCameraChangeListener {
         void onStreetViewPanoramaCameraChange(StreetViewPanoramaCamera streetViewPanoramaCamera);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnStreetViewPanoramaChangeListener {
         void onStreetViewPanoramaChange(StreetViewPanoramaLocation streetViewPanoramaLocation);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnStreetViewPanoramaClickListener {
         void onStreetViewPanoramaClick(StreetViewPanoramaOrientation streetViewPanoramaOrientation);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnStreetViewPanoramaLongClickListener {
         void onStreetViewPanoramaLongClick(StreetViewPanoramaOrientation streetViewPanoramaOrientation);
     }

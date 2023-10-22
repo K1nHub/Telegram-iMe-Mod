@@ -164,7 +164,7 @@ public final class Cea608Decoder extends CeaDecoder {
             this.selectedChannel = 1;
             this.selectedField = 1;
         } else {
-            Log.m814w(TAG, "Invalid channel. Defaulting to CC1.");
+            Log.m1106w(TAG, "Invalid channel. Defaulting to CC1.");
             this.selectedChannel = 0;
             this.selectedField = 0;
         }

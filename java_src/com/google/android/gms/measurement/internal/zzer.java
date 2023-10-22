@@ -11,7 +11,7 @@ import java.net.URLConnection;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzer extends zzki {
     private final SSLSocketFactory zza;
 

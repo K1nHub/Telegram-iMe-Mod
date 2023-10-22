@@ -2,7 +2,7 @@ package com.google.android.material.internal;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TextWatcherAdapter implements TextWatcher {
     @Override // android.text.TextWatcher
     public void afterTextChanged(Editable editable) {

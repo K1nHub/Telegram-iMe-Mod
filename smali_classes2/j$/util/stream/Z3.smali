@@ -57,7 +57,7 @@
     return-void
 .end method
 
-.method private y()V
+.method private x()V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/Z3;->f:[Ljava/lang/Object;
@@ -66,7 +66,7 @@
 
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->z(I)[Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->y(I)[Ljava/lang/Object;
 
     move-result-object v1
 
@@ -88,71 +88,6 @@
 
 
 # virtual methods
-.method protected A()V
-    .locals 4
-
-    iget v0, p0, Lj$/util/stream/e;->b:I
-
-    iget-object v1, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
-
-    invoke-virtual {p0, v1}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_2
-
-    invoke-direct {p0}, Lj$/util/stream/Z3;->y()V
-
-    iget v0, p0, Lj$/util/stream/e;->c:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iget-object v2, p0, Lj$/util/stream/Z3;->f:[Ljava/lang/Object;
-
-    array-length v3, v2
-
-    if-ge v1, v3, :cond_0
-
-    add-int/lit8 v0, v0, 0x1
-
-    aget-object v0, v2, v0
-
-    if-nez v0, :cond_1
-
-    .line 1
-    :cond_0
-    invoke-virtual {p0}, Lj$/util/stream/Z3;->v()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    invoke-virtual {p0, v0, v1}, Lj$/util/stream/Z3;->x(J)V
-
-    :cond_1
-    const/4 v0, 0x0
-
-    .line 2
-    iput v0, p0, Lj$/util/stream/e;->b:I
-
-    iget v0, p0, Lj$/util/stream/e;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lj$/util/stream/e;->c:I
-
-    iget-object v1, p0, Lj$/util/stream/Z3;->f:[Ljava/lang/Object;
-
-    aget-object v0, v1, v0
-
-    iput-object v0, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
-
-    :cond_2
-    return-void
-.end method
-
 .method public abstract c(I)Ljava/lang/Object;
 .end method
 
@@ -194,7 +129,7 @@
 
     add-long/2addr v2, v0
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, p1}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v4
 
@@ -236,7 +171,7 @@
 
     aget-object v2, v2, v0
 
-    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v2
 
@@ -246,7 +181,7 @@
 
     aget-object v2, v2, v0
 
-    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v2
 
@@ -332,11 +267,11 @@
 
     aget-object v2, v2, v1
 
-    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v2}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v2
 
-    invoke-virtual {p0, v3, v0, v2, p1}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;IILjava/lang/Object;)V
+    invoke-virtual {p0, v3, v0, v2, p1}, Lj$/util/stream/Z3;->s(Ljava/lang/Object;IILjava/lang/Object;)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -347,35 +282,35 @@
 
     iget v2, p0, Lj$/util/stream/e;->b:I
 
-    invoke-virtual {p0, v1, v0, v2, p1}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;IILjava/lang/Object;)V
+    invoke-virtual {p0, v1, v0, v2, p1}, Lj$/util/stream/Z3;->s(Ljava/lang/Object;IILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public abstract spliterator()Lj$/util/s;
+.method protected abstract s(Ljava/lang/Object;IILjava/lang/Object;)V
+.end method
+
+.method public abstract spliterator()Lj$/util/Spliterator;
 .end method
 
 .method public synthetic spliterator()Ljava/util/Spliterator;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/Z3;->spliterator()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/Z3;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/s;)Ljava/util/Spliterator;
+    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected abstract t(Ljava/lang/Object;IILjava/lang/Object;)V
+.method protected abstract t(Ljava/lang/Object;)I
 .end method
 
-.method protected abstract u(Ljava/lang/Object;)I
-.end method
-
-.method protected v()J
+.method protected u()J
     .locals 4
 
     iget v0, p0, Lj$/util/stream/e;->c:I
@@ -384,7 +319,7 @@
 
     iget-object v0, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -401,7 +336,7 @@
 
     aget-object v0, v1, v0
 
-    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -413,7 +348,7 @@
     return-wide v0
 .end method
 
-.method protected w(J)I
+.method protected v(J)I
     .locals 6
 
     iget v0, p0, Lj$/util/stream/e;->c:I
@@ -465,7 +400,7 @@
 
     aget-object v0, v0, v1
 
-    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -507,10 +442,10 @@
     throw v0
 .end method
 
-.method protected final x(J)V
+.method protected final w(J)V
     .locals 10
 
-    invoke-virtual {p0}, Lj$/util/stream/Z3;->v()J
+    invoke-virtual {p0}, Lj$/util/stream/Z3;->u()J
 
     move-result-wide v0
 
@@ -518,7 +453,7 @@
 
     if-lez v2, :cond_1
 
-    invoke-direct {p0}, Lj$/util/stream/Z3;->y()V
+    invoke-direct {p0}, Lj$/util/stream/Z3;->x()V
 
     iget v2, p0, Lj$/util/stream/e;->c:I
 
@@ -554,7 +489,7 @@
     iput-object v3, p0, Lj$/util/stream/e;->d:[J
 
     :cond_0
-    invoke-virtual {p0, v2}, Lj$/util/stream/e;->s(I)I
+    invoke-virtual {p0, v2}, Lj$/util/stream/e;->r(I)I
 
     move-result v3
 
@@ -576,7 +511,7 @@
 
     aget-object v5, v8, v5
 
-    invoke-virtual {p0, v5}, Lj$/util/stream/Z3;->u(Ljava/lang/Object;)I
+    invoke-virtual {p0, v5}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
 
     move-result v5
 
@@ -596,5 +531,70 @@
     return-void
 .end method
 
-.method protected abstract z(I)[Ljava/lang/Object;
+.method protected abstract y(I)[Ljava/lang/Object;
+.end method
+
+.method protected z()V
+    .locals 4
+
+    iget v0, p0, Lj$/util/stream/e;->b:I
+
+    iget-object v1, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
+
+    invoke-virtual {p0, v1}, Lj$/util/stream/Z3;->t(Ljava/lang/Object;)I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_2
+
+    invoke-direct {p0}, Lj$/util/stream/Z3;->x()V
+
+    iget v0, p0, Lj$/util/stream/e;->c:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    iget-object v2, p0, Lj$/util/stream/Z3;->f:[Ljava/lang/Object;
+
+    array-length v3, v2
+
+    if-ge v1, v3, :cond_0
+
+    add-int/lit8 v0, v0, 0x1
+
+    aget-object v0, v2, v0
+
+    if-nez v0, :cond_1
+
+    .line 1
+    :cond_0
+    invoke-virtual {p0}, Lj$/util/stream/Z3;->u()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    invoke-virtual {p0, v0, v1}, Lj$/util/stream/Z3;->w(J)V
+
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 2
+    iput v0, p0, Lj$/util/stream/e;->b:I
+
+    iget v0, p0, Lj$/util/stream/e;->c:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lj$/util/stream/e;->c:I
+
+    iget-object v1, p0, Lj$/util/stream/Z3;->f:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    iput-object v0, p0, Lj$/util/stream/Z3;->e:Ljava/lang/Object;
+
+    :cond_2
+    return-void
 .end method

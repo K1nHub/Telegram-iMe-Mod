@@ -2,14 +2,14 @@ package com.iMe.model.staking;
 
 import com.iMe.fork.utils.TabbedFragmentPage;
 import com.iMe.model.common.NavigationTab;
-import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p030ui.base.mvp.MvpFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingNavigationTab.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingNavigationTab extends NavigationTab<MvpFragment> {
 
     /* renamed from: id */
-    private final int f359id;
+    private final int f292id;
     private final TabbedFragmentPage<MvpFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class StakingNavigationTab extends NavigationTab<MvpFragment> {
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f359id;
+        return this.f292id;
     }
 
     public final TabbedFragmentPage<MvpFragment> getPage() {
@@ -68,7 +68,7 @@ public final class StakingNavigationTab extends NavigationTab<MvpFragment> {
     public StakingNavigationTab(int i, TabbedFragmentPage<MvpFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f359id = i;
+        this.f292id = i;
         this.page = page;
     }
 }

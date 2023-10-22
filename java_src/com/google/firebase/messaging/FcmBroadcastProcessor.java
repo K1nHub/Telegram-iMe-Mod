@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FcmBroadcastProcessor {
     private static WithinAppServiceConnection fcmServiceConn;
     private static final Object lock = new Object();

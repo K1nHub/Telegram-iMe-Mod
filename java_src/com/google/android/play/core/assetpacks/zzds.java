@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import java.util.Arrays;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzds {
     private byte[] zza = new byte[4096];
     private int zzb;

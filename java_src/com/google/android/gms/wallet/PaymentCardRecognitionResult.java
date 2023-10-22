@@ -9,12 +9,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerializer;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentCardRecognitionCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PaymentCardRecognitionResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentCardRecognitionResult> CREATOR = new zzw();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     String zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     CreditCardExpirationDate zzb;
 
     PaymentCardRecognitionResult() {
@@ -42,7 +42,7 @@ public final class PaymentCardRecognitionResult extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentCardRecognitionResult(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) CreditCardExpirationDate creditCardExpirationDate) {
+    public PaymentCardRecognitionResult(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) CreditCardExpirationDate creditCardExpirationDate) {
         this.zza = str;
         this.zzb = creditCardExpirationDate;
     }

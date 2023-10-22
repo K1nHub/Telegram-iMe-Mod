@@ -1,7 +1,7 @@
 package com.google.android.material;
 
-import com.iMe.android.R;
-/* loaded from: classes4.dex */
+import com.iMe.android.web.R;
+/* loaded from: classes3.dex */
 public final class R$styleable {
     public static final int AppBarLayout_Layout_layout_scrollFlags = 0;
     public static final int AppBarLayout_Layout_layout_scrollInterpolator = 1;
@@ -13,13 +13,6 @@ public final class R$styleable {
     public static final int AppBarLayout_liftOnScroll = 5;
     public static final int AppBarLayout_liftOnScrollTargetViewId = 6;
     public static final int AppBarLayout_statusBarForeground = 7;
-    public static final int Badge_backgroundColor = 0;
-    public static final int Badge_badgeGravity = 1;
-    public static final int Badge_badgeTextColor = 2;
-    public static final int Badge_horizontalOffset = 3;
-    public static final int Badge_maxCharacterCount = 4;
-    public static final int Badge_number = 5;
-    public static final int Badge_verticalOffset = 6;
     public static final int BottomSheetBehavior_Layout_android_elevation = 1;
     public static final int BottomSheetBehavior_Layout_android_maxWidth = 0;
     public static final int BottomSheetBehavior_Layout_backgroundTint = 2;
@@ -196,32 +189,6 @@ public final class R$styleable {
     public static final int SnackbarLayout_backgroundTintMode = 5;
     public static final int SnackbarLayout_elevation = 6;
     public static final int SnackbarLayout_maxActionInlineWidth = 7;
-    public static final int TabLayout_tabBackground = 0;
-    public static final int TabLayout_tabContentStart = 1;
-    public static final int TabLayout_tabGravity = 2;
-    public static final int TabLayout_tabIconTint = 3;
-    public static final int TabLayout_tabIconTintMode = 4;
-    public static final int TabLayout_tabIndicator = 5;
-    public static final int TabLayout_tabIndicatorAnimationDuration = 6;
-    public static final int TabLayout_tabIndicatorAnimationMode = 7;
-    public static final int TabLayout_tabIndicatorColor = 8;
-    public static final int TabLayout_tabIndicatorFullWidth = 9;
-    public static final int TabLayout_tabIndicatorGravity = 10;
-    public static final int TabLayout_tabIndicatorHeight = 11;
-    public static final int TabLayout_tabInlineLabel = 12;
-    public static final int TabLayout_tabMaxWidth = 13;
-    public static final int TabLayout_tabMinWidth = 14;
-    public static final int TabLayout_tabMode = 15;
-    public static final int TabLayout_tabPadding = 16;
-    public static final int TabLayout_tabPaddingBottom = 17;
-    public static final int TabLayout_tabPaddingEnd = 18;
-    public static final int TabLayout_tabPaddingStart = 19;
-    public static final int TabLayout_tabPaddingTop = 20;
-    public static final int TabLayout_tabRippleColor = 21;
-    public static final int TabLayout_tabSelectedTextColor = 22;
-    public static final int TabLayout_tabTextAppearance = 23;
-    public static final int TabLayout_tabTextColor = 24;
-    public static final int TabLayout_tabUnboundedRipple = 25;
     public static final int TextAppearance_android_fontFamily = 10;
     public static final int TextAppearance_android_shadowColor = 6;
     public static final int TextAppearance_android_shadowDx = 7;
@@ -304,7 +271,6 @@ public final class R$styleable {
     public static final int ThemeEnforcement_enforceTextAppearance = 2;
     public static final int[] AppBarLayout = {16842964, 16843919, 16844096, R.attr.elevation, R.attr.expanded, R.attr.liftOnScroll, R.attr.liftOnScrollTargetViewId, R.attr.statusBarForeground};
     public static final int[] AppBarLayout_Layout = {R.attr.layout_scrollFlags, R.attr.layout_scrollInterpolator};
-    public static final int[] Badge = {R.attr.backgroundColor, R.attr.badgeGravity, R.attr.badgeTextColor, R.attr.horizontalOffset, R.attr.maxCharacterCount, R.attr.number, R.attr.verticalOffset};
     public static final int[] BottomSheetBehavior_Layout = {16843039, 16843840, R.attr.backgroundTint, R.attr.behavior_draggable, R.attr.behavior_expandedOffset, R.attr.behavior_fitToContents, R.attr.behavior_halfExpandedRatio, R.attr.behavior_hideable, R.attr.behavior_peekHeight, R.attr.behavior_saveFlags, R.attr.behavior_skipCollapsed, R.attr.gestureInsetBottomIgnored, R.attr.paddingBottomSystemWindowInsets, R.attr.paddingLeftSystemWindowInsets, R.attr.paddingRightSystemWindowInsets, R.attr.paddingTopSystemWindowInsets, R.attr.shapeAppearance, R.attr.shapeAppearanceOverlay};
     public static final int[] Chip = {16842804, 16842901, 16842904, 16842923, 16843039, 16843087, 16843237, R.attr.checkedIcon, R.attr.checkedIconEnabled, R.attr.checkedIconTint, R.attr.checkedIconVisible, R.attr.chipBackgroundColor, R.attr.chipCornerRadius, R.attr.chipEndPadding, R.attr.chipIcon, R.attr.chipIconEnabled, R.attr.chipIconSize, R.attr.chipIconTint, R.attr.chipIconVisible, R.attr.chipMinHeight, R.attr.chipMinTouchTargetSize, R.attr.chipStartPadding, R.attr.chipStrokeColor, R.attr.chipStrokeWidth, R.attr.chipSurfaceColor, R.attr.closeIcon, R.attr.closeIconEnabled, R.attr.closeIconEndPadding, R.attr.closeIconSize, R.attr.closeIconStartPadding, R.attr.closeIconTint, R.attr.closeIconVisible, R.attr.ensureMinTouchTargetSize, R.attr.hideMotionSpec, R.attr.iconEndPadding, R.attr.iconStartPadding, R.attr.rippleColor, R.attr.shapeAppearance, R.attr.shapeAppearanceOverlay, R.attr.showMotionSpec, R.attr.textEndPadding, R.attr.textStartPadding};
     public static final int[] ChipGroup = {R.attr.checkedChip, R.attr.chipSpacing, R.attr.chipSpacingHorizontal, R.attr.chipSpacingVertical, R.attr.selectionRequired, R.attr.singleLine, R.attr.singleSelection};
@@ -331,7 +297,6 @@ public final class R$styleable {
     public static final int[] ScrollingViewBehavior_Layout = {R.attr.behavior_overlapTop};
     public static final int[] ShapeAppearance = {R.attr.cornerFamily, R.attr.cornerFamilyBottomLeft, R.attr.cornerFamilyBottomRight, R.attr.cornerFamilyTopLeft, R.attr.cornerFamilyTopRight, R.attr.cornerSize, R.attr.cornerSizeBottomLeft, R.attr.cornerSizeBottomRight, R.attr.cornerSizeTopLeft, R.attr.cornerSizeTopRight};
     public static final int[] SnackbarLayout = {16843039, R.attr.actionTextColorAlpha, R.attr.animationMode, R.attr.backgroundOverlayColorAlpha, R.attr.backgroundTint, R.attr.backgroundTintMode, R.attr.elevation, R.attr.maxActionInlineWidth};
-    public static final int[] TabLayout = {R.attr.tabBackground, R.attr.tabContentStart, R.attr.tabGravity, R.attr.tabIconTint, R.attr.tabIconTintMode, R.attr.tabIndicator, R.attr.tabIndicatorAnimationDuration, R.attr.tabIndicatorAnimationMode, R.attr.tabIndicatorColor, R.attr.tabIndicatorFullWidth, R.attr.tabIndicatorGravity, R.attr.tabIndicatorHeight, R.attr.tabInlineLabel, R.attr.tabMaxWidth, R.attr.tabMinWidth, R.attr.tabMode, R.attr.tabPadding, R.attr.tabPaddingBottom, R.attr.tabPaddingEnd, R.attr.tabPaddingStart, R.attr.tabPaddingTop, R.attr.tabRippleColor, R.attr.tabSelectedTextColor, R.attr.tabTextAppearance, R.attr.tabTextColor, R.attr.tabUnboundedRipple};
     public static final int[] TextAppearance = {16842901, 16842902, 16842903, 16842904, 16842906, 16842907, 16843105, 16843106, 16843107, 16843108, 16843692, 16844165, R.attr.fontFamily, R.attr.fontVariationSettings, R.attr.textAllCaps, R.attr.textLocale};
     public static final int[] TextInputEditText = {R.attr.textInputLayoutFocusedRectEnabled};
     public static final int[] TextInputLayout = {16842766, 16842906, 16843039, 16843071, 16843088, R.attr.boxBackgroundColor, R.attr.boxBackgroundMode, R.attr.boxCollapsedPaddingTop, R.attr.boxCornerRadiusBottomEnd, R.attr.boxCornerRadiusBottomStart, R.attr.boxCornerRadiusTopEnd, R.attr.boxCornerRadiusTopStart, R.attr.boxStrokeColor, R.attr.boxStrokeErrorColor, R.attr.boxStrokeWidth, R.attr.boxStrokeWidthFocused, R.attr.counterEnabled, R.attr.counterMaxLength, R.attr.counterOverflowTextAppearance, R.attr.counterOverflowTextColor, R.attr.counterTextAppearance, R.attr.counterTextColor, R.attr.endIconCheckable, R.attr.endIconContentDescription, R.attr.endIconDrawable, R.attr.endIconMode, R.attr.endIconTint, R.attr.endIconTintMode, R.attr.errorContentDescription, R.attr.errorEnabled, R.attr.errorIconDrawable, R.attr.errorIconTint, R.attr.errorIconTintMode, R.attr.errorTextAppearance, R.attr.errorTextColor, R.attr.expandedHintEnabled, R.attr.helperText, R.attr.helperTextEnabled, R.attr.helperTextTextAppearance, R.attr.helperTextTextColor, R.attr.hintAnimationEnabled, R.attr.hintEnabled, R.attr.hintTextAppearance, R.attr.hintTextColor, R.attr.passwordToggleContentDescription, R.attr.passwordToggleDrawable, R.attr.passwordToggleEnabled, R.attr.passwordToggleTint, R.attr.passwordToggleTintMode, R.attr.placeholderText, R.attr.placeholderTextAppearance, R.attr.placeholderTextColor, R.attr.prefixText, R.attr.prefixTextAppearance, R.attr.prefixTextColor, R.attr.shapeAppearance, R.attr.shapeAppearanceOverlay, R.attr.startIconCheckable, R.attr.startIconContentDescription, R.attr.startIconDrawable, R.attr.startIconTint, R.attr.startIconTintMode, R.attr.suffixText, R.attr.suffixTextAppearance, R.attr.suffixTextColor};

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseDotsIndicator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseDotsIndicator extends FrameLayout {
     protected final ArrayList<ImageView> dots;
     private boolean dotsClickable;
@@ -29,7 +29,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
     private Pager pager;
 
     /* compiled from: BaseDotsIndicator.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface Pager {
         void addOnPageChangeListener(OnPageChangeListenerHelper onPageChangeListenerHelper);
 
@@ -90,7 +90,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
     }
 
     /* compiled from: BaseDotsIndicator.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -111,7 +111,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* compiled from: BaseDotsIndicator.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Type {
         private static final /* synthetic */ Type[] $VALUES;
         public static final Type DEFAULT;

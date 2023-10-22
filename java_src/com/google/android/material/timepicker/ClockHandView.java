@@ -23,7 +23,7 @@ import com.google.android.material.R$styleable;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ClockHandView extends View {
     private boolean animatingOnTouchUp;
     private final float centerDotRadius;
@@ -43,12 +43,12 @@ public class ClockHandView extends View {
     private final int selectorRadius;
     private final int selectorStrokeWidth;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnActionUpListener {
         void onActionUp(float f, boolean z);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnRotateListener {
         void onRotate(float f, boolean z);
     }

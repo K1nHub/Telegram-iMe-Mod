@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Landroidx/recyclerview/widget/DefaultItemAnimator$$ExternalSyntheticLambda0;->f$1:Landroidx/recyclerview/widget/DefaultItemAnimator$ChangeInfo;
 
-    invoke-static {v0, v1, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->$r8$lambda$EYEo1ZZYqAp_-q5pj1Ij2FWSCRs(Landroidx/recyclerview/widget/DefaultItemAnimator;Landroidx/recyclerview/widget/DefaultItemAnimator$ChangeInfo;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->$r8$lambda$-i6I2arJLgeVM-sOCut5-ohyDRA(Landroidx/recyclerview/widget/DefaultItemAnimator;Landroidx/recyclerview/widget/DefaultItemAnimator$ChangeInfo;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

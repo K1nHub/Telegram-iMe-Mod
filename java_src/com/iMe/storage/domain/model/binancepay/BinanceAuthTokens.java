@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.binancepay;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceAuthTokens.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceAuthTokens {
     private final String accessToken;
     private final long accessTokenExpiresIn;
@@ -63,7 +63,7 @@ public final class BinanceAuthTokens {
     }
 
     public int hashCode() {
-        return (((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.accessTokenExpiresIn)) * 31) + this.authType.hashCode();
+        return (((((this.accessToken.hashCode() * 31) + this.refreshToken.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.accessTokenExpiresIn)) * 31) + this.authType.hashCode();
     }
 
     public String toString() {

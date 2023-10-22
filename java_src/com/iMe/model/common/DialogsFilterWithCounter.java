@@ -1,6 +1,6 @@
 package com.iMe.model.common;
 /* compiled from: DialogsFilterWithCounter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DialogsFilterWithCounter {
     private final int dialogsCount;
     private final int filterId;

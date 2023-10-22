@@ -5,7 +5,7 @@ import java.util.Map;
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* JADX WARN: Incorrect field signature: TK; */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzlm<K, V> implements Comparable<zzlm>, Map.Entry<K, V> {
     private final Comparable zza;
     private V zzb;

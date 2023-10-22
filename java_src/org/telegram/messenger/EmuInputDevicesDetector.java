@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EmuInputDevicesDetector {
     private static final String INPUT_DEVICES_FILE = "/proc/bus/input/devices";
     private static final String NAME_PREFIX = "N: Name=\"";
@@ -54,7 +54,7 @@ public final class EmuInputDevicesDetector {
                 }
             }
         } catch (IOException e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }

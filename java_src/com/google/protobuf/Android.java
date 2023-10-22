@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class Android {
     private static boolean ASSUME_ANDROID;
     private static final boolean IS_ROBOLECTRIC;

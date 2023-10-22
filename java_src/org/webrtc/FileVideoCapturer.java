@@ -11,7 +11,7 @@ import java.nio.charset.Charset;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
     private CapturerObserver capturerObserver;
@@ -25,7 +25,7 @@ public class FileVideoCapturer implements VideoCapturer {
     };
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface VideoReader {
         void close();
 
@@ -41,7 +41,7 @@ public class FileVideoCapturer implements VideoCapturer {
         return false;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";

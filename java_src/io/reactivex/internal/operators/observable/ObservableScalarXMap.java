@@ -11,7 +11,7 @@ import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableScalarXMap {
     public static <T, R> boolean tryScalarXMapSubscribe(ObservableSource<T> observableSource, Observer<? super R> observer, Function<? super T, ? extends ObservableSource<? extends R>> function) {
         if (observableSource instanceof Callable) {
@@ -61,7 +61,7 @@ public final class ObservableScalarXMap {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ScalarXMapObservable<T, R> extends Observable<R> {
         final Function<? super T, ? extends ObservableSource<? extends R>> mapper;
         final T value;
@@ -99,7 +99,7 @@ public final class ObservableScalarXMap {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ScalarDisposable<T> extends AtomicInteger implements QueueDisposable<T>, Runnable {
         final Observer<? super T> observer;
         final T value;

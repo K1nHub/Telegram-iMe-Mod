@@ -11,14 +11,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FieldSet<T extends FieldDescriptorLite<T>> {
     private static final FieldSet DEFAULT_INSTANCE = new FieldSet(true);
     private final SmallSortedMap<T, Object> fields;
     private boolean hasLazyField;
     private boolean isImmutable;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface FieldDescriptorLite<T extends FieldDescriptorLite<T>> extends Comparable<T> {
         WireFormat.JavaType getLiteJavaType();
 
@@ -87,7 +87,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m1154clone() {
+    public FieldSet<T> m1411clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
             Map.Entry<T, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);
@@ -164,7 +164,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
 
     private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
         Internal.checkNotNull(obj);
-        switch (C12001.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
+        switch (C11211.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
             case 1:
                 return obj instanceof Integer;
             case 2:
@@ -293,8 +293,8 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.FieldSet$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C12001 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C11211 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
@@ -415,7 +415,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) throws IOException {
-        switch (C12001.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11211.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
                 return;
@@ -535,7 +535,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static int computeElementSizeNoTag(WireFormat.FieldType fieldType, Object obj) {
-        switch (C12001.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11211.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return CodedOutputStream.computeDoubleSizeNoTag(((Double) obj).doubleValue());
             case 2:

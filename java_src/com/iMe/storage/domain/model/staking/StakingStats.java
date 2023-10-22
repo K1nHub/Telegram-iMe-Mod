@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.staking;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingStats.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingStats {
     private final StakingValues debt;
     private final boolean isParticipated;

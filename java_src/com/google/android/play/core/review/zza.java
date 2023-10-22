@@ -3,7 +3,7 @@ package com.google.android.play.core.review;
 import android.app.PendingIntent;
 import java.util.Objects;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zza extends ReviewInfo {
     private final PendingIntent zza;
     private final boolean zzb;

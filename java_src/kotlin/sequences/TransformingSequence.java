@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Sequences.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TransformingSequence<T, R> implements Sequence<R> {
     private final Sequence<T> sequence;
     private final Function1<T, R> transformer;
@@ -20,5 +20,10 @@ public final class TransformingSequence<T, R> implements Sequence<R> {
     @Override // kotlin.sequences.Sequence
     public Iterator<R> iterator() {
         return new TransformingSequence$iterator$1(this);
+    }
+
+    public final <E> Sequence<E> flatten$kotlin_stdlib(Function1<? super R, ? extends Iterator<? extends E>> iterator) {
+        Intrinsics.checkNotNullParameter(iterator, "iterator");
+        return new FlatteningSequence(this.sequence, this.transformer, iterator);
     }
 }

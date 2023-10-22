@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_upload_webFile extends TLObject {
     public static int constructor = 568808380;
     public NativeByteBuffer bytes;
@@ -7,6 +7,18 @@ public class TLRPC$TL_upload_webFile extends TLObject {
     public String mime_type;
     public int mtime;
     public int size;
+
+    public static TLRPC$TL_upload_webFile TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
+        if (constructor != i) {
+            if (z) {
+                throw new RuntimeException(String.format("can't parse magic %x in TL_upload_webFile", Integer.valueOf(i)));
+            }
+            return null;
+        }
+        TLRPC$TL_upload_webFile tLRPC$TL_upload_webFile = new TLRPC$TL_upload_webFile();
+        tLRPC$TL_upload_webFile.readParams(abstractSerializedData, z);
+        return tLRPC$TL_upload_webFile;
+    }
 
     @Override // org.telegram.tgnet.TLObject
     public void freeResources() {
@@ -35,17 +47,5 @@ public class TLRPC$TL_upload_webFile extends TLObject {
         this.file_type.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(this.mtime);
         abstractSerializedData.writeByteBuffer(this.bytes);
-    }
-
-    public static TLRPC$TL_upload_webFile TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
-            if (z) {
-                throw new RuntimeException(String.format("can't parse magic %x in TL_upload_webFile", Integer.valueOf(i)));
-            }
-            return null;
-        }
-        TLRPC$TL_upload_webFile tLRPC$TL_upload_webFile = new TLRPC$TL_upload_webFile();
-        tLRPC$TL_upload_webFile.readParams(abstractSerializedData, z);
-        return tLRPC$TL_upload_webFile;
     }
 }

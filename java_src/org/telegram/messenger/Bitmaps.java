@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Bitmaps {
     private static volatile Matrix sScaleMatrix;
     private static final ThreadLocal<byte[]> jpegData = new ThreadLocal<byte[]>() { // from class: org.telegram.messenger.Bitmaps.1
@@ -93,7 +93,7 @@ public class Bitmaps {
         Bitmap.Config config = Bitmap.Config.ARGB_8888;
         Bitmap.Config config2 = bitmap.getConfig();
         if (config2 != null) {
-            int i8 = C34022.$SwitchMap$android$graphics$Bitmap$Config[config2.ordinal()];
+            int i8 = C35592.$SwitchMap$android$graphics$Bitmap$Config[config2.ordinal()];
             if (i8 == 1) {
                 config = Bitmap.Config.ARGB_8888;
             } else if (i8 == 2) {
@@ -139,8 +139,8 @@ public class Bitmaps {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.Bitmaps$2 */
-    /* loaded from: classes6.dex */
-    public static /* synthetic */ class C34022 {
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class C35592 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 
         static {

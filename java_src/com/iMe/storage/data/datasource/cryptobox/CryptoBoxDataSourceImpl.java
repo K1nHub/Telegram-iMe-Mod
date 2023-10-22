@@ -16,8 +16,8 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import java.math.BigInteger;
@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: CryptoBoxDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoBoxApi cryptoBoxApi;
@@ -56,7 +56,7 @@ public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -106,7 +106,7 @@ public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -158,7 +158,7 @@ public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -196,17 +196,13 @@ public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
     public Observable<Result<String>> sign(TransactionArgs args) {
-        byte[] bArr;
         Ethereum.Transaction build;
         Intrinsics.checkNotNullParameter(args, "args");
         if (!(args instanceof CryptoBoxTransactionArgs)) {
             throw new IllegalStateException("Incorrect cryptoBox args passed");
         }
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        if (eVMWallet == null || (bArr = eVMWallet.getPrivateKeyBytes()) == null) {
-            bArr = new byte[0];
-        }
-        byte[] bArr2 = bArr;
+        byte[] orEmpty = CryptoExtKt.orEmpty(eVMWallet != null ? eVMWallet.getPrivateKeyBytes() : null);
         CryptoBoxTransactionArgs cryptoBoxTransactionArgs = (CryptoBoxTransactionArgs) args;
         String value = cryptoBoxTransactionArgs.getValue();
         ByteString byteString = CryptoExtKt.toByteString(NumberExtKt.orZero(value != null ? new BigInteger(value) : null));
@@ -223,7 +219,7 @@ public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
         BigInteger nonce = cryptoBoxTransactionArgs.getNonce();
         String to = cryptoBoxTransactionArgs.getTo();
         Intrinsics.checkNotNullExpressionValue(transaction, "transaction");
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, to, transaction, bArr2)));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, to, transaction, orEmpty)));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

@@ -3,7 +3,7 @@ package kotlin;
 import java.io.Serializable;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Tuples.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Pair<A, B> implements Serializable {
     private final A first;
     private final B second;

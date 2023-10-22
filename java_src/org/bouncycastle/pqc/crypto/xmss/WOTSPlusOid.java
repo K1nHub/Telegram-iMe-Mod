@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class WOTSPlusOid implements XMSSOid {
     private static final Map<String, WOTSPlusOid> oidLookupTable;
     private final int oid;

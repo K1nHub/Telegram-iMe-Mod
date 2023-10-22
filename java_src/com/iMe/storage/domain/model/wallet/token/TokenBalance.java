@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalance.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenBalance {
     public static final Companion Companion = new Companion(null);
     private final double ratePercentageChange24h;
@@ -53,7 +53,7 @@ public final class TokenBalance {
     }
 
     public int hashCode() {
-        return (((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.ratePercentageChange24h)) * 31) + this.token.hashCode();
+        return (((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.ratePercentageChange24h)) * 31) + this.token.hashCode();
     }
 
     public String toString() {
@@ -92,7 +92,7 @@ public final class TokenBalance {
     }
 
     /* compiled from: TokenBalance.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

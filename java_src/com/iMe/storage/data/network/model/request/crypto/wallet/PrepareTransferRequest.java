@@ -4,11 +4,11 @@ import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PrepareTransferRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PrepareTransferRequest {
 
     /* renamed from: to */
-    private final String f377to;
+    private final String f310to;
     private final TokenRequest token;
     private final String value;
 
@@ -17,7 +17,7 @@ public final class PrepareTransferRequest {
             tokenRequest = prepareTransferRequest.token;
         }
         if ((i & 2) != 0) {
-            str = prepareTransferRequest.f377to;
+            str = prepareTransferRequest.f310to;
         }
         if ((i & 4) != 0) {
             str2 = prepareTransferRequest.value;
@@ -30,7 +30,7 @@ public final class PrepareTransferRequest {
     }
 
     public final String component2() {
-        return this.f377to;
+        return this.f310to;
     }
 
     public final String component3() {
@@ -48,27 +48,27 @@ public final class PrepareTransferRequest {
         }
         if (obj instanceof PrepareTransferRequest) {
             PrepareTransferRequest prepareTransferRequest = (PrepareTransferRequest) obj;
-            return Intrinsics.areEqual(this.token, prepareTransferRequest.token) && Intrinsics.areEqual(this.f377to, prepareTransferRequest.f377to) && Intrinsics.areEqual(this.value, prepareTransferRequest.value);
+            return Intrinsics.areEqual(this.token, prepareTransferRequest.token) && Intrinsics.areEqual(this.f310to, prepareTransferRequest.f310to) && Intrinsics.areEqual(this.value, prepareTransferRequest.value);
         }
         return false;
     }
 
     public int hashCode() {
         int hashCode = this.token.hashCode() * 31;
-        String str = this.f377to;
+        String str = this.f310to;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.value;
         return hashCode2 + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
-        return "PrepareTransferRequest(token=" + this.token + ", to=" + this.f377to + ", value=" + this.value + ')';
+        return "PrepareTransferRequest(token=" + this.token + ", to=" + this.f310to + ", value=" + this.value + ')';
     }
 
     public PrepareTransferRequest(TokenRequest token, String str, String str2) {
         Intrinsics.checkNotNullParameter(token, "token");
         this.token = token;
-        this.f377to = str;
+        this.f310to = str;
         this.value = str2;
     }
 
@@ -81,7 +81,7 @@ public final class PrepareTransferRequest {
     }
 
     public final String getTo() {
-        return this.f377to;
+        return this.f310to;
     }
 
     public final String getValue() {

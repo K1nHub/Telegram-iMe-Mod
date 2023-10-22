@@ -48,7 +48,7 @@ final class PsDurationReader {
         long adjustTsTimestamp = this.scrTimestampAdjuster.adjustTsTimestamp(this.lastScrValue) - this.scrTimestampAdjuster.adjustTsTimestamp(j);
         this.durationUs = adjustTsTimestamp;
         if (adjustTsTimestamp < 0) {
-            Log.m814w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
+            Log.m1106w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
             this.durationUs = C0479C.TIME_UNSET;
         }
         return finishReadDuration(extractorInput);

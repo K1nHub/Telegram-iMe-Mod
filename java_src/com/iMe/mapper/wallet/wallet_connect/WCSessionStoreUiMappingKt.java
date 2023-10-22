@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSessionStoreUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WCSessionStoreUiMappingKt {
     public static final WalletConnectSessionItem mapToUi(WCSessionStoreItem wCSessionStoreItem) {
         Intrinsics.checkNotNullParameter(wCSessionStoreItem, "<this>");
@@ -19,6 +19,6 @@ public final class WCSessionStoreUiMappingKt {
         if (str == null) {
             str = "";
         }
-        return new WalletConnectSessionItem(key, name, url, str, DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, wCSessionStoreItem.getDate(), null, 4, null), NetworksHelper.INSTANCE.getNetworkByChainId(wCSessionStoreItem.getChainId()).getFullName());
+        return new WalletConnectSessionItem(key, name, url, str, DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, wCSessionStoreItem.getDate(), null, null, 12, null), NetworksHelper.INSTANCE.getNetworkByChainId(wCSessionStoreItem.getChainId()).getFullName());
     }
 }

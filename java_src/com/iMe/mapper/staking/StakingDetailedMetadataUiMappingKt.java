@@ -15,7 +15,7 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadataUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDetailedMetadataUiMappingKt {
     public static final StakingDetailsItem mapToUi(StakingDetailedMetadata stakingDetailedMetadata) {
         Intrinsics.checkNotNullParameter(stakingDetailedMetadata, "<this>");

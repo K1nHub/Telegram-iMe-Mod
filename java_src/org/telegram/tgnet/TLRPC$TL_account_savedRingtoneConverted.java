@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_savedRingtoneConverted extends TLRPC$account_SavedRingtone {
     public static int constructor = 523271863;
     public TLRPC$Document document;

@@ -24,17 +24,17 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p043ui.Components.AnimatedFileDrawable;
-import org.telegram.p043ui.Components.AttachableDrawable;
-import org.telegram.p043ui.Components.AvatarDrawable;
-import org.telegram.p043ui.Components.ClipRoundedDrawable;
-import org.telegram.p043ui.Components.RLottieDrawable;
-import org.telegram.p043ui.Components.RecyclableDrawable;
-import org.telegram.p043ui.Components.VectorAvatarThumbDrawable;
+import org.telegram.p042ui.Components.AnimatedFileDrawable;
+import org.telegram.p042ui.Components.AttachableDrawable;
+import org.telegram.p042ui.Components.AvatarDrawable;
+import org.telegram.p042ui.Components.ClipRoundedDrawable;
+import org.telegram.p042ui.Components.RLottieDrawable;
+import org.telegram.p042ui.Components.RecyclableDrawable;
+import org.telegram.p042ui.Components.VectorAvatarThumbDrawable;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ImageReceiver implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_CROSSFADE_DURATION = 150;
     private static final int TYPE_CROSSFDADE = 2;
@@ -43,6 +43,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     public static final int TYPE_THUMB = 1;
     private boolean allowCrossfadeWithImage;
     private boolean allowDecodeSingleFrame;
+    private boolean allowDrawWhileCacheGenerating;
     private boolean allowLoadingOnAttachedOnly;
     private boolean allowLottieVibration;
     private boolean allowStartAnimation;
@@ -93,6 +94,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private String currentThumbKey;
     private ImageLocation currentThumbLocation;
     private long currentTime;
+    private ArrayList<Decorator> decorators;
     private ImageReceiverDelegate delegate;
     private final RectF drawRegion;
     private long endTime;
@@ -162,11 +164,22 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private static PorterDuffColorFilter selectedGroupColorFilter = new PorterDuffColorFilter(-4473925, PorterDuff.Mode.MULTIPLY);
     private static final float[] radii = new float[8];
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
+    public static abstract class Decorator {
+        public void onAttachedToWindow(ImageReceiver imageReceiver) {
+        }
+
+        public void onDetachedFromWidnow() {
+        }
+
+        protected abstract void onDraw(Canvas canvas, ImageReceiver imageReceiver);
+    }
+
+    /* loaded from: classes4.dex */
     public interface ImageReceiverDelegate {
 
         /* renamed from: org.telegram.messenger.ImageReceiver$ImageReceiverDelegate$-CC  reason: invalid class name */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public final /* synthetic */ class CC {
             public static void $default$onAnimationReady(ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
             }
@@ -185,7 +198,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public void setAnimation(int i, int i2, int i3) {
-        this.currentImageDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m72dp(i2), AndroidUtilities.m72dp(i3), false, null);
+        this.currentImageDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m102dp(i2), AndroidUtilities.m102dp(i3), false, null);
     }
 
     public boolean updateThumbShaderMatrix() {
@@ -222,7 +235,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         setStaticDrawable(new BitmapDrawable(bitmap));
     }
 
-    /* loaded from: classes6.dex */
+    public void setAllowDrawWhileCacheGenerating(boolean z) {
+        this.allowDrawWhileCacheGenerating = z;
+    }
+
+    /* loaded from: classes4.dex */
     public static class BitmapHolder {
         public Bitmap bitmap;
         public Drawable drawable;
@@ -251,6 +268,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         public BitmapHolder(Bitmap bitmap) {
             this.bitmap = bitmap;
             this.recycleOnRelease = true;
+        }
+
+        public String getKey() {
+            return this.key;
         }
 
         public int getWidth() {
@@ -309,7 +330,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class SetImageBackup {
         public int cacheType;
         public String ext;
@@ -547,8 +568,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1530id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1530id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1608id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1608id;
                     this.currentKeyQuality = true;
                 }
             }
@@ -1046,6 +1067,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (lottieAnimation != null) {
                 lottieAnimation.removeParentView(this);
             }
+            if (this.decorators != null) {
+                for (int i = 0; i < this.decorators.size(); i++) {
+                    this.decorators.get(i).onDetachedFromWidnow();
+                }
+            }
         }
     }
 
@@ -1131,6 +1157,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         Drawable drawable = this.staticThumbDrawable;
         if (drawable instanceof AttachableDrawable) {
             ((AttachableDrawable) drawable).onAttachedToWindow(this);
+        }
+        if (this.decorators != null) {
+            for (int i = 0; i < this.decorators.size(); i++) {
+                this.decorators.get(i).onAttachedToWindow(this);
+            }
         }
         return false;
     }
@@ -1313,30 +1344,32 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:101:0x021f, code lost:
-        if (r38.useRoundForThumb == false) goto L119;
+        if (r38.useRoundForThumb == false) goto L128;
      */
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0221, code lost:
-        if (r3 != null) goto L119;
+        if (r3 != null) goto L128;
      */
     /* JADX WARN: Code restructure failed: missing block: B:103:0x0223, code lost:
         updateDrawableRadius(r12);
         r3 = r38.staticThumbShader;
      */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x024b A[Catch: Exception -> 0x036b, TryCatch #0 {Exception -> 0x036b, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:177:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x024b A[Catch: Exception -> 0x036a, TryCatch #0 {Exception -> 0x036a, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:186:0x0028 }] */
     /* JADX WARN: Removed duplicated region for block: B:129:0x027f  */
     /* JADX WARN: Removed duplicated region for block: B:153:0x0334  */
     /* JADX WARN: Removed duplicated region for block: B:162:0x0360 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0375  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x018a A[Catch: Exception -> 0x036b, TryCatch #0 {Exception -> 0x036b, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:177:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0373  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x037c  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x038d A[LOOP:0: B:182:0x0385->B:184:0x038d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x018a A[Catch: Exception -> 0x036a, TryCatch #0 {Exception -> 0x036a, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:186:0x0028 }] */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0193  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0199 A[Catch: Exception -> 0x036b, TryCatch #0 {Exception -> 0x036b, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:177:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0199 A[Catch: Exception -> 0x036a, TryCatch #0 {Exception -> 0x036a, blocks: (B:11:0x002a, B:23:0x00ed, B:26:0x00f4, B:38:0x0116, B:42:0x0120, B:62:0x017e, B:64:0x018a, B:68:0x0199, B:75:0x01a7, B:78:0x01ad, B:79:0x01b2, B:81:0x01e2, B:84:0x01e8, B:147:0x0322, B:151:0x032e, B:117:0x024b, B:119:0x024f, B:122:0x0254, B:124:0x0263, B:126:0x0277, B:128:0x027b, B:131:0x0283, B:136:0x0291, B:137:0x02a9, B:139:0x02ac, B:140:0x02bf, B:142:0x02ee, B:144:0x0305, B:123:0x025a, B:100:0x021d, B:103:0x0223, B:110:0x0239, B:113:0x023f, B:145:0x0309, B:155:0x033a, B:157:0x033e, B:158:0x0344, B:159:0x035a, B:48:0x0134, B:51:0x0145, B:53:0x0151, B:54:0x015b, B:56:0x015f, B:59:0x0165, B:60:0x016a, B:31:0x0104, B:34:0x010a, B:36:0x0111, B:12:0x0088, B:14:0x00ba, B:17:0x00c2), top: B:186:0x0028 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public boolean draw(android.graphics.Canvas r39, org.telegram.messenger.ImageReceiver.BackgroundThreadDrawHolder r40) {
         /*
-            Method dump skipped, instructions count: 893
+            Method dump skipped, instructions count: 924
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageReceiver.draw(android.graphics.Canvas, org.telegram.messenger.ImageReceiver$BackgroundThreadDrawHolder):boolean");
@@ -1442,9 +1475,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r0 = r5.currentMediaDrawable
             boolean r1 = r0 instanceof android.graphics.drawable.BitmapDrawable
             if (r1 == 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
+            boolean r1 = r0 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
             if (r1 != 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
+            boolean r1 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
             if (r1 != 0) goto L4e
             android.graphics.drawable.BitmapDrawable r0 = (android.graphics.drawable.BitmapDrawable) r0
             android.graphics.Bitmap r0 = r0.getBitmap()
@@ -1454,9 +1487,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentImageDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L65
-            boolean r4 = r1 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L65
-            boolean r4 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
+            boolean r4 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
             if (r4 != 0) goto L65
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()
@@ -1466,9 +1499,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentThumbDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L7c
-            boolean r4 = r1 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L7c
-            boolean r0 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
+            boolean r0 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
             if (r0 != 0) goto L7c
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()
@@ -1676,9 +1709,13 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public boolean hasNotThumb() {
+        return (this.currentImageDrawable == null && this.currentMediaDrawable == null && !(this.staticThumbDrawable instanceof VectorAvatarThumbDrawable)) ? false : true;
+    }
+
+    public boolean hasNotThumbOrOnlyStaticThumb() {
         if (this.currentImageDrawable == null && this.currentMediaDrawable == null) {
             Drawable drawable = this.staticThumbDrawable;
-            if (!(drawable instanceof VectorAvatarThumbDrawable) && (drawable == null || this.currentImageKey != null || this.currentMediaKey != null)) {
+            if (!(drawable instanceof VectorAvatarThumbDrawable) && (drawable == null || (drawable instanceof AvatarDrawable) || this.currentImageKey != null || this.currentMediaKey != null)) {
                 return false;
             }
         }
@@ -2150,7 +2187,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     */
     public boolean setImageBitmapByKey(android.graphics.drawable.Drawable r8, java.lang.String r9, int r10, boolean r11, int r12) {
         /*
-            Method dump skipped, instructions count: 689
+            Method dump skipped, instructions count: 694
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageReceiver.setImageBitmapByKey(android.graphics.drawable.Drawable, java.lang.String, int, boolean, int):boolean");
@@ -2420,7 +2457,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     public void setFileLoadingPriority(int i) {
         if (this.fileLoadingPriority != i) {
             this.fileLoadingPriority = i;
-            if (this.attachedToWindow) {
+            if (this.attachedToWindow && hasImageSet()) {
                 ImageLoader.getInstance().changeFileLoadingPriorityForImageReceiver(this);
             }
         }
@@ -2472,7 +2509,28 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         return backgroundThreadDrawHolder;
     }
 
-    /* loaded from: classes6.dex */
+    public void clearDecorators() {
+        if (this.decorators != null) {
+            if (this.attachedToWindow) {
+                for (int i = 0; i < this.decorators.size(); i++) {
+                    this.decorators.get(i).onDetachedFromWidnow();
+                }
+            }
+            this.decorators.clear();
+        }
+    }
+
+    public void addDecorator(Decorator decorator) {
+        if (this.decorators == null) {
+            this.decorators = new ArrayList<>();
+        }
+        this.decorators.add(decorator);
+        if (this.attachedToWindow) {
+            decorator.onAttachedToWindow(this);
+        }
+    }
+
+    /* loaded from: classes4.dex */
     public static class BackgroundThreadDrawHolder {
         private AnimatedFileDrawable animation;
         public boolean animationNotReady;
@@ -2555,7 +2613,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class ReactionLastFrame extends BitmapDrawable {
         public static final float LAST_FRAME_SCALE = 1.2f;
 

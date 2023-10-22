@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.source.rtsp.RtpPayloadFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.webrtc.VideoEncoderFactory;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
     @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {

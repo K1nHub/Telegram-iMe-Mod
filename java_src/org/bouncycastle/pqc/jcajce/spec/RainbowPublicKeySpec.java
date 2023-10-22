@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.jcajce.spec;
 
 import java.security.spec.KeySpec;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class RainbowPublicKeySpec implements KeySpec {
     private short[][] coeffquadratic;
     private short[] coeffscalar;

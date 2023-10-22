@@ -16,8 +16,8 @@ import kotlinx.coroutines.CoroutineScope;
 import org.orbitmvi.orbit.ContainerHost;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ContainerHostExtensions.kt */
-@DebugMetadata(m102c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1", m101f = "ContainerHostExtensions.kt", m100l = {50}, m99m = "invokeSuspend")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1", m142f = "ContainerHostExtensions.kt", m141l = {50}, m140m = "invokeSuspend")
+/* loaded from: classes4.dex */
 public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ LifecycleOwner $lifecycleOwner;
     final /* synthetic */ Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> $sideEffect;
@@ -56,9 +56,9 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
             Lifecycle lifecycle = this.$lifecycleOwner.getLifecycle();
             Intrinsics.checkNotNullExpressionValue(lifecycle, "lifecycleOwner.lifecycle");
             Lifecycle.State state = Lifecycle.State.STARTED;
-            C33641 c33641 = new C33641(this.$state, this.$sideEffect, this.$this_observe, null);
+            C35401 c35401 = new C35401(this.$state, this.$sideEffect, this.$this_observe, null);
             this.label = 1;
-            if (RepeatOnLifecycleKt.repeatOnLifecycle(lifecycle, state, c33641, this) == coroutine_suspended) {
+            if (RepeatOnLifecycleKt.repeatOnLifecycle(lifecycle, state, c35401, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -71,10 +71,10 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ContainerHostExtensions.kt */
-    @DebugMetadata(m102c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1", m101f = "ContainerHostExtensions.kt", m100l = {}, m99m = "invokeSuspend")
+    @DebugMetadata(m143c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1", m142f = "ContainerHostExtensions.kt", m141l = {}, m140m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1 */
-    /* loaded from: classes6.dex */
-    public static final class C33641 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    /* loaded from: classes4.dex */
+    public static final class C35401 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> $sideEffect;
         final /* synthetic */ Function2<STATE, Continuation<? super Unit>, Object> $state;
         final /* synthetic */ ContainerHost<STATE, SIDE_EFFECT> $this_observe;
@@ -83,7 +83,7 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C33641(Function2<? super STATE, ? super Continuation<? super Unit>, ? extends Object> function2, Function2<? super SIDE_EFFECT, ? super Continuation<? super Unit>, ? extends Object> function22, ContainerHost<STATE, SIDE_EFFECT> containerHost, Continuation<? super C33641> continuation) {
+        C35401(Function2<? super STATE, ? super Continuation<? super Unit>, ? extends Object> function2, Function2<? super SIDE_EFFECT, ? super Continuation<? super Unit>, ? extends Object> function22, ContainerHost<STATE, SIDE_EFFECT> containerHost, Continuation<? super C35401> continuation) {
             super(2, continuation);
             this.$state = function2;
             this.$sideEffect = function22;
@@ -92,14 +92,14 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            C33641 c33641 = new C33641(this.$state, this.$sideEffect, this.$this_observe, continuation);
-            c33641.L$0 = obj;
-            return c33641;
+            C35401 c35401 = new C35401(this.$state, this.$sideEffect, this.$this_observe, continuation);
+            c35401.L$0 = obj;
+            return c35401;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C33641) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C35401) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

@@ -3,7 +3,7 @@ package com.tbuonomo.viewpagerdotsindicator;
 import android.view.View;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ViewExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ViewExtKt {
     public static final void setPaddingHorizontal(View setPaddingHorizontal, int i) {
         Intrinsics.checkNotNullParameter(setPaddingHorizontal, "$this$setPaddingHorizontal");

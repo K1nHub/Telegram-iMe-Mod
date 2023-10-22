@@ -9,9 +9,9 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.NetworkTypeView;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.NetworkTypeView;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBinding {
     public final AppCompatImageView imageAddToken;
     public final AppCompatImageView imageNetwork;
@@ -35,7 +35,6 @@ public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBindi
         this.textTitleDisplayedTokens = textView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayout getRoot() {
         return this.rootView;
     }
@@ -45,7 +44,7 @@ public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletTokensHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_tokens_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_tokens_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -53,28 +52,28 @@ public final class ForkRecycleItemWalletTokensHeaderBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletTokensHeaderBinding bind(View view) {
-        int i = C3473R.C3476id.image_add_token;
+        int i = C3630R.C3633id.image_add_token;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3473R.C3476id.image_network;
+            i = C3630R.C3633id.image_network;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3473R.C3476id.linear_add_token;
+                i = C3630R.C3633id.linear_add_token;
                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout != null) {
-                    i = C3473R.C3476id.linear_network;
+                    i = C3630R.C3633id.linear_network;
                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout2 != null) {
-                        i = C3473R.C3476id.network_type_view;
+                        i = C3630R.C3633id.network_type_view;
                         NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
                         if (networkTypeView != null) {
-                            i = C3473R.C3476id.text_add_token;
+                            i = C3630R.C3633id.text_add_token;
                             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView != null) {
-                                i = C3473R.C3476id.text_network;
+                                i = C3630R.C3633id.text_network;
                                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView2 != null) {
-                                    i = C3473R.C3476id.text_title_displayed_tokens;
+                                    i = C3630R.C3633id.text_title_displayed_tokens;
                                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView != null) {
                                         return new ForkRecycleItemWalletTokensHeaderBinding((LinearLayout) view, appCompatImageView, appCompatImageView2, linearLayout, linearLayout2, networkTypeView, appCompatTextView, appCompatTextView2, textView);

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentMap;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Protobuf {
     private static final Protobuf INSTANCE = new Protobuf();
     private final ConcurrentMap<Class<?>, Schema<?>> schemaCache = new ConcurrentHashMap();

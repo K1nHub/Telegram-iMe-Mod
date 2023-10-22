@@ -1,6 +1,6 @@
 package com.iMe.common;
 /* compiled from: TelegramConstants.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TelegramConstants {
     public static final TelegramConstants INSTANCE = new TelegramConstants();
 

@@ -6,13 +6,13 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: AbstractIterator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractIterator<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private T nextValue;
     private State state = State.NotReady;
 
     /* compiled from: AbstractIterator.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

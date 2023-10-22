@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.kikliko;
 import com.google.gson.annotations.SerializedName;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ReportRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ReportRequest {
     private final String reason;
     @SerializedName("customer_id")

@@ -1,8 +1,8 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-import org.telegram.p043ui.Stories.recorder.StoryPrivacyBottomSheet;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Stories.recorder.StoryPrivacyBottomSheet;
+/* loaded from: classes5.dex */
 public abstract class TLRPC$StoryItem extends TLObject {
     public String attachPath;
     public String caption;
@@ -18,7 +18,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1557id;
+    public int f1635id;
     public boolean isPublic;
     public boolean justUploaded;
     public long lastUpdateTime;
@@ -27,6 +27,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
     public int messageType;
     public boolean min;
     public boolean noforwards;
+    public boolean out;
     public StoryPrivacyBottomSheet.StoryPrivacy parsedPrivacy;
     public boolean pinned;
     public boolean selected_contacts;
@@ -40,19 +41,42 @@ public abstract class TLRPC$StoryItem extends TLObject {
     public ArrayList<TLRPC$PrivacyRule> privacy = new ArrayList<>();
 
     public static TLRPC$StoryItem TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        TLRPC$StoryItem tLRPC$TL_storyItemSkipped;
+        TLRPC$StoryItem tLRPC$StoryItem;
         switch (i) {
             case -5388013:
-                tLRPC$TL_storyItemSkipped = new TLRPC$TL_storyItemSkipped();
+                tLRPC$StoryItem = new TLRPC$StoryItem() { // from class: org.telegram.tgnet.TLRPC$TL_storyItemSkipped
+                    public static int constructor = -5388013;
+
+                    @Override // org.telegram.tgnet.TLObject
+                    public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
+                        int readInt32 = abstractSerializedData2.readInt32(z2);
+                        this.flags = readInt32;
+                        this.close_friends = (readInt32 & 256) != 0;
+                        this.f1635id = abstractSerializedData2.readInt32(z2);
+                        this.date = abstractSerializedData2.readInt32(z2);
+                        this.expire_date = abstractSerializedData2.readInt32(z2);
+                    }
+
+                    @Override // org.telegram.tgnet.TLObject
+                    public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
+                        abstractSerializedData2.writeInt32(constructor);
+                        int i2 = this.close_friends ? this.flags | 256 : this.flags & (-257);
+                        this.flags = i2;
+                        abstractSerializedData2.writeInt32(i2);
+                        abstractSerializedData2.writeInt32(this.f1635id);
+                        abstractSerializedData2.writeInt32(this.date);
+                        abstractSerializedData2.writeInt32(this.expire_date);
+                    }
+                };
                 break;
             case 1153718222:
-                tLRPC$TL_storyItemSkipped = new TLRPC$TL_storyItem();
+                tLRPC$StoryItem = new TLRPC$TL_storyItem();
                 break;
             case 1374088783:
-                tLRPC$TL_storyItemSkipped = new TLRPC$TL_storyItemDeleted();
+                tLRPC$StoryItem = new TLRPC$TL_storyItemDeleted();
                 break;
             case 1445635639:
-                tLRPC$TL_storyItemSkipped = new TLRPC$TL_storyItem() { // from class: org.telegram.tgnet.TLRPC$TL_storyItem_layer160
+                tLRPC$StoryItem = new TLRPC$TL_storyItem() { // from class: org.telegram.tgnet.TLRPC$TL_storyItem_layer160
                     public static int constructor = 1445635639;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_storyItem, org.telegram.tgnet.TLObject
@@ -67,7 +91,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
                         this.edited = (readInt32 & 2048) != 0;
                         this.contacts = (readInt32 & 4096) != 0;
                         this.selected_contacts = (readInt32 & 8192) != 0;
-                        this.f1557id = abstractSerializedData2.readInt32(z2);
+                        this.f1635id = abstractSerializedData2.readInt32(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.expire_date = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
@@ -133,7 +157,7 @@ public abstract class TLRPC$StoryItem extends TLObject {
                         int i9 = this.selected_contacts ? i8 | 8192 : i8 & (-8193);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32(this.f1557id);
+                        abstractSerializedData2.writeInt32(this.f1635id);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32(this.expire_date);
                         if ((this.flags & 1) != 0) {
@@ -163,15 +187,15 @@ public abstract class TLRPC$StoryItem extends TLObject {
                 };
                 break;
             default:
-                tLRPC$TL_storyItemSkipped = null;
+                tLRPC$StoryItem = null;
                 break;
         }
-        if (tLRPC$TL_storyItemSkipped == null && z) {
+        if (tLRPC$StoryItem == null && z) {
             throw new RuntimeException(String.format("can't parse magic %x in StoryItem", Integer.valueOf(i)));
         }
-        if (tLRPC$TL_storyItemSkipped != null) {
-            tLRPC$TL_storyItemSkipped.readParams(abstractSerializedData, z);
+        if (tLRPC$StoryItem != null) {
+            tLRPC$StoryItem.readParams(abstractSerializedData, z);
         }
-        return tLRPC$TL_storyItemSkipped;
+        return tLRPC$StoryItem;
     }
 }

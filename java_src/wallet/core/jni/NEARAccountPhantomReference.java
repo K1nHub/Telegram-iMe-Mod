@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: NEARAccount.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class NEARAccountPhantomReference extends PhantomReference<NEARAccount> {
     private long nativeHandle;
     private static Set<NEARAccountPhantomReference> references = new HashSet();

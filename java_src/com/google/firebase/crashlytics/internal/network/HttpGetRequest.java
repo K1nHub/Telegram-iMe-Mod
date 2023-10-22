@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class HttpGetRequest {
     private final Map<String, String> headers = new HashMap();
     private final Map<String, String> queryParams;
@@ -33,7 +33,7 @@ public class HttpGetRequest {
         inputStream = null;
         try {
             String createUrlWithParams = createUrlWithParams(this.url, this.queryParams);
-            Logger.getLogger().m740v("GET Request URL: " + createUrlWithParams);
+            Logger.getLogger().m1032v("GET Request URL: " + createUrlWithParams);
             httpsURLConnection = (HttpsURLConnection) new URL(createUrlWithParams).openConnection();
             try {
                 httpsURLConnection.setReadTimeout(10000);

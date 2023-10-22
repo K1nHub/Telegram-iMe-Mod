@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 /* compiled from: CoroutineStart.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum CoroutineStart {
     DEFAULT,
     LAZY,
@@ -16,16 +16,28 @@ public enum CoroutineStart {
     UNDISPATCHED;
 
     /* compiled from: CoroutineStart.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
             int[] iArr = new int[CoroutineStart.values().length];
-            iArr[CoroutineStart.DEFAULT.ordinal()] = 1;
-            iArr[CoroutineStart.ATOMIC.ordinal()] = 2;
-            iArr[CoroutineStart.UNDISPATCHED.ordinal()] = 3;
-            iArr[CoroutineStart.LAZY.ordinal()] = 4;
+            try {
+                iArr[CoroutineStart.DEFAULT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[CoroutineStart.ATOMIC.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[CoroutineStart.UNDISPATCHED.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[CoroutineStart.LAZY.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

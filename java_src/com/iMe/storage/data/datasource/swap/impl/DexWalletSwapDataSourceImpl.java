@@ -21,8 +21,8 @@ import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.swap.SwapArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapMethod;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import java.math.BigInteger;
@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.EthereumMessageSigner;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: DexWalletSwapDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -40,7 +40,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
     private final SwapApi swapApi;
 
     /* compiled from: DexWalletSwapDataSourceImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -94,7 +94,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
                     if (!(result instanceof Result.Success)) {
                         if (result instanceof Result.Error) {
                             Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                             return Observable.just(error$default);
                         }
                         return Observable.empty();
@@ -178,7 +178,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
     }
 
     /* compiled from: DexWalletSwapDataSourceImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

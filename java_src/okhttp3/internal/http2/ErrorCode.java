@@ -2,7 +2,7 @@ package okhttp3.internal.http2;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ErrorCode.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum ErrorCode {
     NO_ERROR(0),
     PROTOCOL_ERROR(1),
@@ -31,7 +31,7 @@ public enum ErrorCode {
     }
 
     /* compiled from: ErrorCode.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

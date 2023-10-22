@@ -3,13 +3,13 @@ package retrofit2;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public interface CallAdapter<R, T> {
     T adapt(Call<R> call);
 
     Type responseType();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Factory {
         public abstract CallAdapter<?, ?> get(Type type, Annotation[] annotationArr, Retrofit retrofit);
 

@@ -105,7 +105,7 @@
     return-wide v0
 .end method
 
-.method protected s(I)I
+.method protected r(I)I
     .locals 2
 
     const/4 v0, 0x1

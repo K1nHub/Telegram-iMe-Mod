@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Environment.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum Environment {
     PRODUCTION,
     STAGE,
@@ -25,7 +25,7 @@ public enum Environment {
     }
 
     /* compiled from: Environment.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

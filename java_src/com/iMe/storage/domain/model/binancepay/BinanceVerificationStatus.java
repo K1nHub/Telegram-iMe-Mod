@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.binancepay;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceVerificationStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum BinanceVerificationStatus {
     PASS,
     REJECT,
@@ -17,7 +17,7 @@ public enum BinanceVerificationStatus {
     }
 
     /* compiled from: BinanceVerificationStatus.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -2,14 +2,14 @@
 .super Lj$/util/stream/D4;
 
 # interfaces
-.implements Lj$/util/t;
+.implements Lj$/util/Spliterator$d;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/t;JJ)V
+.method constructor <init>(Lj$/util/Spliterator$d;JJ)V
     .locals 12
 
-    invoke-interface {p1}, Lj$/util/s;->estimateSize()J
+    invoke-interface {p1}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -28,16 +28,16 @@
     move-wide v4, p2
 
     .line 1
-    invoke-direct/range {v2 .. v11}, Lj$/util/stream/D4;-><init>(Lj$/util/s;JJJJ)V
+    invoke-direct/range {v2 .. v11}, Lj$/util/stream/D4;-><init>(Lj$/util/Spliterator;JJJJ)V
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/t;JJJJLj$/util/stream/o1;)V
+.method constructor <init>(Lj$/util/Spliterator$d;JJJJLj$/util/stream/o1;)V
     .locals 0
 
     .line 2
-    invoke-direct/range {p0 .. p9}, Lj$/util/stream/D4;-><init>(Lj$/util/s;JJJJ)V
+    invoke-direct/range {p0 .. p9}, Lj$/util/stream/D4;-><init>(Lj$/util/Spliterator;JJJJ)V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     return-void
 .end method
 
-.method public bridge synthetic d(Lj$/util/function/q;)V
+.method public bridge synthetic d(Lj$/util/function/p;)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/z4;->forEachRemaining(Ljava/lang/Object;)V
@@ -102,11 +102,11 @@
 
     if-ltz v0, :cond_2
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -118,11 +118,11 @@
 
     if-gtz v0, :cond_2
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->forEachRemaining(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->forEachRemaining(Ljava/lang/Object;)V
 
     iget-wide v0, p0, Lj$/util/stream/D4;->e:J
 
@@ -142,15 +142,15 @@
 
     if-lez v0, :cond_3
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
     invoke-virtual {p0}, Lj$/util/stream/z4;->f()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-interface {v0, v3}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     iget-wide v3, p0, Lj$/util/stream/D4;->d:J
 
@@ -170,11 +170,11 @@
 
     if-gez v0, :cond_4
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     iget-wide v3, p0, Lj$/util/stream/D4;->d:J
 
@@ -213,7 +213,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -223,14 +223,14 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public bridge synthetic i(Lj$/util/function/q;)Z
+.method public bridge synthetic i(Lj$/util/function/p;)Z
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/z4;->tryAdvance(Ljava/lang/Object;)Z
@@ -240,7 +240,7 @@
     return p1
 .end method
 
-.method public bridge synthetic k(Lj$/util/function/f;)Z
+.method public bridge synthetic n(Lj$/util/function/f;)Z
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/z4;->tryAdvance(Ljava/lang/Object;)Z
@@ -281,15 +281,15 @@
 
     if-lez v0, :cond_1
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
     invoke-virtual {p0}, Lj$/util/stream/z4;->f()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-interface {v0, v4}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     iget-wide v4, p0, Lj$/util/stream/D4;->d:J
 
@@ -313,11 +313,11 @@
 
     iput-wide v4, p0, Lj$/util/stream/D4;->d:J
 
-    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/D4;->c:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     move-result p1
 

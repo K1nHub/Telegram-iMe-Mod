@@ -3,33 +3,33 @@ package org.telegram.messenger.voip;
 import android.text.TextUtils;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class VLog {
     /* renamed from: d */
-    public static native void m47d(String str);
+    public static native void m76d(String str);
 
     /* renamed from: e */
-    public static native void m46e(String str);
+    public static native void m75e(String str);
 
     /* renamed from: i */
-    public static native void m43i(String str);
+    public static native void m72i(String str);
 
     /* renamed from: v */
-    public static native void m42v(String str);
+    public static native void m71v(String str);
 
     /* renamed from: w */
-    public static native void m41w(String str);
+    public static native void m70w(String str);
 
     VLog() {
     }
 
     /* renamed from: e */
-    public static void m44e(Throwable th) {
-        m45e(null, th);
+    public static void m73e(Throwable th) {
+        m74e(null, th);
     }
 
     /* renamed from: e */
-    public static void m45e(String str, Throwable th) {
+    public static void m74e(String str, Throwable th) {
         StringWriter stringWriter = new StringWriter();
         if (!TextUtils.isEmpty(str)) {
             stringWriter.append((CharSequence) str);
@@ -38,7 +38,7 @@ class VLog {
         th.printStackTrace(new PrintWriter(stringWriter));
         String[] split = stringWriter.toString().split("\n");
         for (String str2 : split) {
-            m46e(str2);
+            m75e(str2);
         }
     }
 }

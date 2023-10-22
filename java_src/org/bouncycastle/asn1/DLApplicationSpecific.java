@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DLApplicationSpecific extends ASN1ApplicationSpecific {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DLApplicationSpecific(boolean z, int i, byte[] bArr) {

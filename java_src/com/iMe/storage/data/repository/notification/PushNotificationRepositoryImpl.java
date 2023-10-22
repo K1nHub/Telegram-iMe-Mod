@@ -18,6 +18,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.notification.Notification;
 import com.iMe.storage.domain.repository.notification.PushNotificationRepository;
 import com.iMe.storage.domain.storage.PreferenceHelper;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PushNotificationRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PushNotificationRepositoryImpl implements PushNotificationRepository {
     private final ApiErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -274,5 +275,10 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
         }));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
+    }
+
+    @Override // com.iMe.storage.domain.repository.notification.PushNotificationRepository
+    public Completable sendActivityMark() {
+        return this.pushNotificationApi.sendActivityMark();
     }
 }

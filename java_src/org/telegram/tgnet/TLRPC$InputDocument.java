@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$InputDocument extends TLObject {
     public long access_hash;
     public byte[] file_reference;
 
     /* renamed from: id */
-    public long f1538id;
+    public long f1616id;
 
     public static TLRPC$InputDocument TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$InputDocument tLRPC$TL_inputDocument;

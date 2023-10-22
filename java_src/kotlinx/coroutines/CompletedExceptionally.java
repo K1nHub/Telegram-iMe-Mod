@@ -3,10 +3,10 @@ package kotlinx.coroutines;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CompletedExceptionally {
-    private static final /* synthetic */ AtomicIntegerFieldUpdater _handled$FU = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled");
-    private volatile /* synthetic */ int _handled;
+    private static final AtomicIntegerFieldUpdater _handled$FU = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled");
+    private volatile int _handled;
     public final Throwable cause;
 
     public CompletedExceptionally(Throwable th, boolean z) {
@@ -18,9 +18,8 @@ public class CompletedExceptionally {
         this(th, (i & 2) != 0 ? false : z);
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean getHandled() {
-        return this._handled;
+        return _handled$FU.get(this) != 0;
     }
 
     public final boolean makeHandled() {

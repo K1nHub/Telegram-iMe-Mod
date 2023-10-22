@@ -5,7 +5,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: PrimitiveIterators.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class IntIterator implements Iterator<Integer>, KMappedMarker, p033j$.util.Iterator {
     @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {

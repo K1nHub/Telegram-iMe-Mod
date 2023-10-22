@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DEROctetString extends ASN1OctetString {
     public DEROctetString(ASN1Encodable aSN1Encodable) throws IOException {
         super(aSN1Encodable.toASN1Primitive().getEncoded("DER"));

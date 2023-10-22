@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 /* compiled from: WalletRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletRepository {
     Observable<Result<Boolean>> detachCustomToken(Token token);
 
@@ -45,7 +45,7 @@ public interface WalletRepository {
 
     Observable<Result<CursoredData<FoundTokenWithFamily>>> searchTokens(String str, String str2, String str3);
 
-    Observable<Result<Boolean>> sendTokens(TransferArgs transferArgs, Network network);
+    Observable<Result<String>> sendTokens(TransferArgs transferArgs, Network network);
 
     Observable<Result<Boolean>> setTokenVisibility(Token token, boolean z);
 }

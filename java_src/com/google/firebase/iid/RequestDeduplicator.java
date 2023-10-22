@@ -8,13 +8,13 @@ import com.google.android.gms.tasks.Task;
 import java.util.Map;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class RequestDeduplicator {
     private final Executor executor;
     private final Map<Pair<String, String>, Task<InstanceIdResult>> getTokenRequests = new ArrayMap();
 
     /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     interface GetTokenRequest {
         Task<InstanceIdResult> start();
     }

@@ -13,12 +13,12 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableRefCount<T> extends Observable<T> {
     RefConnection connection;
 
     /* renamed from: n */
-    final int f546n;
+    final int f459n;
     final Scheduler scheduler;
     final ConnectableObservable<T> source;
     final long timeout;
@@ -30,7 +30,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
 
     public ObservableRefCount(ConnectableObservable<T> connectableObservable, int i, long j, TimeUnit timeUnit, Scheduler scheduler) {
         this.source = connectableObservable;
-        this.f546n = i;
+        this.f459n = i;
         this.timeout = j;
         this.unit = timeUnit;
         this.scheduler = scheduler;
@@ -54,7 +54,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
             long j2 = j + 1;
             refConnection.subscriberCount = j2;
             z = true;
-            if (refConnection.connected || j2 != this.f546n) {
+            if (refConnection.connected || j2 != this.f459n) {
                 z = false;
             } else {
                 refConnection.connected = true;
@@ -129,7 +129,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class RefConnection extends AtomicReference<Disposable> implements Runnable, Consumer<Disposable> {
         boolean connected;
         boolean disconnectedEarly;
@@ -157,7 +157,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class RefCountObserver<T> extends AtomicBoolean implements Observer<T>, Disposable {
         final RefConnection connection;
         final Observer<? super T> downstream;

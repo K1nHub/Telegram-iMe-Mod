@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Transaction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Transaction {
     private final BigDecimal amount;
     private final String createdAt;
@@ -19,7 +19,7 @@ public abstract class Transaction {
     private final TokenDetailed feeToken;
 
     /* renamed from: id */
-    private final String f445id;
+    private final String f378id;
     private final TransactionProcessingType processingType;
     private final Status status;
     private final TokenDetailed token;
@@ -30,7 +30,7 @@ public abstract class Transaction {
     }
 
     private Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenDetailed tokenDetailed, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenDetailed tokenDetailed2) {
-        this.f445id = str;
+        this.f378id = str;
         this.amount = bigDecimal;
         this.type = transactionType;
         this.direction = transactionDirection;
@@ -43,7 +43,7 @@ public abstract class Transaction {
     }
 
     public String getId() {
-        return this.f445id;
+        return this.f378id;
     }
 
     public BigDecimal getAmount() {
@@ -83,7 +83,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Unsupported extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -92,7 +92,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f458id;
+        private final String f391id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -173,7 +173,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f458id;
+            return this.f391id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -234,7 +234,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f458id = id;
+            this.f391id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -248,7 +248,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Transfer extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -257,7 +257,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f457id;
+        private final String f390id;
         private final TransactionProcessingType processingType;
         private final String recipientUserId;
         private final Status status;
@@ -344,7 +344,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f457id;
+            return this.f390id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -410,7 +410,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(recipientUserId, "recipientUserId");
-            this.f457id = id;
+            this.f390id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -425,7 +425,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Referral extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -434,7 +434,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f454id;
+        private final String f387id;
         private final String invitedUserId;
         private final TransactionProcessingType processingType;
         private final Status status;
@@ -521,7 +521,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f454id;
+            return this.f387id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -587,7 +587,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(invitedUserId, "invitedUserId");
-            this.f454id = id;
+            this.f387id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -602,7 +602,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Purchase extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -611,7 +611,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f453id;
+        private final String f386id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -692,7 +692,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f453id;
+            return this.f386id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -753,7 +753,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f453id = id;
+            this.f386id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -767,7 +767,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Lottery extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -776,7 +776,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f452id;
+        private final String f385id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -857,7 +857,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f452id;
+            return this.f385id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -918,7 +918,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f452id = id;
+            this.f385id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -932,7 +932,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Registration extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -941,7 +941,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f456id;
+        private final String f389id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1022,7 +1022,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f456id;
+            return this.f389id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1083,7 +1083,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f456id = id;
+            this.f389id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1097,7 +1097,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Refund extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -1106,7 +1106,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f455id;
+        private final String f388id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1187,7 +1187,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f455id;
+            return this.f388id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1248,7 +1248,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
-            this.f455id = id;
+            this.f388id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1262,7 +1262,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Crypto extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -1271,7 +1271,7 @@ public abstract class Transaction {
         private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f446id;
+        private final String f379id;
         private final TransactionProcessingType processingType;
         private final Status status;
         private final TokenDetailed token;
@@ -1280,7 +1280,7 @@ public abstract class Transaction {
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f446id;
+            return this.f379id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1346,7 +1346,7 @@ public abstract class Transaction {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
-            this.f446id = id;
+            this.f379id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
@@ -1364,7 +1364,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Donation extends Transfer {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1373,7 +1373,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f448id;
+            private final String f381id;
             private final TransactionProcessingType processingType;
             private final String receiverAccountId;
             private final String recipientAddress;
@@ -1484,7 +1484,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f448id;
+                return this.f381id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1573,7 +1573,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
                 Intrinsics.checkNotNullParameter(senderAccountId, "senderAccountId");
                 Intrinsics.checkNotNullParameter(receiverAccountId, "receiverAccountId");
-                this.f448id = id;
+                this.f381id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1592,7 +1592,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static class Transfer extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1601,7 +1601,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f451id;
+            private final String f384id;
             private final String payloadMessage;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
@@ -1613,7 +1613,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f451id;
+                return this.f384id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1694,7 +1694,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                this.f451id = id;
+                this.f384id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1712,7 +1712,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Approve extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1721,7 +1721,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f447id;
+            private final String f380id;
             private final TransactionProcessingType processingType;
             private final Status status;
             private final TokenDetailed token;
@@ -1808,7 +1808,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f447id;
+                return this.f380id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1875,7 +1875,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
                 Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                this.f447id = id;
+                this.f380id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -1890,7 +1890,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class SimplexPurchase extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1899,7 +1899,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f449id;
+            private final String f382id;
             private final String orderId;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
@@ -2016,7 +2016,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f449id;
+                return this.f382id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2108,7 +2108,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(orderId, "orderId");
                 Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
                 Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-                this.f449id = id;
+                this.f382id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
@@ -2128,7 +2128,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Swap extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -2137,7 +2137,7 @@ public abstract class Transaction {
             private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f450id;
+            private final String f383id;
             private final BigDecimal inputAmount;
             private final TokenDetailed inputToken;
             private final BigDecimal outputAmount;
@@ -2254,7 +2254,7 @@ public abstract class Transaction {
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f450id;
+                return this.f383id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2346,7 +2346,7 @@ public abstract class Transaction {
                 Intrinsics.checkNotNullParameter(tradeType, "tradeType");
                 Intrinsics.checkNotNullParameter(inputAmount, "inputAmount");
                 Intrinsics.checkNotNullParameter(outputAmount, "outputAmount");
-                this.f450id = id;
+                this.f383id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;

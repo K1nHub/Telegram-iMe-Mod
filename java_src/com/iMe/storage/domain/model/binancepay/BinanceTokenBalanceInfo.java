@@ -6,10 +6,10 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTokenBalanceInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceTokenBalanceInfo {
     public static final Companion Companion = new Companion(null);
-    private final String asset;
+    private final String assetCode;
     private final String assetName;
     private final String assetShortName;
     private final Balance combined;
@@ -21,7 +21,7 @@ public final class BinanceTokenBalanceInfo {
     private final Balance spot;
 
     public final String component1() {
-        return this.asset;
+        return this.assetCode;
     }
 
     public final boolean component10() {
@@ -60,8 +60,8 @@ public final class BinanceTokenBalanceInfo {
         return this.convertible;
     }
 
-    public final BinanceTokenBalanceInfo copy(String asset, String assetName, String assetShortName, String logoUrl, Balance spot, Balance margin, Balance combined, List<String> replenishNetworksIds, boolean z, boolean z2) {
-        Intrinsics.checkNotNullParameter(asset, "asset");
+    public final BinanceTokenBalanceInfo copy(String assetCode, String assetName, String assetShortName, String logoUrl, Balance spot, Balance margin, Balance combined, List<String> replenishNetworksIds, boolean z, boolean z2) {
+        Intrinsics.checkNotNullParameter(assetCode, "assetCode");
         Intrinsics.checkNotNullParameter(assetName, "assetName");
         Intrinsics.checkNotNullParameter(assetShortName, "assetShortName");
         Intrinsics.checkNotNullParameter(logoUrl, "logoUrl");
@@ -69,7 +69,7 @@ public final class BinanceTokenBalanceInfo {
         Intrinsics.checkNotNullParameter(margin, "margin");
         Intrinsics.checkNotNullParameter(combined, "combined");
         Intrinsics.checkNotNullParameter(replenishNetworksIds, "replenishNetworksIds");
-        return new BinanceTokenBalanceInfo(asset, assetName, assetShortName, logoUrl, spot, margin, combined, replenishNetworksIds, z, z2);
+        return new BinanceTokenBalanceInfo(assetCode, assetName, assetShortName, logoUrl, spot, margin, combined, replenishNetworksIds, z, z2);
     }
 
     public boolean equals(Object obj) {
@@ -78,14 +78,14 @@ public final class BinanceTokenBalanceInfo {
         }
         if (obj instanceof BinanceTokenBalanceInfo) {
             BinanceTokenBalanceInfo binanceTokenBalanceInfo = (BinanceTokenBalanceInfo) obj;
-            return Intrinsics.areEqual(this.asset, binanceTokenBalanceInfo.asset) && Intrinsics.areEqual(this.assetName, binanceTokenBalanceInfo.assetName) && Intrinsics.areEqual(this.assetShortName, binanceTokenBalanceInfo.assetShortName) && Intrinsics.areEqual(this.logoUrl, binanceTokenBalanceInfo.logoUrl) && Intrinsics.areEqual(this.spot, binanceTokenBalanceInfo.spot) && Intrinsics.areEqual(this.margin, binanceTokenBalanceInfo.margin) && Intrinsics.areEqual(this.combined, binanceTokenBalanceInfo.combined) && Intrinsics.areEqual(this.replenishNetworksIds, binanceTokenBalanceInfo.replenishNetworksIds) && this.convertible == binanceTokenBalanceInfo.convertible && this.receivable == binanceTokenBalanceInfo.receivable;
+            return Intrinsics.areEqual(this.assetCode, binanceTokenBalanceInfo.assetCode) && Intrinsics.areEqual(this.assetName, binanceTokenBalanceInfo.assetName) && Intrinsics.areEqual(this.assetShortName, binanceTokenBalanceInfo.assetShortName) && Intrinsics.areEqual(this.logoUrl, binanceTokenBalanceInfo.logoUrl) && Intrinsics.areEqual(this.spot, binanceTokenBalanceInfo.spot) && Intrinsics.areEqual(this.margin, binanceTokenBalanceInfo.margin) && Intrinsics.areEqual(this.combined, binanceTokenBalanceInfo.combined) && Intrinsics.areEqual(this.replenishNetworksIds, binanceTokenBalanceInfo.replenishNetworksIds) && this.convertible == binanceTokenBalanceInfo.convertible && this.receivable == binanceTokenBalanceInfo.receivable;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((((((((this.asset.hashCode() * 31) + this.assetName.hashCode()) * 31) + this.assetShortName.hashCode()) * 31) + this.logoUrl.hashCode()) * 31) + this.spot.hashCode()) * 31) + this.margin.hashCode()) * 31) + this.combined.hashCode()) * 31) + this.replenishNetworksIds.hashCode()) * 31;
+        int hashCode = ((((((((((((((this.assetCode.hashCode() * 31) + this.assetName.hashCode()) * 31) + this.assetShortName.hashCode()) * 31) + this.logoUrl.hashCode()) * 31) + this.spot.hashCode()) * 31) + this.margin.hashCode()) * 31) + this.combined.hashCode()) * 31) + this.replenishNetworksIds.hashCode()) * 31;
         boolean z = this.convertible;
         int i = z;
         if (z != 0) {
@@ -97,11 +97,11 @@ public final class BinanceTokenBalanceInfo {
     }
 
     public String toString() {
-        return "BinanceTokenBalanceInfo(asset=" + this.asset + ", assetName=" + this.assetName + ", assetShortName=" + this.assetShortName + ", logoUrl=" + this.logoUrl + ", spot=" + this.spot + ", margin=" + this.margin + ", combined=" + this.combined + ", replenishNetworksIds=" + this.replenishNetworksIds + ", convertible=" + this.convertible + ", receivable=" + this.receivable + ')';
+        return "BinanceTokenBalanceInfo(assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", assetShortName=" + this.assetShortName + ", logoUrl=" + this.logoUrl + ", spot=" + this.spot + ", margin=" + this.margin + ", combined=" + this.combined + ", replenishNetworksIds=" + this.replenishNetworksIds + ", convertible=" + this.convertible + ", receivable=" + this.receivable + ')';
     }
 
-    public BinanceTokenBalanceInfo(String asset, String assetName, String assetShortName, String logoUrl, Balance spot, Balance margin, Balance combined, List<String> replenishNetworksIds, boolean z, boolean z2) {
-        Intrinsics.checkNotNullParameter(asset, "asset");
+    public BinanceTokenBalanceInfo(String assetCode, String assetName, String assetShortName, String logoUrl, Balance spot, Balance margin, Balance combined, List<String> replenishNetworksIds, boolean z, boolean z2) {
+        Intrinsics.checkNotNullParameter(assetCode, "assetCode");
         Intrinsics.checkNotNullParameter(assetName, "assetName");
         Intrinsics.checkNotNullParameter(assetShortName, "assetShortName");
         Intrinsics.checkNotNullParameter(logoUrl, "logoUrl");
@@ -109,7 +109,7 @@ public final class BinanceTokenBalanceInfo {
         Intrinsics.checkNotNullParameter(margin, "margin");
         Intrinsics.checkNotNullParameter(combined, "combined");
         Intrinsics.checkNotNullParameter(replenishNetworksIds, "replenishNetworksIds");
-        this.asset = asset;
+        this.assetCode = assetCode;
         this.assetName = assetName;
         this.assetShortName = assetShortName;
         this.logoUrl = logoUrl;
@@ -121,8 +121,8 @@ public final class BinanceTokenBalanceInfo {
         this.receivable = z2;
     }
 
-    public final String getAsset() {
-        return this.asset;
+    public final String getAssetCode() {
+        return this.assetCode;
     }
 
     public final String getAssetName() {
@@ -162,7 +162,7 @@ public final class BinanceTokenBalanceInfo {
     }
 
     /* compiled from: BinanceTokenBalanceInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Balance {
         public static final Companion Companion = new Companion(null);
         private final double btcValuation;
@@ -217,7 +217,7 @@ public final class BinanceTokenBalanceInfo {
         }
 
         public int hashCode() {
-            return (((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.total) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.free)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.locked)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.freeze)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.withdrawing)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.btcValuation)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.fiatValuation);
+            return (((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.free)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.locked)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.freeze)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.withdrawing)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.btcValuation)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fiatValuation);
         }
 
         public String toString() {
@@ -263,7 +263,7 @@ public final class BinanceTokenBalanceInfo {
         }
 
         /* compiled from: BinanceTokenBalanceInfo.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -279,7 +279,7 @@ public final class BinanceTokenBalanceInfo {
     }
 
     /* compiled from: BinanceTokenBalanceInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

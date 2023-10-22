@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.catalog.ChannelCountryRespons
 import com.iMe.storage.domain.model.catalog.ChannelCountry;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelCountryMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ChannelCountryMappingKt {
     public static final ChannelCountry mapToDomain(ChannelCountryResponse channelCountryResponse) {
         Intrinsics.checkNotNullParameter(channelCountryResponse, "<this>");

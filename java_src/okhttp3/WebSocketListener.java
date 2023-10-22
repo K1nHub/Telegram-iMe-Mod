@@ -3,7 +3,7 @@ package okhttp3;
 import kotlin.jvm.internal.Intrinsics;
 import okio.ByteString;
 /* compiled from: WebSocketListener.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class WebSocketListener {
     public void onClosed(WebSocket webSocket, int i, String reason) {
         Intrinsics.checkNotNullParameter(webSocket, "webSocket");

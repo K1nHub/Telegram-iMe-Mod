@@ -3,7 +3,7 @@ package kotlin;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Standard.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class NotImplementedError extends Error {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NotImplementedError(String message) {

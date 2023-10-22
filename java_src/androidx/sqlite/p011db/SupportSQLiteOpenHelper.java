@@ -113,7 +113,7 @@ public interface SupportSQLiteOpenHelper extends Closeable {
             int i = 0;
             boolean z = false;
             while (i <= length) {
-                boolean z2 = Intrinsics.compare(str.charAt(!z ? i : length), 32) <= 0;
+                boolean z2 = Intrinsics.compare((int) str.charAt(!z ? i : length), 32) <= 0;
                 if (z) {
                     if (!z2) {
                         break;

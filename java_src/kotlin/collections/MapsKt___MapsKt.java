@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Maps.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MapsKt___MapsKt extends MapsKt___MapsJvmKt {
     public static <K, V> List<Pair<K, V>> toList(Map<? extends K, ? extends V> map) {
         List<Pair<K, V>> listOf;

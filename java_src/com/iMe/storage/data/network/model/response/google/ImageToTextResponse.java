@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.google;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageToTextResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ImageToTextResponse {
     private final String detectedLanguage;
     private final String foundText;

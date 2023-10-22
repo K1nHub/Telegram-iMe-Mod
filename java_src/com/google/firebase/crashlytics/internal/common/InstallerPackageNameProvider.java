@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.common;
 
 import android.content.Context;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class InstallerPackageNameProvider {
     private String installerPackageName;
 

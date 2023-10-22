@@ -4,11 +4,11 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Choreographer;
-import java.util.Objects;
 import kotlin.Result;
 import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HandlerDispatcher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HandlerDispatcherKt {
     private static volatile Choreographer choreographer;
 
@@ -19,7 +19,7 @@ public final class HandlerDispatcherKt {
         }
         if (i >= 28) {
             Object invoke = Handler.class.getDeclaredMethod("createAsync", Looper.class).invoke(null, looper);
-            Objects.requireNonNull(invoke, "null cannot be cast to non-null type android.os.Handler");
+            Intrinsics.checkNotNull(invoke, "null cannot be cast to non-null type android.os.Handler");
             return (Handler) invoke;
         }
         try {
@@ -30,14 +30,14 @@ public final class HandlerDispatcherKt {
     }
 
     static {
-        Object m1658constructorimpl;
+        Object m1935constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m1658constructorimpl = Result.m1658constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
+            m1935constructorimpl = Result.m1935constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th));
+            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
         }
-        HandlerDispatcher handlerDispatcher = Result.m1660isFailureimpl(m1658constructorimpl) ? null : m1658constructorimpl;
+        HandlerDispatcher handlerDispatcher = Result.m1940isFailureimpl(m1935constructorimpl) ? null : m1935constructorimpl;
     }
 }

@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1$3;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
-    .line 71
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public onSnapPositionChange(I)V
     .locals 1
 
-    .line 73
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1$3;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;

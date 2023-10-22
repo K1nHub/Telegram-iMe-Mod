@@ -551,6 +551,74 @@
     return-object v0
 .end method
 
+.method public getStableInsetBottom()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 441
+    iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
+
+    move-result-object v0
+
+    iget v0, v0, Landroidx/core/graphics/Insets;->bottom:I
+
+    return v0
+.end method
+
+.method public getStableInsetLeft()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 401
+    iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
+
+    move-result-object v0
+
+    iget v0, v0, Landroidx/core/graphics/Insets;->left:I
+
+    return v0
+.end method
+
+.method public getStableInsetRight()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 421
+    iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
+
+    move-result-object v0
+
+    iget v0, v0, Landroidx/core/graphics/Insets;->right:I
+
+    return v0
+.end method
+
+.method public getStableInsetTop()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 381
+    iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
+
+    move-result-object v0
+
+    iget v0, v0, Landroidx/core/graphics/Insets;->top:I
+
+    return v0
+.end method
+
 .method public getStableInsets()Landroidx/core/graphics/Insets;
     .locals 1
     .annotation runtime Ljava/lang/Deprecated;

@@ -1,7 +1,7 @@
 package com.iMe.core;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class R$string {
-    public static final int event_log_restricted_send_games = 2131828616;
-    public static final int event_log_restricted_send_gifs = 2131828617;
-    public static final int event_log_restricted_send_inline = 2131828618;
+    public static final int event_log_restricted_send_games = 2131828687;
+    public static final int event_log_restricted_send_gifs = 2131828688;
+    public static final int event_log_restricted_send_inline = 2131828689;
 }

@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: TwitterUserItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterUserItem extends NoChildNode {
     private final String avatarUrl;
     private final String name;

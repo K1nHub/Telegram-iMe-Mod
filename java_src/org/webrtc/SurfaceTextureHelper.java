@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
     private final EglBase eglBase;
@@ -30,7 +30,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 

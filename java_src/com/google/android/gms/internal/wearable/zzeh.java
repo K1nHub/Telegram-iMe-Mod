@@ -4,7 +4,7 @@ import java.util.ListIterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzeh implements ListIterator, Iterator {
     final ListIterator zza;
     final /* synthetic */ int zzb;

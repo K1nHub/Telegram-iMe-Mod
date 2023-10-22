@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inputChatUploadedPhoto extends TLRPC$InputChatPhoto {
     public static int constructor = -1110593856;
     public TLRPC$InputFile file;

@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import org.telegram.p043ui.NotificationsSoundActivity;
+import org.telegram.p042ui.NotificationsSoundActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$NotificationSound;
@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC$TL_notificationSoundDefault;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundLocal;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundNone;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundRingtone;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
     public static final String PROPERTY_CUSTOM = "custom_";
@@ -25,12 +25,12 @@ public class NotificationsSettingsFacade {
     }
 
     public boolean isDefault(long j, int i) {
-        NotificationsController.getSharedPrefKey(j, i);
+        NotificationsController.getSharedPrefKey(j, i, true);
         return false;
     }
 
     public void clearPreference(long j, int i) {
-        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i);
+        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i, true);
         SharedPreferences.Editor edit = getPreferences().edit();
         SharedPreferences.Editor remove = edit.remove(PROPERTY_NOTIFY + sharedPrefKey);
         SharedPreferences.Editor remove2 = remove.remove("custom_" + sharedPrefKey);
@@ -41,25 +41,25 @@ public class NotificationsSettingsFacade {
     }
 
     public int getProperty(String str, long j, int i, int i2) {
-        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i);
+        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i, true);
         SharedPreferences preferences = getPreferences();
         if (preferences.contains(str + sharedPrefKey)) {
             SharedPreferences preferences2 = getPreferences();
             return preferences2.getInt(str + sharedPrefKey, i2);
         }
-        String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j, 0);
+        String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j, 0, true);
         SharedPreferences preferences3 = getPreferences();
         return preferences3.getInt(str + sharedPrefKey2, i2);
     }
 
     public long getProperty(String str, long j, int i, long j2) {
-        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i);
+        String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i, true);
         SharedPreferences preferences = getPreferences();
         if (preferences.contains(str + sharedPrefKey)) {
             SharedPreferences preferences2 = getPreferences();
             return preferences2.getLong(str + sharedPrefKey, j2);
         }
-        String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j, 0);
+        String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j, 0, true);
         SharedPreferences preferences3 = getPreferences();
         return preferences3.getLong(str + sharedPrefKey2, j2);
     }
@@ -111,15 +111,15 @@ public class NotificationsSettingsFacade {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01df  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$applyDialogNotificationsSettings$1(long r18, int r20, org.telegram.tgnet.TLRPC$PeerNotifySettings r21) {
         /*
-            Method dump skipped, instructions count: 472
+            Method dump skipped, instructions count: 482
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsSettingsFacade.lambda$applyDialogNotificationsSettings$1(long, int, org.telegram.tgnet.TLRPC$PeerNotifySettings):void");
@@ -139,7 +139,7 @@ public class NotificationsSettingsFacade {
         }
         int i3 = (j > 0L ? 1 : (j == 0L ? 0 : -1));
         if (i3 != 0) {
-            String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i);
+            String sharedPrefKey = NotificationsController.getSharedPrefKey(j, i, true);
             str = "sound_" + sharedPrefKey;
             str3 = "sound_path_" + sharedPrefKey;
             str2 = "sound_document_id_" + sharedPrefKey;
@@ -189,12 +189,12 @@ public class NotificationsSettingsFacade {
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundRingtone) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = (TLRPC$TL_notificationSoundRingtone) tLRPC$NotificationSound;
-            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1646id);
+            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1723id);
             MediaDataController.getInstance(this.currentAccount).checkRingtones(true);
             if (z && i3 != 0) {
                 editor.putBoolean("custom_" + j, true);
             }
-            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1646id);
+            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1723id);
         }
     }
 

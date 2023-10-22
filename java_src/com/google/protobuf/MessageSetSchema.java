@@ -6,7 +6,7 @@ import com.google.protobuf.WireFormat;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class MessageSetSchema<T> implements Schema<T> {
     private final MessageLite defaultInstance;
     private final ExtensionSchema<?> extensionSchema;

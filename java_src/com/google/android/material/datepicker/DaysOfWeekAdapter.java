@@ -10,7 +10,7 @@ import com.google.android.material.R$layout;
 import com.google.android.material.R$string;
 import java.util.Calendar;
 import java.util.Locale;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class DaysOfWeekAdapter extends BaseAdapter {
     private static final int CALENDAR_DAY_STYLE;
     private final Calendar calendar;

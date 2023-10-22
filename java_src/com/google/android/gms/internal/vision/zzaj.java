@@ -11,10 +11,10 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "RecognitionOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzaj extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzaj> CREATOR = new zzai();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final Rect zza;
 
     public zzaj() {
@@ -22,7 +22,7 @@ public final class zzaj extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzaj(@SafeParcelable.Param(m796id = 2) Rect rect) {
+    public zzaj(@SafeParcelable.Param(m1088id = 2) Rect rect) {
         this.zza = rect;
     }
 

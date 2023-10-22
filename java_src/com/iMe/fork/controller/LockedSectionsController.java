@@ -19,7 +19,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: LockedSectionsController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LockedSectionsController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, LockedSectionsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -32,7 +32,7 @@ public final class LockedSectionsController extends BaseController {
     public LockedSectionsController(int i) {
         super(i);
         Map<LockedSection, SectionPasscodeData> mutableMapOf;
-        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m103to(LockedSection.ARCHIVE, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)), TuplesKt.m103to(LockedSection.CLOUD, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
+        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m144to(LockedSection.ARCHIVE, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)), TuplesKt.m144to(LockedSection.CLOUD, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         this.sectionsPasscodeData = mutableMapOf;
     }
 
@@ -100,7 +100,7 @@ public final class LockedSectionsController extends BaseController {
         LockedSection[] values = LockedSection.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (LockedSection lockedSection : values) {
-            arrayList.add(TuplesKt.m103to(lockedSection, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
+            arrayList.add(TuplesKt.m144to(lockedSection, new SectionPasscodeData(0, null, null, false, false, 0, 0L, 0L, 0, 0, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -110,7 +110,7 @@ public final class LockedSectionsController extends BaseController {
     }
 
     /* compiled from: LockedSectionsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class SectionPasscodeData {
         private int badPasscodeTries;
         private boolean isSectionLocked;
@@ -325,7 +325,7 @@ public final class LockedSectionsController extends BaseController {
     }
 
     /* compiled from: LockedSectionsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

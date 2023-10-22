@@ -169,7 +169,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.surfaceSize = Size.UNKNOWN;
                 this.newlyRenderedFirstFrame = false;
                 this.timedMetadata = new Metadata((long) C0479C.TIME_UNSET, new Metadata.Entry[0]);
-                this.playlist = ImmutableList.m762of();
+                this.playlist = ImmutableList.m1054of();
                 this.timeline = Timeline.EMPTY;
                 this.playlistMetadata = MediaMetadata.EMPTY;
                 this.currentMediaItemIndex = -1;
@@ -684,7 +684,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.durationUs = C0479C.TIME_UNSET;
                 this.positionInFirstPeriodUs = 0L;
                 this.isPlaceholder = false;
-                this.periods = ImmutableList.m762of();
+                this.periods = ImmutableList.m1054of();
             }
 
             private Builder(MediaItemData mediaItemData) {

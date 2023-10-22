@@ -4,7 +4,7 @@ import android.app.Activity;
 import com.iMe.storage.domain.model.ObjectHolder;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidActivityHolder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AndroidActivityHolder implements ObjectHolder<Activity> {
     private final Activity activity;
 

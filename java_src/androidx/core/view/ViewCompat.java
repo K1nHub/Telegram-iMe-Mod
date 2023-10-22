@@ -1,7 +1,6 @@
 package androidx.core.view;
 
 import android.animation.ValueAnimator;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -18,7 +17,6 @@ import android.util.SparseArray;
 import android.view.ContentInfo;
 import android.view.Display;
 import android.view.KeyEvent;
-import android.view.PointerIcon;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -834,12 +832,6 @@ public class ViewCompat {
         }
     }
 
-    public static void setPointerIcon(View view, PointerIconCompat pointerIconCompat) {
-        if (Build.VERSION.SDK_INT >= 24) {
-            Api24Impl.setPointerIcon(view, (PointerIcon) (pointerIconCompat != null ? pointerIconCompat.getPointerIcon() : null));
-        }
-    }
-
     public static Display getDisplay(View view) {
         if (Build.VERSION.SDK_INT >= 17) {
             return Api17Impl.getDisplay(view);
@@ -873,7 +865,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m859at(view).preDispatch(keyEvent);
+        return UnhandledKeyEventManager.m1151at(view).preDispatch(keyEvent);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -881,7 +873,7 @@ public class ViewCompat {
         if (Build.VERSION.SDK_INT >= 28) {
             return false;
         }
-        return UnhandledKeyEventManager.m859at(view).dispatch(view, keyEvent);
+        return UnhandledKeyEventManager.m1151at(view).dispatch(view, keyEvent);
     }
 
     public static void setScreenReaderFocusable(View view, boolean z) {
@@ -1189,7 +1181,7 @@ public class ViewCompat {
         }
 
         /* renamed from: at */
-        static UnhandledKeyEventManager m859at(View view) {
+        static UnhandledKeyEventManager m1151at(View view) {
             int i = R$id.tag_unhandled_key_event_manager;
             UnhandledKeyEventManager unhandledKeyEventManager = (UnhandledKeyEventManager) view.getTag(i);
             if (unhandledKeyEventManager == null) {
@@ -1616,33 +1608,6 @@ public class ViewCompat {
     static class Api15Impl {
         static boolean hasOnClickListeners(View view) {
             return view.hasOnClickListeners();
-        }
-    }
-
-    /* loaded from: classes.dex */
-    static class Api24Impl {
-        static void setPointerIcon(View view, PointerIcon pointerIcon) {
-            view.setPointerIcon(pointerIcon);
-        }
-
-        static boolean startDragAndDrop(View view, ClipData clipData, View.DragShadowBuilder dragShadowBuilder, Object obj, int i) {
-            return view.startDragAndDrop(clipData, dragShadowBuilder, obj, i);
-        }
-
-        static void cancelDragAndDrop(View view) {
-            view.cancelDragAndDrop();
-        }
-
-        static void updateDragShadow(View view, View.DragShadowBuilder dragShadowBuilder) {
-            view.updateDragShadow(dragShadowBuilder);
-        }
-
-        static void dispatchStartTemporaryDetach(View view) {
-            view.dispatchStartTemporaryDetach();
-        }
-
-        static void dispatchFinishTemporaryDetach(View view) {
-            view.dispatchFinishTemporaryDetach();
         }
     }
 

@@ -8,14 +8,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "CloseChannelResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzcc extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzcc> CREATOR = new zzcd();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int zza;
 
     @SafeParcelable.Constructor
-    public zzcc(@SafeParcelable.Param(m796id = 2) int i) {
+    public zzcc(@SafeParcelable.Param(m1088id = 2) int i) {
         this.zza = i;
     }
 

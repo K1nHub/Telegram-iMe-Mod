@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BoostMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BoostMappingKt {
     public static final TransactionArgs mapToDomain(SpeedUpTransactionDataResponse speedUpTransactionDataResponse) {
         Intrinsics.checkNotNullParameter(speedUpTransactionDataResponse, "<this>");

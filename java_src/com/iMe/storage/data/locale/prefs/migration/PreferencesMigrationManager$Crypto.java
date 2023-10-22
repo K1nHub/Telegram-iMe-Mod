@@ -11,7 +11,7 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.scope.Scope;
 import timber.log.Timber;
 /* compiled from: PreferencesMigrationManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PreferencesMigrationManager$Crypto implements KoinComponent {
     public static final PreferencesMigrationManager$Crypto INSTANCE = new PreferencesMigrationManager$Crypto();
 

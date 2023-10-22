@@ -152,7 +152,7 @@
     .line 1
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/d2;->k(Ljava/lang/Integer;)V
+    invoke-virtual {p0, p1}, Lj$/util/stream/d2;->r(Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -167,15 +167,7 @@
     return-object p1
 .end method
 
-.method public synthetic k(Ljava/lang/Integer;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->b(Lj$/util/stream/k3;Ljava/lang/Integer;)V
-
-    return-void
-.end method
-
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1
@@ -189,7 +181,7 @@
     return-object v0
 .end method
 
-.method public m()V
+.method public l()V
     .locals 4
 
     iget v0, p0, Lj$/util/stream/c2;->b:I
@@ -242,7 +234,7 @@
     throw v0
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/c2;->a:[I
@@ -303,6 +295,14 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public synthetic r(Ljava/lang/Integer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->b(Lj$/util/stream/k3;Ljava/lang/Integer;)V
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

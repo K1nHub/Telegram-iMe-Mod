@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.wallet.AutoResolveHelper;
 import com.google.android.gms.wallet.PaymentCardRecognitionIntentResponse;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzaa extends zzx {
     private final TaskCompletionSource zza;
 

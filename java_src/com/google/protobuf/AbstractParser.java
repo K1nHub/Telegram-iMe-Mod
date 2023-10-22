@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.protobuf.MessageLite;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractParser<MessageType extends MessageLite> implements Parser<MessageType> {
     private static final ExtensionRegistryLite EMPTY_REGISTRY = ExtensionRegistryLite.getEmptyRegistry();
 
@@ -19,12 +19,6 @@ public abstract class AbstractParser<MessageType extends MessageLite> implements
             return messagetype;
         }
         throw newUninitializedMessageException(messagetype).asInvalidProtocolBufferException().setUnfinishedMessage(messagetype);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.protobuf.Parser
-    public MessageType parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return (MessageType) checkMessageInitialized((MessageLite) parsePartialFrom(codedInputStream, extensionRegistryLite));
     }
 
     public MessageType parsePartialFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {

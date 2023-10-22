@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.internal.firebase_ml.zzd;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zzb */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzb extends com.google.android.gms.internal.firebase_ml.zzb implements IOnDeviceAutoMLImageLabeler {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzb(IBinder iBinder) {

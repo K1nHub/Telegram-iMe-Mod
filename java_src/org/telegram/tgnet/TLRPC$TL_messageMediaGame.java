@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messageMediaGame extends TLRPC$MessageMedia {
     public static int constructor = -38694904;
 

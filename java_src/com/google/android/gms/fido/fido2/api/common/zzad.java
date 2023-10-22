@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzad extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzad> CREATOR = new zzae();
-    @SafeParcelable.Field(getter = "getTunnelServerId", m797id = 1)
+    @SafeParcelable.Field(getter = "getTunnelServerId", m1089id = 1)
     private final String zza;
 
     @SafeParcelable.Constructor
-    public zzad(@SafeParcelable.Param(m796id = 1) String str) {
+    public zzad(@SafeParcelable.Param(m1088id = 1) String str) {
         this.zza = (String) Preconditions.checkNotNull(str);
     }
 

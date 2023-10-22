@@ -12,12 +12,12 @@ import org.telegram.tgnet.TLRPC$ChatParticipant;
 import org.telegram.tgnet.TLRPC$TL_chatParticipantAdmin;
 import org.telegram.tgnet.TLRPC$TL_chatParticipantCreator;
 /* compiled from: GroupMembershipUseCase.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GroupMembershipUseCase {
     private final TelegramControllersGateway telegramControllersGateway;
 
     /* compiled from: GroupMembershipUseCase.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzjs extends zzhj<String> implements zzjv, RandomAccess {
     private static final zzjs zza;
     private static final zzjv zzb;

@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignsCursoredMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CampaignsCursoredMappingKt {
     public static final CampaignsCursored mapToDomain(CampaignsCursoredResponse campaignsCursoredResponse) {
         int collectionSizeOrDefault;

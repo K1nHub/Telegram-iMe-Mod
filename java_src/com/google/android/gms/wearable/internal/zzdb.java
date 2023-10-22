@@ -23,7 +23,7 @@ import com.google.android.gms.wearable.DataItemAsset;
 import com.google.android.gms.wearable.DataItemBuffer;
 import com.google.android.gms.wearable.PutDataRequest;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdb extends DataClient {
     public static final /* synthetic */ int zza = 0;
     private final DataApi zzb;

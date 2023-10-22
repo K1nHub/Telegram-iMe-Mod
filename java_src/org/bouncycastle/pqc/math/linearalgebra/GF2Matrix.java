@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.math.linearalgebra;
 
 import java.lang.reflect.Array;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GF2Matrix extends Matrix {
     private int length;
     private int[][] matrix;

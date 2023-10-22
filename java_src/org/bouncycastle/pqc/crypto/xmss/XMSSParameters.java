@@ -8,13 +8,13 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.util.Integers;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class XMSSParameters {
     private static final Map<Integer, XMSSParameters> paramsLookupTable;
     private final int height;
 
     /* renamed from: k */
-    private final int f1429k;
+    private final int f1510k;
     private final XMSSOid oid;
     private final String treeDigest;
     private final ASN1ObjectIdentifier treeDigestOID;
@@ -53,7 +53,7 @@ public final class XMSSParameters {
         }
         Objects.requireNonNull(aSN1ObjectIdentifier, "digest == null");
         this.height = i;
-        this.f1429k = determineMinK();
+        this.f1510k = determineMinK();
         String digestName = DigestUtil.getDigestName(aSN1ObjectIdentifier);
         this.treeDigest = digestName;
         this.treeDigestOID = aSN1ObjectIdentifier;
@@ -94,7 +94,7 @@ public final class XMSSParameters {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getK() {
-        return this.f1429k;
+        return this.f1510k;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -266,7 +266,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             list = getSchemeDatas((DrmInitData) Assertions.checkNotNull(drmInitData), this.uuid, false);
             if (list.isEmpty()) {
                 MissingSchemeDataException missingSchemeDataException = new MissingSchemeDataException(this.uuid);
-                Log.m817e(TAG, "DRM error", missingSchemeDataException);
+                Log.m1109e(TAG, "DRM error", missingSchemeDataException);
                 if (eventDispatcher != null) {
                     eventDispatcher.drmSessionManagerError(missingSchemeDataException);
                 }
@@ -325,7 +325,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
         DefaultDrmSession defaultDrmSession = this.placeholderDrmSession;
         if (defaultDrmSession == null) {
-            DefaultDrmSession createAndAcquireSessionWithRetry = createAndAcquireSessionWithRetry(ImmutableList.m762of(), true, null, z);
+            DefaultDrmSession createAndAcquireSessionWithRetry = createAndAcquireSessionWithRetry(ImmutableList.m1054of(), true, null, z);
             this.sessions.add(createAndAcquireSessionWithRetry);
             this.placeholderDrmSession = createAndAcquireSessionWithRetry;
         } else {
@@ -342,7 +342,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             if (drmInitData.schemeDataCount != 1 || !drmInitData.get(0).matches(C0479C.COMMON_PSSH_UUID)) {
                 return false;
             }
-            Log.m814w(TAG, "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + this.uuid);
+            Log.m1106w(TAG, "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + this.uuid);
         }
         String str = drmInitData.schemeType;
         if (str == null || C0479C.CENC_TYPE_cenc.equals(str)) {

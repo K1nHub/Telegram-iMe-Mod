@@ -12,7 +12,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface DataApi {
     public static final String ACTION_DATA_CHANGED = "com.google.android.gms.wearable.DATA_CHANGED";
     public static final int FILTER_LITERAL = 0;
@@ -20,34 +20,34 @@ public interface DataApi {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface DataItemResult extends Result {
         DataItem getDataItem();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface DataListener {
         void onDataChanged(DataEventBuffer dataEventBuffer);
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface DeleteDataItemsResult extends Result {
         int getNumDeleted();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface FilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface GetFdForAssetResult extends Result, Releasable {
         ParcelFileDescriptor getFd();
 

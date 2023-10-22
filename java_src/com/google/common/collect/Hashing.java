@@ -1,5 +1,5 @@
 package com.google.common.collect;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class Hashing {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int smear(int i) {

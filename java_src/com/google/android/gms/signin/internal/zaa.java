@@ -10,14 +10,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "AuthAccountResultCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zaa extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zaa> CREATOR = new zab();
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getConnectionResultCode", m797id = 2)
+    @SafeParcelable.Field(getter = "getConnectionResultCode", m1089id = 2)
     private int zab;
-    @SafeParcelable.Field(getter = "getRawAuthResolutionIntent", m797id = 3)
+    @SafeParcelable.Field(getter = "getRawAuthResolutionIntent", m1089id = 3)
     private Intent zac;
 
     public zaa() {
@@ -40,7 +40,7 @@ public final class zaa extends AbstractSafeParcelable implements Result {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zaa(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) Intent intent) {
+    public zaa(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) Intent intent) {
         this.zaa = i;
         this.zab = i2;
         this.zac = intent;

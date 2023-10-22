@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensSearchResponseMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokensSearchResponseMappingKt {
     public static final CursoredData<FoundTokenWithFamily> mapToDomain(TokensSearchResponse tokensSearchResponse) {
         int collectionSizeOrDefault;

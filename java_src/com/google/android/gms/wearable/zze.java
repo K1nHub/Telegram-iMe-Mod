@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import com.google.android.gms.common.Feature;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zze {
     public static final Feature zza;
     public static final Feature zzb;

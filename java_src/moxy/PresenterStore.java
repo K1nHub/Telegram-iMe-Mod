@@ -3,7 +3,7 @@ package moxy;
 import android.util.Log;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class PresenterStore {
     private Map<String, MvpPresenter> presenters = new HashMap();
 

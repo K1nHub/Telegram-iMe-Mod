@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTokenBalanceExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BinanceTokenBalanceExtKt {
     public static final String getDollarsBalanceText(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
         Intrinsics.checkNotNullParameter(binanceTokenBalanceInfo, "<this>");

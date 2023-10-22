@@ -1,11 +1,11 @@
 package com.iMe.storage.data.network.model.response.crypto.wallet_connect;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.network.model.response.crypto.wallet.GasPriceResponse;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionParamsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectTransactionParamsResponse {
     private final long chainId;
     private final GasPriceResponse fast;
@@ -76,7 +76,7 @@ public final class WalletConnectTransactionParamsResponse {
         GasPriceResponse gasPriceResponse = this.fastest;
         int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
         GasPriceResponse gasPriceResponse2 = this.safeLow;
-        return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
+        return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId);
     }
 
     public String toString() {

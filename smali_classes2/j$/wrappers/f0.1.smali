@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/LongConsumer;
+.implements Ljava/util/function/LongFunction;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/q;)Ljava/util/function/LongConsumer;
+.method public static synthetic a(Lj$/util/function/q;)Ljava/util/function/LongFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/e0;
 
-    iget-object p0, p0, Lj$/wrappers/e0;->a:Ljava/util/function/LongConsumer;
+    iget-object p0, p0, Lj$/wrappers/e0;->a:Ljava/util/function/LongFunction;
 
     return-object p0
 
@@ -50,30 +50,12 @@
 
 
 # virtual methods
-.method public synthetic accept(J)V
+.method public synthetic apply(J)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/f0;->a:Lj$/util/function/q;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/q;->accept(J)V
-
-    return-void
-.end method
-
-.method public synthetic andThen(Ljava/util/function/LongConsumer;)Ljava/util/function/LongConsumer;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/f0;->a:Lj$/util/function/q;
-
-    invoke-static {p1}, Lj$/wrappers/e0;->b(Ljava/util/function/LongConsumer;)Lj$/util/function/q;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/q;->f(Lj$/util/function/q;)Lj$/util/function/q;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/f0;->a(Lj$/util/function/q;)Ljava/util/function/LongConsumer;
+    invoke-interface {v0, p1, p2}, Lj$/util/function/q;->apply(J)Ljava/lang/Object;
 
     move-result-object p1
 

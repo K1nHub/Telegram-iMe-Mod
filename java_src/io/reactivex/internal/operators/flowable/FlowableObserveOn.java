@@ -16,7 +16,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean delayError;
     final int prefetch;
@@ -39,7 +39,7 @@ public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, 
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static abstract class BaseObserveOnSubscriber<T> extends BasicIntQueueSubscription<T> implements FlowableSubscriber<T>, Runnable {
         volatile boolean cancelled;
         final boolean delayError;
@@ -203,7 +203,7 @@ public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, 
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ObserveOnSubscriber<T> extends BaseObserveOnSubscriber<T> {
         final Subscriber<? super T> downstream;
 
@@ -391,7 +391,7 @@ public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, 
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ObserveOnConditionalSubscriber<T> extends BaseObserveOnSubscriber<T> {
         long consumed;
         final ConditionalSubscriber<? super T> downstream;

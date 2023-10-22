@@ -1,5 +1,5 @@
 package com.tbuonomo.viewpagerdotsindicator;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class R$id {
-    public static final int dot = 2131296572;
+    public static final int dot = 2131296553;
 }

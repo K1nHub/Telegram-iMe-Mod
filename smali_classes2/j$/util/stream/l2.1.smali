@@ -144,7 +144,7 @@
 .method public g(Ljava/lang/Object;)V
     .locals 4
 
-    check-cast p1, Lj$/util/function/q;
+    check-cast p1, Lj$/util/function/p;
 
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
 
     aget-wide v2, v1, v0
 
-    invoke-interface {p1, v2, v3}, Lj$/util/function/q;->accept(J)V
+    invoke-interface {p1, v2, v3}, Lj$/util/function/p;->accept(J)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -187,17 +187,17 @@
     return-void
 .end method
 
-.method public synthetic k(JJLj$/util/function/m;)Lj$/util/stream/y1;
+.method public synthetic k(JJLj$/util/function/IntFunction;)Lj$/util/stream/y1;
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->p(Lj$/util/stream/y1;JJLj$/util/function/m;)Lj$/util/stream/y1;
+    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->p(Lj$/util/stream/y1;JJLj$/util/function/IntFunction;)Lj$/util/stream/y1;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic p()I
+.method public synthetic n()I
     .locals 1
 
     const/4 v0, 0x0
@@ -205,48 +205,28 @@
     return v0
 .end method
 
-.method public synthetic q(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public synthetic p(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/m;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public bridge synthetic r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public bridge synthetic q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 0
 
     .line 1
-    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/l2;->k(JJLj$/util/function/m;)Lj$/util/stream/y1;
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/l2;->k(JJLj$/util/function/IntFunction;)Lj$/util/stream/y1;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public spliterator()Lj$/util/s;
-    .locals 4
-
-    .line 3
-    iget-object v0, p0, Lj$/util/stream/l2;->a:[J
-
-    iget v1, p0, Lj$/util/stream/l2;->b:I
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x410
-
-    .line 4
-    invoke-static {v0, v2, v1, v3}, Lj$/util/I;->l([JIII)Lj$/util/s$c;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public spliterator()Lj$/util/t;
+.method public spliterator()Lj$/util/Spliterator$d;
     .locals 4
 
     .line 1
@@ -259,7 +239,27 @@
     const/16 v3, 0x410
 
     .line 2
-    invoke-static {v0, v2, v1, v3}, Lj$/util/I;->l([JIII)Lj$/util/s$c;
+    invoke-static {v0, v2, v1, v3}, Lj$/util/F;->l([JIII)Lj$/util/Spliterator$c;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 4
+
+    .line 3
+    iget-object v0, p0, Lj$/util/stream/l2;->a:[J
+
+    iget v1, p0, Lj$/util/stream/l2;->b:I
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x410
+
+    .line 4
+    invoke-static {v0, v2, v1, v3}, Lj$/util/F;->l([JIII)Lj$/util/Spliterator$c;
 
     move-result-object v0
 

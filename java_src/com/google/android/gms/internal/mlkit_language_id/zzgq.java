@@ -12,7 +12,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzgq<K extends Comparable<K>, V> extends AbstractMap<K, V> {
     private final int zza;
     private List<zzgz> zzb;

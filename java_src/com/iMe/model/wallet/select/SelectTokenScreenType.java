@@ -7,7 +7,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectTokenScreenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SelectTokenScreenType {
     public /* synthetic */ SelectTokenScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -17,7 +17,7 @@ public abstract class SelectTokenScreenType {
     }
 
     /* compiled from: SelectTokenScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Binance extends SelectTokenScreenType {
         private final List<TokenDetailed> tokens;
 
@@ -34,9 +34,9 @@ public abstract class SelectTokenScreenType {
     }
 
     /* compiled from: SelectTokenScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Send extends SelectTokenScreenType {
-        private final List<TokenDetailed> tokens;
+        private final List<TokenDetailed> availableTokens;
 
         public Send() {
             this(null, 1, null);
@@ -44,20 +44,20 @@ public abstract class SelectTokenScreenType {
 
         public Send(List<TokenDetailed> list) {
             super(null);
-            this.tokens = list;
+            this.availableTokens = list;
         }
 
         public /* synthetic */ Send(List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this((i & 1) != 0 ? null : list);
         }
 
-        public final List<TokenDetailed> getTokens() {
-            return this.tokens;
+        public final List<TokenDetailed> getAvailableTokens() {
+            return this.availableTokens;
         }
     }
 
     /* compiled from: SelectTokenScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Swap extends SelectTokenScreenType {
         private final TokenDetailed ignoredToken;
         private final TransactionDirection swapDirection;

@@ -4,7 +4,7 @@ import android.view.Surface;
 import com.otaliastudios.opengl.core.EglCore;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EglWindowSurface.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class EglWindowSurface extends EglNativeWindowSurface {
     private boolean releaseSurface;
     private Surface surface;

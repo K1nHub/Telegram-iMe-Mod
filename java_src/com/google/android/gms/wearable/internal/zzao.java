@@ -14,18 +14,18 @@ import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "CapabilityInfoParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzao extends AbstractSafeParcelable implements CapabilityInfo {
     public static final Parcelable.Creator<zzao> CREATOR = new zzap();
-    @SafeParcelable.Field(getter = "getName", m797id = 2)
+    @SafeParcelable.Field(getter = "getName", m1089id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getNodeParcelables", m797id = 3)
+    @SafeParcelable.Field(getter = "getNodeParcelables", m1089id = 3)
     private final List zzc;
     private final Object zza = new Object();
     private Set zzd = null;
 
     @SafeParcelable.Constructor
-    public zzao(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) List list) {
+    public zzao(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) List list) {
         this.zzb = str;
         this.zzc = list;
         Preconditions.checkNotNull(str);

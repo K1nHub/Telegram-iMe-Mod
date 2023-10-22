@@ -46,7 +46,7 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
 
     public void addItemProvider(BaseItemProvider<T> provider) {
         Intrinsics.checkNotNullParameter(provider, "provider");
-        provider.setAdapter$TMessagesProj_release(this);
+        provider.setAdapter$TMessagesProj_HA_public(this);
         getMItemProviders().put(provider.getItemViewType(), provider);
     }
 

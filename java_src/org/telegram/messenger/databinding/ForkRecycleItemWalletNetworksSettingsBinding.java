@@ -4,20 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
-import com.iMe.p031ui.custom.ImageTextCheckCell;
+import com.iMe.p030ui.custom.ImageTextCheckCell;
 import java.util.Objects;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletNetworksSettingsBinding implements ViewBinding {
-    private final ImageTextCheckCell rootView;
-
     private ForkRecycleItemWalletNetworksSettingsBinding(ImageTextCheckCell imageTextCheckCell, ImageTextCheckCell imageTextCheckCell2) {
-        this.rootView = imageTextCheckCell;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public ImageTextCheckCell getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletNetworksSettingsBinding inflate(LayoutInflater layoutInflater) {
@@ -25,7 +17,7 @@ public final class ForkRecycleItemWalletNetworksSettingsBinding implements ViewB
     }
 
     public static ForkRecycleItemWalletNetworksSettingsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_networks_settings, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_networks_settings, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

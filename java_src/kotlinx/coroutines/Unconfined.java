@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.CoroutineContext;
 /* compiled from: Unconfined.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Unconfined extends CoroutineDispatcher {
     public static final Unconfined INSTANCE = new Unconfined();
 
@@ -21,9 +21,12 @@ public final class Unconfined extends CoroutineDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        if (((YieldContext) coroutineContext.get(YieldContext.Key)) == null) {
-            throw new UnsupportedOperationException("Dispatchers.Unconfined.dispatch function can only be used by the yield function. If you wrap Unconfined dispatcher in your code, make sure you properly delegate isDispatchNeeded and dispatch calls.");
+    public void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        YieldContext yieldContext = (YieldContext) coroutineContext.get(YieldContext.Key);
+        if (yieldContext != null) {
+            yieldContext.dispatcherWasUnconfined = true;
+            return;
         }
+        throw new UnsupportedOperationException("Dispatchers.Unconfined.dispatch function can only be used by the yield function. If you wrap Unconfined dispatcher in your code, make sure you properly delegate isDispatchNeeded and dispatch calls.");
     }
 }

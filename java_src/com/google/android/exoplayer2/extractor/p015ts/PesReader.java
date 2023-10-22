@@ -58,10 +58,10 @@ public final class PesReader implements TsPayloadReader {
             int i2 = this.state;
             if (i2 != 0 && i2 != 1) {
                 if (i2 == 2) {
-                    Log.m814w(TAG, "Unexpected start indicator reading extended header");
+                    Log.m1106w(TAG, "Unexpected start indicator reading extended header");
                 } else if (i2 == 3) {
                     if (this.payloadSize != -1) {
-                        Log.m814w(TAG, "Unexpected start indicator: expected " + this.payloadSize + " more bytes");
+                        Log.m1106w(TAG, "Unexpected start indicator: expected " + this.payloadSize + " more bytes");
                     }
                     this.reader.packetFinished();
                 } else {
@@ -135,7 +135,7 @@ public final class PesReader implements TsPayloadReader {
         this.pesScratch.setPosition(0);
         int readBits = this.pesScratch.readBits(24);
         if (readBits != 1) {
-            Log.m814w(TAG, "Unexpected start code prefix: " + readBits);
+            Log.m1106w(TAG, "Unexpected start code prefix: " + readBits);
             this.payloadSize = -1;
             return false;
         }
@@ -155,7 +155,7 @@ public final class PesReader implements TsPayloadReader {
             int i = ((readBits2 + 6) - 9) - readBits3;
             this.payloadSize = i;
             if (i < 0) {
-                Log.m814w(TAG, "Found negative packet payload size: " + this.payloadSize);
+                Log.m1106w(TAG, "Found negative packet payload size: " + this.payloadSize);
                 this.payloadSize = -1;
             }
         }

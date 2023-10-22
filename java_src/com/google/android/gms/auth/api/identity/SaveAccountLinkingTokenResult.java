@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SaveAccountLinkingTokenResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SaveAccountLinkingTokenResult> CREATOR = new zbk();
-    @SafeParcelable.Field(getter = "getPendingIntent", m797id = 1)
+    @SafeParcelable.Field(getter = "getPendingIntent", m1089id = 1)
     private final PendingIntent zba;
 
     @SafeParcelable.Constructor
-    public SaveAccountLinkingTokenResult(@SafeParcelable.Param(m796id = 1) PendingIntent pendingIntent) {
+    public SaveAccountLinkingTokenResult(@SafeParcelable.Param(m1088id = 1) PendingIntent pendingIntent) {
         this.zba = pendingIntent;
     }
 

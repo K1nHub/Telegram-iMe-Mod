@@ -18,19 +18,19 @@ import java.util.Map;
 @VisibleForTesting
 @SafeParcelable.Class(creator = "DataItemParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdi extends AbstractSafeParcelable implements DataItem {
     public static final Parcelable.Creator<zzdi> CREATOR = new zzdj();
-    @SafeParcelable.Field(getter = "getUri", m797id = 2)
+    @SafeParcelable.Field(getter = "getUri", m1089id = 2)
     private final Uri zza;
-    @SafeParcelable.Field(getter = "getAssetsInternal", m797id = 4, type = "android.os.Bundle")
+    @SafeParcelable.Field(getter = "getAssetsInternal", m1089id = 4, type = "android.os.Bundle")
     private final Map zzb;
-    @SafeParcelable.Field(getter = "getData", m797id = 5)
+    @SafeParcelable.Field(getter = "getData", m1089id = 5)
     private byte[] zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzdi(@SafeParcelable.Param(m796id = 2) Uri uri, @SafeParcelable.Param(m796id = 4) Bundle bundle, @SafeParcelable.Param(m796id = 5) byte[] bArr) {
+    public zzdi(@SafeParcelable.Param(m1088id = 2) Uri uri, @SafeParcelable.Param(m1088id = 4) Bundle bundle, @SafeParcelable.Param(m1088id = 5) byte[] bArr) {
         this.zza = uri;
         HashMap hashMap = new HashMap();
         bundle.setClassLoader((ClassLoader) Preconditions.checkNotNull(DataItemAssetParcelable.class.getClassLoader()));

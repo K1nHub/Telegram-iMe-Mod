@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CloseGuard.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CloseGuard {
     public static final Companion Companion = new Companion(null);
     private final Method getMethod;
@@ -49,7 +49,7 @@ public final class CloseGuard {
     }
 
     /* compiled from: CloseGuard.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

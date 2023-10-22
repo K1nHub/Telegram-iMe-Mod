@@ -6,11 +6,11 @@ import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
 import timber.log.Timber;
 /* compiled from: DbErrorHandler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DbErrorHandler implements ErrorHandler<Throwable> {
 
     /* compiled from: DbErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum ErrorStatus implements IErrorStatus {
         UNKNOWN,
         EMPTY

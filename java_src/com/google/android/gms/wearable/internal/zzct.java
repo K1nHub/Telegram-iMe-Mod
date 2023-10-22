@@ -13,7 +13,7 @@ import com.google.android.gms.wearable.DataItemAsset;
 import com.google.android.gms.wearable.DataItemBuffer;
 import com.google.android.gms.wearable.PutDataRequest;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzct implements DataApi {
     @Override // com.google.android.gms.wearable.DataApi
     public final PendingResult<Status> addListener(GoogleApiClient googleApiClient, DataApi.DataListener dataListener) {

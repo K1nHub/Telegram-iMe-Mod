@@ -171,7 +171,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         ConditionVariable conditionVariable = new ConditionVariable();
         this.constructorFinished = conditionVariable;
         try {
-            Log.m816i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "]");
+            Log.m1108i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "]");
             Context applicationContext = builder.context.getApplicationContext();
             this.applicationContext = applicationContext;
             AnalyticsCollector apply = builder.analyticsCollectorFunction.apply(builder.clock);
@@ -667,7 +667,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         if (timeline.isEmpty() || i < timeline.getWindowCount()) {
             this.pendingOperationAcks++;
             if (isPlayingAd()) {
-                Log.m814w(TAG, "seekTo ignored because an ad is playing");
+                Log.m1106w(TAG, "seekTo ignored because an ad is playing");
                 ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate = new ExoPlayerImplInternal.PlaybackInfoUpdate(this.playbackInfo);
                 playbackInfoUpdate.incrementPendingOperationAcks(1);
                 this.playbackInfoUpdateListener.onPlaybackInfoUpdate(playbackInfoUpdate);
@@ -762,13 +762,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         verifyApplicationThread();
         this.audioFocusManager.updateAudioFocus(getPlayWhenReady(), 1);
         stopInternal(z, null);
-        this.currentCueGroup = new CueGroup(ImmutableList.m762of(), this.playbackInfo.positionUs);
+        this.currentCueGroup = new CueGroup(ImmutableList.m1054of(), this.playbackInfo.positionUs);
     }
 
     @Override // com.google.android.exoplayer2.Player
     public void release() {
         AudioTrack audioTrack;
-        Log.m816i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "] [" + ExoPlayerLibraryInfo.registeredModules() + "]");
+        Log.m1108i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "] [" + ExoPlayerLibraryInfo.registeredModules() + "]");
         verifyApplicationThread();
         if (Util.SDK_INT < 21 && (audioTrack = this.keepSessionIdAudioTrack) != null) {
             audioTrack.release();
@@ -1175,7 +1175,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         removeSurfaceCallbacks();
         this.textureView = textureView;
         if (textureView.getSurfaceTextureListener() != null) {
-            Log.m814w(TAG, "Replacing existing SurfaceTextureListener.");
+            Log.m1106w(TAG, "Replacing existing SurfaceTextureListener.");
         }
         textureView.setSurfaceTextureListener(this.componentListener);
         SurfaceTexture surfaceTexture = textureView.isAvailable() ? textureView.getSurfaceTexture() : null;
@@ -2070,7 +2070,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         if (timeline.isEmpty()) {
             MediaSource.MediaPeriodId dummyPeriodForEmptyTimeline = PlaybackInfo.getDummyPeriodForEmptyTimeline();
             long msToUs = Util.msToUs(this.maskingWindowPositionMs);
-            PlaybackInfo copyWithLoadingMediaPeriodId = copyWithTimeline.copyWithNewPosition(dummyPeriodForEmptyTimeline, msToUs, msToUs, msToUs, 0L, TrackGroupArray.EMPTY, this.emptyTrackSelectorResult, ImmutableList.m762of()).copyWithLoadingMediaPeriodId(dummyPeriodForEmptyTimeline);
+            PlaybackInfo copyWithLoadingMediaPeriodId = copyWithTimeline.copyWithNewPosition(dummyPeriodForEmptyTimeline, msToUs, msToUs, msToUs, 0L, TrackGroupArray.EMPTY, this.emptyTrackSelectorResult, ImmutableList.m1054of()).copyWithLoadingMediaPeriodId(dummyPeriodForEmptyTimeline);
             copyWithLoadingMediaPeriodId.bufferedPositionUs = copyWithLoadingMediaPeriodId.positionUs;
             return copyWithLoadingMediaPeriodId;
         }
@@ -2084,7 +2084,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         }
         if (z || longValue < msToUs2) {
             Assertions.checkState(!mediaPeriodId.isAd());
-            PlaybackInfo copyWithLoadingMediaPeriodId2 = copyWithTimeline.copyWithNewPosition(mediaPeriodId, longValue, longValue, longValue, 0L, z ? TrackGroupArray.EMPTY : copyWithTimeline.trackGroups, z ? this.emptyTrackSelectorResult : copyWithTimeline.trackSelectorResult, z ? ImmutableList.m762of() : copyWithTimeline.staticMetadata).copyWithLoadingMediaPeriodId(mediaPeriodId);
+            PlaybackInfo copyWithLoadingMediaPeriodId2 = copyWithTimeline.copyWithNewPosition(mediaPeriodId, longValue, longValue, longValue, 0L, z ? TrackGroupArray.EMPTY : copyWithTimeline.trackGroups, z ? this.emptyTrackSelectorResult : copyWithTimeline.trackSelectorResult, z ? ImmutableList.m1054of() : copyWithTimeline.staticMetadata).copyWithLoadingMediaPeriodId(mediaPeriodId);
             copyWithLoadingMediaPeriodId2.bufferedPositionUs = longValue;
             return copyWithLoadingMediaPeriodId2;
         }
@@ -2187,7 +2187,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         TextureView textureView = this.textureView;
         if (textureView != null) {
             if (textureView.getSurfaceTextureListener() != this.componentListener) {
-                Log.m814w(TAG, "SurfaceTextureListener already unset or replaced.");
+                Log.m1106w(TAG, "SurfaceTextureListener already unset or replaced.");
             } else {
                 this.textureView.setSurfaceTextureListener(null);
             }
@@ -2352,7 +2352,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             if (this.throwsWhenUsingWrongThread) {
                 throw new IllegalStateException(formatInvariant);
             }
-            Log.m813w(TAG, formatInvariant, this.hasNotifiedFullWrongThreadWarning ? null : new IllegalStateException());
+            Log.m1105w(TAG, formatInvariant, this.hasNotifiedFullWrongThreadWarning ? null : new IllegalStateException());
             this.hasNotifiedFullWrongThreadWarning = true;
         }
     }
@@ -2867,7 +2867,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         public static PlayerId registerMediaMetricsListener(Context context, ExoPlayerImpl exoPlayerImpl, boolean z) {
             MediaMetricsListener create = MediaMetricsListener.create(context);
             if (create == null) {
-                Log.m814w(ExoPlayerImpl.TAG, "MediaMetricsService unavailable.");
+                Log.m1106w(ExoPlayerImpl.TAG, "MediaMetricsService unavailable.");
                 return new PlayerId(LogSessionId.LOG_SESSION_ID_NONE);
             }
             if (z) {

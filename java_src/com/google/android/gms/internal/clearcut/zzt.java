@@ -5,7 +5,7 @@ import com.google.android.gms.internal.clearcut.zzcg;
 public final class zzt {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C7383zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C7717zza> implements zzdq {
         private static final zza zzbf;
         private static volatile zzdz<zza> zzbg;
         private int zzbb;
@@ -15,12 +15,12 @@ public final class zzt {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzt$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C7383zza extends zzcg.zza<zza, C7383zza> implements zzdq {
-            private C7383zza() {
+        public static final class C7717zza extends zzcg.zza<zza, C7717zza> implements zzdq {
+            private C7717zza() {
                 super(zza.zzbf);
             }
 
-            /* synthetic */ C7383zza(zzu zzuVar) {
+            /* synthetic */ C7717zza(zzu zzuVar) {
                 this();
             }
         }
@@ -219,7 +219,7 @@ public final class zzt {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7383zza(null);
+                    return new C7717zza(null);
                 case 3:
                     return zzcg.zza(zzbf, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0004\u0000\u0000\u0000\u0001\f\u0000\u0002\f\u0001\u0003\f\u0002", new Object[]{"zzbb", "zzbc", zzc.zzd(), "zzbd", zzb.zzd(), "zzbe", zzd.zzd()});
                 case 4:

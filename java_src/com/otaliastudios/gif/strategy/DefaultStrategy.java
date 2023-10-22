@@ -11,12 +11,12 @@ import com.otaliastudios.gif.strategy.size.MultiResizer;
 import com.otaliastudios.gif.strategy.size.Resizer;
 import com.otaliastudios.gif.strategy.size.Size;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DefaultStrategy implements Strategy {
     private static final Logger LOG = new Logger(DefaultStrategy.class.getSimpleName());
     private final Options options;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Options {
         private Resizer resizer;
         private long targetBitRate;
@@ -36,7 +36,7 @@ public class DefaultStrategy implements Strategy {
         return new Builder(new FractionResizer(f));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private MultiResizer resizer;
         private long targetBitRate;
@@ -97,7 +97,7 @@ public class DefaultStrategy implements Strategy {
         int width = bestInputSize.getWidth();
         int height = bestInputSize.getHeight();
         Logger logger = LOG;
-        logger.m709i("Input width&height: " + width + "x" + height);
+        logger.m1002i("Input width&height: " + width + "x" + height);
         try {
             Size outputSize = this.options.resizer.getOutputSize(bestInputSize);
             if (outputSize instanceof ExactSize) {
@@ -111,7 +111,7 @@ public class DefaultStrategy implements Strategy {
                 minor = outputSize.getMinor();
                 major = outputSize.getMajor();
             }
-            logger.m709i("Output width&height: " + minor + "x" + major);
+            logger.m1002i("Output width&height: " + minor + "x" + major);
             int minFrameRate = getMinFrameRate(list);
             int min = minFrameRate > 0 ? Math.min(minFrameRate, this.options.targetFrameRate) : this.options.targetFrameRate;
             mediaFormat.setString("mime", this.options.targetMimeType);

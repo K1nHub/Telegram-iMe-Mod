@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.crypto.newhope.NHPrivateKeyParameters;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCNHPrivateKey implements Key, PrivateKey {
     private transient ASN1Set attributes;
     private transient NHPrivateKeyParameters params;

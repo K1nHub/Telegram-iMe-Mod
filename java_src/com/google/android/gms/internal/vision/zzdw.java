@@ -7,7 +7,7 @@ import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzdw<T> implements Iterator<T>, p033j$.util.Iterator {
     private int zza;
     private int zzb;

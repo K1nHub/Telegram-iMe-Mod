@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateDeleteMessages extends TLRPC$Update {
     public static int constructor = -1576161051;
     public ArrayList<Integer> messages = new ArrayList<>();

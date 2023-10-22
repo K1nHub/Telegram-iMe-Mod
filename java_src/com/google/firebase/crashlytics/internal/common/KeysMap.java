@@ -4,7 +4,7 @@ import com.google.firebase.crashlytics.internal.Logger;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class KeysMap {
     private final Map<String, String> keys = new HashMap();
     private final int maxEntries;
@@ -31,7 +31,7 @@ public class KeysMap {
         }
         if (i > 0) {
             Logger logger = Logger.getLogger();
-            logger.m738w("Ignored " + i + " entries when adding custom keys. Maximum allowable: " + this.maxEntries);
+            logger.m1030w("Ignored " + i + " entries when adding custom keys. Maximum allowable: " + this.maxEntries);
         }
     }
 

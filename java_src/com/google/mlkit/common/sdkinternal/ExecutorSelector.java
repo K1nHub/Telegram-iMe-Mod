@@ -5,7 +5,7 @@ import com.google.firebase.inject.Provider;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ExecutorSelector {
     private final Provider<? extends Executor> zza;
 

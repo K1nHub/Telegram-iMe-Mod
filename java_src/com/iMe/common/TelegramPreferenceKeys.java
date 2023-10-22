@@ -21,9 +21,9 @@ import com.iMe.fork.enums.TemplatesMode;
 import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.enums.VideoVoiceCamera;
 import com.iMe.model.contacts.ContactsFilter;
-import com.iMe.p031ui.drawer.DrawerAccountData;
-import com.iMe.p031ui.drawer.DrawerSwitchableItem;
-import com.iMe.p031ui.music.MusicTab;
+import com.iMe.p030ui.drawer.DrawerAccountData;
+import com.iMe.p030ui.drawer.DrawerItem;
+import com.iMe.p030ui.music.MusicTab;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import java.util.ArrayList;
 import java.util.Set;
@@ -34,7 +34,7 @@ import kotlin.collections.SetsKt__SetsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.SharedConfig;
 /* compiled from: TelegramPreferenceKeys.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TelegramPreferenceKeys {
     public static final TelegramPreferenceKeys INSTANCE = new TelegramPreferenceKeys();
 
@@ -47,7 +47,7 @@ public final class TelegramPreferenceKeys {
     }
 
     /* compiled from: TelegramPreferenceKeys.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Global {
         static {
             new Global();
@@ -288,10 +288,6 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("lastSelectedLanguages");
         }
 
-        public static final String isSuggestPremiumReactionsEmoji() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("suggestPremiumReactionsEmoji");
-        }
-
         public static final String selectedFilterTabsWidthMode() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("filterTabsWidthMode");
         }
@@ -308,6 +304,10 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isDialogsPremiumHintEnabled");
         }
 
+        public static final String isChatAttachAlertWalletBotEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isChatAttachAlertWalletBotEnabled");
+        }
+
         public static final String isChatProfileEnabled() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isChatProfileEnabled");
         }
@@ -321,7 +321,7 @@ public final class TelegramPreferenceKeys {
         }
 
         /* compiled from: TelegramPreferenceKeys.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Default {
             static {
                 new Default();
@@ -341,6 +341,10 @@ public final class TelegramPreferenceKeys {
 
             public static final boolean isCallsConfirmationEnabled() {
                 return true;
+            }
+
+            public static final boolean isChatAttachAlertWalletBotEnabled() {
+                return false;
             }
 
             public static final boolean isChatProfileEnabled() {
@@ -499,10 +503,6 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isSuggestPremiumReactionsEmoji() {
-                return true;
-            }
-
             public static final boolean isTranslateInSendPopupEnabled() {
                 return true;
             }
@@ -543,7 +543,7 @@ public final class TelegramPreferenceKeys {
             }
 
             public static final Set<String> selectedDrawerItems() {
-                return DrawerSwitchableItem.Companion.getDefaultItems();
+                return DrawerItem.Companion.getDefaultItems();
             }
 
             public static final Set<String> selectedExtendedAvatarPreviewerItems() {
@@ -613,7 +613,7 @@ public final class TelegramPreferenceKeys {
     }
 
     /* compiled from: TelegramPreferenceKeys.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class User {
         static {
             new User();
@@ -844,22 +844,6 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("lastMusicTab");
         }
 
-        public static final String isNeuroBotsEnabled() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("neuroBotsEnabled");
-        }
-
-        public static final String isNeuroBotsAutoEnabledInPersonalChats() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("neuroBotsAutoEnabledInPersonalChats");
-        }
-
-        public static final String isNeuroBotsAutoEnabledInGroups() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("neuroBotsAutoEnabledInGroups");
-        }
-
-        public static final String isShowOftenUsedNeuroBotsEnabled() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("showOftenUsedNeuroBots");
-        }
-
         public static final String templatesChannelId() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("templatesChannelId");
         }
@@ -932,8 +916,12 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesBarEnabled");
         }
 
-        public static final String isStoriesAvatarsEnabled() {
+        public static final String isStoriesContactsAvatarsEnabled() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesAvatarsEnabled");
+        }
+
+        public static final String isStoriesChannelsAvatarsEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isStoriesChannelAvatarsEnabled");
         }
 
         public static final String isStoriesProfileAvatarEnabled() {
@@ -941,7 +929,7 @@ public final class TelegramPreferenceKeys {
         }
 
         /* compiled from: TelegramPreferenceKeys.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class Default {
             static {
                 new Default();
@@ -999,18 +987,6 @@ public final class TelegramPreferenceKeys {
                 return true;
             }
 
-            public static final boolean isNeuroBotsAutoEnabledInGroups() {
-                return false;
-            }
-
-            public static final boolean isNeuroBotsAutoEnabledInPersonalChats() {
-                return false;
-            }
-
-            public static final boolean isNeuroBotsEnabled() {
-                return false;
-            }
-
             public static final boolean isNoTopicFirstEnabled() {
                 return false;
             }
@@ -1055,10 +1031,6 @@ public final class TelegramPreferenceKeys {
                 return true;
             }
 
-            public static final boolean isShowOftenUsedNeuroBotsEnabled() {
-                return true;
-            }
-
             public static final boolean isShowPremiumBadgeEnabled() {
                 return true;
             }
@@ -1071,11 +1043,15 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isStoriesAvatarsEnabled() {
+            public static final boolean isStoriesBarEnabled() {
                 return true;
             }
 
-            public static final boolean isStoriesBarEnabled() {
+            public static final boolean isStoriesChannelsAvatarsEnabled() {
+                return true;
+            }
+
+            public static final boolean isStoriesContactsAvatarsEnabled() {
                 return true;
             }
 

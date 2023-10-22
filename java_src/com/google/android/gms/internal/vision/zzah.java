@@ -8,34 +8,34 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "LineBoxParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzah extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzah> CREATOR = new zzag();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final zzao[] zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final zzab zzb;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public final String zzc;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     public final String zzd;
-    @SafeParcelable.Field(m797id = 10)
+    @SafeParcelable.Field(m1089id = 10)
     public final boolean zze;
-    @SafeParcelable.Field(m797id = 11)
+    @SafeParcelable.Field(m1089id = 11)
     public final int zzf;
-    @SafeParcelable.Field(m797id = 12)
+    @SafeParcelable.Field(m1089id = 12)
     public final int zzg;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     private final zzab zzh;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     private final zzab zzi;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     private final float zzj;
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     private final int zzk;
 
     @SafeParcelable.Constructor
-    public zzah(@SafeParcelable.Param(m796id = 2) zzao[] zzaoVarArr, @SafeParcelable.Param(m796id = 3) zzab zzabVar, @SafeParcelable.Param(m796id = 4) zzab zzabVar2, @SafeParcelable.Param(m796id = 5) zzab zzabVar3, @SafeParcelable.Param(m796id = 6) String str, @SafeParcelable.Param(m796id = 7) float f, @SafeParcelable.Param(m796id = 8) String str2, @SafeParcelable.Param(m796id = 9) int i, @SafeParcelable.Param(m796id = 10) boolean z, @SafeParcelable.Param(m796id = 11) int i2, @SafeParcelable.Param(m796id = 12) int i3) {
+    public zzah(@SafeParcelable.Param(m1088id = 2) zzao[] zzaoVarArr, @SafeParcelable.Param(m1088id = 3) zzab zzabVar, @SafeParcelable.Param(m1088id = 4) zzab zzabVar2, @SafeParcelable.Param(m1088id = 5) zzab zzabVar3, @SafeParcelable.Param(m1088id = 6) String str, @SafeParcelable.Param(m1088id = 7) float f, @SafeParcelable.Param(m1088id = 8) String str2, @SafeParcelable.Param(m1088id = 9) int i, @SafeParcelable.Param(m1088id = 10) boolean z, @SafeParcelable.Param(m1088id = 11) int i2, @SafeParcelable.Param(m1088id = 12) int i3) {
         this.zza = zzaoVarArr;
         this.zzb = zzabVar;
         this.zzh = zzabVar2;

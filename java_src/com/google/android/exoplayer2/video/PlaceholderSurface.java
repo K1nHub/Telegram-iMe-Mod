@@ -134,19 +134,19 @@ public final class PlaceholderSurface extends Surface {
                         notify();
                     }
                 } catch (GlUtil.GlException e) {
-                    Log.m817e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e);
+                    Log.m1109e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e);
                     this.initException = new IllegalStateException(e);
                     synchronized (this) {
                         notify();
                     }
                 } catch (Error e2) {
-                    Log.m817e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e2);
+                    Log.m1109e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e2);
                     this.initError = e2;
                     synchronized (this) {
                         notify();
                     }
                 } catch (RuntimeException e3) {
-                    Log.m817e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e3);
+                    Log.m1109e(PlaceholderSurface.TAG, "Failed to initialize placeholder surface", e3);
                     this.initException = e3;
                     synchronized (this) {
                         notify();

@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Callbacks.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Callbacks<T> {
     private final Function1<T, Unit> onClose;
 

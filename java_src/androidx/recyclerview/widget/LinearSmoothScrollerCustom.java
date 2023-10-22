@@ -129,7 +129,7 @@ public class LinearSmoothScrollerCustom extends RecyclerView.SmoothScroller {
             } else if (i2 == 0) {
                 paddingTop = (height - i) / 2;
             } else {
-                paddingTop = (layoutManager.getPaddingTop() + this.offset) - AndroidUtilities.m72dp(88);
+                paddingTop = (layoutManager.getPaddingTop() + this.offset) - AndroidUtilities.m102dp(88);
             }
             int i3 = i + paddingTop;
             int i4 = paddingTop - decoratedTop;

@@ -3,7 +3,7 @@ package io.reactivex.internal.util;
 import io.reactivex.exceptions.CompositeException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ExceptionHelper {
     public static final Throwable TERMINATED = new Termination();
 
@@ -38,7 +38,7 @@ public final class ExceptionHelper {
         return "The source did not signal an event for " + j + " " + timeUnit.toString().toLowerCase() + " and has been terminated.";
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Termination extends Throwable {
         @Override // java.lang.Throwable
         public Throwable fillInStackTrace() {

@@ -1,5 +1,5 @@
 package com.google.common.base;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CharMatcher implements Predicate<Character> {
     public abstract boolean matches(char c);
 
@@ -7,13 +7,9 @@ public abstract class CharMatcher implements Predicate<Character> {
         return None.INSTANCE;
     }
 
-    public static CharMatcher whitespace() {
-        return Whitespace.INSTANCE;
-    }
-
     /* renamed from: is */
-    public static CharMatcher m767is(char c) {
-        return new C0892Is(c);
+    public static CharMatcher m1059is(char c) {
+        return new C0886Is(c);
     }
 
     protected CharMatcher() {
@@ -46,7 +42,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         return String.copyValueOf(cArr);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static abstract class FastMatcher extends CharMatcher {
         FastMatcher() {
         }
@@ -58,7 +54,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static abstract class NamedFastMatcher extends FastMatcher {
         private final String description;
 
@@ -71,7 +67,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class None extends NamedFastMatcher {
         static final None INSTANCE = new None();
 
@@ -91,27 +87,12 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes4.dex */
-    static final class Whitespace extends NamedFastMatcher {
-        static final int SHIFT = Integer.numberOfLeadingZeros(31);
-        static final Whitespace INSTANCE = new Whitespace();
-
-        Whitespace() {
-            super("CharMatcher.whitespace()");
-        }
-
-        @Override // com.google.common.base.CharMatcher
-        public boolean matches(char c) {
-            return "\u2002\u3000\r\u0085\u200a\u2005\u2000\u3000\u2029\u000b\u3000\u2008\u2003\u205f\u3000\u1680\t \u2006\u2001  \f\u2009\u3000\u2004\u3000\u3000\u2028\n \u3000".charAt((48906 * c) >>> SHIFT) == c;
-        }
-    }
-
     /* renamed from: com.google.common.base.CharMatcher$Is */
-    /* loaded from: classes4.dex */
-    private static final class C0892Is extends FastMatcher {
+    /* loaded from: classes3.dex */
+    private static final class C0886Is extends FastMatcher {
         private final char match;
 
-        C0892Is(char c) {
+        C0886Is(char c) {
             this.match = c;
         }
 

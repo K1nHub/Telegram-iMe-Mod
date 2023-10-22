@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_inactiveChats extends TLObject {
     public static int constructor = -1456996667;
     public ArrayList<Integer> dates = new ArrayList<>();

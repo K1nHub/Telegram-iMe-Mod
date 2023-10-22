@@ -3,7 +3,7 @@ package com.iMe.model.wallet.home;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FoundTokenItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FoundTokenItem extends NoChildNode {
     private final String address;
     private final boolean isCustom;

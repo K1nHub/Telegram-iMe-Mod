@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Headers;
 import okio.BufferedSource;
 /* compiled from: HeadersReader.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HeadersReader {
     private long headerLimit;
     private final BufferedSource source;
@@ -39,7 +39,7 @@ public final class HeadersReader {
     }
 
     /* compiled from: HeadersReader.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -4,7 +4,7 @@ import android.os.Build;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.manager.binancepay.BinancePayManager;
-import com.iMe.storage.domain.repository.wallet.WalletSessionRepository;
+import com.iMe.storage.domain.repository.wallet.SessionRepository;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
@@ -21,14 +21,14 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: MetadataInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MetadataInterceptor implements Interceptor, KoinComponent {
     public static final Companion Companion = new Companion(null);
     private final Lazy binancePayManager$delegate;
+    private final Lazy sessionRepository$delegate;
     private final Lazy telegramGateway$delegate;
-    private final Lazy walletSessionRepository$delegate;
 
     public MetadataInterceptor() {
         Lazy lazy;
@@ -57,15 +57,15 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
             }
         });
         this.telegramGateway$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletSessionRepository>() { // from class: com.iMe.storage.data.network.interceptor.MetadataInterceptor$special$$inlined$inject$default$2
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<SessionRepository>() { // from class: com.iMe.storage.data.network.interceptor.MetadataInterceptor$special$$inlined$inject$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
             }
 
-            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.repository.wallet.WalletSessionRepository, java.lang.Object] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.repository.wallet.SessionRepository, java.lang.Object] */
             @Override // kotlin.jvm.functions.Function0
-            public final WalletSessionRepository invoke() {
+            public final SessionRepository invoke() {
                 Scope rootScope;
                 KoinComponent koinComponent = KoinComponent.this;
                 Qualifier qualifier = r2;
@@ -75,10 +75,10 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
                 } else {
                     rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
                 }
-                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSessionRepository.class), qualifier, function0);
+                return rootScope.get(Reflection.getOrCreateKotlinClass(SessionRepository.class), qualifier, function0);
             }
         });
-        this.walletSessionRepository$delegate = lazy2;
+        this.sessionRepository$delegate = lazy2;
         lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinancePayManager>() { // from class: com.iMe.storage.data.network.interceptor.MetadataInterceptor$special$$inlined$inject$default$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -112,8 +112,8 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
         return (TelegramGateway) this.telegramGateway$delegate.getValue();
     }
 
-    private final WalletSessionRepository getWalletSessionRepository() {
-        return (WalletSessionRepository) this.walletSessionRepository$delegate.getValue();
+    private final SessionRepository getSessionRepository() {
+        return (SessionRepository) this.sessionRepository$delegate.getValue();
     }
 
     private final BinancePayManager getBinancePayManager() {
@@ -123,8 +123,11 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
     @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) {
         Intrinsics.checkNotNullParameter(chain, "chain");
-        boolean z = false;
-        String token = getWalletSessionRepository().getCurrentAccountToken(false).blockingFirst();
+        String token = getSessionRepository().getCurrentAccountToken(false).blockingFirst();
+        String accessToken = getBinancePayManager().getAccessToken();
+        if (accessToken == null) {
+            accessToken = "";
+        }
         Request.Builder header = chain.request().newBuilder().header("x-device-id", getTelegramGateway().getDeviceId()).header("accept-language", getTelegramGateway().getCurrentLanguage()).header("x-app-version", getTelegramGateway().getAppVersion());
         String RELEASE = Build.VERSION.RELEASE;
         Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
@@ -135,17 +138,8 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
             header2.header(RtspHeaders.AUTHORIZATION, companion.formatAuthToken(token));
         }
         if (isBinanceRequest(chain.request())) {
-            String accessToken = getBinancePayManager().getAccessToken();
-            if (accessToken == null || accessToken.length() == 0) {
-                z = true;
-            }
-            if (!z) {
-                Companion companion2 = Companion;
-                String accessToken2 = getBinancePayManager().getAccessToken();
-                if (accessToken2 == null) {
-                    accessToken2 = "";
-                }
-                header2.header("authorization-binance", companion2.formatAuthToken(accessToken2));
+            if (accessToken.length() > 0) {
+                header2.header("authorization-binance", Companion.formatAuthToken(accessToken));
             }
         }
         return chain.proceed(header2.build());
@@ -158,7 +152,7 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
     }
 
     /* compiled from: MetadataInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

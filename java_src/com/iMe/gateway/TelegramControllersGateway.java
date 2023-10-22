@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: TelegramControllersGateway.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface TelegramControllersGateway {
     public static final Companion Companion = null;
 
@@ -29,7 +29,7 @@ public interface TelegramControllersGateway {
 
     /* compiled from: TelegramControllersGateway.kt */
     /* renamed from: com.iMe.gateway.TelegramControllersGateway$-CC */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         static {
             Companion companion = TelegramControllersGateway.Companion;
@@ -87,7 +87,7 @@ public interface TelegramControllersGateway {
     }
 
     /* compiled from: TelegramControllersGateway.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 

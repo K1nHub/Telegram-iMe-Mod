@@ -8,6 +8,7 @@ import java.net.ProtocolException;
 import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.security.cert.CertificateException;
+import java.util.Collection;
 import java.util.List;
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLPeerUnverifiedException;
@@ -31,7 +32,7 @@ import okhttp3.internal.connection.RealConnection;
 import okhttp3.internal.connection.RouteException;
 import okhttp3.internal.http2.ConnectionShutdownException;
 /* compiled from: RetryAndFollowUpInterceptor.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RetryAndFollowUpInterceptor implements Interceptor {
     private final OkHttpClient client;
 
@@ -75,14 +76,14 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     if (!recover(e, call$okhttp, request$okhttp, !(e instanceof ConnectionShutdownException))) {
                         throw Util.withSuppressed(e, emptyList);
                     }
-                    emptyList = CollectionsKt___CollectionsKt.plus(emptyList, e);
+                    emptyList = CollectionsKt___CollectionsKt.plus((Collection<? extends Object>) ((Collection) emptyList), (Object) e);
                     call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
                     z = false;
                 } catch (RouteException e2) {
                     if (!recover(e2.getLastConnectException(), call$okhttp, request$okhttp, false)) {
                         throw Util.withSuppressed(e2.getFirstConnectException(), emptyList);
                     }
-                    emptyList = CollectionsKt___CollectionsKt.plus(emptyList, e2.getFirstConnectException());
+                    emptyList = CollectionsKt___CollectionsKt.plus((Collection<? extends Object>) ((Collection) emptyList), (Object) e2.getFirstConnectException());
                     call$okhttp.exitNetworkInterceptorExchange$okhttp(true);
                     z = false;
                 }
@@ -237,7 +238,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
     }
 
     /* compiled from: RetryAndFollowUpInterceptor.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

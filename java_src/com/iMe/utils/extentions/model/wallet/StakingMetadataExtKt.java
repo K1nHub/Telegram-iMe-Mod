@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.staking.StakingMetadata;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingMetadataExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StakingMetadataExtKt {
     public static final String getFormattedAPR(StakingMetadata stakingMetadata) {
         Intrinsics.checkNotNullParameter(stakingMetadata, "<this>");

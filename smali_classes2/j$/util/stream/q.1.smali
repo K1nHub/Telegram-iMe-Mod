@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public m()V
+.method public l()V
     .locals 1
 
     const/4 v0, 0x0
@@ -78,12 +78,12 @@
 
     iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0}, Lj$/util/stream/m3;->m()V
+    invoke-interface {v0}, Lj$/util/stream/m3;->l()V
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 2
 
     const/4 p1, 0x0
@@ -98,7 +98,7 @@
 
     const-wide/16 v0, -0x1
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 .end method

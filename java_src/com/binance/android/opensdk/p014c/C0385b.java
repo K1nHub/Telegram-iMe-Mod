@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class C0385b {
     /* renamed from: a */
-    public static final void m836a(String msg) {
+    public static final void m1128a(String msg) {
         Intrinsics.checkParameterIsNotNull(msg, "msg");
         Log.e("BinanceOpenSDK", msg);
     }

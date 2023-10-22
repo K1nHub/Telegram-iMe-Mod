@@ -2,7 +2,7 @@ package kotlin.jvm.internal;
 
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KProperty1;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class PropertyReference1 extends PropertyReference implements KProperty1 {
     public PropertyReference1(Object obj, Class cls, String str, String str2, int i) {
         super(obj, cls, str, str2, i);
@@ -18,7 +18,7 @@ public abstract class PropertyReference1 extends PropertyReference implements KP
         return get(obj);
     }
 
-    @Override // kotlin.reflect.KProperty1
+    @Override // kotlin.reflect.KProperty
     public KProperty1.Getter getGetter() {
         return ((KProperty1) getReflected()).getGetter();
     }

@@ -1,6 +1,6 @@
 package org.orbitmvi.orbit;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
@@ -15,7 +15,7 @@ import org.orbitmvi.orbit.idling.IdlingResource;
 import org.orbitmvi.orbit.idling.NoopIdlingResource;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* compiled from: Container.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface Container<STATE, SIDE_EFFECT> {
     Flow<SIDE_EFFECT> getSideEffectFlow();
 
@@ -24,7 +24,7 @@ public interface Container<STATE, SIDE_EFFECT> {
     Object orbit(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation);
 
     /* compiled from: Container.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Settings {
         private final CoroutineExceptionHandler exceptionHandler;
         private final IdlingResource idlingRegistry;
@@ -50,7 +50,7 @@ public interface Container<STATE, SIDE_EFFECT> {
         public int hashCode() {
             int hashCode = ((((this.sideEffectBufferSize * 31) + this.idlingRegistry.hashCode()) * 31) + this.intentDispatcher.hashCode()) * 31;
             CoroutineExceptionHandler coroutineExceptionHandler = this.exceptionHandler;
-            return ((hashCode + (coroutineExceptionHandler == null ? 0 : coroutineExceptionHandler.hashCode())) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.repeatOnSubscribedStopTimeout);
+            return ((hashCode + (coroutineExceptionHandler == null ? 0 : coroutineExceptionHandler.hashCode())) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.repeatOnSubscribedStopTimeout);
         }
 
         public String toString() {

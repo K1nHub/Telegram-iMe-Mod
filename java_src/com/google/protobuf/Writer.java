@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Writer {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum FieldOrder {
         ASCENDING,
         DESCENDING

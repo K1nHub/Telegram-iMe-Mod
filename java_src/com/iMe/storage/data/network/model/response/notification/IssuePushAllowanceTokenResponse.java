@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.notification;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: IssuePushAllowanceTokenResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class IssuePushAllowanceTokenResponse {
     private final String token;
 

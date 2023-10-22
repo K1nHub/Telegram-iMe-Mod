@@ -4,9 +4,10 @@ import com.google.android.exoplayer2.C0479C;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Charsets.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Charsets {
     public static final Charsets INSTANCE = new Charsets();
+    public static final Charset ISO_8859_1;
     public static final Charset UTF_8;
     private static volatile Charset utf_32be;
     private static volatile Charset utf_32le;
@@ -22,7 +23,9 @@ public final class Charsets {
         Intrinsics.checkNotNullExpressionValue(Charset.forName("UTF-16BE"), "forName(\"UTF-16BE\")");
         Intrinsics.checkNotNullExpressionValue(Charset.forName(C0479C.UTF16LE_NAME), "forName(\"UTF-16LE\")");
         Intrinsics.checkNotNullExpressionValue(Charset.forName(C0479C.ASCII_NAME), "forName(\"US-ASCII\")");
-        Intrinsics.checkNotNullExpressionValue(Charset.forName(C0479C.ISO88591_NAME), "forName(\"ISO-8859-1\")");
+        Charset forName2 = Charset.forName(C0479C.ISO88591_NAME);
+        Intrinsics.checkNotNullExpressionValue(forName2, "forName(\"ISO-8859-1\")");
+        ISO_8859_1 = forName2;
     }
 
     public final Charset UTF32_LE() {

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/m;
+.implements Lj$/util/l;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/PrimitiveIterator$OfDouble;)Lj$/util/m;
+.method public static synthetic a(Ljava/util/PrimitiveIterator$OfDouble;)Lj$/util/l;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/b;
 
-    iget-object p0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object p0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
     return-object p0
 
@@ -55,7 +55,7 @@
 
     iget-object v0, p0, Lj$/wrappers/a;->a:Ljava/util/PrimitiveIterator$OfDouble;
 
-    invoke-static {p1}, Lj$/wrappers/A;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
+    invoke-static {p1}, Lj$/wrappers/z;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
 
     move-result-object p1
 

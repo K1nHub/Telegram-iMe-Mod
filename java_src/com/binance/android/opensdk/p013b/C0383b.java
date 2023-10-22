@@ -7,13 +7,13 @@ import com.binance.android.opensdk.api.OAuthParams;
 public final class C0383b {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: b */
-    public static final String m845b(ChallengeParams challengeParams) {
+    public static final String m1137b(ChallengeParams challengeParams) {
         return "";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: b */
-    public static final String m844b(OAuthParams oAuthParams) {
+    public static final String m1136b(OAuthParams oAuthParams) {
         return "&redirect_uri=" + oAuthParams.getRedirectUri() + "&state=" + oAuthParams.getState() + "&scope=" + oAuthParams.getScope();
     }
 }

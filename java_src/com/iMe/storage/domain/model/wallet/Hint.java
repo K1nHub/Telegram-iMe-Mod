@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.wallet;
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Hint.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Hint {
     private static final String CHANGE_NETWORK_PREFIX = "change_network_";
     public static final Companion Companion = new Companion(null);
@@ -33,7 +33,7 @@ public abstract class Hint {
     }
 
     /* compiled from: Hint.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class ChangeNetwork extends Hint {
         public /* synthetic */ ChangeNetwork(String str, DefaultConstructorMarker defaultConstructorMarker) {
             this(str);
@@ -44,7 +44,7 @@ public abstract class Hint {
         }
 
         /* compiled from: Hint.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class CryptoHomeScreen extends ChangeNetwork {
             public static final CryptoHomeScreen INSTANCE = new CryptoHomeScreen();
 
@@ -54,7 +54,7 @@ public abstract class Hint {
         }
 
         /* compiled from: Hint.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class WalletConnectScreen extends ChangeNetwork {
             public static final WalletConnectScreen INSTANCE = new WalletConnectScreen();
 
@@ -64,7 +64,7 @@ public abstract class Hint {
         }
 
         /* compiled from: Hint.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class TransactionsScreen extends ChangeNetwork {
             public static final TransactionsScreen INSTANCE = new TransactionsScreen();
 
@@ -74,7 +74,7 @@ public abstract class Hint {
         }
 
         /* compiled from: Hint.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class SwapScreen extends ChangeNetwork {
             public static final SwapScreen INSTANCE = new SwapScreen();
 
@@ -85,7 +85,7 @@ public abstract class Hint {
     }
 
     /* compiled from: Hint.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class StakingInfo extends Hint {
         public static final StakingInfo INSTANCE = new StakingInfo();
 
@@ -95,7 +95,7 @@ public abstract class Hint {
     }
 
     /* compiled from: Hint.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

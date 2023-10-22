@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzx extends zzl implements zzy {
     public zzx() {
         super("com.google.android.play.core.assetpacks.protocol.IAssetPackExtractionService");

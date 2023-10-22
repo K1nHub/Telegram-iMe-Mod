@@ -3,7 +3,7 @@ package com.iMe.i_staking.request;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOwnProgrammesRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingOwnProgrammesRequest {
     private final Long lastItemId;
     private final Integer limit;

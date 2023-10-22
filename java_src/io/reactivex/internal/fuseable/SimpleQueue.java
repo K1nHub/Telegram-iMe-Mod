@@ -1,5 +1,5 @@
 package io.reactivex.internal.fuseable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface SimpleQueue<T> {
     void clear();
 

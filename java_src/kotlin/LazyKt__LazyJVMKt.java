@@ -4,11 +4,11 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LazyKt__LazyJVMKt {
 
     /* compiled from: LazyJVM.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

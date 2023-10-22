@@ -19,6 +19,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="bg_error_stroke">#ffde3a3a</color>
     <color name="binance_pay_color_CardBg">#ffffffff</color>
     <color name="binance_pay_color_Line">#ffeaecef</color>
     <color name="binance_pay_color_PrimaryText">#ff202630</color>
@@ -41,17 +42,8 @@
     <color name="cell_button_blue">#ff50a7ea</color>
     <color name="cell_button_green">#ff29cc6a</color>
     <color name="cell_button_white">#ffffffff</color>
-    <color name="colorAnswerAds">#ffc2eefd</color>
-    <color name="colorAnswerAdsText">#ff2678b6</color>
     <color name="colorBlack">#ff373737</color>
-    <color name="colorCategory">#ff444444</color>
-    <color name="colorNewLabel">#ff527dad</color>
-    <color name="colorShopButtonDisable">#ff8a8a8a</color>
-    <color name="colorShopButtonEnable">#ff21cbc6</color>
-    <color name="colorShopButtonTextDisable">#ff8a8a8a</color>
     <color name="colorShopButtonTextLight">#ffffffff</color>
-    <color name="colorShopStatusText">#ff8a8a8a</color>
-    <color name="colorTabsDivider">#ffe2e5e7</color>
     <color name="colorThemeBlue">#ff537ea3</color>
     <color name="common_blue">#ff0000ff</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
@@ -121,10 +113,6 @@
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="divider">#ffdcdcdc</color>
-    <color name="drawer_catalog">#fffc4c69</color>
-    <color name="drawer_management">#ff3ecdc7</color>
-    <color name="drawer_music">#ff48dc6b</color>
-    <color name="drawer_wallet">#ff6a71e5</color>
     <color name="error_color_material_dark">#ffff7043</color>
     <color name="error_color_material_light">#ffff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
@@ -209,7 +197,6 @@
     <color name="topic_purple">#ff6a71e5</color>
     <color name="topic_red">#ffff5534</color>
     <color name="topic_yellow">#ffffd200</color>
-    <color name="twitter">#ff08a0e9</color>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
     <color name="wallet_bright_foreground_holo_light">#ff000000</color>

@@ -142,7 +142,7 @@ public class NavController {
         this.lifecycleObserver = new LifecycleEventObserver() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                NavController.m884lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
+                NavController.m1176lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
             }
         };
         this.onBackPressedCallback = new OnBackPressedCallback() { // from class: androidx.navigation.NavController$onBackPressedCallback$1
@@ -238,7 +238,7 @@ public class NavController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: lifecycleObserver$lambda-2  reason: not valid java name */
-    public static final void m884lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void m1176lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -686,7 +686,7 @@ public class NavController {
         if (mutableList.isEmpty()) {
             return;
         }
-        NavDestination destination = ((NavBackStackEntry) CollectionsKt.last(mutableList)).getDestination();
+        NavDestination destination = ((NavBackStackEntry) CollectionsKt.last((List<? extends Object>) mutableList)).getDestination();
         if (destination instanceof FloatingWindow) {
             reversed2 = CollectionsKt___CollectionsKt.reversed(mutableList);
             for (NavBackStackEntry navBackStackEntry : reversed2) {
@@ -1089,7 +1089,7 @@ public class NavController {
             }
             for (NavBackStackEntry navBackStackEntry2 : arrayList2) {
                 List list = (List) CollectionsKt.lastOrNull((List<? extends Object>) arrayList);
-                if (Intrinsics.areEqual((list == null || (navBackStackEntry = (NavBackStackEntry) CollectionsKt.last(list)) == null || (destination = navBackStackEntry.getDestination()) == null) ? null : destination.getNavigatorName(), navBackStackEntry2.getDestination().getNavigatorName())) {
+                if (Intrinsics.areEqual((list == null || (navBackStackEntry = (NavBackStackEntry) CollectionsKt.last((List<? extends Object>) list)) == null || (destination = navBackStackEntry.getDestination()) == null) ? null : destination.getNavigatorName(), navBackStackEntry2.getDestination().getNavigatorName())) {
                     list.add(navBackStackEntry2);
                 } else {
                     mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(navBackStackEntry2);
@@ -1327,7 +1327,7 @@ public class NavController {
         }
         getBackQueue().addAll(arrayDeque);
         getBackQueue().add(navBackStackEntry2);
-        plus = CollectionsKt___CollectionsKt.plus(arrayDeque, navBackStackEntry2);
+        plus = CollectionsKt___CollectionsKt.plus((Collection<? extends Object>) ((Collection) arrayDeque), (Object) navBackStackEntry2);
         for (NavBackStackEntry navBackStackEntry11 : plus) {
             NavGraph parent2 = navBackStackEntry11.getDestination().getParent();
             if (parent2 != null) {

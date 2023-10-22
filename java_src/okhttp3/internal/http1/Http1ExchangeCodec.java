@@ -27,7 +27,7 @@ import okio.Sink;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: Http1ExchangeCodec.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Http1ExchangeCodec implements ExchangeCodec {
     private final OkHttpClient client;
     private final RealConnection connection;
@@ -241,7 +241,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class KnownLengthSink implements Sink {
         private boolean closed;
         private final ForwardingTimeout timeout;
@@ -286,7 +286,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class ChunkedSink implements Sink {
         private boolean closed;
         private final ForwardingTimeout timeout;
@@ -337,7 +337,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public abstract class AbstractSource implements Source {
         private boolean closed;
         private final ForwardingTimeout timeout;
@@ -386,7 +386,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class FixedLengthSource extends AbstractSource {
         private long bytesRemaining;
 
@@ -441,7 +441,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class ChunkedSource extends AbstractSource {
         private long bytesRemainingInChunk;
         private boolean hasMoreChunks;
@@ -506,21 +506,21 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)
                 r0.readUtf8LineStrict()
             L11:
-                okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0     // Catch: java.lang.NumberFormatException -> Lb1
-                okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)     // Catch: java.lang.NumberFormatException -> Lb1
-                long r0 = r0.readHexadecimalUnsignedLong()     // Catch: java.lang.NumberFormatException -> Lb1
-                r7.bytesRemainingInChunk = r0     // Catch: java.lang.NumberFormatException -> Lb1
-                okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0     // Catch: java.lang.NumberFormatException -> Lb1
-                okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)     // Catch: java.lang.NumberFormatException -> Lb1
-                java.lang.String r0 = r0.readUtf8LineStrict()     // Catch: java.lang.NumberFormatException -> Lb1
+                okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0     // Catch: java.lang.NumberFormatException -> Lb2
+                okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)     // Catch: java.lang.NumberFormatException -> Lb2
+                long r0 = r0.readHexadecimalUnsignedLong()     // Catch: java.lang.NumberFormatException -> Lb2
+                r7.bytesRemainingInChunk = r0     // Catch: java.lang.NumberFormatException -> Lb2
+                okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0     // Catch: java.lang.NumberFormatException -> Lb2
+                okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)     // Catch: java.lang.NumberFormatException -> Lb2
+                java.lang.String r0 = r0.readUtf8LineStrict()     // Catch: java.lang.NumberFormatException -> Lb2
                 if (r0 == 0) goto La9
-                java.lang.CharSequence r0 = kotlin.text.StringsKt.trim(r0)     // Catch: java.lang.NumberFormatException -> Lb1
-                java.lang.String r0 = r0.toString()     // Catch: java.lang.NumberFormatException -> Lb1
-                long r1 = r7.bytesRemainingInChunk     // Catch: java.lang.NumberFormatException -> Lb1
+                java.lang.CharSequence r0 = kotlin.text.StringsKt.trim(r0)     // Catch: java.lang.NumberFormatException -> Lb2
+                java.lang.String r0 = r0.toString()     // Catch: java.lang.NumberFormatException -> Lb2
+                long r1 = r7.bytesRemainingInChunk     // Catch: java.lang.NumberFormatException -> Lb2
                 r3 = 0
                 int r1 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
                 if (r1 < 0) goto L83
-                int r1 = r0.length()     // Catch: java.lang.NumberFormatException -> Lb1
+                int r1 = r0.length()     // Catch: java.lang.NumberFormatException -> Lb2
                 r2 = 0
                 if (r1 <= 0) goto L42
                 r1 = 1
@@ -532,7 +532,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 java.lang.String r1 = ";"
                 r5 = 2
                 r6 = 0
-                boolean r1 = kotlin.text.StringsKt.startsWith$default(r0, r1, r2, r5, r6)     // Catch: java.lang.NumberFormatException -> Lb1
+                boolean r1 = kotlin.text.StringsKt.startsWith$default(r0, r1, r2, r5, r6)     // Catch: java.lang.NumberFormatException -> Lb2
                 if (r1 == 0) goto L83
             L4f:
                 long r0 = r7.bytesRemainingInChunk
@@ -556,27 +556,27 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             L82:
                 return
             L83:
-                java.net.ProtocolException r1 = new java.net.ProtocolException     // Catch: java.lang.NumberFormatException -> Lb1
-                java.lang.StringBuilder r2 = new java.lang.StringBuilder     // Catch: java.lang.NumberFormatException -> Lb1
-                r2.<init>()     // Catch: java.lang.NumberFormatException -> Lb1
+                java.net.ProtocolException r1 = new java.net.ProtocolException     // Catch: java.lang.NumberFormatException -> Lb2
+                java.lang.StringBuilder r2 = new java.lang.StringBuilder     // Catch: java.lang.NumberFormatException -> Lb2
+                r2.<init>()     // Catch: java.lang.NumberFormatException -> Lb2
                 java.lang.String r3 = "expected chunk size and optional extensions"
-                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb1
+                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb2
                 java.lang.String r3 = " but was \""
-                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb1
-                long r3 = r7.bytesRemainingInChunk     // Catch: java.lang.NumberFormatException -> Lb1
-                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb1
-                r2.append(r0)     // Catch: java.lang.NumberFormatException -> Lb1
+                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb2
+                long r3 = r7.bytesRemainingInChunk     // Catch: java.lang.NumberFormatException -> Lb2
+                r2.append(r3)     // Catch: java.lang.NumberFormatException -> Lb2
+                r2.append(r0)     // Catch: java.lang.NumberFormatException -> Lb2
                 r0 = 34
-                r2.append(r0)     // Catch: java.lang.NumberFormatException -> Lb1
-                java.lang.String r0 = r2.toString()     // Catch: java.lang.NumberFormatException -> Lb1
-                r1.<init>(r0)     // Catch: java.lang.NumberFormatException -> Lb1
-                throw r1     // Catch: java.lang.NumberFormatException -> Lb1
+                r2.append(r0)     // Catch: java.lang.NumberFormatException -> Lb2
+                java.lang.String r0 = r2.toString()     // Catch: java.lang.NumberFormatException -> Lb2
+                r1.<init>(r0)     // Catch: java.lang.NumberFormatException -> Lb2
+                throw r1     // Catch: java.lang.NumberFormatException -> Lb2
             La9:
-                java.lang.NullPointerException r0 = new java.lang.NullPointerException     // Catch: java.lang.NumberFormatException -> Lb1
+                java.lang.NullPointerException r0 = new java.lang.NullPointerException     // Catch: java.lang.NumberFormatException -> Lb2
                 java.lang.String r1 = "null cannot be cast to non-null type kotlin.CharSequence"
-                r0.<init>(r1)     // Catch: java.lang.NumberFormatException -> Lb1
-                throw r0     // Catch: java.lang.NumberFormatException -> Lb1
-            Lb1:
+                r0.<init>(r1)     // Catch: java.lang.NumberFormatException -> Lb2
+                throw r0     // Catch: java.lang.NumberFormatException -> Lb2
+            Lb2:
                 r0 = move-exception
                 java.net.ProtocolException r1 = new java.net.ProtocolException
                 java.lang.String r0 = r0.getMessage()
@@ -601,7 +601,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final class UnknownLengthSource extends AbstractSource {
         private boolean inputExhausted;
 
@@ -643,7 +643,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     }
 
     /* compiled from: Http1ExchangeCodec.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

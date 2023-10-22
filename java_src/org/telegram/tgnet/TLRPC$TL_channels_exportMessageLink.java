@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channels_exportMessageLink extends TLObject {
     public static int constructor = -432034325;
     public TLRPC$InputChannel channel;
@@ -7,7 +7,7 @@ public class TLRPC$TL_channels_exportMessageLink extends TLObject {
     public boolean grouped;
 
     /* renamed from: id */
-    public int f1562id;
+    public int f1640id;
     public boolean thread;
 
     @Override // org.telegram.tgnet.TLObject
@@ -24,6 +24,6 @@ public class TLRPC$TL_channels_exportMessageLink extends TLObject {
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
         this.channel.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1562id);
+        abstractSerializedData.writeInt32(this.f1640id);
     }
 }

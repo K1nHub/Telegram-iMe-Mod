@@ -31,7 +31,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedBehavior {
     private int animatingModeChangeCounter;
     private ArrayList<AnimationListener> animationListeners;
@@ -53,7 +53,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
     private int rightInset;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface AnimationListener {
         void onAnimationEnd(BottomAppBar bottomAppBar);
 
@@ -544,7 +544,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Behavior extends HideBottomViewOnScrollBehavior<BottomAppBar> {
         private final Rect fabContentRect;
         private final View.OnLayoutChangeListener fabLayoutListener;
@@ -660,7 +660,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class SavedState extends AbsSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() { // from class: com.google.android.material.bottomappbar.BottomAppBar.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */

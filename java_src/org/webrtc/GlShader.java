@@ -4,7 +4,7 @@ import android.opengl.GLES20;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class GlShader {
     private static final String TAG = "GlShader";
     private int program;
@@ -94,7 +94,7 @@ public class GlShader {
         try {
             GlUtil.checkNoGLES2Error("glUseProgram");
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 

@@ -19,7 +19,7 @@ import okio.ByteString;
 import okio.Okio;
 import okio.Source;
 /* compiled from: Hpack.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Hpack {
     public static final Hpack INSTANCE;
     private static final Map<ByteString, Integer> NAME_TO_FIRST_INDEX;
@@ -48,7 +48,7 @@ public final class Hpack {
     }
 
     /* compiled from: Hpack.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Reader {
         public Header[] dynamicTable;
         public int dynamicTableByteCount;
@@ -94,7 +94,7 @@ public final class Hpack {
         }
 
         private final void clearDynamicTable() {
-            ArraysKt___ArraysJvmKt.fill$default(this.dynamicTable, null, 0, 0, 6, null);
+            ArraysKt___ArraysJvmKt.fill$default(this.dynamicTable, (Object) null, 0, 0, 6, (Object) null);
             this.nextHeaderIndex = this.dynamicTable.length - 1;
             this.headerCount = 0;
             this.dynamicTableByteCount = 0;
@@ -294,7 +294,7 @@ public final class Hpack {
     }
 
     /* compiled from: Hpack.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Writer {
         public Header[] dynamicTable;
         public int dynamicTableByteCount;
@@ -324,7 +324,7 @@ public final class Hpack {
         }
 
         private final void clearDynamicTable() {
-            ArraysKt___ArraysJvmKt.fill$default(this.dynamicTable, null, 0, 0, 6, null);
+            ArraysKt___ArraysJvmKt.fill$default(this.dynamicTable, (Object) null, 0, 0, 6, (Object) null);
             this.nextHeaderIndex = this.dynamicTable.length - 1;
             this.headerCount = 0;
             this.dynamicTableByteCount = 0;

@@ -5,8 +5,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Share.kt */
-@DebugMetadata(m102c = "kotlinx.coroutines.flow.SubscribedFlowCollector", m101f = "Share.kt", m100l = {419, 423}, m99m = "onSubscription")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "kotlinx.coroutines.flow.SubscribedFlowCollector", m142f = "Share.kt", m141l = {419, 423}, m140m = "onSubscription")
+/* loaded from: classes4.dex */
 public final class SubscribedFlowCollector$onSubscription$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

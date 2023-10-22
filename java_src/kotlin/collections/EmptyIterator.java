@@ -6,7 +6,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: Collections.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EmptyIterator implements ListIterator, KMappedMarker, Iterator {
     public static final EmptyIterator INSTANCE = new EmptyIterator();
 

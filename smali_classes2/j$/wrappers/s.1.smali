@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/BiFunction;
+.implements Ljava/util/function/BiFunction;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/BiFunction;
+.field final synthetic a:Lj$/util/function/BiFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/BiFunction;)V
+.method private synthetic constructor <init>(Lj$/util/function/BiFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/s;->a:Ljava/util/function/BiFunction;
+    iput-object p1, p0, Lj$/wrappers/s;->a:Lj$/util/function/BiFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+.method public static synthetic a(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,40 +30,40 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/t;
+    instance-of v0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/t;
+    check-cast p0, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;
 
-    iget-object p0, p0, Lj$/wrappers/t;->a:Lj$/util/function/BiFunction;
+    iget-object p0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->a:Ljava/util/function/BiFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/s;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/s;-><init>(Ljava/util/function/BiFunction;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/s;-><init>(Lj$/util/function/BiFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+.method public synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/s;->a:Ljava/util/function/BiFunction;
+    iget-object v0, p0, Lj$/wrappers/s;->a:Lj$/util/function/BiFunction;
 
-    invoke-static {p1}, Lj$/wrappers/M;->a(Lj$/util/function/Function;)Ljava/util/function/Function;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/function/BiFunction;->andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$Function$-V-WRP;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-interface {v0, p1}, Lj$/util/function/BiFunction;->andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/s;->a(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
 
     move-result-object p1
 
@@ -73,9 +73,9 @@
 .method public synthetic apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/s;->a:Ljava/util/function/BiFunction;
+    iget-object v0, p0, Lj$/wrappers/s;->a:Lj$/util/function/BiFunction;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

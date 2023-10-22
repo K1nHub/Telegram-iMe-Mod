@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okio.ByteString;
 /* compiled from: -Base64.kt */
 /* renamed from: okio.-Base64  reason: invalid class name */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Base64 {
     private static final byte[] BASE64;
 
