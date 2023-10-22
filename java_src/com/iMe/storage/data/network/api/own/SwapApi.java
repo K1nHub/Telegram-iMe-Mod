@@ -14,7 +14,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: SwapApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface SwapApi {
     @POST("v2/getAvailableTokensToSwap")
     Observable<ApiBaseResponse<AvailableSwapTokensResponse>> getAvailableTokensToSwap(@Body AvailableTokensToSwapRequest availableTokensToSwapRequest);

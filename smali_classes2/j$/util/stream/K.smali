@@ -9,7 +9,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/L0;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/W;)V
+.method public constructor <init>(Lj$/util/stream/L0;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/U;)V
     .locals 0
 
     const/4 p1, 0x4
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/T;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/D;)V
+.method public constructor <init>(Lj$/util/stream/T;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/C;)V
     .locals 0
 
     const/4 p1, 0x2
@@ -69,7 +69,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/T;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/J;)V
+.method public constructor <init>(Lj$/util/stream/T;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/I;)V
     .locals 0
 
     const/4 p1, 0x0
@@ -84,7 +84,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/d1;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/k0;)V
+.method public constructor <init>(Lj$/util/stream/d1;Lj$/util/stream/c;Lj$/util/stream/e4;ILj$/wrappers/i0;)V
     .locals 0
 
     const/4 p1, 0x5
@@ -131,7 +131,7 @@
 
 
 # virtual methods
-.method H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 1
 
     iget p1, p0, Lj$/util/stream/K;->l:I

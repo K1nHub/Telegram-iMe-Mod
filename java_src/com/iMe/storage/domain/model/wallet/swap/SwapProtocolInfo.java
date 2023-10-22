@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapProtocolInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SwapProtocolInfo implements Exchange {
     public static final Companion Companion = new Companion(null);
     private static final Lazy<List<SwapProtocolInfo>> allExchanges$delegate;
@@ -73,7 +73,7 @@ public abstract class SwapProtocolInfo implements Exchange {
     }
 
     /* compiled from: SwapProtocolInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Oneinch extends SwapProtocolInfo {
         public static final Oneinch INSTANCE = new Oneinch();
 
@@ -114,7 +114,7 @@ public abstract class SwapProtocolInfo implements Exchange {
     }
 
     /* compiled from: SwapProtocolInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Symbiosis extends SwapProtocolInfo {
         public static final Symbiosis INSTANCE = new Symbiosis();
 
@@ -146,7 +146,7 @@ public abstract class SwapProtocolInfo implements Exchange {
     }
 
     /* compiled from: SwapProtocolInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Unknown extends SwapProtocolInfo {
         public static final Unknown INSTANCE = new Unknown();
 
@@ -190,7 +190,7 @@ public abstract class SwapProtocolInfo implements Exchange {
     }
 
     /* compiled from: SwapProtocolInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

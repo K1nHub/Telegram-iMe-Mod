@@ -4,7 +4,7 @@ import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreatePinCodeScreenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CreatePinCodeScreenType {
     public /* synthetic */ CreatePinCodeScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -14,7 +14,7 @@ public abstract class CreatePinCodeScreenType {
     }
 
     /* compiled from: CreatePinCodeScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creation extends CreatePinCodeScreenType {
         private final WalletCreationType.Initial creationType;
 
@@ -62,7 +62,7 @@ public abstract class CreatePinCodeScreenType {
     }
 
     /* compiled from: CreatePinCodeScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Change extends CreatePinCodeScreenType {
         public static final Change INSTANCE = new Change();
 

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.maps.model.CameraPosition;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzm extends com.google.android.gms.internal.maps.zzb implements zzn {
     public zzm() {
         super("com.google.android.gms.maps.internal.IOnCameraChangeListener");

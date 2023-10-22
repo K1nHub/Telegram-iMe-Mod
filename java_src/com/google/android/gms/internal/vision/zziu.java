@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zziu<T extends zziw<T>> {
     private static final zziu zzd = new zziu(true);
     final zzlh<T, Object> zza;

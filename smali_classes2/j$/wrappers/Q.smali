@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/IntConsumer;
+.implements Ljava/util/function/IntFunction;
 
 
 # instance fields
-.field final synthetic a:Lj$/util/function/l;
+.field final synthetic a:Lj$/util/function/IntFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/function/l;)V
+.method private synthetic constructor <init>(Lj$/util/function/IntFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/Q;->a:Lj$/util/function/l;
+    iput-object p1, p0, Lj$/wrappers/Q;->a:Lj$/util/function/IntFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
+.method public static synthetic a(Lj$/util/function/IntFunction;)Ljava/util/function/IntFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,44 +36,26 @@
 
     check-cast p0, Lj$/wrappers/P;
 
-    iget-object p0, p0, Lj$/wrappers/P;->a:Ljava/util/function/IntConsumer;
+    iget-object p0, p0, Lj$/wrappers/P;->a:Ljava/util/function/IntFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/Q;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/Q;-><init>(Lj$/util/function/l;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/Q;-><init>(Lj$/util/function/IntFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic accept(I)V
+.method public synthetic apply(I)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/Q;->a:Lj$/util/function/l;
+    iget-object v0, p0, Lj$/wrappers/Q;->a:Lj$/util/function/IntFunction;
 
-    invoke-interface {v0, p1}, Lj$/util/function/l;->accept(I)V
-
-    return-void
-.end method
-
-.method public synthetic andThen(Ljava/util/function/IntConsumer;)Ljava/util/function/IntConsumer;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/Q;->a:Lj$/util/function/l;
-
-    invoke-static {p1}, Lj$/wrappers/P;->b(Ljava/util/function/IntConsumer;)Lj$/util/function/l;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/l;->l(Lj$/util/function/l;)Lj$/util/function/l;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/Q;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
+    invoke-interface {v0, p1}, Lj$/util/function/IntFunction;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 

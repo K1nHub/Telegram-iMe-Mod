@@ -145,7 +145,7 @@
 
     check-cast v1, Lj$/util/function/l;
 
-    invoke-interface {v0, v1}, Lj$/util/stream/IntStream;->U(Lj$/util/function/l;)V
+    invoke-interface {v0, v1}, Lj$/util/stream/IntStream;->T(Lj$/util/function/l;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -203,9 +203,9 @@
 
     iget-object v1, p0, Lj$/util/stream/r;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/q;
+    check-cast v1, Lj$/util/function/p;
 
-    invoke-interface {v0, v1}, Lj$/util/stream/e1;->d(Lj$/util/function/q;)V
+    invoke-interface {v0, v1}, Lj$/util/stream/e1;->d(Lj$/util/function/p;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
@@ -333,7 +333,7 @@
     .end packed-switch
 .end method
 
-.method public m()V
+.method public l()V
     .locals 1
 
     iget v0, p0, Lj$/util/stream/r;->b:I
@@ -350,7 +350,7 @@
 
     iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0}, Lj$/util/stream/m3;->m()V
+    invoke-interface {v0}, Lj$/util/stream/m3;->l()V
 
     return-void
 
@@ -358,7 +358,7 @@
     :goto_0
     iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0}, Lj$/util/stream/m3;->m()V
+    invoke-interface {v0}, Lj$/util/stream/m3;->l()V
 
     return-void
 
@@ -370,7 +370,7 @@
     .end packed-switch
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 2
 
     iget p1, p0, Lj$/util/stream/r;->b:I
@@ -385,7 +385,7 @@
     :pswitch_0
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -393,7 +393,7 @@
     :pswitch_1
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -407,7 +407,7 @@
 
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -415,7 +415,7 @@
     :goto_0
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v0, v1}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 

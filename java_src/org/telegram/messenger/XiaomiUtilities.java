@@ -4,7 +4,7 @@ import android.app.AppOpsManager;
 import android.content.Intent;
 import android.os.Process;
 import android.text.TextUtils;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class XiaomiUtilities {
     public static final int OP_ACCESS_XIAOMI_ACCOUNT = 10015;
     public static final int OP_AUTO_START = 10008;
@@ -39,7 +39,7 @@ public class XiaomiUtilities {
             Class cls = Integer.TYPE;
             return ((Integer) AppOpsManager.class.getMethod("checkOpNoThrow", cls, cls, String.class).invoke((AppOpsManager) ApplicationLoader.applicationContext.getSystemService("appops"), Integer.valueOf(i), Integer.valueOf(Process.myUid()), ApplicationLoader.applicationContext.getPackageName())).intValue() == 0;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return true;
         }
     }

@@ -2,7 +2,7 @@ package com.google.firebase.dynamiclinks.internal;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DynamicLinkUTMParams {
     public DynamicLinkUTMParams(DynamicLinkData dynamicLinkData) {
         initUTMParamsBundle(dynamicLinkData);

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.wearable;
 import com.google.android.gms.internal.wearable.zzbs;
 import com.google.android.gms.internal.wearable.zzbv;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzbs<MessageType extends zzbv<MessageType, BuilderType>, BuilderType extends zzbs<MessageType, BuilderType>> extends zzaf<MessageType, BuilderType> {
     protected zzbv zza;
     protected boolean zzb = false;

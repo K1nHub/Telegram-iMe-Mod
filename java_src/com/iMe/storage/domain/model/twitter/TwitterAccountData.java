@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.twitter;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterAccountData.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterAccountData {
     private final String accessToken;
     private final String refreshToken;
@@ -50,7 +50,7 @@ public final class TwitterAccountData {
     }
 
     public int hashCode() {
-        return (((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterId) * 31) + this.twitterUsername.hashCode()) * 31) + this.accessToken.hashCode()) * 31) + this.refreshToken.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.tokenValidUntil);
+        return (((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.twitterId) * 31) + this.twitterUsername.hashCode()) * 31) + this.accessToken.hashCode()) * 31) + this.refreshToken.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.tokenValidUntil);
     }
 
     public String toString() {

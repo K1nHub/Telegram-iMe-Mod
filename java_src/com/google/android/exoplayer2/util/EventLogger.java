@@ -571,11 +571,11 @@ public class EventLogger implements AnalyticsListener {
     }
 
     protected void logd(String str) {
-        Log.m820d(this.tag, str);
+        Log.m1112d(this.tag, str);
     }
 
     protected void loge(String str) {
-        Log.m818e(this.tag, str);
+        Log.m1110e(this.tag, str);
     }
 
     private void logd(AnalyticsListener.EventTime eventTime, String str) {

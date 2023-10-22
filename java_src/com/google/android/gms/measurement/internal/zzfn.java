@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import com.google.android.gms.common.C0704R;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfn {
     public static String zza(Context context) {
         try {

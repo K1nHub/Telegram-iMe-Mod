@@ -1,267 +1,261 @@
-.class final Lj$/util/F;
+.class public abstract Lj$/util/F;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lj$/util/s$b;
 
+# static fields
+.field private static final a:Lj$/util/Spliterator;
 
-# instance fields
-.field private final a:[I
+.field private static final b:Lj$/util/Spliterator$b;
 
-.field private b:I
+.field private static final c:Lj$/util/Spliterator$c;
 
-.field private final c:I
-
-.field private final d:I
+.field private static final d:Lj$/util/Spliterator$a;
 
 
 # direct methods
-.method public constructor <init>([IIII)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lj$/util/A;
 
-    iput-object p1, p0, Lj$/util/F;->a:[I
+    invoke-direct {v0}, Lj$/util/A;-><init>()V
 
-    iput p2, p0, Lj$/util/F;->b:I
+    sput-object v0, Lj$/util/F;->a:Lj$/util/Spliterator;
 
-    iput p3, p0, Lj$/util/F;->c:I
+    new-instance v0, Lj$/util/y;
 
-    or-int/lit8 p1, p4, 0x40
+    invoke-direct {v0}, Lj$/util/y;-><init>()V
 
-    or-int/lit16 p1, p1, 0x4000
+    sput-object v0, Lj$/util/F;->b:Lj$/util/Spliterator$b;
 
-    iput p1, p0, Lj$/util/F;->d:I
+    new-instance v0, Lj$/util/z;
+
+    invoke-direct {v0}, Lj$/util/z;-><init>()V
+
+    sput-object v0, Lj$/util/F;->c:Lj$/util/Spliterator$c;
+
+    new-instance v0, Lj$/util/x;
+
+    invoke-direct {v0}, Lj$/util/x;-><init>()V
+
+    sput-object v0, Lj$/util/F;->d:Lj$/util/Spliterator$a;
 
     return-void
 .end method
 
+.method private static a(III)V
+    .locals 2
 
-# virtual methods
-.method public synthetic b(Lj$/util/function/Consumer;)Z
-    .locals 0
+    if-gt p1, p2, :cond_2
 
-    invoke-static {p0, p1}, Lj$/util/a;->k(Lj$/util/s$b;Lj$/util/function/Consumer;)Z
+    if-ltz p1, :cond_1
 
-    move-result p1
+    if-gt p2, p0, :cond_0
 
-    return p1
-.end method
-
-.method public c(Lj$/util/function/l;)V
-    .locals 4
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lj$/util/F;->a:[I
-
-    array-length v1, v0
-
-    iget v2, p0, Lj$/util/F;->c:I
-
-    if-lt v1, v2, :cond_1
-
-    iget v1, p0, Lj$/util/F;->b:I
-
-    if-ltz v1, :cond_1
-
-    iput v2, p0, Lj$/util/F;->b:I
-
-    if-ge v1, v2, :cond_1
+    return-void
 
     :cond_0
-    aget v3, v0, v1
+    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    invoke-interface {p1, v3}, Lj$/util/function/l;->accept(I)V
+    invoke-direct {p0, p2}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
 
-    add-int/lit8 v1, v1, 0x1
-
-    if-lt v1, v2, :cond_0
+    throw p0
 
     :cond_1
-    return-void
+    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
+
+    invoke-direct {p0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "origin("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ") > fence("
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ")"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public characteristics()I
+.method public static b()Lj$/util/Spliterator$a;
     .locals 1
 
-    iget v0, p0, Lj$/util/F;->d:I
+    sget-object v0, Lj$/util/F;->d:Lj$/util/Spliterator$a;
 
-    return v0
+    return-object v0
 .end method
 
-.method public estimateSize()J
-    .locals 2
-
-    iget v0, p0, Lj$/util/F;->c:I
-
-    iget v1, p0, Lj$/util/F;->b:I
-
-    sub-int/2addr v0, v1
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/s$b;Lj$/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic forEachRemaining(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Lj$/util/function/l;
-
-    invoke-virtual {p0, p1}, Lj$/util/F;->c(Lj$/util/function/l;)V
-
-    return-void
-.end method
-
-.method public g(Lj$/util/function/l;)Z
-    .locals 3
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget v0, p0, Lj$/util/F;->b:I
-
-    if-ltz v0, :cond_0
-
-    iget v1, p0, Lj$/util/F;->c:I
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lj$/util/F;->a:[I
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lj$/util/F;->b:I
-
-    aget v0, v1, v0
-
-    invoke-interface {p1, v0}, Lj$/util/function/l;->accept(I)V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public getComparator()Ljava/util/Comparator;
+.method public static c()Lj$/util/Spliterator$b;
     .locals 1
 
-    const/4 v0, 0x4
+    sget-object v0, Lj$/util/F;->b:Lj$/util/Spliterator$b;
+
+    return-object v0
+.end method
+
+.method public static d()Lj$/util/Spliterator$c;
+    .locals 1
+
+    sget-object v0, Lj$/util/F;->c:Lj$/util/Spliterator$c;
+
+    return-object v0
+.end method
+
+.method public static e()Lj$/util/Spliterator;
+    .locals 1
+
+    sget-object v0, Lj$/util/F;->a:Lj$/util/Spliterator;
+
+    return-object v0
+.end method
+
+.method public static f(Lj$/util/Spliterator$a;)Lj$/util/l;
+    .locals 1
 
     .line 1
-    invoke-static {p0, v0}, Lj$/util/a;->f(Lj$/util/s;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v0, Lj$/util/u;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-.end method
-
-.method public synthetic getExactSizeIfKnown()J
-    .locals 2
-
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public synthetic hasCharacteristics(I)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public bridge synthetic tryAdvance(Ljava/lang/Object;)Z
-    .locals 0
-
-    check-cast p1, Lj$/util/function/l;
-
-    invoke-virtual {p0, p1}, Lj$/util/F;->g(Lj$/util/function/l;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public trySplit()Lj$/util/s$b;
-    .locals 5
-
-    iget v0, p0, Lj$/util/F;->b:I
-
-    iget v1, p0, Lj$/util/F;->c:I
-
-    add-int/2addr v1, v0
-
-    ushr-int/lit8 v1, v1, 0x1
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v2, Lj$/util/F;
-
-    iget-object v3, p0, Lj$/util/F;->a:[I
-
-    iput v1, p0, Lj$/util/F;->b:I
-
-    iget v4, p0, Lj$/util/F;->d:I
-
-    invoke-direct {v2, v3, v0, v1, v4}, Lj$/util/F;-><init>([IIII)V
-
-    move-object v0, v2
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public bridge synthetic trySplit()Lj$/util/s;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/F;->trySplit()Lj$/util/s$b;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lj$/util/u;-><init>(Lj$/util/Spliterator$a;)V
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/t;
+.method public static g(Lj$/util/Spliterator$b;)Lj$/util/n$a;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/F;->trySplit()Lj$/util/s$b;
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 2
+    new-instance v0, Lj$/util/s;
+
+    invoke-direct {v0, p0}, Lj$/util/s;-><init>(Lj$/util/Spliterator$b;)V
+
+    return-object v0
+.end method
+
+.method public static h(Lj$/util/Spliterator$c;)Lj$/util/p;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    new-instance v0, Lj$/util/t;
+
+    invoke-direct {v0, p0}, Lj$/util/t;-><init>(Lj$/util/Spliterator$c;)V
+
+    return-object v0
+.end method
+
+.method public static i(Lj$/util/Spliterator;)Ljava/util/Iterator;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    new-instance v0, Lj$/util/r;
+
+    invoke-direct {v0, p0}, Lj$/util/r;-><init>(Lj$/util/Spliterator;)V
+
+    return-object v0
+.end method
+
+.method public static j([DIII)Lj$/util/Spliterator$a;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    array-length v0, p0
+
+    invoke-static {v0, p1, p2}, Lj$/util/F;->a(III)V
+
+    new-instance v0, Lj$/util/w;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/w;-><init>([DIII)V
+
+    return-object v0
+.end method
+
+.method public static k([IIII)Lj$/util/Spliterator$b;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    array-length v0, p0
+
+    invoke-static {v0, p1, p2}, Lj$/util/F;->a(III)V
+
+    new-instance v0, Lj$/util/C;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/C;-><init>([IIII)V
+
+    return-object v0
+.end method
+
+.method public static l([JIII)Lj$/util/Spliterator$c;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    array-length v0, p0
+
+    invoke-static {v0, p1, p2}, Lj$/util/F;->a(III)V
+
+    new-instance v0, Lj$/util/E;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/E;-><init>([JIII)V
+
+    return-object v0
+.end method
+
+.method public static m([Ljava/lang/Object;III)Lj$/util/Spliterator;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    array-length v0, p0
+
+    invoke-static {v0, p1, p2}, Lj$/util/F;->a(III)V
+
+    new-instance v0, Lj$/util/v;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/v;-><init>([Ljava/lang/Object;III)V
 
     return-object v0
 .end method

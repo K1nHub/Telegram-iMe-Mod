@@ -11,13 +11,13 @@ import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MlKitContext {
     private static final AtomicReference<MlKitContext> zzb = new AtomicReference<>();
     private final ComponentRuntime zza;
 
     private MlKitContext(Context context) {
-        ComponentRuntime componentRuntime = new ComponentRuntime(TaskExecutors.MAIN_THREAD, ComponentDiscovery.forContext(context, MlKitComponentDiscoveryService.class).discover(), Component.m748of(context, Context.class, new Class[0]), Component.m748of(this, MlKitContext.class, new Class[0]));
+        ComponentRuntime componentRuntime = new ComponentRuntime(TaskExecutors.MAIN_THREAD, ComponentDiscovery.forContext(context, MlKitComponentDiscoveryService.class).discover(), Component.m1040of(context, Context.class, new Class[0]), Component.m1040of(this, MlKitContext.class, new Class[0]));
         this.zza = componentRuntime;
         componentRuntime.initializeEagerComponents(true);
     }

@@ -44,7 +44,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/i;->d(D)Lj$/util/i;
+    invoke-static {v0, v1}, Lj$/util/g;->d(D)Lj$/util/g;
 
     move-result-object v0
 

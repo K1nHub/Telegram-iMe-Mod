@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_video_layer45 extends TLRPC$Video {
     public static int constructor = -148338733;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1688id = abstractSerializedData.readInt64(z);
+        this.f1765id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.duration = abstractSerializedData.readInt32(z);
@@ -13,14 +13,14 @@ public class TLRPC$TL_video_layer45 extends TLRPC$Video {
         this.size = abstractSerializedData.readInt32(z);
         this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, 0L, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
         this.dc_id = abstractSerializedData.readInt32(z);
-        this.f1690w = abstractSerializedData.readInt32(z);
-        this.f1687h = abstractSerializedData.readInt32(z);
+        this.f1767w = abstractSerializedData.readInt32(z);
+        this.f1764h = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1688id);
+        abstractSerializedData.writeInt64(this.f1765id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt32(this.duration);
@@ -28,7 +28,7 @@ public class TLRPC$TL_video_layer45 extends TLRPC$Video {
         abstractSerializedData.writeInt32(this.size);
         this.thumb.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(this.dc_id);
-        abstractSerializedData.writeInt32(this.f1690w);
-        abstractSerializedData.writeInt32(this.f1687h);
+        abstractSerializedData.writeInt32(this.f1767w);
+        abstractSerializedData.writeInt32(this.f1764h);
     }
 }

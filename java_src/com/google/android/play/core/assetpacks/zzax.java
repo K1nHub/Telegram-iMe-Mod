@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import android.content.Context;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzax implements com.google.android.play.core.internal.zzcs<zzaw> {
     private final com.google.android.play.core.internal.zzcs<Context> zza;
     private final com.google.android.play.core.internal.zzcs<zzco> zzb;

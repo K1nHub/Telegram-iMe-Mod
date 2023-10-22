@@ -21,7 +21,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: DisplayedTokensMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DisplayedTokensMappingKt {
     public static final Map<TokenDetailed, Boolean> mapToDomain(DisplayedTokensResponse displayedTokensResponse) {
         int collectionSizeOrDefault;
@@ -34,8 +34,8 @@ public final class DisplayedTokensMappingKt {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (DisplayedTokenResponse displayedTokenResponse : displayedTokens) {
-            Pair m103to = TuplesKt.m103to(TokenMappingKt.mapToDomain(displayedTokenResponse.getToken()), Boolean.valueOf(displayedTokenResponse.isVisible()));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(TokenMappingKt.mapToDomain(displayedTokenResponse.getToken()), Boolean.valueOf(displayedTokenResponse.isVisible()));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         return linkedHashMap;
     }

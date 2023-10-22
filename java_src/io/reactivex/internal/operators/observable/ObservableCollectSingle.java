@@ -13,7 +13,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableCollectSingle<T, U> extends Single<U> implements FuseToObservable<U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -39,20 +39,20 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
         return RxJavaPlugins.onAssembly(new ObservableCollect(this.source, this.initialSupplier, this.collector));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class CollectObserver<T, U> implements Observer<T>, Disposable {
         final BiConsumer<? super U, ? super T> collector;
         boolean done;
         final SingleObserver<? super U> downstream;
 
         /* renamed from: u */
-        final U f539u;
+        final U f452u;
         Disposable upstream;
 
         CollectObserver(SingleObserver<? super U> singleObserver, U u, BiConsumer<? super U, ? super T> biConsumer) {
             this.downstream = singleObserver;
             this.collector = biConsumer;
-            this.f539u = u;
+            this.f452u = u;
         }
 
         @Override // io.reactivex.Observer
@@ -79,7 +79,7 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
                 return;
             }
             try {
-                this.collector.accept((U) this.f539u, t);
+                this.collector.accept((U) this.f452u, t);
             } catch (Throwable th) {
                 this.upstream.dispose();
                 onError(th);
@@ -102,7 +102,7 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
                 return;
             }
             this.done = true;
-            this.downstream.onSuccess((U) this.f539u);
+            this.downstream.onSuccess((U) this.f452u);
         }
     }
 }

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_saveAutoDownloadSettings extends TLObject {
     public static int constructor = 1995661875;
     public int flags;

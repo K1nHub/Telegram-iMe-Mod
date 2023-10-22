@@ -13,12 +13,12 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository;
 import com.iMe.storage.domain.repository.crypto.CryptoWalletRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.RxEventBus;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
-import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.p029rx.RxEventBus;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.event.DomainRxEvents;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -47,7 +47,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import wallet.core.jni.Mnemonic;
 /* compiled from: CryptoWalletInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoWalletInteractor {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoLocalWalletRepository cryptoLocalWalletRepository;
@@ -73,7 +73,7 @@ public final class CryptoWalletInteractor {
 
     public final Observable<Result<Wallet>> createLocalWallet(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Wallet>> subscribeOn = this.cryptoLocalWalletRepository.createWallet(blockchainType).subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Wallet>> subscribeOn = this.cryptoLocalWalletRepository.createWallet(blockchainType).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -110,7 +110,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -128,7 +128,7 @@ public final class CryptoWalletInteractor {
                         if (!(result2 instanceof Result.Success)) {
                             if (result2 instanceof Result.Error) {
                                 Result<? extends Wallet> error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
-                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                                 return error$default2;
                             } else if (result2 instanceof Object) {
                                 return result2;
@@ -137,7 +137,7 @@ public final class CryptoWalletInteractor {
                             }
                         }
                         List list = (List) result2.getData();
-                        return (list == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull(list)) == null || (success = Result.Companion.success(wallet2)) == null) ? Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null) : success;
+                        return (list == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull((List<? extends Object>) list)) == null || (success = Result.Companion.success(wallet2)) == null) ? Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null) : success;
                     }
                 }));
                 Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
@@ -145,7 +145,7 @@ public final class CryptoWalletInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
+        Observable subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         Observable doOnNext = subscribeOn.doOnNext(new ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Wallet>, Unit>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$1
             {
@@ -182,7 +182,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -223,14 +223,14 @@ public final class CryptoWalletInteractor {
                         }
                     });
                     schedulersProvider = this.schedulersProvider;
-                    Observable subscribeOn2 = flatMap3.subscribeOn(schedulersProvider.mo717io());
+                    Observable subscribeOn2 = flatMap3.subscribeOn(schedulersProvider.mo1010io());
                     Intrinsics.checkNotNullExpressionValue(subscribeOn2, "result ->\n              …r.io())\n                }");
                     return subscribeOn2;
                 }
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Wallet>> subscribeOn2 = flatMap2.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Wallet>> subscribeOn2 = flatMap2.startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn2, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn2;
     }
@@ -248,13 +248,13 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default2);
                     }
                     return Observable.empty();
                 }
                 List<? extends Wallet> data = result.getData();
-                if (data == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull(data)) == null || (error$default = Result.Companion.success(wallet2)) == null) {
+                if (data == null || (wallet2 = (Wallet) CollectionsKt.firstOrNull((List<? extends Object>) data)) == null || (error$default = Result.Companion.success(wallet2)) == null) {
                     error$default = Result.Companion.error$default(Result.Companion, new ErrorModel(ApiErrorHandler.ErrorStatus.NOT_DEFINED, (Throwable) null, 2, (DefaultConstructorMarker) null), null, 2, null);
                 }
                 Observable just = Observable.just(error$default);
@@ -274,7 +274,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -290,7 +290,7 @@ public final class CryptoWalletInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -298,7 +298,7 @@ public final class CryptoWalletInteractor {
     public final Observable<Result<Boolean>> isValidPasswordForWallet(String password, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidPasswordForWallet(password, blockchainType).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -339,7 +339,7 @@ public final class CryptoWalletInteractor {
     public final Observable<Result<Boolean>> isValidSeed(String seed, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoLocalWalletRepository.isValidSeed(seed, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoLocalWalletReposit…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -478,7 +478,7 @@ public final class CryptoWalletInteractor {
                 deleteWallet$lambda$11 = CryptoWalletInteractor.deleteWallet$lambda$11(Function1.this, obj);
                 return deleteWallet$lambda$11;
             }
-        }).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo717io());
+        }).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun deleteWallet(\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -613,7 +613,7 @@ public final class CryptoWalletInteractor {
                 deleteAllWallets$lambda$17 = CryptoWalletInteractor.deleteAllWallets$lambda$17(Function1.this, obj);
                 return deleteAllWallets$lambda$17;
             }
-        }).subscribeOn(this.schedulersProvider.mo717io());
+        }).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun deleteAllWallets(): …ulersProvider.io())\n    }");
         return subscribeOn;
     }
@@ -678,7 +678,7 @@ public final class CryptoWalletInteractor {
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (BlockchainType blockchainType : list) {
-            arrayList.add(this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).subscribeOn(this.schedulersProvider.mo717io()));
+            arrayList.add(this.cryptoLocalWalletRepository.importWallet(this.cryptoPreferenceHelper.getLastLoggedInGuid(), mnemonic, walletPassword, blockchainType).subscribeOn(this.schedulersProvider.mo1010io()));
         }
         final CryptoWalletInteractor$importBib39BasedWallets$2 cryptoWalletInteractor$importBib39BasedWallets$2 = new Function1<Object[], Result<? extends List<? extends Wallet>>>() { // from class: com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor$importBib39BasedWallets$2
             @Override // kotlin.jvm.functions.Function1
@@ -740,7 +740,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -755,13 +755,13 @@ public final class CryptoWalletInteractor {
                 }
                 linkWalletsWithCheck = CryptoWalletInteractor.this.linkWalletsWithCheck(data);
                 schedulersProvider = CryptoWalletInteractor.this.schedulersProvider;
-                Observable subscribeOn = linkWalletsWithCheck.subscribeOn(schedulersProvider.mo717io());
+                Observable subscribeOn = linkWalletsWithCheck.subscribeOn(schedulersProvider.mo1010io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "linkWalletsWithCheck(wal…(schedulersProvider.io())");
                 return subscribeOn;
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<List<Wallet>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<List<Wallet>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "zip(\n                blo…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -789,7 +789,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -842,7 +842,7 @@ public final class CryptoWalletInteractor {
                         if (!(result2 instanceof Result.Success)) {
                             if (result2 instanceof Result.Error) {
                                 Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
-                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                                 return Observable.just(error$default2);
                             }
                             return Observable.empty();
@@ -854,8 +854,8 @@ public final class CryptoWalletInteractor {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (Wallet wallet4 : list3) {
-                            Pair m103to = TuplesKt.m103to(wallet4.getBlockchainType(), wallet4.getPublicKey());
-                            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                            Pair m144to = TuplesKt.m144to(wallet4.getBlockchainType(), wallet4.getPublicKey());
+                            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
                         }
                         Observable<Result<Boolean>> linkWallets = cryptoWalletRepository.linkWallets(linkedHashMap);
                         final List list4 = arrayList;
@@ -888,14 +888,14 @@ public final class CryptoWalletInteractor {
                         }));
                         Intrinsics.checkNotNullExpressionValue(flatMap3, "crossinline body: (T, Er…e.empty()\n        }\n    }");
                         schedulersProvider2 = CryptoWalletInteractor.this.schedulersProvider;
-                        Observable subscribeOn = flatMap3.subscribeOn(schedulersProvider2.mo717io());
+                        Observable subscribeOn = flatMap3.subscribeOn(schedulersProvider2.mo1010io());
                         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
                         return subscribeOn;
                     }
                 }));
                 Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
                 schedulersProvider = this.schedulersProvider;
-                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo717io());
+                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1010io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                    va…r.io())\n                }");
                 return subscribeOn;
             }
@@ -914,7 +914,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result<? extends List<? extends Wallet>> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                         return error$default;
                     } else if (result instanceof Object) {
                         return result;
@@ -926,7 +926,7 @@ public final class CryptoWalletInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<List<Wallet>>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<List<Wallet>>> subscribeOn = map.subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "getLinkedCryptoWalletAdd…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -995,7 +995,7 @@ public final class CryptoWalletInteractor {
                 unlinkWalletsIfNeeded$lambda$33 = CryptoWalletInteractor.unlinkWalletsIfNeeded$lambda$33(Function1.this, obj);
                 return unlinkWalletsIfNeeded$lambda$33;
             }
-        }).subscribeOn(this.schedulersProvider.mo717io());
+        }).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "zip(\n                blo…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -1016,7 +1016,7 @@ public final class CryptoWalletInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -1039,7 +1039,7 @@ public final class CryptoWalletInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo717io());
+        Observable<Result<Map<BlockchainType, String>>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoWalletRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

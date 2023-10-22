@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$InputEncryptedFile;
 import org.telegram.tgnet.TLRPC$InputFile;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
     private static final int initialRequestsSlowNetworkCount = 1;
@@ -33,7 +33,7 @@ public class FileUploadOperation {
     private boolean isLastPart;
 
     /* renamed from: iv */
-    private byte[] f1450iv;
+    private byte[] f1528iv;
     private byte[] ivChange;
     private byte[] key;
     protected long lastProgressUpdateTime;
@@ -61,7 +61,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j, long j2);
 
@@ -71,12 +71,12 @@ public class FileUploadOperation {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class UploadCachedResult {
         private long bytesOffset;
 
         /* renamed from: iv */
-        private byte[] f1451iv;
+        private byte[] f1529iv;
 
         private UploadCachedResult() {
         }
@@ -118,7 +118,7 @@ public class FileUploadOperation {
         this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("uploadinfo", 0);
         this.slowNetwork = ApplicationLoader.isConnectionSlow();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("start upload on slow network = " + this.slowNetwork);
+            FileLog.m100d("start upload on slow network = " + this.slowNetwork);
         }
         int i = this.slowNetwork ? 1 : 8;
         for (int i2 = 0; i2 < i; i2++) {
@@ -144,7 +144,7 @@ public class FileUploadOperation {
         if (this.slowNetwork != z) {
             this.slowNetwork = z;
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("network changed to slow = " + this.slowNetwork);
+                FileLog.m100d("network changed to slow = " + this.slowNetwork);
             }
             int i = 0;
             while (true) {
@@ -164,7 +164,7 @@ public class FileUploadOperation {
             this.uploadedBytesCount = 0L;
             this.saveInfoTimes = 0;
             this.key = null;
-            this.f1450iv = null;
+            this.f1528iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
             this.lastSavedPartNum = 0;
@@ -220,7 +220,7 @@ public class FileUploadOperation {
                 this.stream = null;
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
     }
@@ -320,7 +320,7 @@ public class FileUploadOperation {
         edit.putLong(this.fileKey + "_id", this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1450iv));
+            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1528iv));
             edit.putString(this.fileKey + "_ivc", Utilities.bytesToHex(this.ivChange));
             edit.putString(this.fileKey + "_key", Utilities.bytesToHex(this.key));
         }
@@ -366,19 +366,19 @@ public class FileUploadOperation {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0099, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x009b, code lost:
         if (r21.uploadingFilePath.toLowerCase().endsWith(r9) != false) goto L117;
      */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x02bc  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x02be  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00cb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$startUploadRequest$4(int r22, int[] r23, int r24, byte[] r25, int r26, int r27, int r28, long r29, org.telegram.tgnet.TLObject r31, org.telegram.tgnet.TLRPC$TL_error r32) {
         /*
-            Method dump skipped, instructions count: 712
+            Method dump skipped, instructions count: 714
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileUploadOperation.lambda$startUploadRequest$4(int, int[], int, byte[], int, int, int, long, org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$TL_error):void");

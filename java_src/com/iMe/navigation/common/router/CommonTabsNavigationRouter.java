@@ -3,7 +3,7 @@ package com.iMe.navigation.common.router;
 import com.iMe.model.common.NavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.router.base.BaseNavigationRouter;
-import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p030ui.base.mvp.MvpFragment;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CommonTabsNavigationRouter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavigationRouter<T> {
     private final boolean preloadAllTabs;
 
@@ -39,7 +39,7 @@ public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavig
                 MvpFragment fragment = navigationTab.getFragment();
                 fragment.setParentFragment(settings.getViewConfiguration().getParentFragment());
                 fragment.onViewCreated();
-                arrayList.add(TuplesKt.m103to(valueOf, fragment));
+                arrayList.add(TuplesKt.m144to(valueOf, fragment));
             }
             MapsKt__MapsKt.putAll(fragmentsStack, arrayList);
         }

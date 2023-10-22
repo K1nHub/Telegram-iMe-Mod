@@ -2,9 +2,9 @@ package com.iMe.feature.socialMedias;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt;
 /* compiled from: SocialType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum SocialType {
     TWITTER,
     INSTAGRAM,
@@ -17,7 +17,7 @@ public enum SocialType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: SocialType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -28,7 +28,6 @@ public enum SocialType {
 
         public final SocialType defineType(String input) {
             SocialType socialType;
-            boolean equals;
             Intrinsics.checkNotNullParameter(input, "input");
             SocialType[] values = SocialType.values();
             int length = values.length;
@@ -39,8 +38,7 @@ public enum SocialType {
                     break;
                 }
                 socialType = values[i];
-                equals = StringsKt__StringsJVMKt.equals(socialType.name(), input, true);
-                if (equals) {
+                if (StringsKt.equals(socialType.name(), input, true)) {
                     break;
                 }
                 i++;

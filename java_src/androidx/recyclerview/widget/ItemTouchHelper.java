@@ -206,8 +206,8 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         this.mRecyclerView = recyclerView;
         if (recyclerView != null) {
             recyclerView.getResources();
-            this.mSwipeEscapeVelocity = AndroidUtilities.m72dp(120);
-            this.mMaxSwipeVelocity = AndroidUtilities.m72dp(800);
+            this.mSwipeEscapeVelocity = AndroidUtilities.m102dp(120);
+            this.mMaxSwipeVelocity = AndroidUtilities.m102dp(800);
             setupCallbacks();
         }
     }
@@ -886,7 +886,7 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
 
         private int getMaxDragScroll(RecyclerView recyclerView) {
             if (this.mCachedMaxScrollSpeed == -1) {
-                this.mCachedMaxScrollSpeed = AndroidUtilities.m72dp(20);
+                this.mCachedMaxScrollSpeed = AndroidUtilities.m102dp(20);
             }
             return this.mCachedMaxScrollSpeed;
         }

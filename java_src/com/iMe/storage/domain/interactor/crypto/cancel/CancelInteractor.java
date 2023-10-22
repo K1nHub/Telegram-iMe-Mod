@@ -9,15 +9,15 @@ import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.repository.crypto.cancel.CancelRepository;
 import com.iMe.storage.domain.utils.crypto.Convert;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import java.math.BigInteger;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CancelInteractor {
     private final CancelRepository cancelRepository;
     private final CryptoAccessManager cryptoAccessManager;
@@ -50,7 +50,7 @@ public final class CancelInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -74,13 +74,13 @@ public final class CancelInteractor {
                 String address = eVMWallet != null ? eVMWallet.getAddress() : null;
                 Observable<Result<String>> cancel = cancelRepository.cancel(new CancelArgs.Ethereum(str, str2, new TransferArgs.EVM(parseDouble, factor, address == null ? "" : address, chainId, nonce, price, limit, null)));
                 schedulersProvider = CancelInteractor.this.schedulersProvider;
-                Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo717io());
+                Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo1010io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "with(result.data!!) {\n  …r.io())\n                }");
                 return subscribeOn;
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo717io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "cancelRepository\n       …artWith(Result.loading())");
         return startWith;
     }

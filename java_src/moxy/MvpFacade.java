@@ -1,5 +1,5 @@
 package moxy;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class MvpFacade {
     private static volatile MvpFacade instance;
     private static final Object lock = new Object();

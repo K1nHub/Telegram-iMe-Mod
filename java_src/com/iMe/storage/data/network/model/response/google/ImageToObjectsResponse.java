@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageToObjectsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ImageToObjectsResponse {
     private final List<RecognizedImageObject> recognizedObjects;
 
@@ -50,7 +50,7 @@ public final class ImageToObjectsResponse {
     }
 
     /* compiled from: ImageToObjectsResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class RecognizedImageObject {
         private final String entityId;
         private final String recognizedObject;
@@ -99,7 +99,7 @@ public final class ImageToObjectsResponse {
         }
 
         public int hashCode() {
-            return (((this.recognizedObject.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.score)) * 31) + this.entityId.hashCode();
+            return (((this.recognizedObject.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.score)) * 31) + this.entityId.hashCode();
         }
 
         public String toString() {

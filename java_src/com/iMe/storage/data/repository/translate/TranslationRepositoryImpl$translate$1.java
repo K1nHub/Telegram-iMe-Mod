@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import kotlin.random.Random;
 /* compiled from: TranslationRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class TranslationRepositoryImpl$translate$1 extends Lambda implements Function1<CharSequence, ObservableSource<? extends Translation>> {
     final /* synthetic */ List<CharSequence> $blocks;
     final /* synthetic */ String $sourceLanguage;
@@ -48,7 +48,7 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
             str2 = TtmlNode.TEXT_EMPHASIS_AUTO;
         }
         Observable<ArrayList<Object>> translate = googleTranslationApi.translate(str, str2, this.$targetLanguage, blockText.toString());
-        final C19811 c19811 = new Function1<ArrayList<Object>, Translation>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.1
+        final C18991 c18991 = new Function1<ArrayList<Object>, Translation>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.1
             @Override // kotlin.jvm.functions.Function1
             public final Translation invoke(ArrayList<Object> response) {
                 Intrinsics.checkNotNullParameter(response, "response");

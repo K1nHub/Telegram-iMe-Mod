@@ -11,7 +11,7 @@ import com.otaliastudios.gif.internal.Logger;
 import com.otaliastudios.opengl.draw.GlRect;
 import com.otaliastudios.opengl.program.GlTextureProgram;
 import com.otaliastudios.opengl.texture.GlTexture;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class VideoDecoderOutput {
     private static final Logger LOG = new Logger(VideoDecoderOutput.class.getSimpleName());
     private GlRect mDrawable;
@@ -35,7 +35,7 @@ public class VideoDecoderOutput {
         surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: com.otaliastudios.gif.transcode.internal.VideoDecoderOutput.1
             @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
             public void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                VideoDecoderOutput.LOG.m707v("New frame available");
+                VideoDecoderOutput.LOG.m1000v("New frame available");
                 synchronized (VideoDecoderOutput.this.mFrameAvailableLock) {
                     if (!VideoDecoderOutput.this.mFrameAvailable) {
                         VideoDecoderOutput.this.mFrameAvailable = true;

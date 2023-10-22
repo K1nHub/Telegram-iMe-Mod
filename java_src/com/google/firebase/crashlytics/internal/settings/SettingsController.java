@@ -25,7 +25,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SettingsController implements SettingsDataProvider {
     private final AtomicReference<TaskCompletionSource<AppSettingsData>> appSettingsData;
     private final CachedSettingsIo cachedSettingsIo;
@@ -115,22 +115,22 @@ public class SettingsController implements SettingsDataProvider {
                         logSettings(readCachedSettings, "Loaded cached settings: ");
                         long currentTimeMillis = this.currentTimeProvider.getCurrentTimeMillis();
                         if (!SettingsCacheBehavior.IGNORE_CACHE_EXPIRATION.equals(settingsCacheBehavior) && parseSettingsJson.isExpired(currentTimeMillis)) {
-                            Logger.getLogger().m740v("Cached settings have expired.");
+                            Logger.getLogger().m1032v("Cached settings have expired.");
                         }
                         try {
-                            Logger.getLogger().m740v("Returning cached settings.");
+                            Logger.getLogger().m1032v("Returning cached settings.");
                             settingsData = parseSettingsJson;
                         } catch (Exception e) {
                             e = e;
                             settingsData = parseSettingsJson;
-                            Logger.getLogger().m743e("Failed to get cached settings", e);
+                            Logger.getLogger().m1035e("Failed to get cached settings", e);
                             return settingsData;
                         }
                     } else {
-                        Logger.getLogger().m743e("Failed to parse cached settings data.", null);
+                        Logger.getLogger().m1035e("Failed to parse cached settings data.", null);
                     }
                 } else {
-                    Logger.getLogger().m746d("No cached settings data found.");
+                    Logger.getLogger().m1038d("No cached settings data found.");
                 }
             }
         } catch (Exception e2) {
@@ -142,7 +142,7 @@ public class SettingsController implements SettingsDataProvider {
     /* JADX INFO: Access modifiers changed from: private */
     public void logSettings(JSONObject jSONObject, String str) throws JSONException {
         Logger logger = Logger.getLogger();
-        logger.m746d(str + jSONObject.toString());
+        logger.m1038d(str + jSONObject.toString());
     }
 
     private String getStoredBuildInstanceIdentifier() {

@@ -2,7 +2,7 @@ package io.reactivex.internal.disposables;
 
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ArrayCompositeDisposable extends AtomicReferenceArray<Disposable> implements Disposable {
     public ArrayCompositeDisposable(int i) {
         super(i);

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_contacts_getLocated extends TLObject {
     public static int constructor = -750207932;
     public boolean background;

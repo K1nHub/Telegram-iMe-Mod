@@ -4,7 +4,7 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzb implements Parcelable.Creator<ReviewInfo> {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ ReviewInfo createFromParcel(Parcel parcel) {

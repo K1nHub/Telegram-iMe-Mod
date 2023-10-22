@@ -1,7 +1,7 @@
 package com.google.android.gms.phenotype;
 
 import java.util.Comparator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzj implements Comparator<zzi> {
     @Override // java.util.Comparator
     public final /* synthetic */ int compare(zzi zziVar, zzi zziVar2) {

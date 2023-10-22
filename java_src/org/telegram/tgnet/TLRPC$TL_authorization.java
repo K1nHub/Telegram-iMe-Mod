@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_authorization extends TLObject {
     public static int constructor = -1392388579;
     public int api_id;
@@ -16,12 +16,13 @@ public class TLRPC$TL_authorization extends TLObject {
     public long hash;
 
     /* renamed from: ip */
-    public String f1559ip;
+    public String f1637ip;
     public boolean official_app;
     public boolean password_pending;
     public String platform;
     public String region;
     public String system_version;
+    public boolean unconfirmed;
 
     public static TLRPC$TL_authorization TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         if (constructor != i) {
@@ -44,6 +45,7 @@ public class TLRPC$TL_authorization extends TLObject {
         this.password_pending = (readInt32 & 4) != 0;
         this.encrypted_requests_disabled = (readInt32 & 8) != 0;
         this.call_requests_disabled = (readInt32 & 16) != 0;
+        this.unconfirmed = (readInt32 & 32) != 0;
         this.hash = abstractSerializedData.readInt64(z);
         this.device_model = abstractSerializedData.readString(z);
         this.platform = abstractSerializedData.readString(z);
@@ -53,7 +55,7 @@ public class TLRPC$TL_authorization extends TLObject {
         this.app_version = abstractSerializedData.readString(z);
         this.date_created = abstractSerializedData.readInt32(z);
         this.date_active = abstractSerializedData.readInt32(z);
-        this.f1559ip = abstractSerializedData.readString(z);
+        this.f1637ip = abstractSerializedData.readString(z);
         this.country = abstractSerializedData.readString(z);
         this.region = abstractSerializedData.readString(z);
     }
@@ -71,7 +73,9 @@ public class TLRPC$TL_authorization extends TLObject {
         this.flags = i4;
         int i5 = this.call_requests_disabled ? i4 | 16 : i4 & (-17);
         this.flags = i5;
-        abstractSerializedData.writeInt32(i5);
+        int i6 = this.unconfirmed ? i5 | 32 : i5 & (-33);
+        this.flags = i6;
+        abstractSerializedData.writeInt32(i6);
         abstractSerializedData.writeInt64(this.hash);
         abstractSerializedData.writeString(this.device_model);
         abstractSerializedData.writeString(this.platform);
@@ -81,7 +85,7 @@ public class TLRPC$TL_authorization extends TLObject {
         abstractSerializedData.writeString(this.app_version);
         abstractSerializedData.writeInt32(this.date_created);
         abstractSerializedData.writeInt32(this.date_active);
-        abstractSerializedData.writeString(this.f1559ip);
+        abstractSerializedData.writeString(this.f1637ip);
         abstractSerializedData.writeString(this.country);
         abstractSerializedData.writeString(this.region);
     }

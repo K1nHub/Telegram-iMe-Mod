@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/w;
+.implements Ljava/util/function/Predicate;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/ObjLongConsumer;
+.field final synthetic a:Lj$/util/function/Predicate;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/ObjLongConsumer;)V
+.method private synthetic constructor <init>(Lj$/util/function/Predicate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/u0;->a:Ljava/util/function/ObjLongConsumer;
+    iput-object p1, p0, Lj$/wrappers/u0;->a:Lj$/util/function/Predicate;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/ObjLongConsumer;)Lj$/util/function/w;
+.method public static synthetic a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,32 +30,90 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/v0;
+    instance-of v0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/v0;
+    check-cast p0, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;
 
-    iget-object p0, p0, Lj$/wrappers/v0;->a:Lj$/util/function/w;
+    iget-object p0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;->a:Ljava/util/function/Predicate;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/u0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/u0;-><init>(Ljava/util/function/ObjLongConsumer;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/u0;-><init>(Lj$/util/function/Predicate;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic accept(Ljava/lang/Object;J)V
+.method public synthetic and(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/u0;->a:Ljava/util/function/ObjLongConsumer;
+    iget-object v0, p0, Lj$/wrappers/u0;->a:Lj$/util/function/Predicate;
 
-    invoke-interface {v0, p1, p2, p3}, Ljava/util/function/ObjLongConsumer;->accept(Ljava/lang/Object;J)V
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;->convert(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
 
-    return-void
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic negate()Ljava/util/function/Predicate;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/u0;->a:Lj$/util/function/Predicate;
+
+    invoke-interface {v0}, Lj$/util/function/Predicate;->negate()Lj$/util/function/Predicate;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic or(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/u0;->a:Lj$/util/function/Predicate;
+
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$Predicate$-V-WRP;->convert(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/u0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic test(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/u0;->a:Lj$/util/function/Predicate;
+
+    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 .end method

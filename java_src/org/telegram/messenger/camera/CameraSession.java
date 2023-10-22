@@ -13,7 +13,7 @@ import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
     public CameraInfo cameraInfo;
@@ -134,7 +134,7 @@ public class CameraSession {
             this.currentFlashMode = z ? "torch" : "off";
             configurePhotoCamera();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -194,17 +194,17 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
                 if (parameters != null) {
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m70d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
+                        FileLog.m100d("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
                     }
                     parameters.setPreviewSize(this.previewSize.getWidth(), this.previewSize.getHeight());
                     if (z && BuildVars.LOGS_ENABLED) {
-                        FileLog.m70d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
+                        FileLog.m100d("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
                     }
                     parameters.setPictureSize(this.pictureSize.getWidth(), this.pictureSize.getHeight());
                     parameters.setPictureFormat(this.pictureFormat);
@@ -249,7 +249,7 @@ public class CameraSession {
             }
             return true;
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
             return false;
         }
     }
@@ -349,7 +349,7 @@ public class CameraSession {
             return
         L7f:
             r0 = move-exception
-            org.telegram.messenger.FileLog.m67e(r0)
+            org.telegram.messenger.FileLog.m97e(r0)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraSession.updateRotation():void");
@@ -365,7 +365,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
                 updateCameraInfo();
                 updateRotation();
@@ -422,7 +422,7 @@ public class CameraSession {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
     }
 
@@ -435,7 +435,7 @@ public class CameraSession {
                 try {
                     parameters = camera.getParameters();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
                 if (parameters != null) {
                     parameters.setFocusMode(TtmlNode.TEXT_EMPHASIS_AUTO);
@@ -451,12 +451,12 @@ public class CameraSession {
                         camera.setParameters(parameters);
                         camera.autoFocus(this.autoFocusCallback);
                     } catch (Exception e2) {
-                        FileLog.m67e(e2);
+                        FileLog.m97e(e2);
                     }
                 }
             }
         } catch (Exception e3) {
-            FileLog.m67e(e3);
+            FileLog.m97e(e3);
         }
     }
 
@@ -549,7 +549,7 @@ public class CameraSession {
             updateCameraInfo();
             return getDisplayOrientation(this.info, true);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return 0;
         }
     }

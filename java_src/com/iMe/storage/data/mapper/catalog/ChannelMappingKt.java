@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.catalog.ChatType;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt___StringsKt;
 /* compiled from: ChannelMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ChannelMappingKt {
     public static final Channel mapToDomain(ChannelResponse channelResponse) {
         String drop;

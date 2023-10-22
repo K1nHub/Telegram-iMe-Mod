@@ -20,7 +20,7 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: KiklikoRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class KiklikoRepositoryImpl implements KiklikoRepository {
     private final KiklikoApi api;
     private final ApiErrorHandler errorHandler;

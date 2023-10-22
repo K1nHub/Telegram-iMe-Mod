@@ -7,18 +7,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "OnDeviceAutoMLImageLabelerOptionsParcelCreator")
 /* renamed from: com.google.firebase.ml.vision.automl.internal.OnDeviceAutoMLImageLabelerOptionsParcel */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class OnDeviceAutoMLImageLabelerOptionsParcel extends AbstractSafeParcelable {
     public static final Parcelable.Creator<OnDeviceAutoMLImageLabelerOptionsParcel> CREATOR = new zzi();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final String zzaxi;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final String zzaxj;
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     public final float zzazi;
 
     @SafeParcelable.Constructor
-    public OnDeviceAutoMLImageLabelerOptionsParcel(@SafeParcelable.Param(m796id = 1) float f, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2) {
+    public OnDeviceAutoMLImageLabelerOptionsParcel(@SafeParcelable.Param(m1088id = 1) float f, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2) {
         this.zzazi = f;
         this.zzaxi = str;
         this.zzaxj = str2;

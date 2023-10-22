@@ -3,7 +3,7 @@ package com.google.firebase.installations.local;
 import com.google.firebase.installations.local.PersistedInstallation;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEntry {
     private final String authToken;
     private final long expiresInSecs;
@@ -107,7 +107,7 @@ final class AutoValue_PersistedInstallationEntry extends PersistedInstallationEn
         return new Builder(this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class Builder extends PersistedInstallationEntry.Builder {
         private String authToken;
         private Long expiresInSecs;

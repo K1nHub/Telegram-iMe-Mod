@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s;
+.implements Lj$/util/Spliterator;
 
 
 # instance fields
@@ -300,7 +300,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -310,14 +310,14 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public trySplit()Lj$/util/s;
+.method public trySplit()Lj$/util/Spliterator;
     .locals 7
 
     iget v2, p0, Lj$/util/stream/S3;->a:I
@@ -387,7 +387,7 @@
     const/16 v4, 0x410
 
     .line 1
-    invoke-static {v1, v2, v3, v4}, Lj$/util/I;->m([Ljava/lang/Object;III)Lj$/util/s;
+    invoke-static {v1, v2, v3, v4}, Lj$/util/F;->m([Ljava/lang/Object;III)Lj$/util/Spliterator;
 
     move-result-object v1
 

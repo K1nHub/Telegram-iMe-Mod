@@ -3,12 +3,12 @@ package com.iMe.storage.domain.model.crypto;
 import com.iMe.storage.R$drawable;
 import com.iMe.storage.R$string;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.CoinType;
 /* compiled from: BlockchainType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum BlockchainType {
     EVM("ETHEREUM_VM", R$drawable.fork_ic_evm_logo, R$string.wallet_crypto_blockchains_evm_title, R$string.wallet_crypto_blockchains_evm_subtitle, CoinType.ETHEREUM),
     TRON("TRON_VM", R$drawable.fork_ic_tron_logo, R$string.wallet_crypto_blockchains_tron_title, R$string.wallet_crypto_blockchains_tron_subtitle, CoinType.TRON),
@@ -63,7 +63,7 @@ public enum BlockchainType {
     }
 
     /* compiled from: BlockchainType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -113,7 +113,9 @@ public enum BlockchainType {
         }
 
         public final List<BlockchainType> getBip39PhraseBasedBlockchains() {
-            return CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON, BlockchainType.BITCOIN});
+            List<BlockchainType> listOf;
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON, BlockchainType.BITCOIN});
+            return listOf;
         }
     }
 }

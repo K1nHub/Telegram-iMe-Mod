@@ -5,14 +5,14 @@ import android.os.Parcelable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NavigationBundle.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NavigationBundle<T extends Parcelable> implements Parcelable {
     public static final Parcelable.Creator<NavigationBundle<?>> CREATOR;
     private final T data;
     private final NavDirection navDirection;
 
     /* compiled from: NavigationBundle.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creator implements Parcelable.Creator<NavigationBundle<?>> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator
@@ -80,7 +80,7 @@ public final class NavigationBundle<T extends Parcelable> implements Parcelable 
     }
 
     /* compiled from: NavigationBundle.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

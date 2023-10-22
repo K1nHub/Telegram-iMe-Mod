@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountLevelMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AccountLevelMetadata {
     private final int daysDuration;
     private final AccountLevel level;

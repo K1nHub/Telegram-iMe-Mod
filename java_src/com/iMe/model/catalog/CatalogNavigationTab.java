@@ -2,14 +2,14 @@ package com.iMe.model.catalog;
 
 import com.iMe.fork.utils.TabbedFragmentPage;
 import com.iMe.model.common.NavigationTab;
-import com.iMe.p031ui.catalog.tabs.CatalogTabFragment;
+import com.iMe.p030ui.catalog.tabs.CatalogTabFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogNavigationTab.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CatalogNavigationTab extends NavigationTab<CatalogTabFragment> {
 
     /* renamed from: id */
-    private final int f350id;
+    private final int f283id;
     private final TabbedFragmentPage<CatalogTabFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class CatalogNavigationTab extends NavigationTab<CatalogTabFragment
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f350id;
+        return this.f283id;
     }
 
     public final TabbedFragmentPage<CatalogTabFragment> getPage() {
@@ -68,7 +68,7 @@ public final class CatalogNavigationTab extends NavigationTab<CatalogTabFragment
     public CatalogNavigationTab(int i, TabbedFragmentPage<CatalogTabFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f350id = i;
+        this.f283id = i;
         this.page = page;
     }
 }

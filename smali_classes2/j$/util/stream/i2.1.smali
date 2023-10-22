@@ -2,7 +2,7 @@
 .super Lj$/util/stream/k2;
 
 # interfaces
-.implements Lj$/util/t;
+.implements Lj$/util/Spliterator$d;
 
 
 # direct methods
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public bridge synthetic d(Lj$/util/function/q;)V
+.method public bridge synthetic d(Lj$/util/function/p;)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/i2;->forEachRemaining(Ljava/lang/Object;)V
@@ -50,11 +50,11 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-nez v0, :cond_2
 
@@ -83,9 +83,9 @@
     goto :goto_2
 
     :cond_2
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->forEachRemaining(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->forEachRemaining(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -114,7 +114,7 @@
     return p1
 .end method
 
-.method public bridge synthetic i(Lj$/util/function/q;)Z
+.method public bridge synthetic i(Lj$/util/function/p;)Z
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/i2;->tryAdvance(Ljava/lang/Object;)Z
@@ -124,7 +124,7 @@
     return p1
 .end method
 
-.method public bridge synthetic k(Lj$/util/function/f;)Z
+.method public bridge synthetic n(Lj$/util/function/f;)Z
     .locals 0
 
     invoke-virtual {p0, p1}, Lj$/util/stream/i2;->tryAdvance(Ljava/lang/Object;)Z
@@ -148,17 +148,17 @@
     return p1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-nez v1, :cond_1
 
@@ -172,15 +172,15 @@
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1}, Lj$/util/stream/z1;->spliterator()Lj$/util/t;
+    invoke-interface {v1}, Lj$/util/stream/z1;->spliterator()Lj$/util/Spliterator$d;
 
     move-result-object v0
 
-    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
-    check-cast v0, Lj$/util/t;
+    check-cast v0, Lj$/util/Spliterator$d;
 
-    invoke-interface {v0, p1}, Lj$/util/t;->tryAdvance(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$d;->tryAdvance(Ljava/lang/Object;)Z
 
     move-result p1
 

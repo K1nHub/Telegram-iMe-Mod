@@ -11,7 +11,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceMappingKt {
     public static final BinanceConvertQuote mapToDomain(BinanceGetConvertQuoteResponse binanceGetConvertQuoteResponse) {
         Intrinsics.checkNotNullParameter(binanceGetConvertQuoteResponse, "<this>");

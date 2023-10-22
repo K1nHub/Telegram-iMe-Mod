@@ -4,14 +4,14 @@ import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectProcessedTransaction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectProcessedTransaction {
     private final String data;
     private final TokenDetailed feeToken;
     private final String from;
 
     /* renamed from: to */
-    private final String f420to;
+    private final String f353to;
     private final TransactionParams.Ether transactionParams;
     private final String value;
 
@@ -23,7 +23,7 @@ public final class WalletConnectProcessedTransaction {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         this.from = from;
-        this.f420to = to;
+        this.f353to = to;
         this.value = value;
         this.data = data;
         this.transactionParams = transactionParams;
@@ -35,7 +35,7 @@ public final class WalletConnectProcessedTransaction {
     }
 
     public final String getTo() {
-        return this.f420to;
+        return this.f353to;
     }
 
     public final String getValue() {

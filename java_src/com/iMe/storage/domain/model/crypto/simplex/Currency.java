@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto.simplex;
 /* compiled from: Currency.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Currency {
     int getSymbolResId();
 

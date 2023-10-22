@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KProperty;
 /* compiled from: ResettableLazyDelegate.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ResettableLazy<PROPTYPE> implements Resettable {
     private final Function0<PROPTYPE> init;
     private volatile Lazy<? extends PROPTYPE> lazyHolder;

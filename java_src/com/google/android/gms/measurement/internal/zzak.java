@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.database.sqlite.SQLiteDatabase;
 import java.io.File;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzak {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0027, code lost:

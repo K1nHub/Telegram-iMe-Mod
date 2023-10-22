@@ -4,18 +4,18 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.manager.common.FeatureAvailableManager$Token;
 import com.iMe.model.wallet.swap.WalletSwapScreenType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
-import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessFragment;
+import com.iMe.p030ui.wallet.swap.process.WalletSwapProcessFragment;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.ActionBar.INavigationLayout;
 /* compiled from: TokenBuyCoordinator.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenBuyCoordinator {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final ResourceManager resourceManager;
@@ -41,25 +41,25 @@ public final class TokenBuyCoordinator {
         if (networkId == null) {
             networkId = this.cryptoPreferenceHelper.getNetworkId();
         }
-        if (args.getToken() != null && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(networkId)) {
+        if (args.getFromToken() != null || (args.getTokenTo() != null && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(networkId))) {
             WalletSwapProcessFragment.Companion companion = WalletSwapProcessFragment.Companion;
             SwapProtocol swapProtocol = args.getSwapProtocol();
             if (swapProtocol == null) {
                 swapProtocol = SwapProtocol.ONEINCH_FUSION;
             }
-            actionBarLayout.presentFragment(companion.newInstance(new WalletSwapScreenType.Crypto(swapProtocol, args.getToken(), null, args.getNetworkId())), z);
+            actionBarLayout.presentFragment(companion.newInstance(new WalletSwapScreenType.Crypto(swapProtocol, args.getFromToken(), args.getTokenTo(), args.getNetworkId())), z);
             return;
         }
-        ContextExtKt.toast(this.resourceManager.getString(C3473R.string.common_unexpected_error_title));
+        ContextExtKt.toast(this.resourceManager.getString(C3630R.string.common_unexpected_error_title));
     }
 
     public final void showNoEnoughMoneyDialog(final INavigationLayout actionBarLayout, final TokenBuyCoordinatorArgs args) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(args, "args");
-        if (args.getToken() != null && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId())) {
+        if ((args.getFromToken() != null || args.getTokenTo() != null) && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId())) {
             BaseFragment lastFragment = actionBarLayout.getLastFragment();
             Intrinsics.checkNotNullExpressionValue(lastFragment, "actionBarLayout.lastFragment");
-            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3473R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3473R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3473R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
+            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     TokenBuyCoordinator.showNoEnoughMoneyDialog$lambda$0(TokenBuyCoordinator.this, actionBarLayout, args);
@@ -69,7 +69,7 @@ public final class TokenBuyCoordinator {
         }
         BaseFragment lastFragment2 = actionBarLayout.getLastFragment();
         Intrinsics.checkNotNullExpressionValue(lastFragment2, "actionBarLayout.lastFragment");
-        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3473R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3473R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3473R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3630R.string.common_ok), null, 8, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

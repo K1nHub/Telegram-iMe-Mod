@@ -13,7 +13,7 @@ import com.google.android.gms.vision.label.internal.client.zzi;
 import java.util.Locale;
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ImageLabeler extends Detector<ImageLabel> {
     private static final LabelOptions zzdq = new LabelOptions(-1);
     private final zzi zzdp;
@@ -30,7 +30,7 @@ public class ImageLabeler extends Detector<ImageLabel> {
 
     @ShowFirstParty
     @KeepForSdk
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private ImageLabelerOptions zzdr = new ImageLabelerOptions(ImageLabelerOptions.zza(Locale.getDefault().getLanguage()), -1, 0.5f, 1);
         private Context zze;
@@ -61,7 +61,7 @@ public class ImageLabeler extends Detector<ImageLabel> {
             throw new IllegalArgumentException("No frame supplied.");
         }
         frame.getBitmap();
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m768m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1060m();
     }
 
     @Override // com.google.android.gms.vision.Detector

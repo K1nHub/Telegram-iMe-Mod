@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import java.util.HashMap;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class GoogleMap {
     public static final int MAP_TYPE_HYBRID = 4;
     public static final int MAP_TYPE_NONE = 0;
@@ -40,7 +40,7 @@ public class GoogleMap {
     private UiSettings zzc;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface CancelableCallback {
         void onCancel();
 
@@ -48,7 +48,7 @@ public class GoogleMap {
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface InfoWindowAdapter {
         View getInfoContents(Marker marker);
 
@@ -57,31 +57,31 @@ public class GoogleMap {
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCameraChangeListener {
         void onCameraChange(CameraPosition cameraPosition);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCameraIdleListener {
         void onCameraIdle();
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCameraMoveCanceledListener {
         void onCameraMoveCanceled();
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCameraMoveListener {
         void onCameraMove();
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCameraMoveStartedListener {
         public static final int REASON_API_ANIMATION = 2;
         public static final int REASON_DEVELOPER_ANIMATION = 3;
@@ -91,19 +91,19 @@ public class GoogleMap {
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnCircleClickListener {
         void onCircleClick(Circle circle);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnGroundOverlayClickListener {
         void onGroundOverlayClick(GroundOverlay groundOverlay);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnIndoorStateChangeListener {
         void onIndoorBuildingFocused();
 
@@ -111,49 +111,49 @@ public class GoogleMap {
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnInfoWindowClickListener {
         void onInfoWindowClick(Marker marker);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnInfoWindowCloseListener {
         void onInfoWindowClose(Marker marker);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnInfoWindowLongClickListener {
         void onInfoWindowLongClick(Marker marker);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMapClickListener {
         void onMapClick(LatLng latLng);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMapLoadedCallback {
         void onMapLoaded();
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMapLongClickListener {
         void onMapLongClick(LatLng latLng);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMarkerClickListener {
         boolean onMarkerClick(Marker marker);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMarkerDragListener {
         void onMarkerDrag(Marker marker);
 
@@ -163,44 +163,44 @@ public class GoogleMap {
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMyLocationButtonClickListener {
         boolean onMyLocationButtonClick();
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMyLocationChangeListener {
         void onMyLocationChange(Location location);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnMyLocationClickListener {
         void onMyLocationClick(Location location);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnPoiClickListener {
         void onPoiClick(PointOfInterest pointOfInterest);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnPolygonClickListener {
         void onPolygonClick(Polygon polygon);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnPolylineClickListener {
         void onPolylineClick(Polyline polyline);
     }
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface SnapshotReadyCallback {
         void onSnapshotReady(Bitmap bitmap);
     }

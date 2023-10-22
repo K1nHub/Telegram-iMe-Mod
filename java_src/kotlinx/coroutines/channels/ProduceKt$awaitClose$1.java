@@ -5,8 +5,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Produce.kt */
-@DebugMetadata(m102c = "kotlinx.coroutines.channels.ProduceKt", m101f = "Produce.kt", m100l = {153}, m99m = "awaitClose")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "kotlinx.coroutines.channels.ProduceKt", m142f = "Produce.kt", m141l = {153}, m140m = "awaitClose")
+/* loaded from: classes4.dex */
 public final class ProduceKt$awaitClose$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

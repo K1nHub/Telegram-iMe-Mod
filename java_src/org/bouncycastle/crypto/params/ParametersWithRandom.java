@@ -2,7 +2,7 @@ package org.bouncycastle.crypto.params;
 
 import java.security.SecureRandom;
 import org.bouncycastle.crypto.CipherParameters;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ParametersWithRandom implements CipherParameters {
     private CipherParameters parameters;
     private SecureRandom random;

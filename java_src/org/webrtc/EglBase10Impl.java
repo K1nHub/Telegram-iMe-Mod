@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
     private static final String TAG = "EglBase10Impl";
@@ -30,7 +30,7 @@ public class EglBase10Impl implements EglBase10 {
         return nativeGetCurrentNativeEGLContext();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -321,7 +321,7 @@ public class EglBase10Impl implements EglBase10 {
         throw new RuntimeException("Failed to create EGL context: 0x" + Integer.toHexString(this.egl.eglGetError()));
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 

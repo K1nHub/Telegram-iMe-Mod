@@ -1,10 +1,10 @@
 package com.iMe.storage.data.locale.prefs.model.auth;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.wallet.SessionTokens;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthTokensMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AuthTokensMetadata {
     private final SessionTokens authTokens;
     private final long updateTimestamp;
@@ -22,7 +22,7 @@ public final class AuthTokensMetadata {
 
     public int hashCode() {
         SessionTokens sessionTokens = this.authTokens;
-        return ((sessionTokens == null ? 0 : sessionTokens.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.updateTimestamp);
+        return ((sessionTokens == null ? 0 : sessionTokens.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.updateTimestamp);
     }
 
     public String toString() {

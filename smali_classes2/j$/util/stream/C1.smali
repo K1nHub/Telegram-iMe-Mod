@@ -86,7 +86,7 @@
     return-wide v0
 .end method
 
-.method public p()I
+.method public n()I
     .locals 1
 
     const/4 v0, 0x2

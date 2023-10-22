@@ -136,10 +136,6 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         sRectPool.release(rect);
     }
 
-    public CoordinatorLayout(Context context) {
-        this(context, null);
-    }
-
     public CoordinatorLayout(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R$attr.coordinatorLayoutStyle);
     }

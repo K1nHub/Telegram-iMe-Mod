@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.source.rtsp.RtpPacket;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Settings.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Settings {
     private int set;
     private final int[] values = new int[10];
@@ -68,7 +68,7 @@ public final class Settings {
     }
 
     /* compiled from: Settings.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

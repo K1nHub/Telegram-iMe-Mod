@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedWithRateR
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AvailableSwapTokensResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AvailableSwapTokensResponse {
     private final String cursor;
     private final List<TokenDetailedWithRateResponse> tokens;

@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.token;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenDetailedWithRate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenDetailedWithRate {
     private final FiatValue rateToFiat;
     private final TokenDetailed token;

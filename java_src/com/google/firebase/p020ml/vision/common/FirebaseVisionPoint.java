@@ -3,7 +3,7 @@ package com.google.firebase.p020ml.vision.common;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.internal.firebase_ml.zzkm;
 /* renamed from: com.google.firebase.ml.vision.common.FirebaseVisionPoint */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseVisionPoint {
     private final Float zzbbf;
     private final Float zzbbg;

@@ -99,10 +99,10 @@
     return-void
 .end method
 
-.method public synthetic q(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public synthetic p(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/m;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object p1
 

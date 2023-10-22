@@ -5,8 +5,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
-@DebugMetadata(m102c = "kotlinx.coroutines.flow.CallbackFlowBuilder", m101f = "Builders.kt", m100l = {336}, m99m = "collectTo")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "kotlinx.coroutines.flow.CallbackFlowBuilder", m142f = "Builders.kt", m141l = {334}, m140m = "collectTo")
+/* loaded from: classes4.dex */
 public final class CallbackFlowBuilder$collectTo$1 extends ContinuationImpl {
     Object L$0;
     int label;

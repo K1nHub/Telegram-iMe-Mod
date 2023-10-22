@@ -8,22 +8,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "BoundingBoxParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzab extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzab> CREATOR = new zzaa();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final int zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final int zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public final int zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public final float zze;
 
     @SafeParcelable.Constructor
-    public zzab(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) int i3, @SafeParcelable.Param(m796id = 5) int i4, @SafeParcelable.Param(m796id = 6) float f) {
+    public zzab(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) int i3, @SafeParcelable.Param(m1088id = 5) int i4, @SafeParcelable.Param(m1088id = 6) float f) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.airdrop;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CheckAirdropPromotionStartRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CheckAirdropPromotionStartRequest {
     private final String promotionVersion;
     private final String requestId;

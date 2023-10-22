@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_attachMenuBots extends TLRPC$AttachMenuBots {
     public static int constructor = 1011024320;
     public long hash;

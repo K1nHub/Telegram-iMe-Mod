@@ -10,7 +10,7 @@ import com.iMe.utils.listeners.OnSnapPositionChangeListener;
 import com.iMe.utils.listeners.SnapOnScrollListener;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecycleViewExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RecycleViewExtKt {
     public static final void restoreScrollState(LinearLayoutManager linearLayoutManager, Parcelable parcelable) {
         Intrinsics.checkNotNullParameter(linearLayoutManager, "<this>");

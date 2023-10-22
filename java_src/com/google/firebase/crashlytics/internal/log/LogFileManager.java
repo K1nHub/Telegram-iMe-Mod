@@ -4,14 +4,14 @@ import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LogFileManager {
     private static final NoopLogStore NOOP_LOG_STORE = new NoopLogStore();
     private final Context context;
     private FileLogStore currentLog;
     private final DirectoryProvider directoryProvider;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface DirectoryProvider {
         File getLogFileDir();
     }
@@ -34,7 +34,7 @@ public class LogFileManager {
             return;
         }
         if (!CommonUtils.getBooleanResourceValue(this.context, "com.crashlytics.CollectCustomLogs", true)) {
-            Logger.getLogger().m746d("Preferences requested no custom logs. Aborting log file creation.");
+            Logger.getLogger().m1038d("Preferences requested no custom logs. Aborting log file creation.");
         } else {
             setLogFile(getWorkingFileForSession(str), 65536);
         }
@@ -65,7 +65,7 @@ public class LogFileManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class NoopLogStore implements FileLogStore {
         @Override // com.google.firebase.crashlytics.internal.log.FileLogStore
         public void closeLogFile() {

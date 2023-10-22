@@ -3,10 +3,14 @@ package kotlin.random;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 /* compiled from: Random.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RandomKt {
     public static final int takeUpperBits(int i, int i2) {
         return (i >>> (32 - i2)) & ((-i2) >> 31);
+    }
+
+    public static final Random Random(long j) {
+        return new XorWowRandom((int) j, (int) (j >> 32));
     }
 
     public static final int nextInt(Random random, IntRange range) {

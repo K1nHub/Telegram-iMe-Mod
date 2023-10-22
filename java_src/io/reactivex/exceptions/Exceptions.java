@@ -1,7 +1,7 @@
 package io.reactivex.exceptions;
 
 import io.reactivex.internal.util.ExceptionHelper;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Exceptions {
     public static RuntimeException propagate(Throwable th) {
         throw ExceptionHelper.wrapOrThrow(th);

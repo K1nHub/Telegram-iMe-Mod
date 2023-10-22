@@ -22,7 +22,7 @@ import com.google.android.gms.wearable.internal.zzgl;
 import com.google.android.gms.wearable.internal.zzhk;
 import com.google.android.gms.wearable.internal.zziw;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Wearable {
     @Deprecated
     public static final Api<WearableOptions> API;
@@ -55,13 +55,13 @@ public class Wearable {
     public static final zziw zze = new zziw();
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class WearableOptions implements Api.ApiOptions.Optional {
         static final WearableOptions zza = new WearableOptions(new Builder());
         private final Looper zzb;
 
         /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static class Builder {
             private Looper zza;
 

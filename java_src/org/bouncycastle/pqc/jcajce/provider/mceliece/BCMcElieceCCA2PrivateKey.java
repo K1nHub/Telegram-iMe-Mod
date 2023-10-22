@@ -11,7 +11,7 @@ import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
 import org.bouncycastle.pqc.math.linearalgebra.GF2mField;
 import org.bouncycastle.pqc.math.linearalgebra.Permutation;
 import org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCMcElieceCCA2PrivateKey implements PrivateKey {
     private McElieceCCA2PrivateKeyParameters params;
 

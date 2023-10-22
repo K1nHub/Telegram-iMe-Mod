@@ -1,6 +1,6 @@
 package com.google.android.gms.maps.model;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class JointType {
     public static final int BEVEL = 1;
     public static final int DEFAULT = 0;

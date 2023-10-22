@@ -1,9 +1,9 @@
 package com.iMe.storage.data.repository.catalog;
 
-import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogCategoryDao;
-import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao;
-import com.iMe.storage.data.locale.p027db.model.catalog.CatalogCategoryDb;
-import com.iMe.storage.data.locale.p027db.model.catalog.CatalogLanguageDb;
+import com.iMe.storage.data.locale.p026db.dao.minor.catalog.CatalogCategoryDao;
+import com.iMe.storage.data.locale.p026db.dao.minor.catalog.CatalogLanguageDao;
+import com.iMe.storage.data.locale.p026db.model.catalog.CatalogCategoryDb;
+import com.iMe.storage.data.locale.p026db.model.catalog.CatalogLanguageDb;
 import com.iMe.storage.data.mapper.catalog.CampaignsCursoredMappingKt;
 import com.iMe.storage.data.mapper.catalog.CategoriesPreviewsCursoredMappingKt;
 import com.iMe.storage.data.mapper.catalog.ChannelCategoryMappingKt;
@@ -28,7 +28,7 @@ import com.iMe.storage.domain.model.catalog.CategoryWithCounter;
 import com.iMe.storage.domain.model.catalog.ChatType;
 import com.iMe.storage.domain.repository.catalog.CatalogRepository;
 import com.iMe.storage.domain.storage.PreferenceHelper;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -39,7 +39,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRepositoryImpl implements CatalogRepository {
     private final CatalogApi catalogApi;
     private final CatalogCategoryDao catalogCategoryDao;
@@ -109,7 +109,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
                     Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                     Observable andThen = rxInsert.andThen(just2);
                     schedulersProvider = this.schedulersProvider;
-                    Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo717io());
+                    Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1010io());
                     Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogLanguageDao\n     …(schedulersProvider.io())");
                     return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>>() { // from class: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1.1
                         @Override // kotlin.jvm.functions.Function1
@@ -156,7 +156,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
                 if (entities.isEmpty()) {
                     Observable<Result<List<CatalogLanguage>>> languages2 = CatalogRepositoryImpl.this.getLanguages(true);
                     schedulersProvider = CatalogRepositoryImpl.this.schedulersProvider;
-                    return languages2.subscribeOn(schedulersProvider.mo717io());
+                    return languages2.subscribeOn(schedulersProvider.mo1010io());
                 }
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(entities, 10);
                 ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
@@ -202,7 +202,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
     @Override // com.iMe.storage.domain.repository.catalog.CatalogRepository
     public Observable<Result<List<CategoryWithCounter>>> getCategories(ChatType chatType, boolean z) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
-        Observable<ApiBaseResponse<List<CategoryWithCounterResponse>>> subscribeOn = this.catalogApi.getCategories(chatType.name(), this.preferenceHelper.getCatalogSelectedLanguageId()).subscribeOn(this.schedulersProvider.mo717io());
+        Observable<ApiBaseResponse<List<CategoryWithCounterResponse>>> subscribeOn = this.catalogApi.getCategories(chatType.name(), this.preferenceHelper.getCatalogSelectedLanguageId()).subscribeOn(this.schedulersProvider.mo1010io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogApi\n            .…(schedulersProvider.io())");
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
         Observable flatMap = subscribeOn.flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<List<? extends CategoryWithCounterResponse>>, ObservableSource<? extends Result<? extends List<? extends CategoryWithCounter>>>>() { // from class: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
@@ -240,7 +240,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
                 }
                 Completable andThen = rxDeleteCategories.andThen(catalogCategoryDao2.rxInsert((List) arrayList2));
                 schedulersProvider = this.schedulersProvider;
-                Completable subscribeOn2 = andThen.subscribeOn(schedulersProvider.mo717io());
+                Completable subscribeOn2 = andThen.subscribeOn(schedulersProvider.mo1010io());
                 Observable just2 = Observable.just(arrayList);
                 Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                 Observable andThen2 = subscribeOn2.andThen(just2);

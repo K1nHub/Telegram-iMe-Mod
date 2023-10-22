@@ -1,9 +1,8 @@
 package com.google.android.material;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class R$attr {
     public static final int appBarLayoutStyle = 2130968634;
     public static final int autoCompleteTextViewStyle = 2130968643;
-    public static final int badgeStyle = 2130968662;
     public static final int bottomSheetStyle = 2130968687;
     public static final int checkboxStyle = 2130968756;
     public static final int chipGroupStyle = 2130968769;
@@ -34,7 +33,6 @@ public final class R$attr {
     public static final int state_dragged = 2130969561;
     public static final int state_liftable = 2130969562;
     public static final int state_lifted = 2130969563;
-    public static final int tabStyle = 2130969611;
     public static final int textAppearanceLineHeightEnabled = 2130969632;
     public static final int textInputStyle = 2130969653;
     public static final int theme = 2130969664;

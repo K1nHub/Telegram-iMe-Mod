@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Job.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface Job extends CoroutineContext.Element {
     public static final Key Key = Key.$$INSTANCE;
 
@@ -16,14 +16,22 @@ public interface Job extends CoroutineContext.Element {
 
     CancellationException getCancellationException();
 
+    Job getParent();
+
+    DisposableHandle invokeOnCompletion(Function1<? super Throwable, Unit> function1);
+
     DisposableHandle invokeOnCompletion(boolean z, boolean z2, Function1<? super Throwable, Unit> function1);
 
     boolean isActive();
 
+    boolean isCancelled();
+
+    boolean isCompleted();
+
     boolean start();
 
     /* compiled from: Job.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class DefaultImpls {
         public static <R> R fold(Job job, R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
             return (R) CoroutineContext.Element.DefaultImpls.fold(job, r, function2);
@@ -66,7 +74,7 @@ public interface Job extends CoroutineContext.Element {
     }
 
     /* compiled from: Job.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Key implements CoroutineContext.Key<Job> {
         static final /* synthetic */ Key $$INSTANCE = new Key();
 

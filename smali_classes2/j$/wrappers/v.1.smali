@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/BinaryOperator;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field final synthetic a:Lj$/util/function/b;
+.field final synthetic a:Ljava/util/function/Consumer;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/function/b;)V
+.method private synthetic constructor <init>(Ljava/util/function/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/v;->a:Lj$/util/function/b;
+    iput-object p1, p0, Lj$/wrappers/v;->a:Ljava/util/function/Consumer;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/b;)Ljava/util/function/BinaryOperator;
+.method public static synthetic b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,52 +30,50 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/u;
+    instance-of v0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/u;
+    check-cast p0, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;
 
-    iget-object p0, p0, Lj$/wrappers/u;->a:Ljava/util/function/BinaryOperator;
+    iget-object p0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;->a:Lj$/util/function/Consumer;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/v;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/v;-><init>(Lj$/util/function/b;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/v;-><init>(Ljava/util/function/Consumer;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+.method public synthetic accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/v;->a:Lj$/util/function/b;
+    iget-object v0, p0, Lj$/wrappers/v;->a:Ljava/util/function/Consumer;
 
-    invoke-static {p1}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-interface {v0, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/BiFunction;->andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/t;->a(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method
 
-.method public synthetic apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/v;->a:Lj$/util/function/b;
+    iget-object v0, p0, Lj$/wrappers/v;->a:Ljava/util/function/Consumer;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;->convert(Lj$/util/function/Consumer;)Ljava/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/function/Consumer;->andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 

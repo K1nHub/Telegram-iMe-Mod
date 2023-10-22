@@ -20,9 +20,9 @@ import org.koin.core.module.Module;
 import org.koin.core.module.ModuleKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: InstanceRegistry.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class InstanceRegistry {
     private final Map<String, InstanceFactory<?>> _instances;
     private final Koin _koin;

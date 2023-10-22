@@ -9,7 +9,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CompletableDoFinally extends Completable {
     final Action onFinally;
     final CompletableSource source;
@@ -24,7 +24,7 @@ public final class CompletableDoFinally extends Completable {
         this.source.subscribe(new DoFinallyObserver(completableObserver, this.onFinally));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DoFinallyObserver extends AtomicInteger implements CompletableObserver, Disposable {
         final CompletableObserver downstream;
         final Action onFinally;

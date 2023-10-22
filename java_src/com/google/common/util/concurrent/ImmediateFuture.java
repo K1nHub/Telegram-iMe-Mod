@@ -6,7 +6,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class ImmediateFuture<V> implements ListenableFuture<V> {
     static final ListenableFuture<?> NULL = new ImmediateFuture(null);
     private static final Logger log = Logger.getLogger(ImmediateFuture.class.getName());

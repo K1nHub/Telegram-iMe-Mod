@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_emailVerificationGoogle extends TLRPC$EmailVerification {
     public static int constructor = -611279166;
     public String token;

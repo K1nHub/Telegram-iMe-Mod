@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 import androidx.appcompat.widget.ListPopupWindow;
-import com.iMe.p031ui.translate.PopupOptionsAdapter;
+import com.iMe.p030ui.translate.PopupOptionsAdapter;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p042ui.ActionBar.Theme;
 /* compiled from: PopupFactory.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class PopupFactoryKt {
     public static /* synthetic */ ListPopupWindow createPopupWithOptions$default(View view, List list, Integer num, Integer num2, Function2 function2, int i, Object obj) {
         if ((i & 2) != 0) {
@@ -31,8 +31,8 @@ public final class PopupFactoryKt {
         final ListPopupWindow listPopupWindow = new ListPopupWindow(view.getContext());
         listPopupWindow.setWidth(AndroidUtilities.displaySize.x / 2);
         listPopupWindow.setAnchorView(view);
-        int m72dp = AndroidUtilities.m72dp(6);
-        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m72dp, m72dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
+        int m102dp = AndroidUtilities.m102dp(6);
+        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m102dp, m102dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
         if (num != null) {
             listPopupWindow.setVerticalOffset(num.intValue());
         }

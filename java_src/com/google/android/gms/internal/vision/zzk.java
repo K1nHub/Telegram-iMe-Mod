@@ -8,19 +8,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "BarcodeDetectorOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzk extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzk> CREATOR = new zzj();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     private boolean zzb;
 
     public zzk() {
     }
 
     @SafeParcelable.Constructor
-    public zzk(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) boolean z) {
+    public zzk(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) boolean z) {
         this.zza = i;
         this.zzb = z;
     }

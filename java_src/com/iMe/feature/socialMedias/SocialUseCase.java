@@ -5,26 +5,26 @@ import com.iMe.feature.profile.ProfileRepository;
 import com.iMe.storage.data.network.interceptor.MetadataInterceptor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.wallet.SessionTokens;
-import com.iMe.storage.domain.repository.wallet.WalletSessionRepository;
+import com.iMe.storage.domain.repository.wallet.SessionRepository;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialUseCase.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialUseCase {
     private final ProfileRepository profileRepository;
+    private final SessionRepository sessionRepository;
     private final SocialRepository socialRepository;
-    private final WalletSessionRepository walletSessionRepository;
 
-    public SocialUseCase(SocialRepository socialRepository, ProfileRepository profileRepository, WalletSessionRepository walletSessionRepository) {
+    public SocialUseCase(SocialRepository socialRepository, ProfileRepository profileRepository, SessionRepository sessionRepository) {
         Intrinsics.checkNotNullParameter(socialRepository, "socialRepository");
         Intrinsics.checkNotNullParameter(profileRepository, "profileRepository");
-        Intrinsics.checkNotNullParameter(walletSessionRepository, "walletSessionRepository");
+        Intrinsics.checkNotNullParameter(sessionRepository, "sessionRepository");
         this.socialRepository = socialRepository;
         this.profileRepository = profileRepository;
-        this.walletSessionRepository = walletSessionRepository;
+        this.sessionRepository = sessionRepository;
     }
 
     public final Observable<Result<SocialDomain>> getAllSocials(final ProfileData profileData) {
@@ -75,7 +75,7 @@ public final class SocialUseCase {
 
     public final Observable<Result<SocialAuthDomain>> startSocialAuth(final SocialType socialType, final long j) {
         Intrinsics.checkNotNullParameter(socialType, "socialType");
-        Observable<Result<SessionTokens>> refreshToken = this.walletSessionRepository.refreshToken();
+        Observable<Result<SessionTokens>> refreshToken = this.sessionRepository.refreshToken();
         final Function1<Result<? extends SessionTokens>, ObservableSource<? extends Result<? extends SocialAuthDomain>>> function1 = new Function1<Result<? extends SessionTokens>, ObservableSource<? extends Result<? extends SocialAuthDomain>>>() { // from class: com.iMe.feature.socialMedias.SocialUseCase$startSocialAuth$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

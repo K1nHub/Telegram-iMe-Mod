@@ -12,7 +12,7 @@ import com.trustwallet.walletconnect.models.binance.WCBinanceCancelOrder;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceCancelOrder.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCBinanceCancelOrderKt {
     private static final JsonDeserializer<WCBinanceCancelOrder.Message> cancelOrderDeserializer = GsonBuilderKt.jsonDeserializer(new Function1<DeserializerArg, WCBinanceCancelOrder.Message>() { // from class: com.trustwallet.walletconnect.models.binance.WCBinanceCancelOrderKt$cancelOrderDeserializer$1
         @Override // kotlin.jvm.functions.Function1

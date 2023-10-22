@@ -2,7 +2,7 @@ package com.google.common.base;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Strings {
     public static String nullToEmpty(String str) {
         return Platform.nullToEmpty(str);
@@ -10,10 +10,6 @@ public final class Strings {
 
     public static String emptyToNull(String str) {
         return Platform.emptyToNull(str);
-    }
-
-    public static boolean isNullOrEmpty(String str) {
-        return Platform.stringIsNullOrEmpty(str);
     }
 
     public static String lenientFormat(String str, Object... objArr) {

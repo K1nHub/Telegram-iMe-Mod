@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionProcessingType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum TransactionProcessingType {
     SIMPLEX(R$string.processing_type_simplex),
     ETHEREUM(R$string.processing_type_eth),
@@ -34,7 +34,7 @@ public enum TransactionProcessingType {
     }
 
     /* compiled from: TransactionProcessingType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

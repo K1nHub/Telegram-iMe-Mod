@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTransactionGasResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTransactionGasResponse {
     private final int duration;
     private final TokenDetailedResponse token;

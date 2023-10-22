@@ -11,6 +11,7 @@ import com.googlecode.mp4parser.RequiresParseDetailAspect;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.reflect.Factory;
 /* loaded from: classes.dex */
@@ -20,6 +21,7 @@ public class HandlerBox extends AbstractFullBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_2 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_3 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_5 = null;
+    public static final Map<String, String> readableTypes;
 
     /* renamed from: a */
     private long f178a;
@@ -62,7 +64,7 @@ public class HandlerBox extends AbstractFullBox {
         hashMap.put("hint", "Hint Track");
         hashMap.put("appl", "Apple specific");
         hashMap.put("meta", "Timed Metadata track - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        Collections.unmodifiableMap(hashMap);
+        readableTypes = Collections.unmodifiableMap(hashMap);
     }
 
     public HandlerBox() {

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_help_getAppChangelog extends TLObject {
     public static int constructor = -1877938321;
     public String prev_app_version;

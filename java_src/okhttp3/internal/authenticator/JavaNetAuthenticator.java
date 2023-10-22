@@ -24,11 +24,11 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.Route;
 /* compiled from: JavaNetAuthenticator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class JavaNetAuthenticator implements Authenticator {
     private final Dns defaultDns;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

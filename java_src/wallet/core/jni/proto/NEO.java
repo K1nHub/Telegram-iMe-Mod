@@ -16,10 +16,10 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class NEO {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -56,7 +56,7 @@ public final class NEO {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -71,7 +71,7 @@ public final class NEO {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionInputOrBuilder extends MessageLiteOrBuilder {
         String getAssetId();
 
@@ -90,7 +90,7 @@ public final class NEO {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionOutputOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -113,7 +113,7 @@ public final class NEO {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionOutputPlanOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -140,7 +140,7 @@ public final class NEO {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransactionPlanOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -173,7 +173,7 @@ public final class NEO {
     private NEO() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionInput extends GeneratedMessageLite<TransactionInput, Builder> implements TransactionInputOrBuilder {
         public static final int ASSET_ID_FIELD_NUMBER = 4;
         private static final TransactionInput DEFAULT_INSTANCE;
@@ -318,9 +318,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionInput, Builder> implements TransactionInputOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -410,7 +410,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionInput();
                 case 2:
@@ -456,47 +456,47 @@ public final class NEO {
     }
 
     /* renamed from: wallet.core.jni.proto.NEO$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73431 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76771 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1959xa1df5c61;
+        static final /* synthetic */ int[] f2133xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1959xa1df5c61 = iArr;
+            f2133xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1959xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2133xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionOutput extends GeneratedMessageLite<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         public static final int ASSET_ID_FIELD_NUMBER = 1;
@@ -664,9 +664,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -778,7 +778,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOutput();
                 case 2:
@@ -823,7 +823,7 @@ public final class NEO {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         public static final int FEE_FIELD_NUMBER = 4;
@@ -1157,9 +1157,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -1432,7 +1432,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1477,7 +1477,7 @@ public final class NEO {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -1587,9 +1587,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -1645,7 +1645,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -1690,7 +1690,7 @@ public final class NEO {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionOutputPlan extends GeneratedMessageLite<TransactionOutputPlan, Builder> implements TransactionOutputPlanOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         public static final int ASSET_ID_FIELD_NUMBER = 4;
@@ -1892,9 +1892,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOutputPlan, Builder> implements TransactionOutputPlanOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -2040,7 +2040,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOutputPlan();
                 case 2:
@@ -2085,7 +2085,7 @@ public final class NEO {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TransactionPlan extends GeneratedMessageLite<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
         private static final TransactionPlan DEFAULT_INSTANCE;
         public static final int ERROR_FIELD_NUMBER = 4;
@@ -2336,9 +2336,9 @@ public final class NEO {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
-            /* synthetic */ Builder(C73431 c73431) {
+            /* synthetic */ Builder(C76771 c76771) {
                 this();
             }
 
@@ -2532,7 +2532,7 @@ public final class NEO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73431.f1959xa1df5c61[method.ordinal()]) {
+            switch (C76771.f2133xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionPlan();
                 case 2:

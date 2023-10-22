@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class InvalidProtocolBufferException extends IOException {
     private MessageLite unfinishedMessage;
     private boolean wasThrownFromInputStream;
@@ -59,7 +59,7 @@ public class InvalidProtocolBufferException extends IOException {
         return new InvalidWireTypeException("Protocol message tag had invalid wire type.");
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class InvalidWireTypeException extends InvalidProtocolBufferException {
         public InvalidWireTypeException(String str) {
             super(str);

@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import java.io.InputStream;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ConstructedOctetStream extends InputStream {
     private InputStream _currentStream;
     private boolean _first = true;

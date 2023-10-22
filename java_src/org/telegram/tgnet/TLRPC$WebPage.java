@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$WebPage extends TLObject {
     public ArrayList<TLRPC$WebPageAttribute> attributes = new ArrayList<>();
     public String author;
@@ -9,6 +9,7 @@ public abstract class TLRPC$WebPage extends TLObject {
     public int date;
     public String description;
     public String display_url;
+    public String displayedText;
     public TLRPC$Document document;
     public int duration;
     public int embed_height;
@@ -19,7 +20,7 @@ public abstract class TLRPC$WebPage extends TLObject {
     public int hash;
 
     /* renamed from: id */
-    public long f1694id;
+    public long f1771id;
     public TLRPC$Photo photo;
     public String site_name;
     public String title;
@@ -46,7 +47,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_webPage, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1694id = abstractSerializedData2.readInt64(z2);
+                        this.f1771id = abstractSerializedData2.readInt64(z2);
                         this.url = abstractSerializedData2.readString(z2);
                         this.display_url = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
@@ -88,7 +89,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1694id);
+                        abstractSerializedData2.writeInt64(this.f1771id);
                         abstractSerializedData2.writeString(this.url);
                         abstractSerializedData2.writeString(this.display_url);
                         if ((this.flags & 1) != 0) {
@@ -137,7 +138,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_webPage, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1694id = abstractSerializedData2.readInt64(z2);
+                        this.f1771id = abstractSerializedData2.readInt64(z2);
                         this.url = abstractSerializedData2.readString(z2);
                         this.display_url = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
@@ -182,7 +183,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1694id);
+                        abstractSerializedData2.writeInt64(this.f1771id);
                         abstractSerializedData2.writeString(this.url);
                         abstractSerializedData2.writeString(this.display_url);
                         if ((this.flags & 1) != 0) {
@@ -240,7 +241,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_webPage, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1694id = abstractSerializedData2.readInt64(z2);
+                        this.f1771id = abstractSerializedData2.readInt64(z2);
                         this.url = abstractSerializedData2.readString(z2);
                         this.display_url = abstractSerializedData2.readString(z2);
                         this.hash = abstractSerializedData2.readInt32(z2);
@@ -308,7 +309,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1694id);
+                        abstractSerializedData2.writeInt64(this.f1771id);
                         abstractSerializedData2.writeString(this.url);
                         abstractSerializedData2.writeString(this.display_url);
                         abstractSerializedData2.writeInt32(this.hash);
@@ -365,7 +366,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_webPage, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1694id = abstractSerializedData2.readInt64(z2);
+                        this.f1771id = abstractSerializedData2.readInt64(z2);
                         this.url = abstractSerializedData2.readString(z2);
                         this.display_url = abstractSerializedData2.readString(z2);
                         this.hash = abstractSerializedData2.readInt32(z2);
@@ -414,7 +415,7 @@ public abstract class TLRPC$WebPage extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt64(this.f1694id);
+                        abstractSerializedData2.writeInt64(this.f1771id);
                         abstractSerializedData2.writeString(this.url);
                         abstractSerializedData2.writeString(this.display_url);
                         abstractSerializedData2.writeInt32(this.hash);

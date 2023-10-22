@@ -1,18 +1,18 @@
 package com.iMe.storage.domain.model.catalog;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelTag.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ChannelTag {
 
     /* renamed from: id */
-    private final long f411id;
+    private final long f344id;
     private final String title;
 
     public static /* synthetic */ ChannelTag copy$default(ChannelTag channelTag, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = channelTag.f411id;
+            j = channelTag.f344id;
         }
         if ((i & 2) != 0) {
             str = channelTag.title;
@@ -21,7 +21,7 @@ public final class ChannelTag {
     }
 
     public final long component1() {
-        return this.f411id;
+        return this.f344id;
     }
 
     public final String component2() {
@@ -39,27 +39,27 @@ public final class ChannelTag {
         }
         if (obj instanceof ChannelTag) {
             ChannelTag channelTag = (ChannelTag) obj;
-            return this.f411id == channelTag.f411id && Intrinsics.areEqual(this.title, channelTag.title);
+            return this.f344id == channelTag.f344id && Intrinsics.areEqual(this.title, channelTag.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f411id) * 31) + this.title.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.f344id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "ChannelTag(id=" + this.f411id + ", title=" + this.title + ')';
+        return "ChannelTag(id=" + this.f344id + ", title=" + this.title + ')';
     }
 
     public ChannelTag(long j, String title) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f411id = j;
+        this.f344id = j;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f411id;
+        return this.f344id;
     }
 
     public final String getTitle() {

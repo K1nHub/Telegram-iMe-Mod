@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import java.util.List;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzda {
     final String zza;
     final long zzb;

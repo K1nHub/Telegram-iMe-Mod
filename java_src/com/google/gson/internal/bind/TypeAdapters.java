@@ -42,7 +42,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerArray;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TypeAdapters {
     public static final TypeAdapter<AtomicBoolean> ATOMIC_BOOLEAN;
     public static final TypeAdapterFactory ATOMIC_BOOLEAN_FACTORY;
@@ -118,7 +118,7 @@ public final class TypeAdapters {
                 JsonToken peek = jsonReader.peek();
                 int i = 0;
                 while (peek != JsonToken.END_ARRAY) {
-                    int i2 = C117535.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
+                    int i2 = C109735.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
                     boolean z = true;
                     if (i2 == 1 || i2 == 2) {
                         int nextInt = jsonReader.nextInt();
@@ -732,7 +732,7 @@ public final class TypeAdapters {
         LOCALE_FACTORY = newFactory(Locale.class, typeAdapter14);
         TypeAdapter<JsonElement> typeAdapter15 = new TypeAdapter<JsonElement>() { // from class: com.google.gson.internal.bind.TypeAdapters.28
             private JsonElement tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-                int i = C117535.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+                int i = C109735.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
                 if (i == 4) {
                     jsonReader.beginArray();
                     return new JsonArray();
@@ -745,7 +745,7 @@ public final class TypeAdapters {
             }
 
             private JsonElement readTerminal(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-                int i = C117535.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+                int i = C109735.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
                 if (i != 1) {
                     if (i != 2) {
                         if (i != 3) {
@@ -857,8 +857,8 @@ public final class TypeAdapters {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.TypeAdapters$35 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C117535 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C109735 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -891,7 +891,7 @@ public final class TypeAdapters {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
         private final Map<String, T> nameToConstant = new HashMap();
         private final Map<String, T> stringToConstant = new HashMap();

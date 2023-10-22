@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 import okhttp3.Request;
 import retrofit2.CallAdapter;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
     final Executor callbackExecutor;
 
@@ -36,7 +36,7 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class ExecutorCallbackCall<T> implements Call<T> {
         final Executor callbackExecutor;
         final Call<T> delegate;
@@ -56,11 +56,11 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
                         @Override // java.lang.Runnable
                         public void run() {
                             if (ExecutorCallbackCall.this.delegate.isCanceled()) {
-                                C72991 c72991 = C72991.this;
+                                C76341 c76341 = C76341.this;
                                 callback.onFailure(ExecutorCallbackCall.this, new IOException("Canceled"));
                                 return;
                             }
-                            C72991 c729912 = C72991.this;
+                            C76341 c763412 = C76341.this;
                             callback.onResponse(ExecutorCallbackCall.this, response);
                         }
                     });
@@ -71,7 +71,7 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
                     ExecutorCallbackCall.this.callbackExecutor.execute(new Runnable() { // from class: retrofit2.ExecutorCallAdapterFactory.ExecutorCallbackCall.1.2
                         @Override // java.lang.Runnable
                         public void run() {
-                            C72991 c72991 = C72991.this;
+                            C76341 c76341 = C76341.this;
                             callback.onFailure(ExecutorCallbackCall.this, th);
                         }
                     });
@@ -101,7 +101,7 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
 
         @Override // retrofit2.Call
         public Call<T> clone() {
-            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.mo4391clone());
+            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.mo5123clone());
         }
 
         @Override // retrofit2.Call

@@ -15,14 +15,14 @@
 .method public abstract i([Ljava/lang/Object;I)V
 .end method
 
-.method public abstract p()I
+.method public abstract n()I
 .end method
 
-.method public abstract q(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public abstract p(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 .end method
 
-.method public abstract r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public abstract q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 .end method
 
-.method public abstract spliterator()Lj$/util/s;
+.method public abstract spliterator()Lj$/util/Spliterator;
 .end method

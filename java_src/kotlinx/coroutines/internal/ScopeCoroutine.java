@@ -5,11 +5,9 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlinx.coroutines.AbstractCoroutine;
-import kotlinx.coroutines.ChildHandle;
 import kotlinx.coroutines.CompletionStateKt;
-import kotlinx.coroutines.Job;
 /* compiled from: Scopes.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ScopeCoroutine<T> extends AbstractCoroutine<T> implements CoroutineStackFrame {
     public final Continuation<T> uCont;
 
@@ -34,14 +32,6 @@ public class ScopeCoroutine<T> extends AbstractCoroutine<T> implements Coroutine
         Continuation<T> continuation = this.uCont;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
-        }
-        return null;
-    }
-
-    public final Job getParent$kotlinx_coroutines_core() {
-        ChildHandle parentHandle$kotlinx_coroutines_core = getParentHandle$kotlinx_coroutines_core();
-        if (parentHandle$kotlinx_coroutines_core != null) {
-            return parentHandle$kotlinx_coroutines_core.getParent();
         }
         return null;
     }

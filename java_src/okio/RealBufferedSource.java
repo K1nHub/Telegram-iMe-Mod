@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.CharsKt__CharJVMKt;
 import okio.internal.BufferKt;
 /* compiled from: RealBufferedSource.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealBufferedSource implements BufferedSource {
     public final Buffer bufferField;
     public boolean closed;
@@ -98,11 +98,6 @@ public final class RealBufferedSource implements BufferedSource {
         Intrinsics.checkNotNullParameter(charset, "charset");
         this.bufferField.writeAll(this.source);
         return this.bufferField.readString(charset);
-    }
-
-    @Override // okio.BufferedSource
-    public Buffer buffer() {
-        return this.bufferField;
     }
 
     @Override // okio.BufferedSource

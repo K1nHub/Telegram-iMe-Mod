@@ -3,17 +3,17 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;IZ)V
+.method constructor <init>(Lj$/util/Spliterator;IZ)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/d1;-><init>(Lj$/util/s;IZ)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/d1;-><init>(Lj$/util/Spliterator;IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final G0()Z
+.method final F0()Z
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -23,7 +23,7 @@
     throw v0
 .end method
 
-.method final H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method final G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -33,7 +33,7 @@
     throw p1
 .end method
 
-.method public Z(Lj$/util/function/q;)V
+.method public Y(Lj$/util/function/p;)V
     .locals 2
 
     invoke-virtual {p0}, Lj$/util/stream/c;->isParallel()Z
@@ -42,15 +42,15 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->J0()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/c;->I0()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/stream/d1;->L0(Lj$/util/s;)Lj$/util/s$c;
+    invoke-static {v0}, Lj$/util/stream/d1;->K0(Lj$/util/Spliterator;)Lj$/util/Spliterator$c;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/s$c;->d(Lj$/util/function/q;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$c;->d(Lj$/util/function/p;)V
 
     goto :goto_0
 
@@ -63,16 +63,16 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p1, v1}, Lj$/util/stream/m0;-><init>(Lj$/util/function/q;Z)V
+    invoke-direct {v0, p1, v1}, Lj$/util/stream/m0;-><init>(Lj$/util/function/p;Z)V
 
     .line 3
-    invoke-virtual {p0, v0}, Lj$/util/stream/c;->x0(Lj$/util/stream/N4;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lj$/util/stream/c;->w0(Lj$/util/stream/N4;)Ljava/lang/Object;
 
     :goto_0
     return-void
 .end method
 
-.method public d(Lj$/util/function/q;)V
+.method public d(Lj$/util/function/p;)V
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/stream/c;->isParallel()Z
@@ -81,20 +81,20 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->J0()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/c;->I0()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/stream/d1;->L0(Lj$/util/s;)Lj$/util/s$c;
+    invoke-static {v0}, Lj$/util/stream/d1;->K0(Lj$/util/Spliterator;)Lj$/util/Spliterator$c;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/s$c;->d(Lj$/util/function/q;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator$c;->d(Lj$/util/function/p;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Lj$/util/stream/d1;->d(Lj$/util/function/q;)V
+    invoke-super {p0, p1}, Lj$/util/stream/d1;->d(Lj$/util/function/p;)V
 
     :goto_0
     return-void

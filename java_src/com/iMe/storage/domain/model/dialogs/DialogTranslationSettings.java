@@ -1,10 +1,10 @@
 package com.iMe.storage.domain.model.dialogs;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogTranslationSettings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DialogTranslationSettings {
     private long dialogId;
     private String inTextTranslateLangCode;
@@ -86,7 +86,7 @@ public final class DialogTranslationSettings {
         if (r2 != 0) {
             i2 = 1;
         }
-        int hashCode2 = (((((hashCode + i2) * 31) + this.outTextTranslateLangCode.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.dialogId)) * 31;
+        int hashCode2 = (((((hashCode + i2) * 31) + this.outTextTranslateLangCode.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.dialogId)) * 31;
         boolean z2 = this.isEnabled;
         int i3 = (hashCode2 + (z2 ? 1 : z2 ? 1 : 0)) * 31;
         String str2 = this.incomingTargetLanguageCode;

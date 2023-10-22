@@ -3,36 +3,43 @@ package com.iMe.model.wallet.home.nft;
 import com.chad.library.adapter.base.entity.node.BaseExpandNode;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.model.wallet.crypto.NetworkItem;
-import com.iMe.storage.domain.model.crypto.nft.avatar.NftCollection;
+import com.iMe.storage.domain.model.crypto.nft.NftCollection;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftCollectionItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NftCollectionItem extends BaseExpandNode {
     private final List<BaseNode> childNode;
     private final NftCollection collection;
     private final boolean isNetworkLogoVisible;
     private final NetworkItem.Crypto networkItem;
     private final List<NftTokenItem> tokens;
+    private final NftType type;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ NftCollectionItem copy$default(NftCollectionItem nftCollectionItem, NftCollection nftCollection, List list, NetworkItem.Crypto crypto, boolean z, int i, Object obj) {
+    public static /* synthetic */ NftCollectionItem copy$default(NftCollectionItem nftCollectionItem, NftCollection nftCollection, List list, NetworkItem.Crypto crypto, boolean z, NftType nftType, int i, Object obj) {
         if ((i & 1) != 0) {
             nftCollection = nftCollectionItem.collection;
         }
+        List<NftTokenItem> list2 = list;
         if ((i & 2) != 0) {
-            list = nftCollectionItem.tokens;
+            list2 = nftCollectionItem.tokens;
         }
+        List list3 = list2;
         if ((i & 4) != 0) {
             crypto = nftCollectionItem.networkItem;
         }
+        NetworkItem.Crypto crypto2 = crypto;
         if ((i & 8) != 0) {
             z = nftCollectionItem.isNetworkLogoVisible;
         }
-        return nftCollectionItem.copy(nftCollection, list, crypto, z);
+        boolean z2 = z;
+        if ((i & 16) != 0) {
+            nftType = nftCollectionItem.type;
+        }
+        return nftCollectionItem.copy(nftCollection, list3, crypto2, z2, nftType);
     }
 
     public final NftCollection component1() {
@@ -51,15 +58,20 @@ public final class NftCollectionItem extends BaseExpandNode {
         return this.isNetworkLogoVisible;
     }
 
-    public final NftCollectionItem copy(NftCollection collection, List<NftTokenItem> tokens, NetworkItem.Crypto networkItem, boolean z) {
+    public final NftType component5() {
+        return this.type;
+    }
+
+    public final NftCollectionItem copy(NftCollection collection, List<NftTokenItem> tokens, NetworkItem.Crypto networkItem, boolean z, NftType type) {
         Intrinsics.checkNotNullParameter(collection, "collection");
         Intrinsics.checkNotNullParameter(tokens, "tokens");
         Intrinsics.checkNotNullParameter(networkItem, "networkItem");
-        return new NftCollectionItem(collection, tokens, networkItem, z);
+        Intrinsics.checkNotNullParameter(type, "type");
+        return new NftCollectionItem(collection, tokens, networkItem, z, type);
     }
 
     public String toString() {
-        return "NftCollectionItem(collection=" + this.collection + ", tokens=" + this.tokens + ", networkItem=" + this.networkItem + ", isNetworkLogoVisible=" + this.isNetworkLogoVisible + ')';
+        return "NftCollectionItem(collection=" + this.collection + ", tokens=" + this.tokens + ", networkItem=" + this.networkItem + ", isNetworkLogoVisible=" + this.isNetworkLogoVisible + ", type=" + this.type + ')';
     }
 
     public final NftCollection getCollection() {
@@ -78,15 +90,21 @@ public final class NftCollectionItem extends BaseExpandNode {
         return this.isNetworkLogoVisible;
     }
 
-    public NftCollectionItem(NftCollection collection, List<NftTokenItem> tokens, NetworkItem.Crypto networkItem, boolean z) {
+    public final NftType getType() {
+        return this.type;
+    }
+
+    public NftCollectionItem(NftCollection collection, List<NftTokenItem> tokens, NetworkItem.Crypto networkItem, boolean z, NftType type) {
         List<BaseNode> mutableList;
         Intrinsics.checkNotNullParameter(collection, "collection");
         Intrinsics.checkNotNullParameter(tokens, "tokens");
         Intrinsics.checkNotNullParameter(networkItem, "networkItem");
+        Intrinsics.checkNotNullParameter(type, "type");
         this.collection = collection;
         this.tokens = tokens;
         this.networkItem = networkItem;
         this.isNetworkLogoVisible = z;
+        this.type = type;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) tokens);
         this.childNode = mutableList;
     }

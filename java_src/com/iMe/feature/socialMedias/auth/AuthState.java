@@ -4,7 +4,7 @@ import com.iMe.feature.socialMedias.SocialType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AuthState {
     private final boolean isLoading;
     private final SocialType socialType;

@@ -2,7 +2,7 @@ package com.google.protobuf;
 
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class UnknownFieldSchema<T, B> {
     abstract void addFixed32(B b, int i, int i2);
 

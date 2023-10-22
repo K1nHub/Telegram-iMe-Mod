@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import okhttp3.Protocol;
 /* compiled from: StatusLine.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StatusLine {
     public static final Companion Companion = new Companion(null);
     public final int code;
@@ -39,7 +39,7 @@ public final class StatusLine {
     }
 
     /* compiled from: StatusLine.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

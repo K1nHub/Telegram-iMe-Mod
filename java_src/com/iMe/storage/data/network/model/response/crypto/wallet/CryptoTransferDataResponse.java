@@ -6,7 +6,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoTransferDataResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CryptoTransferDataResponse {
     private final transient TokenDetailedResponse feeToken;
     private final transient TokenDetailedResponse token;
@@ -35,7 +35,7 @@ public abstract class CryptoTransferDataResponse {
     }
 
     /* compiled from: CryptoTransferDataResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class EVM extends CryptoTransferDataResponse {
         private final TokenDetailedResponse feeToken;
         private final TokenDetailedResponse token;
@@ -120,7 +120,7 @@ public abstract class CryptoTransferDataResponse {
     }
 
     /* compiled from: CryptoTransferDataResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TRON extends CryptoTransferDataResponse {
         private final GasPriceResponse estimateFees;
         private final TokenDetailedResponse feeToken;
@@ -220,7 +220,7 @@ public abstract class CryptoTransferDataResponse {
     }
 
     /* compiled from: CryptoTransferDataResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TON extends CryptoTransferDataResponse {
         private final TonFeesResponse estimateFees;
         private final TokenDetailedResponse feeToken;
@@ -320,7 +320,7 @@ public abstract class CryptoTransferDataResponse {
     }
 
     /* compiled from: CryptoTransferDataResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BTC extends CryptoTransferDataResponse {
         private final TokenDetailedResponse feeToken;
         private final TokenDetailedResponse token;

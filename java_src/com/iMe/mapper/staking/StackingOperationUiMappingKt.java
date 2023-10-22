@@ -12,7 +12,7 @@ import com.iMe.storage.domain.model.staking.StakingValues;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StackingOperationUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StackingOperationUiMappingKt {
     public static final BaseNode mapToUi(StakingOperation stakingOperation, boolean z) {
         StakingValues value;

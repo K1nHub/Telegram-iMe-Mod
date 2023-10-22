@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.token;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FoundToken.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FoundToken {
     private final boolean isCustom;
     private final boolean isEnabled;

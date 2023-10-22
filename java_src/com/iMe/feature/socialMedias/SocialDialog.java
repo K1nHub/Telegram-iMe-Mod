@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import com.iMe.p031ui.base.mvp.MvpBottomSheet;
+import com.iMe.p030ui.base.mvp.MvpBottomSheet;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -24,13 +24,13 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3473R;
+import org.koin.p041mp.KoinPlatformTools;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksBinding;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksItemBinding;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p042ui.ActionBar.Theme;
 /* compiled from: SocialDialog.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialDialog extends MvpBottomSheet {
     public static final Companion Companion = new Companion(null);
     private final ForkDialogSocialNetworksBinding binding;
@@ -78,10 +78,10 @@ public final class SocialDialog extends MvpBottomSheet {
         return (ResourceManager) this.resource$delegate.getValue();
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpBottomSheet
+    @Override // com.iMe.p030ui.base.mvp.MvpBottomSheet
     public View onCreateView(Bundle bundle) {
         this.binding.text.setTextColor(this.textColor);
-        this.binding.text.setText(getResource().getString(C3473R.string.social_cell_social_networks));
+        this.binding.text.setText(getResource().getString(C3630R.string.social_cell_social_networks));
         ConstraintLayout root = this.binding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;
@@ -132,7 +132,7 @@ public final class SocialDialog extends MvpBottomSheet {
     }
 
     /* compiled from: SocialDialog.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

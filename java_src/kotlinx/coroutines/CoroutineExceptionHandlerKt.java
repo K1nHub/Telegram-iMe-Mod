@@ -2,8 +2,9 @@ package kotlinx.coroutines;
 
 import kotlin.ExceptionsKt__ExceptionsKt;
 import kotlin.coroutines.CoroutineContext;
+import kotlinx.coroutines.internal.CoroutineExceptionHandlerImpl_commonKt;
 /* compiled from: CoroutineExceptionHandler.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineExceptionHandlerKt {
     public static final void handleCoroutineException(CoroutineContext coroutineContext, Throwable th) {
         try {
@@ -11,10 +12,10 @@ public final class CoroutineExceptionHandlerKt {
             if (coroutineExceptionHandler != null) {
                 coroutineExceptionHandler.handleException(coroutineContext, th);
             } else {
-                CoroutineExceptionHandlerImplKt.handleCoroutineExceptionImpl(coroutineContext, th);
+                CoroutineExceptionHandlerImpl_commonKt.handleUncaughtCoroutineException(coroutineContext, th);
             }
         } catch (Throwable th2) {
-            CoroutineExceptionHandlerImplKt.handleCoroutineExceptionImpl(coroutineContext, handlerException(th, th2));
+            CoroutineExceptionHandlerImpl_commonKt.handleUncaughtCoroutineException(coroutineContext, handlerException(th, th2));
         }
     }
 

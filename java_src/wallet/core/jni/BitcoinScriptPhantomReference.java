@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: BitcoinScript.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class BitcoinScriptPhantomReference extends PhantomReference<BitcoinScript> {
     private long nativeHandle;
     private static Set<BitcoinScriptPhantomReference> references = new HashSet();

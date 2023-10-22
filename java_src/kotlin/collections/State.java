@@ -1,6 +1,6 @@
 package kotlin.collections;
 /* compiled from: AbstractIterator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 enum State {
     Ready,
     NotReady,

@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import com.iMe.model.wallet.crypto.NetworkItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkSettingsItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NetworkSettingsItem extends NoChildNode {
     private final boolean isEnabled;
     private final NetworkItem.Crypto networkItem;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageRecognitionMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ImageRecognitionMapperKt {
     public static final String toUi(List<RecognizedImageModel> list) {
         Intrinsics.checkNotNullParameter(list, "<this>");

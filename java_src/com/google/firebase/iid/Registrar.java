@@ -19,12 +19,12 @@ import java.util.List;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
 @Keep
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Registrar implements ComponentRegistrar {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FIIDInternalAdapter implements FirebaseInstanceIdInternal {
         final FirebaseInstanceId fiid;
 

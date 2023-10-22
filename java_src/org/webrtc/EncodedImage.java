@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class EncodedImage implements RefCounted {
     public final ByteBuffer buffer;
     public final long captureTimeMs;
@@ -12,11 +12,11 @@ public class EncodedImage implements RefCounted {
     public final FrameType frameType;
 
     /* renamed from: qp */
-    public final Integer f1919qp;
+    public final Integer f2093qp;
     private final RefCountDelegate refCountDelegate;
     public final int rotation;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum FrameType {
         EmptyFrame(0),
         VideoFrameKey(3),
@@ -63,7 +63,7 @@ public class EncodedImage implements RefCounted {
         this.captureTimeNs = j;
         this.frameType = frameType;
         this.rotation = i3;
-        this.f1919qp = num;
+        this.f2093qp = num;
         this.refCountDelegate = new RefCountDelegate(runnable);
     }
 
@@ -99,14 +99,14 @@ public class EncodedImage implements RefCounted {
 
     @CalledByNative
     private Integer getQp() {
-        return this.f1919qp;
+        return this.f2093qp;
     }
 
     public static Builder builder() {
         return new Builder();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private ByteBuffer buffer;
         private long captureTimeNs;
@@ -115,7 +115,7 @@ public class EncodedImage implements RefCounted {
         private FrameType frameType;
 
         /* renamed from: qp */
-        private Integer f1920qp;
+        private Integer f2094qp;
         private Runnable releaseCallback;
         private int rotation;
 
@@ -160,12 +160,12 @@ public class EncodedImage implements RefCounted {
         }
 
         public Builder setQp(Integer num) {
-            this.f1920qp = num;
+            this.f2094qp = num;
             return this;
         }
 
         public EncodedImage createEncodedImage() {
-            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.f1920qp);
+            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.f2094qp);
         }
     }
 }

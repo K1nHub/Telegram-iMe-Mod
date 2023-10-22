@@ -14,7 +14,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestListener;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GlideRequest<TranscodeType> extends RequestBuilder<TranscodeType> {
     @Override // com.bumptech.glide.RequestBuilder, com.bumptech.glide.request.BaseRequestOptions
     public /* bridge */ /* synthetic */ RequestBuilder apply(BaseRequestOptions baseRequestOptions) {
@@ -183,7 +183,7 @@ public class GlideRequest<TranscodeType> extends RequestBuilder<TranscodeType> {
 
     @Override // com.bumptech.glide.RequestBuilder, com.bumptech.glide.request.BaseRequestOptions
     /* renamed from: clone */
-    public GlideRequest<TranscodeType> mo903clone() {
-        return (GlideRequest) super.mo903clone();
+    public GlideRequest<TranscodeType> mo1197clone() {
+        return (GlideRequest) super.mo1197clone();
     }
 }

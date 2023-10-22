@@ -7,14 +7,14 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Dns.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface Dns {
     public static final Dns SYSTEM;
 
     List<InetAddress> lookup(String str) throws UnknownHostException;
 
     /* compiled from: Dns.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -24,7 +24,7 @@ public interface Dns {
         }
 
         /* compiled from: Dns.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         private static final class DnsSystem implements Dns {
             @Override // okhttp3.Dns
             public List<InetAddress> lookup(String hostname) {

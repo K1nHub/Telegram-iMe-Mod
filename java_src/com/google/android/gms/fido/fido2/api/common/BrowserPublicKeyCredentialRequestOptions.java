@@ -14,11 +14,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* loaded from: classes.dex */
 public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOptions {
     public static final Parcelable.Creator<BrowserPublicKeyCredentialRequestOptions> CREATOR = new zzl();
-    @SafeParcelable.Field(getter = "getPublicKeyCredentialRequestOptions", m797id = 2)
+    @SafeParcelable.Field(getter = "getPublicKeyCredentialRequestOptions", m1089id = 2)
     private final PublicKeyCredentialRequestOptions zza;
-    @SafeParcelable.Field(getter = "getOrigin", m797id = 3)
+    @SafeParcelable.Field(getter = "getOrigin", m1089id = 3)
     private final Uri zzb;
-    @SafeParcelable.Field(getter = "getClientDataHash", m797id = 4)
+    @SafeParcelable.Field(getter = "getClientDataHash", m1089id = 4)
     private final byte[] zzc;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -86,7 +86,7 @@ public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOpti
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public BrowserPublicKeyCredentialRequestOptions(@SafeParcelable.Param(m796id = 2) PublicKeyCredentialRequestOptions publicKeyCredentialRequestOptions, @SafeParcelable.Param(m796id = 3) Uri uri, @SafeParcelable.Param(m796id = 4) byte[] bArr) {
+    public BrowserPublicKeyCredentialRequestOptions(@SafeParcelable.Param(m1088id = 2) PublicKeyCredentialRequestOptions publicKeyCredentialRequestOptions, @SafeParcelable.Param(m1088id = 3) Uri uri, @SafeParcelable.Param(m1088id = 4) byte[] bArr) {
         this.zza = (PublicKeyCredentialRequestOptions) Preconditions.checkNotNull(publicKeyCredentialRequestOptions);
         zzc(uri);
         this.zzb = uri;

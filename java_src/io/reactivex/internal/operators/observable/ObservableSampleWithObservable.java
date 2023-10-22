@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableSampleWithObservable<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean emitLast;
     final ObservableSource<?> other;
@@ -28,7 +28,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static abstract class SampleMainObserver<T> extends AtomicReference<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         final AtomicReference<Disposable> other = new AtomicReference<>();
@@ -105,7 +105,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SamplerObserver<T> implements Observer<Object> {
         final SampleMainObserver<T> parent;
 
@@ -134,7 +134,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SampleMainNoLast<T> extends SampleMainObserver<T> {
         SampleMainNoLast(Observer<? super T> observer, ObservableSource<?> observableSource) {
             super(observer, observableSource);
@@ -151,7 +151,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SampleMainEmitLast<T> extends SampleMainObserver<T> {
         volatile boolean done;
         final AtomicInteger wip;

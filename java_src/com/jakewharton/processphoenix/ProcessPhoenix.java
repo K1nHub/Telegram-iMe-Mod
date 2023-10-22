@@ -9,7 +9,7 @@ import android.os.Process;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ProcessPhoenix extends Activity {
     public static void triggerRebirth(Context context) {
         triggerRebirth(context, getRestartIntent(context));

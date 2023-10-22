@@ -2,7 +2,7 @@ package com.google.android.play.core.assetpacks;
 
 import android.os.Bundle;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class AssetPackState {
     public static AssetPackState zzb(String str, int i, int i2, long j, long j2, double d, int i3, String str2, String str3) {
         return new zzbn(str, i, i2, j, j2, (int) Math.rint(100.0d * d), i3, str2, str3);

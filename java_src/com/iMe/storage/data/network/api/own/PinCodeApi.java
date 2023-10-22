@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: PinCodeApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface PinCodeApi {
     @POST("getWalletPassword")
     Observable<ApiBaseResponse<PasswordByPinCodeResponse>> getCryptoWalletPassword(@Body PasswordByPinCodeRequest passwordByPinCodeRequest);

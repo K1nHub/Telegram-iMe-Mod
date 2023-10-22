@@ -11,8 +11,8 @@ import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.FormattingTextController;
 import com.iMe.fork.enums.FormattingPanelType;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.p031ui.formatting_messages.FormattingMessagesKeyboardContainer;
-import com.iMe.p031ui.formatting_messages.FormattingMessagesWeb;
+import com.iMe.p030ui.formatting_messages.FormattingMessagesKeyboardContainer;
+import com.iMe.p030ui.formatting_messages.FormattingMessagesWeb;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -27,20 +27,20 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.Cells.RadioColorCell;
-import org.telegram.p043ui.Components.EditTextCaption;
-import org.telegram.p043ui.Components.TextStyleSpan;
-import org.telegram.p043ui.Components.URLSpanReplacement;
+import org.telegram.p042ui.ActionBar.AlertDialog;
+import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p042ui.Cells.RadioColorCell;
+import org.telegram.p042ui.Components.EditTextCaption;
+import org.telegram.p042ui.Components.TextStyleSpan;
+import org.telegram.p042ui.Components.URLSpanReplacement;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: FormattingTextController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FormattingTextController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, FormattingTextController> accountInstances = new ConcurrentHashMap<>(5);
@@ -105,18 +105,16 @@ public final class FormattingTextController extends BaseController implements Ko
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             String str = (String) obj2;
-            if (i == 0) {
-                i2 = selectionStart;
-            }
+            int i4 = i == 0 ? selectionStart : i2 + 1;
             if (i != 0) {
-                selectionStart = i2;
+                selectionStart = i4;
             }
-            int length = selectionStart + str.length() + i;
-            getTextStyle(messageEditText, i2, length);
+            int length = selectionStart + str.length();
+            getTextStyle(messageEditText, i4, length);
             i = i3;
-            int i4 = i2;
+            int i5 = i4;
             i2 = length;
-            selectionStart = i4;
+            selectionStart = i5;
         }
         return this.listSpansFlags;
     }
@@ -204,8 +202,8 @@ public final class FormattingTextController extends BaseController implements Ko
     public final AlertDialog createChooseSelectedFormattingPanelType(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3473R.string.settings_messages_formatting_title));
-        builder.setNegativeButton(LocaleController.getInternalString(C3473R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3630R.string.settings_messages_formatting_title));
+        builder.setNegativeButton(LocaleController.getInternalString(C3630R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         FormattingPanelType[] values = FormattingPanelType.values();
@@ -214,7 +212,7 @@ public final class FormattingTextController extends BaseController implements Ko
             FormattingPanelType formattingPanelType = values[i];
             RadioColorCell radioColorCell = new RadioColorCell(context);
             radioColorCell.setTag(formattingPanelType);
-            radioColorCell.setPadding(AndroidUtilities.m72dp(4), 0, AndroidUtilities.m72dp(4), 0);
+            radioColorCell.setPadding(AndroidUtilities.m102dp(4), 0, AndroidUtilities.m102dp(4), 0);
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue(formattingPanelType.getTitle(), this.formattingPanelType == formattingPanelType);
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.controller.FormattingTextController$$ExternalSyntheticLambda0
@@ -311,8 +309,8 @@ public final class FormattingTextController extends BaseController implements Ko
             }
         }
         while (!arrayList2.isEmpty()) {
-            arrayList.add(CollectionsKt.last(arrayList2));
-            i -= ((Number) CollectionsKt.last(arrayList2)).intValue();
+            arrayList.add(CollectionsKt.last((List<? extends Object>) arrayList2));
+            i -= ((Number) CollectionsKt.last((List<? extends Object>) arrayList2)).intValue();
             List<Integer> listTextStyleSpanFlags2 = FormattingMessagesKeyboardContainer.Companion.getListTextStyleSpanFlags();
             arrayList2 = new ArrayList();
             for (Object obj : listTextStyleSpanFlags2) {
@@ -325,7 +323,7 @@ public final class FormattingTextController extends BaseController implements Ko
     }
 
     /* compiled from: FormattingTextController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TextStyle {
         private final int endIndexWord;
         private final List<Integer> listFlags;
@@ -393,7 +391,7 @@ public final class FormattingTextController extends BaseController implements Ko
     }
 
     /* compiled from: FormattingTextController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

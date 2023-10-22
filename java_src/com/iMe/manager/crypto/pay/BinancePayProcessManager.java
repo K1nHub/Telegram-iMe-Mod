@@ -4,7 +4,7 @@ import com.binance.android.binancepay.api.BinancePayFactory;
 import com.binance.android.binancepay.api.BinancePayListener;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.utils.system.AndroidActivityHolder;
@@ -14,10 +14,10 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.BinanceTransaction;
 import com.iMe.storage.domain.model.google.DynamicLinkData;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p032rx.RxExtKt;
-import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p031rx.RxExtKt;
+import com.iMe.utils.extentions.p031rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -28,10 +28,10 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import timber.log.Timber;
 /* compiled from: BinancePayProcessManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayProcessManager {
     private final BinanceInternalInteractor binanceInternalInteractor;
     private final DynamicLinksInteractor dynamicLinksInteractor;
@@ -82,7 +82,7 @@ public final class BinancePayProcessManager {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -113,7 +113,7 @@ public final class BinancePayProcessManager {
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo716ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1009ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "dynamicLinksInteractor\n …(schedulersProvider.ui())");
         Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) getViewState(), false, 2, (Object) null);
         final BinancePayProcessView binancePayProcessView = this.viewState;
@@ -125,12 +125,12 @@ public final class BinancePayProcessManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends BinanceTransaction> result) {
-                m1295invoke(result);
+                m1523invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1295invoke(Result<? extends BinanceTransaction> it) {
+            public final void m1523invoke(Result<? extends BinanceTransaction> it) {
                 BinancePayProcessView viewState;
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -205,17 +205,17 @@ public final class BinancePayProcessManager {
                 ResourceManager resourceManager3;
                 viewState = BinancePayProcessManager.this.getViewState();
                 resourceManager = BinancePayProcessManager.this.resourceManager;
-                String string = resourceManager.getString(C3473R.string.wallet_binance_pay_request_paid_success_dialog_title);
+                String string = resourceManager.getString(C3630R.string.wallet_binance_pay_request_paid_success_dialog_title);
                 resourceManager2 = BinancePayProcessManager.this.resourceManager;
-                String string2 = resourceManager2.getString(C3473R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.format(Double.valueOf(binanceTransaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
+                String string2 = resourceManager2.getString(C3630R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.format(Double.valueOf(binanceTransaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
                 resourceManager3 = BinancePayProcessManager.this.resourceManager;
-                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3473R.string.common_ok));
+                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3630R.string.common_ok));
             }
         });
     }
 
     private final DialogModel getConfirmPayDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3473R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.wallet_binance_pay_action_pay));
+        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3630R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_binance_pay_action_pay));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,7 +228,7 @@ public final class BinancePayProcessManager {
     }
 
     /* compiled from: BinancePayProcessManager.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

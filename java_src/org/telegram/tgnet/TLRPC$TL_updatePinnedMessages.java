@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updatePinnedMessages extends TLRPC$Update {
     public static int constructor = -309990731;
     public int flags;

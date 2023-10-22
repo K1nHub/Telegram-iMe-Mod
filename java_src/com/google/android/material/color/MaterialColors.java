@@ -6,7 +6,7 @@ import android.util.TypedValue;
 import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.material.resources.MaterialAttributes;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MaterialColors {
     public static int getColor(View view, int i) {
         return MaterialAttributes.resolveOrThrow(view, i);

@@ -2,22 +2,22 @@
 .super Lj$/util/stream/f4;
 
 # interfaces
-.implements Lj$/util/s$b;
+.implements Lj$/util/Spliterator$b;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/y2;Lj$/util/function/y;Z)V
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/function/y;Z)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/function/x;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f4;-><init>(Lj$/util/stream/y2;Lj$/util/function/x;Z)V
 
     return-void
 .end method
@@ -27,7 +27,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->k(Lj$/util/s$b;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->g(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -57,9 +57,9 @@
 
     invoke-direct {v1, p1}, Lj$/util/stream/p4;-><init>(Lj$/util/function/l;)V
 
-    iget-object p1, p0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object p1, p0, Lj$/util/stream/f4;->d:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, v1, p1}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+    invoke-virtual {v0, v1, p1}, Lj$/util/stream/y2;->t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 
     const/4 p1, 0x1
 
@@ -81,7 +81,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/s$b;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->b(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -116,7 +116,7 @@
     iget-wide v2, p0, Lj$/util/stream/f4;->g:J
 
     .line 3
-    invoke-virtual {v1, v2, v3}, Lj$/util/stream/Z3;->w(J)I
+    invoke-virtual {v1, v2, v3}, Lj$/util/stream/Z3;->v(J)I
 
     move-result v4
 
@@ -176,7 +176,7 @@
 
     invoke-direct {v2, v0}, Lj$/util/stream/p4;-><init>(Lj$/util/stream/W3;)V
 
-    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v1, v2}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v0
 
@@ -191,7 +191,7 @@
     return-void
 .end method
 
-.method l(Lj$/util/s;)Lj$/util/stream/f4;
+.method k(Lj$/util/Spliterator;)Lj$/util/stream/f4;
     .locals 3
 
     new-instance v0, Lj$/util/stream/q4;
@@ -200,7 +200,7 @@
 
     iget-boolean v2, p0, Lj$/util/stream/f4;->a:Z
 
-    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/q4;-><init>(Lj$/util/stream/y2;Lj$/util/s;Z)V
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/q4;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)V
 
     return-object v0
 .end method
@@ -217,32 +217,32 @@
     return p1
 .end method
 
-.method public trySplit()Lj$/util/s$b;
+.method public trySplit()Lj$/util/Spliterator$b;
     .locals 1
 
-    invoke-super {p0}, Lj$/util/stream/f4;->trySplit()Lj$/util/s;
+    invoke-super {p0}, Lj$/util/stream/f4;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$b;
+    check-cast v0, Lj$/util/Spliterator$b;
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/q4;->trySplit()Lj$/util/s$b;
+    invoke-virtual {p0}, Lj$/util/stream/q4;->trySplit()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/t;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/q4;->trySplit()Lj$/util/s$b;
+    invoke-virtual {p0}, Lj$/util/stream/q4;->trySplit()Lj$/util/Spliterator$b;
 
     move-result-object v0
 

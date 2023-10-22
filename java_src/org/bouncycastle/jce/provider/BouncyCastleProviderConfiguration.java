@@ -3,7 +3,7 @@ package org.bouncycastle.jce.provider;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.bouncycastle.jcajce.provider.config.ProviderConfigurationPermission;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class BouncyCastleProviderConfiguration {
     static {
         new ProviderConfigurationPermission("BC", "threadLocalEcImplicitlyCa");

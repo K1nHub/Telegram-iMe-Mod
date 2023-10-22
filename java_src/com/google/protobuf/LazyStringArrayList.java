@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class LazyStringArrayList extends AbstractProtobufList<String> implements LazyStringList, RandomAccess {
     private static final LazyStringArrayList EMPTY_LIST;
     private final List<Object> list;

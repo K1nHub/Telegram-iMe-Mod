@@ -13,7 +13,7 @@ import com.google.android.material.R$attr;
 import com.google.android.material.R$id;
 import com.google.android.material.R$styleable;
 import com.google.android.material.color.MaterialColors;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SnackbarContentLayout extends LinearLayout implements ContentViewCallback {
     private Button actionView;
     private int maxInlineActionWidth;

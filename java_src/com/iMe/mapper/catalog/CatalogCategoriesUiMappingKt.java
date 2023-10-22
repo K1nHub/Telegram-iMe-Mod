@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogCategoriesUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CatalogCategoriesUiMappingKt {
     public static final List<FilterItem> mapToUi(List<CategoryWithCounter> list) {
         int collectionSizeOrDefault;

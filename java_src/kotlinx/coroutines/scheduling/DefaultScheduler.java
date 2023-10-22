@@ -1,6 +1,6 @@
 package kotlinx.coroutines.scheduling;
 /* compiled from: Dispatcher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DefaultScheduler extends SchedulerCoroutineDispatcher {
     public static final DefaultScheduler INSTANCE = new DefaultScheduler();
 
@@ -10,7 +10,7 @@ public final class DefaultScheduler extends SchedulerCoroutineDispatcher {
     }
 
     private DefaultScheduler() {
-        super(TasksKt.CORE_POOL_SIZE, TasksKt.MAX_POOL_SIZE, TasksKt.IDLE_WORKER_KEEP_ALIVE_NS, "DefaultDispatcher");
+        super(TasksKt.CORE_POOL_SIZE, TasksKt.MAX_POOL_SIZE, TasksKt.IDLE_WORKER_KEEP_ALIVE_NS, TasksKt.DEFAULT_SCHEDULER_NAME);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

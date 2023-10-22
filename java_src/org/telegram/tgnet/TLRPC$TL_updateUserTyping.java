@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateUserTyping extends TLRPC$Update {
     public static int constructor = -1071741569;
     public TLRPC$SendMessageAction action;

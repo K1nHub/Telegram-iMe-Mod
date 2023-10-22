@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_encryptedChatDiscarded extends TLRPC$EncryptedChat {
     public static int constructor = 505183301;
 
@@ -8,7 +8,7 @@ public class TLRPC$TL_encryptedChatDiscarded extends TLRPC$EncryptedChat {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.history_deleted = (readInt32 & 1) != 0;
-        this.f1534id = abstractSerializedData.readInt32(z);
+        this.f1612id = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -17,6 +17,6 @@ public class TLRPC$TL_encryptedChatDiscarded extends TLRPC$EncryptedChat {
         int i = this.history_deleted ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        abstractSerializedData.writeInt32(this.f1534id);
+        abstractSerializedData.writeInt32(this.f1612id);
     }
 }

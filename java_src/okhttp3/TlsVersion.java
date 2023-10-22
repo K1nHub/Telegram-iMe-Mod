@@ -3,7 +3,7 @@ package okhttp3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TlsVersion.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum TlsVersion {
     TLS_1_3("TLSv1.3"),
     TLS_1_2("TLSv1.2"),
@@ -27,12 +27,12 @@ public enum TlsVersion {
     }
 
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m1691deprecated_javaName() {
+    public final String m2159deprecated_javaName() {
         return this.javaName;
     }
 
     /* compiled from: TlsVersion.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

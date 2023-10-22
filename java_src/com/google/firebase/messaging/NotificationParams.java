@@ -13,7 +13,7 @@ import java.util.Objects;
 import org.json.JSONArray;
 import org.json.JSONException;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NotificationParams {
     private final Bundle data;
 

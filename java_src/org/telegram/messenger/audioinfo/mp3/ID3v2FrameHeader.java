@@ -2,7 +2,7 @@ package org.telegram.messenger.audioinfo.mp3;
 
 import com.google.android.exoplayer2.C0479C;
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ID3v2FrameHeader {
     private int bodySize;
     private boolean compression;

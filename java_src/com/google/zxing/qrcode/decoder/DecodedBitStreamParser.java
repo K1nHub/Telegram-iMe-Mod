@@ -11,7 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class DecodedBitStreamParser {
     private static final char[] ALPHANUMERIC_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
@@ -36,7 +36,7 @@ final class DecodedBitStreamParser {
                     forBits = Mode.forBits(bitSource.readBits(4));
                 }
                 Mode mode2 = forBits;
-                int[] iArr = C12321.$SwitchMap$com$google$zxing$qrcode$decoder$Mode;
+                int[] iArr = C11471.$SwitchMap$com$google$zxing$qrcode$decoder$Mode;
                 switch (iArr[mode2.ordinal()]) {
                     case 5:
                         mode = mode2;
@@ -105,8 +105,8 @@ final class DecodedBitStreamParser {
     }
 
     /* renamed from: com.google.zxing.qrcode.decoder.DecodedBitStreamParser$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C12321 {
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class C11471 {
         static final /* synthetic */ int[] $SwitchMap$com$google$zxing$qrcode$decoder$Mode;
 
         static {

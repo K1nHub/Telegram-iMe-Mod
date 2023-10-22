@@ -2,7 +2,7 @@ package org.orbitmvi.orbit.syntax.simple;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimpleContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SimpleContext<STATE> {
     private final STATE state;
 

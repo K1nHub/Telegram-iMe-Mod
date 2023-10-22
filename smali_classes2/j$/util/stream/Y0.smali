@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/t;
+.implements Lj$/util/function/s;
 
 
 # static fields
@@ -32,18 +32,18 @@
 
 
 # virtual methods
-.method public a(Lj$/util/function/t;)Lj$/util/function/t;
+.method public a(Lj$/util/function/s;)Lj$/util/function/s;
     .locals 2
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/s;
+    new-instance v0, Lj$/util/function/r;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/s;-><init>(Lj$/util/function/t;Lj$/util/function/t;I)V
+    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/r;-><init>(Lj$/util/function/s;Lj$/util/function/s;I)V
 
     return-object v0
 .end method
@@ -56,18 +56,18 @@
     return-wide p1
 .end method
 
-.method public b(Lj$/util/function/t;)Lj$/util/function/t;
+.method public b(Lj$/util/function/s;)Lj$/util/function/s;
     .locals 2
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/s;
+    new-instance v0, Lj$/util/function/r;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/s;-><init>(Lj$/util/function/t;Lj$/util/function/t;I)V
+    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/r;-><init>(Lj$/util/function/s;Lj$/util/function/s;I)V
 
     return-object v0
 .end method

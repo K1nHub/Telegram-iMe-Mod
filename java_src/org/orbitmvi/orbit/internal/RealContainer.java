@@ -29,7 +29,7 @@ import org.orbitmvi.orbit.internal.repeatonsubscription.RefCountStateFlowKt;
 import org.orbitmvi.orbit.internal.repeatonsubscription.SubscribedCounter;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* compiled from: RealContainer.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealContainer<STATE, SIDE_EFFECT> implements Container<STATE, SIDE_EFFECT> {
     private static final /* synthetic */ AtomicIntegerFieldUpdater initialised$FU = AtomicIntegerFieldUpdater.newUpdater(RealContainer.class, "initialised");
     private final Channel<Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object>> dispatchChannel;

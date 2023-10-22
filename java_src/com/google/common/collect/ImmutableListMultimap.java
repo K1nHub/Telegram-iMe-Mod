@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMultimap;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> implements ListMultimap<K, V> {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.common.collect.Multimap
@@ -14,11 +14,11 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableListMultimap<K, V> m756of() {
+    public static <K, V> ImmutableListMultimap<K, V> m1048of() {
         return EmptyImmutableListMultimap.INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder<K, V> extends ImmutableMultimap.Builder<K, V> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.google.common.collect.ImmutableMultimap.Builder
@@ -54,7 +54,7 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     public static <K, V> ImmutableListMultimap<K, V> fromMapEntries(Collection<? extends Map.Entry<? extends K, ? extends Collection<? extends V>>> collection, Comparator<? super V> comparator) {
         ImmutableList sortedCopyOf;
         if (collection.isEmpty()) {
-            return m756of();
+            return m1048of();
         }
         ImmutableMap.Builder builder = new ImmutableMap.Builder(collection.size());
         int i = 0;
@@ -82,6 +82,6 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     @Override // com.google.common.collect.Multimap
     public ImmutableList<V> get(K k) {
         ImmutableList<V> immutableList = (ImmutableList) this.map.get(k);
-        return immutableList == null ? ImmutableList.m762of() : immutableList;
+        return immutableList == null ? ImmutableList.m1054of() : immutableList;
     }
 }

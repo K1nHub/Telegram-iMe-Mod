@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final boolean delayErrors;
     final Function<? super T, ? extends MaybeSource<? extends R>> mapper;
@@ -38,7 +38,7 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
         this.source.subscribe((FlowableSubscriber) new FlatMapMaybeSubscriber(subscriber, this.mapper, this.delayErrors, this.maxConcurrency));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class FlatMapMaybeSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         volatile boolean cancelled;
         final boolean delayErrors;
@@ -341,7 +341,7 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
             throw new UnsupportedOperationException("Method not decompiled: io.reactivex.internal.operators.flowable.FlowableFlatMapMaybe.FlatMapMaybeSubscriber.drainLoop():void");
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         final class InnerObserver extends AtomicReference<Disposable> implements MaybeObserver<R>, Disposable {
             InnerObserver() {
             }

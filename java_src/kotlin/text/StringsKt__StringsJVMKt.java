@@ -4,13 +4,14 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Locale;
+import kotlin.collections.AbstractList;
 import kotlin.collections.IntIterator;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: StringsJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsKt {
     public static boolean equals(String str, String str2, boolean z) {
         if (str == null) {
@@ -104,6 +105,24 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         return indexOf$default < 0 ? str : StringsKt__StringsKt.replaceRange(str, indexOf$default, oldValue.length() + indexOf$default, newValue).toString();
     }
 
+    public static String concatToString(char[] cArr, int i, int i2) {
+        Intrinsics.checkNotNullParameter(cArr, "<this>");
+        AbstractList.Companion.checkBoundsIndexes$kotlin_stdlib(i, i2, cArr.length);
+        return new String(cArr, i, i2 - i);
+    }
+
+    public static String decodeToString(byte[] bArr) {
+        Intrinsics.checkNotNullParameter(bArr, "<this>");
+        return new String(bArr, Charsets.UTF_8);
+    }
+
+    public static byte[] encodeToByteArray(String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        byte[] bytes = str.getBytes(Charsets.UTF_8);
+        Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
+        return bytes;
+    }
+
     public static /* synthetic */ boolean startsWith$default(String str, String str2, boolean z, int i, Object obj) {
         boolean startsWith;
         if ((i & 2) != 0) {
@@ -114,12 +133,14 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
     }
 
     public static boolean startsWith(String str, String prefix, boolean z) {
+        boolean regionMatches;
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         if (!z) {
             return str.startsWith(prefix);
         }
-        return regionMatches(str, 0, prefix, 0, prefix.length(), z);
+        regionMatches = regionMatches(str, 0, prefix, 0, prefix.length(), z);
+        return regionMatches;
     }
 
     public static /* synthetic */ boolean startsWith$default(String str, String str2, int i, boolean z, int i2, Object obj) {
@@ -132,12 +153,14 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
     }
 
     public static boolean startsWith(String str, String prefix, int i, boolean z) {
+        boolean regionMatches;
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         if (!z) {
             return str.startsWith(prefix, i);
         }
-        return regionMatches(str, i, prefix, 0, prefix.length(), z);
+        regionMatches = regionMatches(str, i, prefix, 0, prefix.length(), z);
+        return regionMatches;
     }
 
     public static /* synthetic */ boolean endsWith$default(String str, String str2, boolean z, int i, Object obj) {
@@ -148,23 +171,28 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
     }
 
     public static final boolean endsWith(String str, String suffix, boolean z) {
+        boolean regionMatches;
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(suffix, "suffix");
         if (!z) {
             return str.endsWith(suffix);
         }
-        return regionMatches(str, str.length() - suffix.length(), suffix, 0, suffix.length(), true);
+        regionMatches = regionMatches(str, str.length() - suffix.length(), suffix, 0, suffix.length(), true);
+        return regionMatches;
     }
 
     public static boolean isBlank(CharSequence charSequence) {
+        IntRange indices;
+        boolean isWhitespace;
         boolean z;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         if (charSequence.length() != 0) {
-            IntRange indices = StringsKt__StringsKt.getIndices(charSequence);
+            indices = StringsKt__StringsKt.getIndices(charSequence);
             if (!(indices instanceof Collection) || !((Collection) indices).isEmpty()) {
                 Iterator<Integer> it = indices.iterator();
                 while (it.hasNext()) {
-                    if (!CharsKt__CharJVMKt.isWhitespace(charSequence.charAt(((IntIterator) it).nextInt()))) {
+                    isWhitespace = CharsKt__CharJVMKt.isWhitespace(charSequence.charAt(((IntIterator) it).nextInt()));
+                    if (!isWhitespace) {
                         z = false;
                         break;
                     }
@@ -179,13 +207,15 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
     }
 
     public static /* synthetic */ boolean regionMatches$default(String str, int i, String str2, int i2, int i3, boolean z, int i4, Object obj) {
+        boolean regionMatches;
         if ((i4 & 16) != 0) {
             z = false;
         }
-        return regionMatches(str, i, str2, i2, i3, z);
+        regionMatches = regionMatches(str, i, str2, i2, i3, z);
+        return regionMatches;
     }
 
-    public static final boolean regionMatches(String str, int i, String other, int i2, int i3, boolean z) {
+    public static boolean regionMatches(String str, int i, String other, int i2, int i3, boolean z) {
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(other, "other");
         if (!z) {

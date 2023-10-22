@@ -4,7 +4,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Appendable.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__AppendableKt {
     public static <T extends Appendable> T append(T t, CharSequence... value) {
         Intrinsics.checkNotNullParameter(t, "<this>");

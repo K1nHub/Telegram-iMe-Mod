@@ -1,5 +1,5 @@
 package com.google.protobuf;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 interface NewInstanceSchema {
     Object newInstance(Object obj);
 }

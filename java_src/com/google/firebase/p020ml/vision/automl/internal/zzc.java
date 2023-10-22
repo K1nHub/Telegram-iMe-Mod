@@ -8,7 +8,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.internal.firebase_ml.zzb;
 import com.google.android.gms.internal.firebase_ml.zzd;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zzc */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzc extends zzb implements zza {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzc(IBinder iBinder) {

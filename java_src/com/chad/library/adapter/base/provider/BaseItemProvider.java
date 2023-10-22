@@ -109,7 +109,7 @@ public abstract class BaseItemProvider<T> {
         return (ArrayList) this.longClickViewIds$delegate.getValue();
     }
 
-    public final void setAdapter$TMessagesProj_release(BaseProviderMultiAdapter<T> adapter) {
+    public final void setAdapter$TMessagesProj_HA_public(BaseProviderMultiAdapter<T> adapter) {
         Intrinsics.checkNotNullParameter(adapter, "adapter");
         this.weakAdapter = new WeakReference<>(adapter);
     }

@@ -25,11 +25,11 @@ public class zzdo implements zzds.zza {
         StringBuilder sb = new StringBuilder(valueOf.length() + 30);
         sb.append("Logging FirebaseMlSdkLogEvent ");
         sb.append(valueOf);
-        gmsLogger.m807d("ClearcutTransport", sb.toString());
+        gmsLogger.m1099d("ClearcutTransport", sb.toString());
         try {
             this.zzc.newEvent(zzadVar.zzf()).log();
         } catch (SecurityException e) {
-            zzb.m804e("ClearcutTransport", "Exception thrown from the logging side", e);
+            zzb.m1096e("ClearcutTransport", "Exception thrown from the logging side", e);
         }
     }
 }

@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 90
+    .line 110
     check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$3;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 91
+    .line 111
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$3;->$item:Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible()Z
@@ -85,10 +85,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
+    .line 112
     invoke-static {p1, v3, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 93
+    .line 113
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$3;->$item:Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->getNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
@@ -111,40 +111,40 @@
 
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
-    .line 94
+    .line 114
     new-instance v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
     invoke-direct {v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$3;->this$0:Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
 
-    .line 96
+    .line 116
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
+    .line 115
     invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v2
 
-    .line 95
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 97
+    .line 118
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)F
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 94
+    .line 114
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 100
+    .line 121
     :cond_0
     invoke-static {p1, v3, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 

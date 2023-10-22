@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channels_deleteChannel extends TLObject {
     public static int constructor = -1072619549;
     public TLRPC$InputChannel channel;

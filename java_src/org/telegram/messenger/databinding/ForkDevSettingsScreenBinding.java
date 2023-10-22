@@ -8,22 +8,15 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkDevSettingsScreenBinding implements ViewBinding {
     public final ProgressBar progressBar;
-    private final ConstraintLayout rootView;
     public final TextView textDevScreen;
 
     private ForkDevSettingsScreenBinding(ConstraintLayout constraintLayout, ProgressBar progressBar, TextView textView) {
-        this.rootView = constraintLayout;
         this.progressBar = progressBar;
         this.textDevScreen = textView;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public ConstraintLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkDevSettingsScreenBinding inflate(LayoutInflater layoutInflater) {
@@ -31,7 +24,7 @@ public final class ForkDevSettingsScreenBinding implements ViewBinding {
     }
 
     public static ForkDevSettingsScreenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_dev_settings_screen, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_dev_settings_screen, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +32,10 @@ public final class ForkDevSettingsScreenBinding implements ViewBinding {
     }
 
     public static ForkDevSettingsScreenBinding bind(View view) {
-        int i = C3473R.C3476id.progressBar;
+        int i = C3630R.C3633id.progressBar;
         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
         if (progressBar != null) {
-            i = C3473R.C3476id.textDevScreen;
+            i = C3630R.C3633id.textDevScreen;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkDevSettingsScreenBinding((ConstraintLayout) view, progressBar, textView);

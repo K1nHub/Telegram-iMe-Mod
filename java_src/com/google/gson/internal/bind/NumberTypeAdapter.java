@@ -11,7 +11,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NumberTypeAdapter extends TypeAdapter<Number> {
     private static final TypeAdapterFactory LAZILY_PARSED_NUMBER_FACTORY = newFactory(ToNumberPolicy.LAZILY_PARSED_NUMBER);
     private final ToNumberStrategy toNumberStrategy;
@@ -41,8 +41,8 @@ public final class NumberTypeAdapter extends TypeAdapter<Number> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.NumberTypeAdapter$2 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11412 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C10632 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -67,7 +67,7 @@ public final class NumberTypeAdapter extends TypeAdapter<Number> {
     @Override // com.google.gson.TypeAdapter
     public Number read(JsonReader jsonReader) throws IOException {
         JsonToken peek = jsonReader.peek();
-        int i = C11412.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
+        int i = C10632.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
         if (i == 1) {
             jsonReader.nextNull();
             return null;

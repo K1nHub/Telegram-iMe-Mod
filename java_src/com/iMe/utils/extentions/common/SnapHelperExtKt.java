@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SnapHelperExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SnapHelperExtKt {
     public static final int getSnapPosition(SnapHelper snapHelper, RecyclerView recyclerView) {
         View findSnapView;

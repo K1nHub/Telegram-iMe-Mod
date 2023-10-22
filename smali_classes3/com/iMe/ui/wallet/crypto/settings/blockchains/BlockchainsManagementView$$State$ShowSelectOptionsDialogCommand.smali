@@ -1,0 +1,82 @@
+.class public Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;
+.super Lmoxy/viewstate/ViewCommand;
+.source "BlockchainsManagementView$$State.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = "ShowSelectOptionsDialogCommand"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lmoxy/viewstate/ViewCommand<",
+        "Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final items:[Ljava/lang/String;
+
+.field public final listener:Landroid/content/DialogInterface$OnClickListener;
+
+.field public final title:Ljava/lang/String;
+
+
+# direct methods
+.method constructor <init>(Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State;Ljava/lang/String;[Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+    .locals 1
+
+    .line 476
+    const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
+
+    const-string v0, "showSelectOptionsDialog"
+
+    invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    .line 478
+    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->title:Ljava/lang/String;
+
+    .line 479
+    iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->items:[Ljava/lang/String;
+
+    .line 480
+    iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->listener:Landroid/content/DialogInterface$OnClickListener;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public apply(Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;)V
+    .locals 3
+
+    .line 485
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->title:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->items:[Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->listener:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->showSelectOptionsDialog(Ljava/lang/String;[Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic apply(Lmoxy/MvpView;)V
+    .locals 0
+
+    .line 467
+    check-cast p1, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;
+
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView$$State$ShowSelectOptionsDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementView;)V
+
+    return-void
+.end method

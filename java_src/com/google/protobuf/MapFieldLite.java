@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MapFieldLite<K, V> extends LinkedHashMap<K, V> {
     private static final MapFieldLite<?, ?> EMPTY_MAP_FIELD;
     private boolean isMutable;

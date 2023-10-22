@@ -29,12 +29,12 @@ import java.util.Set;
 public class SafeParcelResponse extends FastSafeParcelableJsonResponse {
     @KeepForSdk
     public static final Parcelable.Creator<SafeParcelResponse> CREATOR = new zaq();
-    @SafeParcelable.VersionField(getter = "getVersionCode", m794id = 1)
+    @SafeParcelable.VersionField(getter = "getVersionCode", m1086id = 1)
     private final int zaa;
-    @SafeParcelable.Field(getter = "getParcel", m797id = 2)
+    @SafeParcelable.Field(getter = "getParcel", m1089id = 2)
     private final Parcel zab;
     private final int zac;
-    @SafeParcelable.Field(getter = "getFieldMappingDictionary", m797id = 3)
+    @SafeParcelable.Field(getter = "getFieldMappingDictionary", m1089id = 3)
     private final zan zad;
     private final String zae;
     private int zaf;
@@ -42,7 +42,7 @@ public class SafeParcelResponse extends FastSafeParcelableJsonResponse {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SafeParcelResponse(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) Parcel parcel, @SafeParcelable.Param(m796id = 3) zan zanVar) {
+    public SafeParcelResponse(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) Parcel parcel, @SafeParcelable.Param(m1088id = 3) zan zanVar) {
         this.zaa = i;
         this.zab = (Parcel) Preconditions.checkNotNull(parcel);
         this.zac = 2;

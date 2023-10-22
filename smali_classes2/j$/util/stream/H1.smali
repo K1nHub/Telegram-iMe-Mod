@@ -7,22 +7,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/y2;Lj$/util/function/m;Lj$/util/s;)V
-    .locals 1
-
-    .line 4
-    new-instance v0, Lj$/util/stream/b;
-
-    invoke-direct {v0, p2}, Lj$/util/stream/b;-><init>(Lj$/util/function/m;)V
-
-    sget-object p2, Lj$/util/stream/M1;->a:Lj$/util/stream/M1;
-
-    invoke-direct {p0, p1, p3, v0, p2}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/r;Lj$/util/function/b;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/y2;Lj$/util/s;I)V
+.method public constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;I)V
     .locals 1
 
     const/4 v0, 0x1
@@ -38,7 +23,7 @@
 
     sget-object v0, Lj$/util/stream/F1;->a:Lj$/util/stream/F1;
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/r;Lj$/util/function/b;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/q;Lj$/util/function/b;)V
 
     return-void
 
@@ -48,7 +33,7 @@
 
     sget-object v0, Lj$/util/stream/K1;->a:Lj$/util/stream/K1;
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/r;Lj$/util/function/b;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/q;Lj$/util/function/b;)V
 
     return-void
 
@@ -58,7 +43,22 @@
 
     sget-object v0, Lj$/util/stream/I1;->a:Lj$/util/stream/I1;
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/r;Lj$/util/function/b;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/q;Lj$/util/function/b;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lj$/util/stream/y2;Lj$/util/function/IntFunction;Lj$/util/Spliterator;)V
+    .locals 1
+
+    .line 4
+    new-instance v0, Lj$/util/stream/b;
+
+    invoke-direct {v0, p2}, Lj$/util/stream/b;-><init>(Lj$/util/function/IntFunction;)V
+
+    sget-object p2, Lj$/util/stream/M1;->a:Lj$/util/stream/M1;
+
+    invoke-direct {p0, p1, p3, v0, p2}, Lj$/util/stream/N1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/q;Lj$/util/function/b;)V
 
     return-void
 .end method

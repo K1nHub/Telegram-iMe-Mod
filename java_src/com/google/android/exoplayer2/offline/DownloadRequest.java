@@ -94,7 +94,7 @@ public final class DownloadRequest implements Parcelable {
             String str2 = this.mimeType;
             List list = this.streamKeys;
             if (list == null) {
-                list = ImmutableList.m762of();
+                list = ImmutableList.m1054of();
             }
             return new DownloadRequest(str, uri, str2, list, this.keySetId, this.customCacheKey, this.data);
         }

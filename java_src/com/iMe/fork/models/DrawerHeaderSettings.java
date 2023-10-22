@@ -1,9 +1,9 @@
 package com.iMe.fork.models;
 
-import com.iMe.p031ui.drawer.DrawerAccountData;
+import com.iMe.p030ui.drawer.DrawerAccountData;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DrawerHeaderSettings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DrawerHeaderSettings {
     private boolean isShowArchive;
     private boolean isShowAvatar;

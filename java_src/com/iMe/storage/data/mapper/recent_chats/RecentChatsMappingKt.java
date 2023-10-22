@@ -1,10 +1,10 @@
 package com.iMe.storage.data.mapper.recent_chats;
 
-import com.iMe.storage.data.locale.p027db.model.recent_chats.HistoryDialogDb;
+import com.iMe.storage.data.locale.p026db.model.recent_chats.HistoryDialogDb;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecentChatsMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RecentChatsMappingKt {
     public static final HistoryDialogModel mapToDomain(HistoryDialogDb historyDialogDb) {
         Intrinsics.checkNotNullParameter(historyDialogDb, "<this>");

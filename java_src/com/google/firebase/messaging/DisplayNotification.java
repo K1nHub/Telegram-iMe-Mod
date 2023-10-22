@@ -19,7 +19,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class DisplayNotification {
     private final Context context;
     private final Executor networkIoExecutor;
@@ -61,7 +61,7 @@ class DisplayNotification {
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Showing notification");
         }
-        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.f283id, displayNotificationInfo.notificationBuilder.build());
+        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.f251id, displayNotificationInfo.notificationBuilder.build());
     }
 
     private ImageDownload startImageDownloadInBackground() {

@@ -5,10 +5,9 @@ import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.LocaleController;
 /* compiled from: Constants.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Constants {
     public static final Constants INSTANCE = new Constants();
     private static final SimpleDateFormat dateDotsFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
@@ -32,24 +31,5 @@ public final class Constants {
         String uri = builder.build().toString();
         Intrinsics.checkNotNullExpressionValue(uri, "Builder().apply {\n      …\n    }.build().toString()");
         return uri;
-    }
-
-    /* compiled from: Constants.kt */
-    /* loaded from: classes4.dex */
-    public static final class Telegram {
-        public static final Telegram INSTANCE = new Telegram();
-
-        private Telegram() {
-        }
-
-        public final String getShareLinkFor(String username) {
-            CharSequence trim;
-            Intrinsics.checkNotNullParameter(username, "username");
-            StringBuilder sb = new StringBuilder();
-            sb.append("https://t.me/");
-            trim = StringsKt__StringsKt.trim(username);
-            sb.append(trim.toString());
-            return sb.toString();
-        }
     }
 }

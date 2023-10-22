@@ -11,9 +11,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.DisposableHandle;
 import kotlinx.coroutines.JobKt;
+import kotlinx.coroutines.NonDisposableHandle;
 /* compiled from: HandlerDispatcher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HandlerContext extends HandlerDispatcher {
     private volatile HandlerContext _immediate;
     private final Handler handler;
@@ -23,7 +25,7 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1689scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo2115scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         long coerceAtMost;
         final Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
             @Override // java.lang.Runnable
@@ -93,16 +95,38 @@ public final class HandlerContext extends HandlerDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (this.handler.post(runnable)) {
             return;
         }
         cancelOnRejection(coroutineContext, runnable);
     }
 
+    @Override // kotlinx.coroutines.android.HandlerDispatcher, kotlinx.coroutines.Delay
+    public DisposableHandle invokeOnTimeout(long j, final Runnable runnable, CoroutineContext coroutineContext) {
+        long coerceAtMost;
+        Handler handler = this.handler;
+        coerceAtMost = RangesKt___RangesKt.coerceAtMost(j, 4611686018427387903L);
+        if (handler.postDelayed(runnable, coerceAtMost)) {
+            return new DisposableHandle() { // from class: kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda0
+                @Override // kotlinx.coroutines.DisposableHandle
+                public final void dispose() {
+                    HandlerContext.invokeOnTimeout$lambda$3(HandlerContext.this, runnable);
+                }
+            };
+        }
+        cancelOnRejection(coroutineContext, runnable);
+        return NonDisposableHandle.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void invokeOnTimeout$lambda$3(HandlerContext handlerContext, Runnable runnable) {
+        handlerContext.handler.removeCallbacks(runnable);
+    }
+
     private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
         JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().mo1688dispatch(coroutineContext, runnable);
+        Dispatchers.getIO().mo2114dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.MainCoroutineDispatcher, kotlinx.coroutines.CoroutineDispatcher

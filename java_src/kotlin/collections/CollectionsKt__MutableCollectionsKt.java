@@ -12,7 +12,7 @@ import kotlin.ranges.IntRange;
 import kotlin.sequences.Sequence;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MutableCollections.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableCollectionsJVMKt {
     public static <T> boolean addAll(Collection<? super T> collection, Iterable<? extends T> elements) {
         Intrinsics.checkNotNullParameter(collection, "<this>");

@@ -4,8 +4,8 @@ import android.content.SharedPreferences;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.AlbumsController;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p027db.dao.minor.cloud.AlbumsDao;
-import com.iMe.storage.data.locale.p027db.model.cloud.CloudAlbumDb;
+import com.iMe.storage.data.locale.p026db.dao.main.AlbumsDao;
+import com.iMe.storage.data.locale.p026db.model.cloud.AlbumsDb;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
@@ -21,7 +21,7 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
@@ -30,7 +30,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: AlbumsController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AlbumsController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, AlbumsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -51,7 +51,7 @@ public final class AlbumsController extends BaseController implements KoinCompon
                 super(0);
             }
 
-            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.storage.data.locale.db.dao.minor.cloud.AlbumsDao] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.storage.data.locale.db.dao.main.AlbumsDao] */
             @Override // kotlin.jvm.functions.Function0
             public final AlbumsDao invoke() {
                 Scope rootScope;
@@ -158,7 +158,7 @@ public final class AlbumsController extends BaseController implements KoinCompon
     /* JADX INFO: Access modifiers changed from: private */
     public static final void addAlbum$lambda$6(final AlbumsController this$0, final long j, final Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getDao().insert((AlbumsDao) new CloudAlbumDb(this$0.getUserConfig().clientUserId, j));
+        this$0.getDao().insert((AlbumsDao) new AlbumsDb(this$0.getUserConfig().clientUserId, j));
         this$0.albums.add(Long.valueOf(j));
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.AlbumsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
@@ -216,7 +216,7 @@ public final class AlbumsController extends BaseController implements KoinCompon
     }
 
     /* compiled from: AlbumsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import android.text.TextUtils;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_message_secret_old extends TLRPC$TL_message_secret {
     public static int constructor = 1431655928;
 
@@ -13,7 +13,7 @@ public class TLRPC$TL_message_secret_old extends TLRPC$TL_message_secret {
         this.out = (readInt32 & 2) != 0;
         this.mentioned = (readInt32 & 16) != 0;
         this.media_unread = (readInt32 & 32) != 0;
-        this.f1546id = abstractSerializedData.readInt32(z);
+        this.f1624id = abstractSerializedData.readInt32(z);
         this.ttl = abstractSerializedData.readInt32(z);
         TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
         this.from_id = tLRPC$TL_peerUser;
@@ -41,7 +41,7 @@ public class TLRPC$TL_message_secret_old extends TLRPC$TL_message_secret {
         int i4 = this.media_unread ? i3 | 32 : i3 & (-33);
         this.flags = i4;
         abstractSerializedData.writeInt32(i4);
-        abstractSerializedData.writeInt32(this.f1546id);
+        abstractSerializedData.writeInt32(this.f1624id);
         abstractSerializedData.writeInt32(this.ttl);
         abstractSerializedData.writeInt32((int) this.from_id.user_id);
         this.peer_id.serializeToStream(abstractSerializedData);

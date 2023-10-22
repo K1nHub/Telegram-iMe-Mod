@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.math.linearalgebra;
 
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Permutation {
     private int[] perm;
 

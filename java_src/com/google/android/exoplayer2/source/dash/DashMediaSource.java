@@ -430,7 +430,7 @@ public final class DashMediaSource extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onUtcTimestampResolutionError(IOException iOException) {
-        Log.m817e("DashMediaSource", "Failed to resolve time offset.", iOException);
+        Log.m1109e("DashMediaSource", "Failed to resolve time offset.", iOException);
         processManifest(true);
     }
 

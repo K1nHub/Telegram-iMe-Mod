@@ -7,7 +7,7 @@ import android.os.Build;
 import com.google.android.exoplayer2.source.rtsp.RtpPayloadFormat;
 import java.util.Arrays;
 import org.webrtc.Logging;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
 

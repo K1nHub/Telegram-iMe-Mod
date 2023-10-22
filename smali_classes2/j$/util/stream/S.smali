@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method final G0()Z
+.method final F0()Z
     .locals 1
 
     const/4 v0, 0x0

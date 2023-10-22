@@ -9,7 +9,7 @@ import org.koin.core.definition.BeanDefinition;
 import org.koin.core.definition.BeanDefinitionKt;
 import org.koin.core.definition.KoinDefinition;
 /* compiled from: DefinitionBinding.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DefinitionBindingKt {
     public static final KoinDefinition<?> binds(KoinDefinition<?> koinDefinition, KClass<?>[] classes) {
         List<? extends KClass<?>> plus;

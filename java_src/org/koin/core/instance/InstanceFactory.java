@@ -8,9 +8,9 @@ import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 /* compiled from: InstanceFactory.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class InstanceFactory<T> {
     private final BeanDefinition<T> beanDefinition;
 
@@ -65,7 +65,7 @@ public abstract class InstanceFactory<T> {
     }
 
     /* compiled from: InstanceFactory.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

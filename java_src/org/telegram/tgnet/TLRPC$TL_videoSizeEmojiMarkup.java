@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_videoSizeEmojiMarkup extends TLRPC$VideoSize {
     public static int constructor = -128171716;
     public long emoji_id;

@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import com.iMe.model.common.NavigationTab;
 import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.configuration.NavigationViewConfiguration;
-import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p030ui.base.mvp.MvpFragment;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.Collection;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import java.util.Map;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseNavigationRouter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseNavigationRouter<T extends MvpFragment> implements NavigationRouter<T> {
     private T currentActiveFragment;
     private final HashMap<Integer, T> fragmentsStack = new HashMap<>();

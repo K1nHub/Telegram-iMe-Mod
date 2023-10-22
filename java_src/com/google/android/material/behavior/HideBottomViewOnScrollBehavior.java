@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.animation.AnimationUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
     private int additionalHiddenOffsetY;
     private ViewPropertyAnimator currentAnimator;

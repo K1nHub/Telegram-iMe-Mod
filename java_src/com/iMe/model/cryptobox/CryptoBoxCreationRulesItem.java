@@ -2,7 +2,7 @@ package com.iMe.model.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationRulesItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxCreationRulesItem {
     private final String creationFeeText;
     private final String totalAmountText;

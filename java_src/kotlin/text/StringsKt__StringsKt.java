@@ -8,6 +8,7 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.collections.ArraysKt___ArraysKt;
+import kotlin.collections.CharIterator;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
@@ -20,15 +21,16 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 /* compiled from: Strings.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     public static CharSequence trim(CharSequence charSequence) {
+        boolean isWhitespace;
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         int length = charSequence.length() - 1;
         int i = 0;
         boolean z = false;
         while (i <= length) {
-            boolean isWhitespace = CharsKt__CharJVMKt.isWhitespace(charSequence.charAt(!z ? i : length));
+            isWhitespace = CharsKt__CharJVMKt.isWhitespace(charSequence.charAt(!z ? i : length));
             if (z) {
                 if (!isWhitespace) {
                     break;
@@ -91,7 +93,51 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return charSequence.toString();
     }
 
-    public static final IntRange getIndices(CharSequence charSequence) {
+    /* JADX WARN: Type inference failed for: r5v4, types: [kotlin.collections.IntIterator, java.util.Iterator] */
+    public static final CharSequence padStart(CharSequence charSequence, int i, char c) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        if (i < 0) {
+            throw new IllegalArgumentException("Desired length " + i + " is less than zero.");
+        } else if (i <= charSequence.length()) {
+            return charSequence.subSequence(0, charSequence.length());
+        } else {
+            StringBuilder sb = new StringBuilder(i);
+            ?? it = new IntRange(1, i - charSequence.length()).iterator();
+            while (it.hasNext()) {
+                it.nextInt();
+                sb.append(c);
+            }
+            sb.append(charSequence);
+            return sb;
+        }
+    }
+
+    public static String padStart(String str, int i, char c) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return padStart((CharSequence) str, i, c).toString();
+    }
+
+    public static final CharIterator iterator(final CharSequence charSequence) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        return new CharIterator() { // from class: kotlin.text.StringsKt__StringsKt$iterator$1
+            private int index;
+
+            @Override // kotlin.collections.CharIterator
+            public char nextChar() {
+                CharSequence charSequence2 = charSequence;
+                int i = this.index;
+                this.index = i + 1;
+                return charSequence2.charAt(i);
+            }
+
+            @Override // java.util.Iterator, p033j$.util.Iterator
+            public boolean hasNext() {
+                return this.index < charSequence.length();
+            }
+        };
+    }
+
+    public static IntRange getIndices(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         return new IntRange(0, charSequence.length() - 1);
     }
@@ -99,6 +145,11 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     public static int getLastIndex(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         return charSequence.length() - 1;
+    }
+
+    public static final boolean hasSurrogatePairAt(CharSequence charSequence, int i) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        return new IntRange(0, charSequence.length() + (-2)).contains(i) && Character.isHighSurrogate(charSequence.charAt(i)) && Character.isLowSurrogate(charSequence.charAt(i + 1));
     }
 
     public static String substring(String str, IntRange range) {
@@ -177,13 +228,15 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     }
 
     public static /* synthetic */ String substringAfter$default(String str, String str2, String str3, int i, Object obj) {
+        String substringAfter;
         if ((i & 2) != 0) {
             str3 = str;
         }
-        return substringAfter(str, str2, str3);
+        substringAfter = substringAfter(str, str2, str3);
+        return substringAfter;
     }
 
-    public static final String substringAfter(String str, String delimiter, String missingDelimiterValue) {
+    public static String substringAfter(String str, String delimiter, String missingDelimiterValue) {
         int indexOf$default;
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(delimiter, "delimiter");
@@ -193,6 +246,20 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             return missingDelimiterValue;
         }
         String substring = str.substring(indexOf$default + delimiter.length(), str.length());
+        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        return substring;
+    }
+
+    public static String substringBeforeLast(String str, String delimiter, String missingDelimiterValue) {
+        int lastIndexOf$default;
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        Intrinsics.checkNotNullParameter(delimiter, "delimiter");
+        Intrinsics.checkNotNullParameter(missingDelimiterValue, "missingDelimiterValue");
+        lastIndexOf$default = lastIndexOf$default((CharSequence) str, delimiter, 0, false, 6, (Object) null);
+        if (lastIndexOf$default == -1) {
+            return missingDelimiterValue;
+        }
+        String substring = str.substring(0, lastIndexOf$default);
         Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
@@ -288,6 +355,37 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return true;
     }
 
+    public static /* synthetic */ boolean startsWith$default(CharSequence charSequence, char c, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        return startsWith(charSequence, c, z);
+    }
+
+    public static final boolean startsWith(CharSequence charSequence, char c, boolean z) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        return charSequence.length() > 0 && CharsKt__CharKt.equals(charSequence.charAt(0), c, z);
+    }
+
+    public static /* synthetic */ boolean endsWith$default(CharSequence charSequence, char c, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        return endsWith(charSequence, c, z);
+    }
+
+    public static final boolean endsWith(CharSequence charSequence, char c, boolean z) {
+        int lastIndex;
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        if (charSequence.length() > 0) {
+            lastIndex = getLastIndex(charSequence);
+            if (CharsKt__CharKt.equals(charSequence.charAt(lastIndex), c, z)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static /* synthetic */ boolean startsWith$default(CharSequence charSequence, CharSequence charSequence2, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             z = false;
@@ -322,6 +420,28 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             return endsWith$default;
         }
         return regionMatchesImpl(charSequence, charSequence.length() - suffix.length(), suffix, 0, suffix.length(), z);
+    }
+
+    public static /* synthetic */ String commonPrefixWith$default(CharSequence charSequence, CharSequence charSequence2, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        return commonPrefixWith(charSequence, charSequence2, z);
+    }
+
+    public static final String commonPrefixWith(CharSequence charSequence, CharSequence other, boolean z) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        Intrinsics.checkNotNullParameter(other, "other");
+        int min = Math.min(charSequence.length(), other.length());
+        int i = 0;
+        while (i < min && CharsKt__CharKt.equals(charSequence.charAt(i), other.charAt(i), z)) {
+            i++;
+        }
+        int i2 = i - 1;
+        if (hasSurrogatePairAt(charSequence, i2) || hasSurrogatePairAt(other, i2)) {
+            i--;
+        }
+        return charSequence.subSequence(0, i).toString();
     }
 
     /* JADX WARN: Type inference failed for: r9v2, types: [kotlin.collections.IntIterator, java.util.Iterator] */
@@ -409,6 +529,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         int coerceAtMost;
         int coerceAtLeast;
         IntProgression downTo;
+        boolean regionMatches;
         int coerceAtLeast2;
         int coerceAtMost2;
         if (!z2) {
@@ -428,27 +549,31 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             if ((step <= 0 || first > last) && (step >= 0 || last > first)) {
                 return -1;
             }
-            while (!StringsKt__StringsJVMKt.regionMatches((String) charSequence2, 0, (String) charSequence, first, charSequence2.length(), z)) {
+            while (true) {
+                regionMatches = StringsKt__StringsJVMKt.regionMatches((String) charSequence2, 0, (String) charSequence, first, charSequence2.length(), z);
+                if (regionMatches) {
+                    return first;
+                }
                 if (first == last) {
                     return -1;
                 }
                 first += step;
             }
-            return first;
-        }
-        int first2 = downTo.getFirst();
-        int last2 = downTo.getLast();
-        int step2 = downTo.getStep();
-        if ((step2 <= 0 || first2 > last2) && (step2 >= 0 || last2 > first2)) {
-            return -1;
-        }
-        while (!regionMatchesImpl(charSequence2, 0, charSequence, first2, charSequence2.length(), z)) {
-            if (first2 == last2) {
+        } else {
+            int first2 = downTo.getFirst();
+            int last2 = downTo.getLast();
+            int step2 = downTo.getStep();
+            if ((step2 <= 0 || first2 > last2) && (step2 >= 0 || last2 > first2)) {
                 return -1;
             }
-            first2 += step2;
+            while (!regionMatchesImpl(charSequence2, 0, charSequence, first2, charSequence2.length(), z)) {
+                if (first2 == last2) {
+                    return -1;
+                }
+                first2 += step2;
+            }
+            return first2;
         }
-        return first2;
     }
 
     public static final Pair<Integer, String> findAnyOf$StringsKt__StringsKt(CharSequence charSequence, Collection<String> collection, int i, boolean z, boolean z2) {
@@ -457,6 +582,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         IntProgression downTo;
         Object obj;
         Object obj2;
+        boolean regionMatches;
         int coerceAtLeast;
         if (!z && collection.size() == 1) {
             String str = (String) CollectionsKt.single(collection);
@@ -464,7 +590,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             if (indexOf$default < 0) {
                 return null;
             }
-            return TuplesKt.m103to(Integer.valueOf(indexOf$default), str);
+            return TuplesKt.m144to(Integer.valueOf(indexOf$default), str);
         }
         if (z2) {
             lastIndex = getLastIndex(charSequence);
@@ -488,7 +614,8 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         obj2 = it.next();
                         String str2 = (String) obj2;
-                        if (StringsKt__StringsJVMKt.regionMatches(str2, 0, (String) charSequence, first, str2.length(), z)) {
+                        regionMatches = StringsKt__StringsJVMKt.regionMatches(str2, 0, (String) charSequence, first, str2.length(), z);
+                        if (regionMatches) {
                             break;
                         }
                     }
@@ -499,7 +626,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first += step;
                     } else {
-                        return TuplesKt.m103to(Integer.valueOf(first), str3);
+                        return TuplesKt.m144to(Integer.valueOf(first), str3);
                     }
                 }
             }
@@ -528,7 +655,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first2 += step2;
                     } else {
-                        return TuplesKt.m103to(Integer.valueOf(first2), str5);
+                        return TuplesKt.m144to(Integer.valueOf(first2), str5);
                     }
                 }
             }
@@ -681,7 +808,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                 if (indexOfAny < 0) {
                     return null;
                 }
-                return TuplesKt.m103to(Integer.valueOf(indexOfAny), 1);
+                return TuplesKt.m144to(Integer.valueOf(indexOfAny), 1);
             }
         });
     }
@@ -720,7 +847,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                 Intrinsics.checkNotNullParameter($receiver, "$this$$receiver");
                 findAnyOf$StringsKt__StringsKt = StringsKt__StringsKt.findAnyOf$StringsKt__StringsKt($receiver, asList, i3, z, false);
                 if (findAnyOf$StringsKt__StringsKt != null) {
-                    return TuplesKt.m103to(findAnyOf$StringsKt__StringsKt.getFirst(), Integer.valueOf(((String) findAnyOf$StringsKt__StringsKt.getSecond()).length()));
+                    return TuplesKt.m144to(findAnyOf$StringsKt__StringsKt.getFirst(), Integer.valueOf(((String) findAnyOf$StringsKt__StringsKt.getSecond()).length()));
                 }
                 return null;
             }

@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BERSequenceParser implements ASN1SequenceParser {
     private ASN1StreamParser _parser;
 

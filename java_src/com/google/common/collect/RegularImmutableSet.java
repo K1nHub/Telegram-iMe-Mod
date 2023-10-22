@@ -1,6 +1,6 @@
 package com.google.common.collect;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RegularImmutableSet<E> extends ImmutableSet<E> {
     static final RegularImmutableSet<Object> EMPTY;
     private static final Object[] EMPTY_ARRAY;

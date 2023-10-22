@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_secureValueError extends TLRPC$SecureValueError {
     public static int constructor = -2036501105;
     public byte[] hash;

@@ -430,10 +430,10 @@
     return v3
 .end method
 
-.method static c(Lj$/util/s;)I
+.method static c(Lj$/util/Spliterator;)I
     .locals 2
 
-    invoke-interface {p0}, Lj$/util/s;->characteristics()I
+    invoke-interface {p0}, Lj$/util/Spliterator;->characteristics()I
 
     move-result v0
 
@@ -441,7 +441,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-interface {p0}, Lj$/util/s;->getComparator()Ljava/util/Comparator;
+    invoke-interface {p0}, Lj$/util/Spliterator;->getComparator()Ljava/util/Comparator;
 
     move-result-object p0
 

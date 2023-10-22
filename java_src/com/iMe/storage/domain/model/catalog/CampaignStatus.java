@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.catalog;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum CampaignStatus {
     NEW,
     ACTIVE,
@@ -14,7 +14,7 @@ public enum CampaignStatus {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: CampaignStatus.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

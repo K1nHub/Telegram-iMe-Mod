@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s;
+.implements Lj$/util/Spliterator;
 
 
 # instance fields
@@ -10,9 +10,9 @@
 
 .field b:I
 
-.field c:Lj$/util/s;
+.field c:Lj$/util/Spliterator;
 
-.field d:Lj$/util/s;
+.field d:Lj$/util/Spliterator;
 
 .field e:Ljava/util/Deque;
 
@@ -42,7 +42,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v0}, Lj$/util/stream/A1;->n()I
 
     move-result v1
 
@@ -61,7 +61,7 @@
     return-object v0
 
     :cond_1
-    invoke-interface {v0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v0}, Lj$/util/stream/A1;->n()I
 
     move-result v1
 
@@ -106,11 +106,11 @@
     return-wide v1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -122,7 +122,7 @@
     :goto_0
     iget-object v3, p0, Lj$/util/stream/k2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v3}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v3}, Lj$/util/stream/A1;->n()I
 
     move-result v3
 
@@ -159,7 +159,7 @@
 
     iget-object v1, p0, Lj$/util/stream/k2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v1}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v1}, Lj$/util/stream/A1;->n()I
 
     move-result v1
 
@@ -200,7 +200,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -219,11 +219,11 @@
     return v1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-nez v0, :cond_2
 
@@ -239,7 +239,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -254,7 +254,7 @@
 
     :cond_2
     :goto_0
-    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
     :cond_3
     const/4 v0, 0x1
@@ -265,68 +265,80 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$a;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$a;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$a;
+    check-cast v0, Lj$/util/Spliterator$a;
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$b;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$b;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$b;
+    check-cast v0, Lj$/util/Spliterator$b;
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$c;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$c;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$c;
+    check-cast v0, Lj$/util/Spliterator$c;
 
     return-object v0
 .end method
 
-.method public final trySplit()Lj$/util/s;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/Spliterator$d;
+
+    return-object v0
+.end method
+
+.method public final trySplit()Lj$/util/Spliterator;
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/k2;->a:Lj$/util/stream/A1;
 
     if-eqz v0, :cond_4
 
-    iget-object v1, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v1, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v1}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -335,7 +347,7 @@
     :cond_1
     iget v1, p0, Lj$/util/stream/k2;->b:I
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 
@@ -357,7 +369,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -374,7 +386,7 @@
 
     iput-object v0, p0, Lj$/util/stream/k2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {v0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 
@@ -382,13 +394,13 @@
 
     iget-object v0, p0, Lj$/util/stream/k2;->a:Lj$/util/stream/A1;
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    iput-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -407,7 +419,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -416,18 +428,6 @@
     :cond_4
     :goto_0
     const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic trySplit()Lj$/util/t;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/k2;->trySplit()Lj$/util/s;
-
-    move-result-object v0
-
-    check-cast v0, Lj$/util/t;
 
     return-object v0
 .end method

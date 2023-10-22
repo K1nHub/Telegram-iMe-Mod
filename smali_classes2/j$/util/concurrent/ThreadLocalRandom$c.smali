@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/s$b;
+.implements Lj$/util/Spliterator$b;
 
 
 # annotations
@@ -86,7 +86,7 @@
 .method public synthetic b(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->k(Lj$/util/s$b;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/k;->g(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -158,7 +158,7 @@
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/s$b;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/k;->b(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -230,7 +230,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -240,7 +240,7 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
@@ -259,7 +259,7 @@
     return p1
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$b;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$b;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$c;->a()Lj$/util/concurrent/ThreadLocalRandom$c;
@@ -269,7 +269,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$c;->a()Lj$/util/concurrent/ThreadLocalRandom$c;
@@ -279,7 +279,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/t;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator;
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom$c;->a()Lj$/util/concurrent/ThreadLocalRandom$c;

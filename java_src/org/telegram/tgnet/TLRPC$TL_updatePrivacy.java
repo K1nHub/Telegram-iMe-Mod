@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updatePrivacy extends TLRPC$Update {
     public static int constructor = -298113238;
     public TLRPC$PrivacyKey key;

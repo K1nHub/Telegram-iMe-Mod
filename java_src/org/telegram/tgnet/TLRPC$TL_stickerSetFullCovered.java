@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_stickerSetFullCovered extends TLRPC$StickerSetCovered {
     public static int constructor = 1087454222;
     public ArrayList<TLRPC$TL_stickerPack> packs = new ArrayList<>();

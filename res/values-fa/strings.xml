@@ -418,6 +418,8 @@
     <string name="debug_option_choose_wallet_environment">‏انتخاب محیط کیف پول (‎%s‎)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">پس از تغییر محیط، تمام داده‌های کیف پول فعلی و موارد مرتبط با آن حذف خواهد شد</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">مطمئن هستید؟</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">‏در حال حذف پیام‌ها… پردازش‌شده: ‎%1$d of %2$d‎</string>
     <string name="deleting_messages_success">پیام‌های سرویس حذف شده است</string>
     <string name="dialog_promo_discussion_group_description">گروه</string>
@@ -507,7 +509,7 @@
     <string name="folder_tabs_remember_last_filter_tab_hint">هنگام باز کردن برنامه، در همان زبانه‌ای خواهید بود که هنگام آخرین استفاده از برنامه در آن بودید. در صورت غیرفعال بودن این گزینه، اولین زبانه در سمت چپ به‌طور پیش‌فرض باز می‌شود.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">به خاطر سپردن زبانه</string>
     <string name="folder_tabs_settings_folders_first">به سمت چپ زبانه‌های مرتب‌سازی</string>
-    <string name="folder_tabs_settings_header">تنظیمات زبانه</string>
+    <string name="folder_tabs_settings_header">تنظیمات</string>
     <string name="folder_tabs_settings_hide_folders">پنهان کردن پوشه‌ها</string>
     <string name="folder_tabs_sorting_settings">زبانه‌ها بر اساس نوع</string>
     <string name="folder_tabs_sorting_settings_item_title">مرتب‌سازی چت</string>

@@ -6,7 +6,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class UnmodifiableLazyStringList extends AbstractList<String> implements LazyStringList, RandomAccess {
     private final LazyStringList list;
 
@@ -40,8 +40,8 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$1 */
-    /* loaded from: classes4.dex */
-    class C12141 implements ListIterator<String>, Iterator {
+    /* loaded from: classes3.dex */
+    class C11311 implements ListIterator<String>, Iterator {
         ListIterator<String> iter;
         final /* synthetic */ int val$index;
 
@@ -50,7 +50,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12141(int i) {
+        C11311(int i) {
             this.val$index = i;
             this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
         }
@@ -103,12 +103,12 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.List
     public ListIterator<String> listIterator(int i) {
-        return new C12141(i);
+        return new C11311(i);
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$2 */
-    /* loaded from: classes4.dex */
-    class C12152 implements java.util.Iterator<String>, Iterator {
+    /* loaded from: classes3.dex */
+    class C11322 implements java.util.Iterator<String>, Iterator {
         java.util.Iterator<String> iter;
 
         @Override // p033j$.util.Iterator
@@ -116,7 +116,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12152() {
+        C11322() {
             this.iter = UnmodifiableLazyStringList.this.list.iterator();
         }
 
@@ -138,7 +138,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public java.util.Iterator<String> iterator() {
-        return new C12152();
+        return new C11322();
     }
 
     @Override // com.google.protobuf.LazyStringList

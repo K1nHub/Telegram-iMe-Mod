@@ -3,7 +3,7 @@ package io.reactivex.internal.queue;
 import io.reactivex.internal.fuseable.SimplePlainQueue;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class MpscLinkedQueue<T> implements SimplePlainQueue<T> {
     private final AtomicReference<LinkedQueueNode<T>> producerNode = new AtomicReference<>();
     private final AtomicReference<LinkedQueueNode<T>> consumerNode = new AtomicReference<>();
@@ -75,7 +75,7 @@ public final class MpscLinkedQueue<T> implements SimplePlainQueue<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class LinkedQueueNode<E> extends AtomicReference<LinkedQueueNode<E>> {
         private E value;
 

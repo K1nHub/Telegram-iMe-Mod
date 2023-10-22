@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxSuspensionPrepareRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxSuspensionPrepareRequest {
     private final String boxId;
 

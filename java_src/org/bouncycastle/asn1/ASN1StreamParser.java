@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ASN1StreamParser {
     private final InputStream _in;
     private final int _limit;

@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentMap;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzgk {
     private static final zzgk zza = new zzgk();
     private final ConcurrentMap<Class<?>, zzgp<?>> zzc = new ConcurrentHashMap();

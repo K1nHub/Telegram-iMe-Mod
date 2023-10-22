@@ -5,7 +5,7 @@ import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Route;
 /* compiled from: RouteDatabase.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RouteDatabase {
     private final Set<Route> failedRoutes = new LinkedHashSet();
 

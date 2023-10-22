@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: CancellableContinuationImpl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class InvokeOnCancel extends CancelHandler {
     private final Function1<Throwable, Unit> handler;
 

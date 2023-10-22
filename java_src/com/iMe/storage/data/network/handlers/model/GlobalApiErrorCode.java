@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.handlers.model;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlobalApiErrorCode.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum GlobalApiErrorCode {
     ERR_USER_NOT_AUTH,
     ERR_TARGET_USER_NOT_FOUND_IN_IME,
@@ -53,7 +53,7 @@ public enum GlobalApiErrorCode {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: GlobalApiErrorCode.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

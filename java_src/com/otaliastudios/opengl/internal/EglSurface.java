@@ -3,21 +3,21 @@ package com.otaliastudios.opengl.internal;
 import android.opengl.EGLSurface;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: egl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EglSurface {
 
     /* renamed from: native  reason: not valid java name */
-    private final EGLSurface f1986native;
+    private final EGLSurface f2160native;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EglSurface) && Intrinsics.areEqual(this.f1986native, ((EglSurface) obj).f1986native);
+        return (obj instanceof EglSurface) && Intrinsics.areEqual(this.f2160native, ((EglSurface) obj).f2160native);
     }
 
     public int hashCode() {
-        EGLSurface eGLSurface = this.f1986native;
+        EGLSurface eGLSurface = this.f2160native;
         if (eGLSurface == null) {
             return 0;
         }
@@ -25,14 +25,14 @@ public final class EglSurface {
     }
 
     public String toString() {
-        return "EglSurface(native=" + this.f1986native + ')';
+        return "EglSurface(native=" + this.f2160native + ')';
     }
 
     public EglSurface(EGLSurface eGLSurface) {
-        this.f1986native = eGLSurface;
+        this.f2160native = eGLSurface;
     }
 
     public final EGLSurface getNative() {
-        return this.f1986native;
+        return this.f2160native;
     }
 }

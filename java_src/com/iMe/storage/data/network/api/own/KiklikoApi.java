@@ -5,6 +5,7 @@ import com.iMe.storage.data.network.model.request.kikliko.ShareRequest;
 import com.iMe.storage.data.network.model.request.kikliko.ViewRequest;
 import com.iMe.storage.data.network.model.response.kikliko.GetTagsResponse;
 import com.iMe.storage.data.network.model.response.kikliko.SearchResultResponse;
+import com.iMe.storage.domain.model.analytics.AnalyticsEvent;
 import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -12,7 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 /* compiled from: KiklikoApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface KiklikoApi {
     public static final Companion Companion = null;
 
@@ -23,7 +24,7 @@ public interface KiklikoApi {
     @GET("tags")
     Observable<GetTagsResponse> getTags();
 
-    @GET("trending")
+    @GET(AnalyticsEvent.SelectClipCategory.categoryTrending)
     Observable<SearchResultResponse> getTrending(@Query("page") int i, @Query("customer_id") String str, @Query("per_page") int i2, @Query("period") String str2);
 
     @POST("report/{slug}")
@@ -43,7 +44,7 @@ public interface KiklikoApi {
 
     /* compiled from: KiklikoApi.kt */
     /* renamed from: com.iMe.storage.data.network.api.own.KiklikoApi$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         static {
             Companion companion = KiklikoApi.Companion;
@@ -84,7 +85,7 @@ public interface KiklikoApi {
     }
 
     /* compiled from: KiklikoApi.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 

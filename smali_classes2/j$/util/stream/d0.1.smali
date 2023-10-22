@@ -14,11 +14,11 @@
 
 .field final d:Lj$/util/function/Predicate;
 
-.field final e:Lj$/util/function/y;
+.field final e:Lj$/util/function/x;
 
 
 # direct methods
-.method constructor <init>(ZLj$/util/stream/e4;Ljava/lang/Object;Lj$/util/function/Predicate;Lj$/util/function/y;)V
+.method constructor <init>(ZLj$/util/stream/e4;Ljava/lang/Object;Lj$/util/function/Predicate;Lj$/util/function/x;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
     iput-object p4, p0, Lj$/util/stream/d0;->d:Lj$/util/function/Predicate;
 
-    iput-object p5, p0, Lj$/util/stream/d0;->e:Lj$/util/function/y;
+    iput-object p5, p0, Lj$/util/stream/d0;->e:Lj$/util/function/x;
 
     return-void
 .end method
@@ -60,12 +60,12 @@
     return v0
 .end method
 
-.method public c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 1
 
     new-instance v0, Lj$/util/stream/j0;
 
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/j0;-><init>(Lj$/util/stream/d0;Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/j0;-><init>(Lj$/util/stream/d0;Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -74,12 +74,12 @@
     return-object p1
 .end method
 
-.method public d(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public d(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/d0;->e:Lj$/util/function/y;
+    iget-object v0, p0, Lj$/util/stream/d0;->e:Lj$/util/function/x;
 
-    invoke-interface {v0}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -91,14 +91,14 @@
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {p1, v0}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {p1, v0}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v1
 
-    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     .line 3
-    invoke-interface {v0}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 

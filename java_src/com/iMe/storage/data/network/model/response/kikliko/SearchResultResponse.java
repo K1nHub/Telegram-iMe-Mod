@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.kikliko;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SearchResultResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SearchResultResponse {
     private final SearchResponse data;
     private final boolean result;

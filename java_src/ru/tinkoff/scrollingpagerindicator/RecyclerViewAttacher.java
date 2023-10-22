@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class RecyclerViewAttacher implements ScrollingPagerIndicator.PagerAttacher<RecyclerView> {
     private RecyclerView.Adapter<?> attachedAdapter;
     private RecyclerView.AdapterDataObserver dataObserver;

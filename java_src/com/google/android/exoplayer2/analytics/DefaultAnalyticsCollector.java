@@ -1049,8 +1049,8 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     /* loaded from: classes.dex */
     public static final class MediaPeriodQueueTracker {
         private MediaSource.MediaPeriodId currentPlayerMediaPeriod;
-        private ImmutableList<MediaSource.MediaPeriodId> mediaPeriodQueue = ImmutableList.m762of();
-        private ImmutableMap<MediaSource.MediaPeriodId, Timeline> mediaPeriodTimelines = ImmutableMap.m755of();
+        private ImmutableList<MediaSource.MediaPeriodId> mediaPeriodQueue = ImmutableList.m1054of();
+        private ImmutableMap<MediaSource.MediaPeriodId, Timeline> mediaPeriodTimelines = ImmutableMap.m1047of();
         private final Timeline.Period period;
         private MediaSource.MediaPeriodId playingMediaPeriod;
         private MediaSource.MediaPeriodId readingMediaPeriod;

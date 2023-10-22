@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$NotificationSound extends TLObject {
     public static TLRPC$NotificationSound TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$NotificationSound tLRPC$TL_notificationSoundLocal;

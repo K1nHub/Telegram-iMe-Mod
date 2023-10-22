@@ -3,7 +3,7 @@ package okio;
 import java.io.IOException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ForwardingSource.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ForwardingSource implements Source {
     private final Source delegate;
 
@@ -37,7 +37,7 @@ public abstract class ForwardingSource implements Source {
     }
 
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Source m1694deprecated_delegate() {
+    public final Source m2162deprecated_delegate() {
         return this.delegate;
     }
 }

@@ -13,7 +13,7 @@ import com.google.android.gms.wallet.MaskedWallet;
 import com.google.android.gms.wallet.WalletConstants;
 import java.lang.ref.WeakReference;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzw extends zzx {
     private final WeakReference zza;
     private final int zzb;

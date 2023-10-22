@@ -8,16 +8,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CallbackOutputCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CallbackOutput extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CallbackOutput> CREATOR = new zzk();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     int zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     int zzb;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     byte[] zzc;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     String zzd;
 
     private CallbackOutput() {
@@ -39,7 +39,7 @@ public class CallbackOutput extends AbstractSafeParcelable implements ReflectedP
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CallbackOutput(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) int i2, @SafeParcelable.Param(m796id = 3) byte[] bArr, @SafeParcelable.Param(m796id = 4) String str) {
+    public CallbackOutput(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) byte[] bArr, @SafeParcelable.Param(m1088id = 4) String str) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = bArr;

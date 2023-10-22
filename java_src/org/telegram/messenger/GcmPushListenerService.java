@@ -8,7 +8,7 @@ import java.util.Map;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;
 import timber.log.Timber;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     private final Lazy<PushNotificationsManager> pushNotificationsManager = KoinJavaComponent.inject(PushNotificationsManager.class);
 
@@ -28,7 +28,7 @@ public class GcmPushListenerService extends FirebaseMessagingService {
         Map<String, String> data = remoteMessage.getData();
         long sentTime = remoteMessage.getSentTime();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("FCM received data: " + data + " from: " + from);
+            FileLog.m100d("FCM received data: " + data + " from: " + from);
         }
         PushListenerController.processRemoteMessage(2, data.get(TtmlNode.TAG_P), sentTime, data);
     }
@@ -46,7 +46,7 @@ public class GcmPushListenerService extends FirebaseMessagingService {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onNewToken$0(String str) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("Refreshed FCM token: " + str);
+            FileLog.m100d("Refreshed FCM token: " + str);
         }
         ApplicationLoader.postInitApplication();
         PushListenerController.sendRegistrationToServer(2, str);

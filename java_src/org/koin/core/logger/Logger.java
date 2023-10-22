@@ -2,7 +2,7 @@ package org.koin.core.logger;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Logger.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Logger {
     private Level level;
 

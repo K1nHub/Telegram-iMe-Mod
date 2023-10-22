@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC$Chat;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CacheByChatsController {
     public static int KEEP_MEDIA_DELETE = 4;
     public static int KEEP_MEDIA_FOREVER = 2;
@@ -65,7 +65,7 @@ public class CacheByChatsController {
         if (i == KEEP_MEDIA_ONE_MONTH) {
             return LocaleController.formatPluralString("Months", 1, new Object[0]);
         }
-        return LocaleController.getString("AutoDeleteMediaNever", C3473R.string.AutoDeleteMediaNever);
+        return LocaleController.getString("AutoDeleteMediaNever", C3630R.string.AutoDeleteMediaNever);
     }
 
     public static long getDaysInSeconds(int i) {
@@ -183,7 +183,7 @@ public class CacheByChatsController {
         return longSparseArray;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class KeepMediaException {
         public final long dialogId;
         public int keepMedia;
@@ -194,7 +194,7 @@ public class CacheByChatsController {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class KeepMediaFile {
         final File file;
         boolean isStory;

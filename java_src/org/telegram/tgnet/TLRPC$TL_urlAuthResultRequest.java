@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_urlAuthResultRequest extends TLRPC$UrlAuthResult {
     public static int constructor = -1831650802;
     public TLRPC$User bot;

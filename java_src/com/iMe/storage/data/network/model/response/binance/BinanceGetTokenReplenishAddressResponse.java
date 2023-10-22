@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.binance;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceGetTokenReplenishAddressResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceGetTokenReplenishAddressResponse {
     private final String address;
     private final String url;

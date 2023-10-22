@@ -10,11 +10,11 @@ import retrofit2.HttpException;
 import retrofit2.Response;
 import timber.log.Timber;
 /* compiled from: ApiErrorHandler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ApiErrorHandler implements ErrorHandler<Throwable> {
 
     /* compiled from: ApiErrorHandler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum ErrorStatus implements IErrorStatus {
         NO_CONNECTION,
         BAD_RESPONSE,

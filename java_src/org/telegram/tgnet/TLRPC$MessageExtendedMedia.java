@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$MessageExtendedMedia extends TLObject {
     public static TLRPC$MessageExtendedMedia TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$MessageExtendedMedia tLRPC$TL_messageExtendedMediaPreview;

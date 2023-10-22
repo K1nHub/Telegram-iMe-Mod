@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.utils.BillingUtilities;
-import org.telegram.p043ui.PremiumPreviewFragment;
+import org.telegram.p042ui.PremiumPreviewFragment;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$InputStorePaymentPurpose;
@@ -41,7 +41,7 @@ import org.telegram.tgnet.TLRPC$TL_inputStorePaymentGiftPremium;
 import org.telegram.tgnet.TLRPC$TL_payments_assignPlayMarketTransaction;
 import org.telegram.tgnet.TLRPC$Updates;
 import p033j$.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BillingController implements PurchasesUpdatedListener, BillingClientStateListener {
     public static ProductDetails PREMIUM_PRODUCT_DETAILS = null;
     public static boolean billingClientEmpty;
@@ -97,6 +97,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     public int getCurrencyExp(String str) {
+        BillingUtilities.extractCurrencyExp(this.currencyExpMap);
         return ((Integer) Map.EL.getOrDefault(this.currencyExpMap, str, 0)).intValue();
     }
 
@@ -174,7 +175,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
         }
         int responseCode = this.billingClient.launchBillingFlow(activity, productDetailsParamsList.build()).getResponseCode();
         if (responseCode != 0) {
-            FileLog.m70d("Billing: Launch Error: " + responseCode + ", " + str + ", " + str2);
+            FileLog.m100d("Billing: Launch Error: " + responseCode + ", " + str + ", " + str2);
         }
     }
 
@@ -238,7 +239,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     @Override // com.android.billingclient.api.PurchasesUpdatedListener
     public void onPurchasesUpdated(final BillingResult billingResult, List<Purchase> list) {
         Pair<AccountInstance, TLRPC$InputStorePaymentPurpose> extractDeveloperPayload;
-        FileLog.m70d("Billing: Purchases updated: " + billingResult + ", " + list);
+        FileLog.m100d("Billing: Purchases updated: " + billingResult + ", " + list);
         if (billingResult.getResponseCode() != 0) {
             if (billingResult.getResponseCode() == 1) {
                 PremiumPreviewFragment.sentPremiumBuyCanceled();
@@ -286,7 +287,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
             }
             consumeGiftPurchase(purchase, tLRPC$TL_payments_assignPlayMarketTransaction.purpose);
         } else if (tLRPC$TL_error != null) {
-            FileLog.m70d("Billing: Confirmation Error: " + tLRPC$TL_error.code + " " + tLRPC$TL_error.text);
+            FileLog.m100d("Billing: Confirmation Error: " + tLRPC$TL_error.code + " " + tLRPC$TL_error.text);
             NotificationCenter.getGlobalInstance().postNotificationNameOnUIThread(NotificationCenter.billingConfirmPurchaseError, tLRPC$TL_payments_assignPlayMarketTransaction, tLRPC$TL_error);
         }
     }
@@ -304,7 +305,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
 
     @Override // com.android.billingclient.api.BillingClientStateListener
     public void onBillingServiceDisconnected() {
-        FileLog.m70d("Billing: Service disconnected");
+        FileLog.m100d("Billing: Service disconnected");
         int i = this.isDisconnected ? 15000 : DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS;
         this.isDisconnected = true;
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda5
@@ -317,7 +318,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
 
     @Override // com.android.billingclient.api.BillingClientStateListener
     public void onBillingSetupFinished(BillingResult billingResult) {
-        FileLog.m70d("Billing: Setup finished with result " + billingResult);
+        FileLog.m100d("Billing: Setup finished with result " + billingResult);
         if (billingResult.getResponseCode() == 0) {
             this.isDisconnected = false;
             queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new ProductDetailsResponseListener() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda2
@@ -346,7 +347,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBillingSetupFinished$6(BillingResult billingResult, List list) {
-        FileLog.m70d("Billing: Query product details finished " + billingResult + ", " + list);
+        FileLog.m100d("Billing: Query product details finished " + billingResult + ", " + list);
         if (billingResult.getResponseCode() == 0) {
             Iterator it = list.iterator();
             while (it.hasNext()) {

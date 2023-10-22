@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto.airdrop;
 /* compiled from: AirdropVersion.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum AirdropVersion {
     VERSION_1("v1");
     

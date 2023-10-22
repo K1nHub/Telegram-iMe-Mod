@@ -27,7 +27,7 @@ import com.google.android.material.resources.MaterialResources;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class IndicatorViewController {
     private Animator captionAnimator;
     private FrameLayout captionArea;

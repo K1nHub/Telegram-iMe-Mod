@@ -4,7 +4,7 @@ import com.iMe.storage.data.datasource.base.DataSourceFactory;
 import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletCancelDataSourceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletCancelDataSourceFactory implements DataSourceFactory<String, WalletCancelDataSource> {
     private final WalletCancelDataSource ethCancelDataSource;
 

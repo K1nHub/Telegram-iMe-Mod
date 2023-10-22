@@ -470,7 +470,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
                                 break;
                             } else {
                                 arrayList3 = arrayList23;
-                                Log.m814w(LOG_TAG, "EXT-X-MEDIA tag with missing mandatory URI attribute: skipping");
+                                Log.m1106w(LOG_TAG, "EXT-X-MEDIA tag with missing mandatory URI attribute: skipping");
                                 break;
                             }
                         case 1:

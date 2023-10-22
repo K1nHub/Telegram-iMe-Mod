@@ -17,10 +17,10 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.ApplicationLoader;
 /* compiled from: AppLifecycleObserver.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AppLifecycleObserver implements LifecycleObserver, KoinComponent {
     private final Lazy accessManager$delegate;
     private final Handler handler;
@@ -91,7 +91,7 @@ public final class AppLifecycleObserver implements LifecycleObserver, KoinCompon
     }
 
     /* compiled from: AppLifecycleObserver.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

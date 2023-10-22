@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$auth_Authorization;
 import org.telegram.tgnet.TLRPC$auth_LoginToken;
 /* compiled from: LoginTokenGenerator.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LoginTokenGenerator implements NotificationCenter.NotificationCenterDelegate {
     private final Runnable autoRefreshRunnable = new Runnable() { // from class: com.iMe.fork.utils.LoginTokenGenerator$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
@@ -35,7 +35,7 @@ public final class LoginTokenGenerator implements NotificationCenter.Notificatio
     private boolean needAutoRefresh;
 
     /* compiled from: LoginTokenGenerator.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Delegate {
         void onError();
 

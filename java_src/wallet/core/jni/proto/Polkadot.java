@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Polkadot {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface BalanceOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -33,7 +33,7 @@ public final class Polkadot {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface EraOrBuilder extends MessageLiteOrBuilder {
         long getBlockNumber();
 
@@ -46,7 +46,7 @@ public final class Polkadot {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         Balance getBalanceCall();
 
@@ -85,7 +85,7 @@ public final class Polkadot {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -96,7 +96,7 @@ public final class Polkadot {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface StakingOrBuilder extends MessageLiteOrBuilder {
         Staking.Bond getBond();
 
@@ -145,7 +145,7 @@ public final class Polkadot {
     private Polkadot() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public enum RewardDestination implements Internal.EnumLite {
         STAKED(0),
         STASH(1),
@@ -197,7 +197,7 @@ public final class Polkadot {
             return RewardDestinationVerifier.INSTANCE;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         private static final class RewardDestinationVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new RewardDestinationVerifier();
 
@@ -215,7 +215,7 @@ public final class Polkadot {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Era extends GeneratedMessageLite<Era, Builder> implements EraOrBuilder {
         public static final int BLOCK_NUMBER_FIELD_NUMBER = 1;
         private static final Era DEFAULT_INSTANCE;
@@ -313,9 +313,9 @@ public final class Polkadot {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Era, Builder> implements EraOrBuilder {
-            /* synthetic */ Builder(C73511 c73511) {
+            /* synthetic */ Builder(C76851 c76851) {
                 this();
             }
 
@@ -360,7 +360,7 @@ public final class Polkadot {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+            switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Era();
                 case 2:
@@ -406,47 +406,47 @@ public final class Polkadot {
     }
 
     /* renamed from: wallet.core.jni.proto.Polkadot$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73511 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76851 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1967xa1df5c61;
+        static final /* synthetic */ int[] f2141xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1967xa1df5c61 = iArr;
+            f2141xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2141xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Balance extends GeneratedMessageLite<Balance, Builder> implements BalanceOrBuilder {
         private static final Balance DEFAULT_INSTANCE;
         private static volatile Parser<Balance> PARSER = null;
@@ -454,7 +454,7 @@ public final class Polkadot {
         private int messageOneofCase_ = 0;
         private Object messageOneof_;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface TransferOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -472,7 +472,7 @@ public final class Polkadot {
         private Balance() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
             private static final Transfer DEFAULT_INSTANCE;
             private static volatile Parser<Transfer> PARSER = null;
@@ -583,9 +583,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -641,7 +641,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Transfer();
                     case 2:
@@ -686,7 +686,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum MessageOneofCase {
             TRANSFER(1),
             MESSAGEONEOF_NOT_SET(0);
@@ -823,9 +823,9 @@ public final class Polkadot {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Balance, Builder> implements BalanceOrBuilder {
-            /* synthetic */ Builder(C73511 c73511) {
+            /* synthetic */ Builder(C76851 c76851) {
                 this();
             }
 
@@ -881,7 +881,7 @@ public final class Polkadot {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+            switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Balance();
                 case 2:
@@ -926,7 +926,7 @@ public final class Polkadot {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Staking extends GeneratedMessageLite<Staking, Builder> implements StakingOrBuilder {
         public static final int BOND_AND_NOMINATE_FIELD_NUMBER = 2;
         public static final int BOND_EXTRA_FIELD_NUMBER = 3;
@@ -941,7 +941,7 @@ public final class Polkadot {
         private int messageOneofCase_ = 0;
         private Object messageOneof_;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface BondAndNominateOrBuilder extends MessageLiteOrBuilder {
             String getController();
 
@@ -968,7 +968,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface BondExtraOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -979,7 +979,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface BondOrBuilder extends MessageLiteOrBuilder {
             String getController();
 
@@ -998,7 +998,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface ChillAndUnbondOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -1009,7 +1009,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface ChillOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -1018,7 +1018,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface NominateOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -1035,7 +1035,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface UnbondOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -1046,7 +1046,7 @@ public final class Polkadot {
             /* synthetic */ boolean isInitialized();
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public interface WithdrawUnbondedOrBuilder extends MessageLiteOrBuilder {
             @Override // com.google.protobuf.MessageLiteOrBuilder
             /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -1060,7 +1060,7 @@ public final class Polkadot {
         private Staking() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Bond extends GeneratedMessageLite<Bond, Builder> implements BondOrBuilder {
             public static final int CONTROLLER_FIELD_NUMBER = 1;
             private static final Bond DEFAULT_INSTANCE;
@@ -1199,9 +1199,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Bond, Builder> implements BondOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -1285,7 +1285,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Bond();
                     case 2:
@@ -1330,7 +1330,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class BondAndNominate extends GeneratedMessageLite<BondAndNominate, Builder> implements BondAndNominateOrBuilder {
             public static final int CONTROLLER_FIELD_NUMBER = 1;
             private static final BondAndNominate DEFAULT_INSTANCE;
@@ -1531,9 +1531,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<BondAndNominate, Builder> implements BondAndNominateOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -1667,7 +1667,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new BondAndNominate();
                     case 2:
@@ -1712,7 +1712,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class BondExtra extends GeneratedMessageLite<BondExtra, Builder> implements BondExtraOrBuilder {
             private static final BondExtra DEFAULT_INSTANCE;
             private static volatile Parser<BondExtra> PARSER = null;
@@ -1794,9 +1794,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<BondExtra, Builder> implements BondExtraOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -1824,7 +1824,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new BondExtra();
                     case 2:
@@ -1869,7 +1869,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Unbond extends GeneratedMessageLite<Unbond, Builder> implements UnbondOrBuilder {
             private static final Unbond DEFAULT_INSTANCE;
             private static volatile Parser<Unbond> PARSER = null;
@@ -1951,9 +1951,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Unbond, Builder> implements UnbondOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -1981,7 +1981,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Unbond();
                     case 2:
@@ -2026,7 +2026,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class WithdrawUnbonded extends GeneratedMessageLite<WithdrawUnbonded, Builder> implements WithdrawUnbondedOrBuilder {
             private static final WithdrawUnbonded DEFAULT_INSTANCE;
             private static volatile Parser<WithdrawUnbonded> PARSER = null;
@@ -2107,9 +2107,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WithdrawUnbonded, Builder> implements WithdrawUnbondedOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -2137,7 +2137,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WithdrawUnbonded();
                     case 2:
@@ -2182,7 +2182,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Nominate extends GeneratedMessageLite<Nominate, Builder> implements NominateOrBuilder {
             private static final Nominate DEFAULT_INSTANCE;
             public static final int NOMINATORS_FIELD_NUMBER = 1;
@@ -2308,9 +2308,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Nominate, Builder> implements NominateOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -2371,7 +2371,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Nominate();
                     case 2:
@@ -2416,7 +2416,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class ChillAndUnbond extends GeneratedMessageLite<ChillAndUnbond, Builder> implements ChillAndUnbondOrBuilder {
             private static final ChillAndUnbond DEFAULT_INSTANCE;
             private static volatile Parser<ChillAndUnbond> PARSER = null;
@@ -2498,9 +2498,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ChillAndUnbond, Builder> implements ChillAndUnbondOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -2528,7 +2528,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ChillAndUnbond();
                     case 2:
@@ -2573,7 +2573,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Chill extends GeneratedMessageLite<Chill, Builder> implements ChillOrBuilder {
             private static final Chill DEFAULT_INSTANCE;
             private static volatile Parser<Chill> PARSER;
@@ -2637,9 +2637,9 @@ public final class Polkadot {
                 return DEFAULT_INSTANCE.createBuilder(prototype);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Chill, Builder> implements ChillOrBuilder {
-                /* synthetic */ Builder(C73511 c73511) {
+                /* synthetic */ Builder(C76851 c76851) {
                     this();
                 }
 
@@ -2650,7 +2650,7 @@ public final class Polkadot {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+                switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Chill();
                     case 2:
@@ -2695,7 +2695,7 @@ public final class Polkadot {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum MessageOneofCase {
             BOND(1),
             BOND_AND_NOMINATE(2),
@@ -3127,9 +3127,9 @@ public final class Polkadot {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Staking, Builder> implements StakingOrBuilder {
-            /* synthetic */ Builder(C73511 c73511) {
+            /* synthetic */ Builder(C76851 c76851) {
                 this();
             }
 
@@ -3423,7 +3423,7 @@ public final class Polkadot {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+            switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Staking();
                 case 2:
@@ -3468,7 +3468,7 @@ public final class Polkadot {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int BALANCE_CALL_FIELD_NUMBER = 10;
         public static final int BLOCK_HASH_FIELD_NUMBER = 1;
@@ -3503,7 +3503,7 @@ public final class Polkadot {
             this.privateKey_ = byteString;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum MessageOneofCase {
             BALANCE_CALL(10),
             STAKING_CALL(11),
@@ -3840,9 +3840,9 @@ public final class Polkadot {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73511 c73511) {
+            /* synthetic */ Builder(C76851 c76851) {
                 this();
             }
 
@@ -4102,7 +4102,7 @@ public final class Polkadot {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+            switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4147,7 +4147,7 @@ public final class Polkadot {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -4229,9 +4229,9 @@ public final class Polkadot {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73511 c73511) {
+            /* synthetic */ Builder(C76851 c76851) {
                 this();
             }
 
@@ -4259,7 +4259,7 @@ public final class Polkadot {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73511.f1967xa1df5c61[method.ordinal()]) {
+            switch (C76851.f2141xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

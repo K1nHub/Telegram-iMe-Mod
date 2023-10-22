@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_discardEncryption extends TLObject {
     public static int constructor = -208425312;
     public int chat_id;

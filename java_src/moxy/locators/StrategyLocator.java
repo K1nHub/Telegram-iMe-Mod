@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.AddToEndStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import moxy.viewstate.strategy.StateStrategy;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StrategyLocator {
     private static Map<Class, StateStrategy> strategies;
 

@@ -5,7 +5,7 @@ import android.util.DisplayMetrics;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class SmoothCalendarLayoutManager extends LinearLayoutManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SmoothCalendarLayoutManager(Context context, int i, boolean z) {

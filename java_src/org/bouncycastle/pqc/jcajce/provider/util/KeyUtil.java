@@ -3,7 +3,7 @@ package org.bouncycastle.pqc.jcajce.provider.util;
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class KeyUtil {
     public static byte[] getEncodedSubjectPublicKeyInfo(AlgorithmIdentifier algorithmIdentifier, ASN1Encodable aSN1Encodable) {
         try {

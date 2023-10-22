@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.twitter;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterFeedResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterFeedResponse {
     private final List<TweetResponse> tweets;
 

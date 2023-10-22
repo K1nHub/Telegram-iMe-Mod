@@ -17,7 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SyncTask implements Runnable {
     private final FirebaseMessaging firebaseMessaging;
     private final long nextDelaySeconds;
@@ -25,7 +25,7 @@ public class SyncTask implements Runnable {
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
     @VisibleForTesting
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static class ConnectivityChangeReceiver extends BroadcastReceiver {
         private SyncTask task;
 

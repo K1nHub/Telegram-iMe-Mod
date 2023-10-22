@@ -8,25 +8,25 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "MetadataImplCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzb extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzb> CREATOR = new zzy();
-    @SafeParcelable.Field(getter = "getEventStatus", m797id = 1)
+    @SafeParcelable.Field(getter = "getEventStatus", m1089id = 1)
     private int zza;
-    @SafeParcelable.Field(getter = "isUploadable", m797id = 2)
+    @SafeParcelable.Field(getter = "isUploadable", m1089id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "getCompletionToken", m797id = 3)
+    @SafeParcelable.Field(getter = "getCompletionToken", m1089id = 3)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getAccountName", m797id = 4)
+    @SafeParcelable.Field(getter = "getAccountName", m1089id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getSsbContext", m797id = 5)
+    @SafeParcelable.Field(getter = "getSsbContext", m1089id = 5)
     private final byte[] zze;
-    @SafeParcelable.Field(getter = "isContextOnly", m797id = 6)
+    @SafeParcelable.Field(getter = "isContextOnly", m1089id = 6)
     private final boolean zzf;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzb(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) boolean z, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2, @SafeParcelable.Param(m796id = 5) byte[] bArr, @SafeParcelable.Param(m796id = 6) boolean z2) {
+    public zzb(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) byte[] bArr, @SafeParcelable.Param(m1088id = 6) boolean z2) {
         this.zza = i;
         this.zzb = z;
         this.zzc = str;

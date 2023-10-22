@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Indent.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__IndentKt extends StringsKt__AppendableKt {
     public static /* synthetic */ String trimMargin$default(String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -53,7 +53,7 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
                     if (i4 >= length2) {
                         i = -1;
                         break;
-                    } else if (!CharsKt__CharJVMKt.isWhitespace(str2.charAt(i4))) {
+                    } else if (!CharsKt.isWhitespace(str2.charAt(i4))) {
                         i = i4;
                         break;
                     } else {
@@ -162,7 +162,7 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
             if (i >= length) {
                 i = -1;
                 break;
-            } else if (!CharsKt__CharJVMKt.isWhitespace(str.charAt(i))) {
+            } else if (!CharsKt.isWhitespace(str.charAt(i))) {
                 break;
             } else {
                 i++;

@@ -17,10 +17,10 @@ final class TextEmphasis {
     public final int markShape;
     public final int position;
     private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
-    private static final ImmutableSet<String> SINGLE_STYLE_VALUES = ImmutableSet.m751of(TtmlNode.TEXT_EMPHASIS_AUTO, "none");
-    private static final ImmutableSet<String> MARK_SHAPE_VALUES = ImmutableSet.m750of(TtmlNode.TEXT_EMPHASIS_MARK_DOT, TtmlNode.TEXT_EMPHASIS_MARK_SESAME, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
-    private static final ImmutableSet<String> MARK_FILL_VALUES = ImmutableSet.m751of(TtmlNode.TEXT_EMPHASIS_MARK_FILLED, TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
-    private static final ImmutableSet<String> POSITION_VALUES = ImmutableSet.m750of(TtmlNode.ANNOTATION_POSITION_AFTER, TtmlNode.ANNOTATION_POSITION_BEFORE, TtmlNode.ANNOTATION_POSITION_OUTSIDE);
+    private static final ImmutableSet<String> SINGLE_STYLE_VALUES = ImmutableSet.m1043of(TtmlNode.TEXT_EMPHASIS_AUTO, "none");
+    private static final ImmutableSet<String> MARK_SHAPE_VALUES = ImmutableSet.m1042of(TtmlNode.TEXT_EMPHASIS_MARK_DOT, TtmlNode.TEXT_EMPHASIS_MARK_SESAME, TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE);
+    private static final ImmutableSet<String> MARK_FILL_VALUES = ImmutableSet.m1043of(TtmlNode.TEXT_EMPHASIS_MARK_FILLED, TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
+    private static final ImmutableSet<String> POSITION_VALUES = ImmutableSet.m1042of(TtmlNode.ANNOTATION_POSITION_AFTER, TtmlNode.ANNOTATION_POSITION_BEFORE, TtmlNode.ANNOTATION_POSITION_OUTSIDE);
 
     @Target({ElementType.TYPE_USE})
     @Documented

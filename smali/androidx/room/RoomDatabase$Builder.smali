@@ -183,39 +183,6 @@
 
 
 # virtual methods
-.method public addCallback(Landroidx/room/RoomDatabase$Callback;)Landroidx/room/RoomDatabase$Builder;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/room/RoomDatabase$Callback;",
-            ")",
-            "Landroidx/room/RoomDatabase$Builder<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .line 1287
-    iget-object v0, p0, Landroidx/room/RoomDatabase$Builder;->mCallbacks:Ljava/util/ArrayList;
-
-    if-nez v0, :cond_0
-
-    .line 1288
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Landroidx/room/RoomDatabase$Builder;->mCallbacks:Ljava/util/ArrayList;
-
-    .line 1290
-    :cond_0
-    iget-object v0, p0, Landroidx/room/RoomDatabase$Builder;->mCallbacks:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-object p0
-.end method
-
 .method public varargs addMigrations([Landroidx/room/migration/Migration;)Landroidx/room/RoomDatabase$Builder;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;

@@ -93,7 +93,7 @@ public final class CctTransportBackend implements TransportBackend {
         try {
             return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
         } catch (PackageManager.NameNotFoundException e) {
-            Logging.m825e("CctTransportBackend", "Unable to find version code for package", e);
+            Logging.m1117e("CctTransportBackend", "Unable to find version code for package", e);
             return -1;
         }
     }
@@ -151,12 +151,12 @@ public final class CctTransportBackend implements TransportBackend {
             for (EventInternal eventInternal3 : (List) entry.getValue()) {
                 EncodedPayload encodedPayload = eventInternal3.getEncodedPayload();
                 Encoding encoding = encodedPayload.getEncoding();
-                if (encoding.equals(Encoding.m829of("proto"))) {
+                if (encoding.equals(Encoding.m1121of("proto"))) {
                     protoBuilder = LogEvent.protoBuilder(encodedPayload.getBytes());
-                } else if (encoding.equals(Encoding.m829of("json"))) {
+                } else if (encoding.equals(Encoding.m1121of("json"))) {
                     protoBuilder = LogEvent.jsonBuilder(new String(encodedPayload.getBytes(), Charset.forName("UTF-8")));
                 } else {
-                    Logging.m823w("CctTransportBackend", "Received event of unsupported encoding %s. Skipping...", encoding);
+                    Logging.m1115w("CctTransportBackend", "Received event of unsupported encoding %s. Skipping...", encoding);
                 }
                 protoBuilder.setEventTimeMs(eventInternal3.getEventMillis()).setEventUptimeMs(eventInternal3.getUptimeMillis()).setTimezoneOffsetSeconds(eventInternal3.getLong("tz-offset")).setNetworkConnectionInfo(NetworkConnectionInfo.builder().setNetworkType(NetworkConnectionInfo.NetworkType.forNumber(eventInternal3.getInteger("net-type"))).setMobileSubtype(NetworkConnectionInfo.MobileSubtype.forNumber(eventInternal3.getInteger("mobile-subtype"))).build());
                 if (eventInternal3.getCode() != null) {
@@ -172,7 +172,7 @@ public final class CctTransportBackend implements TransportBackend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public HttpResponse doSend(HttpRequest httpRequest) throws IOException {
-        Logging.m827d("CctTransportBackend", "Making request to: %s", httpRequest.url);
+        Logging.m1119d("CctTransportBackend", "Making request to: %s", httpRequest.url);
         HttpURLConnection httpURLConnection = (HttpURLConnection) httpRequest.url.openConnection();
         httpURLConnection.setConnectTimeout(30000);
         httpURLConnection.setReadTimeout(this.readTimeout);
@@ -197,9 +197,9 @@ public final class CctTransportBackend implements TransportBackend {
                     outputStream.close();
                 }
                 int responseCode = httpURLConnection.getResponseCode();
-                Logging.m824i("CctTransportBackend", "Status Code: " + responseCode);
-                Logging.m824i("CctTransportBackend", "Content-Type: " + httpURLConnection.getHeaderField(RtspHeaders.CONTENT_TYPE));
-                Logging.m824i("CctTransportBackend", "Content-Encoding: " + httpURLConnection.getHeaderField(RtspHeaders.CONTENT_ENCODING));
+                Logging.m1116i("CctTransportBackend", "Status Code: " + responseCode);
+                Logging.m1116i("CctTransportBackend", "Content-Type: " + httpURLConnection.getHeaderField(RtspHeaders.CONTENT_TYPE));
+                Logging.m1116i("CctTransportBackend", "Content-Encoding: " + httpURLConnection.getHeaderField(RtspHeaders.CONTENT_ENCODING));
                 if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                     return new HttpResponse(responseCode, new URL(httpURLConnection.getHeaderField(RtspHeaders.LOCATION)), 0L);
                 }
@@ -239,19 +239,19 @@ public final class CctTransportBackend implements TransportBackend {
             }
         } catch (EncodingException e) {
             e = e;
-            Logging.m825e("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            Logging.m1117e("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new HttpResponse(400, null, 0L);
         } catch (ConnectException e2) {
             e = e2;
-            Logging.m825e("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            Logging.m1117e("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new HttpResponse(500, null, 0L);
         } catch (UnknownHostException e3) {
             e = e3;
-            Logging.m825e("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            Logging.m1117e("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new HttpResponse(500, null, 0L);
         } catch (IOException e4) {
             e = e4;
-            Logging.m825e("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            Logging.m1117e("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new HttpResponse(400, null, 0L);
         }
     }
@@ -293,7 +293,7 @@ public final class CctTransportBackend implements TransportBackend {
             });
             int i = httpResponse.code;
             if (i == 200) {
-                return BackendResponse.m828ok(httpResponse.nextRequestMillis);
+                return BackendResponse.m1120ok(httpResponse.nextRequestMillis);
             }
             if (i < 500 && i != 404) {
                 if (i == 400) {
@@ -303,7 +303,7 @@ public final class CctTransportBackend implements TransportBackend {
             }
             return BackendResponse.transientError();
         } catch (IOException e) {
-            Logging.m825e("CctTransportBackend", "Could not make request to the backend", e);
+            Logging.m1117e("CctTransportBackend", "Could not make request to the backend", e);
             return BackendResponse.transientError();
         }
     }
@@ -312,7 +312,7 @@ public final class CctTransportBackend implements TransportBackend {
     public static /* synthetic */ HttpRequest lambda$send$0(HttpRequest httpRequest, HttpResponse httpResponse) {
         URL url = httpResponse.redirectUrl;
         if (url != null) {
-            Logging.m827d("CctTransportBackend", "Following redirect to: %s", url);
+            Logging.m1119d("CctTransportBackend", "Following redirect to: %s", url);
             return httpRequest.withUrl(httpResponse.redirectUrl);
         }
         return null;

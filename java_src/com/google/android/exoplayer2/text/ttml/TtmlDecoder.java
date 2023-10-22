@@ -95,13 +95,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
                                         ttmlNode.addChild(parseNode);
                                     }
                                 } catch (SubtitleDecoderException e) {
-                                    Log.m813w(TAG, "Suppressing parser error", e);
+                                    Log.m1105w(TAG, "Suppressing parser error", e);
                                     i2++;
                                 }
                             }
                             frameAndTickRate2 = frameAndTickRate;
                         } else {
-                            Log.m816i(TAG, "Ignoring unsupported tag: " + newPullParser.getName());
+                            Log.m1108i(TAG, "Ignoring unsupported tag: " + newPullParser.getName());
                             i2++;
                             frameAndTickRate2 = frameAndTickRate3;
                         }
@@ -166,7 +166,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         Matcher matcher = CELL_RESOLUTION.matcher(attributeValue);
         if (!matcher.matches()) {
-            Log.m814w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
+            Log.m1106w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
             return cellResolution;
         }
         try {
@@ -177,7 +177,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             }
             return new CellResolution(parseInt, parseInt2);
         } catch (NumberFormatException unused) {
-            Log.m814w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
+            Log.m1106w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
             return cellResolution;
         }
     }
@@ -189,13 +189,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         Matcher matcher = PIXEL_COORDINATES.matcher(attributeValue);
         if (!matcher.matches()) {
-            Log.m814w(TAG, "Ignoring non-pixel tts extent: " + attributeValue);
+            Log.m1106w(TAG, "Ignoring non-pixel tts extent: " + attributeValue);
             return null;
         }
         try {
             return new TtsExtent(Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1))), Integer.parseInt((String) Assertions.checkNotNull(matcher.group(2))));
         } catch (NumberFormatException unused) {
-            Log.m814w(TAG, "Ignoring malformed tts extent: " + attributeValue);
+            Log.m1106w(TAG, "Ignoring malformed tts extent: " + attributeValue);
             return null;
         }
     }
@@ -464,7 +464,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             matcher = FONT_SIZE.matcher(str);
         } else if (split.length == 2) {
             matcher = FONT_SIZE.matcher(split[1]);
-            Log.m814w(TAG, "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
+            Log.m1106w(TAG, "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         } else {
             throw new SubtitleDecoderException("Invalid number of entries for fontSize: " + split.length + ".");
         }
@@ -514,13 +514,13 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
     private static float parseShear(String str) {
         Matcher matcher = SIGNED_PERCENTAGE.matcher(str);
         if (!matcher.matches()) {
-            Log.m814w(TAG, "Invalid value for shear: " + str);
+            Log.m1106w(TAG, "Invalid value for shear: " + str);
             return Float.MAX_VALUE;
         }
         try {
             return Math.min(100.0f, Math.max(-100.0f, Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1)))));
         } catch (NumberFormatException e) {
-            Log.m813w(TAG, "Failed to parse shear: " + str, e);
+            Log.m1105w(TAG, "Failed to parse shear: " + str, e);
             return Float.MAX_VALUE;
         }
     }

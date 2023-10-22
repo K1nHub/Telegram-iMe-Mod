@@ -1,12 +1,12 @@
 package com.iMe.storage.data.network.model.response.crypto.wallet;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.math.BigInteger;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionParamsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TransactionParamsResponse {
     public /* synthetic */ TransactionParamsResponse(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -16,7 +16,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class EVM extends TransactionParamsResponse {
         private final long chainId;
         private final GasPriceResponse fast;
@@ -87,7 +87,7 @@ public abstract class TransactionParamsResponse {
             GasPriceResponse gasPriceResponse = this.fastest;
             int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
             GasPriceResponse gasPriceResponse2 = this.safeLow;
-            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
+            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId);
         }
 
         public String toString() {
@@ -128,7 +128,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TRON extends TransactionParamsResponse {
         private final TronBlockHeaderResponse blockHeader;
         private final String contractAddress;
@@ -210,14 +210,14 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TON extends TransactionParamsResponse {
         private final int sendMode;
         private final String toWalletAddressFixed;
         private final int walletSeqno;
 
         /* renamed from: wc */
-        private final int f397wc;
+        private final int f330wc;
 
         public static /* synthetic */ TON copy$default(TON ton, int i, String str, int i2, int i3, int i4, Object obj) {
             if ((i4 & 1) != 0) {
@@ -230,7 +230,7 @@ public abstract class TransactionParamsResponse {
                 i2 = ton.walletSeqno;
             }
             if ((i4 & 8) != 0) {
-                i3 = ton.f397wc;
+                i3 = ton.f330wc;
             }
             return ton.copy(i, str, i2, i3);
         }
@@ -248,7 +248,7 @@ public abstract class TransactionParamsResponse {
         }
 
         public final int component4() {
-            return this.f397wc;
+            return this.f330wc;
         }
 
         public final TON copy(int i, String toWalletAddressFixed, int i2, int i3) {
@@ -262,17 +262,17 @@ public abstract class TransactionParamsResponse {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return this.sendMode == ton.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, ton.toWalletAddressFixed) && this.walletSeqno == ton.walletSeqno && this.f397wc == ton.f397wc;
+                return this.sendMode == ton.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, ton.toWalletAddressFixed) && this.walletSeqno == ton.walletSeqno && this.f330wc == ton.f330wc;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f397wc;
+            return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f330wc;
         }
 
         public String toString() {
-            return "TON(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f397wc + ')';
+            return "TON(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f330wc + ')';
         }
 
         public final int getSendMode() {
@@ -288,7 +288,7 @@ public abstract class TransactionParamsResponse {
         }
 
         public final int getWc() {
-            return this.f397wc;
+            return this.f330wc;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -298,12 +298,12 @@ public abstract class TransactionParamsResponse {
             this.sendMode = i;
             this.toWalletAddressFixed = toWalletAddressFixed;
             this.walletSeqno = i2;
-            this.f397wc = i3;
+            this.f330wc = i3;
         }
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BTC extends TransactionParamsResponse {
         private final String changeAddress;
         private final BitcoinGasPriceResponse fast;

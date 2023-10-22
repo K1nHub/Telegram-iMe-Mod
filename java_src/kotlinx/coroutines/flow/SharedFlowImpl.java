@@ -15,7 +15,7 @@ import kotlinx.coroutines.channels.BufferOverflow;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlow;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 /* compiled from: SharedFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implements MutableSharedFlow<T>, Flow {
     private Object[] buffer;
     private final int bufferCapacity;
@@ -27,15 +27,24 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
     private long replayIndex;
 
     /* compiled from: SharedFlow.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
             int[] iArr = new int[BufferOverflow.values().length];
-            iArr[BufferOverflow.SUSPEND.ordinal()] = 1;
-            iArr[BufferOverflow.DROP_LATEST.ordinal()] = 2;
-            iArr[BufferOverflow.DROP_OLDEST.ordinal()] = 3;
+            try {
+                iArr[BufferOverflow.SUSPEND.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BufferOverflow.DROP_LATEST.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BufferOverflow.DROP_OLDEST.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -127,7 +136,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 sharedFlowSlot.cont = cancellableContinuationImpl;
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
             unit = Unit.INSTANCE;
         }
@@ -153,7 +162,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         synchronized (this) {
             if (tryEmitLocked(t)) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
                 continuationArr = findSlotsToResumeLocked(continuationArr2);
                 emitter = null;
             } else {
@@ -173,7 +182,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation2 : continuationArr) {
             if (continuation2 != null) {
                 Result.Companion companion2 = Result.Companion;
-                continuation2.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                continuation2.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
         }
         Object result = cancellableContinuationImpl.getResult();
@@ -224,7 +233,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ java.lang.Object collect$suspendImpl(kotlinx.coroutines.flow.SharedFlowImpl r8, kotlinx.coroutines.flow.FlowCollector r9, kotlin.coroutines.Continuation r10) {
+    public static /* synthetic */ <T> java.lang.Object collect$suspendImpl(kotlinx.coroutines.flow.SharedFlowImpl<T> r8, kotlinx.coroutines.flow.FlowCollector<? super T> r9, kotlin.coroutines.Continuation<?> r10) {
         /*
             Method dump skipped, instructions count: 222
             To view this dump add '--comments-level debug' option
@@ -248,18 +257,18 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
         }
         return z;
     }
 
-    static /* synthetic */ Object emit$suspendImpl(SharedFlowImpl sharedFlowImpl, Object obj, Continuation continuation) {
+    static /* synthetic */ <T> Object emit$suspendImpl(SharedFlowImpl<T> sharedFlowImpl, T t, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
-        if (sharedFlowImpl.tryEmit(obj)) {
+        if (sharedFlowImpl.tryEmit(t)) {
             return Unit.INSTANCE;
         }
-        Object emitSuspend = sharedFlowImpl.emitSuspend(obj, continuation);
+        Object emitSuspend = sharedFlowImpl.emitSuspend(t, continuation);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return emitSuspend == coroutine_suspended ? emitSuspend : Unit.INSTANCE;
     }
@@ -376,7 +385,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
     */
     public final kotlin.coroutines.Continuation<kotlin.Unit>[] updateCollectorIndexLocked$kotlinx_coroutines_core(long r20) {
         /*
-            Method dump skipped, instructions count: 306
+            Method dump skipped, instructions count: 307
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.SharedFlowImpl.updateCollectorIndexLocked$kotlinx_coroutines_core(long):kotlin.coroutines.Continuation[]");
@@ -449,7 +458,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
         }
         return obj;
@@ -551,7 +560,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SharedFlow.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Emitter implements DisposableHandle {
         public final Continuation<Unit> cont;
         public final SharedFlowImpl<?> flow;

@@ -7,8 +7,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* compiled from: SocialWebViewModel.kt */
-@DebugMetadata(m102c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$processUrl$1", m101f = "SocialWebViewModel.kt", m100l = {55, 56, 57, 58}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+@DebugMetadata(m143c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$processUrl$1", m142f = "SocialWebViewModel.kt", m141l = {55, 56, 57, 58}, m140m = "invokeSuspend")
+/* loaded from: classes3.dex */
 final class SocialWebViewModel$processUrl$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $url;
     private /* synthetic */ Object L$0;

@@ -1,7 +1,9 @@
 package kotlin.reflect;
 /* compiled from: KClass.kt */
-/* loaded from: classes6.dex */
-public interface KClass<T> extends KDeclarationContainer {
+/* loaded from: classes4.dex */
+public interface KClass<T> extends KDeclarationContainer, KClassifier {
+    String getQualifiedName();
+
     String getSimpleName();
 
     boolean isInstance(Object obj);

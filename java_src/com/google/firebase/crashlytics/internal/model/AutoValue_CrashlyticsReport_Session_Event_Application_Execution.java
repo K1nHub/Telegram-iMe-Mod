@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution extends CrashlyticsReport.Session.Event.Application.Execution {
     private final CrashlyticsReport.ApplicationExitInfo appExitInfo;
     private final ImmutableList<CrashlyticsReport.Session.Event.Application.Execution.BinaryImage> binaries;
@@ -80,7 +80,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Builder {
         private CrashlyticsReport.ApplicationExitInfo appExitInfo;
         private ImmutableList<CrashlyticsReport.Session.Event.Application.Execution.BinaryImage> binaries;

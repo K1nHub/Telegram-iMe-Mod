@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -34,6 +35,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -153,7 +155,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.PhoneFormat.C3389PhoneFormat;
+import org.telegram.PhoneFormat.C3545PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SendMessagesHelper;
@@ -161,35 +163,35 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.utils.CustomHtml;
-import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.INavigationLayout;
-import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.Cells.TextDetailSettingsCell;
-import org.telegram.p043ui.ChatActivity;
-import org.telegram.p043ui.ChatBackgroundDrawable;
-import org.telegram.p043ui.Components.AlertsCreator;
-import org.telegram.p043ui.Components.BackgroundGradientDrawable;
-import org.telegram.p043ui.Components.BulletinFactory;
-import org.telegram.p043ui.Components.CubicBezierInterpolator;
-import org.telegram.p043ui.Components.EllipsizeSpanAnimator;
-import org.telegram.p043ui.Components.ForegroundColorSpanThemable;
-import org.telegram.p043ui.Components.ForegroundDetector;
-import org.telegram.p043ui.Components.HideViewAfterAnimation;
-import org.telegram.p043ui.Components.LayoutHelper;
-import org.telegram.p043ui.Components.MotionBackgroundDrawable;
-import org.telegram.p043ui.Components.PickerBottomLayout;
-import org.telegram.p043ui.Components.RecyclerListView;
-import org.telegram.p043ui.Components.ShareAlert;
-import org.telegram.p043ui.Components.TypefaceSpan;
-import org.telegram.p043ui.Components.URLSpanReplacement;
-import org.telegram.p043ui.Components.UndoView;
-import org.telegram.p043ui.LaunchActivity;
-import org.telegram.p043ui.Stories.PeerStoriesView;
-import org.telegram.p043ui.Stories.StoryMediaAreasView;
-import org.telegram.p043ui.ThemePreviewActivity;
-import org.telegram.p043ui.WallpapersListActivity;
+import org.telegram.p042ui.ActionBar.AlertDialog;
+import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.ActionBar.BottomSheet;
+import org.telegram.p042ui.ActionBar.INavigationLayout;
+import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p042ui.Cells.TextDetailSettingsCell;
+import org.telegram.p042ui.ChatActivity;
+import org.telegram.p042ui.ChatBackgroundDrawable;
+import org.telegram.p042ui.Components.AlertsCreator;
+import org.telegram.p042ui.Components.BackgroundGradientDrawable;
+import org.telegram.p042ui.Components.BulletinFactory;
+import org.telegram.p042ui.Components.CubicBezierInterpolator;
+import org.telegram.p042ui.Components.EllipsizeSpanAnimator;
+import org.telegram.p042ui.Components.ForegroundColorSpanThemable;
+import org.telegram.p042ui.Components.ForegroundDetector;
+import org.telegram.p042ui.Components.HideViewAfterAnimation;
+import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p042ui.Components.MotionBackgroundDrawable;
+import org.telegram.p042ui.Components.PickerBottomLayout;
+import org.telegram.p042ui.Components.RecyclerListView;
+import org.telegram.p042ui.Components.ShareAlert;
+import org.telegram.p042ui.Components.TypefaceSpan;
+import org.telegram.p042ui.Components.URLSpanReplacement;
+import org.telegram.p042ui.Components.UndoView;
+import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p042ui.Stories.PeerStoriesView;
+import org.telegram.p042ui.Stories.StoryMediaAreasView;
+import org.telegram.p042ui.ThemePreviewActivity;
+import org.telegram.p042ui.WallpapersListActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC$Document;
@@ -199,7 +201,7 @@ import org.telegram.tgnet.TLRPC$TL_userContact_old2;
 import org.telegram.tgnet.TLRPC$TL_wallPaper;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$WallPaperSettings;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AndroidUtilities {
     public static Pattern BAD_CHARS_MESSAGE_LONG_PATTERN = null;
     public static Pattern BAD_CHARS_MESSAGE_PATTERN = null;
@@ -272,7 +274,7 @@ public class AndroidUtilities {
     public static final Rect rectTmp2 = new Rect();
     private static Pattern singleTagPatter = null;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface IntColorCallback {
         void run(int i);
     }
@@ -363,7 +365,7 @@ public class AndroidUtilities {
             return Long.toString(j);
         } else {
             TreeMap treeMap = new TreeMap();
-            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3473R.array.short_numbers);
+            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3630R.array.short_numbers);
             boolean z = false;
             treeMap.put(1000L, stringArray[0]);
             treeMap.put(1000000L, stringArray[1]);
@@ -399,7 +401,7 @@ public class AndroidUtilities {
     }
 
     /* renamed from: px */
-    public static int m71px(float f) {
+    public static int m101px(float f) {
         if (f == BitmapDescriptorFactory.HUE_RED) {
             return 0;
         }
@@ -412,8 +414,8 @@ public class AndroidUtilities {
     }
 
     /* renamed from: dp */
-    public static int m72dp(int i) {
-        return m73dp(i);
+    public static int m102dp(int i) {
+        return m103dp(i);
     }
 
     public static boolean isInLandscapeMode(Activity activity) {
@@ -436,10 +438,10 @@ public class AndroidUtilities {
         UndoView undoView = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getUndoView() : null;
         if (!pathToMessage.exists()) {
             if (undoView != null) {
-                undoView.showError(LocaleController.getString("ErrorOccurred", C3473R.string.ErrorOccurred));
+                undoView.showError(LocaleController.getString("ErrorOccurred", C3630R.string.ErrorOccurred));
                 return;
             } else {
-                BulletinFactory.m33of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3473R.raw.error, LocaleController.getString("ErrorOccurred", C3473R.string.ErrorOccurred)).show();
+                BulletinFactory.m62of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3630R.raw.error, LocaleController.getString("ErrorOccurred", C3630R.string.ErrorOccurred)).show();
                 return;
             }
         }
@@ -451,8 +453,38 @@ public class AndroidUtilities {
         if (undoView != null) {
             undoView.showWithAction(0L, IdFabric$CustomType.UNDO_IMAGE_COPIED, (Runnable) null);
         } else {
-            BulletinFactory.m33of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3473R.string.photo_viewer_image_copied)).show();
+            BulletinFactory.m62of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3630R.string.photo_viewer_image_copied)).show();
         }
+    }
+
+    public static void openTelegramApp(Context context) {
+        if (context == null) {
+            return;
+        }
+        List<ResolveInfo> queryIntentActivities = ApplicationLoader.applicationContext.getPackageManager().queryIntentActivities(new Intent("android.intent.action.VIEW", Uri.parse("tg://")), 0);
+        ArrayList arrayList = new ArrayList();
+        for (ResolveInfo resolveInfo : queryIntentActivities) {
+            String str = resolveInfo.activityInfo.packageName;
+            if (str.equals(BuildConfig.LIBRARY_PACKAGE_NAME) || str.equals("org.telegram.messenger.web") || str.equals("org.telegram.messenger.beta")) {
+                Intent intent = new Intent("android.intent.action.VIEW");
+                intent.setData(Uri.parse("tg://"));
+                intent.setPackage(str);
+                arrayList.add(intent);
+            }
+        }
+        if (arrayList.isEmpty()) {
+            if (!ApplicationLoader.applicationContext.getPackageManager().queryIntentActivities(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")), 0).isEmpty()) {
+                Browser.openUrl(context, "https://play.google.com/store/apps/details?id=org.telegram.messenger");
+                return;
+            } else {
+                Browser.openUrl(context, "https://telegram.org/android");
+                return;
+            }
+        }
+        Intent createChooser = Intent.createChooser((Intent) arrayList.get(0), LocaleController.getInternalString(C3630R.string.DidNotGetTheCodeSms));
+        createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", (Parcelable[]) arrayList.toArray(new Parcelable[0]));
+        createChooser.setFlags(268435456);
+        context.startActivity(createChooser);
     }
 
     static {
@@ -466,12 +498,12 @@ public class AndroidUtilities {
             BAD_CHARS_MESSAGE_PATTERN = Pattern.compile("[\u2066-\u2067]+");
             WEB_URL = Pattern.compile("((?:(http|https|Http|Https|ton|tg):\\/\\/(?:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,64}(?:\\:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,25})?\\@)?)?(?:" + Pattern.compile("(([a-zA-Z0-9 -\ud7ff豈-\ufdcfﷰ-\uffef]([a-zA-Z0-9 -\ud7ff豈-\ufdcfﷰ-\uffef\\-]{0,61}[a-zA-Z0-9 -\ud7ff豈-\ufdcfﷰ-\uffef]){0,1}\\.)+[a-zA-Z -\ud7ff豈-\ufdcfﷰ-\uffef]{2,63}|" + Pattern.compile("((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9]))") + ")") + ")(?:\\:\\d{1,5})?)(\\/(?:(?:[a-zA-Z0-9 -\ud7ff豈-\ufdcfﷰ-\uffef\\;\\/\\?\\:\\@\\&\\=\\#\\~\\-\\.\\+\\!\\*\\'\\(\\)\\,\\_])|(?:\\%[a-fA-F0-9]{2}))*)?(?:\\b|$)");
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         leftBaseline = isTablet() ? 80 : 72;
         checkDisplaySize(ApplicationLoader.applicationContext, null);
-        documentIcons = new int[]{C3473R.C3475drawable.media_doc_blue, C3473R.C3475drawable.media_doc_green, C3473R.C3475drawable.media_doc_red, C3473R.C3475drawable.media_doc_yellow};
-        documentMediaIcons = new int[]{C3473R.C3475drawable.media_doc_blue_b, C3473R.C3475drawable.media_doc_green_b, C3473R.C3475drawable.media_doc_red_b, C3473R.C3475drawable.media_doc_yellow_b};
+        documentIcons = new int[]{C3630R.C3632drawable.media_doc_blue, C3630R.C3632drawable.media_doc_green, C3630R.C3632drawable.media_doc_red, C3630R.C3632drawable.media_doc_yellow};
+        documentMediaIcons = new int[]{C3630R.C3632drawable.media_doc_blue_b, C3630R.C3632drawable.media_doc_green_b, C3630R.C3632drawable.media_doc_red_b, C3630R.C3632drawable.media_doc_yellow_b};
         sUrlMatchFilter = new Linkify.MatchFilter() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda4
             @Override // android.text.util.Linkify.MatchFilter
             public final boolean acceptMatch(CharSequence charSequence, int i, int i2) {
@@ -522,7 +554,7 @@ public class AndroidUtilities {
             lineWidth = staticLayout.getLineWidth(0);
             f = i;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         if (textPaint.measureText("...") + lineWidth < f) {
             return charSequence;
@@ -605,7 +637,7 @@ public class AndroidUtilities {
             try {
                 valueOf.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4, resourcesProvider), indexOf, Math.min(str.length() + indexOf, charSequence.length()), 0);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             indexOf = lowerCase.indexOf(str, indexOf + 1);
         }
@@ -717,7 +749,7 @@ public class AndroidUtilities {
                 try {
                     bitmap.recycle();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
             }
         }
@@ -752,11 +784,11 @@ public class AndroidUtilities {
                 }
                 if (user != null) {
                     ContactsController.getInstance(i).markAsContacted(stringExtra2);
-                    SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.m60of(stringExtra, user.f1685id, null, null, null, true, null, null, null, true, 0, null, false, null));
+                    SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.m90of(stringExtra, user.f1762id, null, null, null, true, null, null, null, true, 0, null, false, null));
                 }
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -774,7 +806,7 @@ public class AndroidUtilities {
         }
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
             View childAt = viewGroup.getChildAt(i);
-            if (childAt.getVisibility() == 0 && ((!(childAt instanceof PeerStoriesView) || childAt == view) && (!(childAt instanceof StoryMediaAreasView.AreaView) || ((StoryMediaAreasView) viewGroup).hasSelected() || (f >= m72dp(60) && f <= viewGroup.getWidth() - m72dp(60))))) {
+            if (childAt.getVisibility() == 0 && ((!(childAt instanceof PeerStoriesView) || childAt == view) && (!(childAt instanceof StoryMediaAreasView.AreaView) || ((StoryMediaAreasView) viewGroup).hasSelected() || (f >= m102dp(60) && f <= viewGroup.getWidth() - m102dp(60))))) {
                 Rect rect = rectTmp2;
                 childAt.getHitRect(rect);
                 if (rect.contains((int) f, (int) f2) && childAt.isClickable()) {
@@ -965,8 +997,18 @@ public class AndroidUtilities {
         return new float[]{f2, f};
     }
 
+    public static void doOnLayout(final View view, final Runnable runnable) {
+        view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.messenger.AndroidUtilities.3
+            @Override // android.view.View.OnLayoutChangeListener
+            public void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+                view.removeOnLayoutChangeListener(this);
+                runnable.run();
+            }
+        });
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class LinkSpec {
         int end;
         int start;
@@ -1121,12 +1163,13 @@ public class AndroidUtilities {
         return 1;
     }
 
-    public static void fillStatusBarHeight(Context context) {
-        if (context == null || statusBarHeight > 0) {
-            return;
+    public static void fillStatusBarHeight(Context context, boolean z) {
+        if (context != null) {
+            if (statusBarHeight <= 0 || z) {
+                statusBarHeight = getStatusBarHeight(context);
+                navigationBarHeight = getNavigationBarHeight(context);
+            }
         }
-        statusBarHeight = getStatusBarHeight(context);
-        navigationBarHeight = getNavigationBarHeight(context);
     }
 
     public static int getStatusBarHeight(Context context) {
@@ -1185,7 +1228,7 @@ public class AndroidUtilities {
                 return pixel;
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         return 0;
     }
@@ -1222,7 +1265,7 @@ public class AndroidUtilities {
                 return iArr;
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         double[] rgbToHsv = rgbToHsv((i2 >> 16) & 255, (i2 >> 8) & 255, i2 & 255);
         rgbToHsv[1] = Math.min(1.0d, rgbToHsv[1] + 0.05d + ((1.0d - rgbToHsv[1]) * 0.1d));
@@ -1450,7 +1493,7 @@ public class AndroidUtilities {
             fileWriter.flush();
             fileWriter.close();
         } catch (Throwable th) {
-            FileLog.m66e(th, false);
+            FileLog.m96e(th, false);
         }
     }
 
@@ -1465,13 +1508,13 @@ public class AndroidUtilities {
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
             builder.setMessage(LocaleController.getString(ApplicationLoader.getMapsProvider().getInstallMapsString()));
-            builder.setPositiveButton(LocaleController.getString("OK", C3473R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString("OK", C3630R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     AndroidUtilities.lambda$isMapsInstalled$7(mapsAppPackageName, baseFragment, dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3473R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3630R.string.Cancel), null);
             baseFragment.showDialog(builder.create());
             return false;
         }
@@ -1482,7 +1525,7 @@ public class AndroidUtilities {
         try {
             baseFragment.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + str)), 500);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -1600,7 +1643,7 @@ public class AndroidUtilities {
                 }
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -1612,7 +1655,7 @@ public class AndroidUtilities {
             prevOrientation = activity.getRequestedOrientation();
             activity.setRequestedOrientation(i);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -1627,11 +1670,11 @@ public class AndroidUtilities {
                 prevOrientation = -10;
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static class VcardData {
         String name;
         ArrayList<String> phones;
@@ -1643,7 +1686,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class VcardItem {
         public int type;
         public ArrayList<String> vcardData = new ArrayList<>();
@@ -1728,7 +1771,7 @@ public class AndroidUtilities {
             if (z) {
                 int i2 = this.type;
                 if (i2 == 0) {
-                    return C3389PhoneFormat.getInstance().format(sb.toString());
+                    return C3545PhoneFormat.getInstance().format(sb.toString());
                 }
                 if (i2 == 5) {
                     String[] split3 = sb.toString().split("T");
@@ -1805,13 +1848,13 @@ public class AndroidUtilities {
         VcardItem vcardItem;
         ArrayList<VcardItem> arrayList2 = arrayList;
         ArrayList<TLRPC$User> arrayList3 = null;
-        C33901 c33901 = 0;
+        C35461 c35461 = 0;
         if (z) {
             try {
                 createInputStream = ApplicationLoader.applicationContext.getContentResolver().openAssetFileDescriptor(uri, "r").createInputStream();
             } catch (Throwable th) {
                 th = th;
-                FileLog.m67e(th);
+                FileLog.m97e(th);
                 return arrayList3;
             }
         } else {
@@ -1820,7 +1863,7 @@ public class AndroidUtilities {
             } catch (Throwable th2) {
                 th = th2;
                 arrayList3 = null;
-                FileLog.m67e(th);
+                FileLog.m97e(th);
                 return arrayList3;
             }
         }
@@ -1870,7 +1913,7 @@ public class AndroidUtilities {
                                                     vcardItem = new VcardItem();
                                                     vcardItem.type = 20;
                                                 }
-                                                vcardItem2 = c33901;
+                                                vcardItem2 = c35461;
                                                 if (vcardItem2 != null && vcardItem2.type >= 0) {
                                                     arrayList2.add(vcardItem2);
                                                 }
@@ -1890,7 +1933,7 @@ public class AndroidUtilities {
                             }
                             i3 = i2;
                         }
-                        vcardItem2 = c33901;
+                        vcardItem2 = c35461;
                         i3 = i2;
                     }
                     if (i3 == 0 && vcardData != null) {
@@ -1910,7 +1953,7 @@ public class AndroidUtilities {
                     String str4 = "=";
                     if (readLine.contains("=QUOTED-PRINTABLE") && readLine.endsWith("=")) {
                         str3 = readLine.substring(i2, readLine.length() - 1);
-                        c33901 = 0;
+                        c35461 = 0;
                     } else {
                         if (i3 == 0 && vcardData != null && vcardItem2 != null) {
                             vcardItem2.fullData = readLine;
@@ -1964,13 +2007,13 @@ public class AndroidUtilities {
                             }
                             arrayList2 = arrayList;
                             str3 = str2;
-                            c33901 = 0;
+                            c35461 = 0;
                             i2 = 0;
                         }
                         str2 = str3;
                         arrayList2 = arrayList;
                         str3 = str2;
-                        c33901 = 0;
+                        c35461 = 0;
                         i2 = 0;
                     }
                 }
@@ -1978,7 +2021,7 @@ public class AndroidUtilities {
                 try {
                     break;
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
             }
         }
@@ -2008,7 +2051,7 @@ public class AndroidUtilities {
                 tLRPC$TL_userContact_old2.phone = str8;
                 tLRPC$TL_userContact_old2.first_name = vcardData2.name;
                 tLRPC$TL_userContact_old2.last_name = "";
-                tLRPC$TL_userContact_old2.f1685id = 0L;
+                tLRPC$TL_userContact_old2.f1762id = 0L;
                 TLRPC$TL_restrictionReason tLRPC$TL_restrictionReason = new TLRPC$TL_restrictionReason();
                 tLRPC$TL_restrictionReason.text = vcardData2.vcard.toString();
                 tLRPC$TL_restrictionReason.platform = "";
@@ -2042,7 +2085,7 @@ public class AndroidUtilities {
                     hashtable.put(str, createFromAsset);
                 } catch (Exception e) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("Could not get typeface '" + str + "' because " + e.getMessage());
+                        FileLog.m99e("Could not get typeface '" + str + "' because " + e.getMessage());
                     }
                     return null;
                 }
@@ -2077,7 +2120,7 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$setWaitingForSms$8(Void r0) {
         if (BuildVars.DEBUG_VERSION) {
-            FileLog.m70d("sms listener registered");
+            FileLog.m100d("sms listener registered");
         }
     }
 
@@ -2125,7 +2168,7 @@ public class AndroidUtilities {
         try {
             return ((InputMethodManager) view.getContext().getSystemService("input_method")).showSoftInput(view, 1);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -2240,7 +2283,7 @@ public class AndroidUtilities {
                 inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -2306,11 +2349,11 @@ public class AndroidUtilities {
         try {
             str = Environment.getExternalStorageState();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             str = null;
         }
         if (str == null || str.startsWith("mounted")) {
-            FileLog.m70d("external dir mounted");
+            FileLog.m100d("external dir mounted");
             try {
                 File[] externalCacheDirs = ApplicationLoader.applicationContext.getExternalCacheDirs();
                 int i = 0;
@@ -2335,15 +2378,15 @@ public class AndroidUtilities {
                 }
                 sb.append(str2);
                 sb.append(" ");
-                FileLog.m70d(sb.toString());
+                FileLog.m100d(sb.toString());
                 if (file != null && ((file.exists() || file.mkdirs()) && file.canWrite())) {
                     return file;
                 }
                 if (file != null) {
-                    FileLog.m70d("check dir file exist " + file.exists() + " can write " + file.canWrite());
+                    FileLog.m100d("check dir file exist " + file.exists() + " can write " + file.canWrite());
                 }
             } catch (Exception e2) {
-                FileLog.m67e(e2);
+                FileLog.m97e(e2);
             }
         }
         try {
@@ -2352,7 +2395,7 @@ public class AndroidUtilities {
                 return cacheDir;
             }
         } catch (Exception e3) {
-            FileLog.m67e(e3);
+            FileLog.m97e(e3);
         }
         try {
             File filesDir = ApplicationLoader.applicationContext.getFilesDir();
@@ -2371,7 +2414,7 @@ public class AndroidUtilities {
     }
 
     /* renamed from: dp */
-    public static int m73dp(float f) {
+    public static int m103dp(float f) {
         if (f == BitmapDescriptorFactory.HUE_RED) {
             return 0;
         }
@@ -2405,15 +2448,11 @@ public class AndroidUtilities {
             if (firstConfigurationWas && Math.abs(f - f2) > 0.001d) {
                 Theme.reloadAllResources(context);
             }
-            boolean z = true;
             firstConfigurationWas = true;
             if (configuration == null) {
                 configuration = context.getResources().getConfiguration();
             }
-            if (configuration.keyboard == 1 || configuration.hardKeyboardHidden != 1) {
-                z = false;
-            }
-            usingHardwareInput = z;
+            usingHardwareInput = configuration.keyboard != 1 && configuration.hardKeyboardHidden == 1;
             WindowManager windowManager = (WindowManager) context.getSystemService("window");
             if (windowManager != null && (defaultDisplay = windowManager.getDefaultDisplay()) != null) {
                 defaultDisplay.getMetrics(displayMetrics);
@@ -2439,24 +2478,22 @@ public class AndroidUtilities {
             if (roundMessageSize == 0) {
                 if (isTablet()) {
                     roundMessageSize = (int) (getMinTabletSide() * 0.6f);
-                    roundPlayingMessageSize = getMinTabletSide() - m72dp(28);
+                    roundPlayingMessageSize = getMinTabletSide() - m102dp(28);
                 } else {
                     Point point = displaySize;
                     roundMessageSize = (int) (Math.min(point.x, point.y) * 0.6f);
                     Point point2 = displaySize;
-                    roundPlayingMessageSize = Math.min(point2.x, point2.y) - m72dp(28);
+                    roundPlayingMessageSize = Math.min(point2.x, point2.y) - m102dp(28);
                 }
-                roundMessageInset = m72dp(2);
+                roundMessageInset = m102dp(2);
             }
+            fillStatusBarHeight(context, true);
             if (BuildVars.LOGS_ENABLED) {
-                if (statusBarHeight == 0) {
-                    fillStatusBarHeight(context);
-                }
-                FileLog.m69e("density = " + density + " display size = " + displaySize.x + " " + displaySize.y + " " + displayMetrics.xdpi + "x" + displayMetrics.ydpi + ", screen layout: " + configuration.screenLayout + ", statusbar height: " + statusBarHeight + ", navbar height: " + navigationBarHeight);
+                FileLog.m99e("density = " + density + " display size = " + displaySize.x + " " + displaySize.y + " " + displayMetrics.xdpi + "x" + displayMetrics.ydpi + ", screen layout: " + configuration.screenLayout + ", statusbar height: " + statusBarHeight + ", navbar height: " + navigationBarHeight);
             }
             touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -2512,16 +2549,12 @@ public class AndroidUtilities {
     }
 
     public static boolean isTabletForce() {
-        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3473R.bool.isTablet);
+        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3630R.bool.isTablet);
     }
 
     public static boolean isTabletInternal() {
         if (isTablet == null) {
-            Boolean valueOf = Boolean.valueOf(isTabletForce());
-            isTablet = valueOf;
-            if (valueOf == null) {
-                return false;
-            }
+            isTablet = Boolean.valueOf(isTabletForce());
         }
         return isTablet.booleanValue();
     }
@@ -2564,8 +2597,8 @@ public class AndroidUtilities {
             Point point = displaySize;
             int min = Math.min(point.x, point.y);
             int i = (min * 35) / 100;
-            if (i < m72dp(320)) {
-                i = m72dp(320);
+            if (i < m102dp(320)) {
+                i = m102dp(320);
             }
             return min - i;
         }
@@ -2574,8 +2607,8 @@ public class AndroidUtilities {
         Point point3 = displaySize;
         int max = Math.max(point3.x, point3.y);
         int i2 = (max * 35) / 100;
-        if (i2 < m72dp(320)) {
-            i2 = m72dp(320);
+        if (i2 < m102dp(320)) {
+            i2 = m102dp(320);
         }
         return Math.min(min2, max - i2);
     }
@@ -2598,7 +2631,7 @@ public class AndroidUtilities {
                 iTelephony2.silenceRinger();
                 iTelephony2.endCall();
             } catch (Throwable th) {
-                FileLog.m67e(th);
+                FileLog.m97e(th);
             }
         }
     }
@@ -2611,7 +2644,7 @@ public class AndroidUtilities {
                     String string = query.getString(0);
                     long j = query.getLong(1);
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("number = " + string);
+                        FileLog.m99e("number = " + string);
                     }
                     if (Math.abs(System.currentTimeMillis() - j) < 3600000 && checkPhonePattern(str, string)) {
                         query.close();
@@ -2620,7 +2653,7 @@ public class AndroidUtilities {
                 }
                 query.close();
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             return null;
         }
@@ -2630,7 +2663,7 @@ public class AndroidUtilities {
     public static boolean checkPhonePattern(String str, String str2) {
         if (!TextUtils.isEmpty(str) && !str.equals("*")) {
             String[] split = str.split("\\*");
-            String stripExceptNumbers = C3389PhoneFormat.stripExceptNumbers(str2);
+            String stripExceptNumbers = C3545PhoneFormat.stripExceptNumbers(str2);
             int i = 0;
             for (String str3 : split) {
                 if (!TextUtils.isEmpty(str3)) {
@@ -2671,7 +2704,7 @@ public class AndroidUtilities {
                     return ((Rect) mStableInsetsField.get(obj)).bottom;
                 }
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
         return 0;
@@ -2688,11 +2721,11 @@ public class AndroidUtilities {
                     point.set(((Integer) Display.class.getMethod("getRawWidth", new Class[0]).invoke(windowManager.getDefaultDisplay(), new Object[0])).intValue(), ((Integer) Display.class.getMethod("getRawHeight", new Class[0]).invoke(windowManager.getDefaultDisplay(), new Object[0])).intValue());
                 } catch (Exception e) {
                     point.set(windowManager.getDefaultDisplay().getWidth(), windowManager.getDefaultDisplay().getHeight());
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                 }
             }
         } catch (Exception e2) {
-            FileLog.m67e(e2);
+            FileLog.m97e(e2);
         }
         return point;
     }
@@ -2791,7 +2824,7 @@ public class AndroidUtilities {
                     edgeEffect2.setColor(i);
                 }
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
     }
@@ -2914,7 +2947,7 @@ public class AndroidUtilities {
             }
             return spannableStringBuilder;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new SpannableStringBuilder(str);
         }
     }
@@ -2931,7 +2964,7 @@ public class AndroidUtilities {
             String group = matcher.group(1);
             final String group2 = matcher.group(2);
             spannableStringBuilder.append((CharSequence) group);
-            spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.3
+            spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.4
                 @Override // android.text.style.ClickableSpan
                 public void onClick(View view) {
                     Browser.openUrl(ApplicationLoader.applicationContext, group2);
@@ -2949,7 +2982,7 @@ public class AndroidUtilities {
         return spannableStringBuilder;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class LinkMovementMethodMy extends LinkMovementMethod {
         @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
         public boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
@@ -2960,7 +2993,7 @@ public class AndroidUtilities {
                 }
                 return onTouchEvent;
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
                 return false;
             }
         }
@@ -2977,7 +3010,7 @@ public class AndroidUtilities {
         }
         int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
         if (BuildVars.LOGS_ENABLED && z && SharedConfig.passcodeHash.length() > 0) {
-            FileLog.m70d("wasInBackground = " + isWasInBackground + " appLocked = " + SharedConfig.appLocked + " autoLockIn = " + SharedConfig.autoLockIn + " lastPauseTime = " + SharedConfig.lastPauseTime + " uptime = " + elapsedRealtime);
+            FileLog.m100d("wasInBackground = " + isWasInBackground + " appLocked = " + SharedConfig.appLocked + " autoLockIn = " + SharedConfig.autoLockIn + " lastPauseTime = " + SharedConfig.lastPauseTime + " uptime = " + elapsedRealtime);
         }
         if (lockedSection != null) {
             LockedSectionsController.SectionPasscodeData sectionsPasscodeData = LockedSectionsController.getInstance(i).getSectionsPasscodeData(lockedSection);
@@ -3001,7 +3034,7 @@ public class AndroidUtilities {
         if (view == null) {
             return;
         }
-        int i = C3473R.C3476id.shake_animation;
+        int i = C3630R.C3633id.shake_animation;
         Object tag = view.getTag(i);
         if (tag instanceof ValueAnimator) {
             ((ValueAnimator) tag).cancel();
@@ -3013,7 +3046,7 @@ public class AndroidUtilities {
                 AndroidUtilities.lambda$shakeView$9(view, valueAnimator);
             }
         });
-        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.4
+        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 view.setTranslationX(BitmapDescriptorFactory.HUE_RED);
@@ -3027,7 +3060,7 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$shakeView$9(View view, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        view.setTranslationX((float) (floatValue * 4.0f * (1.0f - floatValue) * Math.sin(floatValue * 3.141592653589793d * 4.0d) * m73dp(4.0f)));
+        view.setTranslationX((float) (floatValue * 4.0f * (1.0f - floatValue) * Math.sin(floatValue * 3.141592653589793d * 4.0d) * m103dp(4.0f)));
     }
 
     public static void shakeViewSpring(View view) {
@@ -3043,19 +3076,19 @@ public class AndroidUtilities {
     }
 
     public static void shakeViewSpring(final View view, float f, final Runnable runnable) {
-        int m73dp = m73dp(f);
-        int i = C3473R.C3476id.spring_tag;
+        int m103dp = m103dp(f);
+        int i = C3630R.C3633id.spring_tag;
         if (view.getTag(i) != null) {
             ((SpringAnimation) view.getTag(i)).cancel();
         }
-        int i2 = C3473R.C3476id.spring_was_translation_x_tag;
+        int i2 = C3630R.C3633id.spring_was_translation_x_tag;
         Float f2 = (Float) view.getTag(i2);
         if (f2 != null) {
             view.setTranslationX(f2.floatValue());
         }
         view.setTag(i2, Float.valueOf(view.getTranslationX()));
         final float translationX = view.getTranslationX();
-        SpringAnimation addEndListener = new SpringAnimation(view, DynamicAnimation.TRANSLATION_X, translationX).setSpring(new SpringForce(translationX).setStiffness(600.0f)).setStartVelocity((-m73dp) * 100).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda9
+        SpringAnimation addEndListener = new SpringAnimation(view, DynamicAnimation.TRANSLATION_X, translationX).setSpring(new SpringForce(translationX).setStiffness(600.0f)).setStartVelocity((-m103dp) * 100).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda9
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
                 AndroidUtilities.lambda$shakeViewSpring$10(runnable, view, translationX, dynamicAnimation, z, f3, f4);
@@ -3071,8 +3104,8 @@ public class AndroidUtilities {
             runnable.run();
         }
         view.setTranslationX(f);
-        view.setTag(C3473R.C3476id.spring_tag, null);
-        view.setTag(C3473R.C3476id.spring_was_translation_x_tag, null);
+        view.setTag(C3630R.C3633id.spring_tag, null);
+        view.setTag(C3630R.C3633id.spring_was_translation_x_tag, null);
     }
 
     public static void appCenterLog(Throwable th) {
@@ -3094,7 +3127,7 @@ public class AndroidUtilities {
             clipboardManager.setPrimaryClip(ClipData.newPlainText("label", charSequence));
             return true;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -3116,7 +3149,7 @@ public class AndroidUtilities {
             intent.setData(fromFile);
             ApplicationLoader.applicationContext.sendBroadcast(intent);
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -3131,11 +3164,11 @@ public class AndroidUtilities {
                 return file;
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("failed to create directory");
+                FileLog.m100d("failed to create directory");
             }
             return null;
         } else if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("External storage is not mounted READ/WRITE.");
+            FileLog.m100d("External storage is not mounted READ/WRITE.");
             return null;
         } else {
             return null;
@@ -3214,7 +3247,7 @@ public class AndroidUtilities {
             }
             return new File(ApplicationLoader.applicationContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES), generateFileName(0, str));
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }
@@ -3307,7 +3340,7 @@ public class AndroidUtilities {
             String format = generatingVideoPathFormat.format(date);
             return new File(albumDir, "VID_" + format + ".mp4");
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }
@@ -3473,7 +3506,7 @@ public class AndroidUtilities {
                     i = i2 + 1;
                     byteArrayOutputStream.write((char) ((digit << 4) + Character.digit((char) bArr[i], 16)));
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                     return null;
                 }
             } else {
@@ -3485,7 +3518,7 @@ public class AndroidUtilities {
         try {
             byteArrayOutputStream.close();
         } catch (Exception e2) {
-            FileLog.m67e(e2);
+            FileLog.m97e(e2);
         }
         return byteArray;
     }
@@ -3523,7 +3556,7 @@ public class AndroidUtilities {
             fileInputStream.close();
             return true;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -3564,10 +3597,10 @@ public class AndroidUtilities {
             int i = Theme.key_dialogTopBackground;
             hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i)));
             hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i)));
-            builder.setTopAnimation(C3473R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
+            builder.setTopAnimation(C3630R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
             builder.setTopAnimationIsNew(true);
-            builder.setMessage(LocaleController.getString("IncorrectTheme", C3473R.string.IncorrectTheme));
-            builder.setPositiveButton(LocaleController.getString("OK", C3473R.string.OK), null);
+            builder.setMessage(LocaleController.getString("IncorrectTheme", C3630R.string.IncorrectTheme));
+            builder.setPositiveButton(LocaleController.getString("OK", C3630R.string.OK), null);
             baseFragment.showDialog(builder.create());
             return;
         }
@@ -3608,10 +3641,10 @@ public class AndroidUtilities {
             int i2 = Theme.key_dialogTopBackground;
             hashMap2.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
             hashMap2.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
-            builder2.setTopAnimation(C3473R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
+            builder2.setTopAnimation(C3630R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
             builder2.setTopAnimationIsNew(true);
-            builder2.setPositiveButton(LocaleController.getString("OK", C3473R.string.OK), null);
-            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3473R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
+            builder2.setPositiveButton(LocaleController.getString("OK", C3630R.string.OK), null);
+            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3630R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
             baseFragment.showDialog(builder2.create());
         }
     }
@@ -3627,7 +3660,7 @@ public class AndroidUtilities {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p043ui.ActionBar.Theme.ResourcesProvider r10) {
+    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p042ui.ActionBar.Theme.ResourcesProvider r10) {
         /*
             if (r6 == 0) goto Lcb
             boolean r0 = r6.exists()
@@ -3669,7 +3702,7 @@ public class AndroidUtilities {
             android.content.pm.PackageManager r2 = r2.getPackageManager()
             boolean r2 = r2.canRequestPackageInstalls()
             if (r2 != 0) goto L60
-            android.app.Dialog r6 = org.telegram.p043ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
+            android.app.Dialog r6 = org.telegram.p042ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
             r6.show()
             return r1
         L60:
@@ -4107,7 +4140,7 @@ public class AndroidUtilities {
         int i3 = 5;
         if (!TextUtils.isEmpty(str5)) {
             TextView textView = new TextView(activity);
-            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3473R.string.UseProxyTelegramInfo2));
+            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3630R.string.UseProxyTelegramInfo2));
             textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray4));
             textView.setTextSize(1, 14.0f);
             textView.setGravity(49);
@@ -4120,23 +4153,23 @@ public class AndroidUtilities {
         while (i4 < 6) {
             CharSequence charSequence2 = null;
             if (i4 == 0) {
-                charSequence = LocaleController.getString("UseProxyAddress", C3473R.string.UseProxyAddress);
+                charSequence = LocaleController.getString("UseProxyAddress", C3630R.string.UseProxyAddress);
                 charSequence2 = str;
             } else if (i4 == 1) {
                 charSequence2 = "" + str2;
-                charSequence = LocaleController.getString("UseProxyPort", C3473R.string.UseProxyPort);
+                charSequence = LocaleController.getString("UseProxyPort", C3630R.string.UseProxyPort);
             } else if (i4 == 2) {
-                charSequence = LocaleController.getString("UseProxySecret", C3473R.string.UseProxySecret);
+                charSequence = LocaleController.getString("UseProxySecret", C3630R.string.UseProxySecret);
                 charSequence2 = str5;
             } else if (i4 == i2) {
-                charSequence = LocaleController.getString("UseProxyUsername", C3473R.string.UseProxyUsername);
+                charSequence = LocaleController.getString("UseProxyUsername", C3630R.string.UseProxyUsername);
                 charSequence2 = str3;
             } else if (i4 == 4) {
-                charSequence = LocaleController.getString("UseProxyPassword", C3473R.string.UseProxyPassword);
+                charSequence = LocaleController.getString("UseProxyPassword", C3630R.string.UseProxyPassword);
                 charSequence2 = str4;
             } else if (i4 == i3) {
-                charSequence2 = LocaleController.getString(C3473R.string.ProxyBottomSheetChecking);
-                charSequence = LocaleController.getString(C3473R.string.ProxyStatus);
+                charSequence2 = LocaleController.getString(C3630R.string.ProxyBottomSheetChecking);
+                charSequence = LocaleController.getString(C3630R.string.ProxyStatus);
             } else {
                 charSequence = null;
             }
@@ -4144,7 +4177,7 @@ public class AndroidUtilities {
                 i = i3;
             } else {
                 final AtomicReference atomicReference = new AtomicReference();
-                final TextDetailSettingsCell textDetailSettingsCell = new TextDetailSettingsCell(activity) { // from class: org.telegram.messenger.AndroidUtilities.5
+                final TextDetailSettingsCell textDetailSettingsCell = new TextDetailSettingsCell(activity) { // from class: org.telegram.messenger.AndroidUtilities.6
                     @Override // android.view.ViewGroup, android.view.View
                     protected void onAttachedToWindow() {
                         super.onAttachedToWindow();
@@ -4186,7 +4219,7 @@ public class AndroidUtilities {
                             }
                         });
                     } catch (NumberFormatException unused) {
-                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3473R.string.Unavailable));
+                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3630R.string.Unavailable));
                         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
                     }
                 }
@@ -4198,11 +4231,11 @@ public class AndroidUtilities {
         PickerBottomLayout pickerBottomLayout = new PickerBottomLayout(activity, false);
         pickerBottomLayout.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
         linearLayout.addView(pickerBottomLayout, LayoutHelper.createFrame(-1, 48, 83));
-        pickerBottomLayout.cancelButton.setPadding(m72dp(18), 0, m72dp(18), 0);
+        pickerBottomLayout.cancelButton.setPadding(m102dp(18), 0, m102dp(18), 0);
         TextView textView2 = pickerBottomLayout.cancelButton;
         int i5 = Theme.key_dialogTextBlue2;
         textView2.setTextColor(Theme.getColor(i5));
-        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3473R.string.Cancel).toUpperCase());
+        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3630R.string.Cancel).toUpperCase());
         pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4210,9 +4243,9 @@ public class AndroidUtilities {
             }
         });
         pickerBottomLayout.doneButtonTextView.setTextColor(Theme.getColor(i5));
-        pickerBottomLayout.doneButton.setPadding(m72dp(18), 0, m72dp(18), 0);
+        pickerBottomLayout.doneButton.setPadding(m102dp(18), 0, m102dp(18), 0);
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
-        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3473R.string.ConnectingConnectProxy).toUpperCase());
+        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3630R.string.ConnectingConnectProxy).toUpperCase());
         pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4235,12 +4268,12 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showProxyAlert$13(long j, TextDetailSettingsCell textDetailSettingsCell) {
         if (j == -1) {
-            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3473R.string.Unavailable));
+            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3630R.string.Unavailable));
             textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
             return;
         }
         TextView textView = textDetailSettingsCell.getTextView();
-        textView.setText(LocaleController.getString(C3473R.string.Available) + ", " + LocaleController.formatString(C3473R.string.Ping, Long.valueOf(j)));
+        textView.setText(LocaleController.getString(C3630R.string.Available) + ", " + LocaleController.formatString(C3630R.string.Ping, Long.valueOf(j)));
         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGreenText));
     }
 
@@ -4286,10 +4319,10 @@ public class AndroidUtilities {
                 z = true;
             }
             if (!z) {
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 6, LocaleController.getString(C3473R.string.ProxyAddedSuccess));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 6, LocaleController.getString(C3630R.string.ProxyAddedSuccess));
             }
         } else {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 6, LocaleController.getString(C3473R.string.ProxyAddedSuccess));
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 6, LocaleController.getString(C3630R.string.ProxyAddedSuccess));
         }
         runnable.run();
     }
@@ -4696,7 +4729,7 @@ public class AndroidUtilities {
                     AndroidUtilities.lambda$setNavigationBarColor$17(AndroidUtilities.IntColorCallback.this, window, valueAnimator2);
                 }
             });
-            ofArgb.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.6
+            ofArgb.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.7
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (AndroidUtilities.navigationBarColorAnimators != null) {
@@ -4751,7 +4784,7 @@ public class AndroidUtilities {
                     }
                 } catch (Exception e) {
                     e = e;
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                     return !z ? false : false;
                 }
             }
@@ -4769,7 +4802,7 @@ public class AndroidUtilities {
         try {
             return checkHostForPunycode(Uri.parse(str).getHost());
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -4784,7 +4817,7 @@ public class AndroidUtilities {
             declaredField.setAccessible(true);
             final RecyclerListView recyclerListView = (RecyclerListView) declaredField.get(baseFragment);
             recyclerListView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda21
-                @Override // org.telegram.p043ui.Components.RecyclerListView.IntReturnCallback
+                @Override // org.telegram.p042ui.Components.RecyclerListView.IntReturnCallback
                 public final int run() {
                     int lambda$scrollToFragmentRow$18;
                     lambda$scrollToFragmentRow$18 = AndroidUtilities.lambda$scrollToFragmentRow$18(BaseFragment.this, str, recyclerListView);
@@ -4803,7 +4836,7 @@ public class AndroidUtilities {
             Field declaredField = baseFragment.getClass().getDeclaredField(str);
             declaredField.setAccessible(true);
             i = declaredField.getInt(baseFragment);
-            ((LinearLayoutManager) recyclerListView.getLayoutManager()).scrollToPositionWithOffset(i, m72dp(60));
+            ((LinearLayoutManager) recyclerListView.getLayoutManager()).scrollToPositionWithOffset(i, m102dp(60));
             declaredField.setAccessible(false);
             return i;
         } catch (Throwable unused) {
@@ -4934,7 +4967,7 @@ public class AndroidUtilities {
             view.setScaleY(r3);
             if (f != BitmapDescriptorFactory.HUE_RED) {
                 if (!z) {
-                    f2 = m72dp(-16) * f;
+                    f2 = m102dp(-16) * f;
                 }
                 view.setTranslationY(f2);
             }
@@ -4948,7 +4981,7 @@ public class AndroidUtilities {
                 view.setScaleX(z2 ? 0.0f : 1.0f);
                 view.setScaleY(z2 ? 0.0f : 1.0f);
                 if (f != BitmapDescriptorFactory.HUE_RED) {
-                    view.setTranslationY(m72dp(-16) * f);
+                    view.setTranslationY(m102dp(-16) * f);
                 }
             }
             ViewPropertyAnimator withEndAction = view.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(340L).withEndAction(runnable);
@@ -4959,7 +4992,7 @@ public class AndroidUtilities {
         } else {
             ViewPropertyAnimator withEndAction2 = view.animate().alpha(BitmapDescriptorFactory.HUE_RED).scaleY(z2 ? 0.0f : 1.0f).scaleX(z2 ? 0.0f : 1.0f).setListener(new HideViewAfterAnimation(view)).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(340L).withEndAction(runnable);
             if (f != BitmapDescriptorFactory.HUE_RED) {
-                withEndAction2.translationY(m72dp(-16) * f);
+                withEndAction2.translationY(m102dp(-16) * f);
             }
             withEndAction2.start();
         }
@@ -5043,7 +5076,7 @@ public class AndroidUtilities {
             goto L6c
         L68:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m67e(r8)
+            org.telegram.messenger.FileLog.m97e(r8)
         L6c:
             return r7
         L6d:
@@ -5057,13 +5090,13 @@ public class AndroidUtilities {
             r7 = move-exception
             r3 = r0
         L77:
-            org.telegram.messenger.FileLog.m67e(r7)     // Catch: java.lang.Throwable -> L85
+            org.telegram.messenger.FileLog.m97e(r7)     // Catch: java.lang.Throwable -> L85
             if (r3 == 0) goto L84
             r3.close()     // Catch: java.lang.Exception -> L80
             goto L84
         L80:
             r7 = move-exception
-            org.telegram.messenger.FileLog.m67e(r7)
+            org.telegram.messenger.FileLog.m97e(r7)
         L84:
             return r0
         L85:
@@ -5073,7 +5106,7 @@ public class AndroidUtilities {
             goto L90
         L8c:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m67e(r8)
+            org.telegram.messenger.FileLog.m97e(r8)
         L90:
             throw r7
         */
@@ -5086,7 +5119,7 @@ public class AndroidUtilities {
             try {
                 cacheDir.mkdirs();
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
                 return null;
             }
         }
@@ -5100,7 +5133,7 @@ public class AndroidUtilities {
             fileOutputStream.close();
             return uriForFile;
         } catch (Exception e2) {
-            FileLog.m67e(e2);
+            FileLog.m97e(e2);
             return null;
         }
     }
@@ -5198,7 +5231,7 @@ public class AndroidUtilities {
         try {
             i = Build.VERSION.SDK_INT;
         } catch (Exception e) {
-            FileLog.m68e("allGlobalViews()", e);
+            FileLog.m98e("allGlobalViews()", e);
         }
         if (i >= 29) {
             return WindowInspector.getGlobalWindowViews();
@@ -5277,7 +5310,7 @@ public class AndroidUtilities {
                 }
             });
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             runOnUIThread(new Runnable() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda15
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -5435,7 +5468,7 @@ public class AndroidUtilities {
         try {
             return getImageOrientation(new ExifInterface(inputStream));
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new Pair<>(0, 0);
         }
     }
@@ -5444,7 +5477,7 @@ public class AndroidUtilities {
         try {
             return getImageOrientation(new ExifInterface(file));
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new Pair<>(0, 0);
         }
     }
@@ -5493,9 +5526,21 @@ public class AndroidUtilities {
             }
             return new Pair<>(Integer.valueOf(i2), Integer.valueOf(i));
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return new Pair<>(0, 0);
         }
+    }
+
+    public static void forEachViews(View view, Consumer<View> consumer) {
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                consumer.accept(view);
+                forEachViews(viewGroup.getChildAt(i), consumer);
+            }
+            return;
+        }
+        consumer.accept(view);
     }
 
     public static void forEachViews(RecyclerView recyclerView, Consumer<View> consumer) {
@@ -5580,6 +5625,6 @@ public class AndroidUtilities {
         if (context == null) {
             return;
         }
-        context.setTheme((Theme.isCurrentThemeDark() && z) ? C3473R.style.Theme_TMessages_Dark : C3473R.style.Theme_TMessages);
+        context.setTheme((Theme.isCurrentThemeDark() && z) ? C3630R.style.Theme_TMessages_Dark : C3630R.style.Theme_TMessages);
     }
 }

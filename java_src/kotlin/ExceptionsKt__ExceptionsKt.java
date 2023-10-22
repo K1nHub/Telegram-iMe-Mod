@@ -4,7 +4,7 @@ import kotlin.internal.PlatformImplementationsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Exceptions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ExceptionsKt__ExceptionsKt {
     public static void addSuppressed(Throwable th, Throwable exception) {
         Intrinsics.checkNotNullParameter(th, "<this>");

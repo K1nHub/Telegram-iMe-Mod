@@ -21,18 +21,18 @@ import org.json.JSONObject;
 /* loaded from: classes.dex */
 public class KeyHandle extends AbstractSafeParcelable {
     public static final Parcelable.Creator<KeyHandle> CREATOR = new zze();
-    @SafeParcelable.VersionField(getter = "getVersionCode", m794id = 1)
+    @SafeParcelable.VersionField(getter = "getVersionCode", m1086id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getBytes", m797id = 2)
+    @SafeParcelable.Field(getter = "getBytes", m1089id = 2)
     private final byte[] zzb;
-    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m797id = 3, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getProtocolVersionAsString", m1089id = 3, type = "java.lang.String")
     private final ProtocolVersion zzc;
-    @SafeParcelable.Field(getter = "getTransports", m797id = 4)
+    @SafeParcelable.Field(getter = "getTransports", m1089id = 4)
     private final List zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public KeyHandle(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) byte[] bArr, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) List list) {
+    public KeyHandle(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) byte[] bArr, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) List list) {
         this.zza = i;
         this.zzb = bArr;
         try {

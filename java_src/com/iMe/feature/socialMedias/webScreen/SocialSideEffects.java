@@ -4,14 +4,14 @@ import com.iMe.feature.socialMedias.SocialNetwork;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialSideEffects.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SocialSideEffects {
     public /* synthetic */ SocialSideEffects(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ShowError extends SocialSideEffects {
         public static final ShowError INSTANCE = new ShowError();
 
@@ -24,7 +24,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class FinishAuth extends SocialSideEffects {
         public static final FinishAuth INSTANCE = new FinishAuth();
 
@@ -34,7 +34,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class RemoveCookies extends SocialSideEffects {
         public static final RemoveCookies INSTANCE = new RemoveCookies();
 
@@ -44,7 +44,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class LoadUrl extends SocialSideEffects {
         private final String url;
 
@@ -76,7 +76,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class OpenInApp extends SocialSideEffects {
         private final String url;
 
@@ -108,7 +108,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ShowResetAlert extends SocialSideEffects {
         private final String networkName;
 
@@ -140,7 +140,7 @@ public abstract class SocialSideEffects {
     }
 
     /* compiled from: SocialSideEffects.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class ShowMenu extends SocialSideEffects {
         private final SocialNetwork socialNetwork;
 

@@ -11,7 +11,7 @@ import okhttp3.internal.Util;
 import okio.Buffer;
 import okio.BufferedSink;
 /* compiled from: FormBody.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FormBody extends RequestBody {
     private static final MediaType CONTENT_TYPE;
     private final List<String> encodedNames;
@@ -66,7 +66,7 @@ public final class FormBody extends RequestBody {
     }
 
     /* compiled from: FormBody.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final Charset charset;
         private final List<String> names;
@@ -112,7 +112,7 @@ public final class FormBody extends RequestBody {
     }
 
     /* compiled from: FormBody.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

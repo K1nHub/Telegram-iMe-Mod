@@ -10,7 +10,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
 import androidx.customview.widget.ViewDragHelper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
     private boolean interceptingEvents;
     OnDismissListener listener;
@@ -161,7 +161,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
         }
     };
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnDismissListener {
         void onDismiss(View view);
 
@@ -241,7 +241,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private class SettleRunnable implements Runnable {
         private final boolean dismiss;
         private final View view;

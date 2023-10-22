@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ImmutableList<E> extends ImmutableCollection<E> implements List<E>, RandomAccess {
     private static final UnmodifiableListIterator<Object> EMPTY_ITR = new Itr(RegularImmutableList.EMPTY, 0);
 
@@ -20,32 +20,32 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m762of() {
+    public static <E> ImmutableList<E> m1054of() {
         return (ImmutableList<E>) RegularImmutableList.EMPTY;
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m761of(E e) {
+    public static <E> ImmutableList<E> m1053of(E e) {
         return construct(e);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m760of(E e, E e2) {
+    public static <E> ImmutableList<E> m1052of(E e, E e2) {
         return construct(e, e2);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m759of(E e, E e2, E e3) {
+    public static <E> ImmutableList<E> m1051of(E e, E e2, E e3) {
         return construct(e, e2, e3);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m758of(E e, E e2, E e3, E e4) {
+    public static <E> ImmutableList<E> m1050of(E e, E e2, E e3, E e4) {
         return construct(e, e2, e3, e4);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m757of(E e, E e2, E e3, E e4, E e5) {
+    public static <E> ImmutableList<E> m1049of(E e, E e2, E e3, E e4, E e5) {
         return construct(e, e2, e3, e4, e5);
     }
 
@@ -59,7 +59,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
 
     public static <E> ImmutableList<E> copyOf(E[] eArr) {
         if (eArr.length == 0) {
-            return m762of();
+            return m1054of();
         }
         return construct((Object[]) eArr.clone());
     }
@@ -84,7 +84,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <E> ImmutableList<E> asImmutableList(Object[] objArr, int i) {
         if (i == 0) {
-            return m762of();
+            return m1054of();
         }
         return new RegularImmutableList(objArr, i);
     }
@@ -109,7 +109,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Itr<E> extends AbstractIndexedListIterator<E> {
         private final ImmutableList<E> list;
 
@@ -153,7 +153,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return this;
         }
         if (i3 == 0) {
-            return m762of();
+            return m1054of();
         }
         return subListUnchecked(i, i2);
     }
@@ -163,7 +163,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class SubList extends ImmutableList<E> {
         final transient int length;
         final transient int offset;
@@ -281,7 +281,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
         return new Builder<>();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder<E> extends ImmutableCollection.ArrayBasedBuilder<E> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.google.common.collect.ImmutableCollection.Builder

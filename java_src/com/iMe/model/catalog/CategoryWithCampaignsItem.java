@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.catalog.CatalogCategory;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryWithCampaignsItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CategoryWithCampaignsItem extends NoChildNode {
     private final List<CampaignItem> campaigns;
     private final CatalogCategory category;

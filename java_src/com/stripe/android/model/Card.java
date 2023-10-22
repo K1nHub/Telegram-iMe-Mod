@@ -4,7 +4,7 @@ import com.stripe.android.util.DateUtils;
 import com.stripe.android.util.StripeTextUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Card {
     public static final String AMERICAN_EXPRESS = "American Express";
     public static final String DINERS_CLUB = "Diners Club";
@@ -45,16 +45,16 @@ public class Card {
     public static final String[] PREFIXES_MASTERCARD = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55"};
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public @interface CardBrand {
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public @interface FundingType {
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private String addressCity;
         private String addressCountry;

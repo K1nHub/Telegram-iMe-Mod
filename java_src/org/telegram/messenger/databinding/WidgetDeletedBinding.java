@@ -7,18 +7,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class WidgetDeletedBinding implements ViewBinding {
-    private final FrameLayout rootView;
-
     private WidgetDeletedBinding(FrameLayout frameLayout, TextView textView, FrameLayout frameLayout2) {
-        this.rootView = frameLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
-        return this.rootView;
     }
 
     public static WidgetDeletedBinding inflate(LayoutInflater layoutInflater) {
@@ -26,7 +18,7 @@ public final class WidgetDeletedBinding implements ViewBinding {
     }
 
     public static WidgetDeletedBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.widget_deleted, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.widget_deleted, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -34,7 +26,7 @@ public final class WidgetDeletedBinding implements ViewBinding {
     }
 
     public static WidgetDeletedBinding bind(View view) {
-        int i = C3473R.C3476id.widget_deleted_text;
+        int i = C3630R.C3633id.widget_deleted_text;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
             FrameLayout frameLayout = (FrameLayout) view;

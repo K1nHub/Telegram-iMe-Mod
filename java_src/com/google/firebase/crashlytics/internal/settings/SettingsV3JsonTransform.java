@@ -8,7 +8,7 @@ import com.google.firebase.crashlytics.internal.settings.model.SettingsData;
 import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class SettingsV3JsonTransform implements SettingsJsonTransform {
     @Override // com.google.firebase.crashlytics.internal.settings.SettingsJsonTransform
     public SettingsData buildFromJson(CurrentTimeProvider currentTimeProvider, JSONObject jSONObject) throws JSONException {

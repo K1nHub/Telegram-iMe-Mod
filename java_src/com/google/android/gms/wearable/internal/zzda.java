@@ -5,7 +5,7 @@ import com.google.android.gms.wearable.DataApi;
 import com.google.android.gms.wearable.DataClient;
 import java.io.InputStream;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzda extends DataClient.GetFdForAssetResponse {
     private final DataApi.GetFdForAssetResult zza;
 

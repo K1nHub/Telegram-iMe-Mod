@@ -15,7 +15,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements TypeAdapterFactory {
     private final Class<?> baseType;
     private final ExclusionStrategy exclusionStrategy;
@@ -33,12 +33,12 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements TypeAdapterF
     }
 
     /* renamed from: of */
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> m62of(Class<T> cls, String str, ExclusionStrategy exclusionStrategy) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> m92of(Class<T> cls, String str, ExclusionStrategy exclusionStrategy) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, str, exclusionStrategy);
     }
 
     /* renamed from: of */
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> m63of(Class<T> cls) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> m93of(Class<T> cls) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, "class", null);
     }
 

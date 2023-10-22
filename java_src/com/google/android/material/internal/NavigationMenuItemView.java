@@ -29,7 +29,7 @@ import com.google.android.material.R$dimen;
 import com.google.android.material.R$drawable;
 import com.google.android.material.R$id;
 import com.google.android.material.R$layout;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NavigationMenuItemView extends ForegroundLinearLayout implements MenuView.ItemView {
     private static final int[] CHECKED_STATE_SET = {16842912};
     private final AccessibilityDelegateCompat accessibilityDelegate;

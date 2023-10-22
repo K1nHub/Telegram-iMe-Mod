@@ -10,20 +10,20 @@ import java.lang.annotation.Target;
 /* compiled from: DebugMetadata.kt */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public @interface DebugMetadata {
     /* renamed from: c */
-    String m102c() default "";
+    String m143c() default "";
 
     /* renamed from: f */
-    String m101f() default "";
+    String m142f() default "";
 
     /* renamed from: l */
-    int[] m100l() default {};
+    int[] m141l() default {};
 
     /* renamed from: m */
-    String m99m() default "";
+    String m140m() default "";
 
     /* renamed from: v */
-    int m98v() default 1;
+    int m139v() default 1;
 }

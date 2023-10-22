@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     public final ImageView icon;
     private final ConstraintLayout rootView;
@@ -21,7 +21,6 @@ public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
         this.text = textView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_dialog_social_networks_item, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_dialog_social_networks_item, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +38,10 @@ public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksItemBinding bind(View view) {
-        int i = C3473R.C3476id.icon;
+        int i = C3630R.C3633id.icon;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3473R.C3476id.text;
+            i = C3630R.C3633id.text;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkDialogSocialNetworksItemBinding((ConstraintLayout) view, imageView, textView);

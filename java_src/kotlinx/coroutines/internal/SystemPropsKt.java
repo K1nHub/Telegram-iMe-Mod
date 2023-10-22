@@ -1,5 +1,5 @@
 package kotlinx.coroutines.internal;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SystemPropsKt {
     public static final int getAVAILABLE_PROCESSORS() {
         return SystemPropsKt__SystemPropsKt.getAVAILABLE_PROCESSORS();
@@ -15,6 +15,10 @@ public final class SystemPropsKt {
 
     public static final String systemProp(String str) {
         return SystemPropsKt__SystemPropsKt.systemProp(str);
+    }
+
+    public static final String systemProp(String str, String str2) {
+        return SystemPropsKt__SystemProps_commonKt.systemProp(str, str2);
     }
 
     public static final boolean systemProp(String str, boolean z) {

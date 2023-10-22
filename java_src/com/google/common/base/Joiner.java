@@ -2,17 +2,17 @@ package com.google.common.base;
 
 import java.io.IOException;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Joiner {
     private final String separator;
 
     /* renamed from: on */
-    public static Joiner m765on(String str) {
+    public static Joiner m1057on(String str) {
         return new Joiner(str);
     }
 
     /* renamed from: on */
-    public static Joiner m766on(char c) {
+    public static Joiner m1058on(char c) {
         return new Joiner(String.valueOf(c));
     }
 

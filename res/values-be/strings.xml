@@ -416,6 +416,8 @@
     <string name="debug_option_choose_wallet_environment">Выберыце асяроддзе кашалька (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">Пасля змены асяроддзя ўсе бягучыя дадзеныя кашалька і ўсё злучанае з ім будзе выдалена</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Вы ўпэўнены?</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">Выдаленне паведамленняў ... Апрацавана %1$d of %2$d</string>
     <string name="deleting_messages_success">Службовыя паведамленні выдалены</string>
     <string name="dialog_promo_discussion_group_description">група</string>
@@ -506,7 +508,7 @@
     <string name="folder_tabs_remember_last_filter_tab_hint">Калі вы адкрыеце дадатак, вы апынецеся на той жа ўкладцы, на якой былі ў апошні раз. Калі гэты параметр адключаны, па змаўчанні адкрываецца першая ўкладка злева.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">Запамінаць ўкладку</string>
     <string name="folder_tabs_settings_folders_first">Злева ад сартавальных укладак</string>
-    <string name="folder_tabs_settings_header">Настаўленні ўкладак</string>
+    <string name="folder_tabs_settings_header">Настройкі</string>
     <string name="folder_tabs_settings_hide_folders">Схаваць тэчкі</string>
     <string name="folder_tabs_sorting_settings">Укладкі па тыпах</string>
     <string name="folder_tabs_sorting_settings_item_title">Сартаванне чатаў</string>

@@ -182,9 +182,32 @@
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->getBalanceText()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p3, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 52
+    sget p3, Lorg/telegram/messenger/R$id;->image_wallet_crypto_eye:I
+
+    .line 53
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->isBalanceHidden()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    sget p2, Lorg/telegram/messenger/R$drawable;->fork_wallet_crypto_cipher_eye:I
+
+    goto :goto_0
+
+    :cond_0
+    sget p2, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_eye:I
+
+    .line 51
+    :goto_0
+    invoke-virtual {p1, p3, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method

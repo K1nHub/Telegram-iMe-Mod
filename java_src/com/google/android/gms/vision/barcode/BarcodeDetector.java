@@ -12,7 +12,7 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Frame;
 import java.nio.ByteBuffer;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BarcodeDetector extends Detector<Barcode> {
     private final com.google.android.gms.internal.vision.zzm zza;
 
@@ -25,7 +25,7 @@ public final class BarcodeDetector extends Detector<Barcode> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private Context zza;
         private com.google.android.gms.internal.vision.zzk zzb = new com.google.android.gms.internal.vision.zzk();

@@ -1,236 +1,236 @@
-.class final enum Lj$/util/e;
-.super Ljava/lang/Enum;
+.class public Lj$/util/e;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
-.implements Lj$/util/Comparator;
+.implements Lj$/util/function/l;
 
 
-# static fields
-.field public static final enum INSTANCE:Lj$/util/e;
+# instance fields
+.field private count:J
 
-.field private static final synthetic a:[Lj$/util/e;
+.field private max:I
+
+.field private min:I
+
+.field private sum:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lj$/util/e;
-
-    const-string v1, "INSTANCE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lj$/util/e;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lj$/util/e;->INSTANCE:Lj$/util/e;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lj$/util/e;
-
-    aput-object v0, v1, v2
-
-    sput-object v1, Lj$/util/e;->a:[Lj$/util/e;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lj$/util/e;
+.method public constructor <init>()V
     .locals 1
 
-    const-class v0, Lj$/util/e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const v0, 0x7fffffff
 
-    move-result-object p0
+    iput v0, p0, Lj$/util/e;->min:I
 
-    check-cast p0, Lj$/util/e;
+    const/high16 v0, -0x80000000
 
-    return-object p0
-.end method
+    iput v0, p0, Lj$/util/e;->max:I
 
-.method public static values()[Lj$/util/e;
-    .locals 1
-
-    sget-object v0, Lj$/util/e;->a:[Lj$/util/e;
-
-    invoke-virtual {v0}, [Lj$/util/e;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lj$/util/e;
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public accept(I)V
+    .locals 4
 
-    check-cast p1, Ljava/lang/Comparable;
+    iget-wide v0, p0, Lj$/util/e;->count:J
 
-    check-cast p2, Ljava/lang/Comparable;
+    const-wide/16 v2, 0x1
 
-    .line 1
-    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/e;->count:J
+
+    iget-wide v0, p0, Lj$/util/e;->sum:J
+
+    int-to-long v2, p1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/e;->sum:J
+
+    iget v0, p0, Lj$/util/e;->min:I
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iput v0, p0, Lj$/util/e;->min:I
+
+    iget v0, p0, Lj$/util/e;->max:I
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
-    return p1
+    iput p1, p0, Lj$/util/e;->max:I
+
+    return-void
 .end method
 
-.method public reversed()Ljava/util/Comparator;
+.method public b(Lj$/util/e;)V
+    .locals 4
+
+    iget-wide v0, p0, Lj$/util/e;->count:J
+
+    iget-wide v2, p1, Lj$/util/e;->count:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/e;->count:J
+
+    iget-wide v0, p0, Lj$/util/e;->sum:J
+
+    iget-wide v2, p1, Lj$/util/e;->sum:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/e;->sum:J
+
+    iget v0, p0, Lj$/util/e;->min:I
+
+    iget v1, p1, Lj$/util/e;->min:I
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iput v0, p0, Lj$/util/e;->min:I
+
+    iget v0, p0, Lj$/util/e;->max:I
+
+    iget p1, p1, Lj$/util/e;->max:I
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    iput p1, p0, Lj$/util/e;->max:I
+
+    return-void
+.end method
+
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
-    invoke-static {}, Lj$/util/Comparator$-CC;->reverseOrder()Ljava/util/Comparator;
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 2
+    new-instance v0, Lj$/util/function/k;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/function/k;-><init>(Lj$/util/function/l;Lj$/util/function/l;)V
 
     return-object v0
 .end method
 
-.method public synthetic thenComparing(Lj$/util/function/Function;)Ljava/util/Comparator;
-    .locals 0
+.method public toString()Ljava/lang/String;
+    .locals 5
 
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;)Ljava/util/Comparator;
+    const/4 v0, 0x6
 
-    move-result-object p1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    return-object p1
-.end method
+    const-class v1, Lj$/util/e;
 
-.method public synthetic thenComparing(Lj$/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
-    .locals 0
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    invoke-static {p0, p1, p2}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
+    move-result-object v1
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    return-object p1
-.end method
-
-.method public synthetic thenComparing(Ljava/util/Comparator;)Ljava/util/Comparator;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic thenComparing(Ljava/util/function/Function;)Ljava/util/Comparator;
-    .locals 0
-
-    invoke-static {p1}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
-
-    move-result-object p1
+    aput-object v1, v0, v2
 
     .line 1
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;)Ljava/util/Comparator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic thenComparing(Ljava/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
-    .locals 0
-
-    invoke-static {p1}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
-
-    move-result-object p1
+    iget-wide v1, p0, Lj$/util/e;->count:J
 
     .line 2
-    invoke-static {p0, p1, p2}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object v1
 
-    return-object p1
-.end method
+    const/4 v2, 0x1
 
-.method public synthetic thenComparingDouble(Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
-    .locals 0
+    aput-object v1, v0, v2
 
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingDouble(Ljava/util/Comparator;Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+    .line 3
+    iget-wide v1, p0, Lj$/util/e;->sum:J
 
-    move-result-object p1
+    .line 4
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return-object p1
-.end method
+    move-result-object v1
 
-.method public synthetic thenComparingDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/Comparator;
-    .locals 0
+    const/4 v2, 0x2
 
-    invoke-static {p1}, Lj$/wrappers/A0;->a(Ljava/util/function/ToDoubleFunction;)Lj$/util/function/ToDoubleFunction;
+    aput-object v1, v0, v2
 
-    move-result-object p1
+    .line 5
+    iget v1, p0, Lj$/util/e;->min:I
 
-    .line 1
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingDouble(Ljava/util/Comparator;Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
+    .line 6
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v1
 
-    return-object p1
-.end method
+    const/4 v2, 0x3
 
-.method public synthetic thenComparingInt(Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
-    .locals 0
+    aput-object v1, v0, v2
 
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingInt(Ljava/util/Comparator;Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
+    .line 7
+    iget-wide v1, p0, Lj$/util/e;->count:J
 
-    move-result-object p1
+    const-wide/16 v3, 0x0
 
-    return-object p1
-.end method
+    cmp-long v3, v1, v3
 
-.method public synthetic thenComparingInt(Ljava/util/function/ToIntFunction;)Ljava/util/Comparator;
-    .locals 0
+    if-lez v3, :cond_0
 
-    invoke-static {p1}, Lj$/wrappers/C0;->a(Ljava/util/function/ToIntFunction;)Lj$/util/function/ToIntFunction;
+    .line 8
+    iget-wide v3, p0, Lj$/util/e;->sum:J
 
-    move-result-object p1
+    long-to-double v3, v3
 
-    .line 1
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingInt(Ljava/util/Comparator;Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
+    long-to-double v1, v1
 
-    move-result-object p1
+    div-double/2addr v3, v1
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public synthetic thenComparingLong(Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
-    .locals 0
+    :cond_0
+    const-wide/16 v3, 0x0
 
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingLong(Ljava/util/Comparator;Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
+    .line 9
+    :goto_0
+    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object p1
+    move-result-object v1
 
-    return-object p1
-.end method
+    const/4 v2, 0x4
 
-.method public synthetic thenComparingLong(Ljava/util/function/ToLongFunction;)Ljava/util/Comparator;
-    .locals 0
+    aput-object v1, v0, v2
 
-    invoke-static {p1}, Lj$/wrappers/E0;->a(Ljava/util/function/ToLongFunction;)Lj$/util/function/ToLongFunction;
+    .line 10
+    iget v1, p0, Lj$/util/e;->max:I
 
-    move-result-object p1
+    .line 11
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 1
-    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingLong(Ljava/util/Comparator;Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
+    move-result-object v1
 
-    move-result-object p1
+    const/4 v2, 0x5
 
-    return-object p1
+    aput-object v1, v0, v2
+
+    const-string v1, "%s{count=%d, sum=%d, min=%d, average=%f, max=%d}"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

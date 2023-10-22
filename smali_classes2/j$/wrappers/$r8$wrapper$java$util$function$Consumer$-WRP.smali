@@ -30,13 +30,13 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/w;
+    instance-of v0, p0, Lj$/wrappers/v;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/w;
+    check-cast p0, Lj$/wrappers/v;
 
-    iget-object p0, p0, Lj$/wrappers/w;->a:Ljava/util/function/Consumer;
+    iget-object p0, p0, Lj$/wrappers/v;->a:Ljava/util/function/Consumer;
 
     return-object p0
 
@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lj$/wrappers/$r8$wrapper$java$util$function$Consumer$-WRP;->a:Lj$/util/function/Consumer;
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 

@@ -25,7 +25,7 @@ public final class zzqk {
         long j = this.zzbbe;
         if (j == -1 || elapsedRealtime - j >= TimeUnit.SECONDS.toMillis(5L)) {
             this.zzbbe = elapsedRealtime;
-            zzass.m799w("StreamingFormatChecker", "ML Kit has detected that you seem to pass camera frames to the detector as a Bitmap object. This is inefficient. Please use YUV_420_888 format for camera2 API or NV21 format for (legacy) camera API and directly pass down the byte array to ML Kit.");
+            zzass.m1091w("StreamingFormatChecker", "ML Kit has detected that you seem to pass camera frames to the detector as a Bitmap object. This is inefficient. Please use YUV_420_888 format for camera2 API or NV21 format for (legacy) camera API and directly pass down the byte array to ML Kit.");
         }
     }
 }

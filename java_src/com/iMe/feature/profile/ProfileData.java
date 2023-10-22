@@ -1,11 +1,10 @@
 package com.iMe.feature.profile;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: ProfileData.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ProfileData {
     private final long chatId;
     private final String dialogIdText;
@@ -27,7 +26,7 @@ public final class ProfileData {
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chatId)) * 31) + this.dialogIdText.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.userId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chatId)) * 31) + this.dialogIdText.hashCode();
     }
 
     public String toString() {

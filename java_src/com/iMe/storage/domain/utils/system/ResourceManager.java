@@ -1,6 +1,8 @@
 package com.iMe.storage.domain.utils.system;
+
+import android.net.Uri;
 /* compiled from: ResourceManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ResourceManager {
     int getColor(int i);
 
@@ -9,4 +11,6 @@ public interface ResourceManager {
     String getString(int i);
 
     String getString(int i, Object... objArr);
+
+    Uri getUriDrawable(int i);
 }

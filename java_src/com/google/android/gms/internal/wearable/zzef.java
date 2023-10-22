@@ -3,7 +3,7 @@ package com.google.android.gms.internal.wearable;
 import java.io.IOException;
 import java.util.Arrays;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzef {
     private static final zzef zza = new zzef(0, new int[0], new Object[0], false);
     private int zzb;

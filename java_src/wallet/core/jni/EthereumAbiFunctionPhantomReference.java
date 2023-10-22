@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: EthereumAbiFunction.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class EthereumAbiFunctionPhantomReference extends PhantomReference<EthereumAbiFunction> {
     private long nativeHandle;
     private static Set<EthereumAbiFunctionPhantomReference> references = new HashSet();

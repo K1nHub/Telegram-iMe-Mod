@@ -12,14 +12,13 @@ import com.iMe.fork.controller.HiddenChatsController;
 import com.iMe.fork.controller.LockedSectionsController;
 import com.iMe.fork.controller.MultiPanelController;
 import com.iMe.fork.controller.MusicController;
-import com.iMe.fork.controller.NeuroBotsController;
 import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
-import org.telegram.p043ui.Components.Paint.PersistColorPalette;
+import org.telegram.p042ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BaseController {
     protected final int currentAccount;
     private AccountInstance parentAccountInstance;
@@ -62,11 +61,6 @@ public class BaseController {
     /* JADX INFO: Access modifiers changed from: protected */
     public final MusicController getMusicController() {
         return this.parentAccountInstance.getMusicController();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final NeuroBotsController getNeuroBotsController() {
-        return this.parentAccountInstance.getNeuroBotsController();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

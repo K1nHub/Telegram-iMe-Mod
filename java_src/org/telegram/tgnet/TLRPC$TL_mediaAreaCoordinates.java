@@ -1,19 +1,19 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_mediaAreaCoordinates extends TLObject {
 
     /* renamed from: h */
-    public double f1608h;
+    public double f1685h;
     public double rotation;
 
     /* renamed from: w */
-    public double f1609w;
+    public double f1686w;
 
     /* renamed from: x */
-    public double f1610x;
+    public double f1687x;
 
     /* renamed from: y */
-    public double f1611y;
+    public double f1688y;
 
     public static TLRPC$TL_mediaAreaCoordinates TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         if (64088654 != i) {
@@ -29,20 +29,20 @@ public class TLRPC$TL_mediaAreaCoordinates extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1610x = abstractSerializedData.readDouble(z);
-        this.f1611y = abstractSerializedData.readDouble(z);
-        this.f1609w = abstractSerializedData.readDouble(z);
-        this.f1608h = abstractSerializedData.readDouble(z);
+        this.f1687x = abstractSerializedData.readDouble(z);
+        this.f1688y = abstractSerializedData.readDouble(z);
+        this.f1686w = abstractSerializedData.readDouble(z);
+        this.f1685h = abstractSerializedData.readDouble(z);
         this.rotation = abstractSerializedData.readDouble(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(64088654);
-        abstractSerializedData.writeDouble(this.f1610x);
-        abstractSerializedData.writeDouble(this.f1611y);
-        abstractSerializedData.writeDouble(this.f1609w);
-        abstractSerializedData.writeDouble(this.f1608h);
+        abstractSerializedData.writeDouble(this.f1687x);
+        abstractSerializedData.writeDouble(this.f1688y);
+        abstractSerializedData.writeDouble(this.f1686w);
+        abstractSerializedData.writeDouble(this.f1685h);
         abstractSerializedData.writeDouble(this.rotation);
     }
 }

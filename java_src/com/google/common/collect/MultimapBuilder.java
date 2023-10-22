@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class MultimapBuilder<K0, V0> {
     private MultimapBuilder() {
     }
@@ -42,7 +42,7 @@ public abstract class MultimapBuilder<K0, V0> {
         };
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class ArrayListSupplier<V> implements Supplier<List<V>>, Serializable {
         private final int expectedValuesPerKey;
 
@@ -56,7 +56,7 @@ public abstract class MultimapBuilder<K0, V0> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class MultimapBuilderWithKeys<K0> {
         abstract <K extends K0, V> Map<K, Collection<V>> createMap();
 
@@ -78,7 +78,7 @@ public abstract class MultimapBuilder<K0, V0> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class ListMultimapBuilder<K0, V0> extends MultimapBuilder<K0, V0> {
         public abstract <K extends K0, V extends V0> ListMultimap<K, V> build();
 

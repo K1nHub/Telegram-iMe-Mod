@@ -8,16 +8,16 @@
 # instance fields
 .field final synthetic c:Lj$/util/stream/k1;
 
-.field final synthetic d:Lj$/wrappers/i0;
+.field final synthetic d:Lj$/wrappers/g0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/i0;)V
+.method constructor <init>(Lj$/util/stream/k1;Lj$/wrappers/g0;)V
     .locals 0
 
     iput-object p1, p0, Lj$/util/stream/h1;->c:Lj$/util/stream/k1;
 
-    iput-object p2, p0, Lj$/util/stream/h1;->d:Lj$/wrappers/i0;
+    iput-object p2, p0, Lj$/util/stream/h1;->d:Lj$/wrappers/g0;
 
     invoke-direct {p0, p1}, Lj$/util/stream/j1;-><init>(Lj$/util/stream/k1;)V
 
@@ -33,9 +33,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lj$/util/stream/h1;->d:Lj$/wrappers/i0;
+    iget-object v0, p0, Lj$/util/stream/h1;->d:Lj$/wrappers/g0;
 
-    invoke-virtual {v0, p1, p2}, Lj$/wrappers/i0;->b(J)Z
+    invoke-virtual {v0, p1, p2}, Lj$/wrappers/g0;->b(J)Z
 
     move-result p1
 
@@ -82,16 +82,16 @@
     return-void
 .end method
 
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public f(Lj$/util/function/p;)Lj$/util/function/p;
     .locals 1
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 .end method

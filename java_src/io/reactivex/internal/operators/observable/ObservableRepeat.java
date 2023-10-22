@@ -6,7 +6,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T, T> {
     final long count;
 
@@ -23,25 +23,25 @@ public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T,
         new RepeatObserver(observer, j != Long.MAX_VALUE ? j - 1 : Long.MAX_VALUE, sequentialDisposable, this.source).subscribeNext();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class RepeatObserver<T> extends AtomicInteger implements Observer<T> {
         final Observer<? super T> downstream;
         long remaining;
 
         /* renamed from: sd */
-        final SequentialDisposable f547sd;
+        final SequentialDisposable f460sd;
         final ObservableSource<? extends T> source;
 
         RepeatObserver(Observer<? super T> observer, long j, SequentialDisposable sequentialDisposable, ObservableSource<? extends T> observableSource) {
             this.downstream = observer;
-            this.f547sd = sequentialDisposable;
+            this.f460sd = sequentialDisposable;
             this.source = observableSource;
             this.remaining = j;
         }
 
         @Override // io.reactivex.Observer
         public void onSubscribe(Disposable disposable) {
-            this.f547sd.replace(disposable);
+            this.f460sd.replace(disposable);
         }
 
         @Override // io.reactivex.Observer
@@ -70,7 +70,7 @@ public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T,
         void subscribeNext() {
             if (getAndIncrement() == 0) {
                 int i = 1;
-                while (!this.f547sd.isDisposed()) {
+                while (!this.f460sd.isDisposed()) {
                     this.source.subscribe(this);
                     i = addAndGet(-i);
                     if (i == 0) {

@@ -8,7 +8,7 @@ import java.lang.reflect.TypeVariable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TypeToken<T> {
     private final int hashCode;
     private final Class<? super T> rawType;

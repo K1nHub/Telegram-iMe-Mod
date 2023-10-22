@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 @Descriptor(objectTypeIndication = 64, tags = {5})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AudioSpecificConfig extends BaseDescriptor {
     public boolean aacScalefactorDataResilienceFlag;
     public boolean aacSectionDataResilienceFlag;
@@ -287,7 +287,7 @@ public class AudioSpecificConfig extends BaseDescriptor {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ELDSpecificConfig {
         public boolean ldSbrPresentFlag;
 
@@ -349,7 +349,7 @@ public class AudioSpecificConfig extends BaseDescriptor {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class sbr_header {
         public boolean bs_header_extra_1;
         public boolean bs_header_extra_2;

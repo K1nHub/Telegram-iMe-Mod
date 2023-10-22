@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Float;
     .locals 2
 
-    .line 34
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$networkIconCornerSize$2;->this$0:Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
 
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -77,7 +77,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$networkIconCornerSize$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

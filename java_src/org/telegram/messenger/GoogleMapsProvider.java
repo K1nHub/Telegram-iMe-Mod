@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.Objects;
 import org.telegram.messenger.GoogleMapsProvider;
 import org.telegram.messenger.IMapsProvider;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GoogleMapsProvider implements IMapsProvider {
     @Override // org.telegram.messenger.IMapsProvider
     public String getMapsAppPackageName() {
@@ -79,7 +79,7 @@ public class GoogleMapsProvider implements IMapsProvider {
 
     @Override // org.telegram.messenger.IMapsProvider
     public int getInstallMapsString() {
-        return C3473R.string.InstallGoogleMaps;
+        return C3630R.string.InstallGoogleMaps;
     }
 
     @Override // org.telegram.messenger.IMapsProvider
@@ -92,7 +92,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         return new GoogleCircleOptions();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleMapImpl implements IMapsProvider.IMap {
         private GoogleMap googleMap;
         private Map<Circle, GoogleCircle> implToAbsCircleMap;
@@ -305,7 +305,7 @@ public class GoogleMapsProvider implements IMapsProvider {
             this.googleMap.moveCamera(((GoogleCameraUpdate) iCameraUpdate).cameraUpdate);
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public final class GoogleMarker implements IMapsProvider.IMarker {
             private Marker marker;
 
@@ -356,7 +356,7 @@ public class GoogleMapsProvider implements IMapsProvider {
             }
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public final class GoogleCircle implements IMapsProvider.ICircle {
             private Circle circle;
 
@@ -397,7 +397,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleProjection implements IMapsProvider.IProjection {
         private Projection projection;
 
@@ -411,7 +411,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleUISettings implements IMapsProvider.IUISettings {
         private UiSettings uiSettings;
 
@@ -435,7 +435,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleCircleOptions implements IMapsProvider.ICircleOptions {
         private CircleOptions circleOptions;
 
@@ -488,7 +488,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleMarkerOptions implements IMapsProvider.IMarkerOptions {
         private MarkerOptions markerOptions;
 
@@ -539,7 +539,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleLatLngBoundsBuilder implements IMapsProvider.ILatLngBoundsBuilder {
         private LatLngBounds.Builder builder;
 
@@ -559,7 +559,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleLatLngBounds implements IMapsProvider.ILatLngBounds {
         private LatLngBounds bounds;
 
@@ -574,7 +574,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleMapView implements IMapsProvider.IMapView {
         private IMapsProvider.ITouchInterceptor dispatchInterceptor;
         private IMapsProvider.ITouchInterceptor interceptInterceptor;
@@ -588,9 +588,9 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.messenger.GoogleMapsProvider$GoogleMapView$1 */
-        /* loaded from: classes6.dex */
-        public class C34271 extends MapView {
-            C34271(Context context) {
+        /* loaded from: classes4.dex */
+        public class C35841 extends MapView {
+            C35841(Context context) {
                 super(context);
             }
 
@@ -601,7 +601,7 @@ public class GoogleMapsProvider implements IMapsProvider {
                         @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
                         public final Object call(Object obj) {
                             Boolean lambda$dispatchTouchEvent$0;
-                            lambda$dispatchTouchEvent$0 = GoogleMapsProvider.GoogleMapView.C34271.this.lambda$dispatchTouchEvent$0((MotionEvent) obj);
+                            lambda$dispatchTouchEvent$0 = GoogleMapsProvider.GoogleMapView.C35841.this.lambda$dispatchTouchEvent$0((MotionEvent) obj);
                             return lambda$dispatchTouchEvent$0;
                         }
                     });
@@ -621,7 +621,7 @@ public class GoogleMapsProvider implements IMapsProvider {
                         @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
                         public final Object call(Object obj) {
                             Boolean lambda$onInterceptTouchEvent$1;
-                            lambda$onInterceptTouchEvent$1 = GoogleMapsProvider.GoogleMapView.C34271.this.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
+                            lambda$onInterceptTouchEvent$1 = GoogleMapsProvider.GoogleMapView.C35841.this.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
                             return lambda$onInterceptTouchEvent$1;
                         }
                     });
@@ -644,7 +644,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
 
         private GoogleMapView(Context context) {
-            this.mapView = new C34271(context);
+            this.mapView = new C35841(context);
         }
 
         @Override // org.telegram.messenger.IMapsProvider.IMapView
@@ -708,7 +708,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleCameraUpdate implements IMapsProvider.ICameraUpdate {
         private CameraUpdate cameraUpdate;
 
@@ -717,7 +717,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class GoogleMapStyleOptions implements IMapsProvider.IMapStyleOptions {
         private MapStyleOptions mapStyleOptions;
 

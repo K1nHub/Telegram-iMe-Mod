@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.catalog;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignsCursored.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CampaignsCursored {
     private final List<Campaign> items;
     private final CursorMeta meta;

@@ -1,5 +1,5 @@
 package org.bouncycastle.util.encoders;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DecoderException extends IllegalStateException {
     private Throwable cause;
 

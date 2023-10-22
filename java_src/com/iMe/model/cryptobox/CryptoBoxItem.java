@@ -1,10 +1,10 @@
 package com.iMe.model.cryptobox;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxItem extends NoChildNode {
     private final String chatAvatarUrl;
     private final long chatId;
@@ -13,14 +13,14 @@ public final class CryptoBoxItem extends NoChildNode {
     private final String description;
 
     /* renamed from: id */
-    private final String f357id;
+    private final String f290id;
     private final String name;
     private final int statusColorResId;
     private final String statusText;
     private final String tokenLogoUrl;
 
     public final String component1() {
-        return this.f357id;
+        return this.f290id;
     }
 
     public final int component10() {
@@ -77,21 +77,21 @@ public final class CryptoBoxItem extends NoChildNode {
         }
         if (obj instanceof CryptoBoxItem) {
             CryptoBoxItem cryptoBoxItem = (CryptoBoxItem) obj;
-            return Intrinsics.areEqual(this.f357id, cryptoBoxItem.f357id) && Intrinsics.areEqual(this.name, cryptoBoxItem.name) && Intrinsics.areEqual(this.description, cryptoBoxItem.description) && Intrinsics.areEqual(this.chatAvatarUrl, cryptoBoxItem.chatAvatarUrl) && this.chatId == cryptoBoxItem.chatId && Intrinsics.areEqual(this.chatName, cryptoBoxItem.chatName) && Intrinsics.areEqual(this.tokenLogoUrl, cryptoBoxItem.tokenLogoUrl) && Intrinsics.areEqual(this.creationTimeText, cryptoBoxItem.creationTimeText) && Intrinsics.areEqual(this.statusText, cryptoBoxItem.statusText) && this.statusColorResId == cryptoBoxItem.statusColorResId;
+            return Intrinsics.areEqual(this.f290id, cryptoBoxItem.f290id) && Intrinsics.areEqual(this.name, cryptoBoxItem.name) && Intrinsics.areEqual(this.description, cryptoBoxItem.description) && Intrinsics.areEqual(this.chatAvatarUrl, cryptoBoxItem.chatAvatarUrl) && this.chatId == cryptoBoxItem.chatId && Intrinsics.areEqual(this.chatName, cryptoBoxItem.chatName) && Intrinsics.areEqual(this.tokenLogoUrl, cryptoBoxItem.tokenLogoUrl) && Intrinsics.areEqual(this.creationTimeText, cryptoBoxItem.creationTimeText) && Intrinsics.areEqual(this.statusText, cryptoBoxItem.statusText) && this.statusColorResId == cryptoBoxItem.statusColorResId;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((this.f357id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.chatAvatarUrl.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chatId)) * 31) + this.chatName.hashCode()) * 31) + this.tokenLogoUrl.hashCode()) * 31) + this.creationTimeText.hashCode()) * 31) + this.statusText.hashCode()) * 31) + this.statusColorResId;
+        return (((((((((((((((((this.f290id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.chatAvatarUrl.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chatId)) * 31) + this.chatName.hashCode()) * 31) + this.tokenLogoUrl.hashCode()) * 31) + this.creationTimeText.hashCode()) * 31) + this.statusText.hashCode()) * 31) + this.statusColorResId;
     }
 
     public String toString() {
-        return "CryptoBoxItem(id=" + this.f357id + ", name=" + this.name + ", description=" + this.description + ", chatAvatarUrl=" + this.chatAvatarUrl + ", chatId=" + this.chatId + ", chatName=" + this.chatName + ", tokenLogoUrl=" + this.tokenLogoUrl + ", creationTimeText=" + this.creationTimeText + ", statusText=" + this.statusText + ", statusColorResId=" + this.statusColorResId + ')';
+        return "CryptoBoxItem(id=" + this.f290id + ", name=" + this.name + ", description=" + this.description + ", chatAvatarUrl=" + this.chatAvatarUrl + ", chatId=" + this.chatId + ", chatName=" + this.chatName + ", tokenLogoUrl=" + this.tokenLogoUrl + ", creationTimeText=" + this.creationTimeText + ", statusText=" + this.statusText + ", statusColorResId=" + this.statusColorResId + ')';
     }
 
     public final String getId() {
-        return this.f357id;
+        return this.f290id;
     }
 
     public final String getName() {
@@ -139,7 +139,7 @@ public final class CryptoBoxItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(tokenLogoUrl, "tokenLogoUrl");
         Intrinsics.checkNotNullParameter(creationTimeText, "creationTimeText");
         Intrinsics.checkNotNullParameter(statusText, "statusText");
-        this.f357id = id;
+        this.f290id = id;
         this.name = name;
         this.description = description;
         this.chatAvatarUrl = chatAvatarUrl;

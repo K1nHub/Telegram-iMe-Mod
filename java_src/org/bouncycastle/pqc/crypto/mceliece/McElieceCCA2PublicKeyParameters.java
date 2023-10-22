@@ -1,20 +1,20 @@
 package org.bouncycastle.pqc.crypto.mceliece;
 
 import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class McElieceCCA2PublicKeyParameters extends McElieceCCA2KeyParameters {
     private GF2Matrix matrixG;
 
     /* renamed from: n */
-    private int f1417n;
+    private int f1498n;
 
     /* renamed from: t */
-    private int f1418t;
+    private int f1499t;
 
     public McElieceCCA2PublicKeyParameters(int i, int i2, GF2Matrix gF2Matrix, String str) {
         super(false, str);
-        this.f1417n = i;
-        this.f1418t = i2;
+        this.f1498n = i;
+        this.f1499t = i2;
         this.matrixG = new GF2Matrix(gF2Matrix);
     }
 
@@ -23,10 +23,10 @@ public class McElieceCCA2PublicKeyParameters extends McElieceCCA2KeyParameters {
     }
 
     public int getN() {
-        return this.f1417n;
+        return this.f1498n;
     }
 
     public int getT() {
-        return this.f1418t;
+        return this.f1499t;
     }
 }

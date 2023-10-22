@@ -1,449 +1,559 @@
 package com.iMe.storage.data.manager.ton;
 
-import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
-import com.iMe.storage.data.utils.extentions.StringExtKt;
+import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.manager.ton.TonController;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
+import com.iMe.storage.domain.model.crypto.send.TonTransactionPayload;
 import com.iMe.storage.domain.repository.crypto.ton.TonConfigRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
-import drinkless.org.ton.Client;
-import drinkless.org.ton.TonApi;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.ObservableSource;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import java.io.File;
 import java.util.List;
+import java.util.concurrent.Callable;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugProbesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsJVMKt;
+import kotlinx.coroutines.CancellableContinuationImpl;
+import kotlinx.coroutines.rx2.RxSingleKt;
+import kotlinx.serialization.json.Json;
+import kotlinx.serialization.json.JsonBuilder;
+import kotlinx.serialization.json.JsonKt;
+import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.block.AddrStd;
+import org.ton.cell.Cell;
+import org.ton.contract.wallet.WalletContract;
+import org.ton.lite.client.LiteClient;
 import timber.log.Timber;
 /* compiled from: TonControllerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TonControllerImpl implements TonController {
-    private final Lazy client$delegate;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
-    private TonApi.InputKeyRegular inputKey;
-    private boolean isInitialized;
+    private final Lazy json$delegate;
+    private LiteClient liteClient;
+    private PrivateKeyEd25519 privateKey;
     private final SchedulersProvider schedulersProvider;
-    private final TelegramGateway telegramGateway;
     private final TonConfigRepository tonConfigRepository;
-    private long walletId;
+    private WalletContract<Cell> walletContract;
 
-    public TonControllerImpl(CryptoPreferenceHelper cryptoPreferenceHelper, SchedulersProvider schedulersProvider, TelegramGateway telegramGateway, TonConfigRepository tonConfigRepository) {
+    public TonControllerImpl(TelegramGateway telegramGateway, CryptoPreferenceHelper cryptoPreferenceHelper, SchedulersProvider schedulersProvider, TonConfigRepository tonConfigRepository) {
         Lazy lazy;
+        Intrinsics.checkNotNullParameter(telegramGateway, "telegramGateway");
         Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
         Intrinsics.checkNotNullParameter(schedulersProvider, "schedulersProvider");
-        Intrinsics.checkNotNullParameter(telegramGateway, "telegramGateway");
         Intrinsics.checkNotNullParameter(tonConfigRepository, "tonConfigRepository");
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.schedulersProvider = schedulersProvider;
-        this.telegramGateway = telegramGateway;
         this.tonConfigRepository = tonConfigRepository;
-        lazy = LazyKt__LazyJVMKt.lazy(TonControllerImpl$client$2.INSTANCE);
-        this.client$delegate = lazy;
-        this.walletId = -1L;
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<Json>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$json$2
+            @Override // kotlin.jvm.functions.Function0
+            public final Json invoke() {
+                return JsonKt.Json$default(null, new Function1<JsonBuilder, Unit>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$json$2.1
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(JsonBuilder jsonBuilder) {
+                        invoke2(jsonBuilder);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(JsonBuilder Json) {
+                        Intrinsics.checkNotNullParameter(Json, "$this$Json");
+                        Json.setIgnoreUnknownKeys(true);
+                    }
+                }, 1, null);
+            }
+        });
+        this.json$delegate = lazy;
+        try {
+            File filesFixedDirectory = telegramGateway.getFilesFixedDirectory();
+            new File(filesFixedDirectory, BlockchainType.TON.name() + telegramGateway.getSelectedAccountId()).delete();
+        } catch (Exception e) {
+            Timber.m6e(e);
+        }
     }
 
-    private final Client getClient() {
-        Object value = this.client$delegate.getValue();
-        Intrinsics.checkNotNullExpressionValue(value, "<get-client>(...)");
-        return (Client) value;
+    private final Json getJson() {
+        return (Json) this.json$delegate.getValue();
     }
 
     @Override // com.iMe.storage.domain.manager.ton.TonController
-    public Observable<Result<Boolean>> isValidWalletAddress(String str) {
-        Observable map = sendRequest(new TonApi.UnpackAccountAddress(str)).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda10
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                Result isValidWalletAddress$lambda$0;
-                isValidWalletAddress$lambda$0 = TonControllerImpl.isValidWalletAddress$lambda$0(obj);
-                return isValidWalletAddress$lambda$0;
+    public Observable<Result<Boolean>> isValidAddress(final String address) {
+        Intrinsics.checkNotNullParameter(address, "address");
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                Result isValidAddress$lambda$1;
+                isValidAddress$lambda$1 = TonControllerImpl.isValidAddress$lambda$1(address);
+                return isValidAddress$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(UnpackAccoun…toSuccess()\n            }");
-        return map;
+        final TonControllerImpl$isValidAddress$2 tonControllerImpl$isValidAddress$2 = new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$isValidAddress$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, it, 1, (DefaultConstructorMarker) null), null, 2, null);
+            }
+        };
+        Observable<Result<Boolean>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result isValidAddress$lambda$2;
+                isValidAddress$lambda$2 = TonControllerImpl.isValidAddress$lambda$2(Function1.this, obj);
+                return isValidAddress$lambda$2;
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable {\n         …rror(false)\n            }");
+        return onErrorReturn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result isValidWalletAddress$lambda$0(Object result) {
-        Intrinsics.checkNotNullParameter(result, "result");
-        return Result.Companion.success(Boolean.valueOf(result instanceof TonApi.UnpackedAccountAddress));
+    public static final Result isValidAddress$lambda$1(String address) {
+        Intrinsics.checkNotNullParameter(address, "$address");
+        AddrStd.Companion.parse(address);
+        return Result.Companion.success(Boolean.TRUE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource createWallet$lambda$1(Function1 tmp0, Object obj) {
+    public static final Result isValidAddress$lambda$2(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        return (ObservableSource) tmp0.invoke(obj);
+        return (Result) tmp0.invoke(obj);
     }
 
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<Wallet>> createWallet() {
-        Observable<Boolean> initTonLib = initTonLib();
-        final TonControllerImpl$createWallet$1 tonControllerImpl$createWallet$1 = new TonControllerImpl$createWallet$1(this);
-        Observable flatMap = initTonLib.flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda9
+        Observable<Result<Wallet>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$createWallet$1(this, null), 1, null).toObservable();
+        Intrinsics.checkNotNullExpressionValue(observable, "override fun createWalle…\n        }.toObservable()");
+        return observable;
+    }
+
+    @Override // com.iMe.storage.domain.manager.ton.TonController
+    public Observable<Result<Wallet.TON>> importWallet(List<String> mnemonic) {
+        Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
+        Observable<Result<Wallet.TON>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$importWallet$1(this, mnemonic, null), 1, null).toObservable();
+        Intrinsics.checkNotNullExpressionValue(observable, "override fun importWalle…\n        }.toObservable()");
+        return observable;
+    }
+
+    @Override // com.iMe.storage.domain.manager.ton.TonController
+    public Observable<Result<String>> sendTransaction(String to, long j, TonTransactionPayload tonTransactionPayload, int i) {
+        Intrinsics.checkNotNullParameter(to, "to");
+        Observable<Result<String>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$sendTransaction$1(this, to, j, tonTransactionPayload, null), 1, null).onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource createWallet$lambda$1;
-                createWallet$lambda$1 = TonControllerImpl.createWallet$lambda$1(Function1.this, obj);
-                return createWallet$lambda$1;
+                Result sendTransaction$lambda$3;
+                sendTransaction$lambda$3 = TonControllerImpl.sendTransaction$lambda$3((Throwable) obj);
+                return sendTransaction$lambda$3;
             }
-        });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun createWalle…)\n            }\n        }");
-        return flatMap;
+        }).toObservable();
+        Intrinsics.checkNotNullExpressionValue(observable, "override fun sendTransac…          .toObservable()");
+        return observable;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource importWallet$lambda$2(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        return (ObservableSource) tmp0.invoke(obj);
+    public static final Result sendTransaction$lambda$3(Throwable it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, it, 1, (DefaultConstructorMarker) null), null, 2, null);
     }
 
     @Override // com.iMe.storage.domain.manager.ton.TonController
-    public Observable<Result<Wallet.TON>> importWallet(List<String> words) {
-        Intrinsics.checkNotNullParameter(words, "words");
-        Observable<Boolean> initTonLib = initTonLib();
-        final TonControllerImpl$importWallet$1 tonControllerImpl$importWallet$1 = new TonControllerImpl$importWallet$1(this, words);
-        Observable flatMap = initTonLib.flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda7
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                ObservableSource importWallet$lambda$2;
-                importWallet$lambda$2 = TonControllerImpl.importWallet$lambda$2(Function1.this, obj);
-                return importWallet$lambda$2;
+    public Observable<Result<byte[]>> signData(final byte[] data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                Result signData$lambda$4;
+                signData$lambda$4 = TonControllerImpl.signData$lambda$4(TonControllerImpl.this, data);
+                return signData$lambda$4;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "override fun importWalle…)\n            }\n        }");
-        return flatMap;
+        final TonControllerImpl$signData$2 tonControllerImpl$signData$2 = new Function1<Throwable, Result<? extends byte[]>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$signData$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<byte[]> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, it, 1, (DefaultConstructorMarker) null), null, 2, null);
+            }
+        };
+        Observable<Result<byte[]>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda1
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result signData$lambda$5;
+                signData$lambda$5 = TonControllerImpl.signData$lambda$5(Function1.this, obj);
+                return signData$lambda$5;
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable {\n         …).toError()\n            }");
+        return onErrorReturn;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0020, code lost:
-        if (r5 == null) goto L21;
-     */
-    @Override // com.iMe.storage.domain.manager.ton.TonController
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Result signData$lambda$4(TonControllerImpl this$0, byte[] data) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(data, "$data");
+        return Result.Companion.success(this$0.getPrivateKeySafe().sign(data));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Result signData$lambda$5(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Result) tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0035  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public io.reactivex.Observable<com.iMe.storage.domain.model.Result<java.lang.Boolean>> sendTransaction(java.lang.String r17, java.lang.String r18, long r19, java.lang.String r21, boolean r22, int r23) {
+    public final java.lang.Object initLiteClient(kotlin.coroutines.Continuation<? super org.ton.lite.client.LiteClient> r6) {
         /*
-            r16 = this;
-            r0 = r16
-            r1 = r17
-            r2 = r18
-            r3 = r21
-            java.lang.String r4 = "from"
-            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r4)
-            java.lang.String r4 = "to"
-            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, r4)
-            r4 = 0
-            if (r3 == 0) goto L22
-            java.nio.charset.Charset r5 = kotlin.text.Charsets.UTF_8
-            byte[] r5 = r3.getBytes(r5)
-            java.lang.String r6 = "this as java.lang.String).getBytes(charset)"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r6)
-            if (r5 != 0) goto L24
-        L22:
-            byte[] r5 = new byte[r4]
-        L24:
-            if (r22 != 0) goto L33
-            boolean r3 = android.text.TextUtils.isEmpty(r21)
-            if (r3 == 0) goto L2d
-            goto L33
+            r5 = this;
+            boolean r0 = r6 instanceof com.iMe.storage.data.manager.ton.TonControllerImpl$initLiteClient$1
+            if (r0 == 0) goto L13
+            r0 = r6
+            com.iMe.storage.data.manager.ton.TonControllerImpl$initLiteClient$1 r0 = (com.iMe.storage.data.manager.ton.TonControllerImpl$initLiteClient$1) r0
+            int r1 = r0.label
+            r2 = -2147483648(0xffffffff80000000, float:-0.0)
+            r3 = r1 & r2
+            if (r3 == 0) goto L13
+            int r1 = r1 - r2
+            r0.label = r1
+            goto L18
+        L13:
+            com.iMe.storage.data.manager.ton.TonControllerImpl$initLiteClient$1 r0 = new com.iMe.storage.data.manager.ton.TonControllerImpl$initLiteClient$1
+            r0.<init>(r5, r6)
+        L18:
+            java.lang.Object r6 = r0.result
+            java.lang.Object r1 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()
+            int r2 = r0.label
+            r3 = 1
+            if (r2 == 0) goto L35
+            if (r2 != r3) goto L2d
+            java.lang.Object r0 = r0.L$0
+            kotlinx.serialization.StringFormat r0 = (kotlinx.serialization.StringFormat) r0
+            kotlin.ResultKt.throwOnFailure(r6)
+            goto L4a
         L2d:
-            drinkless.org.ton.TonApi$MsgDataDecryptedText r3 = new drinkless.org.ton.TonApi$MsgDataDecryptedText
-            r3.<init>(r5)
-            goto L38
-        L33:
-            drinkless.org.ton.TonApi$MsgDataText r3 = new drinkless.org.ton.TonApi$MsgDataText
-            r3.<init>(r5)
-        L38:
-            r11 = r3
-            drinkless.org.ton.TonApi$InputKeyRegular r3 = r0.inputKey
-            if (r3 == 0) goto L44
-            drinkless.org.ton.TonApi$Key r3 = r3.key
-            if (r3 == 0) goto L44
-            java.lang.String r3 = r3.publicKey
-            goto L45
-        L44:
-            r3 = 0
-        L45:
-            if (r3 != 0) goto L49
-            java.lang.String r3 = ""
-        L49:
-            drinkless.org.ton.TonApi$ActionMsg r5 = new drinkless.org.ton.TonApi$ActionMsg
-            r13 = 1
-            drinkless.org.ton.TonApi$MsgMessage[] r14 = new drinkless.org.ton.TonApi.MsgMessage[r13]
-            drinkless.org.ton.TonApi$MsgMessage r15 = new drinkless.org.ton.TonApi$MsgMessage
-            drinkless.org.ton.TonApi$AccountAddress r7 = new drinkless.org.ton.TonApi$AccountAddress
-            r7.<init>(r2)
-            r6 = r15
-            r8 = r3
-            r9 = r19
-            r12 = r23
-            r6.<init>(r7, r8, r9, r11, r12)
-            r14[r4] = r15
-            r5.<init>(r14, r13)
-            drinkless.org.ton.TonApi$CreateQuery r2 = new drinkless.org.ton.TonApi$CreateQuery
-            drinkless.org.ton.TonApi$InputKeyRegular r4 = r0.inputKey
-            drinkless.org.ton.TonApi$AccountAddress r6 = new drinkless.org.ton.TonApi$AccountAddress
-            r6.<init>(r1)
-            r1 = 0
-            drinkless.org.ton.TonApi$WalletV3InitialAccountState r7 = new drinkless.org.ton.TonApi$WalletV3InitialAccountState
-            long r8 = r0.walletId
-            r7.<init>(r3, r8)
-            r17 = r2
-            r18 = r4
-            r19 = r6
-            r20 = r1
-            r21 = r5
-            r22 = r7
-            r17.<init>(r18, r19, r20, r21, r22)
-            io.reactivex.Observable r1 = r0.sendRequest(r2)
-            com.iMe.storage.domain.utils.rx.SchedulersProvider r2 = r0.schedulersProvider
-            io.reactivex.Scheduler r2 = r2.mo717io()
-            io.reactivex.Observable r1 = r1.subscribeOn(r2)
-            com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2 r2 = new com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
-            r2.<init>()
-            io.reactivex.Observable r1 = r1.flatMap(r2)
-            java.lang.String r2 = "sendRequest(signRequest)…          }\n            }"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r2)
+            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
+            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
+            r6.<init>(r0)
+            throw r6
+        L35:
+            kotlin.ResultKt.throwOnFailure(r6)
+            kotlinx.serialization.json.Json r6 = r5.getJson()
+            r0.L$0 = r6
+            r0.label = r3
+            java.lang.Object r0 = r5.fetchConfig(r0)
+            if (r0 != r1) goto L47
+            return r1
+        L47:
+            r4 = r0
+            r0 = r6
+            r6 = r4
+        L4a:
+            java.lang.String r6 = (java.lang.String) r6
+            kotlinx.serialization.modules.SerializersModule r1 = r0.getSerializersModule()
+            java.lang.Class<org.ton.api.liteclient.config.LiteClientConfigGlobal> r2 = org.ton.api.liteclient.config.LiteClientConfigGlobal.class
+            kotlin.reflect.KType r2 = kotlin.jvm.internal.Reflection.typeOf(r2)
+            java.lang.String r3 = "kotlinx.serialization.serializer.withModule"
+            kotlin.jvm.internal.MagicApiIntrinsics.voidMagicApiCall(r3)
+            kotlinx.serialization.KSerializer r1 = kotlinx.serialization.SerializersKt.serializer(r1, r2)
+            java.lang.Object r6 = r0.decodeFromString(r1, r6)
+            org.ton.api.liteclient.config.LiteClientConfigGlobal r6 = (org.ton.api.liteclient.config.LiteClientConfigGlobal) r6
+            kotlinx.coroutines.CoroutineDispatcher r0 = kotlinx.coroutines.Dispatchers.getDefault()
+            org.ton.lite.client.LiteClient r1 = new org.ton.lite.client.LiteClient
+            r1.<init>(r0, r6)
             return r1
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.sendTransaction(java.lang.String, java.lang.String, long, java.lang.String, boolean, int):io.reactivex.Observable");
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.initLiteClient(kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource sendTransaction$lambda$5(final TonControllerImpl this$0, final Object signResult) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(signResult, "signResult");
-        if (!(signResult instanceof TonApi.QueryInfo)) {
-            Observable just = Observable.just(this$0.getTonApiErrorResult(signResult));
-            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-            return just;
+    public final PrivateKeyEd25519 getPrivateKeySafe() {
+        PrivateKeyEd25519 privateKeyEd25519 = this.privateKey;
+        if (privateKeyEd25519 != null) {
+            return privateKeyEd25519;
         }
-        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f507id)).subscribeOn(this$0.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                Result sendTransaction$lambda$5$lambda$4;
-                sendTransaction$lambda$5$lambda$4 = TonControllerImpl.sendTransaction$lambda$5$lambda$4(TonControllerImpl.this, signResult, obj);
-                return sendTransaction$lambda$5$lambda$4;
+        throw new Throwable("Private key is null");
+    }
+
+    private final Object getLightClientSafe(Continuation<? super LiteClient> continuation) {
+        LiteClient liteClient = this.liteClient;
+        return liteClient == null ? initLiteClient(continuation) : liteClient;
+    }
+
+    private final Object getWalletSafe(Continuation<? super WalletContract<Cell>> continuation) {
+        WalletContract<Cell> walletContract = this.walletContract;
+        return walletContract == null ? initWallet(continuation) : walletContract;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0080 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0088 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0089  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final java.lang.Object initWallet(kotlin.coroutines.Continuation<? super org.ton.contract.wallet.WalletContract<org.ton.cell.Cell>> r14) {
+        /*
+            r13 = this;
+            boolean r0 = r14 instanceof com.iMe.storage.data.manager.ton.TonControllerImpl$initWallet$1
+            if (r0 == 0) goto L13
+            r0 = r14
+            com.iMe.storage.data.manager.ton.TonControllerImpl$initWallet$1 r0 = (com.iMe.storage.data.manager.ton.TonControllerImpl$initWallet$1) r0
+            int r1 = r0.label
+            r2 = -2147483648(0xffffffff80000000, float:-0.0)
+            r3 = r1 & r2
+            if (r3 == 0) goto L13
+            int r1 = r1 - r2
+            r0.label = r1
+            goto L18
+        L13:
+            com.iMe.storage.data.manager.ton.TonControllerImpl$initWallet$1 r0 = new com.iMe.storage.data.manager.ton.TonControllerImpl$initWallet$1
+            r0.<init>(r13, r14)
+        L18:
+            java.lang.Object r14 = r0.result
+            java.lang.Object r1 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()
+            int r2 = r0.label
+            r3 = 2
+            r4 = 1
+            if (r2 == 0) goto L44
+            if (r2 == r4) goto L38
+            if (r2 != r3) goto L30
+            java.lang.Object r0 = r0.L$0
+            com.iMe.storage.data.manager.ton.TonControllerImpl r0 = (com.iMe.storage.data.manager.ton.TonControllerImpl) r0
+            kotlin.ResultKt.throwOnFailure(r14)
+            goto L82
+        L30:
+            java.lang.IllegalStateException r14 = new java.lang.IllegalStateException
+            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
+            r14.<init>(r0)
+            throw r14
+        L38:
+            java.lang.Object r2 = r0.L$1
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r2 = (com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion) r2
+            java.lang.Object r4 = r0.L$0
+            com.iMe.storage.data.manager.ton.TonControllerImpl r4 = (com.iMe.storage.data.manager.ton.TonControllerImpl) r4
+            kotlin.ResultKt.throwOnFailure(r14)
+            goto L57
+        L44:
+            kotlin.ResultKt.throwOnFailure(r14)
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r2 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion
+            r0.L$0 = r13
+            r0.L$1 = r2
+            r0.label = r4
+            java.lang.Object r14 = r13.getLightClientSafe(r0)
+            if (r14 != r1) goto L56
+            return r1
+        L56:
+            r4 = r13
+        L57:
+            org.ton.lite.client.LiteClient r14 = (org.ton.lite.client.LiteClient) r14
+            org.ton.contract.SmartContract$Companion r5 = org.ton.contract.SmartContract.Companion
+            r6 = 0
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion
+            org.ton.api.pk.PrivateKeyEd25519 r8 = r4.getPrivateKeySafe()
+            org.ton.api.pub.PublicKeyEd25519 r8 = r8.publicKey()
+            int r9 = org.ton.contract.wallet.WalletContract.DEFAULT_WALLET_ID
+            r10 = 0
+            r11 = 4
+            r12 = 0
+            org.ton.block.StateInit r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion.createStateInit$default(r7, r8, r9, r10, r11, r12)
+            org.ton.block.AddrStd r5 = r5.address(r6, r7)
+            r0.L$0 = r4
+            r6 = 0
+            r0.L$1 = r6
+            r0.label = r3
+            java.lang.Object r14 = r2.loadContract(r14, r5, r0)
+            if (r14 != r1) goto L81
+            return r1
+        L81:
+            r0 = r4
+        L82:
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract r14 = (com.iMe.storage.data.manager.ton.WalletV3R2Contract) r14
+            r0.walletContract = r14
+            if (r14 == 0) goto L89
+            return r14
+        L89:
+            java.lang.Throwable r14 = new java.lang.Throwable
+            java.lang.String r0 = "Wallet fetching error"
+            r14.<init>(r0)
+            throw r14
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.initWallet(kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00df A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final java.lang.Object sendInternal(java.lang.String r11, long r12, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload r14, kotlin.coroutines.Continuation<? super com.iMe.storage.domain.model.Result<java.lang.String>> r15) {
+        /*
+            Method dump skipped, instructions count: 233
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.sendInternal(java.lang.String, long, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload, kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    private final Object fetchConfig(Continuation<? super String> continuation) {
+        Continuation intercepted;
+        Object coroutine_suspended;
+        intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
+        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
+        cancellableContinuationImpl.initCancellability();
+        Observable<Result<String>> tonConfigJsonString = this.tonConfigRepository.getTonConfigJsonString();
+        final TonControllerImpl$fetchConfig$2$disposable$1 tonControllerImpl$fetchConfig$2$disposable$1 = new Function1<Result<? extends String>, Boolean>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$fetchConfig$2$disposable$1
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final Boolean invoke2(Result<String> it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Boolean.valueOf((it instanceof Result.Error) || (it instanceof Result.Success));
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Boolean invoke(Result<? extends String> result) {
+                return invoke2((Result<String>) result);
+            }
+        };
+        Observable<Result<String>> filter = tonConfigJsonString.filter(new Predicate(tonControllerImpl$fetchConfig$2$disposable$1) { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$sam$io_reactivex_functions_Predicate$0
+            private final /* synthetic */ Function1 function;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                Intrinsics.checkNotNullParameter(tonControllerImpl$fetchConfig$2$disposable$1, "function");
+                this.function = tonControllerImpl$fetchConfig$2$disposable$1;
+            }
+
+            @Override // io.reactivex.functions.Predicate
+            public final /* synthetic */ boolean test(Object obj) {
+                return ((Boolean) this.function.invoke(obj)).booleanValue();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Result sendTransaction$lambda$5$lambda$4(TonControllerImpl this$0, Object signResult, Object sendResult) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(signResult, "$signResult");
-        Intrinsics.checkNotNullParameter(sendResult, "sendResult");
-        if (sendResult instanceof TonApi.C2639Ok) {
-            return Result.Companion.success(Boolean.TRUE);
-        }
-        return this$0.getTonApiErrorResult(signResult);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Object> sendRequest(final TonApi.Function function) {
-        Observable<Object> create = Observable.create(new ObservableOnSubscribe() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda1
-            @Override // io.reactivex.ObservableOnSubscribe
-            public final void subscribe(ObservableEmitter observableEmitter) {
-                TonControllerImpl.sendRequest$lambda$7(TonControllerImpl.this, function, observableEmitter);
-            }
-        });
-        Intrinsics.checkNotNullExpressionValue(create, "create { emitter ->\n    …       }, null)\n        }");
-        return create;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendRequest$lambda$7(TonControllerImpl this$0, final TonApi.Function query, final ObservableEmitter emitter) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(query, "$query");
-        Intrinsics.checkNotNullParameter(emitter, "emitter");
-        this$0.getClient().send(query, new Client.ResultHandler() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda0
-            @Override // drinkless.org.ton.Client.ResultHandler
-            public final void onResult(TonApi.Object object) {
-                TonControllerImpl.sendRequest$lambda$7$lambda$6(TonApi.Function.this, emitter, object);
-            }
-        }, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendRequest$lambda$7$lambda$6(TonApi.Function query, ObservableEmitter emitter, TonApi.Object object) {
-        Intrinsics.checkNotNullParameter(query, "$query");
-        Intrinsics.checkNotNullParameter(emitter, "$emitter");
-        if (object instanceof TonApi.Error) {
-            Timber.m7e("TonApi query " + query + " error " + ((TonApi.Error) object).message, new Object[0]);
-        }
-        emitter.onNext(object);
-        emitter.onComplete();
-    }
-
-    private final Observable<Boolean> initTonLib() {
-        Observable<Result<String>> subscribeOn = this.tonConfigRepository.getTonConfigJsonString().subscribeOn(this.schedulersProvider.mo717io());
-        final Function1<Result<? extends String>, ObservableSource<? extends Boolean>> function1 = new Function1<Result<? extends String>, ObservableSource<? extends Boolean>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$initTonLib$1
+        final Function1<Result<? extends String>, String> function1 = new Function1<Result<? extends String>, String>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$fetchConfig$2$disposable$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ ObservableSource<? extends Boolean> invoke(Result<? extends String> result) {
+            public /* bridge */ /* synthetic */ String invoke(Result<? extends String> result) {
                 return invoke2((Result<String>) result);
             }
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final ObservableSource<? extends Boolean> invoke2(Result<String> result) {
+            public final String invoke2(Result<String> result) {
+                String str;
                 CryptoPreferenceHelper cryptoPreferenceHelper;
-                Observable initTonLibObservable;
-                Observable initTonLibObservable2;
+                boolean isBlank;
                 Intrinsics.checkNotNullParameter(result, "result");
                 if (result instanceof Result.Success) {
-                    initTonLibObservable2 = TonControllerImpl.this.getInitTonLibObservable((String) ((Result.Success) result).getData());
-                    return initTonLibObservable2;
+                    str = (String) ((Result.Success) result).getData();
                 } else if (result instanceof Result.Error) {
                     cryptoPreferenceHelper = TonControllerImpl.this.cryptoPreferenceHelper;
-                    String tonConfigJsonString = cryptoPreferenceHelper.getTonConfigJsonString();
-                    if (!(tonConfigJsonString.length() > 0)) {
-                        Observable just = Observable.just(Boolean.FALSE);
-                        Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-                        return just;
-                    }
-                    initTonLibObservable = TonControllerImpl.this.getInitTonLibObservable(tonConfigJsonString);
-                    return initTonLibObservable;
+                    str = cryptoPreferenceHelper.getTonConfigJsonString();
                 } else {
-                    return Observable.empty();
+                    str = "";
                 }
+                isBlank = StringsKt__StringsJVMKt.isBlank(str);
+                if (isBlank) {
+                    throw new Throwable("TON global configuration fetching error");
+                }
+                return str;
             }
         };
-        Observable<R> flatMap = subscribeOn.flatMap(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda8
+        Observable subscribeOn = filter.map(new Function(function1) { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$sam$io_reactivex_functions_Function$0
+            private final /* synthetic */ Function1 function;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                Intrinsics.checkNotNullParameter(function1, "function");
+                this.function = function1;
+            }
+
             @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                ObservableSource initTonLib$lambda$8;
-                initTonLib$lambda$8 = TonControllerImpl.initTonLib$lambda$8(Function1.this, obj);
-                return initTonLib$lambda$8;
+            public final /* synthetic */ Object apply(Object obj) {
+                return this.function.invoke(obj);
+            }
+        }).subscribeOn(this.schedulersProvider.mo1010io());
+        final TonControllerImpl$fetchConfig$2$disposable$3 tonControllerImpl$fetchConfig$2$disposable$3 = new TonControllerImpl$fetchConfig$2$disposable$3(cancellableContinuationImpl);
+        Consumer consumer = new Consumer(tonControllerImpl$fetchConfig$2$disposable$3) { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$sam$io_reactivex_functions_Consumer$0
+            private final /* synthetic */ Function1 function;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                Intrinsics.checkNotNullParameter(tonControllerImpl$fetchConfig$2$disposable$3, "function");
+                this.function = tonControllerImpl$fetchConfig$2$disposable$3;
+            }
+
+            @Override // io.reactivex.functions.Consumer
+            public final /* synthetic */ void accept(Object obj) {
+                this.function.invoke(obj);
+            }
+        };
+        final TonControllerImpl$fetchConfig$2$disposable$4 tonControllerImpl$fetchConfig$2$disposable$4 = new TonControllerImpl$fetchConfig$2$disposable$4(cancellableContinuationImpl);
+        final Disposable subscribe = subscribeOn.subscribe(consumer, new Consumer(tonControllerImpl$fetchConfig$2$disposable$4) { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$sam$io_reactivex_functions_Consumer$0
+            private final /* synthetic */ Function1 function;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                Intrinsics.checkNotNullParameter(tonControllerImpl$fetchConfig$2$disposable$4, "function");
+                this.function = tonControllerImpl$fetchConfig$2$disposable$4;
+            }
+
+            @Override // io.reactivex.functions.Consumer
+            public final /* synthetic */ void accept(Object obj) {
+                this.function.invoke(obj);
             }
         });
-        final TonControllerImpl$initTonLib$2 tonControllerImpl$initTonLib$2 = new Function1<Throwable, Boolean>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$initTonLib$2
+        cancellableContinuationImpl.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$fetchConfig$2$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(Throwable it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Boolean.FALSE;
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
             }
-        };
-        Observable<Boolean> onErrorReturn = flatMap.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda6
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                Boolean initTonLib$lambda$9;
-                initTonLib$lambda$9 = TonControllerImpl.initTonLib$lambda$9(Function1.this, obj);
-                return initTonLib$lambda$9;
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                Disposable.this.dispose();
             }
         });
-        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "private fun initTonLib()… .onErrorReturn { false }");
-        return onErrorReturn;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource initTonLib$lambda$8(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        return (ObservableSource) tmp0.invoke(obj);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Boolean initTonLib$lambda$9(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        return (Boolean) tmp0.invoke(obj);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Boolean> getInitTonLibObservable(final String str) {
-        if (this.isInitialized) {
-            Observable<Boolean> just = Observable.just(Boolean.TRUE);
-            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-            return just;
+        Object result = cancellableContinuationImpl.getResult();
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        if (result == coroutine_suspended) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
         }
-        File filesFixedDirectory = this.telegramGateway.getFilesFixedDirectory();
-        File file = new File(filesFixedDirectory, BlockchainType.TON.name() + this.telegramGateway.getSelectedAccountId());
-        file.mkdirs();
-        Observable map = sendRequest(new TonApi.Init(new TonApi.Options(getConfig(str), new TonApi.KeyStoreTypeDirectory(file.getAbsolutePath())))).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                Boolean initTonLibObservable$lambda$11;
-                initTonLibObservable$lambda$11 = TonControllerImpl.getInitTonLibObservable$lambda$11(TonControllerImpl.this, str, obj);
-                return initTonLibObservable$lambda$11;
-            }
-        });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(Init(options…          }\n            }");
-        return map;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Boolean getInitTonLibObservable$lambda$11(TonControllerImpl this$0, String configJsonString, Object result) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(configJsonString, "$configJsonString");
-        Intrinsics.checkNotNullParameter(result, "result");
-        boolean z = true;
-        if (result instanceof TonApi.OptionsInfo) {
-            this$0.isInitialized = true;
-            this$0.walletId = ((TonApi.OptionsInfo) result).configInfo.defaultWalletId;
-            this$0.cryptoPreferenceHelper.setTonConfigJsonString(configJsonString);
-        } else {
-            z = false;
-        }
-        return Boolean.valueOf(z);
-    }
-
-    private final TonApi.Config getConfig(String str) {
-        return new TonApi.Config(str, "mainnet", false, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<Wallet.TON>> processInputKey(TonApi.Key key, final List<String> list) {
-        final TonApi.InputKeyRegular inputKeyRegular = new TonApi.InputKeyRegular(key, new byte[0]);
-        this.inputKey = inputKeyRegular;
-        Observable map = sendRequest(new TonApi.GetAccountAddress(new TonApi.WalletV3InitialAccountState(key.publicKey, this.walletId), 2, 0)).subscribeOn(this.schedulersProvider.mo717io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda5
-            @Override // io.reactivex.functions.Function
-            public final Object apply(Object obj) {
-                Result processInputKey$lambda$12;
-                processInputKey$lambda$12 = TonControllerImpl.processInputKey$lambda$12(list, inputKeyRegular, this, obj);
-                return processInputKey$lambda$12;
-            }
-        });
-        Intrinsics.checkNotNullExpressionValue(map, "sendRequest(GetAccountAd…          }\n            }");
-        return map;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Result processInputKey$lambda$12(List words, TonApi.InputKeyRegular newInputKey, TonControllerImpl this$0, Object addressResult) {
-        Intrinsics.checkNotNullParameter(words, "$words");
-        Intrinsics.checkNotNullParameter(newInputKey, "$newInputKey");
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(addressResult, "addressResult");
-        if (addressResult instanceof TonApi.AccountAddress) {
-            String joinBySpace = StringExtKt.joinBySpace(words);
-            String str = ((TonApi.AccountAddress) addressResult).accountAddress;
-            Intrinsics.checkNotNullExpressionValue(str, "addressResult.accountAddress");
-            return Result.Companion.success(new Wallet.TON("", joinBySpace, str, newInputKey));
-        }
-        return this$0.getTonApiErrorResult(addressResult);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final <T> Result.Error<T> getTonApiErrorResult(Object obj) {
-        return new Result.Error<>(new ErrorModel(obj instanceof TonApi.Error ? ((TonApi.Error) obj).message : null, ApiErrorHandler.ErrorStatus.NOT_DEFINED, null, 4, null), null, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Result.Error getTonApiErrorResult$default(TonControllerImpl tonControllerImpl, Object obj, int i, Object obj2) {
-        if ((i & 1) != 0) {
-            obj = null;
-        }
-        return tonControllerImpl.getTonApiErrorResult(obj);
+        return result;
     }
 }

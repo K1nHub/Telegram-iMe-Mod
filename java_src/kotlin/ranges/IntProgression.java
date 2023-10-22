@@ -5,7 +5,7 @@ import kotlin.internal.ProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: Progressions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class IntProgression implements Iterable<Integer>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
     private final int first;
@@ -94,7 +94,7 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     }
 
     /* compiled from: Progressions.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

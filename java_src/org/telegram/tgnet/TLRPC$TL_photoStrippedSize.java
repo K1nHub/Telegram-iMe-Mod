@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_photoStrippedSize extends TLRPC$PhotoSize {
     public static int constructor = -525288402;
 
@@ -7,8 +7,8 @@ public class TLRPC$TL_photoStrippedSize extends TLRPC$PhotoSize {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.type = abstractSerializedData.readString(z);
         this.bytes = abstractSerializedData.readByteArray(z);
-        this.f1553h = 50;
-        this.f1554w = 50;
+        this.f1631h = 50;
+        this.f1632w = 50;
     }
 
     @Override // org.telegram.tgnet.TLObject

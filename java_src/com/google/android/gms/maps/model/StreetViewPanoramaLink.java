@@ -9,16 +9,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaLinkCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class StreetViewPanoramaLink extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaLink> CREATOR = new zzq();
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final float bearing;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final String panoId;
 
     @SafeParcelable.Constructor
-    public StreetViewPanoramaLink(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) float f) {
+    public StreetViewPanoramaLink(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) float f) {
         this.panoId = str;
         this.bearing = (((double) f) <= 0.0d ? (f % 360.0f) + 360.0f : f) % 360.0f;
     }

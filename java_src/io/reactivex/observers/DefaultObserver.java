@@ -3,7 +3,7 @@ package io.reactivex.observers;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.util.EndConsumerHelper;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class DefaultObserver<T> implements Observer<T> {
     private Disposable upstream;
 

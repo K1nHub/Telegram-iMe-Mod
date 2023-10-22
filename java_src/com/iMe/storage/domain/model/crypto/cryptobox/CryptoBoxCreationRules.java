@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSynth
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationRules.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxCreationRules {
     private final String factoryContractAddress;
     private final String factoryContractUrl;
@@ -56,7 +56,7 @@ public final class CryptoBoxCreationRules {
     }
 
     public int hashCode() {
-        return (((((((((this.feeToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.feePerUser)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.feePerCryptobox)) * 31) + this.minimalCapacity) * 31) + this.factoryContractAddress.hashCode()) * 31) + this.factoryContractUrl.hashCode();
+        return (((((((((this.feeToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.feePerUser)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.feePerCryptobox)) * 31) + this.minimalCapacity) * 31) + this.factoryContractAddress.hashCode()) * 31) + this.factoryContractUrl.hashCode();
     }
 
     public String toString() {

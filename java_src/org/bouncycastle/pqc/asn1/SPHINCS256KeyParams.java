@@ -7,7 +7,7 @@ import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SPHINCS256KeyParams extends ASN1Object {
     private final AlgorithmIdentifier treeDigest;
     private final ASN1Integer version;

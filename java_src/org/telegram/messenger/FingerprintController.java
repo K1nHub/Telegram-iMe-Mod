@@ -21,7 +21,7 @@ import javax.crypto.spec.OAEPParameterSpec;
 import javax.crypto.spec.PSource;
 import org.telegram.messenger.support.fingerprint.FingerprintManagerCompat;
 import timber.log.Timber;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
     private static Cipher cipher;
@@ -90,7 +90,7 @@ public class FingerprintController {
             keyStore3.load(null);
             return keyStore;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }
@@ -105,7 +105,7 @@ public class FingerprintController {
             keyPairGenerator = keyPairGenerator3;
             return keyPairGenerator3;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return null;
         }
     }
@@ -127,12 +127,12 @@ public class FingerprintController {
                     }
                 });
             } catch (InvalidAlgorithmParameterException e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             } catch (Exception e2) {
                 if (e2.getClass().getName().equals("android.security.KeyStoreException")) {
                     return;
                 }
-                FileLog.m67e(e2);
+                FileLog.m97e(e2);
             }
         }
     }
@@ -146,7 +146,7 @@ public class FingerprintController {
         try {
             getKeyStore().deleteEntry(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         hasChangedFingerprints = null;
         checkKeyReady(false);
@@ -171,7 +171,7 @@ public class FingerprintController {
         try {
             return getKeyStore().containsAlias(KEY_ALIAS);
         } catch (KeyStoreException e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             return false;
         }
     }
@@ -189,7 +189,7 @@ public class FingerprintController {
             hasChangedFingerprints = Boolean.TRUE;
             return true;
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
             hasChangedFingerprints = Boolean.FALSE;
             return false;
         }

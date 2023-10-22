@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.wearable.Wearable;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class NodeClient extends GoogleApi<Wearable.WearableOptions> {
     public NodeClient(Activity activity, GoogleApi.Settings settings) {
         super(activity, Wearable.API, Wearable.WearableOptions.zza, settings);

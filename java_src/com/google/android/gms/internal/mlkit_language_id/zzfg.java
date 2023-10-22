@@ -2,10 +2,10 @@ package com.google.android.gms.internal.mlkit_language_id;
 
 import java.util.List;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface zzfg extends List {
     /* renamed from: a_ */
-    zzfg mo779a_();
+    zzfg mo1071a_();
 
     Object zza(int i);
 

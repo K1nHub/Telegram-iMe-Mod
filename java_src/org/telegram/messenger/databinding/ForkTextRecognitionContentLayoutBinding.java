@@ -10,8 +10,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkTextRecognitionContentLayoutBinding implements ViewBinding {
     public final ConstraintLayout constraintLayoutHeader;
     public final AppCompatImageView imageClose;
@@ -37,7 +37,6 @@ public final class ForkTextRecognitionContentLayoutBinding implements ViewBindin
         this.textRecognitionContainer = linearLayout2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayout getRoot() {
         return this.rootView;
     }
@@ -47,7 +46,7 @@ public final class ForkTextRecognitionContentLayoutBinding implements ViewBindin
     }
 
     public static ForkTextRecognitionContentLayoutBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_text_recognition_content_layout, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_text_recognition_content_layout, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -55,31 +54,31 @@ public final class ForkTextRecognitionContentLayoutBinding implements ViewBindin
     }
 
     public static ForkTextRecognitionContentLayoutBinding bind(View view) {
-        int i = C3473R.C3476id.constraint_layout_header;
+        int i = C3630R.C3633id.constraint_layout_header;
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout != null) {
-            i = C3473R.C3476id.image_close;
+            i = C3630R.C3633id.image_close;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3473R.C3476id.image_copy;
+                i = C3630R.C3633id.image_copy;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3473R.C3476id.image_service_logo;
+                    i = C3630R.C3633id.image_service_logo;
                     AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView3 != null) {
-                        i = C3473R.C3476id.image_share;
+                        i = C3630R.C3633id.image_share;
                         AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView4 != null) {
-                            i = C3473R.C3476id.image_translate;
+                            i = C3630R.C3633id.image_translate;
                             AppCompatImageView appCompatImageView5 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                             if (appCompatImageView5 != null) {
-                                i = C3473R.C3476id.nested_scroll_view;
+                                i = C3630R.C3633id.nested_scroll_view;
                                 NestedScrollView nestedScrollView = (NestedScrollView) ViewBindings.findChildViewById(view, i);
                                 if (nestedScrollView != null) {
-                                    i = C3473R.C3476id.recognized_text;
+                                    i = C3630R.C3633id.recognized_text;
                                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView != null) {
-                                        i = C3473R.C3476id.text_company;
+                                        i = C3630R.C3633id.text_company;
                                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView2 != null) {
                                             LinearLayout linearLayout = (LinearLayout) view;

@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import com.google.android.play.core.install.InstallState;
 import com.google.android.play.core.internal.zzag;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzb extends com.google.android.play.core.listener.zzc<InstallState> {
     public zzb(Context context) {
         super(new zzag("AppUpdateListenerRegistry"), new IntentFilter("com.google.android.play.core.install.ACTION_INSTALL_STATUS"), context);

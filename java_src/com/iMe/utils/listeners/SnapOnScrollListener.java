@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.iMe.utils.extentions.common.SnapHelperExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SnapOnScrollListener.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SnapOnScrollListener extends RecyclerView.OnScrollListener {
     private Behavior behavior;
     private OnSnapPositionChangeListener onSnapPositionChangeListener;
@@ -13,7 +13,7 @@ public final class SnapOnScrollListener extends RecyclerView.OnScrollListener {
     private int snapPosition;
 
     /* compiled from: SnapOnScrollListener.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public enum Behavior {
         NOTIFY_ON_SCROLL,
         NOTIFY_ON_SCROLL_STATE_IDLE

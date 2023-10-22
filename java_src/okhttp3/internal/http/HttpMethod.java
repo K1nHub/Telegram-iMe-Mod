@@ -2,7 +2,7 @@ package okhttp3.internal.http;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HttpMethod.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HttpMethod {
     public static final HttpMethod INSTANCE = new HttpMethod();
 

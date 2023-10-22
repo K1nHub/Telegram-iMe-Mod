@@ -17,17 +17,17 @@
 
 
 # virtual methods
-.method public B()Lj$/util/s$b;
+.method public A()Lj$/util/Spliterator$b;
     .locals 1
 
-    invoke-super {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
+    invoke-super {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic C(Ljava/lang/Integer;)V
+.method public synthetic B(Ljava/lang/Integer;)V
     .locals 0
 
     invoke-static {p0, p1}, Lj$/util/stream/o1;->b(Lj$/util/stream/k3;Ljava/lang/Integer;)V
@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public synthetic D([Ljava/lang/Integer;I)V
+.method public synthetic C([Ljava/lang/Integer;I)V
     .locals 0
 
     invoke-static {p0, p1, p2}, Lj$/util/stream/o1;->i(Lj$/util/stream/w1;[Ljava/lang/Integer;I)V
@@ -43,10 +43,10 @@
     return-void
 .end method
 
-.method public synthetic E(JJLj$/util/function/m;)Lj$/util/stream/w1;
+.method public synthetic D(JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->o(Lj$/util/stream/w1;JJLj$/util/function/m;)Lj$/util/stream/w1;
+    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->o(Lj$/util/stream/w1;JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
 
     move-result-object p1
 
@@ -99,7 +99,7 @@
     .line 1
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/e2;->C(Ljava/lang/Integer;)V
+    invoke-virtual {p0, p1}, Lj$/util/stream/e2;->B(Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -177,25 +177,33 @@
     .line 1
     check-cast p1, [Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/e2;->D([Ljava/lang/Integer;I)V
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/e2;->C([Ljava/lang/Integer;I)V
 
     return-void
 .end method
 
-.method public m()V
+.method public l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
     invoke-virtual {p0}, Lj$/util/stream/Z3;->clear()V
 
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/Z3;->x(J)V
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/Z3;->w(J)V
 
     return-void
+.end method
+
+.method public synthetic n()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public synthetic o()Z
@@ -206,51 +214,43 @@
     return v0
 .end method
 
-.method public synthetic p()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public synthetic q(Lj$/util/function/m;)[Ljava/lang/Object;
+.method public synthetic p(Lj$/util/function/IntFunction;)[Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/m;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->g(Lj$/util/stream/z1;Lj$/util/function/IntFunction;)[Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public bridge synthetic r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public bridge synthetic q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 0
 
     .line 1
-    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/e2;->E(JJLj$/util/function/m;)Lj$/util/stream/w1;
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/e2;->D(JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public spliterator()Lj$/util/Spliterator$d;
     .locals 1
 
-    .line 2
-    invoke-super {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
+    .line 1
+    invoke-super {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public spliterator()Lj$/util/t;
+.method public spliterator()Lj$/util/Spliterator;
     .locals 1
 
-    .line 1
-    invoke-super {p0}, Lj$/util/stream/W3;->B()Lj$/util/s$b;
+    .line 2
+    invoke-super {p0}, Lj$/util/stream/W3;->A()Lj$/util/Spliterator$b;
 
     move-result-object v0
 

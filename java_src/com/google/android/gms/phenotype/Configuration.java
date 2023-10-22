@@ -12,20 +12,20 @@ import java.util.TreeMap;
 @KeepForSdk
 @SafeParcelable.Class(creator = "ConfigurationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Configuration extends AbstractSafeParcelable implements Comparable<Configuration> {
     @KeepForSdk
     public static final Parcelable.Creator<Configuration> CREATOR = new zzc();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     private final int zzc;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     private final zzi[] zzd;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     private final String[] zze;
     private final Map<String, zzi> zzf = new TreeMap();
 
     @SafeParcelable.Constructor
-    public Configuration(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) zzi[] zziVarArr, @SafeParcelable.Param(m796id = 4) String[] strArr) {
+    public Configuration(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) zzi[] zziVarArr, @SafeParcelable.Param(m1088id = 4) String[] strArr) {
         this.zzc = i;
         this.zzd = zziVarArr;
         for (zzi zziVar : zziVarArr) {

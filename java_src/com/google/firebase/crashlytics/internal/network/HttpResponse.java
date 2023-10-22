@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.network;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class HttpResponse {
     private final String body;
     private final int code;

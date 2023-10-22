@@ -6,21 +6,21 @@
 
 
 # instance fields
-.field final synthetic a:Lj$/util/s;
+.field final synthetic a:Lj$/util/Spliterator;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/s;)V
+.method private synthetic constructor <init>(Lj$/util/Spliterator;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iput-object p1, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/s;)Ljava/util/Spliterator;
+.method public static synthetic a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
     .locals 1
 
     if-nez p0, :cond_0
@@ -43,7 +43,7 @@
     :cond_1
     new-instance v0, Lj$/wrappers/h;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/h;-><init>(Lj$/util/s;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/h;-><init>(Lj$/util/Spliterator;)V
 
     return-object v0
 .end method
@@ -53,9 +53,9 @@
 .method public synthetic characteristics()I
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->characteristics()I
+    invoke-interface {v0}, Lj$/util/Spliterator;->characteristics()I
 
     move-result v0
 
@@ -65,9 +65,9 @@
 .method public synthetic estimateSize()J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -77,13 +77,13 @@
 .method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/s;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -91,9 +91,9 @@
 .method public synthetic getComparator()Ljava/util/Comparator;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->getComparator()Ljava/util/Comparator;
+    invoke-interface {v0}, Lj$/util/Spliterator;->getComparator()Ljava/util/Comparator;
 
     move-result-object v0
 
@@ -103,9 +103,9 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->getExactSizeIfKnown()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->getExactSizeIfKnown()J
 
     move-result-wide v0
 
@@ -115,9 +115,9 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result p1
 
@@ -127,13 +127,13 @@
 .method public synthetic tryAdvance(Ljava/util/function/Consumer;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -143,13 +143,13 @@
 .method public synthetic trySplit()Ljava/util/Spliterator;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/wrappers/h;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/s;)Ljava/util/Spliterator;
+    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
 
     move-result-object v0
 

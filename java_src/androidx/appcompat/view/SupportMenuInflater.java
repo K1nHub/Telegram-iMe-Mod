@@ -135,7 +135,7 @@ public class SupportMenuInflater extends MenuInflater {
         r0.addItem();
      */
     /* JADX WARN: Code restructure failed: missing block: B:39:0x008a, code lost:
-        if (r15.equals("menu") == false) goto L42;
+        if (r15.equals(com.iMe.storage.domain.model.analytics.AnalyticsEvent.OpenWalletScreen.sourceMenu) == false) goto L42;
      */
     /* JADX WARN: Code restructure failed: missing block: B:40:0x008c, code lost:
         r6 = true;
@@ -159,7 +159,7 @@ public class SupportMenuInflater extends MenuInflater {
         r0.readItem(r14);
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00ad, code lost:
-        if (r15.equals("menu") == false) goto L57;
+        if (r15.equals(com.iMe.storage.domain.model.analytics.AnalyticsEvent.OpenWalletScreen.sourceMenu) == false) goto L57;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x00af, code lost:
         parseMenu(r13, r14, r0.addSubMenuItem());

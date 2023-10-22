@@ -1,6 +1,6 @@
 package com.iMe.i_staking.response;
 /* compiled from: StakingTotalStatsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingTotalStatsResponse {
     private final float totalProfitUsd;
     private final float totalStakedUsd;

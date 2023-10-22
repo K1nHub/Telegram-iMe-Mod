@@ -2,7 +2,7 @@ package com.google.android.material.canvas;
 
 import android.graphics.Canvas;
 import android.os.Build;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CanvasCompat {
     public static int saveLayerAlpha(Canvas canvas, float f, float f2, float f3, float f4, int i) {
         if (Build.VERSION.SDK_INT > 21) {

@@ -8,7 +8,7 @@ import com.bumptech.glide.load.resource.transcode.ResourceTranscoder;
 import com.caverock.androidsvg.SVG;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SvgDrawableTranscoder.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SvgDrawableTranscoder implements ResourceTranscoder<SVG, PictureDrawable> {
     @Override // com.bumptech.glide.load.resource.transcode.ResourceTranscoder
     public Resource<PictureDrawable> transcode(Resource<SVG> toTranscode, Options options) {

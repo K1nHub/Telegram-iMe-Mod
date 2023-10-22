@@ -4,7 +4,7 @@ import android.location.Location;
 import android.os.IBinder;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzs extends com.google.android.gms.internal.location.zza implements zzu {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzs(IBinder iBinder) {

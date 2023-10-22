@@ -3,7 +3,7 @@ package com.google.android.play.core.splitinstall;
 import android.content.Context;
 import com.google.android.play.core.internal.zzag;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzs {
     static {
         new zzag("SplitInstallInfoProvider");

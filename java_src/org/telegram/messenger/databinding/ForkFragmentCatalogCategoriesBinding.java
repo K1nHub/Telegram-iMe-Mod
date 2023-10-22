@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     public final RecyclerView recycleCampaigns;
     private final SwipeRefreshLayout rootView;
@@ -18,7 +18,6 @@ public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
         this.recycleCampaigns = recyclerView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public SwipeRefreshLayout getRoot() {
         return this.rootView;
     }
@@ -28,7 +27,7 @@ public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogCategoriesBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_catalog_categories, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_catalog_categories, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +35,7 @@ public final class ForkFragmentCatalogCategoriesBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogCategoriesBinding bind(View view) {
-        int i = C3473R.C3476id.recycle_campaigns;
+        int i = C3630R.C3633id.recycle_campaigns;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentCatalogCategoriesBinding((SwipeRefreshLayout) view, recyclerView);

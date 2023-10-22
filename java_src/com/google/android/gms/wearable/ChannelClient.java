@@ -12,12 +12,12 @@ import java.io.OutputStream;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ChannelClient extends GoogleApi<Wearable.WearableOptions> {
     public static final String ACTION_CHANNEL_EVENT = "com.google.android.gms.wearable.CHANNEL_EVENT";
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Channel extends Parcelable {
         String getNodeId();
 
@@ -25,7 +25,7 @@ public abstract class ChannelClient extends GoogleApi<Wearable.WearableOptions> 
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class ChannelCallback {
         public static final int CLOSE_REASON_DISCONNECTED = 1;
         public static final int CLOSE_REASON_LOCAL_CLOSE = 3;
@@ -47,7 +47,7 @@ public abstract class ChannelClient extends GoogleApi<Wearable.WearableOptions> 
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface CloseReason {
     }
 

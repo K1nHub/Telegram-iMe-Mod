@@ -18,6 +18,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxOrderType;
+import com.iMe.storage.domain.model.crypto.ton.TonFragmentProductsSortingType;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import com.iMe.storage.domain.storage.BasePreferenceHelper;
@@ -34,7 +35,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoPreference.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoPreference extends BasePreference implements CryptoPreferenceHelper {
     private final Gson gson;
     private String tempOneActionGuid;
@@ -348,6 +349,16 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public boolean isTokensPositiveBalances() {
+        return getMPref().getBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "tokens_positive_balances", null, 2, null), false);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setTokensPositiveBalances(boolean z) {
+        getMPref().edit().putBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "tokens_positive_balances", null, 2, null), z).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public StakingOrderType getStakingProgrammesOrderType() {
         StakingOrderType.Companion companion = StakingOrderType.Companion;
         String string = getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "stakings_order_type", null, 2, null), StakingOrderType.DEFAULT.name());
@@ -475,6 +486,16 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public boolean isBinanceTokensPositiveBalances() {
+        return getMPref().getBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "binance_tokens_positive_balances", null, 2, null), false);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setBinanceTokensPositiveBalances(boolean z) {
+        getMPref().edit().putBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "binance_tokens_positive_balances", null, 2, null), z).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public boolean isBannersVisible() {
         return getMPref().getBoolean(BasePreferenceHelper.CC.withTgAccount$default(this, "interface_banners", null, 2, null), true);
     }
@@ -501,19 +522,19 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void setTonConfigJsonString(String value) {
+    public TonFragmentProductsSortingType getTonFragmentProductsSortingType() {
+        return TonFragmentProductsSortingType.Companion.map(getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "ton_fragment_products_sorting_type", null, 2, null), TonFragmentProductsSortingType.PRICE_DESCENDING.name()));
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setTonFragmentProductsSortingType(TonFragmentProductsSortingType value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        getMPref().edit().putString(CryptoPreferenceHelper.CC.withGuid$default(this, "ton_config_json_string", null, 2, null), value).apply();
+        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "ton_fragment_products_sorting_type", null, 2, null), value.name()).apply();
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public CryptoBoxOrderType getCryptoBoxesOrderType() {
-        CryptoBoxOrderType.Companion companion = CryptoBoxOrderType.Companion;
-        String string = getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "cryptoboxes_order_type", null, 2, null), CryptoBoxOrderType.NEWEST.name());
-        if (string == null) {
-            string = "";
-        }
-        return companion.map(string);
+        return CryptoBoxOrderType.Companion.map(getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "cryptoboxes_order_type", null, 2, null), CryptoBoxOrderType.NEWEST.name()));
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper

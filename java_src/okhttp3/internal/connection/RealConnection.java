@@ -51,7 +51,7 @@ import okhttp3.internal.http2.Http2ExchangeCodec;
 import okhttp3.internal.http2.Http2Stream;
 import okhttp3.internal.http2.Settings;
 import okhttp3.internal.http2.StreamResetException;
-import okhttp3.internal.p037ws.RealWebSocket;
+import okhttp3.internal.p036ws.RealWebSocket;
 import okhttp3.internal.platform.Platform;
 import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.OkHostnameVerifier;
@@ -59,7 +59,7 @@ import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
 /* compiled from: RealConnection.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealConnection extends Http2Connection.Listener implements Connection {
     private int allocationLimit;
     private final List<Reference<RealCall>> calls;
@@ -78,7 +78,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     private BufferedSource source;
     private int successCount;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -623,13 +623,6 @@ public final class RealConnection extends Http2Connection.Listener implements Co
         }
     }
 
-    @Override // okhttp3.Connection
-    public Protocol protocol() {
-        Protocol protocol = this.protocol;
-        Intrinsics.checkNotNull(protocol);
-        return protocol;
-    }
-
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Connection{");
@@ -651,7 +644,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     /* compiled from: RealConnection.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

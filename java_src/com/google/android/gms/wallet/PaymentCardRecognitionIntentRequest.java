@@ -8,14 +8,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentCardRecognitionIntentRequestCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class PaymentCardRecognitionIntentRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentCardRecognitionIntentRequest> CREATOR = new zzy();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     int zza;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         /* synthetic */ Builder(zzx zzxVar) {
         }
@@ -48,7 +48,7 @@ public class PaymentCardRecognitionIntentRequest extends AbstractSafeParcelable 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentCardRecognitionIntentRequest(@SafeParcelable.Param(m796id = 1) int i) {
+    public PaymentCardRecognitionIntentRequest(@SafeParcelable.Param(m1088id = 1) int i) {
         this.zza = i;
     }
 }

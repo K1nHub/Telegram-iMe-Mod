@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.crypto.simplex;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BuyingCryptoPayment.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BuyingCryptoPayment {
     private final String html;
     private final String orderId;

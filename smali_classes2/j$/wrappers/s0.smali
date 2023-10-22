@@ -6,21 +6,21 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/ObjIntConsumer;
+.field final synthetic a:Ljava/util/function/ObjLongConsumer;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/ObjIntConsumer;)V
+.method private synthetic constructor <init>(Ljava/util/function/ObjLongConsumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjIntConsumer;
+    iput-object p1, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjLongConsumer;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/ObjIntConsumer;)Lj$/util/function/v;
+.method public static synthetic a(Ljava/util/function/ObjLongConsumer;)Lj$/util/function/v;
     .locals 1
 
     if-nez p0, :cond_0
@@ -43,19 +43,19 @@
     :cond_1
     new-instance v0, Lj$/wrappers/s0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/s0;-><init>(Ljava/util/function/ObjIntConsumer;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/s0;-><init>(Ljava/util/function/ObjLongConsumer;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic accept(Ljava/lang/Object;I)V
+.method public synthetic accept(Ljava/lang/Object;J)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjIntConsumer;
+    iget-object v0, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjLongConsumer;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/function/ObjIntConsumer;->accept(Ljava/lang/Object;I)V
+    invoke-interface {v0, p1, p2, p3}, Ljava/util/function/ObjLongConsumer;->accept(Ljava/lang/Object;J)V
 
     return-void
 .end method

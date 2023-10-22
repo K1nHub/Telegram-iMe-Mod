@@ -67,7 +67,7 @@ final class OrientationListener implements SensorEventListener {
     private void rotateAroundZ(float[] fArr, int i) {
         if (i != 0) {
             int i2 = TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
-            int i3 = 129;
+            int i3 = TsExtractor.TS_STREAM_TYPE_AC3;
             if (i == 1) {
                 i2 = 2;
             } else if (i == 2) {

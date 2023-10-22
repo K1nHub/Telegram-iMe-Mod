@@ -15,23 +15,23 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class PublicKeyCredentialRequestOptions extends RequestOptions {
     public static final Parcelable.Creator<PublicKeyCredentialRequestOptions> CREATOR = new zzaj();
-    @SafeParcelable.Field(getter = "getChallenge", m797id = 2)
+    @SafeParcelable.Field(getter = "getChallenge", m1089id = 2)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getTimeoutSeconds", m797id = 3)
+    @SafeParcelable.Field(getter = "getTimeoutSeconds", m1089id = 3)
     private final Double zzb;
-    @SafeParcelable.Field(getter = "getRpId", m797id = 4)
+    @SafeParcelable.Field(getter = "getRpId", m1089id = 4)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getAllowList", m797id = 5)
+    @SafeParcelable.Field(getter = "getAllowList", m1089id = 5)
     private final List zzd;
-    @SafeParcelable.Field(getter = "getRequestId", m797id = 6)
+    @SafeParcelable.Field(getter = "getRequestId", m1089id = 6)
     private final Integer zze;
-    @SafeParcelable.Field(getter = "getTokenBinding", m797id = 7)
+    @SafeParcelable.Field(getter = "getTokenBinding", m1089id = 7)
     private final TokenBinding zzf;
-    @SafeParcelable.Field(getter = "getUserVerificationAsString", m797id = 8, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getUserVerificationAsString", m1089id = 8, type = "java.lang.String")
     private final zzat zzg;
-    @SafeParcelable.Field(getter = "getAuthenticationExtensions", m797id = 9)
+    @SafeParcelable.Field(getter = "getAuthenticationExtensions", m1089id = 9)
     private final AuthenticationExtensions zzh;
-    @SafeParcelable.Field(getter = "getLongRequestId", m797id = 10)
+    @SafeParcelable.Field(getter = "getLongRequestId", m1089id = 10)
     private final Long zzi;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -111,7 +111,7 @@ public class PublicKeyCredentialRequestOptions extends RequestOptions {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PublicKeyCredentialRequestOptions(@SafeParcelable.Param(m796id = 2) byte[] bArr, @SafeParcelable.Param(m796id = 3) Double d, @SafeParcelable.Param(m796id = 4) String str, @SafeParcelable.Param(m796id = 5) List list, @SafeParcelable.Param(m796id = 6) Integer num, @SafeParcelable.Param(m796id = 7) TokenBinding tokenBinding, @SafeParcelable.Param(m796id = 8) String str2, @SafeParcelable.Param(m796id = 9) AuthenticationExtensions authenticationExtensions, @SafeParcelable.Param(m796id = 10) Long l) {
+    public PublicKeyCredentialRequestOptions(@SafeParcelable.Param(m1088id = 2) byte[] bArr, @SafeParcelable.Param(m1088id = 3) Double d, @SafeParcelable.Param(m1088id = 4) String str, @SafeParcelable.Param(m1088id = 5) List list, @SafeParcelable.Param(m1088id = 6) Integer num, @SafeParcelable.Param(m1088id = 7) TokenBinding tokenBinding, @SafeParcelable.Param(m1088id = 8) String str2, @SafeParcelable.Param(m1088id = 9) AuthenticationExtensions authenticationExtensions, @SafeParcelable.Param(m1088id = 10) Long l) {
         this.zza = (byte[]) Preconditions.checkNotNull(bArr);
         this.zzb = d;
         this.zzc = (String) Preconditions.checkNotNull(str);

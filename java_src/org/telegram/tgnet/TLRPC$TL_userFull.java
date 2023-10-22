@@ -2,9 +2,9 @@ package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.C0479C;
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_userFull extends TLRPC$UserFull {
-    public static int constructor = 1340198022;
+    public static int constructor = -1179571092;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
@@ -20,7 +20,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.translations_disabled = (8388608 & readInt32) != 0;
         this.stories_pinned_available = (67108864 & readInt32) != 0;
         this.blocked_my_stories_from = (readInt32 & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1686id = abstractSerializedData.readInt64(z);
+        this.f1763id = abstractSerializedData.readInt64(z);
         if ((this.flags & 2) != 0) {
             this.about = abstractSerializedData.readString(z);
         }
@@ -81,7 +81,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
             this.wallpaper = TLRPC$WallPaper.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
-            this.stories = TLRPC$TL_userStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            this.stories = TLRPC$PeerStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
     }
 
@@ -109,7 +109,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         int i10 = this.blocked_my_stories_from ? i9 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i9 & (-134217729);
         this.flags = i10;
         abstractSerializedData.writeInt32(i10);
-        abstractSerializedData.writeInt64(this.f1686id);
+        abstractSerializedData.writeInt64(this.f1763id);
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeString(this.about);
         }

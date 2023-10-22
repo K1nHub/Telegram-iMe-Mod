@@ -5,7 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import retrofit2.CallAdapter;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
     static final CallAdapter.Factory INSTANCE = new CompletableFutureCallAdapterFactory();
 
@@ -30,7 +30,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         return new ResponseCallAdapter(CallAdapter.Factory.getParameterUpperBound(0, (ParameterizedType) parameterUpperBound));
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static final class BodyCallAdapter<R> implements CallAdapter<R, CompletableFuture<R>> {
         private final Type responseType;
 
@@ -73,7 +73,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static final class ResponseCallAdapter<R> implements CallAdapter<R, CompletableFuture<Response<R>>> {
         private final Type responseType;
 

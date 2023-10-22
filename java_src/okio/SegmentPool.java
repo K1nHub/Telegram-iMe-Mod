@@ -3,7 +3,7 @@ package okio;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SegmentPool.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SegmentPool {
     private static final int HASH_BUCKET_COUNT;
     private static final AtomicReference<Segment>[] hashBuckets;

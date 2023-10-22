@@ -6,7 +6,7 @@ import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Encodable;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class XMSSPrivateKeyParameters extends XMSSKeyParameters implements Encodable {
     private volatile BDS bdsState;
     private final XMSSParameters params;
@@ -15,7 +15,7 @@ public final class XMSSPrivateKeyParameters extends XMSSKeyParameters implements
     private final byte[] secretKeyPRF;
     private final byte[] secretKeySeed;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private final XMSSParameters params;
         private int index = 0;

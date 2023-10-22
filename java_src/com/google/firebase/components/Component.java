@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Component<T> {
     private final Set<Dependency> dependencies;
     private final ComponentFactory<T> factory;
@@ -75,7 +75,7 @@ public final class Component<T> {
 
     @SafeVarargs
     /* renamed from: of */
-    public static <T> Component<T> m748of(final T t, Class<T> cls, Class<? super T>... clsArr) {
+    public static <T> Component<T> m1040of(final T t, Class<T> cls, Class<? super T>... clsArr) {
         return builder(cls, clsArr).factory(new ComponentFactory() { // from class: com.google.firebase.components.Component$$ExternalSyntheticLambda1
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
@@ -101,7 +101,7 @@ public final class Component<T> {
         }).build();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder<T> {
         private final Set<Dependency> dependencies;
         private ComponentFactory<T> factory;

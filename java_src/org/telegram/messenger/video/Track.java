@@ -12,7 +12,6 @@ import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.exoplayer2.audio.OpusUtil;
 import com.google.android.exoplayer2.util.MediaFormatUtil;
 import com.google.android.exoplayer2.util.MimeTypes;
-import com.google.android.gms.common.Scopes;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox;
 import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.AudioSpecificConfig;
@@ -31,7 +30,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.video.Track;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
     private String handler;
@@ -53,11 +52,11 @@ public class Track {
     private boolean first = true;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class SamplePresentationTime {
 
         /* renamed from: dt */
-        private long f1511dt;
+        private long f1589dt;
         private int index;
         private long presentationTime;
 
@@ -164,8 +163,8 @@ public class Track {
                 } else {
                     avcConfigurationBox.setAvcLevelIndication(13);
                 }
-                if (mediaFormat.containsKey(Scopes.PROFILE)) {
-                    int integer2 = mediaFormat.getInteger(Scopes.PROFILE);
+                if (mediaFormat.containsKey("profile")) {
+                    int integer2 = mediaFormat.getInteger("profile");
                     if (integer2 == 1) {
                         avcConfigurationBox.setAvcProfileIndication(66);
                     } else if (integer2 == 2) {
@@ -359,13 +358,13 @@ public class Track {
             i2 = 0;
         }
         for (i = 1; i < arrayList.size(); i++) {
-            ((SamplePresentationTime) arrayList.get(i)).f1511dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1511dt;
+            ((SamplePresentationTime) arrayList.get(i)).f1589dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1589dt;
         }
         if (z) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             for (int i4 = i2; i4 < this.samplePresentationTimes.size(); i4++) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i4);
-                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1511dt);
+                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1589dt);
             }
         }
     }

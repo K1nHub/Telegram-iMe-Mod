@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CoroutineName.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineName extends AbstractCoroutineContextElement {
     public static final Key Key = new Key(null);
     private final String name;
@@ -25,8 +25,13 @@ public final class CoroutineName extends AbstractCoroutineContextElement {
         return this.name;
     }
 
+    public CoroutineName(String str) {
+        super(Key);
+        this.name = str;
+    }
+
     /* compiled from: CoroutineName.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Key implements CoroutineContext.Key<CoroutineName> {
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();

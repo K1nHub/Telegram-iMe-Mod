@@ -4,7 +4,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 /* compiled from: KotlinVersion.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class KotlinVersion implements Comparable<KotlinVersion> {
     public static final KotlinVersion CURRENT;
     private final int major;
@@ -17,6 +17,10 @@ public final class KotlinVersion implements Comparable<KotlinVersion> {
         this.minor = i2;
         this.patch = i3;
         this.version = versionOf(i, i2, i3);
+    }
+
+    public KotlinVersion(int i, int i2) {
+        this(i, i2, 0);
     }
 
     private final int versionOf(int i, int i2, int i3) {
@@ -59,7 +63,7 @@ public final class KotlinVersion implements Comparable<KotlinVersion> {
     }
 
     /* compiled from: KotlinVersion.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

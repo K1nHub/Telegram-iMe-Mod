@@ -4,7 +4,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_chatPhoto extends TLRPC$ChatPhoto {
     public static int constructor = 476978193;
 
@@ -36,7 +36,7 @@ public class TLRPC$TL_chatPhoto extends TLRPC$ChatPhoto {
         try {
             this.strippedBitmap = new BitmapDrawable(ImageLoader.getStrippedPhotoBitmap(this.stripped_thumb, "b"));
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
     }
 

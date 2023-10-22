@@ -1,7 +1,7 @@
 package com.google.android.material.internal;
 
 import android.widget.ImageButton;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class VisibilityAwareImageButton extends ImageButton {
     private int userSetVisibility;
 

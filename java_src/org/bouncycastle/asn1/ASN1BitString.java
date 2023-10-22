@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 import org.bouncycastle.util.Arrays;
-import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes6.dex */
+import org.bouncycastle.util.p040io.Streams;
+/* loaded from: classes4.dex */
 public abstract class ASN1BitString extends ASN1Primitive {
     private static final char[] table = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     protected final byte[] data;

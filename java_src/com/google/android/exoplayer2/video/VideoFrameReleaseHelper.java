@@ -301,7 +301,7 @@ public final class VideoFrameReleaseHelper {
             this.vsyncOffsetNs = (refreshRate * VSYNC_OFFSET_PERCENTAGE) / 100;
             return;
         }
-        Log.m814w(TAG, "Unable to query display refresh rate");
+        Log.m1106w(TAG, "Unable to query display refresh rate");
         this.vsyncDurationNs = C0479C.TIME_UNSET;
         this.vsyncOffsetNs = C0479C.TIME_UNSET;
     }
@@ -337,7 +337,7 @@ public final class VideoFrameReleaseHelper {
             try {
                 surface.setFrameRate(f, f == BitmapDescriptorFactory.HUE_RED ? 0 : 1);
             } catch (IllegalStateException e) {
-                Log.m817e(VideoFrameReleaseHelper.TAG, "Failed to call Surface.setFrameRate", e);
+                Log.m1109e(VideoFrameReleaseHelper.TAG, "Failed to call Surface.setFrameRate", e);
             }
         }
     }
@@ -482,7 +482,7 @@ public final class VideoFrameReleaseHelper {
             try {
                 this.choreographer = Choreographer.getInstance();
             } catch (RuntimeException e) {
-                Log.m813w(VideoFrameReleaseHelper.TAG, "Vsync sampling disabled due to platform error", e);
+                Log.m1105w(VideoFrameReleaseHelper.TAG, "Vsync sampling disabled due to platform error", e);
             }
         }
 

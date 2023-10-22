@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.ObjectWrapper;
 import com.google.android.gms.dynamite.DynamiteModule;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzan extends zzt<zzad> {
     private final zzam zza;
 

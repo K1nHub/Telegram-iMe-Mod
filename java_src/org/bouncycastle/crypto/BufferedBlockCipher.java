@@ -1,5 +1,5 @@
 package org.bouncycastle.crypto;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BufferedBlockCipher {
     protected byte[] buf;
     protected int bufOff;

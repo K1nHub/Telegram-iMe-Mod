@@ -3,7 +3,7 @@
 
 # interfaces
 .implements Lj$/util/stream/m3;
-.implements Lj$/util/function/q;
+.implements Lj$/util/function/p;
 
 
 # virtual methods

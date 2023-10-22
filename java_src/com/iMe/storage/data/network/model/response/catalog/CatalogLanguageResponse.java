@@ -2,24 +2,24 @@ package com.iMe.storage.data.network.model.response.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogLanguageResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CatalogLanguageResponse {
 
     /* renamed from: id */
-    private final long f384id;
+    private final long f317id;
     private final String nativeTitle;
     private final String title;
 
     public CatalogLanguageResponse(long j, String nativeTitle, String title) {
         Intrinsics.checkNotNullParameter(nativeTitle, "nativeTitle");
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f384id = j;
+        this.f317id = j;
         this.nativeTitle = nativeTitle;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f384id;
+        return this.f317id;
     }
 
     public final String getNativeTitle() {

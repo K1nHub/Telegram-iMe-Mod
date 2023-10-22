@@ -3,13 +3,13 @@ package okhttp3;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import java.io.Closeable;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Headers;
 import okhttp3.internal.connection.Exchange;
 import okhttp3.internal.http.HttpHeaders;
 /* compiled from: Response.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Response implements Closeable {
     private final ResponseBody body;
     private final Response cacheResponse;
@@ -122,12 +122,14 @@ public final class Response implements Closeable {
 
     public final List<Challenge> challenges() {
         String str;
+        List<Challenge> emptyList;
         Headers headers = this.headers;
         int i = this.code;
         if (i == 401) {
             str = RtspHeaders.WWW_AUTHENTICATE;
         } else if (i != 407) {
-            return CollectionsKt.emptyList();
+            emptyList = CollectionsKt__CollectionsKt.emptyList();
+            return emptyList;
         } else {
             str = RtspHeaders.PROXY_AUTHENTICATE;
         }
@@ -158,7 +160,7 @@ public final class Response implements Closeable {
     }
 
     /* compiled from: Response.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private ResponseBody body;
         private Response cacheResponse;

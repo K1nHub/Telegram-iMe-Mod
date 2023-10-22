@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Properties;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ASN1Integer extends ASN1Primitive {
     private final byte[] bytes;
     private final int start;

@@ -13,7 +13,7 @@ import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPublicKeyParameters;
 import org.bouncycastle.pqc.crypto.util.PublicKeyFactory;
 import org.bouncycastle.pqc.crypto.util.SubjectPublicKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCSphincs256PublicKey implements PublicKey, Key {
     private transient SPHINCSPublicKeyParameters params;
     private transient ASN1ObjectIdentifier treeDigest;

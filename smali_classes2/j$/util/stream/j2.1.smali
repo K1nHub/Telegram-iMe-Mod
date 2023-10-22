@@ -27,15 +27,15 @@
     return p1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v1, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-nez v1, :cond_1
 
@@ -47,13 +47,13 @@
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v1}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
-    invoke-interface {v0, p1}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->b(Lj$/util/function/Consumer;)Z
 
     move-result p1
 
@@ -78,11 +78,11 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->d:Lj$/util/Spliterator;
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/k2;->c:Lj$/util/Spliterator;
 
     if-nez v0, :cond_2
 
@@ -109,7 +109,7 @@
     goto :goto_2
 
     :cond_2
-    invoke-interface {v0, p1}, Lj$/util/s;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, p1}, Lj$/util/Spliterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     goto :goto_2
 

@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Objects;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseRemoteModel */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseRemoteModel {
     private static final Map<BaseModel, String> zzawu;
     private static final Map<BaseModel, String> zzawv;

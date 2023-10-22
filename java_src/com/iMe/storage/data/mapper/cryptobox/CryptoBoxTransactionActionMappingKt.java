@@ -10,7 +10,7 @@ import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTransactionGas;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxValues;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTransactionActionMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTransactionActionMappingKt {
     public static final CryptoBoxTransactionAction mapToDomain(CryptoBoxTransactionActionResponse cryptoBoxTransactionActionResponse) {
         Intrinsics.checkNotNullParameter(cryptoBoxTransactionActionResponse, "<this>");

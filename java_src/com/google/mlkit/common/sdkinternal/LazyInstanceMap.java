@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class LazyInstanceMap<K, V> {
     private final Map<K, V> zza = new HashMap();
 

@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.unity;
 import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ResourceUnityVersionProvider implements UnityVersionProvider {
     private static boolean isUnityVersionSet = false;
     private static String unityVersion;
@@ -19,7 +19,7 @@ public class ResourceUnityVersionProvider implements UnityVersionProvider {
                 unityVersion = context.getResources().getString(resourcesIdentifier);
                 isUnityVersionSet = true;
                 Logger logger = Logger.getLogger();
-                logger.m740v("Unity Editor version is: " + unityVersion);
+                logger.m1032v("Unity Editor version is: " + unityVersion);
             }
             return unityVersion;
         }

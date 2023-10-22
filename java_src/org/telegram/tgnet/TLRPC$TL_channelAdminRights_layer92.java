@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channelAdminRights_layer92 extends TLObject {
     public static int constructor = 1568467877;
     public boolean add_admins;

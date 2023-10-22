@@ -9,10 +9,9 @@ import java.util.ServiceConfigurationError;
 import java.util.ServiceLoader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
-public abstract class zziz<T extends zzio> {
+/* loaded from: classes3.dex */
+abstract class zziz<T extends zzio> {
     private static final Logger zza = Logger.getLogger(zzii.class.getName());
     private static String zzb = "com.google.protobuf.BlazeGeneratedExtensionRegistryLiteLoader";
 

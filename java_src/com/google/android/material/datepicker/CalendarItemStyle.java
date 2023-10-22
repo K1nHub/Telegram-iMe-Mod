@@ -15,7 +15,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class CalendarItemStyle {
     private final ColorStateList backgroundColor;
     private final Rect insets;

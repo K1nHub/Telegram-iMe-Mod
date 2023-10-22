@@ -6,7 +6,7 @@ import com.google.android.gms.wearable.DataApi;
 import java.io.IOException;
 import java.io.InputStream;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzcs implements DataApi.GetFdForAssetResult {
     private final Status zza;
     private volatile ParcelFileDescriptor zzb;

@@ -19,7 +19,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.R$attr;
 import com.google.android.material.R$layout;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Snackbar extends BaseTransientBottomBar<Snackbar> {
     private static final int[] SNACKBAR_CONTENT_STYLE_ATTRS = {R$attr.snackbarButtonStyle, R$attr.snackbarTextViewStyle};
     private final AccessibilityManager accessibilityManager;
@@ -134,7 +134,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class SnackbarLayout extends BaseTransientBottomBar.SnackbarBaseLayout {
         @Override // com.google.android.material.snackbar.BaseTransientBottomBar.SnackbarBaseLayout, android.view.View
         public /* bridge */ /* synthetic */ void setBackground(Drawable drawable) {

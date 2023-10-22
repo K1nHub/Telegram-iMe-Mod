@@ -14,7 +14,7 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCEthereumTransaction.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCEthereumTransactionKt {
     private static final JsonDeserializer<List<WCEthereumTransaction>> ethTransactionSerializer = GsonBuilderKt.jsonDeserializer(new Function1<DeserializerArg, List<? extends WCEthereumTransaction>>() { // from class: com.trustwallet.walletconnect.models.ethereum.WCEthereumTransactionKt$ethTransactionSerializer$1
         @Override // kotlin.jvm.functions.Function1

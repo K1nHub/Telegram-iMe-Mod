@@ -1,7 +1,7 @@
 package com.google.common.util.concurrent;
 
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 enum DirectExecutor implements Executor {
     INSTANCE;
 

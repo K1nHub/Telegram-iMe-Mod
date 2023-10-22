@@ -18,7 +18,7 @@
 
 .field public static final google_play_services_version:I = 0x7f0a0009
 
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0a001f
+.field public static final status_bar_notification_info_maxnum:I = 0x7f0a001e
 
 
 # direct methods

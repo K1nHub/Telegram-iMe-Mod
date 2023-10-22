@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @ShowFirstParty
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PaymentInstrumentType {
     public static final int AMEX = 3;
     public static final int DISCOVER = 4;

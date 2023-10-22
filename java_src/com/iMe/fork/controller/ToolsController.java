@@ -35,7 +35,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: ToolsController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ToolsController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, ToolsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -262,8 +262,8 @@ public final class ToolsController extends BaseController {
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
                 Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type com.iMe.fork.enums.DialogType");
-                Pair m103to = TuplesKt.m103to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
-                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                Pair m144to = TuplesKt.m144to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
+                linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.selectedChatAttachAlertButtons = mutableMap;
@@ -338,15 +338,15 @@ public final class ToolsController extends BaseController {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m103to = TuplesKt.m103to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
     }
 
     /* compiled from: ToolsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

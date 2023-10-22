@@ -4,10 +4,10 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Arrays {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Iterator<T> implements java.util.Iterator<T>, p033j$.util.Iterator {
         private final T[] dataArray;
         private int position = 0;

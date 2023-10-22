@@ -2,19 +2,31 @@ package kotlin.jvm.internal;
 
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KProperty;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class PropertyReference extends CallableReference implements KProperty {
+    private final boolean syntheticJavaProperty;
+
     public PropertyReference() {
+        this.syntheticJavaProperty = false;
     }
 
     public PropertyReference(Object obj, Class cls, String str, String str2, int i) {
         super(obj, cls, str, str2, (i & 1) == 1);
+        this.syntheticJavaProperty = (i & 2) == 2;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlin.jvm.internal.CallableReference
     public KProperty getReflected() {
+        if (this.syntheticJavaProperty) {
+            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties");
+        }
         return (KProperty) super.getReflected();
+    }
+
+    @Override // kotlin.jvm.internal.CallableReference
+    public KCallable compute() {
+        return this.syntheticJavaProperty ? this : super.compute();
     }
 
     public boolean equals(Object obj) {

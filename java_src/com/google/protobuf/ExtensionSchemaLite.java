@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.ExtensionDescriptor> {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.protobuf.ExtensionSchema
@@ -41,7 +41,7 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
         GeneratedMessageLite.GeneratedExtension generatedExtension = (GeneratedMessageLite.GeneratedExtension) obj;
         int number = generatedExtension.getNumber();
         if (generatedExtension.descriptor.isRepeated() && generatedExtension.descriptor.isPacked()) {
-            switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
+            switch (C11201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
                 case 1:
                     arrayList = new ArrayList();
                     reader.readDoubleList(arrayList);
@@ -112,7 +112,7 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
                 }
                 obj2 = Integer.valueOf(readInt32);
             } else {
-                switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
+                switch (C11201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
                     case 1:
                         obj2 = Double.valueOf(reader.readDouble());
                         break;
@@ -171,7 +171,7 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
             if (generatedExtension.isRepeated()) {
                 fieldSet.addRepeatedField(generatedExtension.descriptor, obj2);
             } else {
-                int i = C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()];
+                int i = C11201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()];
                 if ((i == 17 || i == 18) && (field = fieldSet.getField(generatedExtension.descriptor)) != null) {
                     obj2 = Internal.mergeMessage(field, obj2);
                 }
@@ -182,8 +182,8 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
     }
 
     /* renamed from: com.google.protobuf.ExtensionSchemaLite$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C11991 {
+    /* loaded from: classes3.dex */
+    static /* synthetic */ class C11201 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -275,7 +275,7 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
     public void serializeExtension(Writer writer, Map.Entry<?, ?> entry) throws IOException {
         GeneratedMessageLite.ExtensionDescriptor extensionDescriptor = (GeneratedMessageLite.ExtensionDescriptor) entry.getKey();
         if (extensionDescriptor.isRepeated()) {
-            switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[extensionDescriptor.getLiteType().ordinal()]) {
+            switch (C11201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[extensionDescriptor.getLiteType().ordinal()]) {
                 case 1:
                     SchemaUtil.writeDoubleList(extensionDescriptor.getNumber(), (List) entry.getValue(), writer, extensionDescriptor.isPacked());
                     return;
@@ -342,7 +342,7 @@ final class ExtensionSchemaLite extends ExtensionSchema<GeneratedMessageLite.Ext
                     return;
             }
         }
-        switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[extensionDescriptor.getLiteType().ordinal()]) {
+        switch (C11201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[extensionDescriptor.getLiteType().ordinal()]) {
             case 1:
                 writer.writeDouble(extensionDescriptor.getNumber(), ((Double) entry.getValue()).doubleValue());
                 return;

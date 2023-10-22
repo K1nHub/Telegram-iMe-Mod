@@ -8,19 +8,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LoyaltyPointsCreator")
 @SafeParcelable.Reserved({1, 4})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LoyaltyPoints extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyPoints> CREATOR = new zzj();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     LoyaltyPointsBalance zzb;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     @Deprecated
     TimeInterval zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         /* synthetic */ Builder(zzg zzgVar) {
         }
@@ -87,7 +87,7 @@ public final class LoyaltyPoints extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LoyaltyPoints(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) LoyaltyPointsBalance loyaltyPointsBalance, @SafeParcelable.Param(m796id = 5) TimeInterval timeInterval) {
+    public LoyaltyPoints(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) LoyaltyPointsBalance loyaltyPointsBalance, @SafeParcelable.Param(m1088id = 5) TimeInterval timeInterval) {
         this.zza = str;
         this.zzb = loyaltyPointsBalance;
         this.zzc = timeInterval;

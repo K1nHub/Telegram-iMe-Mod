@@ -6,7 +6,7 @@ import com.google.android.gms.vision.Detector;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MultiDetector extends Detector<Object> {
     private List<Detector<? extends Object>> zza;
 
@@ -19,7 +19,7 @@ public class MultiDetector extends Detector<Object> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private MultiDetector zza = new MultiDetector();
 

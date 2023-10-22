@@ -1,5 +1,5 @@
 package org.bouncycastle.crypto;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CryptoException extends Exception {
     private Throwable cause;
 

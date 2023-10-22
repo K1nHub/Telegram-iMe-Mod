@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.security.PrivilegedExceptionAction;
 import sun.misc.Unsafe;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzek implements PrivilegedExceptionAction {
     public static final Unsafe zza() throws Exception {
         Field[] declaredFields;

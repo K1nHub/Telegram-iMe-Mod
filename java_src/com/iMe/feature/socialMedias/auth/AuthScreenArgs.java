@@ -6,7 +6,7 @@ import androidx.navigation.NavArgs;
 import com.iMe.feature.socialMedias.SocialAuthDomain;
 import java.io.Serializable;
 import java.util.HashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AuthScreenArgs implements NavArgs {
     private final HashMap arguments = new HashMap();
 

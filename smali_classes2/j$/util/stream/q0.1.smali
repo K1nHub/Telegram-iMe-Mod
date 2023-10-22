@@ -9,7 +9,7 @@
 # instance fields
 .field private final a:Lj$/util/stream/y2;
 
-.field private b:Lj$/util/s;
+.field private b:Lj$/util/Spliterator;
 
 .field private final c:J
 
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/q0;Lj$/util/s;Lj$/util/stream/q0;)V
+.method constructor <init>(Lj$/util/stream/q0;Lj$/util/Spliterator;Lj$/util/stream/q0;)V
     .locals 2
 
     invoke-direct {p0, p1}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
@@ -32,7 +32,7 @@
 
     iput-object v0, p0, Lj$/util/stream/q0;->a:Lj$/util/stream/y2;
 
-    iput-object p2, p0, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iput-object p2, p0, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
     iget-wide v0, p1, Lj$/util/stream/q0;->c:J
 
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/stream/m3;)V
+.method protected constructor <init>(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/stream/m3;)V
     .locals 2
 
     const/4 v0, 0x0
@@ -60,9 +60,9 @@
 
     iput-object p1, p0, Lj$/util/stream/q0;->a:Lj$/util/stream/y2;
 
-    iput-object p2, p0, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iput-object p2, p0, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
-    invoke-interface {p2}, Lj$/util/s;->estimateSize()J
+    invoke-interface {p2}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide p1
 
@@ -101,7 +101,7 @@
     .locals 10
 
     .line 1
-    iget-object v0, p0, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
     iget-wide v1, p0, Lj$/util/stream/q0;->c:J
 
@@ -110,7 +110,7 @@
     move-object v4, p0
 
     :goto_0
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v5
 
@@ -118,7 +118,7 @@
 
     if-lez v5, :cond_3
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v5
 
@@ -128,11 +128,11 @@
 
     iget-object v7, v4, Lj$/util/stream/q0;->f:Lj$/util/stream/q0;
 
-    invoke-direct {v6, v4, v5, v7}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/q0;Lj$/util/s;Lj$/util/stream/q0;)V
+    invoke-direct {v6, v4, v5, v7}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/q0;Lj$/util/Spliterator;Lj$/util/stream/q0;)V
 
     new-instance v7, Lj$/util/stream/q0;
 
-    invoke-direct {v7, v4, v0, v6}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/q0;Lj$/util/s;Lj$/util/stream/q0;)V
+    invoke-direct {v7, v4, v0, v6}, Lj$/util/stream/q0;-><init>(Lj$/util/stream/q0;Lj$/util/Spliterator;Lj$/util/stream/q0;)V
 
     const/4 v8, 0x1
 
@@ -202,11 +202,11 @@
 
     iget-object v2, v4, Lj$/util/stream/q0;->a:Lj$/util/stream/y2;
 
-    invoke-virtual {v2, v0}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {v2, v0}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v5
 
-    invoke-virtual {v2, v5, v6, v1}, Lj$/util/stream/y2;->t0(JLj$/util/function/m;)Lj$/util/stream/s1;
+    invoke-virtual {v2, v5, v6, v1}, Lj$/util/stream/y2;->s0(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 
     move-result-object v1
 
@@ -220,11 +220,11 @@
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    invoke-virtual {v2, v1}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v2, v1}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3, v0}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {v2, v3, v0}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     .line 4
     invoke-interface {v1}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
@@ -235,7 +235,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, v4, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iput-object v0, v4, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
     :cond_4
     invoke-virtual {v4}, Ljava/util/concurrent/CountedCompleter;->tryComplete()V
@@ -261,7 +261,7 @@
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iget-object p1, p0, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
     if-eqz p1, :cond_1
 
@@ -277,14 +277,14 @@
     invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {v1, v2}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v1, v2}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2, p1}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {v1, v2, p1}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     .line 3
-    iput-object v0, p0, Lj$/util/stream/q0;->b:Lj$/util/s;
+    iput-object v0, p0, Lj$/util/stream/q0;->b:Lj$/util/Spliterator;
 
     :cond_1
     :goto_0

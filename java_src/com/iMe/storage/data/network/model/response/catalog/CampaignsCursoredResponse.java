@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.catalog;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignsCursoredResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CampaignsCursoredResponse {
     private final List<CampaignResponse> items;
     private final CursorMetaResponse meta;

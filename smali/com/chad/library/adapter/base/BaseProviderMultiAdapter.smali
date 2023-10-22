@@ -399,7 +399,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 39
-    invoke-virtual {p1, p0}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->setAdapter$TMessagesProj_release(Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;)V
+    invoke-virtual {p1, p0}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->setAdapter$TMessagesProj_HA_public(Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;)V
 
     .line 40
     invoke-direct {p0}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->getMItemProviders()Landroid/util/SparseArray;

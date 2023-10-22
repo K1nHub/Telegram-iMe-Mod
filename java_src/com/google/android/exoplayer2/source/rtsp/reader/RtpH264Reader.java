@@ -115,7 +115,7 @@ final class RtpH264Reader implements RtpPayloadReader {
         } else {
             int nextSequenceNumber = RtpPacket.getNextSequenceNumber(this.previousSequenceNumber);
             if (i != nextSequenceNumber) {
-                Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+                Log.m1106w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
                 return;
             } else {
                 this.fuScratchBuffer.reset(parsableByteArray.getData());

@@ -12,7 +12,7 @@ import com.google.firebase.p020ml.vision.common.FirebaseVisionPoint;
 import java.util.ArrayList;
 import java.util.Iterator;
 /* renamed from: com.google.firebase.ml.vision.face.FirebaseVisionFace */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionFace {
     private Rect zzbat;
     private int zzbbr;

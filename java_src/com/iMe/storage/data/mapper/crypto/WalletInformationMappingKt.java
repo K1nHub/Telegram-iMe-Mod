@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: WalletInformationMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletInformationMappingKt {
     public static final CryptoWalletsInfo mapToDomain(CryptoWalletsInfoResponse cryptoWalletsInfoResponse) {
         int collectionSizeOrDefault;
@@ -29,8 +29,8 @@ public final class WalletInformationMappingKt {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (RemoteWalletInfoResponse remoteWalletInfoResponse : wallets) {
-            Pair m103to = TuplesKt.m103to(BlockchainType.Companion.mapByBackendName(remoteWalletInfoResponse.getPlatform()), remoteWalletInfoResponse.getAddress());
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(BlockchainType.Companion.mapByBackendName(remoteWalletInfoResponse.getPlatform()), remoteWalletInfoResponse.getAddress());
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         boolean isVisible = cryptoWalletsInfoResponse.isVisible();
         List<String> allowedUsers = cryptoWalletsInfoResponse.getAllowedUsers();

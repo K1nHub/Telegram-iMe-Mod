@@ -19,12 +19,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DefaultDateTypeAdapter<T extends Date> extends TypeAdapter<T> {
     private final List<DateFormat> dateFormats;
     private final DateType<T> dateType;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class DateType<T extends Date> {
         public static final DateType<Date> DATE = new DateType<Date>(Date.class) { // from class: com.google.gson.internal.bind.DefaultDateTypeAdapter.DateType.1
             @Override // com.google.gson.internal.bind.DefaultDateTypeAdapter.DateType

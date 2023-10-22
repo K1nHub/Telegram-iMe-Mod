@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import java.io.OutputStream;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DLOutputStream extends ASN1OutputStream {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DLOutputStream(OutputStream outputStream) {

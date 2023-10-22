@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "BarcodeCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Barcode extends AbstractSafeParcelable {
     public static final int ALL_FORMATS = 0;
     public static final int AZTEC = 4096;
@@ -42,55 +42,55 @@ public class Barcode extends AbstractSafeParcelable {
     public static final int URL = 8;
     public static final int WIFI = 9;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 13)
+    @SafeParcelable.Field(m1089id = 13)
     public CalendarEvent calendarEvent;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 14)
+    @SafeParcelable.Field(m1089id = 14)
     public ContactInfo contactInfo;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public Point[] cornerPoints;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public String displayValue;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 15)
+    @SafeParcelable.Field(m1089id = 15)
     public DriverLicense driverLicense;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     public Email email;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public int format;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 12)
+    @SafeParcelable.Field(m1089id = 12)
     public GeoPoint geoPoint;
-    @SafeParcelable.Field(m797id = 17)
+    @SafeParcelable.Field(m1089id = 17)
     public boolean isRecognized;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     public Phone phone;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 16)
+    @SafeParcelable.Field(m1089id = 16)
     public byte[] rawBytes;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public String rawValue;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     public Sms sms;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 11)
+    @SafeParcelable.Field(m1089id = 11)
     public UrlBookmark url;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public int valueFormat;
     @RecentlyNonNull
-    @SafeParcelable.Field(m797id = 10)
+    @SafeParcelable.Field(m1089id = 10)
     public WiFi wifi;
 
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "AddressCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Address extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Address> CREATOR = new zza();
@@ -98,16 +98,16 @@ public class Barcode extends AbstractSafeParcelable {
         public static final int UNKNOWN = 0;
         public static final int WORK = 1;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String[] addressLines;
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public int type;
 
         public Address() {
         }
 
         @SafeParcelable.Constructor
-        public Address(@SafeParcelable.Param(m796id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String[] strArr) {
+        public Address(@SafeParcelable.Param(m1088id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String[] strArr) {
             this.type = i;
             this.addressLines = strArr;
         }
@@ -124,33 +124,33 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "CalendarDateTimeCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CalendarDateTime extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<CalendarDateTime> CREATOR = new zzd();
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public int day;
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public int hours;
-        @SafeParcelable.Field(m797id = 8)
+        @SafeParcelable.Field(m1089id = 8)
         public boolean isUtc;
-        @SafeParcelable.Field(m797id = 6)
+        @SafeParcelable.Field(m1089id = 6)
         public int minutes;
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public int month;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 9)
+        @SafeParcelable.Field(m1089id = 9)
         public String rawValue;
-        @SafeParcelable.Field(m797id = 7)
+        @SafeParcelable.Field(m1089id = 7)
         public int seconds;
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public int year;
 
         public CalendarDateTime() {
         }
 
         @SafeParcelable.Constructor
-        public CalendarDateTime(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) int i3, @SafeParcelable.Param(m796id = 5) int i4, @SafeParcelable.Param(m796id = 6) int i5, @SafeParcelable.Param(m796id = 7) int i6, @SafeParcelable.Param(m796id = 8) boolean z, @RecentlyNonNull @SafeParcelable.Param(m796id = 9) String str) {
+        public CalendarDateTime(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) int i3, @SafeParcelable.Param(m1088id = 5) int i4, @SafeParcelable.Param(m1088id = 6) int i5, @SafeParcelable.Param(m1088id = 7) int i6, @SafeParcelable.Param(m1088id = 8) boolean z, @RecentlyNonNull @SafeParcelable.Param(m1088id = 9) String str) {
             this.year = i;
             this.month = i2;
             this.day = i3;
@@ -179,37 +179,37 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "CalendarEventCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CalendarEvent extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<CalendarEvent> CREATOR = new zzf();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String description;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 8)
+        @SafeParcelable.Field(m1089id = 8)
         public CalendarDateTime end;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public String location;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public String organizer;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 7)
+        @SafeParcelable.Field(m1089id = 7)
         public CalendarDateTime start;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 6)
+        @SafeParcelable.Field(m1089id = 6)
         public String status;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String summary;
 
         public CalendarEvent() {
         }
 
         @SafeParcelable.Constructor
-        public CalendarEvent(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m796id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m796id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m796id = 7) CalendarDateTime calendarDateTime, @RecentlyNonNull @SafeParcelable.Param(m796id = 8) CalendarDateTime calendarDateTime2) {
+        public CalendarEvent(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m1088id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m1088id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m1088id = 7) CalendarDateTime calendarDateTime, @RecentlyNonNull @SafeParcelable.Param(m1088id = 8) CalendarDateTime calendarDateTime2) {
             this.summary = str;
             this.description = str2;
             this.location = str3;
@@ -236,37 +236,37 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "ContactInfoCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class ContactInfo extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<ContactInfo> CREATOR = new zze();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 8)
+        @SafeParcelable.Field(m1089id = 8)
         public Address[] addresses;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 6)
+        @SafeParcelable.Field(m1089id = 6)
         public Email[] emails;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public PersonName name;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String organization;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public Phone[] phones;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public String title;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 7)
+        @SafeParcelable.Field(m1089id = 7)
         public String[] urls;
 
         public ContactInfo() {
         }
 
         @SafeParcelable.Constructor
-        public ContactInfo(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) PersonName personName, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str2, @RecentlyNonNull @SafeParcelable.Param(m796id = 5) Phone[] phoneArr, @RecentlyNonNull @SafeParcelable.Param(m796id = 6) Email[] emailArr, @RecentlyNonNull @SafeParcelable.Param(m796id = 7) String[] strArr, @RecentlyNonNull @SafeParcelable.Param(m796id = 8) Address[] addressArr) {
+        public ContactInfo(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) PersonName personName, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 5) Phone[] phoneArr, @RecentlyNonNull @SafeParcelable.Param(m1088id = 6) Email[] emailArr, @RecentlyNonNull @SafeParcelable.Param(m1088id = 7) String[] strArr, @RecentlyNonNull @SafeParcelable.Param(m1088id = 8) Address[] addressArr) {
             this.name = personName;
             this.organization = str;
             this.title = str2;
@@ -293,58 +293,58 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "DriverLicenseCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class DriverLicense extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<DriverLicense> CREATOR = new zzh();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 8)
+        @SafeParcelable.Field(m1089id = 8)
         public String addressCity;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 9)
+        @SafeParcelable.Field(m1089id = 9)
         public String addressState;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 7)
+        @SafeParcelable.Field(m1089id = 7)
         public String addressStreet;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 10)
+        @SafeParcelable.Field(m1089id = 10)
         public String addressZip;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 14)
+        @SafeParcelable.Field(m1089id = 14)
         public String birthDate;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String documentType;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 13)
+        @SafeParcelable.Field(m1089id = 13)
         public String expiryDate;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String firstName;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 6)
+        @SafeParcelable.Field(m1089id = 6)
         public String gender;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 12)
+        @SafeParcelable.Field(m1089id = 12)
         public String issueDate;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 15)
+        @SafeParcelable.Field(m1089id = 15)
         public String issuingCountry;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public String lastName;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 11)
+        @SafeParcelable.Field(m1089id = 11)
         public String licenseNumber;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public String middleName;
 
         public DriverLicense() {
         }
 
         @SafeParcelable.Constructor
-        public DriverLicense(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m796id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m796id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m796id = 7) String str6, @RecentlyNonNull @SafeParcelable.Param(m796id = 8) String str7, @RecentlyNonNull @SafeParcelable.Param(m796id = 9) String str8, @RecentlyNonNull @SafeParcelable.Param(m796id = 10) String str9, @RecentlyNonNull @SafeParcelable.Param(m796id = 11) String str10, @RecentlyNonNull @SafeParcelable.Param(m796id = 12) String str11, @RecentlyNonNull @SafeParcelable.Param(m796id = 13) String str12, @RecentlyNonNull @SafeParcelable.Param(m796id = 14) String str13, @RecentlyNonNull @SafeParcelable.Param(m796id = 15) String str14) {
+        public DriverLicense(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m1088id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m1088id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m1088id = 7) String str6, @RecentlyNonNull @SafeParcelable.Param(m1088id = 8) String str7, @RecentlyNonNull @SafeParcelable.Param(m1088id = 9) String str8, @RecentlyNonNull @SafeParcelable.Param(m1088id = 10) String str9, @RecentlyNonNull @SafeParcelable.Param(m1088id = 11) String str10, @RecentlyNonNull @SafeParcelable.Param(m1088id = 12) String str11, @RecentlyNonNull @SafeParcelable.Param(m1088id = 13) String str12, @RecentlyNonNull @SafeParcelable.Param(m1088id = 14) String str13, @RecentlyNonNull @SafeParcelable.Param(m1088id = 15) String str14) {
             this.documentType = str;
             this.firstName = str2;
             this.middleName = str3;
@@ -385,7 +385,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "EmailCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Email extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Email> CREATOR = new zzg();
@@ -393,22 +393,22 @@ public class Barcode extends AbstractSafeParcelable {
         public static final int UNKNOWN = 0;
         public static final int WORK = 1;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String address;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public String body;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public String subject;
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public int type;
 
         public Email() {
         }
 
         @SafeParcelable.Constructor
-        public Email(@SafeParcelable.Param(m796id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str2, @RecentlyNonNull @SafeParcelable.Param(m796id = 5) String str3) {
+        public Email(@SafeParcelable.Param(m1088id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 5) String str3) {
             this.type = i;
             this.address = str;
             this.subject = str2;
@@ -429,20 +429,20 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "GeoPointCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class GeoPoint extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<GeoPoint> CREATOR = new zzj();
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public double lat;
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public double lng;
 
         public GeoPoint() {
         }
 
         @SafeParcelable.Constructor
-        public GeoPoint(@SafeParcelable.Param(m796id = 2) double d, @SafeParcelable.Param(m796id = 3) double d2) {
+        public GeoPoint(@SafeParcelable.Param(m1088id = 2) double d, @SafeParcelable.Param(m1088id = 3) double d2) {
             this.lat = d;
             this.lng = d2;
         }
@@ -459,37 +459,37 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "PersonNameCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class PersonName extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<PersonName> CREATOR = new zzi();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 5)
+        @SafeParcelable.Field(m1089id = 5)
         public String first;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String formattedName;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 7)
+        @SafeParcelable.Field(m1089id = 7)
         public String last;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 6)
+        @SafeParcelable.Field(m1089id = 6)
         public String middle;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public String prefix;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String pronunciation;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 8)
+        @SafeParcelable.Field(m1089id = 8)
         public String suffix;
 
         public PersonName() {
         }
 
         @SafeParcelable.Constructor
-        public PersonName(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m796id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m796id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m796id = 7) String str6, @RecentlyNonNull @SafeParcelable.Param(m796id = 8) String str7) {
+        public PersonName(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str3, @RecentlyNonNull @SafeParcelable.Param(m1088id = 5) String str4, @RecentlyNonNull @SafeParcelable.Param(m1088id = 6) String str5, @RecentlyNonNull @SafeParcelable.Param(m1088id = 7) String str6, @RecentlyNonNull @SafeParcelable.Param(m1088id = 8) String str7) {
             this.formattedName = str;
             this.pronunciation = str2;
             this.prefix = str3;
@@ -516,7 +516,7 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "PhoneCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Phone extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Phone> CREATOR = new zzl();
@@ -526,16 +526,16 @@ public class Barcode extends AbstractSafeParcelable {
         public static final int UNKNOWN = 0;
         public static final int WORK = 1;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String number;
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public int type;
 
         public Phone() {
         }
 
         @SafeParcelable.Constructor
-        public Phone(@SafeParcelable.Param(m796id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str) {
+        public Phone(@SafeParcelable.Param(m1088id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str) {
             this.type = i;
             this.number = str;
         }
@@ -552,22 +552,22 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "SmsCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Sms extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<Sms> CREATOR = new zzk();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String message;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String phoneNumber;
 
         public Sms() {
         }
 
         @SafeParcelable.Constructor
-        public Sms(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2) {
+        public Sms(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2) {
             this.message = str;
             this.phoneNumber = str2;
         }
@@ -584,22 +584,22 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "UrlBookmarkCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class UrlBookmark extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<UrlBookmark> CREATOR = new zzn();
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String title;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String url;
 
         public UrlBookmark() {
         }
 
         @SafeParcelable.Constructor
-        public UrlBookmark(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2) {
+        public UrlBookmark(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2) {
             this.title = str;
             this.url = str2;
         }
@@ -616,27 +616,27 @@ public class Barcode extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
     @SafeParcelable.Class(creator = "WiFiCreator")
     @SafeParcelable.Reserved({1})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class WiFi extends AbstractSafeParcelable {
         @RecentlyNonNull
         public static final Parcelable.Creator<WiFi> CREATOR = new zzm();
         public static final int OPEN = 1;
         public static final int WEP = 3;
         public static final int WPA = 2;
-        @SafeParcelable.Field(m797id = 4)
+        @SafeParcelable.Field(m1089id = 4)
         public int encryptionType;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 3)
+        @SafeParcelable.Field(m1089id = 3)
         public String password;
         @RecentlyNonNull
-        @SafeParcelable.Field(m797id = 2)
+        @SafeParcelable.Field(m1089id = 2)
         public String ssid;
 
         public WiFi() {
         }
 
         @SafeParcelable.Constructor
-        public WiFi(@RecentlyNonNull @SafeParcelable.Param(m796id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str2, @SafeParcelable.Param(m796id = 4) int i) {
+        public WiFi(@RecentlyNonNull @SafeParcelable.Param(m1088id = 2) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str2, @SafeParcelable.Param(m1088id = 4) int i) {
             this.ssid = str;
             this.password = str2;
             this.encryptionType = i;
@@ -656,7 +656,7 @@ public class Barcode extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public Barcode(@SafeParcelable.Param(m796id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m796id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m796id = 4) String str2, @SafeParcelable.Param(m796id = 5) int i2, @RecentlyNonNull @SafeParcelable.Param(m796id = 6) Point[] pointArr, @RecentlyNonNull @SafeParcelable.Param(m796id = 7) Email email, @RecentlyNonNull @SafeParcelable.Param(m796id = 8) Phone phone, @RecentlyNonNull @SafeParcelable.Param(m796id = 9) Sms sms, @RecentlyNonNull @SafeParcelable.Param(m796id = 10) WiFi wiFi, @RecentlyNonNull @SafeParcelable.Param(m796id = 11) UrlBookmark urlBookmark, @RecentlyNonNull @SafeParcelable.Param(m796id = 12) GeoPoint geoPoint, @RecentlyNonNull @SafeParcelable.Param(m796id = 13) CalendarEvent calendarEvent, @RecentlyNonNull @SafeParcelable.Param(m796id = 14) ContactInfo contactInfo, @RecentlyNonNull @SafeParcelable.Param(m796id = 15) DriverLicense driverLicense, @RecentlyNonNull @SafeParcelable.Param(m796id = 16) byte[] bArr, @SafeParcelable.Param(m796id = 17) boolean z) {
+    public Barcode(@SafeParcelable.Param(m1088id = 2) int i, @RecentlyNonNull @SafeParcelable.Param(m1088id = 3) String str, @RecentlyNonNull @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) int i2, @RecentlyNonNull @SafeParcelable.Param(m1088id = 6) Point[] pointArr, @RecentlyNonNull @SafeParcelable.Param(m1088id = 7) Email email, @RecentlyNonNull @SafeParcelable.Param(m1088id = 8) Phone phone, @RecentlyNonNull @SafeParcelable.Param(m1088id = 9) Sms sms, @RecentlyNonNull @SafeParcelable.Param(m1088id = 10) WiFi wiFi, @RecentlyNonNull @SafeParcelable.Param(m1088id = 11) UrlBookmark urlBookmark, @RecentlyNonNull @SafeParcelable.Param(m1088id = 12) GeoPoint geoPoint, @RecentlyNonNull @SafeParcelable.Param(m1088id = 13) CalendarEvent calendarEvent, @RecentlyNonNull @SafeParcelable.Param(m1088id = 14) ContactInfo contactInfo, @RecentlyNonNull @SafeParcelable.Param(m1088id = 15) DriverLicense driverLicense, @RecentlyNonNull @SafeParcelable.Param(m1088id = 16) byte[] bArr, @SafeParcelable.Param(m1088id = 17) boolean z) {
         this.format = i;
         this.rawValue = str;
         this.rawBytes = bArr;

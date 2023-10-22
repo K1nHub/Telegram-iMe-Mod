@@ -1,5 +1,5 @@
 package com.google.zxing;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class LuminanceSource {
     private final int height;
     private final int width;

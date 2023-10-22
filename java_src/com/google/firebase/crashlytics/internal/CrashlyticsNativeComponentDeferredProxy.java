@@ -5,7 +5,7 @@ import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CrashlyticsNativeComponentDeferredProxy implements CrashlyticsNativeComponent {
     private static final NativeSessionFileProvider MISSING_NATIVE_SESSION_FILE_PROVIDER = new MissingNativeSessionFileProvider();
     private final AtomicReference<CrashlyticsNativeComponent> availableNativeComponent = new AtomicReference<>(null);
@@ -23,7 +23,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(Provider provider) {
-        Logger.getLogger().m746d("Crashlytics native component now available.");
+        Logger.getLogger().m1038d("Crashlytics native component now available.");
         this.availableNativeComponent.set((CrashlyticsNativeComponent) provider.get());
     }
 
@@ -42,7 +42,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
     @Override // com.google.firebase.crashlytics.internal.CrashlyticsNativeComponent
     public void prepareNativeSession(final String str, final String str2, final long j, final StaticSessionData staticSessionData) {
         Logger logger = Logger.getLogger();
-        logger.m740v("Deferring native open session: " + str);
+        logger.m1032v("Deferring native open session: " + str);
         this.deferredNativeComponent.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.internal.CrashlyticsNativeComponentDeferredProxy$$ExternalSyntheticLambda2
             @Override // com.google.firebase.inject.Deferred.DeferredHandler
             public final void handle(Provider provider) {
@@ -80,7 +80,7 @@ public final class CrashlyticsNativeComponentDeferredProxy implements Crashlytic
         return crashlyticsNativeComponent.getSessionFileProvider(str);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class MissingNativeSessionFileProvider implements NativeSessionFileProvider {
         @Override // com.google.firebase.crashlytics.internal.NativeSessionFileProvider
         public File getAppFile() {

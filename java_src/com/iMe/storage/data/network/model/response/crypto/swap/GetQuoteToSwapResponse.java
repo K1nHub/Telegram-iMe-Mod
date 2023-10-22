@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetQuoteToSwapResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetQuoteToSwapResponse {
     private final String amountBound;
     private final String amountIn;

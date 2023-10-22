@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/stream/U;
+.implements Ljava/util/stream/LongStream;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/stream/DoubleStream;
+.field final synthetic a:Lj$/util/stream/e1;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/stream/DoubleStream;)V
+.method private synthetic constructor <init>(Lj$/util/stream/e1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iput-object p1, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
     return-void
 .end method
 
-.method public static synthetic n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+.method public static synthetic m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,196 +30,100 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/L0;
+    instance-of v0, p0, Lj$/wrappers/J0;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/L0;
+    check-cast p0, Lj$/wrappers/J0;
 
-    iget-object p0, p0, Lj$/wrappers/L0;->a:Lj$/util/stream/U;
+    iget-object p0, p0, Lj$/wrappers/J0;->a:Ljava/util/stream/LongStream;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/K0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/K0;-><init>(Ljava/util/stream/DoubleStream;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/K0;-><init>(Lj$/util/stream/e1;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic G(Lj$/util/function/d;)Lj$/util/i;
+.method public synthetic allMatch(Ljava/util/function/LongPredicate;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-static {p1}, Lj$/wrappers/y;->a(Lj$/util/function/d;)Ljava/util/function/DoubleBinaryOperator;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->reduce(Ljava/util/function/DoubleBinaryOperator;)Ljava/util/OptionalDouble;
+    invoke-static {p1}, Lj$/wrappers/g0;->a(Ljava/util/function/LongPredicate;)Lj$/wrappers/g0;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic H(Lj$/util/function/y;Lj$/util/function/u;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/z0;->a(Lj$/util/function/y;)Ljava/util/function/Supplier;
-
-    move-result-object p1
-
-    invoke-static {p2}, Lj$/wrappers/r0;->a(Lj$/util/function/u;)Ljava/util/function/ObjDoubleConsumer;
-
-    move-result-object p2
-
-    invoke-static {p3}, Lj$/wrappers/r;->a(Lj$/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p3
-
-    invoke-interface {v0, p1, p2, p3}, Ljava/util/stream/DoubleStream;->collect(Ljava/util/function/Supplier;Ljava/util/function/ObjDoubleConsumer;Ljava/util/function/BiConsumer;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic K(DLj$/util/function/d;)D
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p3}, Lj$/wrappers/y;->a(Lj$/util/function/d;)Ljava/util/function/DoubleBinaryOperator;
-
-    move-result-object p3
-
-    invoke-interface {v0, p1, p2, p3}, Ljava/util/stream/DoubleStream;->reduce(DLjava/util/function/DoubleBinaryOperator;)D
-
-    move-result-wide p1
-
-    return-wide p1
-.end method
-
-.method public synthetic M(Lj$/util/function/g;)Lj$/util/stream/Stream;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/C;->a(Lj$/util/function/g;)Ljava/util/function/DoubleFunction;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->mapToObj(Ljava/util/function/DoubleFunction;)Ljava/util/stream/Stream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->convert(Ljava/util/stream/Stream;)Lj$/util/stream/Stream;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic R(Lj$/wrappers/F;)Lj$/util/stream/IntStream;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    .line 1
-    :cond_0
-    iget-object p1, p1, Lj$/wrappers/F;->a:Ljava/util/function/DoubleToIntFunction;
-
-    .line 2
-    :goto_0
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->mapToInt(Ljava/util/function/DoubleToIntFunction;)Ljava/util/stream/IntStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$IntStream$-V-WRP;->convert(Ljava/util/stream/IntStream;)Lj$/util/stream/IntStream;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic Y(Lj$/wrappers/D;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/E;->a(Lj$/wrappers/D;)Ljava/util/function/DoublePredicate;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->allMatch(Ljava/util/function/DoublePredicate;)Z
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->K(Lj$/wrappers/g0;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public synthetic average()Lj$/util/i;
+.method public synthetic anyMatch(Ljava/util/function/LongPredicate;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->average()Ljava/util/OptionalDouble;
+    invoke-static {p1}, Lj$/wrappers/g0;->a(Ljava/util/function/LongPredicate;)Lj$/wrappers/g0;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->k(Lj$/wrappers/g0;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic asDoubleStream()Ljava/util/stream/DoubleStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->asDoubleStream()Lj$/util/stream/U;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
+    invoke-static {v0}, Lj$/wrappers/I0;->m0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic b(Lj$/util/function/f;)Lj$/util/stream/U;
+.method public synthetic average()Ljava/util/OptionalDouble;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-static {p1}, Lj$/wrappers/A;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->peek(Ljava/util/function/DoubleConsumer;)Ljava/util/stream/DoubleStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic boxed()Lj$/util/stream/Stream;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->boxed()Ljava/util/stream/Stream;
+    invoke-interface {v0}, Lj$/util/stream/e1;->average()Lj$/util/g;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/$r8$wrapper$java$util$stream$Stream$-V-WRP;->convert(Ljava/util/stream/Stream;)Lj$/util/stream/Stream;
+    invoke-static {v0}, Lj$/util/k;->n(Lj$/util/g;)Ljava/util/OptionalDouble;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic boxed()Ljava/util/stream/Stream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->boxed()Lj$/util/stream/Stream;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/L0;->m0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
@@ -229,498 +133,602 @@
 .method public synthetic close()V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->close()V
+    invoke-interface {v0}, Lj$/util/stream/g;->close()V
 
     return-void
+.end method
+
+.method public synthetic collect(Ljava/util/function/Supplier;Ljava/util/function/ObjLongConsumer;Ljava/util/function/BiConsumer;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/v0;->a(Ljava/util/function/Supplier;)Lj$/util/function/x;
+
+    move-result-object p1
+
+    invoke-static {p2}, Lj$/wrappers/s0;->a(Ljava/util/function/ObjLongConsumer;)Lj$/util/function/v;
+
+    move-result-object p2
+
+    invoke-static {p3}, Lj$/wrappers/q;->a(Ljava/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+
+    move-result-object p3
+
+    invoke-interface {v0, p1, p2, p3}, Lj$/util/stream/e1;->e0(Lj$/util/function/x;Lj$/util/function/v;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public synthetic count()J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->count()J
+    invoke-interface {v0}, Lj$/util/stream/e1;->count()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public synthetic distinct()Lj$/util/stream/U;
+.method public synthetic distinct()Ljava/util/stream/LongStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->distinct()Ljava/util/stream/DoubleStream;
+    invoke-interface {v0}, Lj$/util/stream/e1;->distinct()Lj$/util/stream/e1;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {v0}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic findAny()Lj$/util/i;
+.method public synthetic filter(Ljava/util/function/LongPredicate;)Ljava/util/stream/LongStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->findAny()Ljava/util/OptionalDouble;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic findFirst()Lj$/util/i;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->findFirst()Ljava/util/OptionalDouble;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic h0(Lj$/wrappers/D;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/E;->a(Lj$/wrappers/D;)Ljava/util/function/DoublePredicate;
+    invoke-static {p1}, Lj$/wrappers/g0;->a(Ljava/util/function/LongPredicate;)Lj$/wrappers/g0;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->anyMatch(Ljava/util/function/DoublePredicate;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic i0(Lj$/wrappers/D;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/E;->a(Lj$/wrappers/D;)Ljava/util/function/DoublePredicate;
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->t(Lj$/wrappers/g0;)Lj$/util/stream/e1;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->noneMatch(Ljava/util/function/DoublePredicate;)Z
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
 
-    move-result p1
+    move-result-object p1
 
-    return p1
+    return-object p1
+.end method
+
+.method public synthetic findAny()Ljava/util/OptionalLong;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->findAny()Lj$/util/i;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/util/k;->p(Lj$/util/i;)Ljava/util/OptionalLong;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic findFirst()Ljava/util/OptionalLong;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->findFirst()Lj$/util/i;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/util/k;->p(Lj$/util/i;)Ljava/util/OptionalLong;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic flatMap(Ljava/util/function/LongFunction;)Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/e0;->a(Ljava/util/function/LongFunction;)Lj$/util/function/q;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->r(Lj$/util/function/q;)Lj$/util/stream/e1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic forEach(Ljava/util/function/LongConsumer;)V
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/c0;->b(Ljava/util/function/LongConsumer;)Lj$/util/function/p;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->d(Lj$/util/function/p;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachOrdered(Ljava/util/function/LongConsumer;)V
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/c0;->b(Ljava/util/function/LongConsumer;)Lj$/util/function/p;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->Y(Lj$/util/function/p;)V
+
+    return-void
 .end method
 
 .method public synthetic isParallel()Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->isParallel()Z
+    invoke-interface {v0}, Lj$/util/stream/g;->isParallel()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public synthetic iterator()Lj$/util/m;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->iterator()Ljava/util/PrimitiveIterator$OfDouble;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/a;->a(Ljava/util/PrimitiveIterator$OfDouble;)Lj$/util/m;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Lj$/util/stream/g;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic j(Lj$/util/function/f;)V
+.method public synthetic iterator()Ljava/util/PrimitiveIterator$OfLong;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-static {p1}, Lj$/wrappers/A;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
+    invoke-interface {v0}, Lj$/util/stream/e1;->iterator()Lj$/util/p;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->forEach(Ljava/util/function/DoubleConsumer;)V
+    invoke-static {v0}, Lj$/wrappers/f;->a(Lj$/util/p;)Ljava/util/PrimitiveIterator$OfLong;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public synthetic l0(Lj$/util/function/f;)V
+.method public synthetic limit(J)Ljava/util/stream/LongStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-static {p1}, Lj$/wrappers/A;->a(Lj$/util/function/f;)Ljava/util/function/DoubleConsumer;
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/e1;->limit(J)Lj$/util/stream/e1;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->forEachOrdered(Ljava/util/function/DoubleConsumer;)V
-
-    return-void
-.end method
-
-.method public synthetic limit(J)Lj$/util/stream/U;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/stream/DoubleStream;->limit(J)Ljava/util/stream/DoubleStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic max()Lj$/util/i;
+.method public synthetic map(Ljava/util/function/LongUnaryOperator;)Ljava/util/stream/LongStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->max()Ljava/util/OptionalDouble;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic min()Lj$/util/i;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->min()Ljava/util/OptionalDouble;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/util/a;->n(Ljava/util/OptionalDouble;)Lj$/util/i;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic onClose(Ljava/lang/Runnable;)Lj$/util/stream/g;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->onClose(Ljava/lang/Runnable;)Ljava/util/stream/BaseStream;
+    invoke-static {p1}, Lj$/wrappers/m0;->c(Ljava/util/function/LongUnaryOperator;)Lj$/util/function/s;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->y(Lj$/util/function/s;)Lj$/util/stream/e1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic parallel()Lj$/util/stream/U;
+.method public synthetic mapToDouble(Ljava/util/function/LongToDoubleFunction;)Ljava/util/stream/DoubleStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->parallel()Ljava/util/stream/DoubleStream;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic parallel()Lj$/util/stream/g;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->parallel()Ljava/util/stream/BaseStream;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic r(Lj$/wrappers/D;)Lj$/util/stream/U;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/E;->a(Lj$/wrappers/D;)Ljava/util/function/DoublePredicate;
+    invoke-static {p1}, Lj$/wrappers/i0;->b(Ljava/util/function/LongToDoubleFunction;)Lj$/wrappers/i0;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->filter(Ljava/util/function/DoublePredicate;)Ljava/util/stream/DoubleStream;
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->N(Lj$/wrappers/i0;)Lj$/util/stream/U;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {p1}, Lj$/wrappers/I0;->m0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic sequential()Lj$/util/stream/U;
+.method public synthetic mapToInt(Ljava/util/function/LongToIntFunction;)Ljava/util/stream/IntStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->sequential()Ljava/util/stream/DoubleStream;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic sequential()Lj$/util/stream/g;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->sequential()Ljava/util/stream/BaseStream;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic skip(J)Lj$/util/stream/U;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/stream/DoubleStream;->skip(J)Ljava/util/stream/DoubleStream;
+    invoke-static {p1}, Lj$/wrappers/k0;->b(Ljava/util/function/LongToIntFunction;)Lj$/wrappers/k0;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->d0(Lj$/wrappers/k0;)Lj$/util/stream/IntStream;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$stream$IntStream$-WRP;->convert(Lj$/util/stream/IntStream;)Ljava/util/stream/IntStream;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public synthetic sorted()Lj$/util/stream/U;
+.method public synthetic mapToObj(Ljava/util/function/LongFunction;)Ljava/util/stream/Stream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->sorted()Ljava/util/stream/DoubleStream;
+    invoke-static {p1}, Lj$/wrappers/e0;->a(Ljava/util/function/LongFunction;)Lj$/util/function/q;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->P(Lj$/util/function/q;)Lj$/util/stream/Stream;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/L0;->m0(Lj$/util/stream/Stream;)Ljava/util/stream/Stream;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic max()Ljava/util/OptionalLong;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->max()Lj$/util/i;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
+    invoke-static {v0}, Lj$/util/k;->p(Lj$/util/i;)Ljava/util/OptionalLong;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic spliterator()Lj$/util/s$a;
+.method public synthetic min()Ljava/util/OptionalLong;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->spliterator()Ljava/util/Spliterator$OfDouble;
+    invoke-interface {v0}, Lj$/util/stream/e1;->min()Lj$/util/i;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/i;->a(Ljava/util/Spliterator$OfDouble;)Lj$/util/s$a;
+    invoke-static {v0}, Lj$/util/k;->p(Lj$/util/i;)Ljava/util/OptionalLong;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic spliterator()Lj$/util/s;
+.method public synthetic noneMatch(Ljava/util/function/LongPredicate;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->spliterator()Ljava/util/Spliterator;
+    invoke-static {p1}, Lj$/wrappers/g0;->a(Ljava/util/function/LongPredicate;)Lj$/wrappers/g0;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->R(Lj$/wrappers/g0;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic onClose(Ljava/lang/Runnable;)Ljava/util/stream/BaseStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0, p1}, Lj$/util/stream/g;->onClose(Ljava/lang/Runnable;)Lj$/util/stream/g;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/E0;->m0(Lj$/util/stream/g;)Ljava/util/stream/BaseStream;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic parallel()Ljava/util/stream/BaseStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/g;->parallel()Lj$/util/stream/g;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/g;->a(Ljava/util/Spliterator;)Lj$/util/s;
+    invoke-static {v0}, Lj$/wrappers/E0;->m0(Lj$/util/stream/g;)Ljava/util/stream/BaseStream;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic sum()D
+.method public synthetic parallel()Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->parallel()Lj$/util/stream/e1;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic peek(Ljava/util/function/LongConsumer;)Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/c0;->b(Ljava/util/function/LongConsumer;)Lj$/util/function/p;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->o(Lj$/util/function/p;)Lj$/util/stream/e1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic reduce(JLjava/util/function/LongBinaryOperator;)J
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p3}, Lj$/wrappers/a0;->a(Ljava/util/function/LongBinaryOperator;)Lj$/util/function/n;
+
+    move-result-object p3
+
+    invoke-interface {v0, p1, p2, p3}, Lj$/util/stream/e1;->C(JLj$/util/function/n;)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
+.method public synthetic reduce(Ljava/util/function/LongBinaryOperator;)Ljava/util/OptionalLong;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-static {p1}, Lj$/wrappers/a0;->a(Ljava/util/function/LongBinaryOperator;)Lj$/util/function/n;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/stream/e1;->g(Lj$/util/function/n;)Lj$/util/i;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/util/k;->p(Lj$/util/i;)Ljava/util/OptionalLong;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic sequential()Ljava/util/stream/BaseStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/g;->sequential()Lj$/util/stream/g;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/E0;->m0(Lj$/util/stream/g;)Ljava/util/stream/BaseStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic sequential()Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->sequential()Lj$/util/stream/e1;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic skip(J)Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/e1;->skip(J)Lj$/util/stream/e1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic sorted()Ljava/util/stream/LongStream;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->sorted()Lj$/util/stream/e1;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/K0;->m0(Lj$/util/stream/e1;)Ljava/util/stream/LongStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic spliterator()Ljava/util/Spliterator$OfLong;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/e1;->spliterator()Lj$/util/Spliterator$c;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/n;->a(Lj$/util/Spliterator$c;)Ljava/util/Spliterator$OfLong;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic spliterator()Ljava/util/Spliterator;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
+
+    invoke-interface {v0}, Lj$/util/stream/g;->spliterator()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/wrappers/h;->a(Lj$/util/Spliterator;)Ljava/util/Spliterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic sum()J
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->sum()D
+    invoke-interface {v0}, Lj$/util/stream/e1;->sum()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public summaryStatistics()Lj$/util/f;
+.method public summaryStatistics()Ljava/util/LongSummaryStatistics;
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->summaryStatistics()Ljava/util/DoubleSummaryStatistics;
+    invoke-interface {v0}, Lj$/util/stream/e1;->summaryStatistics()Lj$/util/f;
 
     .line 1
     new-instance v0, Ljava/lang/Error;
 
-    const-string v1, "Java 8+ API desugaring (library desugaring) cannot convert from java.util.DoubleSummaryStatistics"
+    const-string v1, "Java 8+ API desugaring (library desugaring) cannot convert to java.util.LongSummaryStatistics"
 
     invoke-direct {v0, v1}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
-.method public synthetic toArray()[D
+.method public synthetic toArray()[J
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->toArray()[D
+    invoke-interface {v0}, Lj$/util/stream/e1;->toArray()[J
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic unordered()Lj$/util/stream/g;
+.method public synthetic unordered()Ljava/util/stream/BaseStream;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
+    iget-object v0, p0, Lj$/wrappers/K0;->a:Lj$/util/stream/e1;
 
-    invoke-interface {v0}, Ljava/util/stream/DoubleStream;->unordered()Ljava/util/stream/BaseStream;
+    invoke-interface {v0}, Lj$/util/stream/g;->unordered()Lj$/util/stream/g;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/G0;->n0(Ljava/util/stream/BaseStream;)Lj$/util/stream/g;
+    invoke-static {v0}, Lj$/wrappers/E0;->m0(Lj$/util/stream/g;)Ljava/util/stream/BaseStream;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public synthetic w(Lj$/util/function/g;)Lj$/util/stream/U;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/C;->a(Lj$/util/function/g;)Ljava/util/function/DoubleFunction;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->flatMap(Ljava/util/function/DoubleFunction;)Ljava/util/stream/DoubleStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic x(Lj$/util/function/h;)Lj$/util/stream/e1;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/I;->a(Lj$/util/function/h;)Ljava/util/function/DoubleToLongFunction;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->mapToLong(Ljava/util/function/DoubleToLongFunction;)Ljava/util/stream/LongStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/M0;->n0(Ljava/util/stream/LongStream;)Lj$/util/stream/e1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic y(Lj$/wrappers/J;)Lj$/util/stream/U;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/K0;->a:Ljava/util/stream/DoubleStream;
-
-    invoke-static {p1}, Lj$/wrappers/K;->a(Lj$/wrappers/J;)Ljava/util/function/DoubleUnaryOperator;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/stream/DoubleStream;->map(Ljava/util/function/DoubleUnaryOperator;)Ljava/util/stream/DoubleStream;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/K0;->n0(Ljava/util/stream/DoubleStream;)Lj$/util/stream/U;
-
-    move-result-object p1
-
-    return-object p1
 .end method

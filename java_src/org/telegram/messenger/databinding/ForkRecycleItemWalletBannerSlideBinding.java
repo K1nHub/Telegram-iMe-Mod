@@ -8,19 +8,11 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.Components.RLottieImageView;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.Components.RLottieImageView;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletBannerSlideBinding implements ViewBinding {
-    private final FrameLayout rootView;
-
     private ForkRecycleItemWalletBannerSlideBinding(FrameLayout frameLayout, CardView cardView, FrameLayout frameLayout2, RLottieImageView rLottieImageView, AppCompatTextView appCompatTextView, AppCompatTextView appCompatTextView2) {
-        this.rootView = frameLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletBannerSlideBinding inflate(LayoutInflater layoutInflater) {
@@ -28,7 +20,7 @@ public final class ForkRecycleItemWalletBannerSlideBinding implements ViewBindin
     }
 
     public static ForkRecycleItemWalletBannerSlideBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_banner_slide, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_banner_slide, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,17 +28,17 @@ public final class ForkRecycleItemWalletBannerSlideBinding implements ViewBindin
     }
 
     public static ForkRecycleItemWalletBannerSlideBinding bind(View view) {
-        int i = C3473R.C3476id.card_banner_slide;
+        int i = C3630R.C3633id.card_banner_slide;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
             FrameLayout frameLayout = (FrameLayout) view;
-            i = C3473R.C3476id.image_banner_image;
+            i = C3630R.C3633id.image_banner_image;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
-                i = C3473R.C3476id.text_banner_description;
+                i = C3630R.C3633id.text_banner_description;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3473R.C3476id.text_banner_title;
+                    i = C3630R.C3633id.text_banner_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkRecycleItemWalletBannerSlideBinding(frameLayout, cardView, frameLayout, rLottieImageView, appCompatTextView, appCompatTextView2);

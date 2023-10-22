@@ -1,12 +1,12 @@
 package com.iMe.model.wallet.crypto.create;
 
-import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.model.crypto.Wallet;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreateWalletScreenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class CreateWalletScreenType {
     public /* synthetic */ CreateWalletScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -16,7 +16,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Ready extends CreateWalletScreenType {
         public static final Ready INSTANCE = new Ready();
 
@@ -26,7 +26,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TooBad extends CreateWalletScreenType {
         public static final TooBad INSTANCE = new TooBad();
 
@@ -36,7 +36,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class SecretWords extends CreateWalletScreenType {
         private final String address;
         private final String password;
@@ -63,7 +63,7 @@ public abstract class CreateWalletScreenType {
             Intrinsics.checkNotNullParameter(pin, "pin");
             this.password = password;
             this.pin = pin;
-            this.secretWords = StringExtKt.splitBySpace(wallet2.getMnemonic());
+            this.secretWords = CryptoExtKt.mnemonicAsList(wallet2);
             this.address = wallet2.getAddress();
         }
 
@@ -77,7 +77,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class WordsCheck extends CreateWalletScreenType {
         private final String password;
         private final String pin;
@@ -108,7 +108,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Import extends CreateWalletScreenType {
         private final String address;
         private final String password;

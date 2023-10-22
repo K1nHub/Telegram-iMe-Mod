@@ -6,7 +6,7 @@ import org.koin.core.logger.Logger;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.scope.Scope;
 /* compiled from: InstanceContext.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class InstanceContext {
     private final Logger logger;
     private final ParametersHolder parameters;

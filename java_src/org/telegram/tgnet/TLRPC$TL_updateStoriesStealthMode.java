@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateStoriesStealthMode extends TLRPC$Update {
     public static int constructor = 738741697;
     public TLRPC$TL_storiesStealthMode stealth_mode;

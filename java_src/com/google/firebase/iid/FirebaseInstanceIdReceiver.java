@@ -11,7 +11,7 @@ import com.google.firebase.messaging.FcmBroadcastProcessor;
 import com.google.firebase.messaging.MessagingAnalytics;
 import java.util.concurrent.ExecutionException;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
     @Override // com.google.android.gms.cloudmessaging.CloudMessagingReceiver
     protected final int onMessageReceive(Context context, CloudMessage cloudMessage) {

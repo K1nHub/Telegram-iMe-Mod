@@ -1,5 +1,5 @@
 package retrofit2;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public interface Callback<T> {
     void onFailure(Call<T> call, Throwable th);
 

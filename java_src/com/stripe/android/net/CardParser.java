@@ -5,7 +5,7 @@ import com.stripe.android.util.StripeJsonUtils;
 import com.stripe.android.util.StripeTextUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CardParser {
     static final String FIELD_ADDRESS_CITY = "address_city";
     static final String FIELD_ADDRESS_COUNTRY = "address_country";

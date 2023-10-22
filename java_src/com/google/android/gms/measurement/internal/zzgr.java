@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzgr {
     public static <T> T zza(Bundle bundle, String str, Class<T> cls, T t) {
         T t2 = (T) bundle.get(str);

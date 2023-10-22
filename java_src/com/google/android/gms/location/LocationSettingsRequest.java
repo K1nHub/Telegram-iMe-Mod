@@ -12,18 +12,18 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsRequestCreator")
 @SafeParcelable.Reserved({4, 5, 1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocationSettingsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsRequest> CREATOR = new zzz();
-    @SafeParcelable.Field(getter = "getLocationRequests", m797id = 1)
+    @SafeParcelable.Field(getter = "getLocationRequests", m1089id = 1)
     private final List zza;
-    @SafeParcelable.Field(defaultValue = "false", getter = "alwaysShow", m797id = 2)
+    @SafeParcelable.Field(defaultValue = "false", getter = "alwaysShow", m1089id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "needBle", m797id = 3)
+    @SafeParcelable.Field(getter = "needBle", m1089id = 3)
     private final boolean zzc;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final ArrayList zza = new ArrayList();
         private boolean zzb = false;
@@ -62,7 +62,7 @@ public final class LocationSettingsRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LocationSettingsRequest(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) boolean z, @SafeParcelable.Param(m796id = 3) boolean z2) {
+    public LocationSettingsRequest(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) boolean z2) {
         this.zza = list;
         this.zzb = z;
         this.zzc = z2;

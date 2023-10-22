@@ -1,8 +1,8 @@
 package com.iMe.storage.data.repository.wallet;
 
 import com.iMe.storage.data.datasource.transfer.WalletTransferDataSourceFactory;
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
-import com.iMe.storage.data.locale.p027db.model.wallet.WalletTokenBalanceDb;
+import com.iMe.storage.data.locale.p026db.dao.minor.wallet.WalletTokensBalancesDao;
+import com.iMe.storage.data.locale.p026db.model.wallet.WalletTokenBalanceDb;
 import com.iMe.storage.data.locale.prefs.model.TokenDisplaySettings;
 import com.iMe.storage.data.mapper.crypto.NetworksMappingKt;
 import com.iMe.storage.data.mapper.wallet.CustomTokensMappingKt;
@@ -52,7 +52,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenListsData;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
@@ -80,7 +80,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: WalletRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletRepositoryImpl implements WalletRepository {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final WalletTransferDataSourceFactory dataSourceFactory;
@@ -630,7 +630,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                         }
                         Completable andThen = rxDeleteByNetwork.andThen(walletTokensBalancesDao2.rxInsert((List) arrayList));
                         schedulersProvider = this.schedulersProvider;
-                        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo717io());
+                        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1010io());
                         Observable just = Observable.just(mapToDomain);
                         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
                         Observable andThen2 = subscribeOn.andThen(just);
@@ -719,7 +719,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                 }
                 Completable andThen = rxDeleteByMultipleNetworks.andThen(walletTokensBalancesDao2.rxInsert((List) arrayList));
                 schedulersProvider = this.schedulersProvider;
-                Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo717io());
+                Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1010io());
                 Observable just2 = Observable.just(mapToDomain);
                 Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                 Observable andThen2 = subscribeOn.andThen(just2);
@@ -890,7 +890,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                     }
                     Completable rxInsert = walletTokensBalancesDao2.rxInsert((List) arrayList3);
                     schedulersProvider = this.schedulersProvider;
-                    Completable subscribeOn = rxInsert.subscribeOn(schedulersProvider.mo717io());
+                    Completable subscribeOn = rxInsert.subscribeOn(schedulersProvider.mo1010io());
                     Observable just2 = Observable.just(mapToDomain);
                     Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                     Observable andThen = subscribeOn.andThen(just2);
@@ -977,18 +977,18 @@ public final class WalletRepositoryImpl implements WalletRepository {
     }
 
     @Override // com.iMe.storage.domain.repository.wallet.WalletRepository
-    public Observable<Result<Boolean>> sendTokens(TransferArgs args, Network network) {
+    public Observable<Result<String>> sendTokens(TransferArgs args, Network network) {
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(network, "network");
-        Observable<Result<Boolean>> transfer = this.dataSourceFactory.getDataSource(network.getBlockchainType()).transfer(args, network.getId());
+        Observable<Result<String>> transfer = this.dataSourceFactory.getDataSource(network.getBlockchainType()).transfer(args, network.getId());
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<Boolean>> onErrorReturn = transfer.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.wallet.WalletRepositoryImpl$sendTokens$$inlined$handleError$1
+        Observable<Result<String>> onErrorReturn = transfer.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.repository.wallet.WalletRepositoryImpl$sendTokens$$inlined$handleError$1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final Result<Boolean> invoke(Throwable it) {
+            public final Result<String> invoke(Throwable it) {
                 Intrinsics.checkNotNullParameter(it, "it");
                 return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
             }
@@ -1092,7 +1092,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
     }
 
     /* compiled from: WalletRepositoryImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

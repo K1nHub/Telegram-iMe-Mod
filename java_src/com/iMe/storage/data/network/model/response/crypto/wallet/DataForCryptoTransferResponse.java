@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DataForCryptoTransferResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DataForCryptoTransferResponse {
     private final String contractAddress;
     private final String feeTokenCode;

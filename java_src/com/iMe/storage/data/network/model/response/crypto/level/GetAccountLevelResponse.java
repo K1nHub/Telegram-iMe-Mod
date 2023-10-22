@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.level;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetAccountLevelResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetAccountLevelResponse {
     private final String accountRank;
     private final String telegramId;

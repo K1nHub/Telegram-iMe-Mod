@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import p033j$.util.DesugarTimeZone;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
     private final int century;
@@ -310,7 +310,7 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Strategy {
         abstract boolean addRegex(FastDateParser fastDateParser, StringBuilder sb);
 
@@ -414,7 +414,7 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -440,7 +440,7 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -478,7 +478,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -515,11 +515,11 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class TimeZoneStrategy extends Strategy {
 
         /* renamed from: ID */
-        private static final int f1506ID = 0;
+        private static final int f1584ID = 0;
         private static final int LONG_DST = 3;
         private static final int LONG_STD = 1;
         private static final int SHORT_DST = 4;

@@ -3,10 +3,10 @@ package com.iMe.utils.dialogs;
 import android.view.View;
 import android.widget.TextView;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p042ui.ActionBar.AlertDialog;
+import org.telegram.p042ui.ActionBar.Theme;
 /* compiled from: DialogExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DialogExtKt {
     public static final void makeRedPositiveButton(AlertDialog alertDialog) {
         Intrinsics.checkNotNullParameter(alertDialog, "<this>");

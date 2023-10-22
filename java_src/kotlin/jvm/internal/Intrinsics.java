@@ -3,13 +3,21 @@ package kotlin.jvm.internal;
 import java.util.Arrays;
 import kotlin.KotlinNullPointerException;
 import kotlin.UninitializedPropertyAccessException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Intrinsics {
     public static int compare(int i, int i2) {
         if (i < i2) {
             return -1;
         }
         return i == i2 ? 0 : 1;
+    }
+
+    public static int compare(long j, long j2) {
+        int i = (j > j2 ? 1 : (j == j2 ? 0 : -1));
+        if (i < 0) {
+            return -1;
+        }
+        return i == 0 ? 0 : 1;
     }
 
     private Intrinsics() {
@@ -140,5 +148,11 @@ public class Intrinsics {
         }
         t.setStackTrace((StackTraceElement[]) Arrays.copyOfRange(stackTrace, i + 1, length));
         return t;
+    }
+
+    /* loaded from: classes4.dex */
+    public static class Kotlin {
+        private Kotlin() {
+        }
     }
 }

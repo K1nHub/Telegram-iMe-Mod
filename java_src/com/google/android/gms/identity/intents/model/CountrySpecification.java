@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class CountrySpecification extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<CountrySpecification> CREATOR = new zza();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zza;
 
     @SafeParcelable.Constructor
-    public CountrySpecification(@SafeParcelable.Param(m796id = 2) String str) {
+    public CountrySpecification(@SafeParcelable.Param(m1088id = 2) String str) {
         this.zza = str;
     }
 

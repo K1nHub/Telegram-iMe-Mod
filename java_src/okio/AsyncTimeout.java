@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AsyncTimeout.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AsyncTimeout extends Timeout {
     public static final Companion Companion = new Companion(null);
     private static final long IDLE_TIMEOUT_MILLIS;
@@ -212,7 +212,7 @@ public class AsyncTimeout extends Timeout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AsyncTimeout.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Watchdog extends Thread {
         public Watchdog() {
             super("Okio Watchdog");
@@ -242,7 +242,7 @@ public class AsyncTimeout extends Timeout {
     }
 
     /* compiled from: AsyncTimeout.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

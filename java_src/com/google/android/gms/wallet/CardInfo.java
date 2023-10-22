@@ -8,18 +8,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "CardInfoCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CardInfo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CardInfo> CREATOR = new zze();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     String zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zzb;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     String zzc;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     int zzd;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     UserAddress zze;
 
     private CardInfo() {
@@ -62,7 +62,7 @@ public final class CardInfo extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CardInfo(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) String str3, @SafeParcelable.Param(m796id = 4) int i, @SafeParcelable.Param(m796id = 5) UserAddress userAddress) {
+    public CardInfo(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) String str3, @SafeParcelable.Param(m1088id = 4) int i, @SafeParcelable.Param(m1088id = 5) UserAddress userAddress) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;

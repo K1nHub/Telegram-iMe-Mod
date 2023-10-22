@@ -252,7 +252,7 @@ public final class Loader implements LoaderErrorThrower {
                 obtainMessage(2, e).sendToTarget();
             } catch (Error e2) {
                 if (!this.released) {
-                    Log.m817e(TAG, "Unexpected error loading stream", e2);
+                    Log.m1109e(TAG, "Unexpected error loading stream", e2);
                     obtainMessage(3, e2).sendToTarget();
                 }
                 throw e2;
@@ -260,13 +260,13 @@ public final class Loader implements LoaderErrorThrower {
                 if (this.released) {
                     return;
                 }
-                Log.m817e(TAG, "Unexpected exception loading stream", e3);
+                Log.m1109e(TAG, "Unexpected exception loading stream", e3);
                 obtainMessage(2, new UnexpectedLoaderException(e3)).sendToTarget();
             } catch (OutOfMemoryError e4) {
                 if (this.released) {
                     return;
                 }
-                Log.m817e(TAG, "OutOfMemory error loading stream", e4);
+                Log.m1109e(TAG, "OutOfMemory error loading stream", e4);
                 obtainMessage(2, new UnexpectedLoaderException(e4)).sendToTarget();
             }
         }
@@ -296,7 +296,7 @@ public final class Loader implements LoaderErrorThrower {
                     try {
                         callback.onLoadCompleted(this.loadable, elapsedRealtime, j);
                     } catch (RuntimeException e) {
-                        Log.m817e(TAG, "Unexpected exception handling load completed", e);
+                        Log.m1109e(TAG, "Unexpected exception handling load completed", e);
                         Loader.this.fatalError = new UnexpectedLoaderException(e);
                     }
                 } else if (i2 != 2) {

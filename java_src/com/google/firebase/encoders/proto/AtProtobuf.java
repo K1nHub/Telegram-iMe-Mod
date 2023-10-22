@@ -2,7 +2,7 @@ package com.google.firebase.encoders.proto;
 
 import com.google.firebase.encoders.proto.Protobuf;
 import java.lang.annotation.Annotation;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AtProtobuf {
     private Protobuf.IntEncoding intEncoding = Protobuf.IntEncoding.DEFAULT;
     private int tag;
@@ -20,7 +20,7 @@ public final class AtProtobuf {
         return new ProtobufImpl(this.tag, this.intEncoding);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class ProtobufImpl implements Protobuf {
         private final Protobuf.IntEncoding intEncoding;
         private final int tag;

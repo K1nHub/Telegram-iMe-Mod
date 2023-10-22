@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.crypto.cancel.CancelTransacti
 import com.iMe.storage.domain.model.crypto.cancel.CryptoCancelMetadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CancelMappingKt {
     public static final CryptoCancelMetadata mapToDomain(CancelTransactionDataResponse cancelTransactionDataResponse) {
         Intrinsics.checkNotNullParameter(cancelTransactionDataResponse, "<this>");

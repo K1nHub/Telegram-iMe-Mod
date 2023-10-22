@@ -70,6 +70,11 @@ public interface Map<K, V> {
             }
         }
 
+        public static Object $default$getOrDefault(java.util.Map map, Object obj, Object obj2) {
+            Object obj3 = map.get(obj);
+            return (obj3 != null || map.containsKey(obj)) ? obj3 : obj2;
+        }
+
         /* JADX WARN: Multi-variable type inference failed */
         public static Object $default$merge(java.util.Map map, Object obj, Object obj2, BiFunction biFunction) {
             Objects.requireNonNull(biFunction);
@@ -93,7 +98,7 @@ public interface Map<K, V> {
 
         public static boolean $default$remove(java.util.Map map, Object obj, Object obj2) {
             Object obj3 = map.get(obj);
-            if (AbstractC2835a.m608u(obj3, obj2)) {
+            if (AbstractC2839k.m588q(obj3, obj2)) {
                 if (obj3 != null || map.containsKey(obj)) {
                     map.remove(obj);
                     return true;
@@ -110,7 +115,7 @@ public interface Map<K, V> {
 
         public static boolean $default$replace(java.util.Map map, Object obj, Object obj2, Object obj3) {
             Object obj4 = map.get(obj);
-            if (AbstractC2835a.m608u(obj4, obj2)) {
+            if (AbstractC2839k.m588q(obj4, obj2)) {
                 if (obj4 != null || map.containsKey(obj)) {
                     map.put(obj, obj3);
                     return true;
@@ -147,12 +152,15 @@ public interface Map<K, V> {
                 Object obj3 = ((ConcurrentMap) map).get(obj);
                 return obj3 != null ? obj3 : obj2;
             }
-            Object obj4 = map.get(obj);
-            return (obj4 != null || map.containsKey(obj)) ? obj4 : obj2;
+            return CC.$default$getOrDefault(map, obj, obj2);
         }
 
         public static /* synthetic */ Object putIfAbsent(java.util.Map map, Object obj, Object obj2) {
             return map instanceof Map ? ((Map) map).putIfAbsent(obj, obj2) : CC.$default$putIfAbsent(map, obj, obj2);
+        }
+
+        public static /* synthetic */ Object replace(java.util.Map map, Object obj, Object obj2) {
+            return map instanceof Map ? ((Map) map).replace(obj, obj2) : CC.$default$replace(map, obj, obj2);
         }
     }
 

@@ -7,9 +7,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.BigActionButton;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.BigActionButton;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentStakingTransactionActionsBinding implements ViewBinding {
     public final BigActionButton buttonAction;
     public final AppCompatTextView buttonApproveInfo;
@@ -23,7 +23,6 @@ public final class ForkContentStakingTransactionActionsBinding implements ViewBi
         this.buttonConditions = appCompatTextView2;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayoutCompat getRoot() {
         return this.rootView;
     }
@@ -33,7 +32,7 @@ public final class ForkContentStakingTransactionActionsBinding implements ViewBi
     }
 
     public static ForkContentStakingTransactionActionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_staking_transaction_actions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_staking_transaction_actions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -41,13 +40,13 @@ public final class ForkContentStakingTransactionActionsBinding implements ViewBi
     }
 
     public static ForkContentStakingTransactionActionsBinding bind(View view) {
-        int i = C3473R.C3476id.button_action;
+        int i = C3630R.C3633id.button_action;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3473R.C3476id.button_approve_info;
+            i = C3630R.C3633id.button_approve_info;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3473R.C3476id.button_conditions;
+                i = C3630R.C3633id.button_conditions;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
                     return new ForkContentStakingTransactionActionsBinding((LinearLayoutCompat) view, bigActionButton, appCompatTextView, appCompatTextView2);

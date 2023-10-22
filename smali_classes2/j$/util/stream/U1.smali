@@ -152,7 +152,7 @@
     .line 1
     check-cast p1, Ljava/lang/Double;
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/U1;->l(Ljava/lang/Double;)V
+    invoke-virtual {p0, p1}, Lj$/util/stream/U1;->r(Ljava/lang/Double;)V
 
     return-void
 .end method
@@ -181,15 +181,7 @@
     return-object v0
 .end method
 
-.method public synthetic l(Ljava/lang/Double;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/o1;->a(Lj$/util/stream/j3;Ljava/lang/Double;)V
-
-    return-void
-.end method
-
-.method public m()V
+.method public l()V
     .locals 4
 
     iget v0, p0, Lj$/util/stream/T1;->b:I
@@ -242,7 +234,7 @@
     throw v0
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/T1;->a:[D
@@ -303,6 +295,14 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public synthetic r(Ljava/lang/Double;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/o1;->a(Lj$/util/stream/j3;Ljava/lang/Double;)V
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

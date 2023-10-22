@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.crypto.permission.PermissionAction;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: CryptoPermissionRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoPermissionRepository {
     Observable<Result<AccountInfo>> getAccountInfo(String str);
 

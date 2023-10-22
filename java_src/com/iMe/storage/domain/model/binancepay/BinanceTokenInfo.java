@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.binancepay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTokenInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceTokenInfo {
     private final String asset;
     private final String assetLogoUrl;

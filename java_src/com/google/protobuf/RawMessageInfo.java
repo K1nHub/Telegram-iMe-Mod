@@ -1,6 +1,6 @@
 package com.google.protobuf;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RawMessageInfo implements MessageInfo {
     private final MessageLite defaultInstance;
     private final int flags;

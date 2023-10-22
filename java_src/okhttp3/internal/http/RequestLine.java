@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.HttpUrl;
 import okhttp3.Request;
 /* compiled from: RequestLine.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RequestLine {
     public static final RequestLine INSTANCE = new RequestLine();
 

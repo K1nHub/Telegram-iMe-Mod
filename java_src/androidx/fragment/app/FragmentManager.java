@@ -268,12 +268,6 @@ public abstract class FragmentManager {
         return new BackStackRecord(this);
     }
 
-    public boolean executePendingTransactions() {
-        boolean execPendingActions = execPendingActions(true);
-        forcePostponedTransactions();
-        return execPendingActions;
-    }
-
     private void updateOnBackPressedCallbackEnabled() {
         synchronized (this.mPendingActions) {
             boolean z = true;
@@ -1675,8 +1669,8 @@ public abstract class FragmentManager {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (String str3 : input) {
-                            Pair m103to = TuplesKt.m103to(str3, Boolean.TRUE);
-                            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                            Pair m144to = TuplesKt.m144to(str3, Boolean.TRUE);
+                            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
                         }
                         return new ActivityResultContract.SynchronousResult<>(linkedHashMap);
                     }

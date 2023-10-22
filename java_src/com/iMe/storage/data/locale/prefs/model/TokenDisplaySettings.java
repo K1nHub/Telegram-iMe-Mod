@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.prefs.model;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenDisplaySettings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TokenDisplaySettings {
     private transient boolean isVisible;
 
@@ -27,7 +27,7 @@ public abstract class TokenDisplaySettings {
     }
 
     /* compiled from: TokenDisplaySettings.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Crypto extends TokenDisplaySettings {
         private boolean isVisible;
         private int position;
@@ -110,7 +110,7 @@ public abstract class TokenDisplaySettings {
     }
 
     /* compiled from: TokenDisplaySettings.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Binance extends TokenDisplaySettings {
         private boolean isVisible;
         private int position;

@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataVector.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DataVectorPhantomReference extends PhantomReference<DataVector> {
     private long nativeHandle;
     private static Set<DataVectorPhantomReference> references = new HashSet();

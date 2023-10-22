@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzea extends zzdk {
     private static final Logger zzb = Logger.getLogger(zzea.class.getName());
     private static final boolean zzc = zzhn.zza();
@@ -134,7 +134,7 @@ public abstract class zzea extends zzdk {
     public abstract void zze(int i, int i2) throws IOException;
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class zzb extends IOException {
         zzb() {
             super("CodedOutputStream was writing to a flat byte array and ran out of space.");
@@ -193,7 +193,7 @@ public abstract class zzea extends zzdk {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class zza extends zzea {
         private final byte[] zzb;
         private final int zzc;

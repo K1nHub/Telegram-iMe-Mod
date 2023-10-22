@@ -283,7 +283,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
             this.handler.obtainMessage(14, playerMessage).sendToTarget();
             return;
         }
-        Log.m814w(TAG, "Ignoring messages sent after release.");
+        Log.m1106w(TAG, "Ignoring messages sent after release.");
         playerMessage.markAsProcessed(false);
     }
 
@@ -450,7 +450,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
                 e = e.copyWithMediaPeriodId(readingPeriod.info.f188id);
             }
             if (e.isRecoverable && this.pendingRecoverableRendererError == null) {
-                Log.m813w(TAG, "Recoverable renderer error", e);
+                Log.m1105w(TAG, "Recoverable renderer error", e);
                 this.pendingRecoverableRendererError = e;
                 HandlerWrapper handlerWrapper = this.handler;
                 handlerWrapper.sendMessageAtFrontOfQueue(handlerWrapper.obtainMessage(25, e));
@@ -460,7 +460,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
                     exoPlaybackException.addSuppressed(e);
                     e = this.pendingRecoverableRendererError;
                 }
-                Log.m817e(TAG, "Playback error", e);
+                Log.m1109e(TAG, "Playback error", e);
                 stopInternal(true, false);
                 this.playbackInfo = this.playbackInfo.copyWithPlaybackError(e);
             }
@@ -486,7 +486,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
             handleIoException(e6, 2000);
         } catch (RuntimeException e7) {
             ExoPlaybackException createForUnexpected = ExoPlaybackException.createForUnexpected(e7, ((e7 instanceof IllegalStateException) || (e7 instanceof IllegalArgumentException)) ? 1004 : 1004);
-            Log.m817e(TAG, "Playback error", createForUnexpected);
+            Log.m1109e(TAG, "Playback error", createForUnexpected);
             stopInternal(true, false);
             this.playbackInfo = this.playbackInfo.copyWithPlaybackError(createForUnexpected);
         }
@@ -500,7 +500,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         if (playingPeriod != null) {
             createForSource = createForSource.copyWithMediaPeriodId(playingPeriod.info.f188id);
         }
-        Log.m817e(TAG, "Playback error", createForSource);
+        Log.m1109e(TAG, "Playback error", createForSource);
         stopInternal(false, false);
         this.playbackInfo = this.playbackInfo.copyWithPlaybackError(createForSource);
     }
@@ -971,7 +971,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     private void sendMessageToTargetThread(final PlayerMessage playerMessage) {
         Looper looper = playerMessage.getLooper();
         if (!looper.getThread().isAlive()) {
-            Log.m814w("TAG", "Trying to send message on a dead thread.");
+            Log.m1106w("TAG", "Trying to send message on a dead thread.");
             playerMessage.markAsProcessed(false);
             return;
         }
@@ -988,7 +988,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         try {
             deliverMessage(playerMessage);
         } catch (ExoPlaybackException e) {
-            Log.m817e(TAG, "Unexpected error delivering message on external thread.", e);
+            Log.m1109e(TAG, "Unexpected error delivering message on external thread.", e);
             throw new RuntimeException(e);
         }
     }
@@ -1632,7 +1632,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         } else {
             trackGroupArray = TrackGroupArray.EMPTY;
             trackSelectorResult = this.emptyTrackSelectorResult;
-            list = ImmutableList.m762of();
+            list = ImmutableList.m1054of();
         }
         if (z) {
             this.playbackInfoUpdate.setPositionDiscontinuity(i);
@@ -1654,7 +1654,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
                 }
             }
         }
-        return z ? builder.build() : ImmutableList.m762of();
+        return z ? builder.build() : ImmutableList.m1054of();
     }
 
     private void enableRenderers() throws ExoPlaybackException {

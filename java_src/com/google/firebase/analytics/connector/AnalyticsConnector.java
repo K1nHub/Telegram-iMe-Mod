@@ -5,18 +5,18 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 import java.util.List;
 import java.util.Map;
 /* compiled from: com.google.firebase:firebase-measurement-connector@@19.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface AnalyticsConnector {
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@19.0.0 */
     @KeepForSdk
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface AnalyticsConnectorHandle {
     }
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@19.0.0 */
     @KeepForSdk
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface AnalyticsConnectorListener {
         @KeepForSdk
         void onMessageTriggered(int i, Bundle bundle);
@@ -24,7 +24,7 @@ public interface AnalyticsConnector {
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@19.0.0 */
     @KeepForSdk
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class ConditionalUserProperty {
         @KeepForSdk
         public boolean active;

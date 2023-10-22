@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ProtobufArrayList<E> extends AbstractProtobufList<E> implements RandomAccess {
     private static final ProtobufArrayList<Object> EMPTY_LIST;
     private E[] array;

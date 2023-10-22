@@ -3,7 +3,7 @@ package com.google.android.gms.vision.face;
 import android.graphics.PointF;
 import androidx.annotation.RecentlyNonNull;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Contour {
     public static final int FACE = 1;
     public static final int LEFT_CHEEK = 14;

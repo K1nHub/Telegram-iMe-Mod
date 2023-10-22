@@ -1,5 +1,5 @@
 package org.webrtc;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class TimestampAligner {
     private volatile long nativeTimestampAligner = nativeCreateTimestampAligner();
 

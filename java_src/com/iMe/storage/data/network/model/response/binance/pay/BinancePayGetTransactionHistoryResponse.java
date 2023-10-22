@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.binance.pay;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayGetTransactionHistoryResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayGetTransactionHistoryResponse {
     private final List<HistoryItem> transactionsData;
 
@@ -49,7 +49,7 @@ public final class BinancePayGetTransactionHistoryResponse {
     }
 
     /* compiled from: BinancePayGetTransactionHistoryResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class HistoryItem {
         private final String amount;
         private final String assetCode;

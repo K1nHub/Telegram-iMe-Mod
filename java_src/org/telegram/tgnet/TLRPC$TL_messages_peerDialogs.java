@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_peerDialogs extends TLObject {
     public static int constructor = 863093588;
     public TLRPC$TL_updates_state state;

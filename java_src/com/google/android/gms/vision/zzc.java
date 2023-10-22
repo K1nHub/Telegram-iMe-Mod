@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import com.google.android.gms.common.util.VisibleForTesting;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @VisibleForTesting
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzc {
     private static final Object zza = new Object();
     private static int zzb;

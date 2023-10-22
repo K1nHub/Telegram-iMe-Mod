@@ -29,7 +29,7 @@ import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 import org.json.JSONObject;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StripeApiHandler {
     public static final String CHARSET = "UTF-8";
     private static final String DNS_CACHE_TTL_PROPERTY_NAME = "networkaddress.cache.ttl";
@@ -41,7 +41,7 @@ public class StripeApiHandler {
     public static final String VERSION = "3.5.0";
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     @interface RestMethod {
     }
 
@@ -154,8 +154,8 @@ public class StripeApiHandler {
         return httpURLConnection;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0026 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0027 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -165,84 +165,84 @@ public class StripeApiHandler {
             java.lang.String r0 = "-1"
             java.lang.String r1 = "networkaddress.cache.ttl"
             r2 = 0
-            if (r10 != 0) goto L8
+            if (r10 != 0) goto L9
             return r2
-        L8:
+        L9:
             java.lang.Boolean r3 = java.lang.Boolean.TRUE
-            java.lang.String r4 = java.security.Security.getProperty(r1)     // Catch: java.lang.SecurityException -> L14
+            java.lang.String r4 = java.security.Security.getProperty(r1)     // Catch: java.lang.SecurityException -> L15
             java.lang.String r5 = "0"
-            java.security.Security.setProperty(r1, r5)     // Catch: java.lang.SecurityException -> L15
-            goto L17
-        L14:
-            r4 = r2
+            java.security.Security.setProperty(r1, r5)     // Catch: java.lang.SecurityException -> L16
+            goto L18
         L15:
+            r4 = r2
+        L16:
             java.lang.Boolean r3 = java.lang.Boolean.FALSE
-        L17:
+        L18:
             java.lang.String r5 = r10.getPublishableApiKey()
             java.lang.String r5 = r5.trim()
             boolean r5 = r5.isEmpty()
             r6 = 0
-            if (r5 != 0) goto L92
-            com.stripe.android.net.StripeResponse r7 = getStripeResponse(r7, r8, r9, r10)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            int r8 = r7.getResponseCode()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            java.lang.String r9 = r7.getResponseBody()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            java.util.Map r7 = r7.getResponseHeaders()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            if (r7 != 0) goto L3a
+            if (r5 != 0) goto L93
+            com.stripe.android.net.StripeResponse r7 = getStripeResponse(r7, r8, r9, r10)     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            int r8 = r7.getResponseCode()     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            java.lang.String r9 = r7.getResponseBody()     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            java.util.Map r7 = r7.getResponseHeaders()     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            if (r7 != 0) goto L3b
             r7 = r2
-            goto L42
-        L3a:
+            goto L43
+        L3b:
             java.lang.String r10 = "Request-Id"
-            java.lang.Object r7 = r7.get(r10)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            java.util.List r7 = (java.util.List) r7     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-        L42:
-            if (r7 == 0) goto L51
-            int r10 = r7.size()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            if (r10 <= 0) goto L51
-            java.lang.Object r7 = r7.get(r6)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            java.lang.String r7 = (java.lang.String) r7     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-            goto L52
-        L51:
-            r7 = r2
+            java.lang.Object r7 = r7.get(r10)     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            java.util.List r7 = (java.util.List) r7     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+        L43:
+            if (r7 == 0) goto L52
+            int r10 = r7.size()     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            if (r10 <= 0) goto L52
+            java.lang.Object r7 = r7.get(r6)     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            java.lang.String r7 = (java.lang.String) r7     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+            goto L53
         L52:
+            r7 = r2
+        L53:
             r10 = 200(0xc8, float:2.8E-43)
-            if (r8 < r10) goto L5a
+            if (r8 < r10) goto L5b
             r10 = 300(0x12c, float:4.2E-43)
-            if (r8 < r10) goto L5d
-        L5a:
-            handleAPIError(r9, r8, r7)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
-        L5d:
-            com.stripe.android.model.Token r7 = com.stripe.android.net.TokenParser.parseToken(r9)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
+            if (r8 < r10) goto L5e
+        L5b:
+            handleAPIError(r9, r8, r7)     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
+        L5e:
+            com.stripe.android.model.Token r7 = com.stripe.android.net.TokenParser.parseToken(r9)     // Catch: java.lang.Throwable -> L72 org.json.JSONException -> L83
             boolean r8 = r3.booleanValue()
-            if (r8 == 0) goto L70
-            if (r4 != 0) goto L6d
+            if (r8 == 0) goto L71
+            if (r4 != 0) goto L6e
             java.security.Security.setProperty(r1, r0)
-            goto L70
-        L6d:
+            goto L71
+        L6e:
             java.security.Security.setProperty(r1, r4)
-        L70:
-            return r7
         L71:
+            return r7
+        L72:
             r7 = move-exception
             boolean r8 = r3.booleanValue()
-            if (r8 == 0) goto L81
-            if (r4 != 0) goto L7e
+            if (r8 == 0) goto L82
+            if (r4 != 0) goto L7f
             java.security.Security.setProperty(r1, r0)
-            goto L81
-        L7e:
+            goto L82
+        L7f:
             java.security.Security.setProperty(r1, r4)
-        L81:
-            throw r7
         L82:
+            throw r7
+        L83:
             boolean r7 = r3.booleanValue()
-            if (r7 == 0) goto L91
-            if (r4 != 0) goto L8e
+            if (r7 == 0) goto L92
+            if (r4 != 0) goto L8f
             java.security.Security.setProperty(r1, r0)
-            goto L91
-        L8e:
+            goto L92
+        L8f:
             java.security.Security.setProperty(r1, r4)
-        L91:
-            return r2
         L92:
+            return r2
+        L93:
             com.stripe.android.exception.AuthenticationException r7 = new com.stripe.android.exception.AuthenticationException
             java.lang.Integer r8 = java.lang.Integer.valueOf(r6)
             java.lang.String r9 = "No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions."
@@ -447,7 +447,7 @@ public class StripeApiHandler {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Parameter {
         public final String key;
         public final String value;

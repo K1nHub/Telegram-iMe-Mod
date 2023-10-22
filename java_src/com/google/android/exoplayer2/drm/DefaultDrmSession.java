@@ -186,7 +186,7 @@ public class DefaultDrmSession implements DrmSession {
     @Override // com.google.android.exoplayer2.drm.DrmSession
     public void acquire(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         if (this.referenceCount < 0) {
-            Log.m818e(TAG, "Session reference count less than zero: " + this.referenceCount);
+            Log.m1110e(TAG, "Session reference count less than zero: " + this.referenceCount);
             this.referenceCount = 0;
         }
         if (eventDispatcher != null) {
@@ -213,7 +213,7 @@ public class DefaultDrmSession implements DrmSession {
     public void release(DrmSessionEventListener.EventDispatcher eventDispatcher) {
         int i = this.referenceCount;
         if (i <= 0) {
-            Log.m818e(TAG, "release() called on a session that's already fully released.");
+            Log.m1110e(TAG, "release() called on a session that's already fully released.");
             return;
         }
         int i2 = i - 1;
@@ -325,7 +325,7 @@ public class DefaultDrmSession implements DrmSession {
                 });
                 return;
             }
-            Log.m820d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
+            Log.m1112d(TAG, "Offline license has expired or will expire soon. Remaining seconds: " + licenseDurationRemainingSec);
             postKeyRequest(bArr, 2, z);
         }
     }
@@ -412,7 +412,7 @@ public class DefaultDrmSession implements DrmSession {
 
     private void onError(final Exception exc, int i) {
         this.lastException = new DrmSession.DrmSessionException(exc, DrmUtil.getErrorCodeForMediaDrmException(exc, i));
-        Log.m817e(TAG, "DRM session error", exc);
+        Log.m1109e(TAG, "DRM session error", exc);
         dispatchEvent(new Consumer() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSession$$ExternalSyntheticLambda1
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
@@ -493,7 +493,7 @@ public class DefaultDrmSession implements DrmSession {
                     return;
                 }
             } catch (Exception e2) {
-                Log.m813w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
+                Log.m1105w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
                 bArr = e2;
             }
             DefaultDrmSession.this.loadErrorHandlingPolicy.onLoadTaskConcluded(requestTask.taskId);

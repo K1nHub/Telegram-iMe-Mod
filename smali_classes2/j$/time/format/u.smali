@@ -1,146 +1,187 @@
-.class public final enum Lj$/time/format/u;
-.super Ljava/lang/Enum;
+.class Lj$/time/format/u;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/time/temporal/k;
 
 
-# static fields
-.field public static final enum FULL:Lj$/time/format/u;
+# instance fields
+.field final synthetic a:Lj$/time/chrono/b;
 
-.field public static final enum FULL_STANDALONE:Lj$/time/format/u;
+.field final synthetic b:Lj$/time/temporal/k;
 
-.field public static final enum NARROW:Lj$/time/format/u;
+.field final synthetic c:Lj$/time/chrono/g;
 
-.field public static final enum NARROW_STANDALONE:Lj$/time/format/u;
-
-.field public static final enum SHORT:Lj$/time/format/u;
-
-.field public static final enum SHORT_STANDALONE:Lj$/time/format/u;
-
-.field private static final synthetic a:[Lj$/time/format/u;
+.field final synthetic d:Lj$/time/n;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
-
-    new-instance v0, Lj$/time/format/u;
-
-    const-string v1, "FULL"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    invoke-direct {v0, v1, v2, v3, v2}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v0, Lj$/time/format/u;->FULL:Lj$/time/format/u;
-
-    new-instance v1, Lj$/time/format/u;
-
-    const-string v4, "FULL_STANDALONE"
-
-    const/4 v5, 0x1
-
-    const v6, 0x8002
-
-    invoke-direct {v1, v4, v5, v6, v2}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v1, Lj$/time/format/u;->FULL_STANDALONE:Lj$/time/format/u;
-
-    new-instance v4, Lj$/time/format/u;
-
-    const-string v6, "SHORT"
-
-    invoke-direct {v4, v6, v3, v5, v5}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v4, Lj$/time/format/u;->SHORT:Lj$/time/format/u;
-
-    new-instance v6, Lj$/time/format/u;
-
-    const-string v7, "SHORT_STANDALONE"
-
-    const/4 v8, 0x3
-
-    const v9, 0x8001
-
-    invoke-direct {v6, v7, v8, v9, v5}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v6, Lj$/time/format/u;->SHORT_STANDALONE:Lj$/time/format/u;
-
-    new-instance v7, Lj$/time/format/u;
-
-    const-string v9, "NARROW"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10, v10, v5}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v7, Lj$/time/format/u;->NARROW:Lj$/time/format/u;
-
-    new-instance v9, Lj$/time/format/u;
-
-    const-string v11, "NARROW_STANDALONE"
-
-    const/4 v12, 0x5
-
-    const v13, 0x8004
-
-    invoke-direct {v9, v11, v12, v13, v5}, Lj$/time/format/u;-><init>(Ljava/lang/String;III)V
-
-    sput-object v9, Lj$/time/format/u;->NARROW_STANDALONE:Lj$/time/format/u;
-
-    const/4 v11, 0x6
-
-    new-array v11, v11, [Lj$/time/format/u;
-
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v5
-
-    aput-object v4, v11, v3
-
-    aput-object v6, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lj$/time/format/u;->a:[Lj$/time/format/u;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;III)V
+.method constructor <init>(Lj$/time/chrono/b;Lj$/time/temporal/k;Lj$/time/chrono/g;Lj$/time/n;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    iput-object p2, p0, Lj$/time/format/u;->b:Lj$/time/temporal/k;
+
+    iput-object p3, p0, Lj$/time/format/u;->c:Lj$/time/chrono/g;
+
+    iput-object p4, p0, Lj$/time/format/u;->d:Lj$/time/n;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lj$/time/format/u;
-    .locals 1
 
-    const-class v0, Lj$/time/format/u;
+# virtual methods
+.method public synthetic c(Lj$/time/temporal/o;)I
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->a(Lj$/time/temporal/k;Lj$/time/temporal/o;)I
 
-    move-result-object p0
+    move-result p1
 
-    check-cast p0, Lj$/time/format/u;
-
-    return-object p0
+    return p1
 .end method
 
-.method public static values()[Lj$/time/format/u;
+.method public d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
     .locals 1
 
-    sget-object v0, Lj$/time/format/u;->a:[Lj$/time/format/u;
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
 
-    invoke-virtual {v0}, [Lj$/time/format/u;->clone()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    invoke-interface {p1}, Lj$/time/temporal/o;->h()Z
 
-    check-cast v0, [Lj$/time/format/u;
+    move-result v0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    check-cast v0, Lj$/time/d;
+
+    invoke-virtual {v0, p1}, Lj$/time/d;->d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    iget-object v0, p0, Lj$/time/format/u;->b:Lj$/time/temporal/k;
+
+    invoke-interface {v0, p1}, Lj$/time/temporal/k;->d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public e(Lj$/time/temporal/o;)J
+    .locals 2
+
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Lj$/time/temporal/o;->h()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    check-cast v0, Lj$/time/d;
+
+    invoke-virtual {v0, p1}, Lj$/time/d;->e(Lj$/time/temporal/o;)J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_0
+    iget-object v0, p0, Lj$/time/format/u;->b:Lj$/time/temporal/k;
+
+    invoke-interface {v0, p1}, Lj$/time/temporal/k;->e(Lj$/time/temporal/o;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    .locals 1
+
+    sget v0, Lj$/time/temporal/w;->a:I
+
+    sget-object v0, Lj$/time/temporal/q;->a:Lj$/time/temporal/q;
+
+    if-ne p1, v0, :cond_0
+
+    iget-object p1, p0, Lj$/time/format/u;->c:Lj$/time/chrono/g;
+
+    return-object p1
+
+    :cond_0
+    sget-object v0, Lj$/time/temporal/p;->a:Lj$/time/temporal/p;
+
+    if-ne p1, v0, :cond_1
+
+    iget-object p1, p0, Lj$/time/format/u;->d:Lj$/time/n;
+
+    return-object p1
+
+    :cond_1
+    sget-object v0, Lj$/time/temporal/r;->a:Lj$/time/temporal/r;
+
+    if-ne p1, v0, :cond_2
+
+    iget-object v0, p0, Lj$/time/format/u;->b:Lj$/time/temporal/k;
+
+    invoke-interface {v0, p1}, Lj$/time/temporal/k;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_2
+    invoke-interface {p1, p0}, Lj$/time/temporal/x;->a(Lj$/time/temporal/k;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public i(Lj$/time/temporal/o;)Z
+    .locals 1
+
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Lj$/time/temporal/o;->h()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/chrono/b;
+
+    check-cast v0, Lj$/time/d;
+
+    invoke-virtual {v0, p1}, Lj$/time/d;->i(Lj$/time/temporal/o;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iget-object v0, p0, Lj$/time/format/u;->b:Lj$/time/temporal/k;
+
+    invoke-interface {v0, p1}, Lj$/time/temporal/k;->i(Lj$/time/temporal/o;)Z
+
+    move-result p1
+
+    return p1
 .end method

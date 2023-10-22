@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.orbitmvi.orbit.Container;
 import org.orbitmvi.orbit.CoroutineScopeExtensionsKt;
 /* compiled from: ViewModelExtensions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ViewModelExtensionsKt {
     public static /* synthetic */ Container container$default(ViewModel viewModel, Object obj, Container.Settings settings, Function1 function1, int i, Object obj2) {
         if ((i & 2) != 0) {

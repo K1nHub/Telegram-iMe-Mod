@@ -14,7 +14,7 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 /* compiled from: Builders.common.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class BuildersKt__Builders_commonKt {
     public static /* synthetic */ Job launch$default(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -39,37 +39,38 @@ public final /* synthetic */ class BuildersKt__Builders_commonKt {
     }
 
     public static final <T> Object withContext(CoroutineContext coroutineContext, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        Object result;
+        Object result$kotlinx_coroutines_core;
         Object coroutine_suspended;
         CoroutineContext context = continuation.getContext();
         CoroutineContext newCoroutineContext = CoroutineContextKt.newCoroutineContext(context, coroutineContext);
         JobKt.ensureActive(newCoroutineContext);
         if (newCoroutineContext == context) {
             ScopeCoroutine scopeCoroutine = new ScopeCoroutine(newCoroutineContext, continuation);
-            result = UndispatchedKt.startUndispatchedOrReturn(scopeCoroutine, scopeCoroutine, function2);
+            result$kotlinx_coroutines_core = UndispatchedKt.startUndispatchedOrReturn(scopeCoroutine, scopeCoroutine, function2);
         } else {
             ContinuationInterceptor.Key key = ContinuationInterceptor.Key;
             if (Intrinsics.areEqual(newCoroutineContext.get(key), context.get(key))) {
                 UndispatchedCoroutine undispatchedCoroutine = new UndispatchedCoroutine(newCoroutineContext, continuation);
-                Object updateThreadContext = ThreadContextKt.updateThreadContext(newCoroutineContext, null);
+                CoroutineContext context2 = undispatchedCoroutine.getContext();
+                Object updateThreadContext = ThreadContextKt.updateThreadContext(context2, null);
                 try {
                     Object startUndispatchedOrReturn = UndispatchedKt.startUndispatchedOrReturn(undispatchedCoroutine, undispatchedCoroutine, function2);
-                    ThreadContextKt.restoreThreadContext(newCoroutineContext, updateThreadContext);
-                    result = startUndispatchedOrReturn;
+                    ThreadContextKt.restoreThreadContext(context2, updateThreadContext);
+                    result$kotlinx_coroutines_core = startUndispatchedOrReturn;
                 } catch (Throwable th) {
-                    ThreadContextKt.restoreThreadContext(newCoroutineContext, updateThreadContext);
+                    ThreadContextKt.restoreThreadContext(context2, updateThreadContext);
                     throw th;
                 }
             } else {
                 DispatchedCoroutine dispatchedCoroutine = new DispatchedCoroutine(newCoroutineContext, continuation);
                 CancellableKt.startCoroutineCancellable$default(function2, dispatchedCoroutine, dispatchedCoroutine, null, 4, null);
-                result = dispatchedCoroutine.getResult();
+                result$kotlinx_coroutines_core = dispatchedCoroutine.getResult$kotlinx_coroutines_core();
             }
         }
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (result == coroutine_suspended) {
+        if (result$kotlinx_coroutines_core == coroutine_suspended) {
             DebugProbesKt.probeCoroutineSuspended(continuation);
         }
-        return result;
+        return result$kotlinx_coroutines_core;
     }
 }

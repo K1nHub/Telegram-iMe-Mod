@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.wearable.MessageClient;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzir implements ListenerHolder.Notifier {
     public static final /* synthetic */ int zzc = 0;
     final /* synthetic */ zzfx zza;

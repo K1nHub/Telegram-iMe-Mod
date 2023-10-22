@@ -6,14 +6,14 @@ import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxActionType;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxActionResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxActionResponse {
     private final String boxId;
     private final BigDecimal feeAmount;
     private final TokenDetailedResponse feeToken;
 
     /* renamed from: id */
-    private final String f389id;
+    private final String f322id;
     private final String issuedAt;
     private final String network;
     private final String settledAt;
@@ -25,7 +25,7 @@ public final class CryptoBoxActionResponse {
     private final CryptoBoxActionType type;
 
     public final String component1() {
-        return this.f389id;
+        return this.f322id;
     }
 
     public final TokenDetailedResponse component10() {
@@ -98,19 +98,19 @@ public final class CryptoBoxActionResponse {
         }
         if (obj instanceof CryptoBoxActionResponse) {
             CryptoBoxActionResponse cryptoBoxActionResponse = (CryptoBoxActionResponse) obj;
-            return Intrinsics.areEqual(this.f389id, cryptoBoxActionResponse.f389id) && Intrinsics.areEqual(this.boxId, cryptoBoxActionResponse.boxId) && this.type == cryptoBoxActionResponse.type && this.status == cryptoBoxActionResponse.status && Intrinsics.areEqual(this.network, cryptoBoxActionResponse.network) && Intrinsics.areEqual(this.txHash, cryptoBoxActionResponse.txHash) && Intrinsics.areEqual(this.txUrl, cryptoBoxActionResponse.txUrl) && Intrinsics.areEqual(this.token, cryptoBoxActionResponse.token) && Intrinsics.areEqual(this.tokenAmount, cryptoBoxActionResponse.tokenAmount) && Intrinsics.areEqual(this.feeToken, cryptoBoxActionResponse.feeToken) && Intrinsics.areEqual(this.feeAmount, cryptoBoxActionResponse.feeAmount) && Intrinsics.areEqual(this.issuedAt, cryptoBoxActionResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, cryptoBoxActionResponse.settledAt);
+            return Intrinsics.areEqual(this.f322id, cryptoBoxActionResponse.f322id) && Intrinsics.areEqual(this.boxId, cryptoBoxActionResponse.boxId) && this.type == cryptoBoxActionResponse.type && this.status == cryptoBoxActionResponse.status && Intrinsics.areEqual(this.network, cryptoBoxActionResponse.network) && Intrinsics.areEqual(this.txHash, cryptoBoxActionResponse.txHash) && Intrinsics.areEqual(this.txUrl, cryptoBoxActionResponse.txUrl) && Intrinsics.areEqual(this.token, cryptoBoxActionResponse.token) && Intrinsics.areEqual(this.tokenAmount, cryptoBoxActionResponse.tokenAmount) && Intrinsics.areEqual(this.feeToken, cryptoBoxActionResponse.feeToken) && Intrinsics.areEqual(this.feeAmount, cryptoBoxActionResponse.feeAmount) && Intrinsics.areEqual(this.issuedAt, cryptoBoxActionResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, cryptoBoxActionResponse.settledAt);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((this.f389id.hashCode() * 31) + this.boxId.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.txHash.hashCode()) * 31) + this.txUrl.hashCode()) * 31) + this.token.hashCode()) * 31) + this.tokenAmount.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int hashCode = ((((((((((((((((((((((this.f322id.hashCode() * 31) + this.boxId.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.network.hashCode()) * 31) + this.txHash.hashCode()) * 31) + this.txUrl.hashCode()) * 31) + this.token.hashCode()) * 31) + this.tokenAmount.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
         return hashCode + (str == null ? 0 : str.hashCode());
     }
 
     public String toString() {
-        return "CryptoBoxActionResponse(id=" + this.f389id + ", boxId=" + this.boxId + ", type=" + this.type + ", status=" + this.status + ", network=" + this.network + ", txHash=" + this.txHash + ", txUrl=" + this.txUrl + ", token=" + this.token + ", tokenAmount=" + this.tokenAmount + ", feeToken=" + this.feeToken + ", feeAmount=" + this.feeAmount + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ')';
+        return "CryptoBoxActionResponse(id=" + this.f322id + ", boxId=" + this.boxId + ", type=" + this.type + ", status=" + this.status + ", network=" + this.network + ", txHash=" + this.txHash + ", txUrl=" + this.txUrl + ", token=" + this.token + ", tokenAmount=" + this.tokenAmount + ", feeToken=" + this.feeToken + ", feeAmount=" + this.feeAmount + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ')';
     }
 
     public CryptoBoxActionResponse(String id, String boxId, CryptoBoxActionType type, CryptoBoxActionStatus status, String network, String txHash, String txUrl, TokenDetailedResponse token, BigDecimal tokenAmount, TokenDetailedResponse feeToken, BigDecimal feeAmount, String issuedAt, String str) {
@@ -126,7 +126,7 @@ public final class CryptoBoxActionResponse {
         Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
-        this.f389id = id;
+        this.f322id = id;
         this.boxId = boxId;
         this.type = type;
         this.status = status;
@@ -142,7 +142,7 @@ public final class CryptoBoxActionResponse {
     }
 
     public final String getId() {
-        return this.f389id;
+        return this.f322id;
     }
 
     public final String getBoxId() {

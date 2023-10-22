@@ -4072,7 +4072,6 @@ Helaas is het wel zo dat als je niet akkoord gaat met het beperkte gebruik van j
     <string name="UnpinnedDialogsCount_zero">%1$d chats unpinned</string>
     <string name="UnreadMessages">Ongelezen berichten</string>
     <string name="UnsupportedAttachment">Bestandstype niet ondersteund</string>
-    <string name="UnsupportedMedia">Dit bericht wordt niet ondersteund door jouw versie van Telegram. Update om dit bericht te bekijken: https://telegram.org/update</string>
     <string name="Unvote">Stem intrekken</string>
     <string name="Update">BIJWERKEN</string>
     <string name="UpdateApp">App bijwerken</string>

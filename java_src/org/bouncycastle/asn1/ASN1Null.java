@@ -1,5 +1,5 @@
 package org.bouncycastle.asn1;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ASN1Null extends ASN1Primitive {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // org.bouncycastle.asn1.ASN1Primitive

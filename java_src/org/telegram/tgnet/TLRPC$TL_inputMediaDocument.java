@@ -1,10 +1,10 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inputMediaDocument extends TLRPC$InputMedia {
     public static int constructor = 860303448;
 
     /* renamed from: id */
-    public TLRPC$InputDocument f1591id;
+    public TLRPC$InputDocument f1668id;
     public String query;
 
     @Override // org.telegram.tgnet.TLObject
@@ -12,7 +12,7 @@ public class TLRPC$TL_inputMediaDocument extends TLRPC$InputMedia {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.spoiler = (readInt32 & 4) != 0;
-        this.f1591id = TLRPC$InputDocument.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        this.f1668id = TLRPC$InputDocument.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         if ((this.flags & 1) != 0) {
             this.ttl_seconds = abstractSerializedData.readInt32(z);
         }
@@ -27,7 +27,7 @@ public class TLRPC$TL_inputMediaDocument extends TLRPC$InputMedia {
         int i = this.spoiler ? this.flags | 4 : this.flags & (-5);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        this.f1591id.serializeToStream(abstractSerializedData);
+        this.f1668id.serializeToStream(abstractSerializedData);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.ttl_seconds);
         }

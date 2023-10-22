@@ -110,7 +110,7 @@ final class RtpH265Reader implements RtpPayloadReader {
         } else {
             int i4 = (this.previousSequenceNumber + 1) % RtpPacket.MAX_SEQUENCE_NUMBER;
             if (i != i4) {
-                Log.m814w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
+                Log.m1106w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(i4), Integer.valueOf(i)));
                 return;
             } else {
                 this.fuScratchBuffer.reset(parsableByteArray.getData());

@@ -3,7 +3,7 @@ package com.google.firebase.p020ml.vision.text;
 import com.google.android.gms.common.internal.Objects;
 import java.util.List;
 /* renamed from: com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseVisionCloudTextRecognizerOptions {
     private final boolean zzazz;
     private final List<String> zzbbl;

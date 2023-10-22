@@ -20,7 +20,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ChipTextInputComboView extends FrameLayout implements Checkable {
     private final Chip chip;
     private final EditText editText;
@@ -97,7 +97,7 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
         this.chip.setTag(i, obj);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private class TextFormatter extends TextWatcherAdapter {
         private TextFormatter() {
         }

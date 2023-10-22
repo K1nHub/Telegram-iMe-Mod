@@ -17,11 +17,11 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SwapMappingKt {
 
     /* compiled from: SwapMapping.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

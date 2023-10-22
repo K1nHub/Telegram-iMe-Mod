@@ -9,7 +9,7 @@ import com.iMe.storage.domain.model.catalog.ChatType;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: CatalogRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CatalogRepository {
     Observable<Result<CampaignsCursored>> getAllCampaigns(ChatType chatType, String str);
 

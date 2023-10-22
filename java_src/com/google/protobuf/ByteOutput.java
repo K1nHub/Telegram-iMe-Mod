@@ -2,7 +2,7 @@ package com.google.protobuf;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ByteOutput {
     public abstract void writeLazy(ByteBuffer byteBuffer) throws IOException;
 

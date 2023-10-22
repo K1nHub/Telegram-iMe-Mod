@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkToolbarBinding implements ViewBinding {
     public final ImageView imageBack;
     public final ImageView imageMenu;
@@ -23,7 +23,6 @@ public final class ForkToolbarBinding implements ViewBinding {
         this.textTitle = textView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -33,7 +32,7 @@ public final class ForkToolbarBinding implements ViewBinding {
     }
 
     public static ForkToolbarBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_toolbar, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_toolbar, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -41,13 +40,13 @@ public final class ForkToolbarBinding implements ViewBinding {
     }
 
     public static ForkToolbarBinding bind(View view) {
-        int i = C3473R.C3476id.image_back;
+        int i = C3630R.C3633id.image_back;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3473R.C3476id.image_menu;
+            i = C3630R.C3633id.image_menu;
             ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
             if (imageView2 != null) {
-                i = C3473R.C3476id.text_title;
+                i = C3630R.C3633id.text_title;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
                     return new ForkToolbarBinding((ConstraintLayout) view, imageView, imageView2, textView);

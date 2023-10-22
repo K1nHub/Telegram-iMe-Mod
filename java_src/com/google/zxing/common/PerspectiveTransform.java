@@ -1,7 +1,7 @@
 package com.google.zxing.common;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PerspectiveTransform {
     private final float a11;
     private final float a12;

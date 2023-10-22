@@ -6,7 +6,7 @@ import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.analytics.AnalyticsEventReceiver;
 import java.util.Locale;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class CrashlyticsAnalyticsListener implements AnalyticsConnector.AnalyticsConnectorListener {
     private AnalyticsEventReceiver breadcrumbEventReceiver;
     private AnalyticsEventReceiver crashlyticsOriginEventReceiver;
@@ -22,7 +22,7 @@ class CrashlyticsAnalyticsListener implements AnalyticsConnector.AnalyticsConnec
     @Override // com.google.firebase.analytics.connector.AnalyticsConnector.AnalyticsConnectorListener
     public void onMessageTriggered(int i, Bundle bundle) {
         String string;
-        Logger.getLogger().m740v(String.format(Locale.US, "Analytics listener received message. ID: %d, Extras: %s", Integer.valueOf(i), bundle));
+        Logger.getLogger().m1032v(String.format(Locale.US, "Analytics listener received message. ID: %d, Extras: %s", Integer.valueOf(i), bundle));
         if (bundle == null || (string = bundle.getString(AppMeasurementSdk.ConditionalUserProperty.NAME)) == null) {
             return;
         }

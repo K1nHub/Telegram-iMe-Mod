@@ -9,7 +9,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenListsMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenListsMappingKt {
     public static final TokenListsData mapToDomain(TokenListsResponse tokenListsResponse) {
         int collectionSizeOrDefault;

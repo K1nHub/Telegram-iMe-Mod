@@ -12,7 +12,7 @@ import okhttp3.internal.http2.Hpack;
 import okio.Buffer;
 import okio.BufferedSink;
 /* compiled from: Http2Writer.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Http2Writer implements Closeable {
     private static final Logger logger;
     private final boolean client;
@@ -228,7 +228,7 @@ public final class Http2Writer implements Closeable {
     }
 
     /* compiled from: Http2Writer.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

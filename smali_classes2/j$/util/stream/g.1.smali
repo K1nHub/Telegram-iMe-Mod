@@ -24,7 +24,7 @@
 .method public abstract sequential()Lj$/util/stream/g;
 .end method
 
-.method public abstract spliterator()Lj$/util/s;
+.method public abstract spliterator()Lj$/util/Spliterator;
 .end method
 
 .method public abstract unordered()Lj$/util/stream/g;

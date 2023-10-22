@@ -20,7 +20,7 @@ final class WifiLockManager {
         if (z && this.wifiLock == null) {
             WifiManager wifiManager = this.wifiManager;
             if (wifiManager == null) {
-                Log.m814w(TAG, "WifiManager is null, therefore not creating the WifiLock.");
+                Log.m1106w(TAG, "WifiManager is null, therefore not creating the WifiLock.");
                 return;
             }
             WifiManager.WifiLock createWifiLock = wifiManager.createWifiLock(3, WIFI_LOCK_TAG);

@@ -2,7 +2,7 @@ package com.iMe.gateway.impl;
 
 import android.content.Context;
 import com.iMe.fork.controller.ForkCommonController;
-import com.iMe.fork.p024ui.dialog.TranslateAlert;
+import com.iMe.fork.p023ui.dialog.TranslateAlert;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import java.io.File;
@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 /* compiled from: TelegramGatewayImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TelegramGatewayImpl implements TelegramGateway {
     private final Context context;
 

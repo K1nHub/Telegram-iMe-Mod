@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialDomain.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialDomain {
     private boolean hasUpdateAccess;
     private final List<SocialNetwork> socialNetworks;

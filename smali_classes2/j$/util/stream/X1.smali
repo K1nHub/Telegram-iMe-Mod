@@ -57,10 +57,10 @@
     return-object v0
 .end method
 
-.method public synthetic f(JJLj$/util/function/m;)Lj$/util/stream/w1;
+.method public synthetic f(JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
     .locals 0
 
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->o(Lj$/util/stream/w1;JJLj$/util/function/m;)Lj$/util/stream/w1;
+    invoke-static/range {p0 .. p5}, Lj$/util/stream/o1;->o(Lj$/util/stream/w1;JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
 
     move-result-object p1
 
@@ -86,33 +86,33 @@
     return-void
 .end method
 
-.method public bridge synthetic r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+.method public bridge synthetic q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 0
 
     .line 1
-    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/X1;->f(JJLj$/util/function/m;)Lj$/util/stream/w1;
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/X1;->f(JJLj$/util/function/IntFunction;)Lj$/util/stream/w1;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public spliterator()Lj$/util/Spliterator$d;
     .locals 1
 
-    .line 2
-    invoke-static {}, Lj$/util/I;->c()Lj$/util/s$b;
+    .line 1
+    invoke-static {}, Lj$/util/F;->c()Lj$/util/Spliterator$b;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public spliterator()Lj$/util/t;
+.method public spliterator()Lj$/util/Spliterator;
     .locals 1
 
-    .line 1
-    invoke-static {}, Lj$/util/I;->c()Lj$/util/s$b;
+    .line 2
+    invoke-static {}, Lj$/util/F;->c()Lj$/util/Spliterator$b;
 
     move-result-object v0
 

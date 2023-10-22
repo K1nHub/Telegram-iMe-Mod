@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RestrictedComponentContainer extends AbstractComponentContainer {
     private final Set<Class<?>> allowedDeferredInterfaces;
     private final Set<Class<?>> allowedDirectInterfaces;
@@ -92,7 +92,7 @@ public final class RestrictedComponentContainer extends AbstractComponentContain
         return this.delegateContainer.setOf(cls);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static class RestrictedPublisher implements Publisher {
         private final Publisher delegate;
 

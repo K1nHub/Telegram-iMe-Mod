@@ -10,7 +10,7 @@ import com.google.mlkit.common.model.RemoteModel;
 import java.util.UUID;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SharedPrefManager {
     @KeepForSdk
     public static final Component<?> COMPONENT = Component.builder(SharedPrefManager.class).add(Dependency.required(MlKitContext.class)).add(Dependency.required(Context.class)).factory(zzn.zza).build();

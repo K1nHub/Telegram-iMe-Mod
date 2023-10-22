@@ -8,24 +8,24 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LoyaltyPointsBalanceCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyPointsBalance> CREATOR = new zzi();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     String zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     double zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     String zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     long zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.wallet.wobs.LoyaltyPointsBalance.Type.UNDEFINED", m797id = 7)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.android.gms.wallet.wobs.LoyaltyPointsBalance.Type.UNDEFINED", m1089id = 7)
     int zzf;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         /* synthetic */ Builder(zzh zzhVar) {
         }
@@ -65,7 +65,7 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Type {
         public static final int DOUBLE = 2;
         public static final int INT = 0;
@@ -122,7 +122,7 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LoyaltyPointsBalance(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) double d, @SafeParcelable.Param(m796id = 5) String str2, @SafeParcelable.Param(m796id = 6) long j, @SafeParcelable.Param(m796id = 7) int i2) {
+    public LoyaltyPointsBalance(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) double d, @SafeParcelable.Param(m1088id = 5) String str2, @SafeParcelable.Param(m1088id = 6) long j, @SafeParcelable.Param(m1088id = 7) int i2) {
         this.zza = i;
         this.zzb = str;
         this.zzc = d;

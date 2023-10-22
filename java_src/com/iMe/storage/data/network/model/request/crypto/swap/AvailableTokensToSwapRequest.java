@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.swap;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AvailableTokensToSwapRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AvailableTokensToSwapRequest {
     private final String cursor;
     private final String defiProtocol;

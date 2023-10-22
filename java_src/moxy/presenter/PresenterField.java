@@ -1,7 +1,7 @@
 package moxy.presenter;
 
 import moxy.MvpPresenter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class PresenterField<PresentersContainer> {
     protected final Class<? extends MvpPresenter> presenterClass;
     protected final String presenterId;

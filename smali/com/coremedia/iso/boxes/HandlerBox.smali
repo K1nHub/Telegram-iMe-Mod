@@ -14,6 +14,17 @@
 
 .field private static final synthetic ajc$tjp_5:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
+.field public static final readableTypes:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
 .field private a:J
@@ -149,6 +160,10 @@
 
     .line 63
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/coremedia/iso/boxes/HandlerBox;->readableTypes:Ljava/util/Map;
 
     return-void
 .end method

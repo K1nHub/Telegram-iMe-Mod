@@ -13,8 +13,8 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectTransactionArgs;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import java.math.BigInteger;
@@ -22,7 +22,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: WalletConnectDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletConnectDataSourceImpl implements WalletConnectDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -53,7 +53,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -89,15 +89,12 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
     public Observable<Result<String>> sign(TransactionArgs args) {
-        byte[] bArr;
         Intrinsics.checkNotNullParameter(args, "args");
         if (!(args instanceof WalletConnectTransactionArgs)) {
             throw new IllegalStateException("Incorrect transfer args passed");
         }
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        if (eVMWallet == null || (bArr = eVMWallet.getPrivateKeyBytes()) == null) {
-            bArr = new byte[0];
-        }
+        byte[] orEmpty = CryptoExtKt.orEmpty(eVMWallet != null ? eVMWallet.getPrivateKeyBytes() : null);
         WalletConnectTransactionArgs walletConnectTransactionArgs = (WalletConnectTransactionArgs) args;
         Ethereum.Transaction transaction = Ethereum.Transaction.newBuilder().setContractGeneric(Ethereum.Transaction.ContractGeneric.newBuilder().setData(CryptoExtKt.hexToByteString(walletConnectTransactionArgs.getData())).setAmount(CryptoExtKt.toByteString(walletConnectTransactionArgs.getAmount())).build()).build();
         EthTransactionSigner ethTransactionSigner = EthTransactionSigner.INSTANCE;
@@ -107,7 +104,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
         BigInteger nonce = walletConnectTransactionArgs.getNonce();
         String recipientAddress = walletConnectTransactionArgs.getRecipientAddress();
         Intrinsics.checkNotNullExpressionValue(transaction, "transaction");
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, recipientAddress, transaction, bArr)));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, recipientAddress, transaction, orEmpty)));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

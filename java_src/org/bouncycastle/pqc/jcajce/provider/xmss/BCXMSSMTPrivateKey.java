@@ -11,7 +11,7 @@ import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.pqc.crypto.xmss.XMSSMTPrivateKeyParameters;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BCXMSSMTPrivateKey implements PrivateKey {
     private transient ASN1Set attributes;
     private transient XMSSMTPrivateKeyParameters keyParams;

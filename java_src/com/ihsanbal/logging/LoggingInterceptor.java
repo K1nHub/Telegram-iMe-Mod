@@ -13,7 +13,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LoggingInterceptor implements Interceptor {
     private final Builder builder;
     private final boolean isDebug;
@@ -138,7 +138,7 @@ public class LoggingInterceptor implements Interceptor {
         };
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private static String TAG = "LoggingI";
         private Executor executor;

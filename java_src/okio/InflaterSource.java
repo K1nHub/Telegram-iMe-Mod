@@ -6,7 +6,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InflaterSource.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class InflaterSource implements Source {
     private int bufferBytesHeldByInflater;
     private boolean closed;

@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzb implements IInterface {
     private final IBinder zza;
     private final String zzb;
@@ -23,7 +23,7 @@ public class zzb implements IInterface {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: a_ */
-    public final Parcel m778a_() {
+    public final Parcel m1070a_() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.zzb);
         return obtain;

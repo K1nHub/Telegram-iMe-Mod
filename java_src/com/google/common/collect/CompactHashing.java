@@ -3,7 +3,7 @@ package com.google.common.collect;
 import com.google.common.base.Objects;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CompactHashing {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int getHashPrefix(int i, int i2) {

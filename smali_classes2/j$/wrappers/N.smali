@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/j;
+.implements Lj$/util/function/l;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/IntBinaryOperator;
+.field final synthetic a:Ljava/util/function/IntConsumer;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/IntBinaryOperator;)V
+.method private synthetic constructor <init>(Ljava/util/function/IntConsumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/N;->a:Ljava/util/function/IntBinaryOperator;
+    iput-object p1, p0, Lj$/wrappers/N;->a:Ljava/util/function/IntConsumer;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/IntBinaryOperator;)Lj$/util/function/j;
+.method public static synthetic b(Ljava/util/function/IntConsumer;)Lj$/util/function/l;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,28 +36,46 @@
 
     check-cast p0, Lj$/wrappers/O;
 
-    iget-object p0, p0, Lj$/wrappers/O;->a:Lj$/util/function/j;
+    iget-object p0, p0, Lj$/wrappers/O;->a:Lj$/util/function/l;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/N;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/N;-><init>(Ljava/util/function/IntBinaryOperator;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/N;-><init>(Ljava/util/function/IntConsumer;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic applyAsInt(II)I
+.method public synthetic accept(I)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/N;->a:Ljava/util/function/IntBinaryOperator;
+    iget-object v0, p0, Lj$/wrappers/N;->a:Ljava/util/function/IntConsumer;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/function/IntBinaryOperator;->applyAsInt(II)I
+    invoke-interface {v0, p1}, Ljava/util/function/IntConsumer;->accept(I)V
 
-    move-result p1
+    return-void
+.end method
 
-    return p1
+.method public synthetic k(Lj$/util/function/l;)Lj$/util/function/l;
+    .locals 1
+
+    iget-object v0, p0, Lj$/wrappers/N;->a:Ljava/util/function/IntConsumer;
+
+    invoke-static {p1}, Lj$/wrappers/O;->a(Lj$/util/function/l;)Ljava/util/function/IntConsumer;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/function/IntConsumer;->andThen(Ljava/util/function/IntConsumer;)Ljava/util/function/IntConsumer;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/wrappers/N;->b(Ljava/util/function/IntConsumer;)Lj$/util/function/l;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$WebDocument extends TLObject {
     public long access_hash;
     public ArrayList<TLRPC$DocumentAttribute> attributes = new ArrayList<>();

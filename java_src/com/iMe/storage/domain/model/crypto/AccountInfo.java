@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AccountInfo {
     private final boolean hasAccess;
     private final List<Address> wallets;
@@ -73,7 +73,7 @@ public final class AccountInfo {
     }
 
     /* compiled from: AccountInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Address {
         private final String addressValue;
         private final BlockchainType blockchainType;

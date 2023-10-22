@@ -2,7 +2,7 @@ package com.google.protobuf;
 
 import com.google.protobuf.MapEntryLite;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 interface MapFieldSchema {
     Map<?, ?> forMapData(Object obj);
 

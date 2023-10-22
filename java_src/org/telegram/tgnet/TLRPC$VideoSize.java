@@ -2,20 +2,20 @@ package org.telegram.tgnet;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$VideoSize extends TLObject {
     public ArrayList<Integer> background_colors = new ArrayList<>();
     public int flags;
 
     /* renamed from: h */
-    public int f1691h;
+    public int f1768h;
     public TLRPC$FileLocation location;
     public int size;
     public String type;
     public double video_start_ts;
 
     /* renamed from: w */
-    public int f1692w;
+    public int f1769w;
 
     public static TLRPC$VideoSize TLdeserialize(long j, long j2, AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$VideoSize tLRPC$TL_videoSize;
@@ -41,8 +41,8 @@ public abstract class TLRPC$VideoSize extends TLObject {
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.type = abstractSerializedData2.readString(z2);
                         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
-                        this.f1692w = abstractSerializedData2.readInt32(z2);
-                        this.f1691h = abstractSerializedData2.readInt32(z2);
+                        this.f1769w = abstractSerializedData2.readInt32(z2);
+                        this.f1768h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                     }
 
@@ -51,8 +51,8 @@ public abstract class TLRPC$VideoSize extends TLObject {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeString(this.type);
                         this.location.serializeToStream(abstractSerializedData2);
-                        abstractSerializedData2.writeInt32(this.f1692w);
-                        abstractSerializedData2.writeInt32(this.f1691h);
+                        abstractSerializedData2.writeInt32(this.f1769w);
+                        abstractSerializedData2.writeInt32(this.f1768h);
                         abstractSerializedData2.writeInt32(this.size);
                     }
                 };

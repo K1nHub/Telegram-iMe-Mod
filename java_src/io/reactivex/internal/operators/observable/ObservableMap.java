@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Function<? super T, ? extends U> function;
 
@@ -19,7 +19,7 @@ public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T,
         this.source.subscribe(new MapObserver(observer, this.function));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class MapObserver<T, U> extends BasicFuseableObserver<T, U> {
         final Function<? super T, ? extends U> mapper;
 
@@ -51,7 +51,7 @@ public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T,
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f533qd.poll();
+            T poll = this.f446qd.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }

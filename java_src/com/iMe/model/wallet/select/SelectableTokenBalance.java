@@ -2,7 +2,7 @@ package com.iMe.model.wallet.select;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectableTokenBalance.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SelectableTokenBalance {
     private final String total;
     private final String totalInDollars;

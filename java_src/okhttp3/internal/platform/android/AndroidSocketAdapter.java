@@ -14,7 +14,7 @@ import okhttp3.internal.platform.AndroidPlatform;
 import okhttp3.internal.platform.Platform;
 import okhttp3.internal.platform.android.DeferredSocketAdapter;
 /* compiled from: AndroidSocketAdapter.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AndroidSocketAdapter implements SocketAdapter {
     public static final Companion Companion;
     private static final DeferredSocketAdapter.Factory playProviderFactory;
@@ -92,7 +92,7 @@ public class AndroidSocketAdapter implements SocketAdapter {
     }
 
     /* compiled from: AndroidSocketAdapter.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

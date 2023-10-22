@@ -37,7 +37,7 @@ final class EventSampleStream implements SampleStream {
     }
 
     public String eventStreamId() {
-        return this.eventStream.m822id();
+        return this.eventStream.m1114id();
     }
 
     public void updateEventStream(EventStream eventStream, boolean z) {

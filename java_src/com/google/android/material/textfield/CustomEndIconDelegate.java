@@ -1,6 +1,6 @@
 package com.google.android.material.textfield;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CustomEndIconDelegate extends EndIconDelegate {
     /* JADX INFO: Access modifiers changed from: package-private */
     public CustomEndIconDelegate(TextInputLayout textInputLayout) {

@@ -17,20 +17,20 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OUT uses external 
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: TransactionDirection.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TransactionDirection {
     private static final /* synthetic */ TransactionDirection[] $VALUES;
     public static final Companion Companion;
 
     /* renamed from: IN */
-    public static final TransactionDirection f459IN = new TransactionDirection("IN", 0, "+", R$string.transaction_direction_in_title);
+    public static final TransactionDirection f392IN = new TransactionDirection("IN", 0, "+", R$string.transaction_direction_in_title);
     public static final TransactionDirection OUT;
     public static final TransactionDirection SELF;
     private final String symbol;
     private int title;
 
     private static final /* synthetic */ TransactionDirection[] $values() {
-        return new TransactionDirection[]{f459IN, OUT, SELF};
+        return new TransactionDirection[]{f392IN, OUT, SELF};
     }
 
     public static TransactionDirection valueOf(String str) {
@@ -67,7 +67,7 @@ public final class TransactionDirection {
     }
 
     /* compiled from: TransactionDirection.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -93,7 +93,7 @@ public final class TransactionDirection {
                 }
                 i++;
             }
-            return transactionDirection == null ? TransactionDirection.f459IN : transactionDirection;
+            return transactionDirection == null ? TransactionDirection.f392IN : transactionDirection;
         }
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingMetadataMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingMetadataMapperKt {
     public static final StakingProgrammes mapToDomain(StakingProgrammesResponse stakingProgrammesResponse) {
         int collectionSizeOrDefault;
@@ -32,7 +32,7 @@ public final class StakingMetadataMapperKt {
     public static final StakingMetadata mapToDomain(StakingMetadataResponse stakingMetadataResponse) {
         Intrinsics.checkNotNullParameter(stakingMetadataResponse, "<this>");
         long id = stakingMetadataResponse.getId();
-        String net2 = stakingMetadataResponse.getNet();
+        String net = stakingMetadataResponse.getNet();
         String name = stakingMetadataResponse.getName();
         String author = stakingMetadataResponse.getAuthor();
         String contract = stakingMetadataResponse.getContract();
@@ -55,6 +55,6 @@ public final class StakingMetadataMapperKt {
         if (minimalRank == null) {
             minimalRank = "";
         }
-        return new StakingMetadata(id, net2, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, companion.map(minimalRank), stakingMetadataResponse.getWebsite());
+        return new StakingMetadata(id, net, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, companion.map(minimalRank), stakingMetadataResponse.getWebsite());
     }
 }

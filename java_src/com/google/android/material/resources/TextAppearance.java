@@ -11,7 +11,7 @@ import android.util.Log;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$styleable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TextAppearance {
     private Typeface font;
     public final String fontFamily;

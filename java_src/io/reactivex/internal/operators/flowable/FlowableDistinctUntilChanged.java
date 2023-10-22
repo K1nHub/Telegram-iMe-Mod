@@ -8,7 +8,7 @@ import io.reactivex.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableSubscriber;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWithUpstream<T, T> {
     final BiPredicate<? super K, ? super K> comparer;
     final Function<? super T, K> keySelector;
@@ -28,7 +28,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DistinctUntilChangedSubscriber<T, K> extends BasicFuseableSubscriber<T, T> implements ConditionalSubscriber<T> {
         final BiPredicate<? super K, ? super K> comparer;
         boolean hasValue;
@@ -86,7 +86,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
             while (true) {
-                T poll = this.f563qs.poll();
+                T poll = this.f476qs.poll();
                 if (poll == null) {
                     return null;
                 }
@@ -108,7 +108,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DistinctUntilChangedConditionalSubscriber<T, K> extends BasicFuseableConditionalSubscriber<T, T> {
         final BiPredicate<? super K, ? super K> comparer;
         boolean hasValue;
@@ -165,7 +165,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
             while (true) {
-                T poll = this.f562qs.poll();
+                T poll = this.f475qs.poll();
                 if (poll == null) {
                     return null;
                 }

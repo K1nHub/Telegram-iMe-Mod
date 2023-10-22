@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimpleInitExtensions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SimpleInitExtensionsKt {
     public static final <Item> void quickInit(RecyclerView recyclerView, List<? extends Item> items, int i, final Function3<? super View, ? super Item, ? super Integer, Unit> bind) {
         Intrinsics.checkNotNullParameter(recyclerView, "<this>");

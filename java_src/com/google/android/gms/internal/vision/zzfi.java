@@ -2,11 +2,11 @@ package com.google.android.gms.internal.vision;
 
 import com.google.android.gms.internal.vision.zzjb;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfi {
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzb extends zzjb<zzb, zza> implements zzkm {
         private static final zzji<Integer, zzgz> zzd = new zzfl();
         private static final zzb zze;
@@ -17,7 +17,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzb, zza> implements zzkm {
             private zza() {
                 super(zzb.zze);
@@ -76,7 +76,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzc extends zzjb<zzc, zza> implements zzkm {
         private static final zzc zzg;
         private static volatile zzkx<zzc> zzh;
@@ -89,7 +89,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzc, zza> implements zzkm {
             private zza() {
                 super(zzc.zzg);
@@ -147,7 +147,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zze extends zzjb<zze, zza> implements zzkm {
         private static final zze zzl;
         private static volatile zzkx<zze> zzm;
@@ -162,7 +162,7 @@ public final class zzfi {
         private String zzj = "";
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zzb implements zzje {
             REASON_UNKNOWN(0),
             REASON_MISSING(1),
@@ -211,7 +211,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zze, zza> implements zzkm {
             private zza() {
                 super(zze.zzl);
@@ -269,7 +269,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzl extends zzjb<zzl, zza> implements zzkm {
         private static final zzl zzf;
         private static volatile zzkx<zzl> zzg;
@@ -281,7 +281,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzl, zza> implements zzkm {
             private zza() {
                 super(zzl.zzf);
@@ -339,8 +339,8 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
-    public static final class zza extends zzjb<zza, C7407zza> implements zzkm {
+    /* loaded from: classes3.dex */
+    public static final class zza extends zzjb<zza, C7741zza> implements zzkm {
         private static final zza zzf;
         private static volatile zzkx<zza> zzg;
         private int zzc;
@@ -352,13 +352,13 @@ public final class zzfi {
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
         /* renamed from: com.google.android.gms.internal.vision.zzfi$zza$zza  reason: collision with other inner class name */
-        /* loaded from: classes4.dex */
-        public static final class C7407zza extends zzjb.zzb<zza, C7407zza> implements zzkm {
-            private C7407zza() {
+        /* loaded from: classes3.dex */
+        public static final class C7741zza extends zzjb.zzb<zza, C7741zza> implements zzkm {
+            private C7741zza() {
                 super(zza.zzf);
             }
 
-            public final C7407zza zza(String str) {
+            public final C7741zza zza(String str) {
                 if (this.zzb) {
                     zzb();
                     this.zzb = false;
@@ -367,7 +367,7 @@ public final class zzfi {
                 return this;
             }
 
-            public final C7407zza zzb(String str) {
+            public final C7741zza zzb(String str) {
                 if (this.zzb) {
                     zzb();
                     this.zzb = false;
@@ -376,7 +376,7 @@ public final class zzfi {
                 return this;
             }
 
-            /* synthetic */ C7407zza(zzfk zzfkVar) {
+            /* synthetic */ C7741zza(zzfk zzfkVar) {
                 this();
             }
         }
@@ -395,7 +395,7 @@ public final class zzfi {
             this.zze = str;
         }
 
-        public static C7407zza zza() {
+        public static C7741zza zza() {
             return zzf.zzj();
         }
 
@@ -408,7 +408,7 @@ public final class zzfi {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7407zza(null);
+                    return new C7741zza(null);
                 case 3:
                     return zzjb.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzc", "zzd", "zze"});
                 case 4:
@@ -446,7 +446,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzd extends zzjb<zzd, zza> implements zzkm {
         private static final zzd zzd;
         private static volatile zzkx<zzd> zze;
@@ -456,7 +456,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzd, zza> implements zzkm {
             private zza() {
                 super(zzd.zzd);
@@ -546,7 +546,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzf extends zzjb<zzf, zzb> implements zzkm {
         private static final zzf zzl;
         private static volatile zzkx<zzf> zzm;
@@ -561,7 +561,7 @@ public final class zzfi {
         private zzjl<zzn> zzk = zzjb.zzo();
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zza implements zzje {
             RESULT_UNKNOWN(0),
             RESULT_SUCCESS(1),
@@ -610,7 +610,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zzb extends zzjb.zzb<zzf, zzb> implements zzkm {
             private zzb() {
                 super(zzf.zzl);
@@ -736,7 +736,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzg extends zzjb<zzg, zza> implements zzkm {
         private static final zzg zzj;
         private static volatile zzkx<zzg> zzk;
@@ -749,7 +749,7 @@ public final class zzfi {
         private float zzi;
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zzb implements zzje {
             CLASSIFICATION_UNKNOWN(0),
             CLASSIFICATION_NONE(1),
@@ -791,7 +791,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zzc implements zzje {
             LANDMARK_UNKNOWN(0),
             LANDMARK_NONE(1),
@@ -837,7 +837,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zzd implements zzje {
             MODE_UNKNOWN(0),
             MODE_ACCURATE(1),
@@ -886,7 +886,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzg, zza> implements zzkm {
             private zza() {
                 super(zzg.zzj);
@@ -1038,7 +1038,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzh extends zzjb<zzh, zza> implements zzkm {
         private static final zzh zzj;
         private static volatile zzkx<zzh> zzk;
@@ -1054,7 +1054,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzh, zza> implements zzkm {
             private zza() {
                 super(zzh.zzj);
@@ -1206,7 +1206,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzi extends zzjb<zzi, zza> implements zzkm {
         private static final zzi zzg;
         private static volatile zzkx<zzi> zzh;
@@ -1219,7 +1219,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzi, zza> implements zzkm {
             private zza() {
                 super(zzi.zzg);
@@ -1336,7 +1336,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzj extends zzjb<zzj, zzb> implements zzkm {
         private static final zzj zzi;
         private static volatile zzkx<zzj> zzj;
@@ -1348,7 +1348,7 @@ public final class zzfi {
         private long zzh;
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public enum zza implements zzje {
             FORMAT_UNKNOWN(0),
             FORMAT_LUMINANCE(1),
@@ -1397,7 +1397,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zzb extends zzjb.zzb<zzj, zzb> implements zzkm {
             private zzb() {
                 super(zzj.zzi);
@@ -1519,7 +1519,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzk extends zzjb<zzk, zza> implements zzkm {
         private static final zzk zzj;
         private static volatile zzkx<zzk> zzk;
@@ -1535,7 +1535,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzk, zza> implements zzkm {
             private zza() {
                 super(zzk.zzj);
@@ -1676,7 +1676,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzm extends zzjb<zzm, zza> implements zzkm {
         private static final zzm zzf;
         private static volatile zzkx<zzm> zzg;
@@ -1688,7 +1688,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzm, zza> implements zzkm {
             private zza() {
                 super(zzm.zzf);
@@ -1780,7 +1780,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzn extends zzjb<zzn, zza> implements zzkm {
         private static final zzn zzh;
         private static volatile zzkx<zzn> zzi;
@@ -1794,7 +1794,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzn, zza> implements zzkm {
             private zza() {
                 super(zzn.zzh);
@@ -1912,7 +1912,7 @@ public final class zzfi {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzo extends zzjb<zzo, zza> implements zzkm {
         private static final zzo zzi;
         private static volatile zzkx<zzo> zzj;
@@ -1927,7 +1927,7 @@ public final class zzfi {
         }
 
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class zza extends zzjb.zzb<zzo, zza> implements zzkm {
             private zza() {
                 super(zzo.zzi);

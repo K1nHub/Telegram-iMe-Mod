@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.binance.pay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayGetTransactionRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayGetTransactionRequest {
     private final String transactionId;
 

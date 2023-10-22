@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CompletionStateKt {
     public static /* synthetic */ Object toState$default(Object obj, Function1 function1, int i, Object obj2) {
         if ((i & 1) != 0) {
@@ -18,20 +18,20 @@ public final class CompletionStateKt {
     }
 
     public static final <T> Object toState(Object obj, Function1<? super Throwable, Unit> function1) {
-        Throwable m1659exceptionOrNullimpl = Result.m1659exceptionOrNullimpl(obj);
-        if (m1659exceptionOrNullimpl == null) {
+        Throwable m1938exceptionOrNullimpl = Result.m1938exceptionOrNullimpl(obj);
+        if (m1938exceptionOrNullimpl == null) {
             return function1 != null ? new CompletedWithCancellation(obj, function1) : obj;
         }
-        return new CompletedExceptionally(m1659exceptionOrNullimpl, false, 2, null);
+        return new CompletedExceptionally(m1938exceptionOrNullimpl, false, 2, null);
     }
 
     public static final <T> Object toState(Object obj, CancellableContinuation<?> cancellableContinuation) {
-        Throwable m1659exceptionOrNullimpl = Result.m1659exceptionOrNullimpl(obj);
-        if (m1659exceptionOrNullimpl != null) {
+        Throwable m1938exceptionOrNullimpl = Result.m1938exceptionOrNullimpl(obj);
+        if (m1938exceptionOrNullimpl != null) {
             if (DebugKt.getRECOVER_STACK_TRACES() && (cancellableContinuation instanceof CoroutineStackFrame)) {
-                m1659exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m1659exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation);
+                m1938exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m1938exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation);
             }
-            obj = new CompletedExceptionally(m1659exceptionOrNullimpl, false, 2, null);
+            obj = new CompletedExceptionally(m1938exceptionOrNullimpl, false, 2, null);
         }
         return obj;
     }
@@ -43,9 +43,9 @@ public final class CompletionStateKt {
             if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
                 th = StackTraceRecoveryKt.recoverFromStackFrame(th, (CoroutineStackFrame) continuation);
             }
-            return Result.m1658constructorimpl(ResultKt.createFailure(th));
+            return Result.m1935constructorimpl(ResultKt.createFailure(th));
         }
         Result.Companion companion2 = Result.Companion;
-        return Result.m1658constructorimpl(obj);
+        return Result.m1935constructorimpl(obj);
     }
 }

@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoEncoder;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class VideoEncoderWrapper {
     /* JADX INFO: Access modifiers changed from: private */
     public static native void nativeOnEncodedFrame(long j, EncodedImage encodedImage);
@@ -12,7 +12,7 @@ public class VideoEncoderWrapper {
 
     @CalledByNative
     static boolean getScalingSettingsOn(VideoEncoder.ScalingSettings scalingSettings) {
-        return scalingSettings.f1927on;
+        return scalingSettings.f2101on;
     }
 
     @CalledByNative

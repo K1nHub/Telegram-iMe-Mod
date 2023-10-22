@@ -1,6 +1,6 @@
 package com.fxn.bubbletabbar;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int[] Bubble = {16842754, 16842766, 16842960, 16843014, 16843233, 16844126};

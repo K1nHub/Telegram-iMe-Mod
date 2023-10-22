@@ -2,12 +2,12 @@ package com.iMe.storage.domain.model.binancepay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceUserInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceUserInfo {
     private final String email;
 
     /* renamed from: id */
-    private final String f405id;
+    private final String f338id;
     private final boolean isVerified;
 
     public static /* synthetic */ BinanceUserInfo copy$default(BinanceUserInfo binanceUserInfo, String str, String str2, boolean z, int i, Object obj) {
@@ -15,7 +15,7 @@ public final class BinanceUserInfo {
             str = binanceUserInfo.email;
         }
         if ((i & 2) != 0) {
-            str2 = binanceUserInfo.f405id;
+            str2 = binanceUserInfo.f338id;
         }
         if ((i & 4) != 0) {
             z = binanceUserInfo.isVerified;
@@ -28,7 +28,7 @@ public final class BinanceUserInfo {
     }
 
     public final String component2() {
-        return this.f405id;
+        return this.f338id;
     }
 
     public final boolean component3() {
@@ -47,14 +47,14 @@ public final class BinanceUserInfo {
         }
         if (obj instanceof BinanceUserInfo) {
             BinanceUserInfo binanceUserInfo = (BinanceUserInfo) obj;
-            return Intrinsics.areEqual(this.email, binanceUserInfo.email) && Intrinsics.areEqual(this.f405id, binanceUserInfo.f405id) && this.isVerified == binanceUserInfo.isVerified;
+            return Intrinsics.areEqual(this.email, binanceUserInfo.email) && Intrinsics.areEqual(this.f338id, binanceUserInfo.f338id) && this.isVerified == binanceUserInfo.isVerified;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.email.hashCode() * 31) + this.f405id.hashCode()) * 31;
+        int hashCode = ((this.email.hashCode() * 31) + this.f338id.hashCode()) * 31;
         boolean z = this.isVerified;
         int i = z;
         if (z != 0) {
@@ -64,14 +64,14 @@ public final class BinanceUserInfo {
     }
 
     public String toString() {
-        return "BinanceUserInfo(email=" + this.email + ", id=" + this.f405id + ", isVerified=" + this.isVerified + ')';
+        return "BinanceUserInfo(email=" + this.email + ", id=" + this.f338id + ", isVerified=" + this.isVerified + ')';
     }
 
     public BinanceUserInfo(String email, String id, boolean z) {
         Intrinsics.checkNotNullParameter(email, "email");
         Intrinsics.checkNotNullParameter(id, "id");
         this.email = email;
-        this.f405id = id;
+        this.f338id = id;
         this.isVerified = z;
     }
 
@@ -80,7 +80,7 @@ public final class BinanceUserInfo {
     }
 
     public final String getId() {
-        return this.f405id;
+        return this.f338id;
     }
 
     public final boolean isVerified() {

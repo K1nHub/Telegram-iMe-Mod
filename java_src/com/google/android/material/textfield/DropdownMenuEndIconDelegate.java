@@ -33,7 +33,7 @@ import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DropdownMenuEndIconDelegate extends EndIconDelegate {
     private static final boolean IS_LOLLIPOP;
     private final TextInputLayout.AccessibilityDelegate accessibilityDelegate;

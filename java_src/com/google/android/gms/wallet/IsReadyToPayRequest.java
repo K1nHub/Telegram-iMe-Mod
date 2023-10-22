@@ -11,25 +11,25 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "IsReadyToPayRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class IsReadyToPayRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<IsReadyToPayRequest> CREATOR = new zzq();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     ArrayList zza;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     String zzb;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     String zzc;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     ArrayList zzd;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     boolean zze;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     String zzf;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Deprecated
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final class Builder {
         /* synthetic */ Builder(zzp zzpVar) {
         }
@@ -137,7 +137,7 @@ public final class IsReadyToPayRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public IsReadyToPayRequest(@SafeParcelable.Param(m796id = 2) ArrayList arrayList, @SafeParcelable.Param(m796id = 4) String str, @SafeParcelable.Param(m796id = 5) String str2, @SafeParcelable.Param(m796id = 6) ArrayList arrayList2, @SafeParcelable.Param(m796id = 7) boolean z, @SafeParcelable.Param(m796id = 8) String str3) {
+    public IsReadyToPayRequest(@SafeParcelable.Param(m1088id = 2) ArrayList arrayList, @SafeParcelable.Param(m1088id = 4) String str, @SafeParcelable.Param(m1088id = 5) String str2, @SafeParcelable.Param(m1088id = 6) ArrayList arrayList2, @SafeParcelable.Param(m1088id = 7) boolean z, @SafeParcelable.Param(m1088id = 8) String str3) {
         this.zza = arrayList;
         this.zzb = str;
         this.zzc = str2;

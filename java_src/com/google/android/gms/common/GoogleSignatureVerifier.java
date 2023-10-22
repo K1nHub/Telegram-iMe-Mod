@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.util.Log;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ShowFirstParty;
@@ -59,7 +60,7 @@ public class GoogleSignatureVerifier {
     public static final boolean zzb(PackageInfo packageInfo, boolean z) {
         if (z && packageInfo != null && ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName))) {
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-            z = (applicationInfo == null || (applicationInfo.flags & 129) == 0) ? false : true;
+            z = (applicationInfo == null || (applicationInfo.flags & TsExtractor.TS_STREAM_TYPE_AC3) == 0) ? false : true;
         }
         if (packageInfo != null && packageInfo.signatures != null) {
             if ((z ? zza(packageInfo, zzm.zza) : zza(packageInfo, zzm.zza[0])) != null) {

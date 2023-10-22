@@ -3,17 +3,17 @@ package org.telegram.messenger;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
-import com.google.mlkit.p022nl.languageid.LanguageIdentification;
+import com.google.mlkit.p021nl.languageid.LanguageIdentification;
 import org.telegram.messenger.LanguageDetector;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LanguageDetector {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface StringCallback {
         void run(String str);
     }
@@ -38,19 +38,19 @@ public class LanguageDetector {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(e);
                 }
-                FileLog.m66e((Throwable) e, false);
+                FileLog.m96e((Throwable) e, false);
                 return;
             } catch (Exception e2) {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(e2);
                 }
-                FileLog.m67e(e2);
+                FileLog.m97e(e2);
                 return;
             } catch (Throwable th) {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(null);
                 }
-                FileLog.m66e(th, false);
+                FileLog.m96e(th, false);
                 return;
             }
         }

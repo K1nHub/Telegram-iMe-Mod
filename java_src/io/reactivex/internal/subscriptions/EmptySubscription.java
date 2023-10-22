@@ -2,7 +2,7 @@ package io.reactivex.internal.subscriptions;
 
 import io.reactivex.internal.fuseable.QueueSubscription;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum EmptySubscription implements QueueSubscription<Object> {
     INSTANCE;
 

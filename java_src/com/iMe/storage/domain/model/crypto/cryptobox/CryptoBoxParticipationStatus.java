@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto.cryptobox;
 /* compiled from: CryptoBoxParticipationStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum CryptoBoxParticipationStatus {
     NONE,
     QUEUED,

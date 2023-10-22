@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.util.VisibleForTesting;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DynamicLinksApi extends GoogleApi<Api.ApiOptions.NoOptions> {
     static final Api<Api.ApiOptions.NoOptions> API;
     private static final Api.AbstractClientBuilder<DynamicLinksClient, Api.ApiOptions.NoOptions> CLIENT_BUILDER;

@@ -315,7 +315,7 @@
     .end packed-switch
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget v0, p0, Lj$/util/stream/Y2;->b:I
@@ -330,7 +330,7 @@
     :sswitch_0
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -338,7 +338,7 @@
     :sswitch_1
     iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {p1, v1, v2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 
@@ -346,7 +346,7 @@
     :goto_0
     iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 

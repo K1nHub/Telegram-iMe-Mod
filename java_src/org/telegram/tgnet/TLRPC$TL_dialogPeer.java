@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_dialogPeer extends TLRPC$DialogPeer {
     public static int constructor = -445792507;
     public TLRPC$Peer peer;

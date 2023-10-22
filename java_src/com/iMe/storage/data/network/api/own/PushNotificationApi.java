@@ -7,12 +7,13 @@ import com.iMe.storage.data.network.model.request.notification.SetNotificationRe
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.network.model.response.notification.IssuePushAllowanceTokenResponse;
 import com.iMe.storage.data.network.model.response.notification.NotificationResponse;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: PushNotificationApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface PushNotificationApi {
     @POST("deletePushToken")
     Observable<ApiBaseResponse<Object>> deletePushToken(@Body DeleteTokenRequest deleteTokenRequest);
@@ -25,6 +26,9 @@ public interface PushNotificationApi {
 
     @POST("savePushTokenByAllowance")
     Observable<ApiBaseResponse<Object>> savePushToken(@Body SaveTokenRequest saveTokenRequest);
+
+    @POST("notification/registerSelf")
+    Completable sendActivityMark();
 
     @POST("setAllNotificationsRead")
     Observable<ApiBaseResponse<Object>> setAllNotificationsRead();

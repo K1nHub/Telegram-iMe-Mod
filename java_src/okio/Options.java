@@ -5,7 +5,7 @@ import java.util.RandomAccess;
 import kotlin.collections.AbstractList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Options.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Options extends AbstractList<ByteString> implements RandomAccess {
     public static final Companion Companion = new Companion(null);
     private final ByteString[] byteStrings;
@@ -75,7 +75,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
     }
 
     /* compiled from: Options.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -84,7 +84,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             this();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x00f1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x00f2, code lost:
             continue;
          */
         /* renamed from: of */
@@ -92,12 +92,12 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public final okio.Options m89of(okio.ByteString... r17) {
+        public final okio.Options m115of(okio.ByteString... r17) {
             /*
                 Method dump skipped, instructions count: 330
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: okio.Options.Companion.m89of(okio.ByteString[]):okio.Options");
+            throw new UnsupportedOperationException("Method not decompiled: okio.Options.Companion.m115of(okio.ByteString[]):okio.Options");
         }
 
         static /* synthetic */ void buildTrieRecursive$default(Companion companion, long j, Buffer buffer, int i, List list, int i2, int i3, List list2, int i4, Object obj) {

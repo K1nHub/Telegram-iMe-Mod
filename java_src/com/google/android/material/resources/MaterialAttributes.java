@@ -3,7 +3,7 @@ package com.google.android.material.resources;
 import android.content.Context;
 import android.util.TypedValue;
 import android.view.View;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MaterialAttributes {
     public static TypedValue resolve(Context context, int i) {
         TypedValue typedValue = new TypedValue();

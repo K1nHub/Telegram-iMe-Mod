@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.ThreadUtils;
 import org.webrtc.VideoFrame;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class YuvConverter {
     private static final String FRAGMENT_SHADER = "uniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 1.5 * xUnit).rgb);\n}\n";
     private final GlGenericDrawer drawer;
@@ -16,7 +16,7 @@ public class YuvConverter {
     private final ThreadUtils.ThreadChecker threadChecker;
     private final VideoFrameDrawer videoFrameDrawer;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private float[] coeffs;
         private int coeffsLoc;
@@ -110,7 +110,7 @@ public class YuvConverter {
                     GLES20.glBindFramebuffer(36160, 0);
                 } catch (Exception e) {
                     e = e;
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                     int i6 = (i2 * height) + i;
                     int i7 = i2 / 2;
                     int i8 = i6 + i7;

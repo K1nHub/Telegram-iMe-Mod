@@ -9,13 +9,13 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import androidx.collection.LongSparseArray;
 import java.util.ArrayList;
-import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p042ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$Message;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: ChatsWidgetService.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
     private int appWidgetId;
@@ -85,7 +85,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         r0 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:164:0x0413, code lost:
-        org.telegram.messenger.FileLog.m67e(r0);
+        org.telegram.messenger.FileLog.m97e(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x0262, code lost:
         if ((r0 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) != false) goto L55;

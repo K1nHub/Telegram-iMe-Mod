@@ -10,7 +10,7 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: WalletConnectRepository.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface WalletConnectRepository {
     Completable deleteAllWalletConnectSessions();
 

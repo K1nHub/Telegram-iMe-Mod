@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class GmsRpc {
     private final FirebaseApp app;
     private final FirebaseInstallationsApi firebaseInstallations;
@@ -59,7 +59,7 @@ public class GmsRpc {
         }, new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m728xb80eb67f(task2);
+                return GmsRpc.this.m1021xb80eb67f(task2);
             }
         });
     }
@@ -125,7 +125,7 @@ public class GmsRpc {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc */
-    public /* synthetic */ String m728xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m1021xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

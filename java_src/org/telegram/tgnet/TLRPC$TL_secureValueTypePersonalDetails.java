@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_secureValueTypePersonalDetails extends TLRPC$SecureValueType {
     public static int constructor = -1658158621;
 

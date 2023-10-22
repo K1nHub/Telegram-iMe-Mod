@@ -9,7 +9,8 @@ import java.util.Objects;
 import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt__MutableCollectionsKt;
 import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -21,14 +22,14 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import okhttp3.internal.Util;
 /* compiled from: Headers.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Headers implements Iterable<Pair<? extends String, ? extends String>>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
     private final String[] namesAndValues;
 
     /* renamed from: of */
-    public static final Headers m94of(String... strArr) {
-        return Companion.m93of(strArr);
+    public static final Headers m118of(String... strArr) {
+        return Companion.m117of(strArr);
     }
 
     private Headers(String[] strArr) {
@@ -57,6 +58,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     public final List<String> values(String name) {
+        List<String> emptyList;
         boolean equals;
         Intrinsics.checkNotNullParameter(name, "name");
         int size = size();
@@ -75,7 +77,8 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
             Intrinsics.checkNotNullExpressionValue(unmodifiableList, "Collections.unmodifiableList(result)");
             return unmodifiableList;
         }
-        return CollectionsKt.emptyList();
+        emptyList = CollectionsKt__CollectionsKt.emptyList();
+        return emptyList;
     }
 
     @Override // java.lang.Iterable
@@ -83,14 +86,14 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         int size = size();
         Pair[] pairArr = new Pair[size];
         for (int i = 0; i < size; i++) {
-            pairArr[i] = TuplesKt.m103to(name(i), value(i));
+            pairArr[i] = TuplesKt.m144to(name(i), value(i));
         }
         return ArrayIteratorKt.iterator(pairArr);
     }
 
     public final Builder newBuilder() {
         Builder builder = new Builder();
-        CollectionsKt.addAll(builder.getNamesAndValues$okhttp(), this.namesAndValues);
+        CollectionsKt__MutableCollectionsKt.addAll(builder.getNamesAndValues$okhttp(), this.namesAndValues);
         return builder;
     }
 
@@ -122,7 +125,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     /* compiled from: Headers.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final List<String> namesAndValues = new ArrayList(20);
 
@@ -206,7 +209,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
             return this;
         }
 
-        /* JADX WARN: Incorrect condition in loop: B:8:0x0036 */
+        /* JADX WARN: Incorrect condition in loop: B:8:0x0037 */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
@@ -226,28 +229,28 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
                 int r1 = r0.getFirst()
                 int r2 = r0.getLast()
                 int r0 = r0.getStep()
-                if (r0 < 0) goto L27
-                if (r1 > r2) goto L46
-                goto L29
-            L27:
-                if (r1 < r2) goto L46
-            L29:
+                if (r0 < 0) goto L28
+                if (r1 > r2) goto L47
+                goto L2a
+            L28:
+                if (r1 < r2) goto L47
+            L2a:
                 java.util.List<java.lang.String> r3 = r5.namesAndValues
                 java.lang.Object r3 = r3.get(r1)
                 java.lang.String r3 = (java.lang.String) r3
                 r4 = 1
                 boolean r3 = kotlin.text.StringsKt.equals(r6, r3, r4)
-                if (r3 == 0) goto L42
+                if (r3 == 0) goto L43
                 java.util.List<java.lang.String> r6 = r5.namesAndValues
                 int r1 = r1 + r4
                 java.lang.Object r6 = r6.get(r1)
                 java.lang.String r6 = (java.lang.String) r6
                 return r6
-            L42:
-                if (r1 == r2) goto L46
+            L43:
+                if (r1 == r2) goto L47
                 int r1 = r1 + r0
-                goto L29
-            L46:
+                goto L2a
+            L47:
                 r6 = 0
                 return r6
             */
@@ -262,7 +265,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     /* compiled from: Headers.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -314,7 +317,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         }
 
         /* renamed from: of */
-        public final Headers m93of(String... namesAndValues) {
+        public final Headers m117of(String... namesAndValues) {
             IntRange indices;
             IntProgression step;
             CharSequence trim;

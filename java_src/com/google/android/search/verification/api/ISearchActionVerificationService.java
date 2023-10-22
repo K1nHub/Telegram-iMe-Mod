@@ -9,13 +9,13 @@ import android.os.RemoteException;
 import com.google.android.aidl.BaseProxy;
 import com.google.android.aidl.BaseStub;
 import com.google.android.aidl.Codecs;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ISearchActionVerificationService extends IInterface {
     int getVersion() throws RemoteException;
 
     boolean isSearchAction(Intent intent, Bundle options) throws RemoteException;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Stub extends BaseStub implements ISearchActionVerificationService {
         public static ISearchActionVerificationService asInterface(IBinder obj) {
             if (obj == null) {
@@ -28,7 +28,7 @@ public interface ISearchActionVerificationService extends IInterface {
             return new Proxy(obj);
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static class Proxy extends BaseProxy implements ISearchActionVerificationService {
             Proxy(IBinder remote) {
                 super(remote, "com.google.android.search.verification.api.ISearchActionVerificationService");

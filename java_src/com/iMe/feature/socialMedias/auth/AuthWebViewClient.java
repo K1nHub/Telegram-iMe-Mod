@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthWebViewClient.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AuthWebViewClient extends WebViewClient {
     private final Function1<String, Unit> overrideUrl;
     private final Function0<Unit> pageFinished;

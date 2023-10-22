@@ -1,8 +1,9 @@
 package kotlinx.coroutines.internal;
 
-import kotlin.text.StringsKt__StringNumberConversionsKt;
+import kotlin.text.StringsKt;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SystemProps.common.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     public static final boolean systemProp(String str, boolean z) {
         String systemProp = SystemPropsKt.systemProp(str);
@@ -35,12 +36,11 @@ public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
     }
 
     public static final long systemProp(String str, long j, long j2, long j3) {
-        Long longOrNull;
         String systemProp = SystemPropsKt.systemProp(str);
         if (systemProp == null) {
             return j;
         }
-        longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(systemProp);
+        Long longOrNull = StringsKt.toLongOrNull(systemProp);
         if (longOrNull == null) {
             throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + systemProp + '\'').toString());
         }
@@ -53,5 +53,10 @@ public final /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
             return longValue;
         }
         throw new IllegalStateException(("System property '" + str + "' should be in range " + j2 + ".." + j3 + ", but is '" + longValue + '\'').toString());
+    }
+
+    public static final String systemProp(String str, String str2) {
+        String systemProp = SystemPropsKt.systemProp(str);
+        return systemProp == null ? str2 : systemProp;
     }
 }

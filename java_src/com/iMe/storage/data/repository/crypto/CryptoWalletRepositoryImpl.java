@@ -1,6 +1,6 @@
 package com.iMe.storage.data.repository.crypto;
 
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
+import com.iMe.storage.data.locale.p026db.dao.minor.wallet.WalletTokensBalancesDao;
 import com.iMe.storage.data.mapper.crypto.WalletInformationMappingKt;
 import com.iMe.storage.data.network.api.own.CryptoWalletApi;
 import com.iMe.storage.data.network.handlers.ErrorHandler;
@@ -22,7 +22,7 @@ import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.repository.crypto.CryptoWalletRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletApi cryptoWalletApi;
@@ -135,7 +135,7 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
                     Result.Error error = (Result.Error) result;
                     if (!Intrinsics.areEqual(error.getError().getStatus(), IErrorStatus.this)) {
                         Result<? extends Boolean> error$default = Result.Companion.error$default(Result.Companion, error.getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapError");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapError");
                         return error$default;
                     }
                     error.getError();

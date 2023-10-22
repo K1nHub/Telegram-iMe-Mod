@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/o;
+.implements Lj$/util/function/n;
 
 
 # static fields

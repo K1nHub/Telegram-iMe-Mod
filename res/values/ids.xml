@@ -62,15 +62,11 @@
     <item type="id" name="action_text" />
     <item type="id" name="actions" />
     <item type="id" name="activity_chooser_view_content" />
-    <item type="id" name="ads_phrase" />
     <item type="id" name="alertTitle" />
     <item type="id" name="androidx_window_activity_scope" />
     <item type="id" name="answer_btn" />
     <item type="id" name="answer_text" />
     <item type="id" name="appbar" />
-    <item type="id" name="avatar" />
-    <item type="id" name="avatar_bg" />
-    <item type="id" name="avatar_container" />
     <item type="id" name="backup_word_switcher_1" />
     <item type="id" name="backup_word_switcher_2" />
     <item type="id" name="backup_word_switcher_3" />
@@ -79,18 +75,6 @@
     <item type="id" name="barrier_amount_end" />
     <item type="id" name="barrier_bottom_actions" />
     <item type="id" name="binance_pay_link" />
-    <item type="id" name="bot_analog_language" />
-    <item type="id" name="bot_avatar" />
-    <item type="id" name="bot_current_language" />
-    <item type="id" name="bot_date_added" />
-    <item type="id" name="bot_date_updated" />
-    <item type="id" name="bot_description" />
-    <item type="id" name="bot_developer" />
-    <item type="id" name="bot_info_button" />
-    <item type="id" name="bot_installed_icon" />
-    <item type="id" name="bot_name" />
-    <item type="id" name="bot_new_label" />
-    <item type="id" name="bot_status" />
     <item type="id" name="bottom_navigation_catalog" />
     <item type="id" name="bottom_navigation_wallet" />
     <item type="id" name="btn_cancel" />
@@ -101,6 +85,7 @@
     <item type="id" name="button_add" />
     <item type="id" name="button_address_options" />
     <item type="id" name="button_approve_info" />
+    <item type="id" name="button_back" />
     <item type="id" name="button_backup" />
     <item type="id" name="button_change_network" />
     <item type="id" name="button_close" />
@@ -112,15 +97,13 @@
     <item type="id" name="button_disconnect_all" />
     <item type="id" name="button_done" />
     <item type="id" name="button_more" />
-    <item type="id" name="button_new_cryptobox" />
     <item type="id" name="button_next" />
     <item type="id" name="button_ok" />
     <item type="id" name="button_process" />
     <item type="id" name="button_reset" />
-    <item type="id" name="button_reset_all" />
     <item type="id" name="button_retry" />
     <item type="id" name="button_safety_info" />
-    <item type="id" name="button_scan_qr" />
+    <item type="id" name="button_send" />
     <item type="id" name="button_subscribe" />
     <item type="id" name="buttons" />
     <item type="id" name="cancel_button" />
@@ -134,8 +117,8 @@
     <item type="id" name="card_nft_collection" />
     <item type="id" name="card_nft_token" />
     <item type="id" name="card_root" />
-    <item type="id" name="card_seed" />
     <item type="id" name="card_staking_dashboard" />
+    <item type="id" name="card_view" />
     <item type="id" name="card_view_transaction_info" />
     <item type="id" name="card_word" />
     <item type="id" name="catalog_all" />
@@ -155,11 +138,11 @@
     <item type="id" name="chip2" />
     <item type="id" name="chip3" />
     <item type="id" name="chip_group" />
+    <item type="id" name="choice_address_buttons" />
     <item type="id" name="chronometer" />
     <item type="id" name="circle_center" />
     <item type="id" name="color_key_tag" />
     <item type="id" name="confirm_button" />
-    <item type="id" name="confirm_seed_view" />
     <item type="id" name="constraint_bottom_action" />
     <item type="id" name="constraint_info" />
     <item type="id" name="constraint_input" />
@@ -171,7 +154,6 @@
     <item type="id" name="constraint_statistics" />
     <item type="id" name="constraint_tags" />
     <item type="id" name="constraint_trade_info" />
-    <item type="id" name="constraint_translate_root" />
     <item type="id" name="constraint_wallet" />
     <item type="id" name="constraint_words" />
     <item type="id" name="contacts_widget_item" />
@@ -205,11 +187,10 @@
     <item type="id" name="dev_tools_nav_graph.xml" />
     <item type="id" name="dialog_button" />
     <item type="id" name="divider" />
-    <item type="id" name="divider1" />
-    <item type="id" name="divider2" />
     <item type="id" name="divider_1" />
     <item type="id" name="divider_action_buttons" />
     <item type="id" name="divider_comment" />
+    <item type="id" name="divider_crypto" />
     <item type="id" name="divider_cryptobox_description" />
     <item type="id" name="divider_cryptobox_info" />
     <item type="id" name="divider_horizontal" />
@@ -217,14 +198,11 @@
     <item type="id" name="divider_vertical" />
     <item type="id" name="dot" />
     <item type="id" name="dots_indicator_tutorial" />
-    <item type="id" name="dummy" />
     <item type="id" name="edit_address" />
     <item type="id" name="edit_from_amount" />
     <item type="id" name="edit_input_amount" />
     <item type="id" name="edit_output_amount" />
-    <item type="id" name="edit_password" />
     <item type="id" name="edit_query" />
-    <item type="id" name="edit_seed" />
     <item type="id" name="empty_view" />
     <item type="id" name="errorBlock" />
     <item type="id" name="expand_activities_button" />
@@ -241,13 +219,13 @@
     <item type="id" name="frame_contacts" />
     <item type="id" name="frame_container" />
     <item type="id" name="frame_fragment_container" />
-    <item type="id" name="frame_half_bg" />
-    <item type="id" name="frame_image_container" />
+    <item type="id" name="frame_icon_container" />
     <item type="id" name="frame_pages_container" />
+    <item type="id" name="frame_paste" />
+    <item type="id" name="frame_premium_star_container" />
     <item type="id" name="frame_qr" />
     <item type="id" name="frame_root" />
     <item type="id" name="frame_tabs_container" />
-    <item type="id" name="frame_twitter" />
     <item type="id" name="ghost_view" />
     <item type="id" name="ghost_view_holder" />
     <item type="id" name="glide_custom_view_target_tag" />
@@ -262,11 +240,7 @@
     <item type="id" name="icon" />
     <item type="id" name="icon_group" />
     <item type="id" name="image" />
-    <item type="id" name="imageBots" />
     <item type="id" name="imageError" />
-    <item type="id" name="imageGifResponses" />
-    <item type="id" name="imageSettings" />
-    <item type="id" name="imageTextResponses" />
     <item type="id" name="imageView" />
     <item type="id" name="image_account_avatar" />
     <item type="id" name="image_action" />
@@ -277,9 +251,7 @@
     <item type="id" name="image_arrow" />
     <item type="id" name="image_avatar" />
     <item type="id" name="image_back" />
-    <item type="id" name="image_backup_status" />
     <item type="id" name="image_banner_image" />
-    <item type="id" name="image_change_direction" />
     <item type="id" name="image_check" />
     <item type="id" name="image_close" />
     <item type="id" name="image_collection_image" />
@@ -289,7 +261,6 @@
     <item type="id" name="image_empty" />
     <item type="id" name="image_empty_icon" />
     <item type="id" name="image_fee_arrow" />
-    <item type="id" name="image_forward" />
     <item type="id" name="image_header" />
     <item type="id" name="image_header_right_button" />
     <item type="id" name="image_help" />
@@ -311,11 +282,11 @@
     <item type="id" name="image_peer_icon" />
     <item type="id" name="image_price_direction" />
     <item type="id" name="image_qr" />
+    <item type="id" name="image_recipient_icon" />
     <item type="id" name="image_retweets" />
     <item type="id" name="image_safety_status" />
     <item type="id" name="image_safety_status_arrow" />
     <item type="id" name="image_service_logo" />
-    <item type="id" name="image_settings" />
     <item type="id" name="image_share" />
     <item type="id" name="image_staking_icon" />
     <item type="id" name="image_staking_info" />
@@ -329,7 +300,6 @@
     <item type="id" name="image_transaction_type_icon" />
     <item type="id" name="image_transactions_approval" />
     <item type="id" name="image_translate" />
-    <item type="id" name="image_translate_logo" />
     <item type="id" name="image_user_avatar" />
     <item type="id" name="image_verified" />
     <item type="id" name="image_view_balance" />
@@ -341,18 +311,14 @@
     <item type="id" name="input_amount" />
     <item type="id" name="input_capacity" />
     <item type="id" name="input_chat" />
+    <item type="id" name="input_comment" />
     <item type="id" name="input_description" />
+    <item type="id" name="input_recipient" />
     <item type="id" name="input_token" />
-    <item type="id" name="installs_counter" />
-    <item type="id" name="installs_label" />
     <item type="id" name="item_back" />
-    <item type="id" name="item_container" />
     <item type="id" name="item_menu" />
     <item type="id" name="item_more_options" />
     <item type="id" name="iv_logo" />
-    <item type="id" name="layoutBottom" />
-    <item type="id" name="layoutContainer" />
-    <item type="id" name="layoutLabel" />
     <item type="id" name="line1" />
     <item type="id" name="line3" />
     <item type="id" name="linearImages" />
@@ -366,6 +332,7 @@
     <item type="id" name="linear_bottom_panel" />
     <item type="id" name="linear_chat_settings" />
     <item type="id" name="linear_content" />
+    <item type="id" name="linear_crypto_info" />
     <item type="id" name="linear_crypto_settings" />
     <item type="id" name="linear_cryptobox_description" />
     <item type="id" name="linear_cryptobox_info" />
@@ -373,7 +340,6 @@
     <item type="id" name="linear_header" />
     <item type="id" name="linear_info" />
     <item type="id" name="linear_input_token" />
-    <item type="id" name="linear_input_wrapper" />
     <item type="id" name="linear_network" />
     <item type="id" name="linear_output_token" />
     <item type="id" name="linear_percentages" />
@@ -383,13 +349,14 @@
     <item type="id" name="linear_safety" />
     <item type="id" name="linear_seed_first_part" />
     <item type="id" name="linear_seed_second_part" />
+    <item type="id" name="linear_select_network" />
     <item type="id" name="linear_sessions" />
     <item type="id" name="linear_staked" />
     <item type="id" name="linear_staking_info" />
+    <item type="id" name="linear_staking_settings" />
     <item type="id" name="linear_switcher_wrapper" />
     <item type="id" name="linear_to" />
     <item type="id" name="linear_verification" />
-    <item type="id" name="linear_wallets" />
     <item type="id" name="list_item" />
     <item type="id" name="list_view" />
     <item type="id" name="llContent" />
@@ -477,21 +444,14 @@
     <item type="id" name="nested_root" />
     <item type="id" name="nested_scroll_view" />
     <item type="id" name="network_type_view" />
-    <item type="id" name="network_type_view_container" />
     <item type="id" name="nft_root_view" />
-    <item type="id" name="normalPhraseLayout" />
-    <item type="id" name="normal_phrase" />
     <item type="id" name="notification_background" />
     <item type="id" name="notification_main_column" />
     <item type="id" name="notification_main_column_container" />
     <item type="id" name="object_tag" />
     <item type="id" name="off" />
     <item type="id" name="on" />
-    <item type="id" name="only_positive_checkbox" />
-    <item type="id" name="only_positive_checkbox_container" />
-    <item type="id" name="only_positive_checkbox_text" />
     <item type="id" name="operations_pager" />
-    <item type="id" name="options_layout" />
     <item type="id" name="parentPanel" />
     <item type="id" name="parent_matrix" />
     <item type="id" name="parent_tag" />
@@ -510,8 +470,6 @@
     <item type="id" name="passcode_btn_fingerprint" />
     <item type="id" name="passcode_view" />
     <item type="id" name="photo" />
-    <item type="id" name="phrases_counter" />
-    <item type="id" name="phrases_label" />
     <item type="id" name="player_album_art" />
     <item type="id" name="player_album_title" />
     <item type="id" name="player_author_name" />
@@ -527,15 +485,10 @@
     <item type="id" name="progress_circular" />
     <item type="id" name="progress_horizontal" />
     <item type="id" name="radio" />
-    <item type="id" name="rating" />
-    <item type="id" name="rating_container" />
-    <item type="id" name="rating_label" />
-    <item type="id" name="rating_number" />
     <item type="id" name="realtime_blur" />
     <item type="id" name="recognized_text" />
     <item type="id" name="recycle_actions" />
     <item type="id" name="recycle_banners" />
-    <item type="id" name="recycle_buy_tokens" />
     <item type="id" name="recycle_campaigns" />
     <item type="id" name="recycle_categories" />
     <item type="id" name="recycle_channels" />
@@ -554,13 +507,12 @@
     <item type="id" name="recycle_transactions" />
     <item type="id" name="recycle_tweets" />
     <item type="id" name="recycle_user_channels" />
-    <item type="id" name="recycle_wallet_balances" />
     <item type="id" name="recycle_wallet_home_binance_pay_dashboard" />
     <item type="id" name="recycle_wallet_home_crypto_dashboard" />
     <item type="id" name="recycle_wallet_home_services_dashboard" />
     <item type="id" name="recycle_wallets" />
     <item type="id" name="recycler" />
-    <item type="id" name="recyclerLanguages" />
+    <item type="id" name="recycler_products" />
     <item type="id" name="recycler_statuses" />
     <item type="id" name="recycler_tokens" />
     <item type="id" name="right_icon" />
@@ -582,12 +534,11 @@
     <item type="id" name="search_plate" />
     <item type="id" name="search_src_text" />
     <item type="id" name="search_voice_btn" />
-    <item type="id" name="seed_list" />
+    <item type="id" name="section" />
     <item type="id" name="select_dialog_listview" />
     <item type="id" name="selectable_token_header" />
     <item type="id" name="selection_type" />
     <item type="id" name="shake_animation" />
-    <item type="id" name="shop_button" />
     <item type="id" name="shortcut" />
     <item type="id" name="shortcut_widget_item" />
     <item type="id" name="shortcut_widget_item_avatar" />
@@ -598,7 +549,6 @@
     <item type="id" name="shortcut_widget_item_time" />
     <item type="id" name="sliding_pane_detail_container" />
     <item type="id" name="sliding_pane_layout" />
-    <item type="id" name="smart_panel_root" />
     <item type="id" name="snackbar_action" />
     <item type="id" name="snackbar_text" />
     <item type="id" name="socialAuthScreen" />
@@ -617,12 +567,13 @@
     <item type="id" name="staking_info" />
     <item type="id" name="staking_pager" />
     <item type="id" name="staking_participated" />
-    <item type="id" name="stats_container" />
+    <item type="id" name="staking_percentage_view" />
+    <item type="id" name="staking_safe_withdrawal_view" />
+    <item type="id" name="staking_withdrawal_fee_view" />
     <item type="id" name="submenuarrow" />
     <item type="id" name="submit_area" />
     <item type="id" name="subtitle" />
     <item type="id" name="svg_tag" />
-    <item type="id" name="tabs" />
     <item type="id" name="tag_accessibility_actions" />
     <item type="id" name="tag_accessibility_clickable_spans" />
     <item type="id" name="tag_accessibility_heading" />
@@ -636,17 +587,13 @@
     <item type="id" name="tag_unhandled_key_event_manager" />
     <item type="id" name="tag_unhandled_key_listeners" />
     <item type="id" name="tag_window_insets_animation_callback" />
-    <item type="id" name="tags_container" />
     <item type="id" name="test_checkbox_android_button_tint" />
     <item type="id" name="test_checkbox_app_button_tint" />
     <item type="id" name="test_radiobutton_android_button_tint" />
     <item type="id" name="test_radiobutton_app_button_tint" />
     <item type="id" name="text" />
-    <item type="id" name="textCountryName" />
     <item type="id" name="textDevScreen" />
-    <item type="id" name="textEmptyBots" />
     <item type="id" name="textError" />
-    <item type="id" name="textRateBot" />
     <item type="id" name="textSpacerNoButtons" />
     <item type="id" name="textSpacerNoTitle" />
     <item type="id" name="textSubTitle" />
@@ -686,10 +633,11 @@
     <item type="id" name="text_comments_count" />
     <item type="id" name="text_company" />
     <item type="id" name="text_contacts" />
-    <item type="id" name="text_copy_info" />
     <item type="id" name="text_creation_fee_title" />
     <item type="id" name="text_creation_fee_value" />
     <item type="id" name="text_creation_time" />
+    <item type="id" name="text_crypto_wallet_address_title" />
+    <item type="id" name="text_crypto_wallet_address_value" />
     <item type="id" name="text_cryptobox_description" />
     <item type="id" name="text_cryptobox_description_title" />
     <item type="id" name="text_cryptobox_info" />
@@ -703,11 +651,12 @@
     <item type="id" name="text_deposit_title" />
     <item type="id" name="text_description" />
     <item type="id" name="text_discount" />
+    <item type="id" name="text_duration_title" />
     <item type="id" name="text_empty_description" />
     <item type="id" name="text_empty_title" />
     <item type="id" name="text_fee_title" />
     <item type="id" name="text_fee_value" />
-    <item type="id" name="text_forgot_password" />
+    <item type="id" name="text_fiat_price" />
     <item type="id" name="text_from" />
     <item type="id" name="text_from_currency" />
     <item type="id" name="text_header" />
@@ -733,7 +682,6 @@
     <item type="id" name="text_network" />
     <item type="id" name="text_network_title" />
     <item type="id" name="text_network_value" />
-    <item type="id" name="text_new_cryptobox" />
     <item type="id" name="text_nickname" />
     <item type="id" name="text_not_found" />
     <item type="id" name="text_notification_category" />
@@ -750,6 +698,7 @@
     <item type="id" name="text_percentage_value" />
     <item type="id" name="text_post" />
     <item type="id" name="text_powered_by" />
+    <item type="id" name="text_price" />
     <item type="id" name="text_price_title" />
     <item type="id" name="text_price_value" />
     <item type="id" name="text_privacy" />
@@ -769,11 +718,9 @@
     <item type="id" name="text_safety_title" />
     <item type="id" name="text_section_actions" />
     <item type="id" name="text_section_name" />
-    <item type="id" name="text_service" />
     <item type="id" name="text_sessions_title" />
     <item type="id" name="text_setting_description" />
     <item type="id" name="text_setting_title" />
-    <item type="id" name="text_source_language" />
     <item type="id" name="text_staked_title" />
     <item type="id" name="text_staked_value" />
     <item type="id" name="text_staking_end_title" />
@@ -792,7 +739,6 @@
     <item type="id" name="text_symbol_title" />
     <item type="id" name="text_symbol_value" />
     <item type="id" name="text_tags" />
-    <item type="id" name="text_target_language" />
     <item type="id" name="text_tax" />
     <item type="id" name="text_threshold_value" />
     <item type="id" name="text_ticker" />
@@ -810,23 +756,19 @@
     <item type="id" name="text_token_title" />
     <item type="id" name="text_total_fee_title" />
     <item type="id" name="text_total_fee_value" />
-    <item type="id" name="text_total_tokens_title" />
-    <item type="id" name="text_total_tokens_value" />
+    <item type="id" name="text_total_tokens" />
     <item type="id" name="text_total_users_fee_title" />
     <item type="id" name="text_total_users_fee_value" />
     <item type="id" name="text_trade_pair" />
     <item type="id" name="text_trade_percent" />
     <item type="id" name="text_trade_price" />
     <item type="id" name="text_transaction_amount" />
-    <item type="id" name="text_transaction_header" />
     <item type="id" name="text_transaction_type" />
     <item type="id" name="text_transaction_type_title" />
     <item type="id" name="text_transactions" />
     <item type="id" name="text_transactions_approval" />
-    <item type="id" name="text_twitter" />
     <item type="id" name="text_user_full_name" />
     <item type="id" name="text_user_id" />
-    <item type="id" name="text_validation_error" />
     <item type="id" name="text_value" />
     <item type="id" name="text_view_balance" />
     <item type="id" name="text_wallet_address" />
@@ -842,8 +784,6 @@
     <item type="id" name="textinput_placeholder" />
     <item type="id" name="textinput_prefix_text" />
     <item type="id" name="textinput_suffix_text" />
-    <item type="id" name="themes_counter" />
-    <item type="id" name="themes_label" />
     <item type="id" name="time" />
     <item type="id" name="timeout_callback" />
     <item type="id" name="title" />
@@ -903,18 +843,21 @@
     <item type="id" name="view_output_network" />
     <item type="id" name="view_pager_tutorial" />
     <item type="id" name="view_planned_withdrawal_fee_cell" />
+    <item type="id" name="view_price_cell" />
     <item type="id" name="view_profit_cell" />
     <item type="id" name="view_profit_dot" />
     <item type="id" name="view_progress" />
     <item type="id" name="view_read_mark" />
+    <item type="id" name="view_recipient" />
     <item type="id" name="view_reward_per_user_cell" />
     <item type="id" name="view_staked_dot" />
     <item type="id" name="view_staking_dashboard" />
     <item type="id" name="view_start_date_cell" />
     <item type="id" name="view_status_cell" />
     <item type="id" name="view_switch" />
-    <item type="id" name="view_tag" />
+    <item type="id" name="view_text_cell" />
     <item type="id" name="view_threshold_cell" />
+    <item type="id" name="view_time_left_cell" />
     <item type="id" name="view_transition" />
     <item type="id" name="view_tree_lifecycle_owner" />
     <item type="id" name="view_tree_on_back_pressed_dispatcher_owner" />
@@ -922,7 +865,6 @@
     <item type="id" name="view_tree_view_model_store_owner" />
     <item type="id" name="view_tweet" />
     <item type="id" name="view_wallet_cell" />
-    <item type="id" name="viewpager" />
     <item type="id" name="visible_removing_fragment_view_tag" />
     <item type="id" name="wallet_home_binance_pay" />
     <item type="id" name="wallet_home_crypto" />

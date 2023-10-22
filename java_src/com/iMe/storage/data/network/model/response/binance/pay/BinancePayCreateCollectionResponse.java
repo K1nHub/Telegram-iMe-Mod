@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.binance.pay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayCreateCollectionResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayCreateCollectionResponse {
     private final String messageId;
 

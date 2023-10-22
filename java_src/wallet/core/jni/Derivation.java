@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum Derivation {
     DEFAULT(0),
     CUSTOM(1),

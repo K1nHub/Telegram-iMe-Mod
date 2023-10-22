@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class MetaDataStore {
     private final File filesDir;
 
@@ -49,7 +49,7 @@ class MetaDataStore {
         } catch (Exception e2) {
             e = e2;
             fileInputStream2 = fileInputStream;
-            Logger.getLogger().m743e("Error deserializing user metadata.", e);
+            Logger.getLogger().m1035e("Error deserializing user metadata.", e);
             CommonUtils.closeOrLog(fileInputStream2, "Failed to close user metadata file.");
             return Collections.emptyMap();
         } catch (Throwable th2) {

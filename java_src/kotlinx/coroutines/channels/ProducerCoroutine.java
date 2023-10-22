@@ -6,7 +6,7 @@ import kotlinx.coroutines.CoroutineExceptionHandlerKt;
 import kotlinx.coroutines.channels.SendChannel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Produce.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ProducerCoroutine<E> extends ChannelCoroutine<E> implements ProducerScope<E> {
     public ProducerCoroutine(CoroutineContext coroutineContext, Channel<E> channel) {
         super(coroutineContext, channel, true, true);

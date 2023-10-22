@@ -1688,6 +1688,21 @@
     return v0
 .end method
 
+.method public getItemViewType(Landroid/view/View;)I
+    .locals 0
+
+    .line 8687
+    invoke-static {p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getLayoutDirection()I
     .locals 1
 

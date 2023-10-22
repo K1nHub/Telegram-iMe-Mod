@@ -8,12 +8,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LabelValueCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LabelValue extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelValue> CREATOR = new zzd();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     String zzb;
 
     LabelValue() {
@@ -36,7 +36,7 @@ public final class LabelValue extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public LabelValue(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2) {
+    public LabelValue(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2) {
         this.zza = str;
         this.zzb = str2;
     }

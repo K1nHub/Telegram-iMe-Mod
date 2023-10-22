@@ -6,7 +6,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.io.Serializable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum NotificationLite {
     COMPLETE;
 
@@ -24,33 +24,33 @@ public enum NotificationLite {
         return "NotificationLite.Complete";
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ErrorNotification implements Serializable {
 
         /* renamed from: e */
-        final Throwable f564e;
+        final Throwable f477e;
 
         ErrorNotification(Throwable th) {
-            this.f564e = th;
+            this.f477e = th;
         }
 
         public String toString() {
-            return "NotificationLite.Error[" + this.f564e + "]";
+            return "NotificationLite.Error[" + this.f477e + "]";
         }
 
         public int hashCode() {
-            return this.f564e.hashCode();
+            return this.f477e.hashCode();
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof ErrorNotification) {
-                return ObjectHelper.equals(this.f564e, ((ErrorNotification) obj).f564e);
+                return ObjectHelper.equals(this.f477e, ((ErrorNotification) obj).f477e);
             }
             return false;
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SubscriptionNotification implements Serializable {
         final Subscription upstream;
 
@@ -63,7 +63,7 @@ public enum NotificationLite {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class DisposableNotification implements Serializable {
         final Disposable upstream;
 
@@ -109,7 +109,7 @@ public enum NotificationLite {
     }
 
     public static Throwable getError(Object obj) {
-        return ((ErrorNotification) obj).f564e;
+        return ((ErrorNotification) obj).f477e;
     }
 
     public static Subscription getSubscription(Object obj) {
@@ -125,7 +125,7 @@ public enum NotificationLite {
             subscriber.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            subscriber.onError(((ErrorNotification) obj).f564e);
+            subscriber.onError(((ErrorNotification) obj).f477e);
             return true;
         } else {
             subscriber.onNext(obj);
@@ -138,7 +138,7 @@ public enum NotificationLite {
             observer.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            observer.onError(((ErrorNotification) obj).f564e);
+            observer.onError(((ErrorNotification) obj).f477e);
             return true;
         } else {
             observer.onNext(obj);
@@ -151,7 +151,7 @@ public enum NotificationLite {
             subscriber.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            subscriber.onError(((ErrorNotification) obj).f564e);
+            subscriber.onError(((ErrorNotification) obj).f477e);
             return true;
         } else if (obj instanceof SubscriptionNotification) {
             subscriber.onSubscribe(((SubscriptionNotification) obj).upstream);
@@ -167,7 +167,7 @@ public enum NotificationLite {
             observer.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            observer.onError(((ErrorNotification) obj).f564e);
+            observer.onError(((ErrorNotification) obj).f477e);
             return true;
         } else if (obj instanceof DisposableNotification) {
             observer.onSubscribe(((DisposableNotification) obj).upstream);

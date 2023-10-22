@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_reactionEmpty extends TLRPC$Reaction {
     public static int constructor = 2046153753;
 

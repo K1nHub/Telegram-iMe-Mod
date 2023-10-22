@@ -9,7 +9,7 @@ import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.ByteString;
 /* compiled from: Huffman.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Huffman {
     private static final int[] CODES;
     private static final byte[] CODE_BIT_COUNTS;
@@ -126,7 +126,7 @@ public final class Huffman {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Huffman.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Node {
         private final Node[] children;
         private final int symbol;

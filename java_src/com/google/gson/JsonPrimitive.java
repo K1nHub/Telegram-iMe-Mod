@@ -3,7 +3,7 @@ package com.google.gson;
 import com.google.gson.internal.LazilyParsedNumber;
 import java.math.BigInteger;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class JsonPrimitive extends JsonElement {
     private final Object value;
 

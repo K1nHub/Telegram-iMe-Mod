@@ -32,7 +32,7 @@ public final class PlaybackInfo {
     public static PlaybackInfo createDummy(TrackSelectorResult trackSelectorResult) {
         Timeline timeline = Timeline.EMPTY;
         MediaSource.MediaPeriodId mediaPeriodId = PLACEHOLDER_MEDIA_PERIOD_ID;
-        return new PlaybackInfo(timeline, mediaPeriodId, C0479C.TIME_UNSET, 0L, 1, null, false, TrackGroupArray.EMPTY, trackSelectorResult, ImmutableList.m762of(), mediaPeriodId, false, 0, PlaybackParameters.DEFAULT, 0L, 0L, 0L, false);
+        return new PlaybackInfo(timeline, mediaPeriodId, C0479C.TIME_UNSET, 0L, 1, null, false, TrackGroupArray.EMPTY, trackSelectorResult, ImmutableList.m1054of(), mediaPeriodId, false, 0, PlaybackParameters.DEFAULT, 0L, 0L, 0L, false);
     }
 
     public PlaybackInfo(Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j, long j2, int i, ExoPlaybackException exoPlaybackException, boolean z, TrackGroupArray trackGroupArray, TrackSelectorResult trackSelectorResult, List<Metadata> list, MediaSource.MediaPeriodId mediaPeriodId2, boolean z2, int i2, PlaybackParameters playbackParameters, long j3, long j4, long j5, boolean z3) {

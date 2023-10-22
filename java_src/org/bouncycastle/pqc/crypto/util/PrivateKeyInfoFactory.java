@@ -25,7 +25,7 @@ import org.bouncycastle.pqc.crypto.xmss.XMSSMTPrivateKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSPrivateKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSUtil;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class PrivateKeyInfoFactory {
     public static PrivateKeyInfo createPrivateKeyInfo(AsymmetricKeyParameter asymmetricKeyParameter, ASN1Set aSN1Set) throws IOException {
         if (asymmetricKeyParameter instanceof QTESLAPrivateKeyParameters) {

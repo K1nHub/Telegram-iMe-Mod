@@ -20,7 +20,7 @@ import java.util.List;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 @Keep
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(ComponentContainer componentContainer) {

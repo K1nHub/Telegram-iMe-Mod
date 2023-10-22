@@ -1,9 +1,9 @@
 package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationExecuteRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxCreationExecuteRequest {
     private final long chatId;
     private final String description;
@@ -52,7 +52,7 @@ public final class CryptoBoxCreationExecuteRequest {
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chatId) * 31) + this.description.hashCode()) * 31) + this.signedTransactionBody.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chatId) * 31) + this.description.hashCode()) * 31) + this.signedTransactionBody.hashCode();
     }
 
     public String toString() {

@@ -2,11 +2,11 @@ package com.iMe.model.dialog;
 
 import java.util.List;
 import kotlin.Pair;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RadioCellsListDialogModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RadioCellsListDialogModel {
     private final List<Pair<String, Boolean>> items;
     private final String negativeButtonText;
@@ -92,7 +92,7 @@ public final class RadioCellsListDialogModel {
     }
 
     public /* synthetic */ RadioCellsListDialogModel(String str, String str2, List list, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? CollectionsKt.emptyList() : list, str3);
+        this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? CollectionsKt__CollectionsKt.emptyList() : list, str3);
     }
 
     public final List<Pair<String, Boolean>> getItems() {

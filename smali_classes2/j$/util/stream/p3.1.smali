@@ -23,14 +23,14 @@
 
 
 # virtual methods
-.method E0(Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;)Lj$/util/stream/A1;
+.method D0(Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 17
 
     move-object/from16 v9, p0
 
     move-object/from16 v8, p3
 
-    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v6
 
@@ -46,13 +46,13 @@
 
     move-object/from16 v3, p2
 
-    invoke-interface {v3, v0}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {v3, v0}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->r0()Lj$/util/stream/e4;
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->q0()Lj$/util/stream/e4;
 
     move-result-object v11
 
@@ -64,13 +64,13 @@
 
     move-wide v15, v0
 
-    invoke-static/range {v11 .. v16}, Lj$/util/stream/B3;->b(Lj$/util/stream/e4;Lj$/util/s;JJ)Lj$/util/s;
+    invoke-static/range {v11 .. v16}, Lj$/util/stream/B3;->b(Lj$/util/stream/e4;Lj$/util/Spliterator;JJ)Lj$/util/Spliterator;
 
     move-result-object v0
 
     move-object/from16 v2, p1
 
-    invoke-static {v2, v0, v10, v8}, Lj$/util/stream/x2;->e(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-static {v2, v0, v10, v8}, Lj$/util/stream/x2;->e(Lj$/util/stream/y2;Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
     :goto_0
     sget-object v0, Lj$/util/stream/d4;->ORDERED:Lj$/util/stream/d4;
 
-    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -99,7 +99,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->w0(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v1
 
@@ -109,11 +109,11 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/p3;->L0(Lj$/util/s;JJJ)Lj$/util/s;
+    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/p3;->K0(Lj$/util/Spliterator;JJJ)Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-static {v9, v0, v10, v8}, Lj$/util/stream/x2;->e(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-static {v9, v0, v10, v8}, Lj$/util/stream/x2;->e(Lj$/util/stream/y2;Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object v0
 
@@ -138,7 +138,7 @@
 
     move-wide v7, v11
 
-    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;JJ)V
+    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;JJ)V
 
     invoke-virtual {v10}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -149,12 +149,12 @@
     return-object v0
 .end method
 
-.method F0(Lj$/util/stream/y2;Lj$/util/s;)Lj$/util/s;
+.method E0(Lj$/util/stream/y2;Lj$/util/Spliterator;)Lj$/util/Spliterator;
     .locals 16
 
     move-object/from16 v9, p0
 
-    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v6
 
@@ -168,7 +168,7 @@
 
     move-object/from16 v3, p2
 
-    invoke-interface {v3, v0}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {v3, v0}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v0
 
@@ -176,7 +176,7 @@
 
     new-instance v0, Lj$/util/stream/C4;
 
-    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->w0(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v11
 
@@ -190,7 +190,7 @@
 
     move-object v10, v0
 
-    invoke-direct/range {v10 .. v15}, Lj$/util/stream/C4;-><init>(Lj$/util/s;JJ)V
+    invoke-direct/range {v10 .. v15}, Lj$/util/stream/C4;-><init>(Lj$/util/Spliterator;JJ)V
 
     return-object v0
 
@@ -200,7 +200,7 @@
     :cond_1
     sget-object v0, Lj$/util/stream/d4;->ORDERED:Lj$/util/stream/d4;
 
-    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/y2;->r0()I
 
     move-result v1
 
@@ -210,7 +210,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->w0(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/y2;->v0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v1
 
@@ -220,7 +220,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/p3;->L0(Lj$/util/s;JJJ)Lj$/util/s;
+    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/p3;->K0(Lj$/util/Spliterator;JJJ)Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -243,7 +243,7 @@
 
     move-object/from16 v3, p2
 
-    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;JJ)V
+    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;JJ)V
 
     invoke-virtual {v10}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -251,14 +251,14 @@
 
     check-cast v0, Lj$/util/stream/A1;
 
-    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/stream/A1;->spliterator()Lj$/util/Spliterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+.method G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
     .locals 0
 
     new-instance p1, Lj$/util/stream/o3;
@@ -268,7 +268,7 @@
     return-object p1
 .end method
 
-.method L0(Lj$/util/s;JJJ)Lj$/util/s;
+.method K0(Lj$/util/Spliterator;JJJ)Lj$/util/Spliterator;
     .locals 7
 
     cmp-long v2, p2, p6
@@ -310,7 +310,7 @@
 
     move-wide p6, v0
 
-    invoke-direct/range {p2 .. p7}, Lj$/util/stream/I4;-><init>(Lj$/util/s;JJ)V
+    invoke-direct/range {p2 .. p7}, Lj$/util/stream/I4;-><init>(Lj$/util/Spliterator;JJ)V
 
     return-object v2
 .end method

@@ -14,7 +14,7 @@ import okio.ByteString;
 import okio.Okio;
 import okio.Source;
 /* compiled from: RequestBody.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class RequestBody {
     public static final Companion Companion = new Companion(null);
 
@@ -87,7 +87,7 @@ public abstract class RequestBody {
     public abstract void writeTo(BufferedSink bufferedSink) throws IOException;
 
     /* compiled from: RequestBody.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

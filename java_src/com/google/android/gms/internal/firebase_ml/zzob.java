@@ -134,7 +134,7 @@ public final class zzob {
         try {
             return zzor.zzbu(str);
         } catch (IllegalArgumentException unused) {
-            zzass.m805e("SharedPrefManager", str.length() != 0 ? "Invalid model type ".concat(str) : new String("Invalid model type "));
+            zzass.m1097e("SharedPrefManager", str.length() != 0 ? "Invalid model type ".concat(str) : new String("Invalid model type "));
             return zzor.UNKNOWN;
         }
     }

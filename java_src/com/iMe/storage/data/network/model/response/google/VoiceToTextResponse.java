@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.google;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: VoiceToTextResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class VoiceToTextResponse {
     private final String text;
 

@@ -7,8 +7,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final AppCompatTextView textFeeTitle;
@@ -24,7 +24,6 @@ public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding
         this.textTimeValue = appCompatTextView4;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -34,7 +33,7 @@ public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding
     }
 
     public static ForkContentStakingWithdrawalFeeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_staking_withdrawal_fee, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_staking_withdrawal_fee, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,16 +41,16 @@ public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding
     }
 
     public static ForkContentStakingWithdrawalFeeBinding bind(View view) {
-        int i = C3473R.C3476id.text_fee_title;
+        int i = C3630R.C3633id.text_fee_title;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
-            i = C3473R.C3476id.text_fee_value;
+            i = C3630R.C3633id.text_fee_value;
             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView2 != null) {
-                i = C3473R.C3476id.text_time_title;
+                i = C3630R.C3633id.text_time_title;
                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView3 != null) {
-                    i = C3473R.C3476id.text_time_value;
+                    i = C3630R.C3633id.text_time_value;
                     AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView4 != null) {
                         return new ForkContentStakingWithdrawalFeeBinding((ConstraintLayout) view, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4);

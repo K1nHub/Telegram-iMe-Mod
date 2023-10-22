@@ -12,7 +12,7 @@ import javax.crypto.spec.SecretKeySpec;
 import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCCipher.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCCipher {
     public static final WCCipher INSTANCE = new WCCipher();
 

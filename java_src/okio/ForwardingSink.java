@@ -3,7 +3,7 @@ package okio;
 import java.io.IOException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ForwardingSink.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class ForwardingSink implements Sink {
     private final Sink delegate;
 

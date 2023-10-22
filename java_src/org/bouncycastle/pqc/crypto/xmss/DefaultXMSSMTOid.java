@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DefaultXMSSMTOid implements XMSSOid {
     private static final Map<String, DefaultXMSSMTOid> oidLookupTable;
     private final int oid;

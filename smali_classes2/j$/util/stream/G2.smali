@@ -107,13 +107,13 @@
     return-void
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
     iget-object p1, p0, Lj$/util/stream/G2;->b:Ljava/lang/Object;

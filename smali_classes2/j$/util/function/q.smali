@@ -3,8 +3,5 @@
 
 
 # virtual methods
-.method public abstract accept(J)V
-.end method
-
-.method public abstract f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public abstract apply(J)Ljava/lang/Object;
 .end method

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletsInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoWalletsInfo {
     private final List<Long> allowedUsers;
     private final boolean isVisible;

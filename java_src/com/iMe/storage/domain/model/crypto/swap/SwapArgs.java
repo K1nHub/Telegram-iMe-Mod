@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto.swap;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapMethod;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class SwapArgs implements TransactionArgs {
     private final BigDecimal amount;
     private final long chainId;
@@ -66,7 +66,7 @@ public abstract class SwapArgs implements TransactionArgs {
     }
 
     /* compiled from: SwapArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Dex extends SwapArgs {
         private final BigDecimal amount;
         private final BigInteger amountOutBound;
@@ -184,7 +184,7 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.callData.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkId.hashCode()) * 31;
+            int hashCode = ((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.callData.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkId.hashCode()) * 31;
             String str = this.outputNetworkId;
             return hashCode + (str == null ? 0 : str.hashCode());
         }

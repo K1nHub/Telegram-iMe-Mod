@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DynamicLinkDataCreator implements Parcelable.Creator<DynamicLinkData> {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // android.os.Parcelable.Creator

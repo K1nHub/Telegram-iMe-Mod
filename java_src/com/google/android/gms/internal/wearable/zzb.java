@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzb extends Binder implements IInterface {
     /* JADX INFO: Access modifiers changed from: protected */
     public zzb(String str) {

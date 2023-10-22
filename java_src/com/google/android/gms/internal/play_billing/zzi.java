@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: com.android.billingclient:billing@@5.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class zzi extends Binder implements IInterface {
     /* JADX INFO: Access modifiers changed from: protected */
     public zzi(String str) {

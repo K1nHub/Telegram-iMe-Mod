@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_updateTheme extends TLRPC$Update {
     public static int constructor = -2112423005;
     public TLRPC$Theme theme;

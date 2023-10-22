@@ -10,7 +10,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.flow.internal.ChannelFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ChannelFlowBuilder<T> extends ChannelFlow<T> {
     private final Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> block;
 
@@ -26,9 +26,9 @@ public class ChannelFlowBuilder<T> extends ChannelFlow<T> {
         this.block = function2;
     }
 
-    static /* synthetic */ Object collectTo$suspendImpl(ChannelFlowBuilder channelFlowBuilder, ProducerScope producerScope, Continuation continuation) {
+    static /* synthetic */ <T> Object collectTo$suspendImpl(ChannelFlowBuilder<T> channelFlowBuilder, ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
-        Object invoke = channelFlowBuilder.block.invoke(producerScope, continuation);
+        Object invoke = ((ChannelFlowBuilder) channelFlowBuilder).block.invoke(producerScope, continuation);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return invoke == coroutine_suspended ? invoke : Unit.INSTANCE;
     }

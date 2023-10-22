@@ -2,7 +2,7 @@ package com.google.android.gms.wearable.internal;
 
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzca extends zzet {
     private final Object zza = new Object();
     private zzcb zzb;

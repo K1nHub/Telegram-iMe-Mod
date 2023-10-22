@@ -19,15 +19,15 @@ import com.google.android.gms.common.util.VisibleForTesting;
 @SafeParcelable.Class(creator = "StatusCreator")
 /* loaded from: classes.dex */
 public final class Status extends AbstractSafeParcelable implements Result, ReflectedParcelable {
-    @SafeParcelable.VersionField(m794id = 1000)
+    @SafeParcelable.VersionField(m1086id = 1000)
     final int zzb;
-    @SafeParcelable.Field(getter = "getStatusCode", m797id = 1)
+    @SafeParcelable.Field(getter = "getStatusCode", m1089id = 1)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getStatusMessage", m797id = 2)
+    @SafeParcelable.Field(getter = "getStatusMessage", m1089id = 2)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getPendingIntent", m797id = 3)
+    @SafeParcelable.Field(getter = "getPendingIntent", m1089id = 3)
     private final PendingIntent zze;
-    @SafeParcelable.Field(getter = "getConnectionResult", m797id = 4)
+    @SafeParcelable.Field(getter = "getConnectionResult", m1089id = 4)
     private final ConnectionResult zzf;
     @ShowFirstParty
     @VisibleForTesting
@@ -61,7 +61,7 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public Status(@SafeParcelable.Param(m796id = 1000) int i, @SafeParcelable.Param(m796id = 1) int i2, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) PendingIntent pendingIntent, @SafeParcelable.Param(m796id = 4) ConnectionResult connectionResult) {
+    public Status(@SafeParcelable.Param(m1088id = 1000) int i, @SafeParcelable.Param(m1088id = 1) int i2, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) PendingIntent pendingIntent, @SafeParcelable.Param(m1088id = 4) ConnectionResult connectionResult) {
         this.zzb = i;
         this.zzc = i2;
         this.zzd = str;

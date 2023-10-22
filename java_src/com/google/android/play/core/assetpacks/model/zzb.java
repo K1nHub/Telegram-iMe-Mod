@@ -1,6 +1,6 @@
 package com.google.android.play.core.assetpacks.model;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzb {
     public static String zza(String str, String str2) {
         StringBuilder sb = new StringBuilder(str.length() + 1 + String.valueOf(str2).length());

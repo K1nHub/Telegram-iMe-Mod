@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channels_editBanned extends TLObject {
     public static int constructor = -1763259007;
     public TLRPC$TL_chatBannedRights banned_rights;

@@ -4,7 +4,7 @@ import java.util.concurrent.CancellationException;
 import kotlin.coroutines.CoroutineContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Job.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class JobKt__JobKt {
     public static final CompletableJob Job(Job job) {
         return new JobImpl(job);
@@ -15,6 +15,10 @@ public final /* synthetic */ class JobKt__JobKt {
             job = null;
         }
         return JobKt.Job(job);
+    }
+
+    public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {
+        return job.invokeOnCompletion(new DisposeOnCompletion(disposableHandle));
     }
 
     public static /* synthetic */ void cancel$default(CoroutineContext coroutineContext, CancellationException cancellationException, int i, Object obj) {

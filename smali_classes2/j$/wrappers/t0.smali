@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/ObjIntConsumer;
+.implements Ljava/util/function/ObjLongConsumer;
 
 
 # instance fields
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/v;)Ljava/util/function/ObjIntConsumer;
+.method public static synthetic a(Lj$/util/function/v;)Ljava/util/function/ObjLongConsumer;
     .locals 1
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
 
     check-cast p0, Lj$/wrappers/s0;
 
-    iget-object p0, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjIntConsumer;
+    iget-object p0, p0, Lj$/wrappers/s0;->a:Ljava/util/function/ObjLongConsumer;
 
     return-object p0
 
@@ -50,12 +50,12 @@
 
 
 # virtual methods
-.method public synthetic accept(Ljava/lang/Object;I)V
+.method public synthetic accept(Ljava/lang/Object;J)V
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/t0;->a:Lj$/util/function/v;
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/v;->accept(Ljava/lang/Object;I)V
+    invoke-interface {v0, p1, p2, p3}, Lj$/util/function/v;->accept(Ljava/lang/Object;J)V
 
     return-void
 .end method

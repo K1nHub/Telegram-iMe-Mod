@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DonationTransferMetadata.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DonationTransferMetadata {
     private final TokenDetailed feeToken;
     private final String recipientAddress;

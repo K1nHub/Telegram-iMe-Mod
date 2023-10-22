@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Iterables.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1<T> implements Iterable<T>, KMappedMarker {
     final /* synthetic */ Sequence $this_asIterable$inlined;
 

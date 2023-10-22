@@ -10,30 +10,30 @@ import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "MaskedWalletCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MaskedWallet extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<MaskedWallet> CREATOR = new zzt();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     String zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     String[] zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     String zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     zza zze;
-    @SafeParcelable.Field(m797id = 7)
+    @SafeParcelable.Field(m1089id = 7)
     zza zzf;
-    @SafeParcelable.Field(m797id = 8)
+    @SafeParcelable.Field(m1089id = 8)
     LoyaltyWalletObject[] zzg;
-    @SafeParcelable.Field(m797id = 9)
+    @SafeParcelable.Field(m1089id = 9)
     OfferWalletObject[] zzh;
-    @SafeParcelable.Field(m797id = 10)
+    @SafeParcelable.Field(m1089id = 10)
     UserAddress zzi;
-    @SafeParcelable.Field(m797id = 11)
+    @SafeParcelable.Field(m1089id = 11)
     UserAddress zzj;
-    @SafeParcelable.Field(m797id = 12)
+    @SafeParcelable.Field(m1089id = 12)
     InstrumentInfo[] zzk;
 
     private MaskedWallet() {
@@ -58,7 +58,7 @@ public final class MaskedWallet extends AbstractSafeParcelable implements Reflec
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public MaskedWallet(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) String str2, @SafeParcelable.Param(m796id = 4) String[] strArr, @SafeParcelable.Param(m796id = 5) String str3, @SafeParcelable.Param(m796id = 6) zza zzaVar, @SafeParcelable.Param(m796id = 7) zza zzaVar2, @SafeParcelable.Param(m796id = 8) LoyaltyWalletObject[] loyaltyWalletObjectArr, @SafeParcelable.Param(m796id = 9) OfferWalletObject[] offerWalletObjectArr, @SafeParcelable.Param(m796id = 10) UserAddress userAddress, @SafeParcelable.Param(m796id = 11) UserAddress userAddress2, @SafeParcelable.Param(m796id = 12) InstrumentInfo[] instrumentInfoArr) {
+    public MaskedWallet(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2, @SafeParcelable.Param(m1088id = 4) String[] strArr, @SafeParcelable.Param(m1088id = 5) String str3, @SafeParcelable.Param(m1088id = 6) zza zzaVar, @SafeParcelable.Param(m1088id = 7) zza zzaVar2, @SafeParcelable.Param(m1088id = 8) LoyaltyWalletObject[] loyaltyWalletObjectArr, @SafeParcelable.Param(m1088id = 9) OfferWalletObject[] offerWalletObjectArr, @SafeParcelable.Param(m1088id = 10) UserAddress userAddress, @SafeParcelable.Param(m1088id = 11) UserAddress userAddress2, @SafeParcelable.Param(m1088id = 12) InstrumentInfo[] instrumentInfoArr) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = strArr;

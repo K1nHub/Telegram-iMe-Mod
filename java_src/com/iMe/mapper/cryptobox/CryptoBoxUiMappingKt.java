@@ -6,7 +6,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxUiMappingKt {
     public static final CryptoBoxItem mapToUi(CryptoBoxInfo cryptoBoxInfo, ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(cryptoBoxInfo, "<this>");

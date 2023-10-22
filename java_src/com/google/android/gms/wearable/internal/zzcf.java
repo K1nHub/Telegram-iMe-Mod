@@ -7,22 +7,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "ConsentResponseCreator")
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzcf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzcf> CREATOR = new zzcg();
-    @SafeParcelable.Field(m797id = 1)
+    @SafeParcelable.Field(m1089id = 1)
     public final int zza;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final boolean zzb;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final boolean zzc;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final boolean zzd;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public final boolean zze;
 
     @SafeParcelable.Constructor
-    public zzcf(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) boolean z, @SafeParcelable.Param(m796id = 3) boolean z2, @SafeParcelable.Param(m796id = 4) boolean z3, @SafeParcelable.Param(m796id = 5) boolean z4) {
+    public zzcf(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) boolean z2, @SafeParcelable.Param(m1088id = 4) boolean z3, @SafeParcelable.Param(m1088id = 5) boolean z4) {
         this.zza = i;
         this.zzb = z;
         this.zzc = z2;

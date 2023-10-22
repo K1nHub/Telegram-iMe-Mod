@@ -642,7 +642,7 @@ public final class Format implements Bundleable {
                 i++;
             }
             sb.append(", drm=[");
-            Joiner.m766on(',').appendTo(sb, linkedHashSet);
+            Joiner.m1058on(',').appendTo(sb, linkedHashSet);
             sb.append(']');
         }
         if (format.width != -1 && format.height != -1) {
@@ -683,7 +683,7 @@ public final class Format implements Bundleable {
                 arrayList.add("forced");
             }
             sb.append(", selectionFlags=[");
-            Joiner.m766on(',').appendTo(sb, arrayList);
+            Joiner.m1058on(',').appendTo(sb, arrayList);
             sb.append("]");
         }
         if (format.roleFlags != 0) {
@@ -734,7 +734,7 @@ public final class Format implements Bundleable {
                 arrayList2.add("trick-play");
             }
             sb.append(", roleFlags=[");
-            Joiner.m766on(',').appendTo(sb, arrayList2);
+            Joiner.m1058on(',').appendTo(sb, arrayList2);
             sb.append("]");
         }
         return sb.toString();

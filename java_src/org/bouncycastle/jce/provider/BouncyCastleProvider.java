@@ -22,7 +22,7 @@ import org.bouncycastle.pqc.jcajce.provider.rainbow.RainbowKeyFactorySpi;
 import org.bouncycastle.pqc.jcajce.provider.sphincs.Sphincs256KeyFactorySpi;
 import org.bouncycastle.pqc.jcajce.provider.xmss.XMSSKeyFactorySpi;
 import org.bouncycastle.pqc.jcajce.provider.xmss.XMSSMTKeyFactorySpi;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BouncyCastleProvider extends Provider implements ConfigurableProvider {
     private static final String[] ASYMMETRIC_CIPHERS;
     private static final String[] ASYMMETRIC_GENERIC;

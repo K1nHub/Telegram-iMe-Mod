@@ -6,21 +6,21 @@
 
 
 # instance fields
-.field final synthetic a:Lj$/util/m;
+.field final synthetic a:Lj$/util/l;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/m;)V
+.method private synthetic constructor <init>(Lj$/util/l;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iput-object p1, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/m;)Ljava/util/PrimitiveIterator$OfDouble;
+.method public static synthetic a(Lj$/util/l;)Ljava/util/PrimitiveIterator$OfDouble;
     .locals 1
 
     if-nez p0, :cond_0
@@ -43,7 +43,7 @@
     :cond_1
     new-instance v0, Lj$/wrappers/b;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/b;-><init>(Lj$/util/m;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/b;-><init>(Lj$/util/l;)V
 
     return-object v0
 .end method
@@ -53,9 +53,9 @@
 .method public synthetic forEachRemaining(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
-    invoke-interface {v0, p1}, Lj$/util/o;->forEachRemaining(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lj$/util/n;->forEachRemaining(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -63,13 +63,13 @@
 .method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/m;->forEachRemaining(Lj$/util/function/Consumer;)V
+    invoke-interface {v0, p1}, Lj$/util/l;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -77,13 +77,13 @@
 .method public synthetic forEachRemaining(Ljava/util/function/DoubleConsumer;)V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
-    invoke-static {p1}, Lj$/wrappers/z;->b(Ljava/util/function/DoubleConsumer;)Lj$/util/function/f;
+    invoke-static {p1}, Lj$/wrappers/y;->b(Ljava/util/function/DoubleConsumer;)Lj$/util/function/f;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/m;->e(Lj$/util/function/f;)V
+    invoke-interface {v0, p1}, Lj$/util/l;->e(Lj$/util/function/f;)V
 
     return-void
 .end method
@@ -91,7 +91,7 @@
 .method public synthetic hasNext()Z
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
     invoke-interface {v0}, Lj$/util/Iterator;->hasNext()Z
 
@@ -103,9 +103,9 @@
 .method public synthetic next()Ljava/lang/Double;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
-    invoke-interface {v0}, Lj$/util/m;->next()Ljava/lang/Double;
+    invoke-interface {v0}, Lj$/util/l;->next()Ljava/lang/Double;
 
     move-result-object v0
 
@@ -115,7 +115,7 @@
 .method public synthetic next()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
     invoke-interface {v0}, Lj$/util/Iterator;->next()Ljava/lang/Object;
 
@@ -127,9 +127,9 @@
 .method public synthetic nextDouble()D
     .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
-    invoke-interface {v0}, Lj$/util/m;->nextDouble()D
+    invoke-interface {v0}, Lj$/util/l;->nextDouble()D
 
     move-result-wide v0
 
@@ -139,7 +139,7 @@
 .method public synthetic remove()V
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/m;
+    iget-object v0, p0, Lj$/wrappers/b;->a:Lj$/util/l;
 
     invoke-interface {v0}, Lj$/util/Iterator;->remove()V
 

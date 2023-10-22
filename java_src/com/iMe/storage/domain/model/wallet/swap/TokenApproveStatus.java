@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.wallet.swap;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenApproveStatus.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum TokenApproveStatus {
     ALLOWED,
     ERROR,
@@ -13,7 +13,7 @@ public enum TokenApproveStatus {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: TokenApproveStatus.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

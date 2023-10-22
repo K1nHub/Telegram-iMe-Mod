@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: SocialWebScreen.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 /* synthetic */ class SocialWebScreen$onCreate$2 extends AdaptedFunctionReference implements Function2<SocialSideEffects, Continuation<? super Unit>, Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SocialWebScreen$onCreate$2(Object obj) {

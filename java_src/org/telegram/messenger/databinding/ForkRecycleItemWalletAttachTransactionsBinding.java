@@ -6,19 +6,11 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.state.GlobalStateLayout;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletAttachTransactionsBinding implements ViewBinding {
-    private final GlobalStateLayout rootView;
-
     private ForkRecycleItemWalletAttachTransactionsBinding(GlobalStateLayout globalStateLayout, GlobalStateLayout globalStateLayout2, RecyclerView recyclerView) {
-        this.rootView = globalStateLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public GlobalStateLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletAttachTransactionsBinding inflate(LayoutInflater layoutInflater) {
@@ -26,7 +18,7 @@ public final class ForkRecycleItemWalletAttachTransactionsBinding implements Vie
     }
 
     public static ForkRecycleItemWalletAttachTransactionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_attach_transactions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_attach_transactions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,7 +27,7 @@ public final class ForkRecycleItemWalletAttachTransactionsBinding implements Vie
 
     public static ForkRecycleItemWalletAttachTransactionsBinding bind(View view) {
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) view;
-        int i = C3473R.C3476id.recycle_transactions;
+        int i = C3630R.C3633id.recycle_transactions;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkRecycleItemWalletAttachTransactionsBinding(globalStateLayout, globalStateLayout, recyclerView);

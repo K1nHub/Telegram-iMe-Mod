@@ -39,7 +39,7 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import com.google.android.material.stateful.ExtendableSavedState;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FloatingActionButton extends VisibilityAwareImageButton implements TintableBackgroundView, TintableImageSourceView, ExpandableWidget, Shapeable, CoordinatorLayout.AttachedBehavior {
     private ColorStateList backgroundTint;
     private PorterDuff.Mode backgroundTintMode;
@@ -56,7 +56,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
     private int size;
     private final Rect touchArea;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class OnVisibilityChangedListener {
         public void onHidden(FloatingActionButton floatingActionButton) {
         }
@@ -466,7 +466,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         return super.onTouchEvent(motionEvent);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Behavior extends BaseBehavior<FloatingActionButton> {
         public Behavior() {
         }
@@ -476,7 +476,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     protected static class BaseBehavior<T extends FloatingActionButton> extends CoordinatorLayout.Behavior<T> {
         private boolean autoHideEnabled;
         private OnVisibilityChangedListener internalAutoHideListener;
@@ -679,7 +679,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         getImpl().addTransformationCallback(new TransformationCallbackWrapper(transformationCallback));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     class TransformationCallbackWrapper<T extends FloatingActionButton> implements FloatingActionButtonImpl.InternalTransformationCallback {
         private final TransformationCallback<T> listener;
 
@@ -757,7 +757,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public class ShadowDelegateImpl implements ShadowViewDelegate {
         ShadowDelegateImpl() {
         }

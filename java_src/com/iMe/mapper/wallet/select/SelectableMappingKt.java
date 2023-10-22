@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectableMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SelectableMappingKt {
     public static final TokenDetailed mapToDetailedToken(BinanceTokenInfo binanceTokenInfo) {
         Intrinsics.checkNotNullParameter(binanceTokenInfo, "<this>");
@@ -22,7 +22,7 @@ public final class SelectableMappingKt {
 
     public static final TokenDetailed mapToDetailedToken(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
         Intrinsics.checkNotNullParameter(binanceTokenBalanceInfo, "<this>");
-        return mapToDetailedToken(new BinanceTokenInfo(binanceTokenBalanceInfo.getAsset(), binanceTokenBalanceInfo.getAssetName(), binanceTokenBalanceInfo.getAssetShortName(), binanceTokenBalanceInfo.getLogoUrl()));
+        return mapToDetailedToken(new BinanceTokenInfo(binanceTokenBalanceInfo.getAssetCode(), binanceTokenBalanceInfo.getAssetName(), binanceTokenBalanceInfo.getAssetShortName(), binanceTokenBalanceInfo.getLogoUrl()));
     }
 
     public static final SelectableTokenBalance mapToSelectableBalance(TokenBalance tokenBalance) {

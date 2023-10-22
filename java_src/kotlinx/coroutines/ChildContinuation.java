@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.Unit;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ChildContinuation extends JobCancellingNode {
     public final CancellableContinuationImpl<?> child;
 

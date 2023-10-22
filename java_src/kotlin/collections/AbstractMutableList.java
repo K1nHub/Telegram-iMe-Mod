@@ -2,7 +2,7 @@ package kotlin.collections;
 
 import java.util.List;
 /* compiled from: AbstractMutableList.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractMutableList<E> extends java.util.AbstractList<E> implements List<E> {
     public abstract int getSize();
 

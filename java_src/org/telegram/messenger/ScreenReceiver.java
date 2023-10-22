@@ -7,7 +7,7 @@ import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ScreenReceiver extends BroadcastReceiver {
     private Lazy<CryptoAccessManager> accessManager = KoinJavaComponent.inject(CryptoAccessManager.class);
 
@@ -19,14 +19,14 @@ public class ScreenReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("screen off");
+                FileLog.m100d("screen off");
             }
             ConnectionsManager.getInstance(UserConfig.selectedAccount).setAppPaused(true, true);
             ApplicationLoader.isScreenOn = false;
             resetWalletSession();
         } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("screen on");
+                FileLog.m100d("screen on");
             }
             ConnectionsManager.getInstance(UserConfig.selectedAccount).setAppPaused(false, true);
             ApplicationLoader.isScreenOn = true;

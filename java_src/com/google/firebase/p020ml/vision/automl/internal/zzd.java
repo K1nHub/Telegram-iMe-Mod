@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import com.google.android.gms.internal.firebase_ml.zza;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zzd */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzd extends zza implements zza {
     public static zza asInterface(IBinder iBinder) {
         if (iBinder == null) {

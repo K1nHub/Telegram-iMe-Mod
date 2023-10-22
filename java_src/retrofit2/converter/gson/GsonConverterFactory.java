@@ -9,7 +9,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class GsonConverterFactory extends Converter.Factory {
     private final Gson gson;
 

@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "SymbolBoxParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzal extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzal> CREATOR = new zzak();
 

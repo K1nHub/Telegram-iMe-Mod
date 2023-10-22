@@ -1,52 +1,51 @@
-.class public final synthetic Lj$/util/J;
+.class public final synthetic Lj$/util/j;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/security/PrivilegedAction;
+.implements Lj$/util/function/f;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/J;
+# instance fields
+.field public final synthetic a:Lj$/util/function/Consumer;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/J;
-
-    invoke-direct {v0}, Lj$/util/J;-><init>()V
-
-    sput-object v0, Lj$/util/J;->a:Lj$/util/J;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lj$/util/function/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/j;->a:Lj$/util/function/Consumer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()Ljava/lang/Object;
+.method public final accept(D)V
     .locals 1
 
-    sget-boolean v0, Lj$/util/K;->a:Z
+    iget-object v0, p0, Lj$/util/j;->a:Lj$/util/function/Consumer;
 
-    const-string v0, "org.openjdk.java.util.stream.tripwire"
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public j(Lj$/util/function/f;)Lj$/util/function/f;
+    .locals 1
 
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    .line 2
+    new-instance v0, Lj$/util/function/e;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lj$/util/function/e;-><init>(Lj$/util/function/f;Lj$/util/function/f;)V
 
     return-object v0
 .end method

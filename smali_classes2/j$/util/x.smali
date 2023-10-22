@@ -1,258 +1,102 @@
-.class Lj$/util/x;
-.super Ljava/lang/Object;
+.class final Lj$/util/x;
+.super Lj$/util/B;
 
 # interfaces
-.implements Lj$/util/m;
-.implements Lj$/util/function/f;
-.implements Lj$/util/Iterator;
-
-
-# instance fields
-.field a:Z
-
-.field b:D
-
-.field final synthetic c:Lj$/util/s$a;
+.implements Lj$/util/Spliterator$a;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s$a;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/x;->c:Lj$/util/s$a;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lj$/util/x;->a:Z
+    invoke-direct {p0}, Lj$/util/B;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(D)V
-    .locals 1
+.method public synthetic b(Lj$/util/function/Consumer;)Z
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p0, p1}, Lj$/util/k;->f(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)Z
 
-    iput-boolean v0, p0, Lj$/util/x;->a:Z
+    move-result p1
 
-    iput-wide p1, p0, Lj$/util/x;->b:D
-
-    return-void
+    return p1
 .end method
 
 .method public e(Lj$/util/function/f;)V
-    .locals 2
-
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    :goto_0
-    invoke-virtual {p0}, Lj$/util/x;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lj$/util/x;->nextDouble()D
-
-    move-result-wide v0
-
-    invoke-interface {p1, v0, v1}, Lj$/util/function/f;->accept(D)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public forEachRemaining(Lj$/util/function/Consumer;)V
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Lj$/util/function/f;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lj$/util/function/f;
-
-    invoke-virtual {p0, p1}, Lj$/util/x;->e(Lj$/util/function/f;)V
-
-    goto :goto_1
-
-    .line 2
-    :cond_0
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3
-    sget-boolean v0, Lj$/util/K;->a:Z
-
-    if-nez v0, :cond_2
-
-    .line 4
-    :goto_0
-    invoke-virtual {p0}, Lj$/util/x;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lj$/util/x;->nextDouble()D
-
-    move-result-wide v0
-
-    .line 5
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return-void
-
-    .line 6
-    :cond_2
-    const-class p1, Lj$/util/x;
-
-    const-string v0, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)"
-
-    invoke-static {p1, v0}, Lj$/util/K;->a(Ljava/lang/Class;Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public bridge synthetic forEachRemaining(Ljava/lang/Object;)V
     .locals 0
 
-    .line 7
-    check-cast p1, Lj$/util/function/f;
-
-    invoke-virtual {p0, p1}, Lj$/util/x;->e(Lj$/util/function/f;)V
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public hasNext()Z
-    .locals 1
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
 
-    iget-boolean v0, p0, Lj$/util/x;->a:Z
+    invoke-static {p0, p1}, Lj$/util/k;->a(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)V
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lj$/util/x;->c:Lj$/util/s$a;
-
-    invoke-interface {v0, p0}, Lj$/util/s$a;->k(Lj$/util/function/f;)Z
-
-    :cond_0
-    iget-boolean v0, p0, Lj$/util/x;->a:Z
-
-    return v0
+    return-void
 .end method
 
-.method public j(Lj$/util/function/f;)Lj$/util/function/f;
+.method public getComparator()Ljava/util/Comparator;
     .locals 1
 
     .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 2
-    new-instance v0, Lj$/util/function/e;
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/e;-><init>(Lj$/util/function/f;Lj$/util/function/f;)V
-
-    return-object v0
+    throw v0
 .end method
 
-.method public next()Ljava/lang/Double;
+.method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    .line 1
-    sget-boolean v0, Lj$/util/K;->a:Z
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lj$/util/x;->nextDouble()D
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const-class v0, Lj$/util/x;
-
-    const-string v1, "{0} calling PrimitiveIterator.OfDouble.nextLong()"
-
-    invoke-static {v0, v1}, Lj$/util/K;->a(Ljava/lang/Class;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public bridge synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 2
-    invoke-virtual {p0}, Lj$/util/x;->next()Ljava/lang/Double;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public nextDouble()D
-    .locals 2
-
-    iget-boolean v0, p0, Lj$/util/x;->a:Z
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lj$/util/x;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lj$/util/x;->a:Z
-
-    iget-wide v0, p0, Lj$/util/x;->b:D
 
     return-wide v0
 .end method
 
-.method public synthetic remove()V
-    .locals 1
+.method public synthetic hasCharacteristics(I)Z
+    .locals 0
 
-    invoke-static {p0}, Lj$/util/Iterator$-CC;->a(Ljava/util/Iterator;)V
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public n(Lj$/util/function/f;)Z
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$a;
+    .locals 1
 
     const/4 v0, 0x0
 
-    throw v0
+    return-object v0
+.end method
+
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

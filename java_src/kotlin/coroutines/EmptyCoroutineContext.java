@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CoroutineContextImpl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class EmptyCoroutineContext implements CoroutineContext, Serializable {
     public static final EmptyCoroutineContext INSTANCE = new EmptyCoroutineContext();
 

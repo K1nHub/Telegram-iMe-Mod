@@ -200,7 +200,89 @@
     return-object v0
 .end method
 
-.method static c(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+.method public static c(Ljava/lang/Iterable;Lj$/util/function/Consumer;)V
+    .locals 2
+
+    sget-object v0, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
+
+    if-nez v0, :cond_0
+
+    :try_start_0
+    sget-object v0, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/Error;
+
+    const-string v0, "Runtime illegal access in synchronized collection forEach fall-back."
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/Error;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-enter v0
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
+
+    :try_start_2
+    sget-object v1, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw p0
+    :try_end_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3} :catch_1
+
+    :catch_1
+    move-exception p0
+
+    new-instance p1, Ljava/lang/Error;
+
+    const-string v0, "Runtime illegal access in synchronized collection forEach."
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/Error;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method static d(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
     .locals 2
 
     sget-object v0, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
@@ -286,7 +368,117 @@
     throw p1
 .end method
 
-.method static d(Ljava/util/List;Ljava/util/Comparator;)V
+.method static e(Ljava/util/List;Lj$/util/function/UnaryOperator;)V
+    .locals 2
+
+    sget-object v0, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
+
+    if-nez v0, :cond_1
+
+    :try_start_0
+    sget-object v0, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    .line 1
+    instance-of v0, p0, Lj$/util/List;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/List;
+
+    invoke-interface {p0, p1}, Lj$/util/List;->replaceAll(Lj$/util/function/UnaryOperator;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0, p1}, Lj$/util/List$-CC;->$default$replaceAll(Ljava/util/List;Lj$/util/function/UnaryOperator;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    .line 2
+    new-instance p1, Ljava/lang/Error;
+
+    const-string v0, "Runtime illegal access in synchronized list replaceAll fall-back."
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/Error;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-enter v0
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
+
+    :try_start_2
+    sget-object v1, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    .line 3
+    instance-of v1, p0, Lj$/util/List;
+
+    if-eqz v1, :cond_2
+
+    check-cast p0, Lj$/util/List;
+
+    invoke-interface {p0, p1}, Lj$/util/List;->replaceAll(Lj$/util/function/UnaryOperator;)V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {p0, p1}, Lj$/util/List$-CC;->$default$replaceAll(Ljava/util/List;Lj$/util/function/UnaryOperator;)V
+
+    .line 4
+    :goto_1
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw p0
+    :try_end_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3} :catch_1
+
+    :catch_1
+    move-exception p0
+
+    new-instance p1, Ljava/lang/Error;
+
+    const-string v0, "Runtime illegal access in synchronized list replaceAll."
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/Error;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method static f(Ljava/util/List;Ljava/util/Comparator;)V
     .locals 2
 
     sget-object v0, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
@@ -302,7 +494,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    invoke-static {p0, p1}, Lj$/util/a;->v(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {p0, p1}, Lj$/util/k;->r(Ljava/util/List;Ljava/util/Comparator;)V
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -338,7 +530,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    invoke-static {p0, p1}, Lj$/util/a;->v(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {p0, p1}, Lj$/util/k;->r(Ljava/util/List;Ljava/util/Comparator;)V
 
     monitor-exit v0
 

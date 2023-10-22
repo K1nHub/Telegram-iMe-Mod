@@ -3,7 +3,7 @@ package com.iMe.manager.common;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FeatureAvailableManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FeatureAvailableManager$Token {
     public static final FeatureAvailableManager$Token INSTANCE = new FeatureAvailableManager$Token();
 

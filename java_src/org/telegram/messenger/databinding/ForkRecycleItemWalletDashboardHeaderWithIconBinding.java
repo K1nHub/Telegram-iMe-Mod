@@ -8,18 +8,10 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDashboardHeaderWithIconBinding implements ViewBinding {
-    private final LinearLayout rootView;
-
     private ForkRecycleItemWalletDashboardHeaderWithIconBinding(LinearLayout linearLayout, AppCompatImageView appCompatImageView, LinearLayout linearLayout2, AppCompatTextView appCompatTextView) {
-        this.rootView = linearLayout;
-    }
-
-    @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
-        return this.rootView;
     }
 
     public static ForkRecycleItemWalletDashboardHeaderWithIconBinding inflate(LayoutInflater layoutInflater) {
@@ -27,7 +19,7 @@ public final class ForkRecycleItemWalletDashboardHeaderWithIconBinding implement
     }
 
     public static ForkRecycleItemWalletDashboardHeaderWithIconBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_dashboard_header_with_icon, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_dashboard_header_with_icon, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,11 +27,11 @@ public final class ForkRecycleItemWalletDashboardHeaderWithIconBinding implement
     }
 
     public static ForkRecycleItemWalletDashboardHeaderWithIconBinding bind(View view) {
-        int i = C3473R.C3476id.header_info_icon;
+        int i = C3630R.C3633id.header_info_icon;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            int i2 = C3473R.C3476id.text_wallet_header;
+            int i2 = C3630R.C3633id.text_wallet_header;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i2);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemWalletDashboardHeaderWithIconBinding(linearLayout, appCompatImageView, linearLayout, appCompatTextView);

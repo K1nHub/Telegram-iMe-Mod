@@ -8,16 +8,19 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC$ChannelParticipant;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$ChatFull;
+import org.telegram.tgnet.TLRPC$TL_authorization;
 import org.telegram.tgnet.TLRPC$TL_exportedMessageLink;
 import org.telegram.tgnet.TLRPC$TL_messages_requestUrlAuth;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
 /* compiled from: TelegramApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface TelegramApi {
     Observable<String> acceptUrlAuth(String str, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth);
 
     Completable deleteUsers(ArrayList<TLRPC$User> arrayList);
+
+    Observable<List<TLRPC$TL_authorization>> getAccountSessions();
 
     Observable<TLRPC$Chat> getChatInfoById(long j);
 
@@ -43,7 +46,7 @@ public interface TelegramApi {
 
     /* compiled from: TelegramApi.kt */
     /* renamed from: com.iMe.manager.TelegramApi$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         public static /* synthetic */ Observable getFullChatInfoById$default(TelegramApi telegramApi, long j, TLRPC$Chat tLRPC$Chat, int i, Object obj) {
             if (obj == null) {

@@ -288,7 +288,7 @@ final class MediaPeriodHolder {
                 mediaSourceList.releasePeriod(mediaPeriod);
             }
         } catch (RuntimeException e) {
-            Log.m817e(TAG, "Period release failed.", e);
+            Log.m1109e(TAG, "Period release failed.", e);
         }
     }
 }

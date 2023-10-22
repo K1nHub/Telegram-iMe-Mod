@@ -39,7 +39,7 @@
 .method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/w;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {p1}, Lj$/wrappers/v;->b(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 

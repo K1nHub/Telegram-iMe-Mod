@@ -2,14 +2,14 @@ package com.iMe.model.wallet.details;
 
 import com.iMe.fork.utils.TabbedFragmentPage;
 import com.iMe.model.common.NavigationTab;
-import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p030ui.base.mvp.MvpFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTokenDetailsNavigationTab.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFragment> {
 
     /* renamed from: id */
-    private final int f365id;
+    private final int f299id;
     private final TabbedFragmentPage<MvpFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFrag
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f365id;
+        return this.f299id;
     }
 
     public final TabbedFragmentPage<MvpFragment> getPage() {
@@ -68,7 +68,7 @@ public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFrag
     public WalletTokenDetailsNavigationTab(int i, TabbedFragmentPage<MvpFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f365id = i;
+        this.f299id = i;
         this.page = page;
     }
 }

@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.instance.InstanceFactory;
 import org.koin.core.module.Module;
 /* compiled from: KoinDefinition.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class KoinDefinition<R> {
     private final InstanceFactory<R> factory;
     private final Module module;

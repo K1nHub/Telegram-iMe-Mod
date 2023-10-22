@@ -4,7 +4,7 @@ import android.net.Uri;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DynamicLinkData.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class DynamicLinkData {
     private static final String BINANCE_PAYMENT_ID_QUERY_KEY = "binance_payment_id";
     private static final String CRYPTOBOX_ID_QUERY_KEY = "cryptobox_id";
@@ -18,7 +18,7 @@ public abstract class DynamicLinkData {
     }
 
     /* compiled from: DynamicLinkData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BinancePayment extends DynamicLinkData {
         private final String binancePayId;
 
@@ -66,7 +66,7 @@ public abstract class DynamicLinkData {
     }
 
     /* compiled from: DynamicLinkData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoBox extends DynamicLinkData {
         private final String cryptoBoxId;
 
@@ -114,7 +114,7 @@ public abstract class DynamicLinkData {
     }
 
     /* compiled from: DynamicLinkData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class NotSupported extends DynamicLinkData {
         public static final NotSupported INSTANCE = new NotSupported();
 
@@ -124,7 +124,7 @@ public abstract class DynamicLinkData {
     }
 
     /* compiled from: DynamicLinkData.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

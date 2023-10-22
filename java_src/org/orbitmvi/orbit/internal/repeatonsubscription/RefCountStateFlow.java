@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.StateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RefCountStateFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RefCountStateFlow<T> implements StateFlow<T> {
     private final SubscribedCounter subscribedCounter;
     private final StateFlow<T> upStream;

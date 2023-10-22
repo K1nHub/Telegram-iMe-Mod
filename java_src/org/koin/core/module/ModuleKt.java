@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.error.DefinitionOverrideException;
 import org.koin.core.instance.InstanceFactory;
 /* compiled from: Module.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ModuleKt {
     public static final void overrideError(InstanceFactory<?> factory, String mapping) {
         Intrinsics.checkNotNullParameter(factory, "factory");

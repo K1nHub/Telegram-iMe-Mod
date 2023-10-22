@@ -12,9 +12,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
+/* loaded from: classes4.dex */
 public final class ForkFragmentTokenManagementBinding implements ViewBinding {
     public final TextView buttonAction;
     public final ActionBarMenuItem buttonAddressOptions;
@@ -74,7 +74,6 @@ public final class ForkFragmentTokenManagementBinding implements ViewBinding {
         this.textSymbolValue = appCompatTextView14;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public FrameLayout getRoot() {
         return this.rootView;
     }
@@ -84,7 +83,7 @@ public final class ForkFragmentTokenManagementBinding implements ViewBinding {
     }
 
     public static ForkFragmentTokenManagementBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_token_management, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_token_management, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -92,82 +91,82 @@ public final class ForkFragmentTokenManagementBinding implements ViewBinding {
     }
 
     public static ForkFragmentTokenManagementBinding bind(View view) {
-        int i = C3473R.C3476id.button_action;
+        int i = C3630R.C3633id.button_action;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3473R.C3476id.button_address_options;
+            i = C3630R.C3633id.button_address_options;
             ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
             if (actionBarMenuItem != null) {
-                i = C3473R.C3476id.button_safety_info;
+                i = C3630R.C3633id.button_safety_info;
                 AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView != null) {
-                    i = C3473R.C3476id.edit_address;
+                    i = C3630R.C3633id.edit_address;
                     EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
                     if (editText != null) {
-                        i = C3473R.C3476id.image_logo;
+                        i = C3630R.C3633id.image_logo;
                         AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView2 != null) {
-                            i = C3473R.C3476id.image_safety_status;
+                            i = C3630R.C3633id.image_safety_status;
                             AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                             if (appCompatImageView3 != null) {
-                                i = C3473R.C3476id.image_safety_status_arrow;
+                                i = C3630R.C3633id.image_safety_status_arrow;
                                 AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatImageView4 != null) {
-                                    i = C3473R.C3476id.linear_address;
+                                    i = C3630R.C3633id.linear_address;
                                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                     if (linearLayout != null) {
-                                        i = C3473R.C3476id.linear_info;
+                                        i = C3630R.C3633id.linear_info;
                                         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                                         if (constraintLayout != null) {
-                                            i = C3473R.C3476id.linear_safety;
+                                            i = C3630R.C3633id.linear_safety;
                                             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                             if (linearLayout2 != null) {
-                                                i = C3473R.C3476id.linear_verification;
+                                                i = C3630R.C3633id.linear_verification;
                                                 LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                 if (linearLayout3 != null) {
-                                                    i = C3473R.C3476id.text_address;
+                                                    i = C3630R.C3633id.text_address;
                                                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView2 != null) {
-                                                        i = C3473R.C3476id.text_address_title;
+                                                        i = C3630R.C3633id.text_address_title;
                                                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                         if (appCompatTextView != null) {
-                                                            i = C3473R.C3476id.text_decimals_title;
+                                                            i = C3630R.C3633id.text_decimals_title;
                                                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                             if (appCompatTextView2 != null) {
-                                                                i = C3473R.C3476id.text_decimals_value;
+                                                                i = C3630R.C3633id.text_decimals_value;
                                                                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                 if (appCompatTextView3 != null) {
-                                                                    i = C3473R.C3476id.text_icon_title;
+                                                                    i = C3630R.C3633id.text_icon_title;
                                                                     AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                     if (appCompatTextView4 != null) {
-                                                                        i = C3473R.C3476id.text_information_title;
+                                                                        i = C3630R.C3633id.text_information_title;
                                                                         AppCompatTextView appCompatTextView5 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                         if (appCompatTextView5 != null) {
-                                                                            i = C3473R.C3476id.text_name_title;
+                                                                            i = C3630R.C3633id.text_name_title;
                                                                             AppCompatTextView appCompatTextView6 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                             if (appCompatTextView6 != null) {
-                                                                                i = C3473R.C3476id.text_name_value;
+                                                                                i = C3630R.C3633id.text_name_value;
                                                                                 AppCompatTextView appCompatTextView7 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                 if (appCompatTextView7 != null) {
-                                                                                    i = C3473R.C3476id.text_network_title;
+                                                                                    i = C3630R.C3633id.text_network_title;
                                                                                     AppCompatTextView appCompatTextView8 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                     if (appCompatTextView8 != null) {
-                                                                                        i = C3473R.C3476id.text_network_value;
+                                                                                        i = C3630R.C3633id.text_network_value;
                                                                                         AppCompatTextView appCompatTextView9 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                         if (appCompatTextView9 != null) {
-                                                                                            i = C3473R.C3476id.text_not_found;
+                                                                                            i = C3630R.C3633id.text_not_found;
                                                                                             AppCompatTextView appCompatTextView10 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                             if (appCompatTextView10 != null) {
-                                                                                                i = C3473R.C3476id.text_safety_status;
+                                                                                                i = C3630R.C3633id.text_safety_status;
                                                                                                 AppCompatTextView appCompatTextView11 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                 if (appCompatTextView11 != null) {
-                                                                                                    i = C3473R.C3476id.text_safety_title;
+                                                                                                    i = C3630R.C3633id.text_safety_title;
                                                                                                     AppCompatTextView appCompatTextView12 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                     if (appCompatTextView12 != null) {
-                                                                                                        i = C3473R.C3476id.text_symbol_title;
+                                                                                                        i = C3630R.C3633id.text_symbol_title;
                                                                                                         AppCompatTextView appCompatTextView13 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                         if (appCompatTextView13 != null) {
-                                                                                                            i = C3473R.C3476id.text_symbol_value;
+                                                                                                            i = C3630R.C3633id.text_symbol_value;
                                                                                                             AppCompatTextView appCompatTextView14 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                                                             if (appCompatTextView14 != null) {
                                                                                                                 return new ForkFragmentTokenManagementBinding((FrameLayout) view, textView, actionBarMenuItem, appCompatImageView, editText, appCompatImageView2, appCompatImageView3, appCompatImageView4, linearLayout, constraintLayout, linearLayout2, linearLayout3, textView2, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, appCompatTextView5, appCompatTextView6, appCompatTextView7, appCompatTextView8, appCompatTextView9, appCompatTextView10, appCompatTextView11, appCompatTextView12, appCompatTextView13, appCompatTextView14);

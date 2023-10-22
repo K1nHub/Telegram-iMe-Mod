@@ -7,13 +7,13 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CornersOutlineProvider.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CornersOutlineProvider extends ViewOutlineProvider {
     private final float radius;
     private final RoundCorners roundCorners;
 
     /* compiled from: CornersOutlineProvider.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

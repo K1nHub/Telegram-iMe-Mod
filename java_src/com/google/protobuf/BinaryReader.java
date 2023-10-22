@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class BinaryReader implements Reader {
-    /* synthetic */ BinaryReader(C11921 c11921) {
+    /* synthetic */ BinaryReader(C11131 c11131) {
         this();
     }
 
@@ -23,7 +23,7 @@ abstract class BinaryReader implements Reader {
     private BinaryReader() {
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class SafeHeapReader extends BinaryReader {
         private final byte[] buffer;
         private final boolean bufferIsImmutable;
@@ -1106,7 +1106,7 @@ abstract class BinaryReader implements Reader {
         }
 
         private Object readField(WireFormat.FieldType fieldType, Class<?> cls, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            switch (C11921.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+            switch (C11131.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
                 case 1:
                     return Boolean.valueOf(readBool());
                 case 2:
@@ -1417,8 +1417,8 @@ abstract class BinaryReader implements Reader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.BinaryReader$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11921 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C11131 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {

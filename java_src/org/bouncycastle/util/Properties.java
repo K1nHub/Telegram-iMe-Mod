@@ -5,7 +5,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.security.Security;
 import java.util.Map;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Properties {
     private static final ThreadLocal threadProperties = new ThreadLocal();
 

@@ -685,7 +685,7 @@ public abstract class Timeline implements Bundleable {
                 window.firstPeriodIndex = 0;
                 Bundle bundle = window.toBundle();
                 Bundle bundle2 = new Bundle();
-                BundleUtil.putBinder(bundle2, FIELD_WINDOWS, new BundleListRetriever(ImmutableList.m761of(bundle)));
+                BundleUtil.putBinder(bundle2, FIELD_WINDOWS, new BundleListRetriever(ImmutableList.m1053of(bundle)));
                 BundleUtil.putBinder(bundle2, FIELD_PERIODS, new BundleListRetriever(arrayList));
                 bundle2.putIntArray(FIELD_SHUFFLED_WINDOW_INDICES, new int[]{0});
                 return bundle2;
@@ -706,7 +706,7 @@ public abstract class Timeline implements Bundleable {
 
     private static <T extends Bundleable> ImmutableList<T> fromBundleListRetriever(Bundleable.Creator<T> creator, IBinder iBinder) {
         if (iBinder == null) {
-            return ImmutableList.m762of();
+            return ImmutableList.m1054of();
         }
         ImmutableList.Builder builder = new ImmutableList.Builder();
         ImmutableList<Bundle> list = BundleListRetriever.getList(iBinder);

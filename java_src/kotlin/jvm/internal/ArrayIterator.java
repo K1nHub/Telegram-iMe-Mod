@@ -5,10 +5,9 @@ import java.util.NoSuchElementException;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArrayIterator.kt */
-/* loaded from: classes6.dex */
-public final class ArrayIterator<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
+/* loaded from: classes4.dex */
+final class ArrayIterator<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private final T[] array;
     private int index;
 

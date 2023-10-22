@@ -9,7 +9,7 @@ import org.orbitmvi.orbit.internal.LazyCreateContainerDecorator;
 import org.orbitmvi.orbit.internal.RealContainer;
 import org.orbitmvi.orbit.internal.TestContainerDecorator;
 /* compiled from: CoroutineScopeExtensions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CoroutineScopeExtensionsKt {
     public static final <STATE, SIDE_EFFECT> Container<STATE, SIDE_EFFECT> container(CoroutineScope coroutineScope, STATE initialState, Container.Settings settings, Function1<? super STATE, Unit> function1) {
         Intrinsics.checkNotNullParameter(coroutineScope, "<this>");

@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum SS58AddressType {
     POLKADOT((byte) 0),
     KUSAMA((byte) 2);

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_getPinnedDialogs extends TLObject {
     public static int constructor = -692498958;
     public int folder_id;

@@ -1,6 +1,6 @@
 package com.google.firebase.iid;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class InstanceIdResultImpl implements InstanceIdResult {
     private final String token;
 

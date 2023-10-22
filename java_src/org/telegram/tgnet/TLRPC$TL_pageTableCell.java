@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_pageTableCell extends TLObject {
     public static int constructor = 878078826;
     public boolean align_center;

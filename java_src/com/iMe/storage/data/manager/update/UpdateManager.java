@@ -24,7 +24,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: UpdateManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class UpdateManager {
     private final ActionGateway actionGateway;
     private final Task<AppUpdateInfo> appUpdateInfoTask;
@@ -38,7 +38,7 @@ public final class UpdateManager {
     private final TelegramGateway telegramGateway;
 
     /* compiled from: UpdateManager.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface FlexibleUpdateDownloadListener {
         void onDownloadProgress(long j, long j2);
     }
@@ -335,7 +335,7 @@ public final class UpdateManager {
     }
 
     /* compiled from: UpdateManager.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

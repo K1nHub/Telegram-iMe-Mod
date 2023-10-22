@@ -7,13 +7,13 @@ import com.iMe.storage.data.network.handlers.model.GlobalApiErrorCode;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.utils.extentions.HttpClientExtKt;
 import com.iMe.storage.domain.gateway.TelegramGateway;
-import com.iMe.storage.domain.interactor.wallet.WalletSessionInteractor;
+import com.iMe.storage.domain.interactor.wallet.SessionInteractor;
 import com.iMe.storage.domain.manager.auth.AuthManager;
 import com.iMe.storage.domain.manager.binancepay.BinancePayManager;
 import com.iMe.storage.domain.model.binancepay.BinancePayAuthType;
 import com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository;
-import com.iMe.storage.domain.utils.p030rx.RxEventBus;
-import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
+import com.iMe.storage.domain.utils.p029rx.RxEventBus;
+import com.iMe.storage.domain.utils.p029rx.event.DomainRxEvents;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
@@ -29,21 +29,21 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import timber.log.Timber;
 /* compiled from: ApiErrorInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
     private final Lazy authManager$delegate;
     private final Lazy binanceInternalRepository$delegate;
     private final Lazy binancePayManager$delegate;
     private final Gson gson;
     private final RxEventBus rxEventBus;
+    private final Lazy sessionInteractor$delegate;
     private final TelegramGateway telegramGateway;
-    private final Lazy walletSessionInteractor$delegate;
 
     /* compiled from: ApiErrorInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -85,17 +85,17 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
         }
     }
 
-    public ApiErrorInterceptor(Gson gson, TelegramGateway telegramGateway, RxEventBus rxEventBus) {
+    public ApiErrorInterceptor(Gson gson, RxEventBus rxEventBus, TelegramGateway telegramGateway) {
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
         Lazy lazy4;
         Intrinsics.checkNotNullParameter(gson, "gson");
-        Intrinsics.checkNotNullParameter(telegramGateway, "telegramGateway");
         Intrinsics.checkNotNullParameter(rxEventBus, "rxEventBus");
+        Intrinsics.checkNotNullParameter(telegramGateway, "telegramGateway");
         this.gson = gson;
-        this.telegramGateway = telegramGateway;
         this.rxEventBus = rxEventBus;
+        this.telegramGateway = telegramGateway;
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
         lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<AuthManager>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -119,29 +119,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             }
         });
         this.authManager$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinancePayManager>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$2
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.binancepay.BinancePayManager, java.lang.Object] */
-            @Override // kotlin.jvm.functions.Function0
-            public final BinancePayManager invoke() {
-                Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
-                Qualifier qualifier = r2;
-                Function0<? extends ParametersHolder> function0 = r3;
-                if (koinComponent instanceof KoinScopeComponent) {
-                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
-                } else {
-                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
-                }
-                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayManager.class), qualifier, function0);
-            }
-        });
-        this.binancePayManager$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinanceInternalRepository>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$3
+        lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinanceInternalRepository>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -162,16 +140,16 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
                 return rootScope.get(Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), qualifier, function0);
             }
         });
-        this.binanceInternalRepository$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<WalletSessionInteractor>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$4
+        this.binanceInternalRepository$delegate = lazy2;
+        lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<BinancePayManager>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
             }
 
-            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.interactor.wallet.WalletSessionInteractor, java.lang.Object] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.manager.binancepay.BinancePayManager, java.lang.Object] */
             @Override // kotlin.jvm.functions.Function0
-            public final WalletSessionInteractor invoke() {
+            public final BinancePayManager invoke() {
                 Scope rootScope;
                 KoinComponent koinComponent = KoinComponent.this;
                 Qualifier qualifier = r2;
@@ -181,10 +159,32 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
                 } else {
                     rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
                 }
-                return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), qualifier, function0);
+                return rootScope.get(Reflection.getOrCreateKotlinClass(BinancePayManager.class), qualifier, function0);
             }
         });
-        this.walletSessionInteractor$delegate = lazy4;
+        this.binancePayManager$delegate = lazy3;
+        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new Function0<SessionInteractor>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$special$$inlined$inject$default$4
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.interactor.wallet.SessionInteractor, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final SessionInteractor invoke() {
+                Scope rootScope;
+                KoinComponent koinComponent = KoinComponent.this;
+                Qualifier qualifier = r2;
+                Function0<? extends ParametersHolder> function0 = r3;
+                if (koinComponent instanceof KoinScopeComponent) {
+                    rootScope = ((KoinScopeComponent) koinComponent).getScope();
+                } else {
+                    rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
+                }
+                return rootScope.get(Reflection.getOrCreateKotlinClass(SessionInteractor.class), qualifier, function0);
+            }
+        });
+        this.sessionInteractor$delegate = lazy4;
     }
 
     @Override // org.koin.core.component.KoinComponent
@@ -196,16 +196,16 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
         return (AuthManager) this.authManager$delegate.getValue();
     }
 
-    private final BinancePayManager getBinancePayManager() {
-        return (BinancePayManager) this.binancePayManager$delegate.getValue();
-    }
-
     private final BinanceInternalRepository getBinanceInternalRepository() {
         return (BinanceInternalRepository) this.binanceInternalRepository$delegate.getValue();
     }
 
-    private final WalletSessionInteractor getWalletSessionInteractor() {
-        return (WalletSessionInteractor) this.walletSessionInteractor$delegate.getValue();
+    private final BinancePayManager getBinancePayManager() {
+        return (BinancePayManager) this.binancePayManager$delegate.getValue();
+    }
+
+    private final SessionInteractor getSessionInteractor() {
+        return (SessionInteractor) this.sessionInteractor$delegate.getValue();
     }
 
     @Override // okhttp3.Interceptor
@@ -221,56 +221,56 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             Timber.m6e(e);
             obj = null;
         }
-        if (obj != null) {
-            ApiBaseResponse apiBaseResponse = (ApiBaseResponse) obj;
-            if (apiBaseResponse.isError()) {
-                switch (WhenMappings.$EnumSwitchMapping$0[GlobalApiErrorCode.Companion.map(apiBaseResponse.getCode()).ordinal()]) {
-                    case 1:
-                        requestForceAppUpdate();
+        ApiBaseResponse apiBaseResponse = (ApiBaseResponse) obj;
+        if (apiBaseResponse != null && apiBaseResponse.isError()) {
+            GlobalApiErrorCode.Companion companion = GlobalApiErrorCode.Companion;
+            Intrinsics.checkNotNull(obj);
+            switch (WhenMappings.$EnumSwitchMapping$0[companion.map(apiBaseResponse.getCode()).ordinal()]) {
+                case 1:
+                    requestForceAppUpdate();
+                    break;
+                case 2:
+                    String accessToken = getBinancePayManager().getAccessToken();
+                    if (accessToken == null) {
+                        accessToken = "";
+                    }
+                    synchronized (this) {
+                        proceed = repeatBinanceRequestWithNewToken(accessToken, chain, request, proceed);
                         break;
-                    case 2:
-                        String accessToken = getBinancePayManager().getAccessToken();
-                        if (accessToken == null) {
-                            accessToken = "";
+                    }
+                case 3:
+                    synchronized (this) {
+                        if (getBinancePayManager().isAuthorized()) {
+                            getBinancePayManager().logout();
+                            this.rxEventBus.publish(DomainRxEvents.BinanceExpiredSession.INSTANCE);
+                        }
+                        Unit unit = Unit.INSTANCE;
+                        break;
+                    }
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    String refreshToken = getAuthManager().getRefreshToken();
+                    if (refreshToken == null) {
+                        refreshToken = "";
+                    }
+                    if (refreshToken.length() > 0) {
+                        String accessToken2 = getAuthManager().getAccessToken();
+                        if (accessToken2 == null) {
+                            accessToken2 = "";
                         }
                         synchronized (this) {
-                            proceed = repeatBinanceRequestWithNewToken(accessToken, chain, request, proceed);
+                            proceed = repeatRequestWithNewToken(accessToken2, chain, request, proceed);
                             break;
                         }
-                    case 3:
-                        synchronized (this) {
-                            if (getBinancePayManager().isAuthorized()) {
-                                getBinancePayManager().logout();
-                                this.rxEventBus.publish(DomainRxEvents.BinanceExpiredSession.INSTANCE);
-                            }
-                            Unit unit = Unit.INSTANCE;
-                            break;
-                        }
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                        String refreshToken = getAuthManager().getRefreshToken();
-                        if (refreshToken == null) {
-                            refreshToken = "";
-                        }
-                        if (refreshToken.length() > 0) {
-                            String accessToken2 = getAuthManager().getAccessToken();
-                            if (accessToken2 == null) {
-                                accessToken2 = "";
-                            }
-                            synchronized (this) {
-                                proceed = repeatRequestWithNewToken(accessToken2, chain, request, proceed);
-                                break;
-                            }
-                        } else {
-                            forceWalletLogout();
-                            break;
-                        }
-                    case 8:
+                    } else {
                         forceWalletLogout();
                         break;
-                }
+                    }
+                case 8:
+                    forceWalletLogout();
+                    break;
             }
         }
         return proceed;
@@ -303,7 +303,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             accessToken = "";
         }
         if (Intrinsics.areEqual(str, accessToken)) {
-            if (getWalletSessionInteractor().refreshToken().blockingFirst().isSuccess()) {
+            if (getSessionInteractor().refreshToken().blockingFirst().isSuccess()) {
                 String accessToken2 = getAuthManager().getAccessToken();
                 return processNewRequest(RtspHeaders.AUTHORIZATION, chain, request, accessToken2 != null ? accessToken2 : "");
             }

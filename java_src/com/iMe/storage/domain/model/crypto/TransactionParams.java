@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.crypto;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.send.BitcoinUnspentOutput;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
@@ -12,14 +12,14 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionParams.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TransactionParams {
     private final GasPriceInfo fastest;
     private final GasPriceInfo low;
     private final GasPriceInfo medium;
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -68,7 +68,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Ether extends TransactionParams {
         private final long chainId;
         private final GasPriceInfo fastest;
@@ -136,7 +136,7 @@ public abstract class TransactionParams {
         }
 
         public int hashCode() {
-            return (((((((getMedium().hashCode() * 31) + (getFastest() == null ? 0 : getFastest().hashCode())) * 31) + (getLow() != null ? getLow().hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId);
+            return (((((((getMedium().hashCode() * 31) + (getFastest() == null ? 0 : getFastest().hashCode())) * 31) + (getLow() != null ? getLow().hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId);
         }
 
         public String toString() {
@@ -180,7 +180,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Tron extends TransactionParams {
         private final TronBlockHeader blockHeader;
         private final String contractAddress;
@@ -263,7 +263,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Ton extends TransactionParams {
         private final GasPriceInfo medium;
         private final int walletSeqno;
@@ -329,7 +329,7 @@ public abstract class TransactionParams {
     }
 
     /* compiled from: TransactionParams.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Bitcoin extends TransactionParams {
         private final String changeAddress;
         private final GasPriceInfo fastest;

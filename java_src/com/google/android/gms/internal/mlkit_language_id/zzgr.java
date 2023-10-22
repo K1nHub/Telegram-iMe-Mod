@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzgr {
     private static final Class<?> zza = zzd();
     private static final zzhh<?, ?> zzb = zza(false);

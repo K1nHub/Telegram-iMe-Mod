@@ -8,7 +8,7 @@ import kotlin.coroutines.AbstractCoroutineContextElement;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 /* compiled from: AndroidExceptionPreHandler.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class AndroidExceptionPreHandler extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
     private volatile Object _preHandler;
 

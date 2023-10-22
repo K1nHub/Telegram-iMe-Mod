@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC$Document;
 /* compiled from: AnimatedStickerEditedInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
     private final TLRPC$Document animatedSticker;
     private final long duration;
@@ -78,8 +78,8 @@ public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
         mediaEntity.viewHeight = 640;
         mediaEntity.width = 0.75f;
         mediaEntity.height = 0.75f;
-        mediaEntity.f1499x = 0.125f;
-        mediaEntity.f1500y = 0.125f;
+        mediaEntity.f1577x = 0.125f;
+        mediaEntity.f1578y = 0.125f;
         Unit unit = Unit.INSTANCE;
         mediaEntityArr[0] = mediaEntity;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(mediaEntityArr);
@@ -109,7 +109,7 @@ public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
     }
 
     /* compiled from: AnimatedStickerEditedInfo.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -2,10 +2,12 @@ package org.koin.androidx.scope;
 
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
+import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.scope.Scope;
 /* compiled from: ComponentActivityExt.kt */
-/* loaded from: classes6.dex */
+@Metadata(m152bv = {1, 0, 3}, m151d1 = {"\u0000\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001¨\u0006\u0002"}, m150d2 = {"org/koin/androidx/scope/ComponentActivityExtKt$registerScopeForLifecycle$1", "Landroidx/lifecycle/DefaultLifecycleObserver;", "koin-android_release"}, m149k = 1, m148mv = {1, 5, 1})
+/* loaded from: classes4.dex */
 public final class ComponentActivityExtKt$registerScopeForLifecycle$1 implements DefaultLifecycleObserver {
     final /* synthetic */ Scope $scope;
 

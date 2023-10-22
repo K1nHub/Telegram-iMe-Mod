@@ -1,261 +1,220 @@
-.class public abstract Lj$/util/I;
+.class public final Lj$/util/i;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field private static final a:Lj$/util/s;
+.field private static final c:Lj$/util/i;
 
-.field private static final b:Lj$/util/s$b;
 
-.field private static final c:Lj$/util/s$c;
+# instance fields
+.field private final a:Z
 
-.field private static final d:Lj$/util/s$a;
+.field private final b:J
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lj$/util/D;
+    new-instance v0, Lj$/util/i;
 
-    invoke-direct {v0}, Lj$/util/D;-><init>()V
+    invoke-direct {v0}, Lj$/util/i;-><init>()V
 
-    sput-object v0, Lj$/util/I;->a:Lj$/util/s;
-
-    new-instance v0, Lj$/util/B;
-
-    invoke-direct {v0}, Lj$/util/B;-><init>()V
-
-    sput-object v0, Lj$/util/I;->b:Lj$/util/s$b;
-
-    new-instance v0, Lj$/util/C;
-
-    invoke-direct {v0}, Lj$/util/C;-><init>()V
-
-    sput-object v0, Lj$/util/I;->c:Lj$/util/s$c;
-
-    new-instance v0, Lj$/util/A;
-
-    invoke-direct {v0}, Lj$/util/A;-><init>()V
-
-    sput-object v0, Lj$/util/I;->d:Lj$/util/s$a;
+    sput-object v0, Lj$/util/i;->c:Lj$/util/i;
 
     return-void
 .end method
 
-.method private static a(III)V
+.method private constructor <init>()V
     .locals 2
 
-    if-gt p1, p2, :cond_2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-ltz p1, :cond_1
+    const/4 v0, 0x0
 
-    if-gt p2, p0, :cond_0
+    iput-boolean v0, p0, Lj$/util/i;->a:Z
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lj$/util/i;->b:J
 
     return-void
+.end method
+
+.method private constructor <init>(J)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lj$/util/i;->a:Z
+
+    iput-wide p1, p0, Lj$/util/i;->b:J
+
+    return-void
+.end method
+
+.method public static a()Lj$/util/i;
+    .locals 1
+
+    sget-object v0, Lj$/util/i;->c:Lj$/util/i;
+
+    return-object v0
+.end method
+
+.method public static d(J)Lj$/util/i;
+    .locals 1
+
+    new-instance v0, Lj$/util/i;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/i;-><init>(J)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public b()J
+    .locals 2
+
+    iget-boolean v0, p0, Lj$/util/i;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lj$/util/i;->b:J
+
+    return-wide v0
 
     :cond_0
-    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    invoke-direct {p0, p2}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
+    const-string v1, "No value present"
 
-    throw p0
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public c()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lj$/util/i;->a:Z
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lj$/util/i;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
+    check-cast p1, Lj$/util/i;
 
-    invoke-direct {p0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
+    iget-boolean v1, p0, Lj$/util/i;->a:Z
 
-    throw p0
+    if-eqz v1, :cond_2
+
+    iget-boolean v3, p1, Lj$/util/i;->a:Z
+
+    if-eqz v3, :cond_2
+
+    iget-wide v3, p0, Lj$/util/i;->b:J
+
+    iget-wide v5, p1, Lj$/util/i;->b:J
+
+    cmp-long p1, v3, v5
+
+    if-nez p1, :cond_3
+
+    goto :goto_0
 
     :cond_2
-    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
+    iget-boolean p1, p1, Lj$/util/i;->a:Z
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-ne v1, p1, :cond_3
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    goto :goto_0
 
-    const-string v1, "origin("
+    :cond_3
+    move v0, v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ") > fence("
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ")"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    :goto_0
+    return v0
 .end method
 
-.method public static b()Lj$/util/s$a;
-    .locals 1
+.method public hashCode()I
+    .locals 4
 
-    sget-object v0, Lj$/util/I;->d:Lj$/util/s$a;
+    iget-boolean v0, p0, Lj$/util/i;->a:Z
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lj$/util/i;->b:J
+
+    const/16 v2, 0x20
+
+    ushr-long v2, v0, v2
+
+    xor-long/2addr v0, v2
+
+    long-to-int v0, v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
 
-.method public static c()Lj$/util/s$b;
-    .locals 1
+.method public toString()Ljava/lang/String;
+    .locals 3
 
-    sget-object v0, Lj$/util/I;->b:Lj$/util/s$b;
+    iget-boolean v0, p0, Lj$/util/i;->a:Z
 
-    return-object v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public static d()Lj$/util/s$c;
-    .locals 1
+    const/4 v0, 0x1
 
-    sget-object v0, Lj$/util/I;->c:Lj$/util/s$c;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    return-object v0
-.end method
+    iget-wide v1, p0, Lj$/util/i;->b:J
 
-.method public static e()Lj$/util/s;
-    .locals 1
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sget-object v0, Lj$/util/I;->a:Lj$/util/s;
+    move-result-object v1
 
-    return-object v0
-.end method
+    const/4 v2, 0x0
 
-.method public static f(Lj$/util/s$a;)Lj$/util/m;
-    .locals 1
+    aput-object v1, v0, v2
 
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "OptionalLong[%s]"
 
-    .line 2
-    new-instance v0, Lj$/util/x;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Lj$/util/x;-><init>(Lj$/util/s$a;)V
+    move-result-object v0
 
-    return-object v0
-.end method
+    goto :goto_0
 
-.method public static g(Lj$/util/s$b;)Lj$/util/o$a;
-    .locals 1
+    :cond_0
+    const-string v0, "OptionalLong.empty"
 
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    new-instance v0, Lj$/util/v;
-
-    invoke-direct {v0, p0}, Lj$/util/v;-><init>(Lj$/util/s$b;)V
-
-    return-object v0
-.end method
-
-.method public static h(Lj$/util/s$c;)Lj$/util/q;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    new-instance v0, Lj$/util/w;
-
-    invoke-direct {v0, p0}, Lj$/util/w;-><init>(Lj$/util/s$c;)V
-
-    return-object v0
-.end method
-
-.method public static i(Lj$/util/s;)Ljava/util/Iterator;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    new-instance v0, Lj$/util/u;
-
-    invoke-direct {v0, p0}, Lj$/util/u;-><init>(Lj$/util/s;)V
-
-    return-object v0
-.end method
-
-.method public static j([DIII)Lj$/util/s$a;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    array-length v0, p0
-
-    invoke-static {v0, p1, p2}, Lj$/util/I;->a(III)V
-
-    new-instance v0, Lj$/util/z;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/z;-><init>([DIII)V
-
-    return-object v0
-.end method
-
-.method public static k([IIII)Lj$/util/s$b;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    array-length v0, p0
-
-    invoke-static {v0, p1, p2}, Lj$/util/I;->a(III)V
-
-    new-instance v0, Lj$/util/F;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/F;-><init>([IIII)V
-
-    return-object v0
-.end method
-
-.method public static l([JIII)Lj$/util/s$c;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    array-length v0, p0
-
-    invoke-static {v0, p1, p2}, Lj$/util/I;->a(III)V
-
-    new-instance v0, Lj$/util/H;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/H;-><init>([JIII)V
-
-    return-object v0
-.end method
-
-.method public static m([Ljava/lang/Object;III)Lj$/util/s;
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    array-length v0, p0
-
-    invoke-static {v0, p1, p2}, Lj$/util/I;->a(III)V
-
-    new-instance v0, Lj$/util/y;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lj$/util/y;-><init>([Ljava/lang/Object;III)V
-
+    :goto_0
     return-object v0
 .end method

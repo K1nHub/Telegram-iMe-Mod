@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, BuilderType extends zzb<MessageType, BuilderType>> extends zzhf<MessageType, BuilderType> {
     private static Map<Object, zzjb<?, ?>> zzd = new ConcurrentHashMap();
     protected zzlx zzb = zzlx.zza();
     private int zzc = -1;
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     protected static class zza<T extends zzjb<T, ?>> extends zzhg<T> {
         private final T zza;
 
@@ -28,7 +28,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum zzg {
         public static final int zza = 1;
         public static final int zzb = 2;
@@ -48,7 +48,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
     public abstract Object zza(int i, Object obj, Object obj2);
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzc<MessageType extends zzc<MessageType, BuilderType>, BuilderType extends zzd<MessageType, BuilderType>> extends zzjb<MessageType, BuilderType> implements zzkm {
         protected zziu<zzf> zzc = zziu.zza();
 
@@ -86,7 +86,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzd<MessageType extends zzc<MessageType, BuilderType>, BuilderType extends zzd<MessageType, BuilderType>> extends zzb<MessageType, BuilderType> implements zzkm {
         protected zzd(MessageType messagetype) {
             super(messagetype);
@@ -130,7 +130,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzb<MessageType extends zzjb<MessageType, BuilderType>, BuilderType extends zzb<MessageType, BuilderType>> extends zzhe<MessageType, BuilderType> {
         protected MessageType zza;
         protected boolean zzb = false;
@@ -257,7 +257,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class zzf implements zziw<zzf> {
         final zzml zzc;
         final zzjh<?> zza = null;
@@ -312,7 +312,7 @@ public abstract class zzjb<MessageType extends zzjb<MessageType, BuilderType>, B
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class zze<ContainingType extends zzkk, Type> extends zzim<ContainingType, Type> {
         final ContainingType zza;
         final Type zzb;

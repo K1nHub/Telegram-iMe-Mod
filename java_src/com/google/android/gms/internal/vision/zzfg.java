@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Vector;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzfg {
     private final ConcurrentHashMap<zzff, List<Throwable>> zza = new ConcurrentHashMap<>(16, 0.75f, 10);
     private final ReferenceQueue<Throwable> zzb = new ReferenceQueue<>();

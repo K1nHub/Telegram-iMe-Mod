@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_sendEncryptedMultiMedia extends TLObject {
     public ArrayList<TLRPC$TL_decryptedMessage> messages = new ArrayList<>();
     public ArrayList<TLRPC$InputEncryptedFile> files = new ArrayList<>();

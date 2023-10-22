@@ -18,7 +18,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ConfigCacheClient {
     private Task<ConfigContainer> cachedContainerTask = null;
     private final ExecutorService executorService;
@@ -141,7 +141,7 @@ public class ConfigCacheClient {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class AwaitListener<TResult> implements OnSuccessListener<TResult>, OnFailureListener, OnCanceledListener {
         private final CountDownLatch latch;
 

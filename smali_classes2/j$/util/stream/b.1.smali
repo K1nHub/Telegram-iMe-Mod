@@ -2,8 +2,8 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/y;
-.implements Lj$/util/function/r;
+.implements Lj$/util/function/x;
+.implements Lj$/util/function/q;
 .implements Lj$/util/function/Consumer;
 .implements Lj$/util/function/c;
 
@@ -15,22 +15,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/m;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lj$/util/stream/b;->a:I
-
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/b;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/s;)V
+.method public synthetic constructor <init>(Lj$/util/Spliterator;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -38,6 +23,21 @@
     iput v0, p0, Lj$/util/stream/b;->a:I
 
     .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/stream/b;->b:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lj$/util/function/IntFunction;)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lj$/util/stream/b;->a:I
+
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lj$/util/stream/b;->b:Ljava/lang/Object;
@@ -223,12 +223,12 @@
 
     iget-object v0, p0, Lj$/util/stream/b;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/function/m;
+    check-cast v0, Lj$/util/function/IntFunction;
 
     sget v1, Lj$/util/stream/H1;->k:I
 
     .line 1
-    invoke-static {p1, p2, v0}, Lj$/util/stream/x2;->d(JLj$/util/function/m;)Lj$/util/stream/s1;
+    invoke-static {p1, p2, v0}, Lj$/util/stream/x2;->d(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 
     move-result-object p1
 
@@ -248,7 +248,7 @@
     :pswitch_0
     iget-object v0, p0, Lj$/util/stream/b;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/s;
+    check-cast v0, Lj$/util/Spliterator;
 
     return-object v0
 
@@ -258,7 +258,7 @@
 
     check-cast v0, Lj$/util/stream/c;
 
-    invoke-virtual {v0}, Lj$/util/stream/c;->D0()Lj$/util/s;
+    invoke-virtual {v0}, Lj$/util/stream/c;->C0()Lj$/util/Spliterator;
 
     move-result-object v0
 

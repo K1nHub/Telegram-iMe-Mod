@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.lms;
 
 import org.bouncycastle.crypto.Digest;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class LmsUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void byteArray(byte[] bArr, Digest digest) {

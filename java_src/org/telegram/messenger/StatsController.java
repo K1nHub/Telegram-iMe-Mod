@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import com.google.android.exoplayer2.ExoPlayer;
 import java.io.RandomAccessFile;
 import org.telegram.messenger.utils.ImmutableByteArrayOutputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
     private static final int TYPES_COUNT = 8;

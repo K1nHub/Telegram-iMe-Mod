@@ -1,166 +1,190 @@
-.class public Lj$/util/h;
+.class public final Lj$/util/h;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lj$/util/function/q;
-.implements Lj$/util/function/l;
+
+# static fields
+.field private static final c:Lj$/util/h;
 
 
 # instance fields
-.field private count:J
+.field private final a:Z
 
-.field private max:J
-
-.field private min:J
-
-.field private sum:J
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lj$/util/h;
+
+    invoke-direct {v0}, Lj$/util/h;-><init>()V
+
+    sput-object v0, Lj$/util/h;->c:Lj$/util/h;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide v0, 0x7fffffffffffffffL
+    const/4 v0, 0x0
 
-    iput-wide v0, p0, Lj$/util/h;->min:J
+    iput-boolean v0, p0, Lj$/util/h;->a:Z
 
-    const-wide/high16 v0, -0x8000000000000000L
-
-    iput-wide v0, p0, Lj$/util/h;->max:J
+    iput v0, p0, Lj$/util/h;->b:I
 
     return-void
+.end method
+
+.method private constructor <init>(I)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lj$/util/h;->a:Z
+
+    iput p1, p0, Lj$/util/h;->b:I
+
+    return-void
+.end method
+
+.method public static a()Lj$/util/h;
+    .locals 1
+
+    sget-object v0, Lj$/util/h;->c:Lj$/util/h;
+
+    return-object v0
+.end method
+
+.method public static d(I)Lj$/util/h;
+    .locals 1
+
+    new-instance v0, Lj$/util/h;
+
+    invoke-direct {v0, p0}, Lj$/util/h;-><init>(I)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public accept(I)V
+.method public b()I
     .locals 2
 
-    int-to-long v0, p1
+    iget-boolean v0, p0, Lj$/util/h;->a:Z
 
-    invoke-virtual {p0, v0, v1}, Lj$/util/h;->accept(J)V
+    if-eqz v0, :cond_0
 
-    return-void
+    iget v0, p0, Lj$/util/h;->b:I
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    const-string v1, "No value present"
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method public accept(J)V
-    .locals 4
-
-    iget-wide v0, p0, Lj$/util/h;->count:J
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lj$/util/h;->count:J
-
-    iget-wide v0, p0, Lj$/util/h;->sum:J
-
-    add-long/2addr v0, p1
-
-    iput-wide v0, p0, Lj$/util/h;->sum:J
-
-    iget-wide v0, p0, Lj$/util/h;->min:J
-
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lj$/util/h;->min:J
-
-    iget-wide v0, p0, Lj$/util/h;->max:J
-
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lj$/util/h;->max:J
-
-    return-void
-.end method
-
-.method public b(Lj$/util/h;)V
-    .locals 4
-
-    iget-wide v0, p0, Lj$/util/h;->count:J
-
-    iget-wide v2, p1, Lj$/util/h;->count:J
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lj$/util/h;->count:J
-
-    iget-wide v0, p0, Lj$/util/h;->sum:J
-
-    iget-wide v2, p1, Lj$/util/h;->sum:J
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lj$/util/h;->sum:J
-
-    iget-wide v0, p0, Lj$/util/h;->min:J
-
-    iget-wide v2, p1, Lj$/util/h;->min:J
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lj$/util/h;->min:J
-
-    iget-wide v0, p0, Lj$/util/h;->max:J
-
-    iget-wide v2, p1, Lj$/util/h;->max:J
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lj$/util/h;->max:J
-
-    return-void
-.end method
-
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public c()Z
     .locals 1
 
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v0, p0, Lj$/util/h;->a:Z
 
-    .line 2
-    new-instance v0, Lj$/util/function/p;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
-
-    return-object v0
+    return v0
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lj$/util/h;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lj$/util/h;
+
+    iget-boolean v1, p0, Lj$/util/h;->a:Z
+
+    if-eqz v1, :cond_2
+
+    iget-boolean v3, p1, Lj$/util/h;->a:Z
+
+    if-eqz v3, :cond_2
+
+    iget v1, p0, Lj$/util/h;->b:I
+
+    iget p1, p1, Lj$/util/h;->b:I
+
+    if-ne v1, p1, :cond_3
+
+    goto :goto_0
+
+    :cond_2
+    iget-boolean p1, p1, Lj$/util/h;->a:Z
+
+    if-ne v1, p1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v2
+
+    :goto_0
+    return v0
+.end method
+
+.method public hashCode()I
     .locals 1
 
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v0, p0, Lj$/util/h;->a:Z
 
-    .line 2
-    new-instance v0, Lj$/util/function/k;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/k;-><init>(Lj$/util/function/l;Lj$/util/function/l;)V
+    iget v0, p0, Lj$/util/h;->b:I
 
-    return-object v0
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 5
+    .locals 3
 
-    const/4 v0, 0x6
+    iget-boolean v0, p0, Lj$/util/h;->a:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const-class v1, Lj$/util/h;
+    iget v1, p0, Lj$/util/h;->b:I
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -168,92 +192,17 @@
 
     aput-object v1, v0, v2
 
-    .line 1
-    iget-wide v1, p0, Lj$/util/h;->count:J
-
-    .line 2
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    .line 3
-    iget-wide v1, p0, Lj$/util/h;->sum:J
-
-    .line 4
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    .line 5
-    iget-wide v1, p0, Lj$/util/h;->min:J
-
-    .line 6
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    .line 7
-    iget-wide v1, p0, Lj$/util/h;->count:J
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v3, v1, v3
-
-    if-lez v3, :cond_0
-
-    .line 8
-    iget-wide v3, p0, Lj$/util/h;->sum:J
-
-    long-to-double v3, v3
-
-    long-to-double v1, v1
-
-    div-double/2addr v3, v1
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v3, 0x0
-
-    .line 9
-    :goto_0
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v1
-
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    .line 10
-    iget-wide v1, p0, Lj$/util/h;->max:J
-
-    .line 11
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    const-string v1, "%s{count=%d, sum=%d, min=%d, average=%f, max=%d}"
+    const-string v1, "OptionalInt[%s]"
 
     invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "OptionalInt.empty"
+
+    :goto_0
     return-object v0
 .end method

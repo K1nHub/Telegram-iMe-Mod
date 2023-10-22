@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoFrame;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class VideoFrameDrawer {
     public static final String TAG = "VideoFrameDrawer";
     static final float[] srcPoints = {BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f};
@@ -25,7 +25,7 @@ public class VideoFrameDrawer {
         Matrix matrix2 = new Matrix(textureBuffer.getTransformMatrix());
         matrix2.preConcat(matrix);
         float[] convertMatrixFromAndroidGraphicsMatrix = RendererCommon.convertMatrixFromAndroidGraphicsMatrix(matrix2);
-        int i9 = C72871.$SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type[textureBuffer.getType().ordinal()];
+        int i9 = C76221.$SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type[textureBuffer.getType().ordinal()];
         if (i9 == 1) {
             glDrawer.drawOes(textureBuffer.getTextureId(), textureBuffer.getWidth(), textureBuffer.getHeight(), i, i2, convertMatrixFromAndroidGraphicsMatrix, i3, i4, i5, i6, i7, i8, z);
         } else if (i9 == 2) {
@@ -37,8 +37,8 @@ public class VideoFrameDrawer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.VideoFrameDrawer$1 */
-    /* loaded from: classes7.dex */
-    public static /* synthetic */ class C72871 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C76221 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type;
 
         static {
@@ -62,7 +62,7 @@ public class VideoFrameDrawer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class YuvUploader {
         private ByteBuffer copyBuffer;
         private int[] yuvTextures;
@@ -70,7 +70,7 @@ public class VideoFrameDrawer {
         private YuvUploader() {
         }
 
-        /* synthetic */ YuvUploader(C72871 c72871) {
+        /* synthetic */ YuvUploader(C76221 c76221) {
             this();
         }
 

@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.C0479C;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringNumberConversions.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumberConversionsJVMKt {
     public static Integer toIntOrNull(String str) {
         Intrinsics.checkNotNullParameter(str, "<this>");
@@ -22,7 +22,7 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
         }
         int i3 = 0;
         char charAt = str.charAt(0);
-        int compare = Intrinsics.compare(charAt, 48);
+        int compare = Intrinsics.compare((int) charAt, 48);
         int i4 = C0479C.RATE_UNSET_INT;
         int i5 = 1;
         if (compare >= 0) {
@@ -69,7 +69,7 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
         }
         int i2 = 0;
         char charAt = str.charAt(0);
-        int compare = Intrinsics.compare(charAt, 48);
+        int compare = Intrinsics.compare((int) charAt, 48);
         long j = C0479C.TIME_UNSET;
         boolean z = true;
         if (compare >= 0) {
@@ -113,5 +113,10 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
             j2 = -256204778801521550L;
         }
         return z ? Long.valueOf(j3) : Long.valueOf(-j3);
+    }
+
+    public static final Void numberFormatError(String input) {
+        Intrinsics.checkNotNullParameter(input, "input");
+        throw new NumberFormatException("Invalid number format: '" + input + '\'');
     }
 }

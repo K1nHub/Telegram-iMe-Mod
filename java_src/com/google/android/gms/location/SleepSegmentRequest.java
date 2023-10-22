@@ -13,15 +13,15 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "SleepSegmentRequestCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class SleepSegmentRequest extends AbstractSafeParcelable {
     public static final int CLASSIFY_EVENTS_ONLY = 2;
     public static final Parcelable.Creator<SleepSegmentRequest> CREATOR = new zzah();
     public static final int SEGMENT_AND_CLASSIFY_EVENTS = 0;
     public static final int SEGMENT_EVENTS_ONLY = 1;
-    @SafeParcelable.Field(getter = "getUserPreferredSleepWindow", m797id = 1)
+    @SafeParcelable.Field(getter = "getUserPreferredSleepWindow", m1089id = 1)
     private final List zza;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getRequestedDataType", m797id = 2)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getRequestedDataType", m1089id = 2)
     private final int zzb;
 
     public SleepSegmentRequest(int i) {
@@ -62,7 +62,7 @@ public class SleepSegmentRequest extends AbstractSafeParcelable {
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public SleepSegmentRequest(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) int i) {
+    public SleepSegmentRequest(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) int i) {
         this.zza = list;
         this.zzb = i;
     }

@@ -3,7 +3,7 @@ package com.google.android.gms.tasks;
 import com.google.android.gms.common.annotation.KeepForSdk;
 /* compiled from: com.google.android.gms:play-services-tasks@@18.0.2 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NativeOnCompleteListener implements OnCompleteListener<Object> {
     private final long zza;
 

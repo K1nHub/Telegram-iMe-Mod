@@ -16,7 +16,7 @@ import wallet.core.jni.Derivation;
 import wallet.core.jni.HDWallet;
 import wallet.core.jni.SegwitAddress;
 /* compiled from: BTCBlockchainCryptoWalletManagerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BTCBlockchainCryptoWalletManagerImpl extends BlockchainCryptoWalletManager {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BTCBlockchainCryptoWalletManagerImpl(CryptoPreferenceHelper cryptoPreferenceHelper) {

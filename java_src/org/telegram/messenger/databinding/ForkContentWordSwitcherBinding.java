@@ -7,9 +7,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.iMe.p031ui.custom.backup.BackupWordView;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import com.iMe.p030ui.custom.backup.BackupWordView;
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentWordSwitcherBinding implements ViewBinding {
     public final ConstraintLayout constraintWords;
     private final ConstraintLayout rootView;
@@ -21,7 +21,6 @@ public final class ForkContentWordSwitcherBinding implements ViewBinding {
         this.textTitle = appCompatTextView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public ConstraintLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkContentWordSwitcherBinding implements ViewBinding {
     }
 
     public static ForkContentWordSwitcherBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_word_switcher, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_word_switcher, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,19 +38,19 @@ public final class ForkContentWordSwitcherBinding implements ViewBinding {
     }
 
     public static ForkContentWordSwitcherBinding bind(View view) {
-        int i = C3473R.C3476id.constraint_words;
+        int i = C3630R.C3633id.constraint_words;
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout != null) {
-            i = C3473R.C3476id.text_title;
+            i = C3630R.C3633id.text_title;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3473R.C3476id.view_backup_word_1;
+                i = C3630R.C3633id.view_backup_word_1;
                 BackupWordView backupWordView = (BackupWordView) ViewBindings.findChildViewById(view, i);
                 if (backupWordView != null) {
-                    i = C3473R.C3476id.view_backup_word_2;
+                    i = C3630R.C3633id.view_backup_word_2;
                     BackupWordView backupWordView2 = (BackupWordView) ViewBindings.findChildViewById(view, i);
                     if (backupWordView2 != null) {
-                        i = C3473R.C3476id.view_backup_word_3;
+                        i = C3630R.C3633id.view_backup_word_3;
                         BackupWordView backupWordView3 = (BackupWordView) ViewBindings.findChildViewById(view, i);
                         if (backupWordView3 != null) {
                             return new ForkContentWordSwitcherBinding((ConstraintLayout) view, constraintLayout, appCompatTextView, backupWordView, backupWordView2, backupWordView3);

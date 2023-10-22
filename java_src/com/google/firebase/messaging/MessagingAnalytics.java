@@ -23,7 +23,7 @@ import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.messaging.reporting.MessagingClientEventExtension;
 import java.util.concurrent.ExecutionException;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MessagingAnalytics {
     static boolean deliveryMetricsExportToBigQueryEnabled() {
         ApplicationInfo applicationInfo;
@@ -256,7 +256,7 @@ public class MessagingAnalytics {
             return;
         }
         try {
-            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m829of("proto"), new Transformer() { // from class: com.google.firebase.messaging.MessagingAnalytics$$ExternalSyntheticLambda0
+            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m1121of("proto"), new Transformer() { // from class: com.google.firebase.messaging.MessagingAnalytics$$ExternalSyntheticLambda0
                 @Override // com.google.android.datatransport.Transformer
                 public final Object apply(Object obj) {
                     return ((MessagingClientEventExtension) obj).toByteArray();

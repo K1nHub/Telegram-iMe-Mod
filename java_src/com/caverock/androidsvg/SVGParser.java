@@ -720,7 +720,7 @@ public class SVGParser {
                     return;
                 case 2:
                 case 3:
-                    m830g(attributes);
+                    m1122g(attributes);
                     return;
                 case 4:
                     defs(attributes);
@@ -1492,7 +1492,7 @@ public class SVGParser {
     }
 
     /* renamed from: g */
-    private void m830g(Attributes attributes) throws SVGParseException {
+    private void m1122g(Attributes attributes) throws SVGParseException {
         debug("<g>", new Object[0]);
         if (this.currentElement == null) {
             throw new SVGParseException("Invalid document. Root element must be <svg>");

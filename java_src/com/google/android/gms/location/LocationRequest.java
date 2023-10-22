@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationRequestCreator")
 @SafeParcelable.Reserved({4, 5, 1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocationRequest extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new zzx();
     @Deprecated
@@ -29,35 +29,35 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
     public static final int PRIORITY_LOW_POWER = 104;
     @Deprecated
     public static final int PRIORITY_NO_POWER = 105;
-    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m797id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m1089id = 1)
     private int zza;
-    @SafeParcelable.Field(defaultValue = "3600000", getter = "getIntervalMillis", m797id = 2)
+    @SafeParcelable.Field(defaultValue = "3600000", getter = "getIntervalMillis", m1089id = 2)
     private long zzb;
-    @SafeParcelable.Field(defaultValue = "600000", getter = "getMinUpdateIntervalMillis", m797id = 3)
+    @SafeParcelable.Field(defaultValue = "600000", getter = "getMinUpdateIntervalMillis", m1089id = 3)
     private long zzc;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMaxUpdateDelayMillis", m797id = 8)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMaxUpdateDelayMillis", m1089id = 8)
     private long zzd;
-    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m797id = 10)
+    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m1089id = 10)
     private long zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MAX_VALUE", getter = "getMaxUpdates", m797id = 6)
+    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MAX_VALUE", getter = "getMaxUpdates", m1089id = 6)
     private int zzf;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMinUpdateDistanceMeters", m797id = 7)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMinUpdateDistanceMeters", m1089id = 7)
     private float zzg;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isWaitForAccurateLocation", m797id = 9)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isWaitForAccurateLocation", m1089id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(defaultValueUnchecked = "-1", getter = "getMaxUpdateAgeMillis", m797id = 11)
+    @SafeParcelable.Field(defaultValueUnchecked = "-1", getter = "getMaxUpdateAgeMillis", m1089id = 11)
     private long zzi;
-    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m797id = 12)
+    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m1089id = 12)
     private final int zzj;
-    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m797id = 13)
+    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m1089id = 13)
     private final int zzk;
-    @SafeParcelable.Field(getter = "getModuleId", m797id = 14)
+    @SafeParcelable.Field(getter = "getModuleId", m1089id = 14)
     private final String zzl;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m797id = 15)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m1089id = 15)
     private final boolean zzm;
-    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m797id = 16)
+    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m1089id = 16)
     private final WorkSource zzn;
-    @SafeParcelable.Field(getter = "getImpersonation", m797id = 17)
+    @SafeParcelable.Field(getter = "getImpersonation", m1089id = 17)
     private final com.google.android.gms.internal.location.zzd zzo;
 
     @Deprecated
@@ -361,7 +361,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         public static final long IMPLICIT_MAX_UPDATE_AGE = -1;
         public static final long IMPLICIT_MIN_UPDATE_INTERVAL = -1;
@@ -564,7 +564,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LocationRequest(@SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) long j, @SafeParcelable.Param(m796id = 3) long j2, @SafeParcelable.Param(m796id = 8) long j3, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m795id = 5) long j4, @SafeParcelable.Param(m796id = 10) long j5, @SafeParcelable.Param(m796id = 6) int i2, @SafeParcelable.Param(m796id = 7) float f, @SafeParcelable.Param(m796id = 9) boolean z, @SafeParcelable.Param(m796id = 11) long j6, @SafeParcelable.Param(m796id = 12) int i3, @SafeParcelable.Param(m796id = 13) int i4, @SafeParcelable.Param(m796id = 14) String str, @SafeParcelable.Param(m796id = 15) boolean z2, @SafeParcelable.Param(m796id = 16) WorkSource workSource, @SafeParcelable.Param(m796id = 17) com.google.android.gms.internal.location.zzd zzdVar) {
+    public LocationRequest(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) long j, @SafeParcelable.Param(m1088id = 3) long j2, @SafeParcelable.Param(m1088id = 8) long j3, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m1087id = 5) long j4, @SafeParcelable.Param(m1088id = 10) long j5, @SafeParcelable.Param(m1088id = 6) int i2, @SafeParcelable.Param(m1088id = 7) float f, @SafeParcelable.Param(m1088id = 9) boolean z, @SafeParcelable.Param(m1088id = 11) long j6, @SafeParcelable.Param(m1088id = 12) int i3, @SafeParcelable.Param(m1088id = 13) int i4, @SafeParcelable.Param(m1088id = 14) String str, @SafeParcelable.Param(m1088id = 15) boolean z2, @SafeParcelable.Param(m1088id = 16) WorkSource workSource, @SafeParcelable.Param(m1088id = 17) com.google.android.gms.internal.location.zzd zzdVar) {
         this.zza = i;
         long j7 = j;
         this.zzb = j7;

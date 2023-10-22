@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NioByteString extends ByteString.LeafByteString {
     private final ByteBuffer buffer;
 
@@ -48,18 +48,11 @@ public final class NioByteString extends ByteString.LeafByteString {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.protobuf.ByteString
-    public void copyToInternal(byte[] bArr, int i, int i2, int i3) {
+    protected void copyToInternal(byte[] bArr, int i, int i2, int i3) {
         ByteBuffer slice = this.buffer.slice();
         slice.position(i);
         slice.get(bArr, i2, i3);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.protobuf.ByteString.LeafByteString
-    public boolean equalsRange(ByteString byteString, int i, int i2) {
-        return substring(0, i2).equals(byteString.substring(i, i2 + i));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -95,12 +88,6 @@ public final class NioByteString extends ByteString.LeafByteString {
         return Utf8.isValidUtf8(this.buffer);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.ByteString
-    public int partialIsValidUtf8(int i, int i2, int i3) {
-        return Utf8.partialIsValidUtf8(i, this.buffer, i2, i3 + i2);
-    }
-
     @Override // com.google.protobuf.ByteString
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -117,17 +104,13 @@ public final class NioByteString extends ByteString.LeafByteString {
             if (obj instanceof NioByteString) {
                 return this.buffer.equals(((NioByteString) obj).buffer);
             }
-            if (obj instanceof RopeByteString) {
-                return obj.equals(this);
-            }
             return this.buffer.equals(byteString.asReadOnlyByteBuffer());
         }
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.protobuf.ByteString
-    public int partialHash(int i, int i2, int i3) {
+    protected int partialHash(int i, int i2, int i3) {
         for (int i4 = i2; i4 < i2 + i3; i4++) {
             i = (i * 31) + this.buffer.get(i4);
         }

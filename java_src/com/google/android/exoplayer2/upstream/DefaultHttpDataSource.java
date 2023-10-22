@@ -178,7 +178,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     public Map<String, List<String>> getResponseHeaders() {
         HttpURLConnection httpURLConnection = this.connection;
         if (httpURLConnection == null) {
-            return ImmutableMap.m755of();
+            return ImmutableMap.m1047of();
         }
         return new NullFilteringHeadersMap(httpURLConnection.getHeaderFields());
     }
@@ -506,7 +506,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             try {
                 httpURLConnection.disconnect();
             } catch (Exception e) {
-                Log.m817e(TAG, "Unexpected error while disconnecting", e);
+                Log.m1109e(TAG, "Unexpected error while disconnecting", e);
             }
             this.connection = null;
         }

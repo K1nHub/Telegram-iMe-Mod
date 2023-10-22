@@ -5,18 +5,18 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.authenticator.JavaNetAuthenticator;
 /* compiled from: Authenticator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface Authenticator {
     public static final Authenticator NONE;
 
     Request authenticate(Route route, Response response) throws IOException;
 
     /* compiled from: Authenticator.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
 
         /* compiled from: Authenticator.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         private static final class AuthenticatorNone implements Authenticator {
             @Override // okhttp3.Authenticator
             public Request authenticate(Route route, Response response) {

@@ -4,7 +4,7 @@ import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.internal.zzbp;
 import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzal extends zzbp {
     final /* synthetic */ StreetViewPanorama.OnStreetViewPanoramaLongClickListener zza;
 

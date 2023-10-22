@@ -42,7 +42,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Gson {
     static final String DEFAULT_DATE_PATTERN = null;
     final List<TypeAdapterFactory> builderFactories;
@@ -570,7 +570,7 @@ public final class Gson {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FutureTypeAdapter<T> extends SerializationDelegatingTypeAdapter<T> {
         private TypeAdapter<T> delegate;
 

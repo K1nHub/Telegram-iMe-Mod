@@ -12,7 +12,7 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzb extends com.google.android.play.core.internal.zzx {
     final NotificationManager zza;
     private final com.google.android.play.core.internal.zzag zzb = new com.google.android.play.core.internal.zzag("AssetPackExtractionService");

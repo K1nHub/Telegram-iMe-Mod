@@ -4,10 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
-import com.iMe.p031ui.custom.state.GlobalStateLayout;
+import com.iMe.p030ui.custom.state.GlobalStateLayout;
 import java.util.Objects;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkRecycleItemGlobalStateBinding implements ViewBinding {
     private final GlobalStateLayout rootView;
 
@@ -15,7 +15,6 @@ public final class ForkRecycleItemGlobalStateBinding implements ViewBinding {
         this.rootView = globalStateLayout;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public GlobalStateLayout getRoot() {
         return this.rootView;
     }
@@ -25,7 +24,7 @@ public final class ForkRecycleItemGlobalStateBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemGlobalStateBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_global_state, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_global_state, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

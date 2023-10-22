@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.common;
 
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class UserMetadata {
     private final KeysMap customKeys = new KeysMap(64, 1024);
     private final KeysMap internalKeys = new KeysMap(64, 8192);

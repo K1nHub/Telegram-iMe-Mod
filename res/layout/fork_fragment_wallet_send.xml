@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <org.telegram.ui.Components.RLottieImageView android:id="@id/image_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" android:layout_marginBottom="@dimen/margin_normal_20" />
+        <TextView android:textSize="@dimen/text_size_small_upper" android:gravity="center" android:id="@id/text_header" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/margin_upper" android:layout_marginRight="@dimen/margin_upper" android:layout_marginBottom="@dimen/margin_under_upper" android:layout_weight="1.0" android:layout_marginHorizontal="@dimen/margin_upper" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/linear_select_network" android:paddingTop="@dimen/margin_under_normal" android:paddingBottom="@dimen/margin_under_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_under_normal" android:paddingStart="@dimen/margin_normal_20" android:paddingEnd="@dimen/margin_under_upper" android:elevation="@dimen/wallet_card_elevation" android:paddingVertical="@dimen/margin_under_normal">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_network" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/fork_ic_network" />
+            <TextView android:textSize="@dimen/text_size_normal_upper" android:ellipsize="end" android:layout_gravity="start|center" android:id="@id/text_network" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/wallet_amount_send_select_network_title" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="@dimen/margin_under_normal" />
+            <com.iMe.ui.custom.NetworkTypeView android:id="@id/network_type_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/linear_crypto_settings" android:paddingLeft="@dimen/margin_under_upper" android:paddingTop="@dimen/margin_under_upper" android:paddingRight="@dimen/margin_under_upper" android:paddingBottom="@dimen/margin_half_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_big" android:elevation="@dimen/wallet_card_elevation" android:paddingHorizontal="@dimen/margin_under_upper">
+            <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_recipient" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.iMe.ui.custom.ChooseRecipientOptionsView android:id="@id/choice_address_buttons" android:paddingBottom="@dimen/margin_normal_20" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_token" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_comment" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_size_small_upper" android:textColor="@color/gray_message" android:id="@id/text_token_balance" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal_18" />
+                <TextView android:textSize="@dimen/text_size_small_upper" android:textColor="@color/gray_message" android:gravity="end" android:id="@id/text_token_balance_in_dollars" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <com.iMe.ui.custom.TransactionActionButtonsView android:id="@id/button_send" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.iMe.ui.custom.FeeView android:id="@id/view_fee" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_under_normal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

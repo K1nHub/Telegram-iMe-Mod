@@ -13,7 +13,7 @@ import java.io.Writer;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class JsonValueObjectEncoderContext implements ObjectEncoderContext, ValueEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final boolean ignoreNullValues;

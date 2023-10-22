@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: StakingProgrammesFilterType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum StakingProgrammesFilterType {
     RUNNING(R$string.staking_programmes_filter_active),
     FINISHED(R$string.staking_programmes_filter_completed),
@@ -22,7 +22,7 @@ public enum StakingProgrammesFilterType {
     }
 
     /* compiled from: StakingProgrammesFilterType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -9,7 +9,7 @@ import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthUseCase.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AuthUseCase {
     private final SocialRepository socialRepository;
 
@@ -25,7 +25,7 @@ public final class AuthUseCase {
     public final Map<String, String> makeAuthHeader(String authToken) {
         Map<String, String> mapOf;
         Intrinsics.checkNotNullParameter(authToken, "authToken");
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m103to(RtspHeaders.AUTHORIZATION, authToken));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to(RtspHeaders.AUTHORIZATION, authToken));
         return mapOf;
     }
 }

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_autoDownloadSettings extends TLObject {
     public static int constructor = -1163561432;
     public boolean audio_preload_next;

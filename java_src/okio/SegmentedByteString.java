@@ -5,7 +5,7 @@ import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.Intrinsics;
 import okio.internal.SegmentedByteStringKt;
 /* compiled from: SegmentedByteString.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SegmentedByteString extends ByteString {
     private final transient int[] directory;
     private final transient byte[][] segments;
@@ -115,7 +115,6 @@ public final class SegmentedByteString extends ByteString {
         return getDirectory$okio()[getSegments$okio().length - 1];
     }
 
-    @Override // okio.ByteString
     public byte[] toByteArray() {
         byte[] bArr = new byte[size()];
         int length = getSegments$okio().length;

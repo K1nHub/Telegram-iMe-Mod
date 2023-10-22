@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.math.linearalgebra;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class IntUtils {
     public static int[] clone(int[] iArr) {
         int[] iArr2 = new int[iArr.length];

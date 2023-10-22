@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.Locale;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class QueueFileLogStore implements FileLogStore {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private QueueFile logFile;
@@ -16,7 +16,7 @@ class QueueFileLogStore implements FileLogStore {
     private final File workingFile;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class LogBytes {
         public final byte[] bytes;
         public final int offset;
@@ -83,7 +83,7 @@ class QueueFileLogStore implements FileLogStore {
                     }
                 });
             } catch (IOException e) {
-                Logger.getLogger().m743e("A problem occurred while reading the Crashlytics log file.", e);
+                Logger.getLogger().m1035e("A problem occurred while reading the Crashlytics log file.", e);
             }
             return new LogBytes(bArr, iArr[0]);
         }
@@ -108,7 +108,7 @@ class QueueFileLogStore implements FileLogStore {
                 this.logFile = new QueueFile(this.workingFile);
             } catch (IOException e) {
                 Logger logger = Logger.getLogger();
-                logger.m743e("Could not open log file: " + this.workingFile, e);
+                logger.m1035e("Could not open log file: " + this.workingFile, e);
             }
         }
     }
@@ -130,7 +130,7 @@ class QueueFileLogStore implements FileLogStore {
                 this.logFile.remove();
             }
         } catch (IOException e) {
-            Logger.getLogger().m743e("There was a problem writing to the Crashlytics log.", e);
+            Logger.getLogger().m1035e("There was a problem writing to the Crashlytics log.", e);
         }
     }
 }

@@ -8,27 +8,27 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "FaceSettingsParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzf> CREATOR = new zze();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public int zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public int zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public boolean zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public boolean zze;
-    @SafeParcelable.Field(defaultValue = "-1", m797id = 7)
+    @SafeParcelable.Field(defaultValue = "-1", m1089id = 7)
     public float zzf;
 
     public zzf() {
     }
 
     @SafeParcelable.Constructor
-    public zzf(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) int i3, @SafeParcelable.Param(m796id = 5) boolean z, @SafeParcelable.Param(m796id = 6) boolean z2, @SafeParcelable.Param(m796id = 7) float f) {
+    public zzf(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) int i3, @SafeParcelable.Param(m1088id = 5) boolean z, @SafeParcelable.Param(m1088id = 6) boolean z2, @SafeParcelable.Param(m1088id = 7) float f) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

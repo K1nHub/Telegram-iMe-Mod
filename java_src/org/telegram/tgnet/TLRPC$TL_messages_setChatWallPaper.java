@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_setChatWallPaper extends TLObject {
     public static int constructor = -1879389471;
     public int flags;
 
     /* renamed from: id */
-    public int f1642id;
+    public int f1719id;
     public TLRPC$InputPeer peer;
     public TLRPC$WallPaperSettings settings;
     public TLRPC$InputWallPaper wallpaper;
@@ -27,7 +27,7 @@ public class TLRPC$TL_messages_setChatWallPaper extends TLObject {
             this.settings.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 2) != 0) {
-            abstractSerializedData.writeInt32(this.f1642id);
+            abstractSerializedData.writeInt32(this.f1719id);
         }
     }
 }

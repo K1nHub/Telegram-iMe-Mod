@@ -945,11 +945,11 @@ public class MatroskaExtractor implements Extractor {
         } else {
             if (CODEC_ID_SUBRIP.equals(track.codecId) || CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_VTT.equals(track.codecId)) {
                 if (this.blockSampleCount > 1) {
-                    Log.m814w(TAG, "Skipping subtitle sample in laced block.");
+                    Log.m1106w(TAG, "Skipping subtitle sample in laced block.");
                 } else {
                     long j2 = this.blockDurationUs;
                     if (j2 == C0479C.TIME_UNSET) {
-                        Log.m814w(TAG, "Skipping subtitle sample with no duration.");
+                        Log.m1106w(TAG, "Skipping subtitle sample with no duration.");
                     } else {
                         setSubtitleEndTime(track.codecId, j2, this.subtitleSample.getData());
                         int position = this.subtitleSample.getPosition();
@@ -1286,7 +1286,7 @@ public class MatroskaExtractor implements Extractor {
         jArr2[i] = this.durationUs - jArr3[i];
         long j = jArr2[i];
         if (j <= 0) {
-            Log.m814w(TAG, "Discarding last cue point with unexpected duration: " + j);
+            Log.m1106w(TAG, "Discarding last cue point with unexpected duration: " + j);
             iArr = Arrays.copyOf(iArr, i);
             jArr = Arrays.copyOf(jArr, i);
             jArr2 = Arrays.copyOf(jArr2, i);
@@ -1762,7 +1762,7 @@ public class MatroskaExtractor implements Extractor {
                     }
                     throw ParserException.createForMalformedContainer("Failed to find FourCC VC1 initialization data", null);
                 }
-                Log.m814w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
+                Log.m1106w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
                 return new Pair<>(MimeTypes.VIDEO_UNKNOWN, null);
             } catch (ArrayIndexOutOfBoundsException unused) {
                 throw ParserException.createForMalformedContainer("Error parsing FourCC private data", null);

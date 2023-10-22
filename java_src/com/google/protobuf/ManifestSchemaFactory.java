@@ -1,6 +1,6 @@
 package com.google.protobuf;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ManifestSchemaFactory implements SchemaFactory {
     private static final MessageInfoFactory EMPTY_FACTORY = new MessageInfoFactory() { // from class: com.google.protobuf.ManifestSchemaFactory.1
         @Override // com.google.protobuf.MessageInfoFactory
@@ -58,7 +58,7 @@ public final class ManifestSchemaFactory implements SchemaFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class CompositeMessageInfoFactory implements MessageInfoFactory {
         private MessageInfoFactory[] factories;
 

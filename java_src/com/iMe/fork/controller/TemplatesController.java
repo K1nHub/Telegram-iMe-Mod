@@ -6,8 +6,8 @@ import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p027db.dao.main.TemplatesDao;
-import com.iMe.storage.data.locale.p027db.model.templates.TemplatesDb;
+import com.iMe.storage.data.locale.p026db.dao.main.TemplatesDao;
+import com.iMe.storage.data.locale.p026db.model.templates.TemplatesDb;
 import com.iMe.storage.data.mapper.template.TemplateMappingKt;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.storage.domain.model.templates.TemplateModel;
@@ -47,7 +47,7 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.ChatObject;
@@ -68,7 +68,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: TemplatesController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TemplatesController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, TemplatesController> accountInstances = new ConcurrentHashMap<>(5);
@@ -77,7 +77,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     private long templatesChannelId;
 
     /* compiled from: TemplatesController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -160,8 +160,8 @@ public final class TemplatesController extends BaseController implements KoinCom
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TemplatesDb templatesDb : allTemplatesForUser) {
-            Pair m103to = TuplesKt.m103to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.templates = mutableMap;
@@ -176,7 +176,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                 this.templates.clear();
                 TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
                 tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(this.templatesChannelId);
-                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1566id;
+                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1644id;
                 List<TemplateModel> templates = backup.getTemplates();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(templates, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
@@ -210,13 +210,13 @@ public final class TemplatesController extends BaseController implements KoinCom
             ArrayList<TLRPC$User> arrayList2 = tLRPC$messages_Messages.users;
             Intrinsics.checkNotNullExpressionValue(arrayList2, "response.users");
             for (TLRPC$User tLRPC$User : arrayList2) {
-                longSparseArray.put(tLRPC$User.f1685id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1762id, tLRPC$User);
             }
             LongSparseArray longSparseArray2 = new LongSparseArray();
             ArrayList<TLRPC$Chat> arrayList3 = tLRPC$messages_Messages.chats;
             Intrinsics.checkNotNullExpressionValue(arrayList3, "response.chats");
             for (TLRPC$Chat tLRPC$Chat : arrayList3) {
-                longSparseArray2.put(tLRPC$Chat.f1522id, tLRPC$Chat);
+                longSparseArray2.put(tLRPC$Chat.f1600id, tLRPC$Chat);
             }
             ArrayList<TLRPC$Message> arrayList4 = tLRPC$messages_Messages.messages;
             Intrinsics.checkNotNullExpressionValue(arrayList4, "response.messages");
@@ -230,7 +230,7 @@ public final class TemplatesController extends BaseController implements KoinCom
             map = SequencesKt___SequencesKt.map(filterNot, new Function1<TLRPC$Message, Integer>() { // from class: com.iMe.fork.controller.TemplatesController$restoreBackup$1$4
                 @Override // kotlin.jvm.functions.Function1
                 public final Integer invoke(TLRPC$Message tLRPC$Message) {
-                    return Integer.valueOf(tLRPC$Message.f1546id);
+                    return Integer.valueOf(tLRPC$Message.f1624id);
                 }
             });
             CollectionsKt__MutableCollectionsKt.addAll(arrayList, map);
@@ -246,7 +246,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList5, 10);
         ArrayList arrayList6 = new ArrayList(collectionSizeOrDefault);
         for (TemplateModel templateModel : arrayList5) {
-            arrayList6.add(TuplesKt.m103to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList6.add(TuplesKt.m144to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map2, arrayList6);
         this$0.getDao().restoreBackup(this$0.getUserConfig().clientUserId, arrayList5);
@@ -591,7 +591,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* compiled from: TemplatesController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -659,7 +659,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList, 10);
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
         for (TemplateModel templateModel : arrayList) {
-            arrayList2.add(TuplesKt.m103to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList2.add(TuplesKt.m144to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map, arrayList2);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.TemplatesController$$ExternalSyntheticLambda11

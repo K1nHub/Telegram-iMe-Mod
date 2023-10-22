@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.crypto;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TronBlockHeader.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TronBlockHeader {
     private final long number;
     private final String parentHash;
@@ -55,7 +55,7 @@ public final class TronBlockHeader {
     }
 
     public int hashCode() {
-        return (((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.number) * 31) + this.txTrieRoot.hashCode()) * 31) + this.witnessAddress.hashCode()) * 31) + this.parentHash.hashCode()) * 31) + this.version) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.timestamp);
+        return (((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.number) * 31) + this.txTrieRoot.hashCode()) * 31) + this.witnessAddress.hashCode()) * 31) + this.parentHash.hashCode()) * 31) + this.version) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.timestamp);
     }
 
     public String toString() {

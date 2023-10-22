@@ -4,7 +4,7 @@ import com.iMe.storage.common.AppConfiguration$Api;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialAuthHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SocialAuthHelper {
     public static final SocialAuthHelper INSTANCE = new SocialAuthHelper();
 

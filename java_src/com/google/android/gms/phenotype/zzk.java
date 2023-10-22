@@ -3,7 +3,7 @@ package com.google.android.gms.phenotype;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzk implements Parcelable.Creator<zzi> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zzi createFromParcel(Parcel parcel) {

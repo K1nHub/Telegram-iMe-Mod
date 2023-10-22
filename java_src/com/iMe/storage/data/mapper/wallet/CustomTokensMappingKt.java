@@ -9,7 +9,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CustomTokensMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CustomTokensMappingKt {
     public static final CursoredData<TokenDetailed> mapToDomain(CustomTokensResponse customTokensResponse) {
         int collectionSizeOrDefault;

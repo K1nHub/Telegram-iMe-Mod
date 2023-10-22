@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.util.MimeTypes;
-import org.telegram.p043ui.Stories.MessageMediaStoryFull;
-import org.telegram.p043ui.Stories.MessageMediaStoryFull_old;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Stories.MessageMediaStoryFull;
+import org.telegram.p042ui.Stories.MessageMediaStoryFull_old;
+/* loaded from: classes5.dex */
 public abstract class TLRPC$MessageMedia extends TLObject {
     public String address;
     public TLRPC$Document alt_document;
@@ -21,9 +21,10 @@ public abstract class TLRPC$MessageMedia extends TLObject {
     public int heading;
 
     /* renamed from: id */
-    public int f1547id;
+    public int f1625id;
     public String last_name;
     public boolean nopremium;
+    public TLRPC$Peer peer;
     public int period;
     public String phone_number;
     public TLRPC$Photo photo;
@@ -246,7 +247,38 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 };
                 break;
             case -877523576:
-                tLRPC$MessageMedia = new TLRPC$TL_messageMediaStory();
+                tLRPC$MessageMedia = new TLRPC$MessageMedia() { // from class: org.telegram.tgnet.TLRPC$TL_messageMediaStory_layer162
+                    public static int constructor = -877523576;
+
+                    @Override // org.telegram.tgnet.TLObject
+                    public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
+                        int readInt32 = abstractSerializedData2.readInt32(z2);
+                        this.flags = readInt32;
+                        this.via_mention = (readInt32 & 2) != 0;
+                        this.user_id = abstractSerializedData2.readInt64(z2);
+                        this.f1625id = abstractSerializedData2.readInt32(z2);
+                        if ((this.flags & 1) != 0) {
+                            this.storyItem = TLRPC$StoryItem.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
+                        }
+                        TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
+                        this.peer = tLRPC$TL_peerUser;
+                        tLRPC$TL_peerUser.user_id = this.user_id;
+                    }
+
+                    @Override // org.telegram.tgnet.TLObject
+                    public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
+                        this.flags = this.storyItem != null ? this.flags | 1 : this.flags & (-2);
+                        abstractSerializedData2.writeInt32(constructor);
+                        int i2 = this.via_mention ? this.flags | 2 : this.flags & (-3);
+                        this.flags = i2;
+                        abstractSerializedData2.writeInt32(i2);
+                        abstractSerializedData2.writeInt64(this.peer.user_id);
+                        abstractSerializedData2.writeInt32(this.f1625id);
+                        if ((this.flags & 1) != 0) {
+                            this.storyItem.serializeToStream(abstractSerializedData2);
+                        }
+                    }
+                };
                 break;
             case -873313984:
                 tLRPC$MessageMedia = new TLRPC$TL_messageMediaContact() { // from class: org.telegram.tgnet.TLRPC$TL_messageMediaContact_layer131
@@ -392,6 +424,9 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                     }
                 };
                 break;
+            case 1758159491:
+                tLRPC$MessageMedia = new TLRPC$TL_messageMediaStory();
+                break;
             case 1766936791:
                 tLRPC$MessageMedia = new TLRPC$TL_messageMediaPhoto();
                 break;
@@ -493,7 +528,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                     tLRPC$TL_messageMediaDocument.document = tLRPC$TL_documentEncrypted;
                     TLRPC$Video tLRPC$Video = tLRPC$MessageMedia.video_unused;
                     tLRPC$TL_documentEncrypted.key = tLRPC$Video.key;
-                    tLRPC$TL_documentEncrypted.f1531iv = tLRPC$Video.f1689iv;
+                    tLRPC$TL_documentEncrypted.f1609iv = tLRPC$Video.f1766iv;
                 } else {
                     tLRPC$TL_messageMediaDocument.document = new TLRPC$TL_document();
                 }
@@ -501,7 +536,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 TLRPC$Document tLRPC$Document = tLRPC$TL_messageMediaDocument.document;
                 tLRPC$Document.file_reference = new byte[0];
                 TLRPC$Video tLRPC$Video2 = tLRPC$MessageMedia.video_unused;
-                tLRPC$Document.f1530id = tLRPC$Video2.f1688id;
+                tLRPC$Document.f1608id = tLRPC$Video2.f1765id;
                 tLRPC$Document.access_hash = tLRPC$Video2.access_hash;
                 tLRPC$Document.date = tLRPC$Video2.date;
                 String str = tLRPC$Video2.mime_type;
@@ -516,8 +551,8 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 tLRPC$TL_messageMediaDocument.captionLegacy = tLRPC$MessageMedia.captionLegacy;
                 TLRPC$TL_documentAttributeVideo tLRPC$TL_documentAttributeVideo = new TLRPC$TL_documentAttributeVideo();
                 TLRPC$Video tLRPC$Video3 = tLRPC$MessageMedia.video_unused;
-                tLRPC$TL_documentAttributeVideo.f1533w = tLRPC$Video3.f1690w;
-                tLRPC$TL_documentAttributeVideo.f1532h = tLRPC$Video3.f1687h;
+                tLRPC$TL_documentAttributeVideo.f1611w = tLRPC$Video3.f1767w;
+                tLRPC$TL_documentAttributeVideo.f1610h = tLRPC$Video3.f1764h;
                 tLRPC$TL_documentAttributeVideo.duration = tLRPC$Video3.duration;
                 tLRPC$TL_messageMediaDocument.document.attributes.add(tLRPC$TL_documentAttributeVideo);
                 if (tLRPC$TL_messageMediaDocument.captionLegacy == null) {
@@ -532,7 +567,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                     tLRPC$TL_messageMediaDocument.document = tLRPC$TL_documentEncrypted2;
                     TLRPC$Audio tLRPC$Audio = tLRPC$MessageMedia.audio_unused;
                     tLRPC$TL_documentEncrypted2.key = tLRPC$Audio.key;
-                    tLRPC$TL_documentEncrypted2.f1531iv = tLRPC$Audio.f1518iv;
+                    tLRPC$TL_documentEncrypted2.f1609iv = tLRPC$Audio.f1596iv;
                 } else {
                     tLRPC$TL_messageMediaDocument.document = new TLRPC$TL_document();
                 }
@@ -540,7 +575,7 @@ public abstract class TLRPC$MessageMedia extends TLObject {
                 TLRPC$Document tLRPC$Document2 = tLRPC$TL_messageMediaDocument.document;
                 tLRPC$Document2.file_reference = new byte[0];
                 TLRPC$Audio tLRPC$Audio2 = tLRPC$MessageMedia.audio_unused;
-                tLRPC$Document2.f1530id = tLRPC$Audio2.f1517id;
+                tLRPC$Document2.f1608id = tLRPC$Audio2.f1595id;
                 tLRPC$Document2.access_hash = tLRPC$Audio2.access_hash;
                 tLRPC$Document2.date = tLRPC$Audio2.date;
                 String str2 = tLRPC$Audio2.mime_type;

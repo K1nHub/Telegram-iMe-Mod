@@ -2,7 +2,7 @@ package org.bouncycastle.util.encoders;
 
 import java.io.ByteArrayOutputStream;
 import org.bouncycastle.util.Strings;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class Hex {
     private static final HexEncoder encoder = new HexEncoder();
 

@@ -12,7 +12,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: CryptoWalletApi.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CryptoWalletApi {
     @POST("prepareTransferTx")
     Observable<ApiBaseResponse<CryptoTransferDataResponse.BTC>> getBTCCryptoTransferData(@Body PrepareTransferRequest prepareTransferRequest);

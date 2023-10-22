@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class DEROctetStringParser implements ASN1OctetStringParser {
     private DefiniteLengthInputStream stream;
 

@@ -1,14 +1,23 @@
 package kotlin.jvm.internal;
 
+import java.util.List;
 import kotlin.reflect.KClass;
+import kotlin.reflect.KClassifier;
 import kotlin.reflect.KDeclarationContainer;
 import kotlin.reflect.KFunction;
+import kotlin.reflect.KMutableProperty1;
 import kotlin.reflect.KProperty0;
 import kotlin.reflect.KProperty1;
-/* loaded from: classes6.dex */
+import kotlin.reflect.KType;
+import kotlin.reflect.KTypeProjection;
+/* loaded from: classes4.dex */
 public class ReflectionFactory {
     public KFunction function(FunctionReference functionReference) {
         return functionReference;
+    }
+
+    public KMutableProperty1 mutableProperty1(MutablePropertyReference1 mutablePropertyReference1) {
+        return mutablePropertyReference1;
     }
 
     public KProperty0 property0(PropertyReference0 propertyReference0) {
@@ -34,5 +43,9 @@ public class ReflectionFactory {
     public String renderLambdaToString(FunctionBase functionBase) {
         String obj = functionBase.getClass().getGenericInterfaces()[0].toString();
         return obj.startsWith("kotlin.jvm.functions.") ? obj.substring(21) : obj;
+    }
+
+    public KType typeOf(KClassifier kClassifier, List<KTypeProjection> list, boolean z) {
+        return new TypeReference(kClassifier, list, z);
     }
 }

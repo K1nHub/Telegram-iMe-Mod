@@ -12,7 +12,7 @@ import java.util.Set;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdp<K, V> extends AbstractMap<K, V> implements Serializable {
     private static final Object zzd = new Object();
     @NullableDecl

@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: CryptoAccountItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoAccountItem extends NoChildNode {
     private final List<HorizontalActionButtonItem> actions;
     private final String address;
@@ -126,9 +126,9 @@ public final class CryptoAccountItem extends NoChildNode {
             r1 = r3
         L17:
             if (r1 == 0) goto L2a
-            int r1 = org.telegram.messenger.C3473R.string.wallet_home_crypto_account_telegram_id
+            int r1 = org.telegram.messenger.C3630R.string.wallet_home_crypto_account_telegram_id
             java.lang.Object[] r3 = new java.lang.Object[r3]
-            long r4 = r0.f1685id
+            long r4 = r0.f1762id
             java.lang.Long r0 = java.lang.Long.valueOf(r4)
             r3[r2] = r0
             java.lang.String r7 = r7.getString(r1, r3)

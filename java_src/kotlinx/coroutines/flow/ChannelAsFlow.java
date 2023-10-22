@@ -15,12 +15,12 @@ import kotlinx.coroutines.flow.internal.ChannelFlow;
 import kotlinx.coroutines.flow.internal.SendingCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Channels.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ChannelAsFlow<T> extends ChannelFlow<T> {
-    private static final /* synthetic */ AtomicIntegerFieldUpdater consumed$FU = AtomicIntegerFieldUpdater.newUpdater(ChannelAsFlow.class, "consumed");
+    private static final AtomicIntegerFieldUpdater consumed$FU = AtomicIntegerFieldUpdater.newUpdater(ChannelAsFlow.class, "consumed");
     private final ReceiveChannel<T> channel;
     private final boolean consume;
-    private volatile /* synthetic */ int consumed;
+    private volatile int consumed;
 
     public /* synthetic */ ChannelAsFlow(ReceiveChannel receiveChannel, boolean z, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(receiveChannel, z, (i2 & 4) != 0 ? EmptyCoroutineContext.INSTANCE : coroutineContext, (i2 & 8) != 0 ? -3 : i, (i2 & 16) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);

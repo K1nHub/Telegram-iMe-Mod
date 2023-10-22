@@ -1,7 +1,7 @@
 package kotlinx.coroutines;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Empty implements Incomplete {
     private final boolean isActive;
 

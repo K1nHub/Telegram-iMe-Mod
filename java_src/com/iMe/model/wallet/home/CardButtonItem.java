@@ -2,17 +2,17 @@ package com.iMe.model.wallet.home;
 
 import com.iMe.model.common.NoChildNode;
 /* compiled from: CardButtonItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CardButtonItem extends NoChildNode {
     private final int icon;
 
     /* renamed from: id */
-    private final int f366id;
+    private final int f300id;
     private final int titleResId;
 
     public static /* synthetic */ CardButtonItem copy$default(CardButtonItem cardButtonItem, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 1) != 0) {
-            i = cardButtonItem.f366id;
+            i = cardButtonItem.f300id;
         }
         if ((i4 & 2) != 0) {
             i2 = cardButtonItem.icon;
@@ -24,7 +24,7 @@ public final class CardButtonItem extends NoChildNode {
     }
 
     public final int component1() {
-        return this.f366id;
+        return this.f300id;
     }
 
     public final int component2() {
@@ -45,21 +45,21 @@ public final class CardButtonItem extends NoChildNode {
         }
         if (obj instanceof CardButtonItem) {
             CardButtonItem cardButtonItem = (CardButtonItem) obj;
-            return this.f366id == cardButtonItem.f366id && this.icon == cardButtonItem.icon && this.titleResId == cardButtonItem.titleResId;
+            return this.f300id == cardButtonItem.f300id && this.icon == cardButtonItem.icon && this.titleResId == cardButtonItem.titleResId;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.f366id * 31) + this.icon) * 31) + this.titleResId;
+        return (((this.f300id * 31) + this.icon) * 31) + this.titleResId;
     }
 
     public String toString() {
-        return "CardButtonItem(id=" + this.f366id + ", icon=" + this.icon + ", titleResId=" + this.titleResId + ')';
+        return "CardButtonItem(id=" + this.f300id + ", icon=" + this.icon + ", titleResId=" + this.titleResId + ')';
     }
 
     public final int getId() {
-        return this.f366id;
+        return this.f300id;
     }
 
     public final int getIcon() {
@@ -71,7 +71,7 @@ public final class CardButtonItem extends NoChildNode {
     }
 
     public CardButtonItem(int i, int i2, int i3) {
-        this.f366id = i;
+        this.f300id = i;
         this.icon = i2;
         this.titleResId = i3;
     }

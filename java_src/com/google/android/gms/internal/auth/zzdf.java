@@ -1,7 +1,8 @@
 package com.google.android.gms.internal.auth;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-auth-base@@18.0.4 */
 /* loaded from: classes.dex */
-final class zzdf extends zzdh {
+public final class zzdf extends zzdh {
     static final zzdf zza = new zzdf();
 
     private zzdf() {

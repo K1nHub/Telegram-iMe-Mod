@@ -6,10 +6,10 @@
 
 
 # direct methods
-.method constructor <init>(JLj$/util/function/m;)V
+.method constructor <init>(JLj$/util/function/IntFunction;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/D1;-><init>(JLj$/util/function/m;)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/D1;-><init>(JLj$/util/function/IntFunction;)V
 
     return-void
 .end method
@@ -158,7 +158,7 @@
     return-object p1
 .end method
 
-.method public m()V
+.method public l()V
     .locals 4
 
     iget v0, p0, Lj$/util/stream/D1;->b:I
@@ -211,7 +211,7 @@
     throw v0
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 3
 
     iget-object v0, p0, Lj$/util/stream/D1;->a:[Ljava/lang/Object;

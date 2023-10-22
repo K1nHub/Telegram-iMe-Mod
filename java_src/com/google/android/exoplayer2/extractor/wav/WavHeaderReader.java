@@ -21,7 +21,7 @@ final class WavHeaderReader {
             parsableByteArray.setPosition(0);
             int readInt = parsableByteArray.readInt();
             if (readInt != 1463899717) {
-                Log.m818e(TAG, "Unsupported form type: " + readInt);
+                Log.m1110e(TAG, "Unsupported form type: " + readInt);
                 return false;
             }
             return true;
@@ -79,7 +79,7 @@ final class WavHeaderReader {
     private static ChunkHeader skipToChunk(int i, ExtractorInput extractorInput, ParsableByteArray parsableByteArray) throws IOException {
         ChunkHeader peek = ChunkHeader.peek(extractorInput, parsableByteArray);
         while (peek.f194id != i) {
-            Log.m814w(TAG, "Ignoring unknown WAV chunk: " + peek.f194id);
+            Log.m1106w(TAG, "Ignoring unknown WAV chunk: " + peek.f194id);
             long j = peek.size + 8;
             if (j > 2147483647L) {
                 throw ParserException.createForUnsupportedContainerFeature("Chunk is too large (~2GB+) to skip; id: " + peek.f194id);

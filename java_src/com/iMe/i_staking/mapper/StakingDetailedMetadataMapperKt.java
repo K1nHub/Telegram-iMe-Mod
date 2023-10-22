@@ -10,12 +10,12 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadataMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDetailedMetadataMapperKt {
     public static final StakingDetailedMetadata mapToDomain(StakingDetailedMetadataResponse stakingDetailedMetadataResponse) {
         Intrinsics.checkNotNullParameter(stakingDetailedMetadataResponse, "<this>");
         long id = stakingDetailedMetadataResponse.getId();
-        String net2 = stakingDetailedMetadataResponse.getNet();
+        String net = stakingDetailedMetadataResponse.getNet();
         String name = stakingDetailedMetadataResponse.getName();
         String author = stakingDetailedMetadataResponse.getAuthor();
         String contract = stakingDetailedMetadataResponse.getContract();
@@ -40,6 +40,6 @@ public final class StakingDetailedMetadataMapperKt {
         if (minimalRank == null) {
             minimalRank = "";
         }
-        return new StakingDetailedMetadata(id, net2, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, mapToDomain4, hasEnoughFunds, companion.map(minimalRank), stakingDetailedMetadataResponse.getWebsite());
+        return new StakingDetailedMetadata(id, net, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, mapToDomain4, hasEnoughFunds, companion.map(minimalRank), stakingDetailedMetadataResponse.getWebsite());
     }
 }

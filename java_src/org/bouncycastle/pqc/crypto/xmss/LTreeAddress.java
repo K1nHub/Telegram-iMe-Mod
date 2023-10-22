@@ -2,14 +2,14 @@ package org.bouncycastle.pqc.crypto.xmss;
 
 import org.bouncycastle.pqc.crypto.xmss.XMSSAddress;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final class LTreeAddress extends XMSSAddress {
     private final int lTreeAddress;
     private final int treeHeight;
     private final int treeIndex;
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Builder extends XMSSAddress.Builder<Builder> {
         private int lTreeAddress;
         private int treeHeight;

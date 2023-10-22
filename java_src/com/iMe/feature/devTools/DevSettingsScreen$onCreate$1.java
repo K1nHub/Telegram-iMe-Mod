@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: DevSettingsScreen.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 /* synthetic */ class DevSettingsScreen$onCreate$1 extends AdaptedFunctionReference implements Function2<DevState, Continuation<? super Unit>, Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DevSettingsScreen$onCreate$1(Object obj) {

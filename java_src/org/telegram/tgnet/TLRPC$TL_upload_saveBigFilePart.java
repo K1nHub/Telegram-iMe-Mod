@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_upload_saveBigFilePart extends TLObject {
     public static int constructor = -562337987;
     public NativeByteBuffer bytes;
@@ -13,15 +13,6 @@ public class TLRPC$TL_upload_saveBigFilePart extends TLObject {
     }
 
     @Override // org.telegram.tgnet.TLObject
-    public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.file_id);
-        abstractSerializedData.writeInt32(this.file_part);
-        abstractSerializedData.writeInt32(this.file_total_parts);
-        abstractSerializedData.writeByteBuffer(this.bytes);
-    }
-
-    @Override // org.telegram.tgnet.TLObject
     public void freeResources() {
         NativeByteBuffer nativeByteBuffer;
         if (this.disableFree || (nativeByteBuffer = this.bytes) == null) {
@@ -29,5 +20,14 @@ public class TLRPC$TL_upload_saveBigFilePart extends TLObject {
         }
         nativeByteBuffer.reuse();
         this.bytes = null;
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public void serializeToStream(AbstractSerializedData abstractSerializedData) {
+        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt64(this.file_id);
+        abstractSerializedData.writeInt32(this.file_part);
+        abstractSerializedData.writeInt32(this.file_total_parts);
+        abstractSerializedData.writeByteBuffer(this.bytes);
     }
 }

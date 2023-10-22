@@ -14,7 +14,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class WebRtcAudioRecord {
     private static final long AUDIO_RECORD_THREAD_JOIN_TIMEOUT_MS = 2000;
     private static final int BITS_PER_SAMPLE = 16;
@@ -40,13 +40,13 @@ public class WebRtcAudioRecord {
     private int requestedSampleRate = OpusUtil.SAMPLE_RATE;
     private int requestedChannels = 1;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface WebRtcAudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -55,7 +55,7 @@ public class WebRtcAudioRecord {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public interface WebRtcAudioRecordSamplesReadyCallback {
         void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
     }
@@ -84,7 +84,7 @@ public class WebRtcAudioRecord {
         errorCallback = webRtcAudioRecordErrorCallback;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
@@ -119,7 +119,7 @@ public class WebRtcAudioRecord {
         audioSamplesReadyCallback = webRtcAudioRecordSamplesReadyCallback;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     private class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -161,7 +161,7 @@ public class WebRtcAudioRecord {
                             WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.this;
                             webRtcAudioRecord.nativeDataIsRecorded(read, webRtcAudioRecord.nativeAudioRecord);
                         } catch (UnsatisfiedLinkError e) {
-                            FileLog.m67e(e);
+                            FileLog.m97e(e);
                             this.keepAlive = false;
                         }
                     }
@@ -355,7 +355,7 @@ public class WebRtcAudioRecord {
         try {
             audioRecord.stop();
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
         releaseAudioResources(true);
     }
@@ -398,7 +398,7 @@ public class WebRtcAudioRecord {
         try {
             this.audioRecord.stop();
         } catch (Throwable th) {
-            FileLog.m67e(th);
+            FileLog.m97e(th);
         }
         releaseAudioResources(false);
         return true;

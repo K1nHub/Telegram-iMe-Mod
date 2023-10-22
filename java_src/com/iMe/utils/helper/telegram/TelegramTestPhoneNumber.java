@@ -2,7 +2,7 @@ package com.iMe.utils.helper.telegram;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TelegramTestPhoneNumber.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TelegramTestPhoneNumber {
     private final String confirmXCode;
     private final String number;

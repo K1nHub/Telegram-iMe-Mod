@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 import moxy.MvpPresenter;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public @interface ProvidePresenterTag {
     public static final String EMPTY = "";
 

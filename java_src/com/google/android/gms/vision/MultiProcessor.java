@@ -5,14 +5,14 @@ import androidx.annotation.RecentlyNonNull;
 import com.google.android.gms.vision.Detector;
 import java.util.HashSet;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MultiProcessor<T> implements Detector.Processor<T> {
     private Factory<T> zza;
     private SparseArray<zza> zzb;
     private int zzc;
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Factory<T> {
         @RecentlyNonNull
         Tracker<T> create(@RecentlyNonNull T t);
@@ -27,7 +27,7 @@ public class MultiProcessor<T> implements Detector.Processor<T> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private class zza {
         private Tracker<T> zza;
         private int zzb;
@@ -49,7 +49,7 @@ public class MultiProcessor<T> implements Detector.Processor<T> {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder<T> {
         private MultiProcessor<T> zza;
 

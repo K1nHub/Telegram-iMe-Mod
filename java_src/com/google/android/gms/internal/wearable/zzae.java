@@ -3,7 +3,7 @@ package com.google.android.gms.internal.wearable;
 import java.util.Collections;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzae {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ int zza(long[] jArr, long j, int i, int i2) {

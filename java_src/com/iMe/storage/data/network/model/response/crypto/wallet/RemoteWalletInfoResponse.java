@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletsInfoResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RemoteWalletInfoResponse {
     private final String address;
     private final String platform;

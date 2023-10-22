@@ -3,7 +3,7 @@ package org.telegram.messenger.audioinfo.mp3;
 import java.io.IOException;
 import java.io.InputStream;
 import org.telegram.messenger.audioinfo.util.RangeInputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ID3v2FrameBody {
     static final ThreadLocal<Buffer> textBuffer = new ThreadLocal<Buffer>() { // from class: org.telegram.messenger.audioinfo.mp3.ID3v2FrameBody.1
         /* JADX INFO: Access modifiers changed from: protected */
@@ -18,7 +18,7 @@ public class ID3v2FrameBody {
     private final ID3v2TagHeader tagHeader;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Buffer {
         byte[] bytes;
 

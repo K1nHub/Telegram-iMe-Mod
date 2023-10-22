@@ -11,22 +11,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import okio.internal.ByteStringKt;
 /* compiled from: ByteString.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ByteString implements Serializable, Comparable<ByteString> {
     public static final Companion Companion = new Companion(null);
     public static final ByteString EMPTY = new ByteString(new byte[0]);
     private final byte[] data;
     private transient int hashCode;
     private transient String utf8;
-
-    public static final ByteString encodeUtf8(String str) {
-        return Companion.encodeUtf8(str);
-    }
-
-    /* renamed from: of */
-    public static final ByteString m92of(byte... bArr) {
-        return Companion.m91of(bArr);
-    }
 
     public String utf8() {
         String utf8$okio = getUtf8$okio();
@@ -142,13 +133,6 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         ByteStringKt.commonWrite(this, buffer, i, i2);
     }
 
-    public byte[] toByteArray() {
-        byte[] data$okio = getData$okio();
-        byte[] copyOf = Arrays.copyOf(data$okio, data$okio.length);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "java.util.Arrays.copyOf(this, size)");
-        return copyOf;
-    }
-
     public byte[] internalArray$okio() {
         return getData$okio();
     }
@@ -169,7 +153,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     /* compiled from: ByteString.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public static /* synthetic */ ByteString of$default(Companion companion, byte[] bArr, int i, int i2, int i3, Object obj) {
             if ((i3 & 1) != 0) {
@@ -178,7 +162,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             if ((i3 & 2) != 0) {
                 i2 = bArr.length;
             }
-            return companion.m90of(bArr, i, i2);
+            return companion.m116of(bArr, i, i2);
         }
 
         private Companion() {
@@ -197,15 +181,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m91of(byte... data) {
-            Intrinsics.checkNotNullParameter(data, "data");
-            byte[] copyOf = Arrays.copyOf(data, data.length);
-            Intrinsics.checkNotNullExpressionValue(copyOf, "java.util.Arrays.copyOf(this, size)");
-            return new ByteString(copyOf);
-        }
-
-        /* renamed from: of */
-        public final ByteString m90of(byte[] toByteString, int i, int i2) {
+        public final ByteString m116of(byte[] toByteString, int i, int i2) {
             byte[] copyOfRange;
             Intrinsics.checkNotNullParameter(toByteString, "$this$toByteString");
             Util.checkOffsetAndCount(toByteString.length, i, i2);

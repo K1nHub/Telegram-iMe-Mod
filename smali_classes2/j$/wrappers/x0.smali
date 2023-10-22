@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Predicate;
+.implements Lj$/util/function/ToDoubleFunction;
 
 
 # instance fields
-.field final synthetic a:Lj$/util/function/Predicate;
+.field final synthetic a:Ljava/util/function/ToDoubleFunction;
 
 
 # direct methods
-.method private synthetic constructor <init>(Lj$/util/function/Predicate;)V
+.method private synthetic constructor <init>(Ljava/util/function/ToDoubleFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/x0;->a:Lj$/util/function/Predicate;
+    iput-object p1, p0, Lj$/wrappers/x0;->a:Ljava/util/function/ToDoubleFunction;
 
     return-void
 .end method
 
-.method public static synthetic a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
+.method public static synthetic a(Ljava/util/function/ToDoubleFunction;)Lj$/util/function/ToDoubleFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,90 +30,34 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/w0;
+    instance-of v0, p0, Lj$/wrappers/y0;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/w0;
+    check-cast p0, Lj$/wrappers/y0;
 
-    iget-object p0, p0, Lj$/wrappers/w0;->a:Ljava/util/function/Predicate;
+    iget-object p0, p0, Lj$/wrappers/y0;->a:Lj$/util/function/ToDoubleFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/x0;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/x0;-><init>(Lj$/util/function/Predicate;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/x0;-><init>(Ljava/util/function/ToDoubleFunction;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic and(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 1
+.method public synthetic applyAsDouble(Ljava/lang/Object;)D
+    .locals 2
 
-    iget-object v0, p0, Lj$/wrappers/x0;->a:Lj$/util/function/Predicate;
+    iget-object v0, p0, Lj$/wrappers/x0;->a:Ljava/util/function/ToDoubleFunction;
 
-    invoke-static {p1}, Lj$/wrappers/w0;->a(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
+    invoke-interface {v0, p1}, Ljava/util/function/ToDoubleFunction;->applyAsDouble(Ljava/lang/Object;)D
 
-    move-result-object p1
+    move-result-wide v0
 
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic negate()Ljava/util/function/Predicate;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/x0;->a:Lj$/util/function/Predicate;
-
-    invoke-interface {v0}, Lj$/util/function/Predicate;->negate()Lj$/util/function/Predicate;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic or(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/x0;->a:Lj$/util/function/Predicate;
-
-    invoke-static {p1}, Lj$/wrappers/w0;->a(Ljava/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/wrappers/x0;->a(Lj$/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic test(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/wrappers/x0;->a:Lj$/util/function/Predicate;
-
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
+    return-wide v0
 .end method

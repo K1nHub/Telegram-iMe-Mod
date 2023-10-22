@@ -60,7 +60,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         try {
             return newInstance(uuid);
         } catch (UnsupportedDrmException unused) {
-            Log.m818e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
+            Log.m1110e(TAG, "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
             return new DummyExoMediaDrm();
         }
     }
@@ -164,7 +164,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             try {
                 Api31.setLogSessionIdOnMediaDrmSession(this.mediaDrm, bArr, playerId);
             } catch (UnsupportedOperationException unused) {
-                Log.m814w(TAG, "setLogSessionId failed.");
+                Log.m1106w(TAG, "setLogSessionId failed.");
             }
         }
     }
@@ -417,7 +417,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         short readLittleEndianShort = parsableByteArray.readLittleEndianShort();
         short readLittleEndianShort2 = parsableByteArray.readLittleEndianShort();
         if (readLittleEndianShort != 1 || readLittleEndianShort2 != 1) {
-            Log.m816i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
+            Log.m1108i(TAG, "Unexpected record count or type. Skipping LA_URL workaround.");
             return bArr;
         }
         short readLittleEndianShort3 = parsableByteArray.readLittleEndianShort();
@@ -427,7 +427,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             return bArr;
         }
         if (readString.indexOf("</DATA>") == -1) {
-            Log.m814w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
+            Log.m1106w(TAG, "Could not find the </DATA> tag. Skipping LA_URL workaround.");
         }
         String str = readString.substring(0, indexOf) + MOCK_LA_URL + readString.substring(indexOf);
         int i = readLittleEndianInt + 52;

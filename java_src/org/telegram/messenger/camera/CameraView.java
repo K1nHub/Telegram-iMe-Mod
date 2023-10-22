@@ -56,7 +56,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -67,13 +67,13 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
-import org.telegram.p043ui.Components.AnimatedFloat;
-import org.telegram.p043ui.Components.CubicBezierInterpolator;
-import org.telegram.p043ui.Components.InstantCameraView;
-import org.telegram.p043ui.Components.LayoutHelper;
-import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p042ui.Components.AnimatedFloat;
+import org.telegram.p042ui.Components.CubicBezierInterpolator;
+import org.telegram.p042ui.Components.InstantCameraView;
+import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p042ui.Components.RLottieDrawable;
 import org.webrtc.EglBase;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CameraView extends FrameLayout implements TextureView.SurfaceTextureListener, CameraController.ICameraView {
     private static final int MSG_AUDIOFRAME_AVAILABLE = 3;
     private static final int MSG_START_RECORDING = 0;
@@ -94,10 +94,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private boolean closingDualCamera;
 
     /* renamed from: cx */
-    private int f1503cx;
+    private int f1581cx;
 
     /* renamed from: cy */
-    private int f1504cy;
+    private int f1582cy;
     private CameraViewDelegate delegate;
     protected boolean dual;
     private boolean dualCameraAppeared;
@@ -167,7 +167,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private int videoHeight;
     private int videoWidth;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface CameraViewDelegate {
         void onCameraInit();
     }
@@ -469,10 +469,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         this.blurredStubView = imageView;
         addView(imageView, LayoutHelper.createFrame(-1, -1, 17));
         this.blurredStubView.setVisibility(8);
-        this.focusAreaSize = AndroidUtilities.m72dp(96);
+        this.focusAreaSize = AndroidUtilities.m102dp(96);
         this.outerPaint.setColor(-1);
         this.outerPaint.setStyle(Paint.Style.STROKE);
-        this.outerPaint.setStrokeWidth(AndroidUtilities.m72dp(2));
+        this.outerPaint.setStrokeWidth(AndroidUtilities.m102dp(2));
         this.innerPaint.setColor(Integer.MAX_VALUE);
     }
 
@@ -763,7 +763,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("CameraView start create thread");
+            FileLog.m100d("CameraView start create thread");
         }
         this.cameraThread = new CameraGLThread(surfaceTexture);
         checkPreviewMatrix();
@@ -953,8 +953,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.focusProgress = BitmapDescriptorFactory.HUE_RED;
             this.innerAlpha = 1.0f;
             this.outerAlpha = 1.0f;
-            this.f1503cx = i4;
-            this.f1504cy = i5;
+            this.f1581cx = i4;
+            this.f1582cy = i5;
             this.lastDrawTime = System.currentTimeMillis();
             invalidate();
         }
@@ -1010,7 +1010,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     protected boolean drawChild(Canvas canvas, View view, long j) {
         boolean drawChild = super.drawChild(canvas, view, j);
         if (this.focusProgress != 1.0f || this.innerAlpha != BitmapDescriptorFactory.HUE_RED || this.outerAlpha != BitmapDescriptorFactory.HUE_RED) {
-            int m72dp = AndroidUtilities.m72dp(30);
+            int m102dp = AndroidUtilities.m102dp(30);
             long currentTimeMillis = System.currentTimeMillis();
             long j2 = currentTimeMillis - this.lastDrawTime;
             if (j2 < 0 || j2 > 17) {
@@ -1020,9 +1020,9 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.outerPaint.setAlpha((int) (this.interpolator.getInterpolation(this.outerAlpha) * 255.0f));
             this.innerPaint.setAlpha((int) (this.interpolator.getInterpolation(this.innerAlpha) * 127.0f));
             float interpolation = this.interpolator.getInterpolation(this.focusProgress);
-            float f = m72dp;
-            canvas.drawCircle(this.f1503cx, this.f1504cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
-            canvas.drawCircle(this.f1503cx, this.f1504cy, f * interpolation, this.innerPaint);
+            float f = m102dp;
+            canvas.drawCircle(this.f1581cx, this.f1582cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
+            canvas.drawCircle(this.f1581cx, this.f1582cy, f * interpolation, this.innerPaint);
             float f2 = this.focusProgress;
             if (f2 < 1.0f) {
                 float f3 = f2 + (((float) j2) / 200.0f);
@@ -1104,7 +1104,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         return this.videoHeight;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public class CameraGLThread extends DispatchQueue {
         private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
         private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -1229,7 +1229,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
 
         private boolean initGL() {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("CameraView start init gl");
+                FileLog.m100d("CameraView start init gl");
             }
             EGL10 egl10 = (EGL10) EGLContext.getEGL();
             this.egl10 = egl10;
@@ -1237,14 +1237,14 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.eglDisplay = eglGetDisplay;
             if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m69e("eglGetDisplay failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                    FileLog.m99e("eglGetDisplay failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                 }
                 this.eglDisplay = null;
                 finish();
                 return false;
             } else if (!this.egl10.eglInitialize(eglGetDisplay, new int[2])) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m69e("eglInitialize failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                    FileLog.m99e("eglInitialize failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                 }
                 finish();
                 return false;
@@ -1253,7 +1253,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 EGLConfig[] eGLConfigArr = new EGLConfig[1];
                 if (!this.egl10.eglChooseConfig(this.eglDisplay, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("eglChooseConfig failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                        FileLog.m99e("eglChooseConfig failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                     }
                     finish();
                     return false;
@@ -1265,7 +1265,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     if (eglCreateContext == null || eglCreateContext == EGL10.EGL_NO_CONTEXT) {
                         this.eglContext = null;
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m69e("eglCreateContext failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                            FileLog.m99e("eglCreateContext failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                         }
                         finish();
                         return false;
@@ -1276,21 +1276,21 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         this.eglSurface = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m69e("createWindowSurface failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                                FileLog.m99e("createWindowSurface failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                             }
                             finish();
                             return false;
                         } else if (!this.egl10.eglMakeCurrent(this.eglDisplay, eglCreateWindowSurface, eglCreateWindowSurface, this.eglContext)) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m69e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                                FileLog.m99e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                             }
                             finish();
                             return false;
                         } else {
                             this.eglContext.getGL();
                             android.opengl.Matrix.setIdentityM(CameraView.this.mSTMatrix[0], 0);
-                            int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3473R.raw.camera_vert));
-                            int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3473R.raw.camera_frag));
+                            int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3630R.raw.camera_vert));
+                            int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3630R.raw.camera_frag));
                             if (loadShader != 0 && loadShader2 != 0) {
                                 int glCreateProgram = GLES20.glCreateProgram();
                                 this.drawProgram = glCreateProgram;
@@ -1301,7 +1301,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                                 GLES20.glGetProgramiv(this.drawProgram, 35714, iArr2, 0);
                                 if (iArr2[0] == 0) {
                                     if (BuildVars.LOGS_ENABLED) {
-                                        FileLog.m69e("failed link shader");
+                                        FileLog.m99e("failed link shader");
                                     }
                                     GLES20.glDeleteProgram(this.drawProgram);
                                     this.drawProgram = 0;
@@ -1333,7 +1333,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                                 GLES20.glBlendFuncSeparate(770, 771, 1, 771);
                                 android.opengl.Matrix.setIdentityM(CameraView.this.mMVPMatrix[0], 0);
                                 if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.m69e("gl initied");
+                                    FileLog.m99e("gl initied");
                                 }
                                 float[] fArr = {BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, 1.0f, 1.0f};
                                 CameraView.this.vertexBuffer = ByteBuffer.allocateDirect(this.verticesData.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -1374,7 +1374,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                                 return true;
                             }
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m69e("failed creating shader");
+                                FileLog.m99e("failed creating shader");
                             }
                             finish();
                             return false;
@@ -1384,7 +1384,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     return false;
                 } else {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("eglConfig not initialized");
+                        FileLog.m99e("eglConfig not initialized");
                     }
                     finish();
                     return false;
@@ -1541,7 +1541,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     EGLSurface eGLSurface = this.eglSurface;
                     if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m70d("CameraView eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                            FileLog.m100d("CameraView eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                             return;
                         }
                         return;
@@ -1596,7 +1596,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     }
                     int worldAngle = cameraSessionArr[i5].getWorldAngle();
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m70d("CameraView set gl renderer session " + i5 + " angle=" + worldAngle);
+                        FileLog.m100d("CameraView set gl renderer session " + i5 + " angle=" + worldAngle);
                     }
                     android.opengl.Matrix.setIdentityM(CameraView.this.mMVPMatrix[i5], 0);
                     if (worldAngle != 0) {
@@ -1667,7 +1667,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     EGLSurface eGLSurface2 = this.eglSurface;
                     if (!egl102.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, this.eglContext)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m70d("CameraView eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
+                            FileLog.m100d("CameraView eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.egl10.eglGetError()));
                             return;
                         }
                         return;
@@ -1804,7 +1804,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
         if (iArr[0] == 0) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m69e(GLES20.glGetShaderInfoLog(glCreateShader));
+                FileLog.m99e(GLES20.glGetShaderInfoLog(glCreateShader));
             }
             GLES20.glDeleteShader(glCreateShader);
             return 0;
@@ -1827,7 +1827,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("CameraView create camera session " + i);
+            FileLog.m100d("CameraView create camera session " + i);
         }
         if (this.previewSize[i] == null) {
             updateCameraInfoSize(i);
@@ -1857,7 +1857,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     public /* synthetic */ void lambda$createCamera$9(int i, final CameraGLThread cameraGLThread) {
         if (this.cameraSession[i] != null) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m70d("CameraView camera initied " + i);
+                FileLog.m100d("CameraView camera initied " + i);
             }
             this.cameraSession[i].setInitied();
             requestLayout();
@@ -1883,7 +1883,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         cameraGLThread.setCurrentSession(this.cameraSession[i], i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public class VideoRecorder implements Runnable {
         private static final String AUDIO_MIME_TYPE = "audio/mp4a-latm";
         private static final int FRAME_RATE = 30;
@@ -1990,7 +1990,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         Method dump skipped, instructions count: 262
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC35001.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC36611.run():void");
                 }
             };
         }
@@ -2046,7 +2046,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                             return;
                         }
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m70d("CameraView fix timestamp enabled");
+                            FileLog.m100d("CameraView fix timestamp enabled");
                         }
                     } else {
                         this.zeroTimeStamps = 0;
@@ -2077,7 +2077,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public void handleAudioFrameAvailable(org.telegram.p043ui.Components.InstantCameraView.AudioBufferInfo r17) {
+        public void handleAudioFrameAvailable(org.telegram.p042ui.Components.InstantCameraView.AudioBufferInfo r17) {
             /*
                 Method dump skipped, instructions count: 517
                 To view this dump add '--comments-level debug' option
@@ -2089,7 +2089,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             try {
                 drainEncoder(false);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             long currentTimeMillis = System.currentTimeMillis();
             if (!this.lastCameraId.equals(num)) {
@@ -2120,7 +2120,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             if (this.videoFirst == -1) {
                 this.videoFirst = j / 1000;
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("CameraView first video frame was at " + this.videoFirst);
+                    FileLog.m100d("CameraView first video frame was at " + this.videoFirst);
                 }
             }
             this.videoLast = j;
@@ -2168,14 +2168,14 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                                 GLES20.glUniform1f(this.shapeHandle, BitmapDescriptorFactory.HUE_RED);
                                 GLES20.glUniform1f(this.crossfadeHandle, 1.0f);
                             } else if (!z2) {
-                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.m72dp(16));
+                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.m102dp(16));
                                 GLES20.glUniform1f(this.scaleHandle, 1.0f);
                                 GLES20.glUniform1f(this.shapeFromHandle, (float) Math.floor(CameraView.this.shapeValue));
                                 GLES20.glUniform1f(this.shapeToHandle, (float) Math.ceil(CameraView.this.shapeValue));
                                 GLES20.glUniform1f(this.shapeHandle, CameraView.this.shapeValue - ((float) Math.floor(CameraView.this.shapeValue)));
                                 GLES20.glUniform1f(this.crossfadeHandle, BitmapDescriptorFactory.HUE_RED);
                             } else {
-                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.m72dp(16));
+                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.m102dp(16));
                                 GLES20.glUniform1f(this.scaleHandle, 1.0f - f);
                                 GLES20.glUniform1f(this.shapeFromHandle, (float) Math.floor(CameraView.this.shapeValue));
                                 GLES20.glUniform1f(this.shapeToHandle, (float) Math.ceil(CameraView.this.shapeValue));
@@ -2186,7 +2186,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         } else {
                             GLES20.glUniform1f(this.alphaHandle, 1.0f);
                             if (z2) {
-                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.lerp(AndroidUtilities.m72dp(12), AndroidUtilities.m72dp(16), f));
+                                GLES20.glUniform1f(this.roundRadiusHandle, AndroidUtilities.lerp(AndroidUtilities.m102dp(12), AndroidUtilities.m102dp(16), f));
                                 GLES20.glUniform1f(this.scaleHandle, 1.0f);
                                 GLES20.glUniform1f(this.shapeFromHandle, CameraView.this.lastShapeTo);
                                 GLES20.glUniform1f(this.shapeToHandle, 2.0f);
@@ -2224,7 +2224,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             try {
                 drainEncoder(true);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
             MediaCodec mediaCodec = this.videoEncoder;
             if (mediaCodec != null) {
@@ -2233,7 +2233,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     this.videoEncoder.release();
                     this.videoEncoder = null;
                 } catch (Exception e2) {
-                    FileLog.m67e(e2);
+                    FileLog.m97e(e2);
                 }
             }
             MediaCodec mediaCodec2 = this.audioEncoder;
@@ -2243,7 +2243,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     this.audioEncoder.release();
                     this.audioEncoder = null;
                 } catch (Exception e3) {
-                    FileLog.m67e(e3);
+                    FileLog.m97e(e3);
                 }
             }
             final CountDownLatch countDownLatch = new CountDownLatch(1);
@@ -2259,13 +2259,13 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 e4.printStackTrace();
             }
             if (this.writingToDifferentFile && !this.fileToWrite.renameTo(this.videoFile)) {
-                FileLog.m69e("unable to rename file, try move file");
+                FileLog.m99e("unable to rename file, try move file");
                 try {
                     AndroidUtilities.copyFile(this.fileToWrite, this.videoFile);
                     this.fileToWrite.delete();
                 } catch (IOException e5) {
-                    FileLog.m67e(e5);
-                    FileLog.m69e("unable to move file");
+                    FileLog.m97e(e5);
+                    FileLog.m99e("unable to move file");
                 }
             }
             EGL14.eglDestroySurface(this.eglDisplay, this.eglSurface);
@@ -2329,7 +2329,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 this.audioRecorder = audioRecord;
                 audioRecord.startRecording();
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m70d("CameraView initied audio record with channels " + this.audioRecorder.getChannelCount() + " sample rate = " + this.audioRecorder.getSampleRate() + " bufferSize = " + i);
+                    FileLog.m100d("CameraView initied audio record with channels " + this.audioRecorder.getChannelCount() + " sample rate = " + this.audioRecorder.getSampleRate() + " bufferSize = " + i);
                 }
                 Thread thread = new Thread(this.recorderRunnable);
                 thread.setPriority(10);
@@ -2358,7 +2358,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                     this.videoEncoder = MediaCodec.createEncoderByType("video/avc");
                 }
                 if (this.outputMimeType.equals("video/hevc") && (mediaCodec = this.videoEncoder) != null && !mediaCodec.getCodecInfo().isHardwareAccelerated()) {
-                    FileLog.m69e("hevc encoder isn't hardware accelerated");
+                    FileLog.m99e("hevc encoder isn't hardware accelerated");
                     this.videoEncoder.release();
                     this.videoEncoder = null;
                 }
@@ -2422,7 +2422,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 }
                 if (!EGL14.eglMakeCurrent(this.eglDisplay, eglCreateWindowSurface, eglCreateWindowSurface, this.eglContext)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(EGL14.eglGetError()));
+                        FileLog.m99e("eglMakeCurrent failed " + GLUtils.getEGLErrorString(EGL14.eglGetError()));
                     }
                     throw new RuntimeException("eglMakeCurrent failed");
                 }
@@ -2431,8 +2431,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder()).asFloatBuffer();
                 this.textureBuffer = asFloatBuffer;
                 asFloatBuffer.put(fArr).position(0);
-                int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3473R.raw.camera_vert));
-                int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3473R.raw.camera_frag));
+                int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3630R.raw.camera_vert));
+                int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3630R.raw.camera_frag));
                 if (loadShader == 0 || loadShader2 == 0) {
                     return;
                 }
@@ -2473,76 +2473,76 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             return this.surface;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:261:0x018c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:261:0x018d, code lost:
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L78;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:262:0x018e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:262:0x018f, code lost:
             r1 = r17.audioEncoder.getOutputBuffers();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:263:0x0194, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:263:0x0195, code lost:
             r2 = r17.audioEncoder.dequeueOutputBuffer(r17.audioBufferInfo, 0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:264:0x019e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:264:0x019f, code lost:
             if (r2 != (-1)) goto L81;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:265:0x01a0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:265:0x01a1, code lost:
             if (r18 == false) goto L133;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:267:0x01a4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:267:0x01a5, code lost:
             if (r17.running != false) goto L132;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:269:0x01a8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:269:0x01a9, code lost:
             if (r17.sendWhenDone != 0) goto L132;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:273:0x01af, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:273:0x01b0, code lost:
             if (r2 != (-3)) goto L83;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:275:0x01b3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:275:0x01b4, code lost:
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L123;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:276:0x01b5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:276:0x01b6, code lost:
             r1 = r17.audioEncoder.getOutputBuffers();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:279:0x01be, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:279:0x01bf, code lost:
             if (r2 != (-2)) goto L85;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:280:0x01c0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:280:0x01c1, code lost:
             r2 = r17.audioEncoder.getOutputFormat();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:281:0x01c8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:281:0x01c9, code lost:
             if (r17.audioTrackIndex != (-5)) goto L116;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:282:0x01ca, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:282:0x01cb, code lost:
             r17.audioTrackIndex = r17.mediaMuxer.addTrack(r2, true);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:285:0x01d7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:285:0x01d8, code lost:
             if (r2 < 0) goto L109;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:287:0x01db, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:287:0x01dc, code lost:
             if (android.os.Build.VERSION.SDK_INT >= 21) goto L108;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:288:0x01dd, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:288:0x01de, code lost:
             r8 = r1[r2];
          */
-        /* JADX WARN: Code restructure failed: missing block: B:289:0x01e0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:289:0x01e1, code lost:
             r8 = r17.audioEncoder.getOutputBuffer(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:290:0x01e6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:290:0x01e7, code lost:
             if (r8 == null) goto L105;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:291:0x01e8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:291:0x01e9, code lost:
             r13 = r17.audioBufferInfo;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:292:0x01ee, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:292:0x01ef, code lost:
             if ((r13.flags & 2) == 0) goto L96;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:293:0x01f0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:293:0x01f1, code lost:
             r13.size = 0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:295:0x01f4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:295:0x01f5, code lost:
             if (r13.size == 0) goto L99;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:296:0x01f6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:296:0x01f7, code lost:
             r13 = new android.media.MediaCodec.BufferInfo();
             r14 = r17.audioBufferInfo;
             r13.size = r14.size;
@@ -2552,16 +2552,16 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             r8 = org.telegram.messenger.AndroidUtilities.cloneByteBuffer(r8);
             r17.fileWriteQueue.postRunnable(new org.telegram.messenger.camera.CameraView$VideoRecorder$$ExternalSyntheticLambda1());
          */
-        /* JADX WARN: Code restructure failed: missing block: B:297:0x021b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:297:0x021c, code lost:
             r17.audioEncoder.releaseOutputBuffer(r2, false);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:298:0x0226, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:298:0x0227, code lost:
             if ((r17.audioBufferInfo.flags & 4) == 0) goto L103;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:299:0x0228, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:299:0x0229, code lost:
             return;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:301:0x0240, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:301:0x0241, code lost:
             throw new java.lang.RuntimeException("encoderOutputBuffer " + r2 + " was null");
          */
         /* JADX WARN: Code restructure failed: missing block: B:354:?, code lost:
@@ -2576,7 +2576,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         */
         public void drainEncoder(boolean r18) throws java.lang.Exception {
             /*
-                Method dump skipped, instructions count: 601
+                Method dump skipped, instructions count: 602
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.drainEncoder(boolean):void");
@@ -2586,7 +2586,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             try {
                 this.mediaMuxer.writeSampleData(this.videoTrackIndex, byteBuffer, bufferInfo, true);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
 
@@ -2594,7 +2594,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             try {
                 this.mediaMuxer.writeSampleData(this.audioTrackIndex, byteBuffer, bufferInfo, false);
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
 
@@ -2622,7 +2622,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class EncoderHandler extends Handler {
         private WeakReference<VideoRecorder> mWeakEncoder;
 
@@ -2640,17 +2640,17 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             if (i == 0) {
                 try {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m69e("start encoder");
+                        FileLog.m99e("start encoder");
                     }
                     videoRecorder.prepareEncoder();
                 } catch (Exception e) {
-                    FileLog.m67e(e);
+                    FileLog.m97e(e);
                     videoRecorder.handleStopRecording(0);
                     Looper.myLooper().quit();
                 }
             } else if (i == 1) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m69e("stop encoder");
+                    FileLog.m99e("stop encoder");
                 }
                 videoRecorder.handleStopRecording(message.arg1);
             } else if (i == 2) {

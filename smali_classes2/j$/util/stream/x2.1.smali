@@ -89,7 +89,7 @@
     return-object v0
 .end method
 
-.method static d(JLj$/util/function/m;)Lj$/util/stream/s1;
+.method static d(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
     .locals 2
 
     const-wide/16 v0, 0x0
@@ -106,7 +106,7 @@
 
     new-instance v0, Lj$/util/stream/b2;
 
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/b2;-><init>(JLj$/util/function/m;)V
+    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/b2;-><init>(JLj$/util/function/IntFunction;)V
 
     goto :goto_0
 
@@ -120,10 +120,10 @@
     return-object v0
 .end method
 
-.method public static e(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
+.method public static e(Lj$/util/stream/y2;Lj$/util/Spliterator;ZLj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 4
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -135,7 +135,7 @@
 
     const/16 v2, 0x4000
 
-    invoke-interface {p1, v2}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v2
 
@@ -149,7 +149,7 @@
 
     long-to-int p2, v0
 
-    invoke-interface {p3, p2}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p3, p2}, Lj$/util/function/IntFunction;->apply(I)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -157,7 +157,7 @@
 
     new-instance p3, Lj$/util/stream/r2;
 
-    invoke-direct {p3, p1, p0, p2}, Lj$/util/stream/r2;-><init>(Lj$/util/s;Lj$/util/stream/y2;[Ljava/lang/Object;)V
+    invoke-direct {p3, p1, p0, p2}, Lj$/util/stream/r2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/y2;[Ljava/lang/Object;)V
 
     invoke-virtual {p3}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -181,7 +181,7 @@
     :cond_1
     new-instance v0, Lj$/util/stream/H1;
 
-    invoke-direct {v0, p0, p3, p1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/function/m;Lj$/util/s;)V
+    invoke-direct {v0, p0, p3, p1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/function/IntFunction;Lj$/util/Spliterator;)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -191,7 +191,7 @@
 
     if-eqz p2, :cond_2
 
-    invoke-static {p0, p3}, Lj$/util/stream/x2;->l(Lj$/util/stream/A1;Lj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-static {p0, p3}, Lj$/util/stream/x2;->l(Lj$/util/stream/A1;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object p0
 
@@ -199,10 +199,10 @@
     return-object p0
 .end method
 
-.method public static f(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/u1;
+.method public static f(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)Lj$/util/stream/u1;
     .locals 4
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -214,7 +214,7 @@
 
     const/16 v2, 0x4000
 
-    invoke-interface {p1, v2}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v2
 
@@ -232,7 +232,7 @@
 
     new-instance v0, Lj$/util/stream/o2;
 
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/o2;-><init>(Lj$/util/s;Lj$/util/stream/y2;[D)V
+    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/o2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/y2;[D)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -258,7 +258,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/s;I)V
+    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;I)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -276,10 +276,10 @@
     return-object p0
 .end method
 
-.method public static g(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/w1;
+.method public static g(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)Lj$/util/stream/w1;
     .locals 4
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -291,7 +291,7 @@
 
     const/16 v2, 0x4000
 
-    invoke-interface {p1, v2}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v2
 
@@ -309,7 +309,7 @@
 
     new-instance v0, Lj$/util/stream/p2;
 
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/p2;-><init>(Lj$/util/s;Lj$/util/stream/y2;[I)V
+    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/p2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/y2;[I)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -335,7 +335,7 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/s;I)V
+    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;I)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -353,10 +353,10 @@
     return-object p0
 .end method
 
-.method public static h(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/y1;
+.method public static h(Lj$/util/stream/y2;Lj$/util/Spliterator;Z)Lj$/util/stream/y1;
     .locals 4
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
+    invoke-virtual {p0, p1}, Lj$/util/stream/y2;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -368,7 +368,7 @@
 
     const/16 v2, 0x4000
 
-    invoke-interface {p1, v2}, Lj$/util/s;->hasCharacteristics(I)Z
+    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
     move-result v2
 
@@ -386,7 +386,7 @@
 
     new-instance v0, Lj$/util/stream/q2;
 
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/q2;-><init>(Lj$/util/s;Lj$/util/stream/y2;[J)V
+    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/q2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/y2;[J)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -412,7 +412,7 @@
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/s;I)V
+    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/H1;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;I)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -617,10 +617,10 @@
     return-object p0
 .end method
 
-.method public static l(Lj$/util/stream/A1;Lj$/util/function/m;)Lj$/util/stream/A1;
+.method public static l(Lj$/util/stream/A1;Lj$/util/function/IntFunction;)Lj$/util/stream/A1;
     .locals 4
 
-    invoke-interface {p0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {p0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 
@@ -638,7 +638,7 @@
 
     long-to-int v0, v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/IntFunction;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -678,7 +678,7 @@
 .method public static m(Lj$/util/stream/u1;)Lj$/util/stream/u1;
     .locals 4
 
-    invoke-interface {p0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {p0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 
@@ -732,7 +732,7 @@
 .method public static n(Lj$/util/stream/w1;)Lj$/util/stream/w1;
     .locals 4
 
-    invoke-interface {p0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {p0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 
@@ -786,7 +786,7 @@
 .method public static o(Lj$/util/stream/y1;)Lj$/util/stream/y1;
     .locals 4
 
-    invoke-interface {p0}, Lj$/util/stream/A1;->p()I
+    invoke-interface {p0}, Lj$/util/stream/A1;->n()I
 
     move-result v0
 

@@ -9,7 +9,7 @@ import com.google.android.gms.wearable.Asset;
 import com.google.android.gms.wearable.MessageOptions;
 import com.google.android.gms.wearable.PutDataRequest;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzfb extends com.google.android.gms.internal.wearable.zza {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzfb(IBinder iBinder) {

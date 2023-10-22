@@ -7,7 +7,7 @@ import android.content.Intent;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.ApplicationLoader;
 /* compiled from: BaseStopServiceReceiver.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseStopServiceReceiver extends BroadcastReceiver {
     private final Class<? extends Service> serviceClass;
 

@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MlKitInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public int delete(Uri uri, String str, String[] strArr) {

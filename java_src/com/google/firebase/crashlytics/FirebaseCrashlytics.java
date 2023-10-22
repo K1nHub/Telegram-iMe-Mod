@@ -24,7 +24,7 @@ import com.google.firebase.installations.FirebaseInstallationsApi;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseCrashlytics {
     final CrashlyticsCore core;
 
@@ -33,7 +33,7 @@ public class FirebaseCrashlytics {
         Context applicationContext = firebaseApp.getApplicationContext();
         String packageName = applicationContext.getPackageName();
         Logger logger = Logger.getLogger();
-        logger.m742i("Initializing Firebase Crashlytics " + CrashlyticsCore.getVersion() + " for " + packageName);
+        logger.m1034i("Initializing Firebase Crashlytics " + CrashlyticsCore.getVersion() + " for " + packageName);
         DataCollectionArbiter dataCollectionArbiter = new DataCollectionArbiter(firebaseApp);
         IdManager idManager = new IdManager(applicationContext, packageName, firebaseInstallationsApi, dataCollectionArbiter);
         CrashlyticsNativeComponentDeferredProxy crashlyticsNativeComponentDeferredProxy = new CrashlyticsNativeComponentDeferredProxy(deferred);
@@ -42,11 +42,11 @@ public class FirebaseCrashlytics {
         String applicationId = firebaseApp.getOptions().getApplicationId();
         String mappingFileId = CommonUtils.getMappingFileId(applicationContext);
         Logger logger2 = Logger.getLogger();
-        logger2.m746d("Mapping file ID is: " + mappingFileId);
+        logger2.m1038d("Mapping file ID is: " + mappingFileId);
         try {
             AppData create = AppData.create(applicationContext, idManager, applicationId, mappingFileId, new ResourceUnityVersionProvider(applicationContext));
             Logger logger3 = Logger.getLogger();
-            logger3.m740v("Installer package name is: " + create.installerPackageName);
+            logger3.m1032v("Installer package name is: " + create.installerPackageName);
             ExecutorService buildSingleThreadExecutorService = ExecutorUtils.buildSingleThreadExecutorService("com.google.firebase.crashlytics.startup");
             final SettingsController create2 = SettingsController.create(applicationContext, applicationId, idManager, new HttpRequestFactory(), create.versionCode, create.versionName, dataCollectionArbiter);
             create2.loadSettingsData(buildSingleThreadExecutorService).continueWith(buildSingleThreadExecutorService, new Continuation<Void, Object>() { // from class: com.google.firebase.crashlytics.FirebaseCrashlytics.1
@@ -55,7 +55,7 @@ public class FirebaseCrashlytics {
                     if (task.isSuccessful()) {
                         return null;
                     }
-                    Logger.getLogger().m743e("Error fetching settings.", task.getException());
+                    Logger.getLogger().m1035e("Error fetching settings.", task.getException());
                     return null;
                 }
             });
@@ -72,7 +72,7 @@ public class FirebaseCrashlytics {
             });
             return new FirebaseCrashlytics(crashlyticsCore);
         } catch (PackageManager.NameNotFoundException e) {
-            Logger.getLogger().m743e("Error retrieving app package info.", e);
+            Logger.getLogger().m1035e("Error retrieving app package info.", e);
             return null;
         }
     }
@@ -89,7 +89,7 @@ public class FirebaseCrashlytics {
 
     public void recordException(Throwable th) {
         if (th == null) {
-            Logger.getLogger().m738w("A null value was passed to recordException. Ignoring.");
+            Logger.getLogger().m1030w("A null value was passed to recordException. Ignoring.");
         } else {
             this.core.logException(th);
         }

@@ -1,6 +1,6 @@
 package com.iMe.storage.data.mapper.wallet;
 
-import com.iMe.storage.data.locale.p027db.model.wallet.WalletTokenBalanceDb;
+import com.iMe.storage.data.locale.p026db.model.wallet.WalletTokenBalanceDb;
 import com.iMe.storage.data.network.model.response.wallet.TokenBalanceResponse;
 import com.iMe.storage.data.network.model.response.wallet.WalletBalancesResponse;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBalanceMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletBalanceMappingKt {
     public static final TokenBalance mapToDomain(WalletTokenBalanceDb walletTokenBalanceDb) {
         Intrinsics.checkNotNullParameter(walletTokenBalanceDb, "<this>");

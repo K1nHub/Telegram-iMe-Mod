@@ -2,25 +2,25 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/g;
+.implements Ljava/util/function/DoubleFunction;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/function/DoubleFunction;
+.field final synthetic a:Lj$/util/function/g;
 
 
 # direct methods
-.method private synthetic constructor <init>(Ljava/util/function/DoubleFunction;)V
+.method private synthetic constructor <init>(Lj$/util/function/g;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/wrappers/B;->a:Ljava/util/function/DoubleFunction;
+    iput-object p1, p0, Lj$/wrappers/B;->a:Lj$/util/function/g;
 
     return-void
 .end method
 
-.method public static synthetic a(Ljava/util/function/DoubleFunction;)Lj$/util/function/g;
+.method public static synthetic a(Lj$/util/function/g;)Ljava/util/function/DoubleFunction;
     .locals 1
 
     if-nez p0, :cond_0
@@ -30,20 +30,20 @@
     return-object p0
 
     :cond_0
-    instance-of v0, p0, Lj$/wrappers/C;
+    instance-of v0, p0, Lj$/wrappers/A;
 
     if-eqz v0, :cond_1
 
-    check-cast p0, Lj$/wrappers/C;
+    check-cast p0, Lj$/wrappers/A;
 
-    iget-object p0, p0, Lj$/wrappers/C;->a:Lj$/util/function/g;
+    iget-object p0, p0, Lj$/wrappers/A;->a:Ljava/util/function/DoubleFunction;
 
     return-object p0
 
     :cond_1
     new-instance v0, Lj$/wrappers/B;
 
-    invoke-direct {v0, p0}, Lj$/wrappers/B;-><init>(Ljava/util/function/DoubleFunction;)V
+    invoke-direct {v0, p0}, Lj$/wrappers/B;-><init>(Lj$/util/function/g;)V
 
     return-object v0
 .end method
@@ -53,9 +53,9 @@
 .method public synthetic apply(D)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/wrappers/B;->a:Ljava/util/function/DoubleFunction;
+    iget-object v0, p0, Lj$/wrappers/B;->a:Lj$/util/function/g;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/function/DoubleFunction;->apply(D)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lj$/util/function/g;->apply(D)Ljava/lang/Object;
 
     move-result-object p1
 

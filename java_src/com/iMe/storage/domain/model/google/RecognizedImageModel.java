@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.google;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RecognizedImageModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RecognizedImageModel {
     private final int confidence;
     private final String recognizedObject;

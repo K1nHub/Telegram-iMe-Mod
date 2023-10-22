@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_getAttachedStickers extends TLObject {
     public static int constructor = -866424884;
     public TLRPC$InputStickeredMedia media;

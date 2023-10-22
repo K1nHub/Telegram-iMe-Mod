@@ -8,8 +8,8 @@ import com.iMe.storage.domain.model.crypto.simplex.Currency;
 import com.iMe.storage.domain.model.crypto.simplex.CustomPriceLimits;
 import com.iMe.storage.domain.model.crypto.simplex.FiatCurrency;
 import com.iMe.storage.domain.repository.crypto.simplex.SimplexRepository;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Observable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimplexInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SimplexInteractor {
     private final SchedulersProvider schedulersProvider;
     private final SimplexRepository simplexRepository;
@@ -65,7 +65,7 @@ public final class SimplexInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result<? extends List<BuyingCryptoQuote>> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.mapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
                         return error$default;
                     } else if (result instanceof Object) {
                         return result;
@@ -81,7 +81,7 @@ public final class SimplexInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<List<BuyingCryptoQuote>>> startWith = map.subscribeOn(this.schedulersProvider.mo717io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<List<BuyingCryptoQuote>>> startWith = map.subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "simplexRepository\n      …artWith(Result.loading())");
         return startWith;
     }
@@ -106,7 +106,7 @@ public final class SimplexInteractor {
     }
 
     /* compiled from: SimplexInteractor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

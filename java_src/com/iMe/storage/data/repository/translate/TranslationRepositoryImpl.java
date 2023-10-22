@@ -28,7 +28,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: TranslationRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TranslationRepositoryImpl implements TranslationRepository {
     private final GoogleServicesErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -95,7 +95,7 @@ public final class TranslationRepositoryImpl implements TranslationRepository {
                         return repeat + translation.getText();
                     }
                 }, 30, null);
-                Translation translation = (Translation) CollectionsKt.firstOrNull(translations);
+                Translation translation = (Translation) CollectionsKt.firstOrNull((List<? extends Object>) translations);
                 String sourceLang = translation != null ? translation.getSourceLang() : null;
                 if (sourceLang == null) {
                     sourceLang = "";
@@ -176,7 +176,7 @@ public final class TranslationRepositoryImpl implements TranslationRepository {
     }
 
     /* compiled from: TranslationRepositoryImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC$TL_contact;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$UserStatus;
 /* compiled from: FilteredByOnlineContactsDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FilteredByOnlineContactsDelegate extends BaseController {
     private final Lazy allContacts$delegate;
     private final Lazy blockedContacts$delegate;
@@ -26,7 +26,7 @@ public final class FilteredByOnlineContactsDelegate extends BaseController {
     private final long selfId;
 
     /* compiled from: FilteredByOnlineContactsDelegate.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -360,6 +360,6 @@ public final class FilteredByOnlineContactsDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1685id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1762id));
     }
 }

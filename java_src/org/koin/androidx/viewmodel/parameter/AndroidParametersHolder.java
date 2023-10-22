@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KClass;
 import org.koin.core.parameter.ParametersHolder;
 /* compiled from: AndroidParametersHolder.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class AndroidParametersHolder extends ParametersHolder {
     private final CreationExtras extras;
 

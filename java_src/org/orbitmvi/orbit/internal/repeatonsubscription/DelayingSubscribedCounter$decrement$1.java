@@ -5,8 +5,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DelayingSubscribedCounter.kt */
-@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.repeatonsubscription.DelayingSubscribedCounter", m101f = "DelayingSubscribedCounter.kt", m100l = {53}, m99m = "decrement")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.repeatonsubscription.DelayingSubscribedCounter", m142f = "DelayingSubscribedCounter.kt", m141l = {53}, m140m = "decrement")
+/* loaded from: classes4.dex */
 public final class DelayingSubscribedCounter$decrement$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

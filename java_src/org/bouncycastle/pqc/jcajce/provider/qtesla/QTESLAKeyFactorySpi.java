@@ -14,7 +14,7 @@ import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.jcajce.provider.util.AsymmetricKeyInfoConverter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class QTESLAKeyFactorySpi extends KeyFactorySpi implements AsymmetricKeyInfoConverter {
     @Override // java.security.KeyFactorySpi
     public PrivateKey engineGeneratePrivate(KeySpec keySpec) throws InvalidKeySpecException {

@@ -3,7 +3,7 @@ package org.webrtc;
 import android.content.Context;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class Camera1Capturer extends CameraCapturer {
     private final boolean captureToTexture;
 

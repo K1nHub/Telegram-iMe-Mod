@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class Face {
     public static final float UNCOMPUTED_PROBABILITY = -1.0f;
     private int zza;

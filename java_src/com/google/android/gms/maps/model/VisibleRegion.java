@@ -9,22 +9,22 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "VisibleRegionCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class VisibleRegion extends AbstractSafeParcelable {
     public static final Parcelable.Creator<VisibleRegion> CREATOR = new zzad();
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final LatLng farLeft;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public final LatLng farRight;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public final LatLngBounds latLngBounds;
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final LatLng nearLeft;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final LatLng nearRight;
 
     @SafeParcelable.Constructor
-    public VisibleRegion(@SafeParcelable.Param(m796id = 2) LatLng latLng, @SafeParcelable.Param(m796id = 3) LatLng latLng2, @SafeParcelable.Param(m796id = 4) LatLng latLng3, @SafeParcelable.Param(m796id = 5) LatLng latLng4, @SafeParcelable.Param(m796id = 6) LatLngBounds latLngBounds) {
+    public VisibleRegion(@SafeParcelable.Param(m1088id = 2) LatLng latLng, @SafeParcelable.Param(m1088id = 3) LatLng latLng2, @SafeParcelable.Param(m1088id = 4) LatLng latLng3, @SafeParcelable.Param(m1088id = 5) LatLng latLng4, @SafeParcelable.Param(m1088id = 6) LatLngBounds latLngBounds) {
         this.nearLeft = latLng;
         this.nearRight = latLng2;
         this.farLeft = latLng3;

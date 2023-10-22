@@ -5,7 +5,7 @@ import org.bouncycastle.asn1.ASN1BitString;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ASN1OctetString;
 import org.bouncycastle.asn1.ASN1Primitive;
-import org.bouncycastle.asn1.p038bc.BCObjectIdentifiers;
+import org.bouncycastle.asn1.p037bc.BCObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
@@ -29,7 +29,7 @@ import org.bouncycastle.pqc.crypto.xmss.XMSSPrivateKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSUtil;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class PrivateKeyFactory {
     private static short[] convert(byte[] bArr) {
         int length = bArr.length / 2;
@@ -42,7 +42,7 @@ public class PrivateKeyFactory {
 
     public static AsymmetricKeyParameter createKey(PrivateKeyInfo privateKeyInfo) throws IOException {
         ASN1ObjectIdentifier algorithm = privateKeyInfo.getPrivateKeyAlgorithm().getAlgorithm();
-        if (algorithm.m88on(BCObjectIdentifiers.qTESLA)) {
+        if (algorithm.m114on(BCObjectIdentifiers.qTESLA)) {
             return new QTESLAPrivateKeyParameters(Utils.qTeslaLookupSecurityCategory(privateKeyInfo.getPrivateKeyAlgorithm()), ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets());
         } else if (algorithm.equals((ASN1Primitive) BCObjectIdentifiers.sphincs256)) {
             return new SPHINCSPrivateKeyParameters(ASN1OctetString.getInstance(privateKeyInfo.parsePrivateKey()).getOctets(), Utils.sphincs256LookupTreeAlgName(SPHINCS256KeyParams.getInstance(privateKeyInfo.getPrivateKeyAlgorithm().getParameters())));

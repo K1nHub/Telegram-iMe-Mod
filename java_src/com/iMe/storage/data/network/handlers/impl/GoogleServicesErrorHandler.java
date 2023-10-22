@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import retrofit2.HttpException;
 import timber.log.Timber;
 /* compiled from: GoogleServicesErrorHandler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GoogleServicesErrorHandler extends ApiErrorHandler {
     private final ResourceManager resourceManager;
 

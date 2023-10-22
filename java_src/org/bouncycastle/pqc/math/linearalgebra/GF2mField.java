@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.math.linearalgebra;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class GF2mField {
     private int degree;
     private int polynomial;

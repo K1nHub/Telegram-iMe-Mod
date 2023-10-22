@@ -6,8 +6,8 @@ import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.enums.DrawStatusType;
 import com.iMe.fork.enums.RecentChatsDialogType;
 import com.iMe.fork.models.backup.Backup;
-import com.iMe.storage.data.locale.p027db.dao.main.HistoryDialogDao;
-import com.iMe.storage.data.locale.p027db.model.recent_chats.HistoryDialogDb;
+import com.iMe.storage.data.locale.p026db.dao.main.HistoryDialogDao;
+import com.iMe.storage.data.locale.p026db.model.recent_chats.HistoryDialogDb;
 import com.iMe.storage.data.mapper.recent_chats.RecentChatsMappingKt;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import java.util.ArrayList;
@@ -39,17 +39,17 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p033j$.util.Collection$EL;
+import p033j$.util.Collection;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 import p033j$.util.function.Predicate;
 /* compiled from: RecentChatsController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class RecentChatsController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, RecentChatsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -190,8 +190,8 @@ public final class RecentChatsController extends BaseController implements KoinC
             coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
             LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
             for (HistoryDialogModel historyDialogModel2 : pinnedRecentChats2) {
-                Pair m103to = TuplesKt.m103to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
-                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                Pair m144to = TuplesKt.m144to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
+                linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.historyDialogs = mutableMap;
@@ -301,8 +301,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m103to = TuplesKt.m103to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;
@@ -346,7 +346,7 @@ public final class RecentChatsController extends BaseController implements KoinC
                 return Boolean.valueOf(!it.isPinned());
             }
         };
-        Collection$EL.removeIf(values, new Predicate() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
+        Collection.EL.removeIf(values, new Predicate() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
             @Override // p033j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
                 return Predicate.CC.$default$and(this, predicate);
@@ -359,7 +359,7 @@ public final class RecentChatsController extends BaseController implements KoinC
 
             @Override // p033j$.util.function.Predicate
             /* renamed from: or */
-            public /* synthetic */ Predicate mo25or(Predicate predicate) {
+            public /* synthetic */ Predicate mo53or(Predicate predicate) {
                 return Predicate.CC.$default$or(this, predicate);
             }
 
@@ -384,7 +384,7 @@ public final class RecentChatsController extends BaseController implements KoinC
         HistoryDialogDao.clearRecentChatHistory$default(this$0.getDao(), false, 1, null);
     }
 
-    public final Collection<HistoryDialogModel> getRecentChatsList() {
+    public final java.util.Collection<HistoryDialogModel> getRecentChatsList() {
         return this.historyDialogs.values();
     }
 
@@ -429,7 +429,7 @@ public final class RecentChatsController extends BaseController implements KoinC
     }
 
     /* compiled from: RecentChatsController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

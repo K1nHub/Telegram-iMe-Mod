@@ -1,8 +1,7 @@
 package com.iMe.storage.domain.model.crypto;
 
 import com.iMe.storage.data.manager.common.EnvironmentManager;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import drinkless.org.ton.TonApi;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.CoinType;
@@ -10,7 +9,7 @@ import wallet.core.jni.Derivation;
 import wallet.core.jni.HDWallet;
 import wallet.core.jni.PrivateKey;
 /* compiled from: Wallet.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Wallet {
     private final BlockchainType blockchainType;
     private final String guid;
@@ -45,7 +44,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class MultiCoinWallet extends Wallet {
         private final String address;
         private final BlockchainType blockchainType;
@@ -122,7 +121,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class EVM extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
@@ -199,7 +198,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TRON extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
@@ -276,7 +275,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BTC extends MultiCoinWallet {
         private final String address;
         private final String guid;
@@ -389,16 +388,15 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TON extends Wallet {
         private final String address;
         private final String guid;
-        private final TonApi.InputKeyRegular inputKey;
         private final String mnemonic;
         private final byte[] privateKeyBytes;
         private final String publicKey;
 
-        public static /* synthetic */ TON copy$default(TON ton, String str, String str2, String str3, TonApi.InputKeyRegular inputKeyRegular, int i, Object obj) {
+        public static /* synthetic */ TON copy$default(TON ton, String str, String str2, String str3, String str4, int i, Object obj) {
             if ((i & 1) != 0) {
                 str = ton.getGuid();
             }
@@ -409,9 +407,9 @@ public abstract class Wallet {
                 str3 = ton.getAddress();
             }
             if ((i & 8) != 0) {
-                inputKeyRegular = ton.inputKey;
+                str4 = ton.getPublicKey();
             }
-            return ton.copy(str, str2, str3, inputKeyRegular);
+            return ton.copy(str, str2, str3, str4);
         }
 
         public final String component1() {
@@ -426,16 +424,16 @@ public abstract class Wallet {
             return getAddress();
         }
 
-        public final TonApi.InputKeyRegular component4() {
-            return this.inputKey;
+        public final String component4() {
+            return getPublicKey();
         }
 
-        public final TON copy(String guid, String mnemonic, String address, TonApi.InputKeyRegular inputKey) {
+        public final TON copy(String guid, String mnemonic, String address, String publicKey) {
             Intrinsics.checkNotNullParameter(guid, "guid");
             Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
             Intrinsics.checkNotNullParameter(address, "address");
-            Intrinsics.checkNotNullParameter(inputKey, "inputKey");
-            return new TON(guid, mnemonic, address, inputKey);
+            Intrinsics.checkNotNullParameter(publicKey, "publicKey");
+            return new TON(guid, mnemonic, address, publicKey);
         }
 
         public boolean equals(Object obj) {
@@ -444,17 +442,17 @@ public abstract class Wallet {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return Intrinsics.areEqual(getGuid(), ton.getGuid()) && Intrinsics.areEqual(getMnemonic(), ton.getMnemonic()) && Intrinsics.areEqual(getAddress(), ton.getAddress()) && Intrinsics.areEqual(this.inputKey, ton.inputKey);
+                return Intrinsics.areEqual(getGuid(), ton.getGuid()) && Intrinsics.areEqual(getMnemonic(), ton.getMnemonic()) && Intrinsics.areEqual(getAddress(), ton.getAddress()) && Intrinsics.areEqual(getPublicKey(), ton.getPublicKey());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((getGuid().hashCode() * 31) + getMnemonic().hashCode()) * 31) + getAddress().hashCode()) * 31) + this.inputKey.hashCode();
+            return (((((getGuid().hashCode() * 31) + getMnemonic().hashCode()) * 31) + getAddress().hashCode()) * 31) + getPublicKey().hashCode();
         }
 
         public String toString() {
-            return "TON(guid=" + getGuid() + ", mnemonic=" + getMnemonic() + ", address=" + getAddress() + ", inputKey=" + this.inputKey + ')';
+            return "TON(guid=" + getGuid() + ", mnemonic=" + getMnemonic() + ", address=" + getAddress() + ", publicKey=" + getPublicKey() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
@@ -472,28 +470,23 @@ public abstract class Wallet {
             return this.address;
         }
 
-        public final TonApi.InputKeyRegular getInputKey() {
-            return this.inputKey;
+        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public String getPublicKey() {
+            return this.publicKey;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public TON(String guid, String mnemonic, String address, TonApi.InputKeyRegular inputKey) {
+        public TON(String guid, String mnemonic, String address, String publicKey) {
             super(guid, mnemonic, BlockchainType.TON, null);
             Intrinsics.checkNotNullParameter(guid, "guid");
             Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
             Intrinsics.checkNotNullParameter(address, "address");
-            Intrinsics.checkNotNullParameter(inputKey, "inputKey");
+            Intrinsics.checkNotNullParameter(publicKey, "publicKey");
             this.guid = guid;
             this.mnemonic = mnemonic;
             this.address = address;
-            this.inputKey = inputKey;
-            this.publicKey = CryptoExtKt.getUnarmoredPublicKey(this);
+            this.publicKey = publicKey;
             this.privateKeyBytes = new byte[0];
-        }
-
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public String getPublicKey() {
-            return this.publicKey;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet

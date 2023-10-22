@@ -8,7 +8,7 @@ import org.koin.core.definition.KoinDefinition;
 import org.koin.core.instance.SingleInstanceFactory;
 import org.koin.core.qualifier.Qualifier;
 /* compiled from: OptionDSL.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class OptionDSLKt {
     public static final <T> KoinDefinition<T> onOptions(KoinDefinition<T> koinDefinition, Function1<? super BeanDefinition<T>, Unit> function1) {
         Intrinsics.checkNotNullParameter(koinDefinition, "<this>");

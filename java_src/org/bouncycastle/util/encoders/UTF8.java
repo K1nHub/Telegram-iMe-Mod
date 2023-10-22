@@ -1,7 +1,7 @@
 package org.bouncycastle.util.encoders;
 
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class UTF8 {
     private static final short[] firstUnitTable = new short[128];
     private static final byte[] transitionTable;

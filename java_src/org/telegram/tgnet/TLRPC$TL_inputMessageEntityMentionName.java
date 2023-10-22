@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inputMessageEntityMentionName extends TLRPC$MessageEntity {
     public static int constructor = 546203849;
     public TLRPC$InputUser user_id;

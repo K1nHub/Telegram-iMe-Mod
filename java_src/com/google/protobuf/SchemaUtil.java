@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SchemaUtil {
     private static final Class<?> GENERATED_MESSAGE_CLASS = getGeneratedMessageClass();
     private static final UnknownFieldSchema<?, ?> PROTO2_UNKNOWN_FIELD_SET_SCHEMA = getUnknownFieldSetSchema(false);

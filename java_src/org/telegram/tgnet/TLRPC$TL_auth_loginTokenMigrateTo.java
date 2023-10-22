@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_auth_loginTokenMigrateTo extends TLRPC$auth_LoginToken {
     public static int constructor = 110008598;
     public int dc_id;

@@ -1,5 +1,5 @@
 package com.google.common.primitives;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Booleans {
     public static int compare(boolean z, boolean z2) {
         if (z == z2) {

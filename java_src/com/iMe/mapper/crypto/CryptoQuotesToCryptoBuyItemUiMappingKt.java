@@ -9,7 +9,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoQuotesToCryptoBuyItemUiMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoQuotesToCryptoBuyItemUiMappingKt {
     public static final List<CryptoBuyItem> mapToUI(List<BuyingCryptoQuote> list, TokenDetailed tokenDetailed) {
         int collectionSizeOrDefault;

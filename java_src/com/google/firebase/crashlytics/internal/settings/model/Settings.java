@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.settings.model;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Settings {
     FeaturesSettingsData getFeaturesData();
 

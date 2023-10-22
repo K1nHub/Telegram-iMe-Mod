@@ -2,7 +2,7 @@ package com.google.zxing.common.reedsolomon;
 
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GenericGFPoly {
     private final int[] coefficients;
     private final GenericGF field;

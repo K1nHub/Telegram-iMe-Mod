@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/LongToDoubleFunction;
+.implements Ljava/util/function/LongToIntFunction;
 
 
 # instance fields

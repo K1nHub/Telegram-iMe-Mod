@@ -16,9 +16,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.p043ui.Components.VideoPlayer;
+import org.telegram.p042ui.Components.VideoPlayer;
 import org.telegram.tgnet.TLRPC$Document;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class VideoPlayerHolderBase {
     boolean audioDisabled;
     Uri contentUri;
@@ -123,6 +123,9 @@ public class VideoPlayerHolderBase {
         this.startTime = System.currentTimeMillis();
         this.audioDisabled = z2;
         this.paused = z;
+        if (j > 0) {
+            this.currentPosition = j;
+        }
         DispatchQueue dispatchQueue = this.dispatchQueue;
         Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
@@ -185,46 +188,46 @@ public class VideoPlayerHolderBase {
         }
         VideoPlayer videoPlayer2 = new VideoPlayer(false, z);
         this.videoPlayer = videoPlayer2;
-        videoPlayer2.setDelegate(new C35202());
+        videoPlayer2.setDelegate(new C36812());
         this.videoPlayer.setIsStory();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.video.VideoPlayerHolderBase$2 */
-    /* loaded from: classes6.dex */
-    public class C35202 implements VideoPlayer.VideoPlayerDelegate {
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+    /* loaded from: classes4.dex */
+    public class C36812 implements VideoPlayer.VideoPlayerDelegate {
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public /* bridge */ /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
             VideoPlayer.VideoPlayerDelegate.CC.$default$onRenderedFirstFrame(this, eventTime);
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public /* bridge */ /* synthetic */ void onSeekFinished(AnalyticsListener.EventTime eventTime) {
             VideoPlayer.VideoPlayerDelegate.CC.$default$onSeekFinished(this, eventTime);
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public /* bridge */ /* synthetic */ void onSeekStarted(AnalyticsListener.EventTime eventTime) {
             VideoPlayer.VideoPlayerDelegate.CC.$default$onSeekStarted(this, eventTime);
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
             return false;
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onVideoSizeChanged(int i, int i2, int i3, float f) {
         }
 
-        C35202() {
+        C36812() {
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onStateChanged(boolean z, int i) {
             VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
             videoPlayerHolderBase.lastState = i;
@@ -245,19 +248,19 @@ public class VideoPlayerHolderBase {
             VideoPlayerHolderBase.this.onStateChanged(z, i);
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onError(VideoPlayer videoPlayer, Exception exc) {
-            FileLog.m67e(exc);
+            FileLog.m97e(exc);
         }
 
-        @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
+        @Override // org.telegram.p042ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onRenderedFirstFrame() {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoPlayerHolderBase.C35202.this.lambda$onRenderedFirstFrame$0();
+                    VideoPlayerHolderBase.C36812.this.lambda$onRenderedFirstFrame$0();
                 }
-            }, 16L);
+            }, VideoPlayerHolderBase.this.surfaceView == null ? 16L : 32L);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -322,17 +325,7 @@ public class VideoPlayerHolderBase {
             return;
         }
         this.paused = true;
-        SurfaceView surfaceView = this.surfaceView;
-        if (surfaceView != null && this.firstFrameRendered && surfaceView.getHolder().getSurface().isValid()) {
-            this.stubAvailable = true;
-            if (this.playerStubBitmap == null) {
-                this.playerStubBitmap = Bitmap.createBitmap(720, 1280, Bitmap.Config.ARGB_8888);
-                this.playerStubPaint = new Paint(1);
-            }
-            if (Build.VERSION.SDK_INT >= 24) {
-                AndroidUtilities.getBitmapFromSurface(this.surfaceView, this.playerStubBitmap);
-            }
-        }
+        prepareStub();
         this.dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -346,6 +339,23 @@ public class VideoPlayerHolderBase {
         VideoPlayer videoPlayer = this.videoPlayer;
         if (videoPlayer != null) {
             videoPlayer.pause();
+        }
+    }
+
+    public void prepareStub() {
+        SurfaceView surfaceView = this.surfaceView;
+        if (surfaceView != null && this.firstFrameRendered && surfaceView.getHolder().getSurface().isValid()) {
+            this.stubAvailable = true;
+            if (this.playerStubBitmap == null) {
+                this.playerStubBitmap = Bitmap.createBitmap(720, 1280, Bitmap.Config.ARGB_8888);
+                this.playerStubPaint = new Paint(1);
+            }
+            if (Build.VERSION.SDK_INT >= 24) {
+                AndroidUtilities.getBitmapFromSurface(this.surfaceView, this.playerStubBitmap);
+                if (this.playerStubBitmap.getPixel(0, 0) == 0) {
+                    this.stubAvailable = false;
+                }
+            }
         }
     }
 

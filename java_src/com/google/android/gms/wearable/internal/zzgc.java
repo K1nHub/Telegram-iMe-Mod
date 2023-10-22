@@ -4,7 +4,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.wearable.Node;
 import com.google.android.gms.wearable.NodeApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzgc implements NodeApi.GetLocalNodeResult {
     private final Status zza;
     private final Node zzb;

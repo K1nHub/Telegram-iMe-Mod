@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.staking.StakingOperationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransactionsScreenType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class WalletTransactionsScreenType {
     public /* synthetic */ WalletTransactionsScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -17,7 +17,7 @@ public abstract class WalletTransactionsScreenType {
     }
 
     /* compiled from: WalletTransactionsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Fullscreen extends WalletTransactionsScreenType {
         public static final Fullscreen INSTANCE = new Fullscreen();
 
@@ -27,7 +27,7 @@ public abstract class WalletTransactionsScreenType {
     }
 
     /* compiled from: WalletTransactionsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class TokenDetailsTab extends WalletTransactionsScreenType {
         private final TransactionsGroup transactionsGroup;
 
@@ -75,7 +75,7 @@ public abstract class WalletTransactionsScreenType {
     }
 
     /* compiled from: WalletTransactionsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class StakingDetailsTab extends WalletTransactionsScreenType {
         private final StakingOperationType operationsType;
         private final StakingDetailsItem stakingDetails;
@@ -142,7 +142,7 @@ public abstract class WalletTransactionsScreenType {
     }
 
     /* compiled from: WalletTransactionsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class StakingOperationsTab extends WalletTransactionsScreenType {
         private final StakingOperationType operationsType;
 
@@ -191,7 +191,7 @@ public abstract class WalletTransactionsScreenType {
     }
 
     /* compiled from: WalletTransactionsScreenType.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoBoxDetailsTab extends WalletTransactionsScreenType {
         private final CryptoBoxInfo cryptoBoxInfo;
 

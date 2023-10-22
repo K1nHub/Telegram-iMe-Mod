@@ -33,7 +33,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import timber.log.Timber;
 /* compiled from: GoogleServicesRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GoogleServicesRepositoryImpl implements GoogleServicesRepository {
     private final File cachePath;
     private final ApiErrorHandler errorHandler;
@@ -186,11 +186,11 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
 
     private final Pair<MultipartBody.Part, File> convertBitmapToMultipart(Bitmap bitmap) {
         File tempFile$default = BitmapExtKt.toTempFile$default(bitmap, this.cachePath, null, 2, null);
-        return TuplesKt.m103to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
+        return TuplesKt.m144to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
     }
 
     /* compiled from: GoogleServicesRepositoryImpl.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

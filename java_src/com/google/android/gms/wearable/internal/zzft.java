@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.ApiExceptionUtil;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.wearable.MessageApi;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzft implements BaseImplementation.ResultHolder {
     final /* synthetic */ TaskCompletionSource zza;
 

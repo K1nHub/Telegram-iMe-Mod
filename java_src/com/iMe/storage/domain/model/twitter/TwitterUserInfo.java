@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.twitter;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterUserInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterUserInfo {
     private final Long telegramUserId;
     private final String twitterAvatarUrl;
@@ -73,9 +73,9 @@ public final class TwitterUserInfo {
     }
 
     public int hashCode() {
-        int m724m = ((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.twitterUserId) * 31) + this.twitterUsername.hashCode()) * 31) + this.twitterName.hashCode()) * 31) + this.twitterAvatarUrl.hashCode()) * 31;
+        int m1017m = ((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.twitterUserId) * 31) + this.twitterUsername.hashCode()) * 31) + this.twitterName.hashCode()) * 31) + this.twitterAvatarUrl.hashCode()) * 31;
         Long l = this.telegramUserId;
-        return m724m + (l == null ? 0 : l.hashCode());
+        return m1017m + (l == null ? 0 : l.hashCode());
     }
 
     public String toString() {

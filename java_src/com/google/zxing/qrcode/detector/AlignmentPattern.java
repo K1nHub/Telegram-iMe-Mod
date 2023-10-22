@@ -1,7 +1,7 @@
 package com.google.zxing.qrcode.detector;
 
 import com.google.zxing.ResultPoint;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AlignmentPattern extends ResultPoint {
     private final float estimatedModuleSize;
 

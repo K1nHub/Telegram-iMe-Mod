@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailedWithRate;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenMapping.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokenMappingKt {
     public static final TokenDetailed mapToDomain(TokenDetailedResponse tokenDetailedResponse) {
         Intrinsics.checkNotNullParameter(tokenDetailedResponse, "<this>");

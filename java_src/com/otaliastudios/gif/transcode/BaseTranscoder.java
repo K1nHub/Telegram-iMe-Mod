@@ -9,7 +9,7 @@ import com.otaliastudios.gif.internal.MediaCodecBuffers;
 import com.otaliastudios.gif.sink.DataSink;
 import com.otaliastudios.gif.source.DataSource;
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseTranscoder implements Transcoder {
     private MediaFormat mActualOutputFormat;
     private final MediaCodec.BufferInfo mBufferInfo = new MediaCodec.BufferInfo();

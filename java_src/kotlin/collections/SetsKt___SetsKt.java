@@ -1,17 +1,16 @@
 package kotlin.collections;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Sets.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SetsKt___SetsKt extends SetsKt__SetsKt {
     public static <T> Set<T> minus(Set<? extends T> set, T t) {
-        int mapCapacity;
         Intrinsics.checkNotNullParameter(set, "<this>");
-        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(set.size());
-        LinkedHashSet linkedHashSet = new LinkedHashSet(mapCapacity);
+        LinkedHashSet linkedHashSet = new LinkedHashSet(MapsKt.mapCapacity(set.size()));
         boolean z = false;
         for (T t2 : set) {
             boolean z2 = true;
@@ -26,11 +25,30 @@ public class SetsKt___SetsKt extends SetsKt__SetsKt {
         return linkedHashSet;
     }
 
-    public static <T> Set<T> plus(Set<? extends T> set, T t) {
-        int mapCapacity;
+    public static <T> Set<T> minus(Set<? extends T> set, Iterable<? extends T> elements) {
         Intrinsics.checkNotNullParameter(set, "<this>");
-        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(set.size() + 1);
-        LinkedHashSet linkedHashSet = new LinkedHashSet(mapCapacity);
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        Collection<?> convertToListIfNotCollection = CollectionsKt__MutableCollectionsKt.convertToListIfNotCollection(elements);
+        if (convertToListIfNotCollection.isEmpty()) {
+            return CollectionsKt.toSet(set);
+        }
+        if (convertToListIfNotCollection instanceof Set) {
+            LinkedHashSet linkedHashSet = new LinkedHashSet();
+            for (T t : set) {
+                if (!convertToListIfNotCollection.contains(t)) {
+                    linkedHashSet.add(t);
+                }
+            }
+            return linkedHashSet;
+        }
+        LinkedHashSet linkedHashSet2 = new LinkedHashSet(set);
+        linkedHashSet2.removeAll(convertToListIfNotCollection);
+        return linkedHashSet2;
+    }
+
+    public static <T> Set<T> plus(Set<? extends T> set, T t) {
+        Intrinsics.checkNotNullParameter(set, "<this>");
+        LinkedHashSet linkedHashSet = new LinkedHashSet(MapsKt.mapCapacity(set.size() + 1));
         linkedHashSet.addAll(set);
         linkedHashSet.add(t);
         return linkedHashSet;
@@ -38,7 +56,6 @@ public class SetsKt___SetsKt extends SetsKt__SetsKt {
 
     public static <T> Set<T> plus(Set<? extends T> set, Iterable<? extends T> elements) {
         int size;
-        int mapCapacity;
         Intrinsics.checkNotNullParameter(set, "<this>");
         Intrinsics.checkNotNullParameter(elements, "elements");
         Integer collectionSizeOrNull = CollectionsKt__IterablesKt.collectionSizeOrNull(elements);
@@ -47,10 +64,9 @@ public class SetsKt___SetsKt extends SetsKt__SetsKt {
         } else {
             size = set.size() * 2;
         }
-        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(size);
-        LinkedHashSet linkedHashSet = new LinkedHashSet(mapCapacity);
+        LinkedHashSet linkedHashSet = new LinkedHashSet(MapsKt.mapCapacity(size));
         linkedHashSet.addAll(set);
-        CollectionsKt__MutableCollectionsKt.addAll(linkedHashSet, elements);
+        CollectionsKt.addAll(linkedHashSet, elements);
         return linkedHashSet;
     }
 }

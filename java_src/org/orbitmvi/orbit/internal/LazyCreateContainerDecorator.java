@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.StateFlow;
 import org.orbitmvi.orbit.Container;
 /* compiled from: LazyCreateContainerDecorator.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class LazyCreateContainerDecorator<STATE, SIDE_EFFECT> implements Container {
     private static final /* synthetic */ AtomicIntegerFieldUpdater created$FU = AtomicIntegerFieldUpdater.newUpdater(LazyCreateContainerDecorator.class, "created");
     private final Container<STATE, SIDE_EFFECT> actual;

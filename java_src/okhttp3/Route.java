@@ -4,7 +4,7 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Route.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Route {
     private final Address address;
     private final Proxy proxy;

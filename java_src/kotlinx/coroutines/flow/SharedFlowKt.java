@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow;
 import kotlinx.coroutines.channels.BufferOverflow;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: SharedFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SharedFlowKt {
     public static final Symbol NO_VALUE = new Symbol("NO_VALUE");
 

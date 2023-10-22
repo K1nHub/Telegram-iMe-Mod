@@ -6,14 +6,14 @@ import com.iMe.model.wallet.crypto.TokenItem;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayScreenArgs.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinancePayScreenArgs implements Parcelable {
     public static final Parcelable.Creator<BinancePayScreenArgs> CREATOR = new Creator();
     private final TokenItem tokenItem;
     private final Long userId;
 
     /* compiled from: BinancePayScreenArgs.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Creator implements Parcelable.Creator<BinancePayScreenArgs> {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // android.os.Parcelable.Creator

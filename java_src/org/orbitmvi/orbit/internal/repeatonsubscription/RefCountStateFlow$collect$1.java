@@ -5,8 +5,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RefCountStateFlow.kt */
-@DebugMetadata(m102c = "org.orbitmvi.orbit.internal.repeatonsubscription.RefCountStateFlow", m101f = "RefCountStateFlow.kt", m100l = {19, 20, 22}, m99m = "collect")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.repeatonsubscription.RefCountStateFlow", m142f = "RefCountStateFlow.kt", m141l = {19, 20, 22}, m140m = "collect")
+/* loaded from: classes4.dex */
 public final class RefCountStateFlow$collect$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

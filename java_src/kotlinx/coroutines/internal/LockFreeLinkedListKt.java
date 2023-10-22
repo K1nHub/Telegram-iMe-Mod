@@ -1,12 +1,10 @@
 package kotlinx.coroutines.internal;
+
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LockFreeLinkedList.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class LockFreeLinkedListKt {
     private static final Object CONDITION_FALSE = new Symbol("CONDITION_FALSE");
-
-    static {
-        new Symbol("LIST_EMPTY");
-    }
 
     public static final Object getCONDITION_FALSE() {
         return CONDITION_FALSE;
@@ -15,6 +13,10 @@ public final class LockFreeLinkedListKt {
     public static final LockFreeLinkedListNode unwrap(Object obj) {
         LockFreeLinkedListNode lockFreeLinkedListNode;
         Removed removed = obj instanceof Removed ? (Removed) obj : null;
-        return (removed == null || (lockFreeLinkedListNode = removed.ref) == null) ? (LockFreeLinkedListNode) obj : lockFreeLinkedListNode;
+        if (removed == null || (lockFreeLinkedListNode = removed.ref) == null) {
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
+            return (LockFreeLinkedListNode) obj;
+        }
+        return lockFreeLinkedListNode;
     }
 }

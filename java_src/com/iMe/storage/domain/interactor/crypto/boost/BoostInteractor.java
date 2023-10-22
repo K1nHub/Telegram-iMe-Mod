@@ -3,14 +3,14 @@ package com.iMe.storage.domain.interactor.crypto.boost;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.repository.crypto.boost.BoostRepository;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BoostInteractor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BoostInteractor {
     private final BoostRepository boostRepository;
     private final SchedulersProvider schedulersProvider;
@@ -38,7 +38,7 @@ public final class BoostInteractor {
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -68,12 +68,12 @@ public final class BoostInteractor {
                             }
                             Observable<Result<String>> boost = boostRepository2.boost(data2, str);
                             schedulersProvider2 = BoostInteractor.this.schedulersProvider;
-                            Observable<Result<String>> subscribeOn = boost.subscribeOn(schedulersProvider2.mo717io());
+                            Observable<Result<String>> subscribeOn = boost.subscribeOn(schedulersProvider2.mo1010io());
                             Intrinsics.checkNotNullExpressionValue(subscribeOn, "boostRepository\n        …(schedulersProvider.io())");
                             return subscribeOn;
                         } else if (result2 instanceof Result.Error) {
                             Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
-                            Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                            Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                             return Observable.just(error$default2);
                         } else {
                             return Observable.empty();
@@ -82,13 +82,13 @@ public final class BoostInteractor {
                 }));
                 Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
                 schedulersProvider = BoostInteractor.this.schedulersProvider;
-                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo717io());
+                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1010io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "boostRepository\n        …(schedulersProvider.io())");
                 return subscribeOn;
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo717io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "boostRepository\n        …artWith(Result.loading())");
         return startWith;
     }

@@ -10,8 +10,8 @@ import java.util.Locale;
 import java.util.Objects;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.p043ui.Components.voip.VoIPHelper;
-/* loaded from: classes6.dex */
+import org.telegram.p042ui.Components.voip.VoIPHelper;
+/* loaded from: classes4.dex */
 public class VoIPController {
     public static final int DATA_SAVING_ALWAYS = 2;
     public static final int DATA_SAVING_MOBILE = 1;
@@ -47,7 +47,7 @@ public class VoIPController {
     protected ConnectionStateListener listener;
     protected long nativeInst = nativeInit(new File(ApplicationLoader.applicationContext.getFilesDir(), "voip_persistent_state.json").getAbsolutePath());
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface ConnectionStateListener {
         void onConnectionStateChanged(int i, boolean z);
 
@@ -358,7 +358,7 @@ public class VoIPController {
         return nativeNeedRate(this.nativeInst);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Stats {
         public long bytesRecvdMobile;
         public long bytesRecvdWifi;

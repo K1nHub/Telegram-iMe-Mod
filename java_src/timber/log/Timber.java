@@ -6,7 +6,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class Timber {
     private static final Tree[] TREE_ARRAY_EMPTY;
     static volatile Tree[] forestAsArray;
@@ -108,7 +108,7 @@ public final class Timber {
         forestAsArray = treeArr;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Tree {
         final ThreadLocal<String> explicitTag = new ThreadLocal<>();
 

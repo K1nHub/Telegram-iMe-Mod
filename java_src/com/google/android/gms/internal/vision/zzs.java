@@ -9,25 +9,25 @@ import com.google.android.gms.vision.Frame;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @SafeParcelable.Class(creator = "FrameMetadataParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzv();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public int zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public int zzc;
-    @SafeParcelable.Field(m797id = 5)
+    @SafeParcelable.Field(m1089id = 5)
     public long zzd;
-    @SafeParcelable.Field(m797id = 6)
+    @SafeParcelable.Field(m1089id = 6)
     public int zze;
 
     public zzs() {
     }
 
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) int i3, @SafeParcelable.Param(m796id = 5) long j, @SafeParcelable.Param(m796id = 6) int i4) {
+    public zzs(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) int i3, @SafeParcelable.Param(m1088id = 5) long j, @SafeParcelable.Param(m1088id = 6) int i4) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

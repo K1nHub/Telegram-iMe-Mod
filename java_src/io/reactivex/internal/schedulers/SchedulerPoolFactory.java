@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import p033j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SchedulerPoolFactory {
     public static final boolean PURGE_ENABLED;
     public static final int PURGE_PERIOD_SECONDS;
@@ -52,7 +52,7 @@ public final class SchedulerPoolFactory {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class PurgeProperties {
         boolean purgeEnable;
         int purgePeriod;
@@ -92,7 +92,7 @@ public final class SchedulerPoolFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ScheduledTask implements Runnable {
         ScheduledTask() {
         }

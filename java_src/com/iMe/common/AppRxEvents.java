@@ -2,12 +2,12 @@ package com.iMe.common;
 
 import android.content.Intent;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
-import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
-import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
+import com.iMe.storage.domain.utils.p029rx.event.DomainRxEvents;
+import com.iMe.storage.domain.utils.p029rx.event.RxEvent;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppRxEvents.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class AppRxEvents implements RxEvent {
     public /* synthetic */ AppRxEvents(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -17,7 +17,7 @@ public abstract class AppRxEvents implements RxEvent {
     }
 
     /* compiled from: AppRxEvents.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class UpdateWalletScreen extends AppRxEvents {
         public static final UpdateWalletScreen INSTANCE = new UpdateWalletScreen();
 
@@ -27,7 +27,7 @@ public abstract class AppRxEvents implements RxEvent {
     }
 
     /* compiled from: AppRxEvents.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class SuccessEnterPinCode extends AppRxEvents implements DomainRxEvents.CryptoEvent {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SuccessEnterPinCode(EnterPinCodeScreenType screenType) {
@@ -37,7 +37,7 @@ public abstract class AppRxEvents implements RxEvent {
     }
 
     /* compiled from: AppRxEvents.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BinanceWalletScreenNeedUpdate extends AppRxEvents {
         public static final BinanceWalletScreenNeedUpdate INSTANCE = new BinanceWalletScreenNeedUpdate();
 
@@ -47,7 +47,7 @@ public abstract class AppRxEvents implements RxEvent {
     }
 
     /* compiled from: AppRxEvents.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BinanceOpenAuthScreen extends AppRxEvents {
         public static final BinanceOpenAuthScreen INSTANCE = new BinanceOpenAuthScreen();
 
@@ -57,7 +57,7 @@ public abstract class AppRxEvents implements RxEvent {
     }
 
     /* compiled from: AppRxEvents.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class BinanceAuthHandled extends AppRxEvents {
         private final Intent intent;
 

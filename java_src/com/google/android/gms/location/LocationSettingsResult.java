@@ -10,16 +10,16 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsResultCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class LocationSettingsResult extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<LocationSettingsResult> CREATOR = new zzaa();
-    @SafeParcelable.Field(getter = "getStatus", m797id = 1)
+    @SafeParcelable.Field(getter = "getStatus", m1089id = 1)
     private final Status zza;
-    @SafeParcelable.Field(getter = "getLocationSettingsStates", m797id = 2)
+    @SafeParcelable.Field(getter = "getLocationSettingsStates", m1089id = 2)
     private final LocationSettingsStates zzb;
 
     @SafeParcelable.Constructor
-    public LocationSettingsResult(@SafeParcelable.Param(m796id = 1) Status status, @SafeParcelable.Param(m796id = 2) LocationSettingsStates locationSettingsStates) {
+    public LocationSettingsResult(@SafeParcelable.Param(m1088id = 1) Status status, @SafeParcelable.Param(m1088id = 2) LocationSettingsStates locationSettingsStates) {
         this.zza = status;
         this.zzb = locationSettingsStates;
     }

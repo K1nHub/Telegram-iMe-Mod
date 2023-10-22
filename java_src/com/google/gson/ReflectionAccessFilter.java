@@ -1,8 +1,8 @@
 package com.google.gson;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ReflectionAccessFilter {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum FilterResult {
         ALLOW,
         INDECISIVE,

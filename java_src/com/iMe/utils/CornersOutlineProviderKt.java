@@ -3,7 +3,7 @@ package com.iMe.utils;
 import android.view.View;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CornersOutlineProvider.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CornersOutlineProviderKt {
     public static /* synthetic */ void roundCorners$default(View view, float f, int i, Object obj) {
         if ((i & 1) != 0) {

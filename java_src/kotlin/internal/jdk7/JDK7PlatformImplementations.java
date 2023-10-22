@@ -3,12 +3,12 @@ package kotlin.internal.jdk7;
 import kotlin.internal.PlatformImplementations;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JDK7PlatformImplementations.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class JDK7PlatformImplementations extends PlatformImplementations {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: JDK7PlatformImplementations.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ReflectSdkVersion {
         public static final Integer sdkVersion;
 

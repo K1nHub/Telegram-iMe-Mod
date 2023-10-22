@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import okio.Buffer;
 /* compiled from: hostnames.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HostnamesKt {
     /* JADX WARN: Removed duplicated region for block: B:11:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x006d A[RETURN] */
@@ -67,24 +67,24 @@ public final class HostnamesKt {
         L6d:
             return r3
         L6e:
-            java.lang.String r5 = java.net.IDN.toASCII(r5)     // Catch: java.lang.IllegalArgumentException -> La4
+            java.lang.String r5 = java.net.IDN.toASCII(r5)     // Catch: java.lang.IllegalArgumentException -> La5
             java.lang.String r0 = "IDN.toASCII(host)"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La4
-            java.util.Locale r0 = java.util.Locale.US     // Catch: java.lang.IllegalArgumentException -> La4
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La5
+            java.util.Locale r0 = java.util.Locale.US     // Catch: java.lang.IllegalArgumentException -> La5
             java.lang.String r2 = "Locale.US"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r2)     // Catch: java.lang.IllegalArgumentException -> La4
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r2)     // Catch: java.lang.IllegalArgumentException -> La5
             if (r5 == 0) goto L9c
-            java.lang.String r5 = r5.toLowerCase(r0)     // Catch: java.lang.IllegalArgumentException -> La4
+            java.lang.String r5 = r5.toLowerCase(r0)     // Catch: java.lang.IllegalArgumentException -> La5
             java.lang.String r0 = "(this as java.lang.String).toLowerCase(locale)"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La4
-            int r0 = r5.length()     // Catch: java.lang.IllegalArgumentException -> La4
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La5
+            int r0 = r5.length()     // Catch: java.lang.IllegalArgumentException -> La5
             if (r0 != 0) goto L90
             r1 = r4
         L90:
             if (r1 == 0) goto L93
             return r3
         L93:
-            boolean r0 = containsInvalidHostnameAsciiCodes(r5)     // Catch: java.lang.IllegalArgumentException -> La4
+            boolean r0 = containsInvalidHostnameAsciiCodes(r5)     // Catch: java.lang.IllegalArgumentException -> La5
             if (r0 == 0) goto L9a
             goto L9b
         L9a:
@@ -92,11 +92,11 @@ public final class HostnamesKt {
         L9b:
             return r3
         L9c:
-            java.lang.NullPointerException r5 = new java.lang.NullPointerException     // Catch: java.lang.IllegalArgumentException -> La4
+            java.lang.NullPointerException r5 = new java.lang.NullPointerException     // Catch: java.lang.IllegalArgumentException -> La5
             java.lang.String r0 = "null cannot be cast to non-null type java.lang.String"
-            r5.<init>(r0)     // Catch: java.lang.IllegalArgumentException -> La4
-            throw r5     // Catch: java.lang.IllegalArgumentException -> La4
-        La4:
+            r5.<init>(r0)     // Catch: java.lang.IllegalArgumentException -> La5
+            throw r5     // Catch: java.lang.IllegalArgumentException -> La5
+        La5:
             return r3
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.HostnamesKt.toCanonicalHost(java.lang.String):java.lang.String");
@@ -107,7 +107,7 @@ public final class HostnamesKt {
         int length = str.length();
         for (int i = 0; i < length; i++) {
             char charAt = str.charAt(i);
-            if (Intrinsics.compare(charAt, 31) <= 0 || Intrinsics.compare(charAt, 127) >= 0) {
+            if (Intrinsics.compare((int) charAt, 31) <= 0 || Intrinsics.compare((int) charAt, 127) >= 0) {
                 return true;
             }
             indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) " #%/:?@[\\]", charAt, 0, false, 6, (Object) null);
@@ -164,7 +164,7 @@ public final class HostnamesKt {
             int i6 = 0;
             while (i5 < i2) {
                 char charAt = str.charAt(i5);
-                if (Intrinsics.compare(charAt, 48) < 0 || Intrinsics.compare(charAt, 57) > 0) {
+                if (Intrinsics.compare((int) charAt, 48) < 0 || Intrinsics.compare((int) charAt, 57) > 0) {
                     break;
                 } else if ((i6 == 0 && i != i5) || (i6 = ((i6 * 10) + charAt) - 48) > 255) {
                     return false;

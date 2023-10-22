@@ -4,7 +4,7 @@ import com.iMe.i_staking.response.StakingDetailedStatsResponse;
 import com.iMe.storage.domain.model.staking.StakingDetailedStats;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedStatsMapper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDetailedStatsMapperKt {
     public static final StakingDetailedStats mapToDomain(StakingDetailedStatsResponse stakingDetailedStatsResponse) {
         Intrinsics.checkNotNullParameter(stakingDetailedStatsResponse, "<this>");

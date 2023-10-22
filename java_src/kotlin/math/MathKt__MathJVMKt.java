@@ -1,7 +1,7 @@
 package kotlin.math;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MathJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MathKt__MathJVMKt extends MathKt__MathHKt {
     public static int roundToInt(double d) {
         if (Double.isNaN(d)) {
@@ -14,6 +14,13 @@ public class MathKt__MathJVMKt extends MathKt__MathHKt {
             return Integer.MIN_VALUE;
         }
         return (int) Math.round(d);
+    }
+
+    public static long roundToLong(double d) {
+        if (Double.isNaN(d)) {
+            throw new IllegalArgumentException("Cannot round NaN value.");
+        }
+        return Math.round(d);
     }
 
     public static int roundToInt(float f) {

@@ -8,10 +8,11 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.viewbinding.ViewBinding;
 import java.lang.reflect.Method;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.properties.ReadOnlyProperty;
 import kotlin.reflect.KProperty;
 /* compiled from: FragmentViewBindingDelegate.kt */
-/* loaded from: classes4.dex */
-public final class FragmentViewBindingDelegate<T extends ViewBinding> {
+/* loaded from: classes3.dex */
+public final class FragmentViewBindingDelegate<T extends ViewBinding> implements ReadOnlyProperty<Fragment, T> {
     private final Method bindMethod;
     private T binding;
     private final Fragment fragment;
@@ -23,7 +24,13 @@ public final class FragmentViewBindingDelegate<T extends ViewBinding> {
         this.bindMethod = bindingClass.getMethod("bind", View.class);
     }
 
-    public T getValue(Fragment thisRef, KProperty<?> property) {
+    @Override // kotlin.properties.ReadOnlyProperty
+    public /* bridge */ /* synthetic */ Object getValue(Fragment fragment, KProperty kProperty) {
+        return getValue2(fragment, (KProperty<?>) kProperty);
+    }
+
+    /* renamed from: getValue  reason: avoid collision after fix types in other method */
+    public T getValue2(Fragment thisRef, KProperty<?> property) {
         Intrinsics.checkNotNullParameter(thisRef, "thisRef");
         Intrinsics.checkNotNullParameter(property, "property");
         T t = this.binding;

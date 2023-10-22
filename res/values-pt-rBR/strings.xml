@@ -4102,7 +4102,6 @@ Se de forma geral você não concorda com os requisitos modestos do Telegram, n�
     <string name="UnpinnedDialogsCount_zero">%1$d chats desafixados</string>
     <string name="UnreadMessages">Mensagens não lidas</string>
     <string name="UnsupportedAttachment">Anexo não suportado</string>
-    <string name="UnsupportedMedia">Esta mensagem não é compatível com a sua versão do Telegram. Atualize o aplicativo para visualizar: https://telegram.org/update</string>
     <string name="Unvote">Remover Voto</string>
     <string name="Update">ATUALIZAR</string>
     <string name="UpdateApp">Atualizar aplicativo</string>
@@ -4952,6 +4951,8 @@ Configurações > Ferramentas > Bate-papos > Modelos"</string>
     <string name="debug_option_choose_wallet_environment">Escolha o ambiente da carteira (%s)</string>
     <string name="debug_option_choose_wallet_environment_dialog_message">Depois de mudar o ambiente, todos os dados atuais da carteira e tudo associado a ela será excluído</string>
     <string name="debug_option_choose_wallet_environment_dialog_title">Tem certeza?</string>
+    <string name="debug_option_theme_switch">Volume+ theme switch</string>
+    <string name="debug_test_backend">Test Backend</string>
     <string name="deleting_messages">Excluindo mensagens... Processadas: %1$d de %2$d</string>
     <string name="deleting_messages_success">Mensagens de serviço excluídas</string>
     <string name="dialog_promo_discussion_group_description">Grupo</string>
@@ -5043,7 +5044,7 @@ e tentaremos encontrar a conta dele no Telegram"</string>
     <string name="folder_tabs_remember_last_filter_tab_hint">Ao abrir o app, você estará na última aba que abriu. Se essa opção estiver desativada, a primeira aba à esquerda estará aberta por predefinição.</string>
     <string name="folder_tabs_remember_last_filter_tab_item_title">Lembrar aba</string>
     <string name="folder_tabs_settings_folders_first">À esquerda das abas de classificação</string>
-    <string name="folder_tabs_settings_header">Configurações de abas</string>
+    <string name="folder_tabs_settings_header">Configurações</string>
     <string name="folder_tabs_settings_hide_folders">Ocultar pastas</string>
     <string name="folder_tabs_sorting_settings">Abas por tipo</string>
     <string name="folder_tabs_sorting_settings_item_title">Classificação de chats</string>

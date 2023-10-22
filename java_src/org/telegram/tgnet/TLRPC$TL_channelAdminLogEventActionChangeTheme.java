@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channelAdminLogEventActionChangeTheme extends TLRPC$ChannelAdminLogEventAction {
     public static int constructor = -26672755;
     public String new_value;

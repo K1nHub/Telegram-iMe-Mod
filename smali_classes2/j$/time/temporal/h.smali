@@ -2,7 +2,7 @@
 .super Ljava/lang/Enum;
 
 # interfaces
-.implements Lj$/time/temporal/l;
+.implements Lj$/time/temporal/y;
 
 
 # static fields
@@ -25,7 +25,7 @@
 
     const-wide/32 v1, 0x1e18558
 
-    invoke-static {v1, v2}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v1, v2}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v1
 
@@ -43,7 +43,7 @@
 
     const-wide/32 v4, 0x786156
 
-    invoke-static {v4, v5}, Lj$/time/Duration;->c(J)Lj$/time/Duration;
+    invoke-static {v4, v5}, Lj$/time/Duration;->d(J)Lj$/time/Duration;
 
     move-result-object v2
 
@@ -110,6 +110,78 @@
 
 
 # virtual methods
+.method public a(Lj$/time/temporal/j;J)Lj$/time/temporal/j;
+    .locals 5
+
+    sget-object v0, Lj$/time/temporal/b;->a:[I
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    const-wide/16 v0, 0x100
+
+    div-long v2, p2, v0
+
+    sget-object v4, Lj$/time/temporal/ChronoUnit;->YEARS:Lj$/time/temporal/ChronoUnit;
+
+    invoke-interface {p1, v2, v3, v4}, Lj$/time/temporal/j;->f(JLj$/time/temporal/y;)Lj$/time/temporal/j;
+
+    move-result-object p1
+
+    rem-long/2addr p2, v0
+
+    const-wide/16 v0, 0x3
+
+    mul-long/2addr p2, v0
+
+    sget-object v0, Lj$/time/temporal/ChronoUnit;->MONTHS:Lj$/time/temporal/ChronoUnit;
+
+    invoke-interface {p1, p2, p3, v0}, Lj$/time/temporal/j;->f(JLj$/time/temporal/y;)Lj$/time/temporal/j;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Unreachable"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    sget-object v0, Lj$/time/temporal/i;->c:Lj$/time/temporal/o;
+
+    invoke-interface {p1, v0}, Lj$/time/temporal/k;->c(Lj$/time/temporal/o;)I
+
+    move-result v1
+
+    int-to-long v1, v1
+
+    invoke-static {v1, v2, p2, p3}, Lj$/lang/d;->c(JJ)J
+
+    move-result-wide p2
+
+    invoke-interface {p1, v0, p2, p3}, Lj$/time/temporal/j;->b(Lj$/time/temporal/o;J)Lj$/time/temporal/j;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 1
 

@@ -2,7 +2,7 @@ package com.google.common.collect;
 
 import com.google.common.base.Objects;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class AbstractMapEntry<K, V> implements Map.Entry<K, V> {
     @Override // java.util.Map.Entry
     public abstract K getKey();

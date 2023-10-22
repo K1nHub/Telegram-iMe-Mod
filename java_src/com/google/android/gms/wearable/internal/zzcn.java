@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.wearable.Asset;
 import com.google.android.gms.wearable.DataItemAsset;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzcn extends zzu {
     final /* synthetic */ DataItemAsset zza;
 

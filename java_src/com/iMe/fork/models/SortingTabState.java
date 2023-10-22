@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.filters.FilterFab;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SortingTabState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SortingTabState {
     private Set<? extends FilterFab> fabs;
     private boolean isEnabled;

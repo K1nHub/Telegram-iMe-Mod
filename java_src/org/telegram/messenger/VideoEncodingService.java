@@ -5,8 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import com.iMe.storage.domain.model.analytics.AnalyticsEvent;
 import org.telegram.messenger.NotificationCenter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private NotificationCompat.Builder builder;
     private int currentAccount;
@@ -33,7 +34,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.stopEncodingService);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadProgressChanged);
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("destroy video service");
+            FileLog.m100d("destroy video service");
         }
     }
 
@@ -51,7 +52,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
                 try {
                     NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(4, this.builder.build());
                 } catch (Throwable th) {
-                    FileLog.m67e(th);
+                    FileLog.m97e(th);
                 }
             }
         } else if (i == NotificationCenter.stopEncodingService) {
@@ -80,13 +81,13 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             notificationCenter.removeObserver(this, i4);
             NotificationCenter.getInstance(this.currentAccount).addObserver(this, i4);
         }
-        boolean booleanExtra = intent.getBooleanExtra("gif", false);
+        boolean booleanExtra = intent.getBooleanExtra(AnalyticsEvent.SendClip.typeGif, false);
         if (this.path == null) {
             stopSelf();
             return 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("start video service");
+            FileLog.m100d("start video service");
         }
         if (this.builder == null) {
             NotificationsController.checkOtherNotificationsChannel();
@@ -95,15 +96,15 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             builder.setSmallIcon(17301640);
             this.builder.setWhen(System.currentTimeMillis());
             this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-            this.builder.setContentTitle(LocaleController.getString("AppName", C3473R.string.AppName));
+            this.builder.setContentTitle(LocaleController.getString("AppName", C3630R.string.AppName));
             if (booleanExtra) {
                 NotificationCompat.Builder builder2 = this.builder;
-                int i5 = C3473R.string.SendingGif;
+                int i5 = C3630R.string.SendingGif;
                 builder2.setTicker(LocaleController.getString("SendingGif", i5));
                 this.builder.setContentText(LocaleController.getString("SendingGif", i5));
             } else {
                 NotificationCompat.Builder builder3 = this.builder;
-                int i6 = C3473R.string.SendingVideo;
+                int i6 = C3630R.string.SendingVideo;
                 builder3.setTicker(LocaleController.getString("SendingVideo", i6));
                 this.builder.setContentText(LocaleController.getString("SendingVideo", i6));
             }

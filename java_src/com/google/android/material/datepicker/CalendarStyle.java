@@ -9,7 +9,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.resources.MaterialResources;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CalendarStyle {
     final CalendarItemStyle day;
     final CalendarItemStyle invalidDay;

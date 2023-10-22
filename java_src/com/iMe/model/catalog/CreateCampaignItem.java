@@ -2,7 +2,7 @@ package com.iMe.model.catalog;
 
 import com.iMe.model.common.NoChildNode;
 /* compiled from: CreateCampaignItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CreateCampaignItem extends NoChildNode {
     private final int icon;
     private final int titleResId;

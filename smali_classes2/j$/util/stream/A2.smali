@@ -7,20 +7,20 @@
 
 
 # instance fields
-.field final synthetic b:Lj$/util/function/y;
+.field final synthetic b:Lj$/util/function/x;
 
-.field final synthetic c:Lj$/util/function/w;
+.field final synthetic c:Lj$/util/function/v;
 
 .field final synthetic d:Lj$/util/function/b;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/function/y;Lj$/util/function/w;Lj$/util/function/b;)V
+.method constructor <init>(Lj$/util/function/x;Lj$/util/function/v;Lj$/util/function/b;)V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/A2;->b:Lj$/util/function/y;
+    iput-object p1, p0, Lj$/util/stream/A2;->b:Lj$/util/function/x;
 
-    iput-object p2, p0, Lj$/util/stream/A2;->c:Lj$/util/function/w;
+    iput-object p2, p0, Lj$/util/stream/A2;->c:Lj$/util/function/v;
 
     iput-object p3, p0, Lj$/util/stream/A2;->d:Lj$/util/function/b;
 
@@ -54,11 +54,11 @@
 .method public accept(J)V
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/A2;->c:Lj$/util/function/w;
+    iget-object v0, p0, Lj$/util/stream/A2;->c:Lj$/util/function/v;
 
     iget-object v1, p0, Lj$/util/stream/T2;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1, p2}, Lj$/util/function/w;->accept(Ljava/lang/Object;J)V
+    invoke-interface {v0, v1, p1, p2}, Lj$/util/function/v;->accept(Ljava/lang/Object;J)V
 
     return-void
 .end method
@@ -92,16 +92,16 @@
     return-void
 .end method
 
-.method public f(Lj$/util/function/q;)Lj$/util/function/q;
+.method public f(Lj$/util/function/p;)Lj$/util/function/p;
     .locals 1
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/function/p;
+    new-instance v0, Lj$/util/function/o;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/function/p;-><init>(Lj$/util/function/q;Lj$/util/function/q;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/o;-><init>(Lj$/util/function/p;Lj$/util/function/p;)V
 
     return-object v0
 .end method
@@ -127,18 +127,18 @@
     return-void
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 0
 
-    iget-object p1, p0, Lj$/util/stream/A2;->b:Lj$/util/function/y;
+    iget-object p1, p0, Lj$/util/stream/A2;->b:Lj$/util/function/x;
 
-    invoke-interface {p1}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 

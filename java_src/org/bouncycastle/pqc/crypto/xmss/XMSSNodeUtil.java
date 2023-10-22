@@ -3,7 +3,7 @@ package org.bouncycastle.pqc.crypto.xmss;
 import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class XMSSNodeUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static XMSSNode lTree(WOTSPlus wOTSPlus, WOTSPlusPublicKeyParameters wOTSPlusPublicKeyParameters, LTreeAddress lTreeAddress) {
@@ -80,7 +80,7 @@ class XMSSNodeUtil {
             for (int i2 = 0; i2 < treeDigestSize; i2++) {
                 bArr[i2 + treeDigestSize] = (byte) (xMSSNode2.getValue()[i2] ^ PRF3[i2]);
             }
-            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m79H(PRF, bArr));
+            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m105H(PRF, bArr));
         }
         throw new IllegalStateException("height of both nodes must be equal");
     }

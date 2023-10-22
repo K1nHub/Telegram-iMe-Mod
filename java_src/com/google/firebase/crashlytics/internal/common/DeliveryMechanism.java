@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.common;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum DeliveryMechanism {
     DEVELOPER(1),
     USER_SIDELOAD(2),
@@ -8,19 +8,19 @@ public enum DeliveryMechanism {
     
 
     /* renamed from: id */
-    private final int f242id;
+    private final int f241id;
 
     DeliveryMechanism(int i) {
-        this.f242id = i;
+        this.f241id = i;
     }
 
     public int getId() {
-        return this.f242id;
+        return this.f241id;
     }
 
     @Override // java.lang.Enum
     public String toString() {
-        return Integer.toString(this.f242id);
+        return Integer.toString(this.f241id);
     }
 
     public static DeliveryMechanism determineFrom(String str) {

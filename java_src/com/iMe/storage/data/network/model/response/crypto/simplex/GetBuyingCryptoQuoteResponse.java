@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.simplex;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetBuyingCryptoQuoteResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetBuyingCryptoQuoteResponse {
     private final List<CryptoQuote> quotes;
 
@@ -49,7 +49,7 @@ public final class GetBuyingCryptoQuoteResponse {
     }
 
     /* compiled from: GetBuyingCryptoQuoteResponse.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class CryptoQuote {
         private final float digitalMoneyAmount;
         private final float fiatMoneyAmount;

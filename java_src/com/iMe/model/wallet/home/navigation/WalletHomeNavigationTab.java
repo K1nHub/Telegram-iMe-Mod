@@ -2,14 +2,14 @@ package com.iMe.model.wallet.home.navigation;
 
 import com.iMe.fork.utils.TabbedFragmentPage;
 import com.iMe.model.common.NavigationTab;
-import com.iMe.p031ui.wallet.home.tabs.WalletHomeTabFragment;
+import com.iMe.p030ui.wallet.home.tabs.WalletHomeTabFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletHomeNavigationTab.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFragment> {
 
     /* renamed from: id */
-    private final int f369id;
+    private final int f303id;
     private final TabbedFragmentPage<WalletHomeTabFragment> page;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFr
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f369id;
+        return this.f303id;
     }
 
     public final TabbedFragmentPage<WalletHomeTabFragment> getPage() {
@@ -68,7 +68,7 @@ public final class WalletHomeNavigationTab extends NavigationTab<WalletHomeTabFr
     public WalletHomeNavigationTab(int i, TabbedFragmentPage<WalletHomeTabFragment> page) {
         super(i, page.getFragment());
         Intrinsics.checkNotNullParameter(page, "page");
-        this.f369id = i;
+        this.f303id = i;
         this.page = page;
     }
 }

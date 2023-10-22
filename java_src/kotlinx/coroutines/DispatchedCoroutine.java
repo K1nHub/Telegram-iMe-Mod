@@ -8,14 +8,41 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.internal.DispatchedContinuationKt;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 /* compiled from: Builders.common.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
-    private static final /* synthetic */ AtomicIntegerFieldUpdater _decision$FU = AtomicIntegerFieldUpdater.newUpdater(DispatchedCoroutine.class, "_decision");
-    private volatile /* synthetic */ int _decision;
+    private static final AtomicIntegerFieldUpdater _decision$FU = AtomicIntegerFieldUpdater.newUpdater(DispatchedCoroutine.class, "_decision");
+    private volatile int _decision;
 
     public DispatchedCoroutine(CoroutineContext coroutineContext, Continuation<? super T> continuation) {
         super(coroutineContext, continuation);
-        this._decision = 0;
+    }
+
+    private final boolean trySuspend() {
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decision$FU;
+        do {
+            int i = atomicIntegerFieldUpdater.get(this);
+            if (i != 0) {
+                if (i == 2) {
+                    return false;
+                }
+                throw new IllegalStateException("Already suspended".toString());
+            }
+        } while (!_decision$FU.compareAndSet(this, 0, 1));
+        return true;
+    }
+
+    private final boolean tryResume() {
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decision$FU;
+        do {
+            int i = atomicIntegerFieldUpdater.get(this);
+            if (i != 0) {
+                if (i == 1) {
+                    return false;
+                }
+                throw new IllegalStateException("Already resumed".toString());
+            }
+        } while (!_decision$FU.compareAndSet(this, 0, 2));
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -34,7 +61,7 @@ public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
         DispatchedContinuationKt.resumeCancellableWith$default(intercepted, CompletionStateKt.recoverResult(obj, this.uCont), null, 2, null);
     }
 
-    public final Object getResult() {
+    public final Object getResult$kotlinx_coroutines_core() {
         Object coroutine_suspended;
         if (trySuspend()) {
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -45,31 +72,5 @@ public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
             throw ((CompletedExceptionally) unboxState).cause;
         }
         return unboxState;
-    }
-
-    private final boolean trySuspend() {
-        do {
-            int i = this._decision;
-            if (i != 0) {
-                if (i == 2) {
-                    return false;
-                }
-                throw new IllegalStateException("Already suspended".toString());
-            }
-        } while (!_decision$FU.compareAndSet(this, 0, 1));
-        return true;
-    }
-
-    private final boolean tryResume() {
-        do {
-            int i = this._decision;
-            if (i != 0) {
-                if (i == 1) {
-                    return false;
-                }
-                throw new IllegalStateException("Already resumed".toString());
-            }
-        } while (!_decision$FU.compareAndSet(this, 0, 2));
-        return true;
     }
 }

@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public m()V
+.method public l()V
     .locals 5
 
     iget-object v0, p0, Lj$/util/stream/P3;->c:[I
@@ -52,7 +52,7 @@
 
     int-to-long v3, v1
 
-    invoke-interface {v0, v3, v4}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {v0, v3, v4}, Lj$/util/stream/m3;->m(J)V
 
     iget-boolean v0, p0, Lj$/util/stream/D3;->b:Z
 
@@ -104,7 +104,7 @@
     :cond_1
     iget-object v0, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/m3;
 
-    invoke-interface {v0}, Lj$/util/stream/m3;->m()V
+    invoke-interface {v0}, Lj$/util/stream/m3;->l()V
 
     const/4 v0, 0x0
 
@@ -113,7 +113,7 @@
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 2
 
     const-wide/32 v0, 0x7ffffff7

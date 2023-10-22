@@ -8,7 +8,7 @@ import java.net.URI;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 /* compiled from: NullProxySelector.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class NullProxySelector extends ProxySelector {
     public static final NullProxySelector INSTANCE = new NullProxySelector();
 

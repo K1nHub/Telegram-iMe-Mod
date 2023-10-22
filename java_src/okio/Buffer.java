@@ -13,21 +13,16 @@ import java.nio.channels.ByteChannel;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Objects;
-import kotlin.collections.ArraysKt___ArraysJvmKt;
+import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.Charsets;
 import okio.internal.BufferKt;
 /* compiled from: Buffer.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Buffer implements BufferedSource, BufferedSink, Cloneable, ByteChannel {
     public Segment head;
     private long size;
-
-    @Override // okio.BufferedSource
-    public Buffer buffer() {
-        return this;
-    }
 
     @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
     public void close() {
@@ -760,7 +755,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             Segment writableSegment$okio = writableSegment$okio(1);
             int min = Math.min(i3 - i, 8192 - writableSegment$okio.limit);
             int i4 = i + min;
-            ArraysKt___ArraysJvmKt.copyInto(source, writableSegment$okio.data, writableSegment$okio.limit, i, i4);
+            ArraysKt.copyInto(source, writableSegment$okio.data, writableSegment$okio.limit, i, i4);
             writableSegment$okio.limit += min;
             i = i4;
         }
@@ -824,7 +819,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             int min = Math.min(i2, segment.limit - segment.pos);
             byte[] bArr = segment.data;
             int i3 = segment.pos;
-            ArraysKt___ArraysJvmKt.copyInto(bArr, sink, i, i3, i3 + min);
+            ArraysKt.copyInto(bArr, sink, i, i3, i3 + min);
             segment.pos += min;
             setSize$okio(size() - min);
             if (segment.pos == segment.limit) {
@@ -1031,7 +1026,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
     }
 
     /* compiled from: Buffer.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class UnsafeCursor implements Closeable {
         public Buffer buffer;
         public byte[] data;
@@ -1232,57 +1227,6 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         Buffer buffer = new Buffer();
         copyTo(buffer, 0L, Math.min(32, size()));
         throw new EOFException("\\n not found: limit=" + Math.min(size(), j) + " content=" + buffer.readByteString().hex() + (char) 8230);
-    }
-
-    public int readUtf8CodePoint() throws EOFException {
-        int i;
-        int i2;
-        int i3;
-        if (size() == 0) {
-            throw new EOFException();
-        }
-        byte b = getByte(0L);
-        if ((b & 128) == 0) {
-            i = b & Byte.MAX_VALUE;
-            i3 = 0;
-            i2 = 1;
-        } else if ((b & 224) == 192) {
-            i = b & 31;
-            i2 = 2;
-            i3 = 128;
-        } else if ((b & 240) == 224) {
-            i = b & 15;
-            i2 = 3;
-            i3 = 2048;
-        } else if ((b & 248) != 240) {
-            skip(1L);
-            return 65533;
-        } else {
-            i = b & 7;
-            i2 = 4;
-            i3 = 65536;
-        }
-        long j = i2;
-        if (size() < j) {
-            throw new EOFException("size < " + i2 + ": " + size() + " (to read code point prefixed 0x" + Util.toHexString(b) + ')');
-        }
-        for (int i4 = 1; i4 < i2; i4++) {
-            long j2 = i4;
-            byte b2 = getByte(j2);
-            if ((b2 & 192) != 128) {
-                skip(j2);
-                return 65533;
-            }
-            i = (i << 6) | (b2 & 63);
-        }
-        skip(j);
-        if (i > 1114111) {
-            return 65533;
-        }
-        if ((55296 <= i && 57343 >= i) || i < i3) {
-            return 65533;
-        }
-        return i;
     }
 
     public Buffer writeUtf8(String string, int i, int i2) {

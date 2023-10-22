@@ -1,9 +1,9 @@
 package com.iMe.storage.data.network.model.request.billing;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ValidateReceiptRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ValidateReceiptRequest {
     private final String orderId;
     private final String packageName;
@@ -82,7 +82,7 @@ public final class ValidateReceiptRequest {
     }
 
     public int hashCode() {
-        return (((((((((this.orderId.hashCode() * 31) + this.packageName.hashCode()) * 31) + this.productId.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.purchaseTime)) * 31) + this.purchaseState) * 31) + this.purchaseToken.hashCode();
+        return (((((((((this.orderId.hashCode() * 31) + this.packageName.hashCode()) * 31) + this.productId.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.purchaseTime)) * 31) + this.purchaseState) * 31) + this.purchaseToken.hashCode();
     }
 
     public String toString() {

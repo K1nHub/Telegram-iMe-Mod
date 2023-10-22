@@ -4,14 +4,15 @@ import android.content.Context;
 import android.content.pm.ProviderInfo;
 import android.net.Uri;
 import android.util.Log;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzbg {
     private static volatile zzcy<Boolean> zza = zzcy.zzc();
     private static final Object zzb = new Object();
 
     private static boolean zza(Context context) {
-        return (context.getPackageManager().getApplicationInfo("com.google.android.gms", 0).flags & 129) != 0;
+        return (context.getPackageManager().getApplicationInfo("com.google.android.gms", 0).flags & TsExtractor.TS_STREAM_TYPE_AC3) != 0;
     }
 
     public static boolean zza(Context context, Uri uri) {

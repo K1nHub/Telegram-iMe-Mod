@@ -82,7 +82,7 @@
     return-void
 .end method
 
-.method public n(J)V
+.method public m(J)V
     .locals 8
 
     iget-object v0, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/m3;
@@ -99,7 +99,7 @@
 
     move-result-wide p1
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->n(J)V
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/m3;->m(J)V
 
     return-void
 .end method

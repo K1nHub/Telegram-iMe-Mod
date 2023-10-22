@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.translation;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Translation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Translation {
     private final String sourceLang;
     private final String text;

@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class HeartBeatInfoStorage {
     private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("dd/MM/yyyy z");
     private static HeartBeatInfoStorage instance;

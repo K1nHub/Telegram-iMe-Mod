@@ -1,14 +1,14 @@
 package io.reactivex.internal.util;
 
 import io.reactivex.functions.Predicate;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class AppendOnlyLinkedArrayList<T> {
     final int capacity;
     final Object[] head;
     int offset;
     Object[] tail;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface NonThrowingPredicate<T> extends Predicate<T> {
         @Override // io.reactivex.functions.Predicate
         boolean test(T t);

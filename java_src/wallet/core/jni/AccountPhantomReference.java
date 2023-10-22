@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: Account.java */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 class AccountPhantomReference extends PhantomReference<Account> {
     private long nativeHandle;
     private static Set<AccountPhantomReference> references = new HashSet();

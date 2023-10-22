@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzhi extends AbstractList<String> implements zzfg, RandomAccess {
     private final zzfg zza;
 
@@ -16,7 +16,7 @@ public final class zzhi extends AbstractList<String> implements zzfg, RandomAcce
 
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfg
     /* renamed from: a_ */
-    public final zzfg mo779a_() {
+    public final zzfg mo1071a_() {
         return this;
     }
 

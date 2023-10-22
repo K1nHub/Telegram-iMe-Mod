@@ -15,7 +15,7 @@ import com.google.android.material.ripple.RippleUtils;
 import com.google.android.material.shadow.ShadowViewDelegate;
 import java.util.ArrayList;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.floatingactionbutton.FloatingActionButtonImpl

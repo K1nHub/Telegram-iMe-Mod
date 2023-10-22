@@ -8,19 +8,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "GoogleNowAuthStateCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class GoogleNowAuthState extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GoogleNowAuthState> CREATOR = new zza();
-    @SafeParcelable.Field(getter = "getAuthCode", m797id = 1)
+    @SafeParcelable.Field(getter = "getAuthCode", m1089id = 1)
     String zza;
-    @SafeParcelable.Field(getter = "getAccessToken", m797id = 2)
+    @SafeParcelable.Field(getter = "getAccessToken", m1089id = 2)
     String zzb;
-    @SafeParcelable.Field(getter = "getNextAllowedTimeMillis", m797id = 3)
+    @SafeParcelable.Field(getter = "getNextAllowedTimeMillis", m1089id = 3)
     long zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleNowAuthState(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) long j) {
+    public GoogleNowAuthState(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) long j) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = j;

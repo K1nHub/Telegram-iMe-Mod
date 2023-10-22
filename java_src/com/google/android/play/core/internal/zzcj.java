@@ -2,7 +2,7 @@ package com.google.android.play.core.internal;
 
 import java.io.File;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzcj {
     public static String zza(File file) {
         if (!file.getName().endsWith(".apk")) {

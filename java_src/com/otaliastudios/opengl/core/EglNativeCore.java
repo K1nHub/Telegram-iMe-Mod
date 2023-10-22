@@ -11,7 +11,7 @@ import com.otaliastudios.opengl.internal.EglSurface;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EglNativeCore.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class EglNativeCore {
     private EglConfig eglConfig;
     private EglContext eglContext;
@@ -110,7 +110,7 @@ public class EglNativeCore {
     }
 
     /* compiled from: EglNativeCore.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

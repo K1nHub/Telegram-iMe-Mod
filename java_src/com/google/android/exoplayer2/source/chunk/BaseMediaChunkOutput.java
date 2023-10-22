@@ -27,7 +27,7 @@ public final class BaseMediaChunkOutput implements ChunkExtractor.TrackOutputPro
                 }
                 i3++;
             } else {
-                Log.m818e(TAG, "Unmatched track of type: " + i2);
+                Log.m1110e(TAG, "Unmatched track of type: " + i2);
                 return new DummyTrackOutput();
             }
         }

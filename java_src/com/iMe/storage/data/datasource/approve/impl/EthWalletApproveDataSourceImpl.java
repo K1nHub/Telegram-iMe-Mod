@@ -13,15 +13,15 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.swap.ApproveArgs;
-import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
-import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.iMe.storage.domain.utils.extensions.CryptoExtKt;
+import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: EthWalletApproveDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
@@ -54,7 +54,7 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
                     if (!(result instanceof Result.Success)) {
                         if (result instanceof Result.Error) {
                             Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                            Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                             return Observable.just(error$default);
                         }
                         return Observable.empty();
@@ -92,7 +92,6 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
     public Observable<Result<String>> sign(TransactionArgs args) {
-        byte[] bArr;
         Intrinsics.checkNotNullParameter(args, "args");
         if (!(args instanceof ApproveArgs.Dex)) {
             throw new IllegalStateException("Incorrect approve args passed");
@@ -100,10 +99,7 @@ public final class EthWalletApproveDataSourceImpl implements WalletApproveDataSo
         ApproveArgs.Dex dex = (ApproveArgs.Dex) args;
         Ethereum.Transaction createTransaction = createTransaction(dex);
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        if (eVMWallet == null || (bArr = eVMWallet.getPrivateKeyBytes()) == null) {
-            bArr = new byte[0];
-        }
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(EthTransactionSigner.INSTANCE.sign(dex.getChainId(), dex.getGasPrice(), dex.getGasLimit(), dex.getNonce(), dex.getTokenContractAddress(), createTransaction, bArr)));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(EthTransactionSigner.INSTANCE.sign(dex.getChainId(), dex.getGasPrice(), dex.getGasLimit(), dex.getNonce(), dex.getTokenContractAddress(), createTransaction, CryptoExtKt.orEmpty(eVMWallet != null ? eVMWallet.getPrivateKeyBytes() : null))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

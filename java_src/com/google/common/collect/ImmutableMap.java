@@ -15,7 +15,7 @@ import p033j$.util.Map;
 import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Function;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p033j$.util.Map {
     private transient ImmutableSet<Map.Entry<K, V>> entrySet;
     private transient ImmutableSet<K> keySet;
@@ -83,12 +83,12 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableMap<K, V> m755of() {
+    public static <K, V> ImmutableMap<K, V> m1047of() {
         return (ImmutableMap<K, V>) RegularImmutableMap.EMPTY;
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableMap<K, V> m754of(K k, V v) {
+    public static <K, V> ImmutableMap<K, V> m1046of(K k, V v) {
         CollectPreconditions.checkEntryNotNull(k, v);
         return RegularImmutableMap.create(1, new Object[]{k, v});
     }
@@ -97,7 +97,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         return new Builder<>();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Builder<K, V> {
         Object[] alternatingKeysAndValues;
         DuplicateKey duplicateKey;
@@ -243,7 +243,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public static final class DuplicateKey {
             private final Object key;
             private final Object value1;

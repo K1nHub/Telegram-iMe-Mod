@@ -2,7 +2,7 @@ package com.google.common.util.concurrent;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Uninterruptibles {
     public static <V> V getUninterruptibly(Future<V> future) throws ExecutionException {
         V v;

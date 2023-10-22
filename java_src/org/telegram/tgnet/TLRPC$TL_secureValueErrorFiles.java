@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_secureValueErrorFiles extends TLRPC$SecureValueError {
     public static int constructor = 1717706985;
     public ArrayList<byte[]> file_hash = new ArrayList<>();

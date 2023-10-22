@@ -48,22 +48,22 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceInternalRepositoryImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceInternalRepositoryImpl implements BinanceInternalRepository {
     private final BinanceInternalApi binanceInternalApi;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final ApiErrorHandler errorHandler;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
 
-    public BinanceInternalRepositoryImpl(BinanceInternalApi binanceInternalApi, CryptoPreferenceHelper cryptoPreferenceHelper, FirebaseFunctionsErrorHandler firebaseErrorHandler, ApiErrorHandler errorHandler) {
+    public BinanceInternalRepositoryImpl(BinanceInternalApi binanceInternalApi, CryptoPreferenceHelper cryptoPreferenceHelper, ApiErrorHandler errorHandler, FirebaseFunctionsErrorHandler firebaseErrorHandler) {
         Intrinsics.checkNotNullParameter(binanceInternalApi, "binanceInternalApi");
         Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
-        Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
         Intrinsics.checkNotNullParameter(errorHandler, "errorHandler");
+        Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
         this.binanceInternalApi = binanceInternalApi;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
-        this.firebaseErrorHandler = firebaseErrorHandler;
         this.errorHandler = errorHandler;
+        this.firebaseErrorHandler = firebaseErrorHandler;
     }
 
     @Override // com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository

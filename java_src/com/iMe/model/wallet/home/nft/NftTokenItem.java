@@ -1,38 +1,44 @@
 package com.iMe.model.wallet.home.nft;
 
 import com.iMe.model.common.NoChildNode;
-import com.iMe.storage.domain.model.crypto.nft.avatar.NftToken;
-import java.util.List;
+import com.iMe.storage.domain.model.crypto.nft.NftToken;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftTokenItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NftTokenItem extends NoChildNode {
-    private final List<NftToken> collection;
+    private final int itemIndex;
+    private final NftType nftType;
     private final NftToken token;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ NftTokenItem copy$default(NftTokenItem nftTokenItem, NftToken nftToken, List list, int i, Object obj) {
-        if ((i & 1) != 0) {
+    public static /* synthetic */ NftTokenItem copy$default(NftTokenItem nftTokenItem, NftToken nftToken, int i, NftType nftType, int i2, Object obj) {
+        if ((i2 & 1) != 0) {
             nftToken = nftTokenItem.token;
         }
-        if ((i & 2) != 0) {
-            list = nftTokenItem.collection;
+        if ((i2 & 2) != 0) {
+            i = nftTokenItem.itemIndex;
         }
-        return nftTokenItem.copy(nftToken, list);
+        if ((i2 & 4) != 0) {
+            nftType = nftTokenItem.nftType;
+        }
+        return nftTokenItem.copy(nftToken, i, nftType);
     }
 
     public final NftToken component1() {
         return this.token;
     }
 
-    public final List<NftToken> component2() {
-        return this.collection;
+    public final int component2() {
+        return this.itemIndex;
     }
 
-    public final NftTokenItem copy(NftToken token, List<NftToken> collection) {
+    public final NftType component3() {
+        return this.nftType;
+    }
+
+    public final NftTokenItem copy(NftToken token, int i, NftType nftType) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(collection, "collection");
-        return new NftTokenItem(token, collection);
+        Intrinsics.checkNotNullParameter(nftType, "nftType");
+        return new NftTokenItem(token, i, nftType);
     }
 
     public boolean equals(Object obj) {
@@ -41,31 +47,36 @@ public final class NftTokenItem extends NoChildNode {
         }
         if (obj instanceof NftTokenItem) {
             NftTokenItem nftTokenItem = (NftTokenItem) obj;
-            return Intrinsics.areEqual(this.token, nftTokenItem.token) && Intrinsics.areEqual(this.collection, nftTokenItem.collection);
+            return Intrinsics.areEqual(this.token, nftTokenItem.token) && this.itemIndex == nftTokenItem.itemIndex && this.nftType == nftTokenItem.nftType;
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.token.hashCode() * 31) + this.collection.hashCode();
+        return (((this.token.hashCode() * 31) + this.itemIndex) * 31) + this.nftType.hashCode();
     }
 
     public String toString() {
-        return "NftTokenItem(token=" + this.token + ", collection=" + this.collection + ')';
+        return "NftTokenItem(token=" + this.token + ", itemIndex=" + this.itemIndex + ", nftType=" + this.nftType + ')';
     }
 
     public final NftToken getToken() {
         return this.token;
     }
 
-    public final List<NftToken> getCollection() {
-        return this.collection;
+    public final int getItemIndex() {
+        return this.itemIndex;
     }
 
-    public NftTokenItem(NftToken token, List<NftToken> collection) {
+    public final NftType getNftType() {
+        return this.nftType;
+    }
+
+    public NftTokenItem(NftToken token, int i, NftType nftType) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(collection, "collection");
+        Intrinsics.checkNotNullParameter(nftType, "nftType");
         this.token = token;
-        this.collection = collection;
+        this.itemIndex = i;
+        this.nftType = nftType;
     }
 }

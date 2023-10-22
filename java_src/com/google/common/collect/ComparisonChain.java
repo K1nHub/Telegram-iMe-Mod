@@ -4,7 +4,7 @@ import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Ints;
 import com.google.common.primitives.Longs;
 import java.util.Comparator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class ComparisonChain {
     private static final ComparisonChain ACTIVE = new ComparisonChain() { // from class: com.google.common.collect.ComparisonChain.1
         @Override // com.google.common.collect.ComparisonChain
@@ -66,7 +66,7 @@ public abstract class ComparisonChain {
         return ACTIVE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static final class InactiveComparisonChain extends ComparisonChain {
         final int result;
 

@@ -211,7 +211,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                             if (XmlPullParserUtil.isStartTag(xmlPullParser2, "SegmentTemplate")) {
                                 long parseAvailabilityTimeOffsetUs2 = parseAvailabilityTimeOffsetUs(xmlPullParser2, C0479C.TIME_UNSET);
                                 j6 = -9223372036854775807L;
-                                parseSegmentTemplate = parseSegmentTemplate(xmlPullParser, null, ImmutableList.m762of(), j8, parseDuration2, j5, parseAvailabilityTimeOffsetUs2, j4);
+                                parseSegmentTemplate = parseSegmentTemplate(xmlPullParser, null, ImmutableList.m1054of(), j8, parseDuration2, j5, parseAvailabilityTimeOffsetUs2, j4);
                                 j10 = parseAvailabilityTimeOffsetUs2;
                                 j9 = j5;
                             } else {
@@ -1195,7 +1195,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 if (matcher.matches()) {
                     return Integer.parseInt(matcher.group(1));
                 }
-                Log.m814w(TAG, "Unable to parse CEA-608 channel number from: " + descriptor.value);
+                Log.m1106w(TAG, "Unable to parse CEA-608 channel number from: " + descriptor.value);
             }
         }
         return -1;
@@ -1210,7 +1210,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 if (matcher.matches()) {
                     return Integer.parseInt(matcher.group(1));
                 }
-                Log.m814w(TAG, "Unable to parse CEA-708 service block number from: " + descriptor.value);
+                Log.m1106w(TAG, "Unable to parse CEA-708 service block number from: " + descriptor.value);
             }
         }
         return -1;

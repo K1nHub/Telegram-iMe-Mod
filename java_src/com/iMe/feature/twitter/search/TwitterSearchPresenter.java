@@ -6,24 +6,20 @@ import com.iMe.manager.TelegramApi;
 import com.iMe.manager.crypto.recipient.CryptoRecipientManager;
 import com.iMe.manager.crypto.recipient.CryptoRecipientView;
 import com.iMe.model.common.GlobalStateItem;
-import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.state.GlobalState;
 import com.iMe.model.twitter.TwitterInviteItem;
 import com.iMe.model.twitter.TwitterUserItem;
-import com.iMe.p031ui.base.mvp.base.BasePresenter;
-import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.p030ui.base.mvp.base.BasePresenter;
+import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.interactor.twitter.TwitterInteractor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.twitter.TwitterProfileInfo;
 import com.iMe.storage.domain.model.twitter.TwitterUserInfo;
 import com.iMe.storage.domain.storage.TwitterPreferenceHelper;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
+import com.iMe.storage.domain.utils.p029rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p032rx.RxExtKt;
-import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p031rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
@@ -41,18 +37,14 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringNumberConversionsKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3473R;
-import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* compiled from: TwitterSearchPresenter.kt */
 @InjectViewState
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchView> {
-    private final BlockchainType blockchainType;
     private final CryptoRecipientManager cryptoRecipientManager;
     private final List<BaseNode> items;
     private int page;
@@ -70,12 +62,6 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         new Companion(null);
     }
 
-    public void loadAddressInfoById(String recipient, BlockchainType blockchainType) {
-        Intrinsics.checkNotNullParameter(recipient, "recipient");
-        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        this.cryptoRecipientManager.loadAddressInfoById(recipient, blockchainType);
-    }
-
     public TwitterSearchPresenter(TelegramGateway telegramGateway, BlockchainType blockchainType, CryptoRecipientManager cryptoRecipientManager, ResourceManager resourceManager, SchedulersProvider schedulersProvider, TelegramApi telegramApi, TelegramControllersGateway telegramControllersGateway, TwitterInteractor twitterInteractor, TwitterPreferenceHelper twitterPreferenceHelper) {
         Intrinsics.checkNotNullParameter(telegramGateway, "telegramGateway");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
@@ -86,7 +72,6 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         Intrinsics.checkNotNullParameter(telegramControllersGateway, "telegramControllersGateway");
         Intrinsics.checkNotNullParameter(twitterInteractor, "twitterInteractor");
         Intrinsics.checkNotNullParameter(twitterPreferenceHelper, "twitterPreferenceHelper");
-        this.blockchainType = blockchainType;
         this.cryptoRecipientManager = cryptoRecipientManager;
         this.resourceManager = resourceManager;
         this.schedulersProvider = schedulersProvider;
@@ -103,271 +88,6 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         this.query = "";
     }
 
-    public final void reload() {
-        this.page = 1;
-        this.items.clear();
-        searchByQuery(true);
-    }
-
-    public static /* synthetic */ void searchByQuery$default(TwitterSearchPresenter twitterSearchPresenter, boolean z, int i, Object obj) {
-        if ((i & 1) != 0) {
-            z = false;
-        }
-        twitterSearchPresenter.searchByQuery(z);
-    }
-
-    public final void searchByQuery(final boolean z) {
-        final boolean z2 = !z;
-        if (z2 || this.page > 1) {
-            ((TwitterSearchView) getViewState()).onLoadMoreComplete();
-            return;
-        }
-        Observable<Result<List<BaseNode>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "getSearchObservable()\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BaseNode>>, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$searchByQuery$$inlined$subscribeWithErrorHandle$default$1
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1200invoke(result);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1200invoke(Result<? extends List<? extends BaseNode>> it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result<? extends List<? extends BaseNode>> result = it;
-                if (result instanceof Result.Success) {
-                    TwitterSearchPresenter.this.onSearchSuccess((List) ((Result.Success) result).getData(), z2, z);
-                } else if (result instanceof Result.Loading) {
-                    if (z) {
-                        TwitterSearchPresenter.this.renderGlobalState(GlobalState.Progress.INSTANCE);
-                    }
-                } else if (result instanceof Result.Error) {
-                    if (z2) {
-                        ((TwitterSearchView) TwitterSearchPresenter.this.getViewState()).onLoadMoreError();
-                    } else if (((Result.Error) result).getError().isNoConnectionStatus()) {
-                        TwitterSearchPresenter.this.renderGlobalState(GlobalState.NoInternet.INSTANCE);
-                    } else {
-                        TwitterSearchPresenter.this.renderGlobalState(GlobalState.Unexpected.INSTANCE);
-                    }
-                }
-            }
-        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$searchByQuery$$inlined$subscribeWithErrorHandle$default$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable error) {
-                Timber.m6e(error);
-                BaseView baseView = BaseView.this;
-                if (baseView != null) {
-                    String message = error.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView.showToast(message);
-                }
-                Intrinsics.checkNotNullExpressionValue(error, "error");
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
-        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
-    }
-
-    public final void onQueryUpdate(String newQuery) {
-        Intrinsics.checkNotNullParameter(newQuery, "newQuery");
-        this.querySubject.onNext(newQuery);
-    }
-
-    public final void onUserClick(final TwitterUserItem twitterUserItem) {
-        Intrinsics.checkNotNullParameter(twitterUserItem, "twitterUserItem");
-        Observable<Result<TwitterProfileInfo>> observeOn = this.twitterInteractor.getUserByUsername(twitterUserItem.getNickname()).observeOn(this.schedulersProvider.mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-        T viewState = getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TwitterProfileInfo>, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$onUserClick$$inlined$subscribeWithErrorHandle$default$1
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TwitterProfileInfo> result) {
-                m1199invoke(result);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1199invoke(Result<? extends TwitterProfileInfo> it) {
-                ResourceManager resourceManager;
-                ResourceManager resourceManager2;
-                BlockchainType blockchainType;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result<? extends TwitterProfileInfo> result = it;
-                if (result instanceof Result.Success) {
-                    if (((TwitterProfileInfo) ((Result.Success) result).getData()).getTelegramUserId() != TwitterUserItem.this.getUser().f1685id) {
-                        resourceManager2 = this.resourceManager;
-                        ((TwitterSearchView) this.getViewState()).showToast(resourceManager2.getString(C3473R.string.common_error_unexpected));
-                        return;
-                    }
-                    TwitterSearchPresenter twitterSearchPresenter = this;
-                    String valueOf = String.valueOf(TwitterUserItem.this.getUser().f1685id);
-                    blockchainType = this.blockchainType;
-                    twitterSearchPresenter.loadAddressInfoById(valueOf, blockchainType);
-                } else if (result instanceof Result.Error) {
-                    resourceManager = this.resourceManager;
-                    ((TwitterSearchView) this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
-                }
-            }
-        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$onUserClick$$inlined$subscribeWithErrorHandle$default$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable error) {
-                Timber.m6e(error);
-                BaseView baseView = BaseView.this;
-                if (baseView != null) {
-                    String message = error.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView.showToast(message);
-                }
-                Intrinsics.checkNotNullExpressionValue(error, "error");
-            }
-        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
-    }
-
-    public final void onInviteClick(TwitterInviteItem twitterInviteItem) {
-        Intrinsics.checkNotNullParameter(twitterInviteItem, "twitterInviteItem");
-        ((TwitterSearchView) getViewState()).showInviteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3473R.string.twitter_search_invite_confirmation_title), this.resourceManager.getString(C3473R.string.twitter_search_invite_confirmation_description, twitterInviteItem.getNickname()), LocaleController.getString("Cancel", C3473R.string.Cancel), LocaleController.getString("Send", C3473R.string.Send)), twitterInviteItem.getId());
-    }
-
-    public final void sendInvite(long j) {
-        Observable<Result<Boolean>> observeOn = this.twitterInteractor.sendInvite(this.profileId, j).observeOn(this.schedulersProvider.mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-        T viewState = getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$sendInvite$$inlined$subscribeWithErrorHandle$default$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1201invoke(result);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1201invoke(Result<? extends Boolean> it) {
-                ResourceManager resourceManager;
-                ResourceManager resourceManager2;
-                ResourceManager resourceManager3;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result<? extends Boolean> result = it;
-                if (result instanceof Result.Success) {
-                    resourceManager3 = TwitterSearchPresenter.this.resourceManager;
-                    ((TwitterSearchView) TwitterSearchPresenter.this.getViewState()).showToast(resourceManager3.getString(C3473R.string.twitter_search_invite_success));
-                } else if (result instanceof Result.Error) {
-                    Result.Error error = (Result.Error) result;
-                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.TwitterErrorStatus.TWITTER_USER_DISABLED_DIRECT_MESSAGES) {
-                        resourceManager2 = TwitterSearchPresenter.this.resourceManager;
-                        ((TwitterSearchView) TwitterSearchPresenter.this.getViewState()).showToast(resourceManager2.getString(C3473R.string.twitter_search_invite_direct_messages_error));
-                        return;
-                    }
-                    resourceManager = TwitterSearchPresenter.this.resourceManager;
-                    ((TwitterSearchView) TwitterSearchPresenter.this.getViewState()).showErrorToast(error, resourceManager);
-                }
-            }
-        }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$sendInvite$$inlined$subscribeWithErrorHandle$default$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable error) {
-                Timber.m6e(error);
-                BaseView baseView = BaseView.this;
-                if (baseView != null) {
-                    String message = error.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView.showToast(message);
-                }
-                Intrinsics.checkNotNullExpressionValue(error, "error");
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
-        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
-    }
-
-    public final void processSelectedRecipient(String id, String address) {
-        Object obj;
-        Long longOrNull;
-        boolean z;
-        Intrinsics.checkNotNullParameter(id, "id");
-        Intrinsics.checkNotNullParameter(address, "address");
-        List<BaseNode> list = this.items;
-        ArrayList arrayList = new ArrayList();
-        for (Object obj2 : list) {
-            if (obj2 instanceof TwitterUserItem) {
-                arrayList.add(obj2);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            long j = ((TwitterUserItem) obj).getUser().f1685id;
-            longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(id);
-            if (longOrNull != null && j == longOrNull.longValue()) {
-                z = true;
-                continue;
-            } else {
-                z = false;
-                continue;
-            }
-            if (z) {
-                break;
-            }
-        }
-        TwitterUserItem twitterUserItem = (TwitterUserItem) obj;
-        if (twitterUserItem == null) {
-            return;
-        }
-        ((TwitterSearchView) getViewState()).onUserSelected(twitterUserItem, address);
-    }
-
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
@@ -379,7 +99,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         renderGlobalState(GlobalState.Empty.TwitterSearch.INSTANCE);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.base.BasePresenter, moxy.MvpPresenter
+    @Override // com.iMe.p030ui.base.mvp.base.BasePresenter, moxy.MvpPresenter
     public void onDestroy() {
         this.cryptoRecipientManager.onDetachViewState();
         super.onDestroy();
@@ -413,7 +133,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$4 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$4(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$4;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo716ui());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
         final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -443,7 +163,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$5 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$5(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$5;
             }
-        }).observeOn(this.schedulersProvider.mo717io());
+        }).observeOn(this.schedulersProvider.mo1010io());
         final Function1<String, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -470,7 +190,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$6 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$6(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$6;
             }
-        }).subscribeOn(this.schedulersProvider.mo717io()).observeOn(this.schedulersProvider.mo716ui());
+        }).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
         Intrinsics.checkNotNullExpressionValue(observeOn3, "private fun subscribeToQ…     .autoDispose()\n    }");
         Disposable subscribe = observeOn3.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BaseNode>>, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -479,12 +199,12 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1202invoke(result);
+                m1430invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1202invoke(Result<? extends List<? extends BaseNode>> it) {
+            public final void m1430invoke(Result<? extends List<? extends BaseNode>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BaseNode>> result = it;
                 if (result instanceof Result.Success) {
@@ -561,7 +281,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 if (!(result instanceof Result.Success)) {
                     if (result instanceof Result.Error) {
                         Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
                         return Observable.just(error$default);
                     }
                     return Observable.empty();
@@ -615,7 +335,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        Observable<List<TLRPC$User>> observeOn = this.telegramApi.getUsersByIds(arrayList).observeOn(this.schedulersProvider.mo716ui());
+        Observable<List<TLRPC$User>> observeOn = this.telegramApi.getUsersByIds(arrayList).observeOn(this.schedulersProvider.mo1009ui());
         final Function1<List<? extends TLRPC$User>, Result<? extends List<? extends BaseNode>>> function1 = new Function1<List<? extends TLRPC$User>, Result<? extends List<? extends BaseNode>>>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$flatMapSearchResult$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -639,7 +359,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                         }
                         obj = it.next();
                         Long telegramUserId2 = ((TwitterUserInfo) obj).getTelegramUserId();
-                        long j = tLRPC$User.f1685id;
+                        long j = tLRPC$User.f1762id;
                         if (telegramUserId2 != null && telegramUserId2.longValue() == j) {
                             z = true;
                             continue;
@@ -704,7 +424,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
     }
 
     /* compiled from: TwitterSearchPresenter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -4,7 +4,7 @@ import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.binancepay.BinanceTokenBalanceInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceBalanceItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BinanceBalanceItem extends NoChildNode {
     private final BinanceTokenBalanceInfo balanceInfo;
     private final boolean isBalanceHidden;

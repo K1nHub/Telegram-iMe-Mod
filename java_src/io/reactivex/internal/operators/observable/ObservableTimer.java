@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableTimer extends Observable<Long> {
     final long delay;
     final Scheduler scheduler;
@@ -27,7 +27,7 @@ public final class ObservableTimer extends Observable<Long> {
         timerObserver.setResource(this.scheduler.scheduleDirect(timerObserver, this.delay, this.unit));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class TimerObserver extends AtomicReference<Disposable> implements Disposable, Runnable {
         final Observer<? super Long> downstream;
 

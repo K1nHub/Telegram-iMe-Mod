@@ -21,12 +21,13 @@ import androidx.core.text.TextDirectionHeuristicsCompat;
 import androidx.core.util.Preconditions;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.StaticLayoutBuilderCompat;
 import com.google.android.material.resources.CancelableFontCallback;
 import com.google.android.material.resources.TextAppearance;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CollapsingTextHelper {
     private static final Paint DEBUG_DRAW_PAINT;
     private static final boolean USE_SCALING_TEXTURE;
@@ -99,7 +100,7 @@ public final class CollapsingTextHelper {
 
     public CollapsingTextHelper(View view) {
         this.view = view;
-        TextPaint textPaint = new TextPaint(129);
+        TextPaint textPaint = new TextPaint((int) TsExtractor.TS_STREAM_TYPE_AC3);
         this.textPaint = textPaint;
         this.tmpPaint = new TextPaint(textPaint);
         this.collapsedBounds = new Rect();

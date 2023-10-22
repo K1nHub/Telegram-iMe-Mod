@@ -1,6 +1,6 @@
 package org.webrtc.audio;
 @Deprecated
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public class LegacyAudioDeviceModule implements AudioDeviceModule {
     @Override // org.webrtc.audio.AudioDeviceModule
     public long getNativeAudioDeviceModulePointer() {

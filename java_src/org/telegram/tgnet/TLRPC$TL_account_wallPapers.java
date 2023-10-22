@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_account_wallPapers extends TLRPC$account_WallPapers {
     public static int constructor = -842824308;
     public long hash;

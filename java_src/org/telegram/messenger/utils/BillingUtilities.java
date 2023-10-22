@@ -15,7 +15,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$InputStorePaymentPurpose;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BillingUtilities {
     public static void extractCurrencyExp(Map<String, Integer> map) {
         if (map.isEmpty()) {
@@ -29,7 +29,7 @@ public class BillingUtilities {
                 }
                 open.close();
             } catch (Exception e) {
-                FileLog.m67e(e);
+                FileLog.m97e(e);
             }
         }
     }
@@ -56,13 +56,13 @@ public class BillingUtilities {
     public static Pair<AccountInstance, TLRPC$InputStorePaymentPurpose> extractDeveloperPayload(Purchase purchase) {
         AccountIdentifiers accountIdentifiers = purchase.getAccountIdentifiers();
         if (accountIdentifiers == null) {
-            FileLog.m70d("Billing: Extract payload. No AccountIdentifiers");
+            FileLog.m100d("Billing: Extract payload. No AccountIdentifiers");
             return null;
         }
         String obfuscatedAccountId = accountIdentifiers.getObfuscatedAccountId();
         String obfuscatedProfileId = accountIdentifiers.getObfuscatedProfileId();
         if (obfuscatedAccountId == null || obfuscatedAccountId.isEmpty() || obfuscatedProfileId == null || obfuscatedProfileId.isEmpty()) {
-            FileLog.m70d("Billing: Extract payload. Empty AccountIdentifiers");
+            FileLog.m100d("Billing: Extract payload. Empty AccountIdentifiers");
             return null;
         }
         try {
@@ -71,12 +71,12 @@ public class BillingUtilities {
             serializedData.cleanup();
             AccountInstance findAccountById = findAccountById(Long.parseLong(new String(Base64.decode(obfuscatedAccountId, 0), Charsets.UTF_8)));
             if (findAccountById == null) {
-                FileLog.m70d("Billing: Extract payload. AccountInstance not found");
+                FileLog.m100d("Billing: Extract payload. AccountInstance not found");
                 return null;
             }
             return Pair.create(findAccountById, TLdeserialize);
         } catch (Exception e) {
-            FileLog.m68e("Billing: Extract Payload", e);
+            FileLog.m98e("Billing: Extract Payload", e);
             return null;
         }
     }

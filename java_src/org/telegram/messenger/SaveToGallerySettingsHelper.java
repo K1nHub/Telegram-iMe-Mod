@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.LongSparseArray;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.NotificationBadge;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SaveToGallerySettingsHelper {
     public static String CHANNELS_PREF_NAME = "channels_save_gallery_exceptions";
     public static final long DEFAULT_VIDEO_LIMIT = 104857600;
@@ -120,7 +120,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Settings {
         public long limitVideo = SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT;
         public boolean savePhoto;
@@ -143,7 +143,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class SharedSettings extends Settings {
         private int type;
 
@@ -195,13 +195,13 @@ public class SaveToGallerySettingsHelper {
             StringBuilder sb = new StringBuilder();
             if (enabled()) {
                 if (this.savePhoto) {
-                    sb.append(LocaleController.getString("SaveToGalleryPhotos", C3473R.string.SaveToGalleryPhotos));
+                    sb.append(LocaleController.getString("SaveToGalleryPhotos", C3630R.string.SaveToGalleryPhotos));
                 }
                 if (this.saveVideo) {
                     if (sb.length() != 0) {
                         sb.append(", ");
                     }
-                    sb.append(LocaleController.getString("SaveToGalleryVideos", C3473R.string.SaveToGalleryVideos));
+                    sb.append(LocaleController.getString("SaveToGalleryVideos", C3630R.string.SaveToGalleryVideos));
                     long j = this.limitVideo;
                     if (j > 0 && j < 4194304000L) {
                         sb.append(" (");
@@ -210,7 +210,7 @@ public class SaveToGallerySettingsHelper {
                     }
                 }
             } else {
-                sb.append(LocaleController.getString("SaveToGalleryOff", C3473R.string.SaveToGalleryOff));
+                sb.append(LocaleController.getString("SaveToGalleryOff", C3630R.string.SaveToGalleryOff));
             }
             LongSparseArray<DialogException> saveGalleryExceptions = UserConfig.getInstance(i).getSaveGalleryExceptions(this.type);
             if (saveGalleryExceptions.size() != 0) {
@@ -229,7 +229,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class DialogException extends Settings {
         public long dialogId;
 
@@ -238,7 +238,7 @@ public class SaveToGallerySettingsHelper {
             StringBuilder sb = new StringBuilder();
             if (enabled()) {
                 if (this.savePhoto) {
-                    sb.append(LocaleController.getString("SaveToGalleryPhotos", C3473R.string.SaveToGalleryPhotos));
+                    sb.append(LocaleController.getString("SaveToGalleryPhotos", C3630R.string.SaveToGalleryPhotos));
                 }
                 if (this.saveVideo) {
                     if (sb.length() != 0) {
@@ -246,13 +246,13 @@ public class SaveToGallerySettingsHelper {
                     }
                     long j = this.limitVideo;
                     if (j <= 0 || j >= 4194304000L) {
-                        sb.append(LocaleController.formatString("SaveToGalleryVideos", C3473R.string.SaveToGalleryVideos, new Object[0]));
+                        sb.append(LocaleController.formatString("SaveToGalleryVideos", C3630R.string.SaveToGalleryVideos, new Object[0]));
                     } else {
-                        sb.append(LocaleController.formatString("SaveToGalleryVideosUpTo", C3473R.string.SaveToGalleryVideosUpTo, AndroidUtilities.formatFileSize(j, true, false)));
+                        sb.append(LocaleController.formatString("SaveToGalleryVideosUpTo", C3630R.string.SaveToGalleryVideosUpTo, AndroidUtilities.formatFileSize(j, true, false)));
                     }
                 }
             } else {
-                sb.append(LocaleController.getString("SaveToGalleryOff", C3473R.string.SaveToGalleryOff));
+                sb.append(LocaleController.getString("SaveToGalleryOff", C3630R.string.SaveToGalleryOff));
             }
             return sb;
         }

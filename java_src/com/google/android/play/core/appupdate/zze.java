@@ -6,7 +6,7 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import com.google.android.play.core.common.IntentSenderForResultStarter;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zze implements IntentSenderForResultStarter {
     final /* synthetic */ Activity zza;
 

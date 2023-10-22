@@ -1,10 +1,10 @@
 package com.iMe.storage.data.network.model.response.crypto.cryptobox;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTransactionArgsResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxTransactionArgsResponse {
     private final long chainId;
     private final String data;
@@ -13,7 +13,7 @@ public final class CryptoBoxTransactionArgsResponse {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f392to;
+    private final String f325to;
     private final String value;
 
     public final long component1() {
@@ -21,7 +21,7 @@ public final class CryptoBoxTransactionArgsResponse {
     }
 
     public final String component2() {
-        return this.f392to;
+        return this.f325to;
     }
 
     public final BigInteger component3() {
@@ -58,21 +58,21 @@ public final class CryptoBoxTransactionArgsResponse {
         }
         if (obj instanceof CryptoBoxTransactionArgsResponse) {
             CryptoBoxTransactionArgsResponse cryptoBoxTransactionArgsResponse = (CryptoBoxTransactionArgsResponse) obj;
-            return this.chainId == cryptoBoxTransactionArgsResponse.chainId && Intrinsics.areEqual(this.f392to, cryptoBoxTransactionArgsResponse.f392to) && Intrinsics.areEqual(this.nonce, cryptoBoxTransactionArgsResponse.nonce) && Intrinsics.areEqual(this.gasLimit, cryptoBoxTransactionArgsResponse.gasLimit) && Intrinsics.areEqual(this.gasPrice, cryptoBoxTransactionArgsResponse.gasPrice) && Intrinsics.areEqual(this.data, cryptoBoxTransactionArgsResponse.data) && Intrinsics.areEqual(this.value, cryptoBoxTransactionArgsResponse.value);
+            return this.chainId == cryptoBoxTransactionArgsResponse.chainId && Intrinsics.areEqual(this.f325to, cryptoBoxTransactionArgsResponse.f325to) && Intrinsics.areEqual(this.nonce, cryptoBoxTransactionArgsResponse.nonce) && Intrinsics.areEqual(this.gasLimit, cryptoBoxTransactionArgsResponse.gasLimit) && Intrinsics.areEqual(this.gasPrice, cryptoBoxTransactionArgsResponse.gasPrice) && Intrinsics.areEqual(this.data, cryptoBoxTransactionArgsResponse.data) && Intrinsics.areEqual(this.value, cryptoBoxTransactionArgsResponse.value);
         }
         return false;
     }
 
     public int hashCode() {
-        int m724m = ((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId) * 31) + this.f392to.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.gasPrice.hashCode()) * 31;
+        int m1017m = ((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId) * 31) + this.f325to.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.gasPrice.hashCode()) * 31;
         String str = this.data;
-        int hashCode = (m724m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m1017m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.value;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
-        return "CryptoBoxTransactionArgsResponse(chainId=" + this.chainId + ", to=" + this.f392to + ", nonce=" + this.nonce + ", gasLimit=" + this.gasLimit + ", gasPrice=" + this.gasPrice + ", data=" + this.data + ", value=" + this.value + ')';
+        return "CryptoBoxTransactionArgsResponse(chainId=" + this.chainId + ", to=" + this.f325to + ", nonce=" + this.nonce + ", gasLimit=" + this.gasLimit + ", gasPrice=" + this.gasPrice + ", data=" + this.data + ", value=" + this.value + ')';
     }
 
     public CryptoBoxTransactionArgsResponse(long j, String to, BigInteger nonce, BigInteger gasLimit, BigInteger gasPrice, String str, String str2) {
@@ -81,7 +81,7 @@ public final class CryptoBoxTransactionArgsResponse {
         Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
         Intrinsics.checkNotNullParameter(gasPrice, "gasPrice");
         this.chainId = j;
-        this.f392to = to;
+        this.f325to = to;
         this.nonce = nonce;
         this.gasLimit = gasLimit;
         this.gasPrice = gasPrice;
@@ -94,7 +94,7 @@ public final class CryptoBoxTransactionArgsResponse {
     }
 
     public final String getTo() {
-        return this.f392to;
+        return this.f325to;
     }
 
     public final BigInteger getNonce() {

@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.twitter;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterSelfChatProfileRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TwitterSelfChatProfileRequest {
     private final String accessToken;
     private final String telegramUserId;

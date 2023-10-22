@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BottomSheetMenuItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BottomSheetMenuItem {
     private final Function0<Unit> action;
     private final int icon;

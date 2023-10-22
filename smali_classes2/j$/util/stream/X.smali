@@ -65,9 +65,9 @@
 .method public final test(Ljava/lang/Object;)Z
     .locals 0
 
-    check-cast p1, Lj$/util/j;
+    check-cast p1, Lj$/util/h;
 
-    invoke-virtual {p1}, Lj$/util/j;->c()Z
+    invoke-virtual {p1}, Lj$/util/h;->c()Z
 
     move-result p1
 

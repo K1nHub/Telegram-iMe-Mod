@@ -1,5 +1,5 @@
 package com.google.common.base;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Ascii {
     private static int getAlphaIndex(char c) {
         return (char) ((c | ' ') - 97);

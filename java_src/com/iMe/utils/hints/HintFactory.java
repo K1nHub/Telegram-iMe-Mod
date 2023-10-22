@@ -6,11 +6,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.model.hint.HintModel;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p043ui.ActionBar.INavigationLayout;
-import org.telegram.p043ui.Components.HintView;
-import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p042ui.ActionBar.INavigationLayout;
+import org.telegram.p042ui.Components.HintView;
+import org.telegram.p042ui.Components.LayoutHelper;
 /* compiled from: HintFactory.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HintFactory {
     private HintView hintView;
 

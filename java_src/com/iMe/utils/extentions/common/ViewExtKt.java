@@ -1,7 +1,6 @@
 package com.iMe.utils.extentions.common;
 
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -33,22 +32,22 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.common.DigitsInputFilter;
 import com.iMe.utils.helper.binancepay.BinancePayHelper;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p043ui.ActionBar.Theme;
-import org.telegram.p043ui.Components.TypefaceSpan;
+import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p042ui.Components.TypefaceSpan;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ViewExtKt {
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
         java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
@@ -74,7 +73,7 @@ public final class ViewExtKt {
     }
 
     public static final int getDpToPx(float f) {
-        return (int) (f * Resources.getSystem().getDisplayMetrics().density);
+        return AndroidUtilities.m103dp(f);
     }
 
     public static /* synthetic */ View inflate$default(ViewGroup viewGroup, int i, boolean z, int i2, Object obj) {
@@ -94,13 +93,13 @@ public final class ViewExtKt {
     public static final void setVerticalPadding(View view, Number verticalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(verticalPadding, "verticalPadding");
-        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m73dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m73dp(verticalPadding.floatValue()));
+        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m103dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m103dp(verticalPadding.floatValue()));
     }
 
     public static final void setHorizontalPadding(View view, Number horizontalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(horizontalPadding, "horizontalPadding");
-        view.setPadding(AndroidUtilities.m73dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m73dp(horizontalPadding.floatValue()), view.getPaddingBottom());
+        view.setPadding(AndroidUtilities.m103dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m103dp(horizontalPadding.floatValue()), view.getPaddingBottom());
     }
 
     public static final void loadImage(ImageView imageView, TokenDetailed token) {
@@ -113,7 +112,7 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(headers, "headers");
-        Glide.with(imageView).load(new GlideUrl(url, new Headers() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda4
+        Glide.with(imageView).load(new GlideUrl(url, new Headers() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda3
             @Override // com.bumptech.glide.load.model.Headers
             public final Map getHeaders() {
                 return ViewExtKt.loadImage$lambda$0(headers);
@@ -130,53 +129,6 @@ public final class ViewExtKt {
         for (Drawable drawable : filterNotNull) {
             drawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
         }
-    }
-
-    public static final void setRightDrawableOnClickListener(final TextView textView, final Function0<Unit> action) {
-        Intrinsics.checkNotNullParameter(textView, "<this>");
-        Intrinsics.checkNotNullParameter(action, "action");
-        textView.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnTouchListener
-            public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean rightDrawableOnClickListener$lambda$2;
-                rightDrawableOnClickListener$lambda$2 = ViewExtKt.setRightDrawableOnClickListener$lambda$2(textView, action, view, motionEvent);
-                return rightDrawableOnClickListener$lambda$2;
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setRightDrawableOnClickListener$lambda$2(TextView this_setRightDrawableOnClickListener, Function0 action, View view, MotionEvent motionEvent) {
-        Intrinsics.checkNotNullParameter(this_setRightDrawableOnClickListener, "$this_setRightDrawableOnClickListener");
-        Intrinsics.checkNotNullParameter(action, "$action");
-        if (motionEvent.getAction() != 1 || motionEvent.getRawX() < this_setRightDrawableOnClickListener.getRight() - this_setRightDrawableOnClickListener.getCompoundDrawables()[2].getBounds().width()) {
-            return false;
-        }
-        action.invoke();
-        return true;
-    }
-
-    public static final void setRightDrawableOnClickListener(TextView textView, final Runnable action) {
-        Intrinsics.checkNotNullParameter(textView, "<this>");
-        Intrinsics.checkNotNullParameter(action, "action");
-        setRightDrawableOnClickListener(textView, new Function0<Unit>() { // from class: com.iMe.utils.extentions.common.ViewExtKt$setRightDrawableOnClickListener$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                action.run();
-            }
-        });
     }
 
     public static /* synthetic */ void visible$default(View view, boolean z, int i, Object obj) {
@@ -302,7 +254,7 @@ public final class ViewExtKt {
             }
         }, 1, null);
         final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
-        view.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
+        view.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view2, MotionEvent motionEvent) {
                 boolean mixedClickListener$lambda$4;
@@ -388,7 +340,7 @@ public final class ViewExtKt {
     public static final void onAction(EditText editText, final int i, final Callbacks$Callback runAction) {
         Intrinsics.checkNotNullParameter(editText, "<this>");
         Intrinsics.checkNotNullParameter(runAction, "runAction");
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda3
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
                 boolean onAction$lambda$5;
@@ -408,21 +360,20 @@ public final class ViewExtKt {
         return false;
     }
 
-    public static final void visible(View view, boolean z) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(z ? 0 : 8);
-    }
-
     public static final void setEnabledWithAlpha(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         view.setAlpha(z ? 1.0f : 0.5f);
         view.setEnabled(z);
     }
 
+    public static final void visible(View view, boolean z) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setVisibility(z ? 0 : 8);
+    }
+
     public static final void disable(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setAlpha(0.5f);
-        view.setEnabled(false);
+        setEnabledWithAlpha(view, false);
     }
 
     public static final void nextPage(ViewPager viewPager) {
@@ -469,8 +420,8 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(viewPager, "<this>");
         viewPager.setOffscreenPageLimit(3);
         viewPager.setClipToPadding(false);
-        int m73dp = AndroidUtilities.m73dp(24.0f);
-        viewPager.setPadding(m73dp, 0, m73dp, 0);
+        int m103dp = AndroidUtilities.m103dp(24.0f);
+        viewPager.setPadding(m103dp, 0, m103dp, 0);
     }
 
     public static final void withMediumTypeface(TextView textView) {
@@ -497,6 +448,11 @@ public final class ViewExtKt {
         limitInputLength(editText, i, i2);
     }
 
+    public static final void limitInputLength(EditText editText, int i, int i2) {
+        Intrinsics.checkNotNullParameter(editText, "<this>");
+        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i2, i, 0.0d, 4, null)});
+    }
+
     public static /* synthetic */ void setMargins$default(View view, int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -519,11 +475,6 @@ public final class ViewExtKt {
             i4 = marginLayoutParams4 != null ? marginLayoutParams4.bottomMargin : 0;
         }
         setMargins(view, i, i2, i3, i4);
-    }
-
-    public static final void limitInputLength(EditText editText, int i, int i2) {
-        Intrinsics.checkNotNullParameter(editText, "<this>");
-        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i2, i, 0.0d, 4, null)});
     }
 
     public static final void setAllowDecimals(EditText editText, boolean z) {
@@ -562,6 +513,11 @@ public final class ViewExtKt {
         return scaleY;
     }
 
+    public static final void setTextsColorKey(int i, TextView... textViews) {
+        Intrinsics.checkNotNullParameter(textViews, "textViews");
+        setTextsColor(Theme.getColor(i), (TextView[]) Arrays.copyOf(textViews, textViews.length));
+    }
+
     public static final void setMargins(View view, int i, int i2, int i3, int i4) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -574,7 +530,7 @@ public final class ViewExtKt {
     public static final void setTextsColor(int i, TextView... textViews) {
         Intrinsics.checkNotNullParameter(textViews, "textViews");
         for (TextView textView : textViews) {
-            textView.setTextColor(Theme.getColor(i));
+            textView.setTextColor(i);
         }
     }
 }

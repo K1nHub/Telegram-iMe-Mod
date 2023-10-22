@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_channels_getAdminLog extends TLObject {
     public static int constructor = 870184064;
     public ArrayList<TLRPC$InputUser> admins = new ArrayList<>();
@@ -13,7 +13,7 @@ public class TLRPC$TL_channels_getAdminLog extends TLObject {
     public long min_id;
 
     /* renamed from: q */
-    public String f1563q;
+    public String f1641q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -25,7 +25,7 @@ public class TLRPC$TL_channels_getAdminLog extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         this.channel.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeString(this.f1563q);
+        abstractSerializedData.writeString(this.f1641q);
         if ((this.flags & 1) != 0) {
             this.events_filter.serializeToStream(abstractSerializedData);
         }

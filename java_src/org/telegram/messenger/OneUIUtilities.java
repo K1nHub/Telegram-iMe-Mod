@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.os.Build;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Field;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class OneUIUtilities {
     public static final int ONE_UI_4_0 = 40000;
     private static Boolean isOneUI;

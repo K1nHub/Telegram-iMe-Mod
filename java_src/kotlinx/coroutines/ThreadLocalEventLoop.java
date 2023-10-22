@@ -1,9 +1,12 @@
 package kotlinx.coroutines;
+
+import kotlinx.coroutines.internal.Symbol;
+import kotlinx.coroutines.internal.ThreadLocalKt;
 /* compiled from: EventLoop.common.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ThreadLocalEventLoop {
     public static final ThreadLocalEventLoop INSTANCE = new ThreadLocalEventLoop();
-    private static final ThreadLocal<EventLoop> ref = new ThreadLocal<>();
+    private static final ThreadLocal<EventLoop> ref = ThreadLocalKt.commonThreadLocal(new Symbol("ThreadLocalEventLoop"));
 
     private ThreadLocalEventLoop() {
     }

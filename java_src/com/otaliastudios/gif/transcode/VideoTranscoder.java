@@ -11,7 +11,7 @@ import com.otaliastudios.gif.time.TimeInterpolator;
 import com.otaliastudios.gif.transcode.internal.VideoDecoderOutput;
 import com.otaliastudios.gif.transcode.internal.VideoEncoderInput;
 import com.otaliastudios.gif.transcode.internal.VideoFrameDropper;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class VideoTranscoder extends BaseTranscoder {
     private VideoDecoderOutput mDecoderOutputSurface;
     private MediaCodec mEncoder;

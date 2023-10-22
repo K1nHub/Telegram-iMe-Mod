@@ -12,7 +12,7 @@ import android.util.Log;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TopicsSyncTask implements Runnable {
     private static final Object TOPIC_SYNC_TASK_LOCK = new Object();
     private static Boolean hasAccessNetworkStatePermission;
@@ -24,7 +24,7 @@ public class TopicsSyncTask implements Runnable {
     private final TopicsSubscriber topicsSubscriber;
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     class ConnectivityChangeReceiver extends BroadcastReceiver {
         private TopicsSyncTask task;
 
@@ -39,7 +39,7 @@ public class TopicsSyncTask implements Runnable {
                 return;
             }
             if (topicsSyncTask.isDeviceConnected()) {
-                if (TopicsSyncTask.m1130$$Nest$smisLoggable()) {
+                if (TopicsSyncTask.m1387$$Nest$smisLoggable()) {
                     Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                 }
                 this.task.topicsSubscriber.scheduleSyncTaskWithDelaySeconds(this.task, 0L);
@@ -49,7 +49,7 @@ public class TopicsSyncTask implements Runnable {
         }
 
         public void registerReceiver() {
-            if (TopicsSyncTask.m1130$$Nest$smisLoggable()) {
+            if (TopicsSyncTask.m1387$$Nest$smisLoggable()) {
                 Log.d("FirebaseMessaging", "Connectivity change received registered");
             }
             TopicsSyncTask.this.context.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
@@ -57,7 +57,7 @@ public class TopicsSyncTask implements Runnable {
     }
 
     /* renamed from: -$$Nest$smisLoggable  reason: not valid java name */
-    static /* bridge */ /* synthetic */ boolean m1130$$Nest$smisLoggable() {
+    static /* bridge */ /* synthetic */ boolean m1387$$Nest$smisLoggable() {
         return isLoggable();
     }
 

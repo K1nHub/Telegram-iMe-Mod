@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.vision.barcode.Barcode;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzo extends zzb implements zzl {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzo(IBinder iBinder) {
@@ -15,10 +15,10 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final Barcode[] zza(IObjectWrapper iObjectWrapper, zzs zzsVar) throws RemoteException {
-        Parcel m778a_ = m778a_();
-        zzd.zza(m778a_, iObjectWrapper);
-        zzd.zza(m778a_, zzsVar);
-        Parcel zza = zza(1, m778a_);
+        Parcel m1070a_ = m1070a_();
+        zzd.zza(m1070a_, iObjectWrapper);
+        zzd.zza(m1070a_, zzsVar);
+        Parcel zza = zza(1, m1070a_);
         Barcode[] barcodeArr = (Barcode[]) zza.createTypedArray(Barcode.CREATOR);
         zza.recycle();
         return barcodeArr;
@@ -26,10 +26,10 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final Barcode[] zzb(IObjectWrapper iObjectWrapper, zzs zzsVar) throws RemoteException {
-        Parcel m778a_ = m778a_();
-        zzd.zza(m778a_, iObjectWrapper);
-        zzd.zza(m778a_, zzsVar);
-        Parcel zza = zza(2, m778a_);
+        Parcel m1070a_ = m1070a_();
+        zzd.zza(m1070a_, iObjectWrapper);
+        zzd.zza(m1070a_, zzsVar);
+        Parcel zza = zza(2, m1070a_);
         Barcode[] barcodeArr = (Barcode[]) zza.createTypedArray(Barcode.CREATOR);
         zza.recycle();
         return barcodeArr;
@@ -37,6 +37,6 @@ public final class zzo extends zzb implements zzl {
 
     @Override // com.google.android.gms.internal.vision.zzl
     public final void zza() throws RemoteException {
-        zzb(3, m778a_());
+        zzb(3, m1070a_());
     }
 }

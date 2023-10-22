@@ -3,7 +3,7 @@ package com.google.protobuf;
 import com.google.protobuf.ArrayDecoders;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface Schema<T> {
     boolean equals(T t, T t2);
 

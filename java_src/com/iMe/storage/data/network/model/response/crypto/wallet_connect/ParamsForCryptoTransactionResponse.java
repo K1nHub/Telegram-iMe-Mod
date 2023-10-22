@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionPara
 import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ParamsForCryptoTransactionResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class ParamsForCryptoTransactionResponse {
     private final String data;
     private final TokenDetailedResponse feeToken;
@@ -12,7 +12,7 @@ public final class ParamsForCryptoTransactionResponse {
     private final String networkType;
 
     /* renamed from: to */
-    private final String f398to;
+    private final String f331to;
     private final TransactionParamsResponse.EVM transactionParams;
     private final String value;
 
@@ -21,7 +21,7 @@ public final class ParamsForCryptoTransactionResponse {
             str = paramsForCryptoTransactionResponse.from;
         }
         if ((i & 2) != 0) {
-            str2 = paramsForCryptoTransactionResponse.f398to;
+            str2 = paramsForCryptoTransactionResponse.f331to;
         }
         String str6 = str2;
         if ((i & 4) != 0) {
@@ -51,7 +51,7 @@ public final class ParamsForCryptoTransactionResponse {
     }
 
     public final String component2() {
-        return this.f398to;
+        return this.f331to;
     }
 
     public final String component3() {
@@ -91,17 +91,17 @@ public final class ParamsForCryptoTransactionResponse {
         }
         if (obj instanceof ParamsForCryptoTransactionResponse) {
             ParamsForCryptoTransactionResponse paramsForCryptoTransactionResponse = (ParamsForCryptoTransactionResponse) obj;
-            return Intrinsics.areEqual(this.from, paramsForCryptoTransactionResponse.from) && Intrinsics.areEqual(this.f398to, paramsForCryptoTransactionResponse.f398to) && Intrinsics.areEqual(this.value, paramsForCryptoTransactionResponse.value) && Intrinsics.areEqual(this.data, paramsForCryptoTransactionResponse.data) && Intrinsics.areEqual(this.transactionParams, paramsForCryptoTransactionResponse.transactionParams) && Intrinsics.areEqual(this.networkType, paramsForCryptoTransactionResponse.networkType) && Intrinsics.areEqual(this.feeToken, paramsForCryptoTransactionResponse.feeToken);
+            return Intrinsics.areEqual(this.from, paramsForCryptoTransactionResponse.from) && Intrinsics.areEqual(this.f331to, paramsForCryptoTransactionResponse.f331to) && Intrinsics.areEqual(this.value, paramsForCryptoTransactionResponse.value) && Intrinsics.areEqual(this.data, paramsForCryptoTransactionResponse.data) && Intrinsics.areEqual(this.transactionParams, paramsForCryptoTransactionResponse.transactionParams) && Intrinsics.areEqual(this.networkType, paramsForCryptoTransactionResponse.networkType) && Intrinsics.areEqual(this.feeToken, paramsForCryptoTransactionResponse.feeToken);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((this.from.hashCode() * 31) + this.f398to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.feeToken.hashCode();
+        return (((((((((((this.from.hashCode() * 31) + this.f331to.hashCode()) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.feeToken.hashCode();
     }
 
     public String toString() {
-        return "ParamsForCryptoTransactionResponse(from=" + this.from + ", to=" + this.f398to + ", value=" + this.value + ", data=" + this.data + ", transactionParams=" + this.transactionParams + ", networkType=" + this.networkType + ", feeToken=" + this.feeToken + ')';
+        return "ParamsForCryptoTransactionResponse(from=" + this.from + ", to=" + this.f331to + ", value=" + this.value + ", data=" + this.data + ", transactionParams=" + this.transactionParams + ", networkType=" + this.networkType + ", feeToken=" + this.feeToken + ')';
     }
 
     public ParamsForCryptoTransactionResponse(String from, String to, String value, String data, TransactionParamsResponse.EVM transactionParams, String networkType, TokenDetailedResponse feeToken) {
@@ -113,7 +113,7 @@ public final class ParamsForCryptoTransactionResponse {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         this.from = from;
-        this.f398to = to;
+        this.f331to = to;
         this.value = value;
         this.data = data;
         this.transactionParams = transactionParams;
@@ -126,7 +126,7 @@ public final class ParamsForCryptoTransactionResponse {
     }
 
     public final String getTo() {
-        return this.f398to;
+        return this.f331to;
     }
 
     public final String getValue() {

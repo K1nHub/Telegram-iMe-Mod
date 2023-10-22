@@ -14,17 +14,17 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "PatternItemCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class PatternItem extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getType", m797id = 2)
+    @SafeParcelable.Field(getter = "getType", m1089id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getLength", m797id = 3)
+    @SafeParcelable.Field(getter = "getLength", m1089id = 3)
     private final Float zzc;
     private static final String zza = PatternItem.class.getSimpleName();
     public static final Parcelable.Creator<PatternItem> CREATOR = new zzj();
 
     @SafeParcelable.Constructor
-    public PatternItem(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) Float f) {
+    public PatternItem(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) Float f) {
         boolean z = false;
         if (i == 1 || (f != null && f.floatValue() >= BitmapDescriptorFactory.HUE_RED)) {
             z = true;

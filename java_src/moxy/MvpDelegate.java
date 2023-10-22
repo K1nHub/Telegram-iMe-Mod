@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import moxy.presenter.PresenterField;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MvpDelegate<Delegated> {
     private static final Comparator<PresenterField> COMPARE_BY_TAGS = new Comparator() { // from class: moxy.MvpDelegate$$ExternalSyntheticLambda0
         @Override // java.util.Comparator

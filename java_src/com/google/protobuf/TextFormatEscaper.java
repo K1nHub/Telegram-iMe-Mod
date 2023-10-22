@@ -1,10 +1,10 @@
 package com.google.protobuf;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TextFormatEscaper {
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface ByteSequence {
         byte byteAt(int i);
 

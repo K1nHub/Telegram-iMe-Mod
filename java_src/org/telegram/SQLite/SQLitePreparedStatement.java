@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
     private String query;
@@ -102,7 +102,7 @@ public class SQLitePreparedStatement {
         if (BuildVars.LOGS_ENABLED) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.startTime;
             if (elapsedRealtime > 500) {
-                FileLog.m70d("sqlite query " + this.query + " took " + elapsedRealtime + "ms");
+                FileLog.m100d("sqlite query " + this.query + " took " + elapsedRealtime + "ms");
             }
         }
         try {
@@ -110,7 +110,7 @@ public class SQLitePreparedStatement {
             finalize(this.sqliteStatementHandle);
         } catch (SQLiteException e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m68e(e.getMessage(), e);
+                FileLog.m98e(e.getMessage(), e);
             }
         }
     }

@@ -50,9 +50,9 @@
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/c;
+    new-instance v0, Lj$/util/a;
 
-    invoke-direct {v0, p2, p1}, Lj$/util/c;-><init>(Ljava/util/Comparator;Lj$/util/function/Function;)V
+    invoke-direct {v0, p2, p1}, Lj$/util/a;-><init>(Ljava/util/Comparator;Lj$/util/function/Function;)V
 
     .line 3
     invoke-static {p0, v0}, Lj$/util/Comparator$-EL;->a(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
@@ -78,9 +78,9 @@
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
-    new-instance v0, Lj$/util/c;
+    new-instance v0, Lj$/util/a;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/c;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/a;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
 
     return-object v0
 .end method
@@ -157,7 +157,7 @@
 .method public static a()Ljava/util/Comparator;
     .locals 1
 
-    sget-object v0, Lj$/util/e;->INSTANCE:Lj$/util/e;
+    sget-object v0, Lj$/util/c;->INSTANCE:Lj$/util/c;
 
     return-object v0
 .end method
@@ -182,9 +182,9 @@
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/d;
+    new-instance v0, Lj$/util/b;
 
-    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/Function;)V
+    invoke-direct {v0, p0}, Lj$/util/b;-><init>(Lj$/util/function/Function;)V
 
     return-object v0
 .end method
@@ -207,9 +207,9 @@
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/d;
+    new-instance v0, Lj$/util/b;
 
-    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToDoubleFunction;)V
+    invoke-direct {v0, p0}, Lj$/util/b;-><init>(Lj$/util/function/ToDoubleFunction;)V
 
     return-object v0
 .end method
@@ -232,9 +232,9 @@
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/d;
+    new-instance v0, Lj$/util/b;
 
-    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToIntFunction;)V
+    invoke-direct {v0, p0}, Lj$/util/b;-><init>(Lj$/util/function/ToIntFunction;)V
 
     return-object v0
 .end method
@@ -257,9 +257,9 @@
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    new-instance v0, Lj$/util/d;
+    new-instance v0, Lj$/util/b;
 
-    invoke-direct {v0, p0}, Lj$/util/d;-><init>(Lj$/util/function/ToLongFunction;)V
+    invoke-direct {v0, p0}, Lj$/util/b;-><init>(Lj$/util/function/ToLongFunction;)V
 
     return-object v0
 .end method

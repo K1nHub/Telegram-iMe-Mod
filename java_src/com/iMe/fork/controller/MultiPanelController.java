@@ -36,7 +36,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: MultiPanelController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MultiPanelController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, MultiPanelController> accountInstances = new ConcurrentHashMap<>(5);
@@ -151,8 +151,8 @@ public final class MultiPanelController extends BaseController {
                 arrayList.add(BackupMappingKt.mapToBackup(multiPanelButtonState));
             }
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-            Pair m103to = TuplesKt.m103to(name, mutableList);
-            linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+            Pair m144to = TuplesKt.m144to(name, mutableList);
+            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -194,8 +194,8 @@ public final class MultiPanelController extends BaseController {
                     }
                 }
                 mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList2);
-                Pair m103to = TuplesKt.m103to(mapNameToEnum, mutableList);
-                linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
+                Pair m144to = TuplesKt.m144to(mapNameToEnum, mutableList);
+                linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.buttonStates = mutableMap;
@@ -294,8 +294,42 @@ public final class MultiPanelController extends BaseController {
         multiPanelButtonState.setEnabled(z);
     }
 
+    public final Boolean isButtonEnabled(DialogType dialogType, MultiPanelButton button) {
+        Object obj;
+        boolean z;
+        Intrinsics.checkNotNullParameter(dialogType, "dialogType");
+        Intrinsics.checkNotNullParameter(button, "button");
+        List<MultiPanelButtonState> list = this.buttonStates.get(dialogType);
+        if (list != null) {
+            Iterator<T> it = list.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    obj = null;
+                    break;
+                }
+                obj = it.next();
+                if (((MultiPanelButtonState) obj).getType() == button) {
+                    z = true;
+                    continue;
+                } else {
+                    z = false;
+                    continue;
+                }
+                if (z) {
+                    break;
+                }
+            }
+            MultiPanelButtonState multiPanelButtonState = (MultiPanelButtonState) obj;
+            if (multiPanelButtonState != null) {
+                return Boolean.valueOf(multiPanelButtonState.isEnabled());
+            }
+            return null;
+        }
+        return null;
+    }
+
     /* compiled from: MultiPanelController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -11,12 +11,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "WebPaymentDataCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzau extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzau> CREATOR = new zzav();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     String zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     Bundle zzb;
 
     private zzau() {
@@ -32,7 +32,7 @@ public final class zzau extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzau(@SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) Bundle bundle) {
+    public zzau(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) Bundle bundle) {
         this.zza = str;
         this.zzb = bundle;
     }

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_inlineBotSwitchPM extends TLObject {
     public static int constructor = 1008755359;
     public String start_param;

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messages_reorderStickerSets extends TLObject {
     public static int constructor = 2016638777;
     public boolean emojis;

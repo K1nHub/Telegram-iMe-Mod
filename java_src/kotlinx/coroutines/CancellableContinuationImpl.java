@@ -13,18 +13,20 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.DispatchedContinuation;
+import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: CancellableContinuationImpl.kt */
-/* loaded from: classes6.dex */
-public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements CancellableContinuation<T>, CoroutineStackFrame {
-    private static final /* synthetic */ AtomicIntegerFieldUpdater _decision$FU = AtomicIntegerFieldUpdater.newUpdater(CancellableContinuationImpl.class, "_decision");
-    private static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_state");
-    private volatile /* synthetic */ int _decision;
-    private volatile /* synthetic */ Object _state;
+/* loaded from: classes4.dex */
+public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements CancellableContinuation<T>, CoroutineStackFrame, Waiter {
+    private volatile int _decisionAndIndex;
+    private volatile Object _parentHandle;
+    private volatile Object _state;
     private final CoroutineContext context;
     private final Continuation<T> delegate;
-    private DisposableHandle parentHandle;
+    private static final AtomicIntegerFieldUpdater _decisionAndIndex$FU = AtomicIntegerFieldUpdater.newUpdater(CancellableContinuationImpl.class, "_decisionAndIndex");
+    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_state");
+    private static final AtomicReferenceFieldUpdater _parentHandle$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_parentHandle");
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public StackTraceElement getStackTraceElement() {
@@ -33,15 +35,6 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     protected String nameString() {
         return "CancellableContinuation";
-    }
-
-    private final void callCancelHandler(Function1<? super Throwable, Unit> function1, Throwable th) {
-        try {
-            function1.invoke(th);
-        } catch (Throwable th2) {
-            CoroutineContext context = getContext();
-            CoroutineExceptionHandlerKt.handleCoroutineException(context, new CompletionHandlerException("Exception in invokeOnCancellation handler for " + this, th2));
-        }
     }
 
     @Override // kotlinx.coroutines.DispatchedTask
@@ -59,7 +52,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             }
         }
         this.context = continuation.getContext();
-        this._decision = 0;
+        this._decisionAndIndex = 536870911;
         this._state = Active.INSTANCE;
     }
 
@@ -68,12 +61,26 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         return this.context;
     }
 
+    private final DisposableHandle getParentHandle() {
+        return (DisposableHandle) _parentHandle$FU.get(this);
+    }
+
     public final Object getState$kotlinx_coroutines_core() {
-        return this._state;
+        return _state$FU.get(this);
+    }
+
+    @Override // kotlinx.coroutines.CancellableContinuation
+    public boolean isActive() {
+        return getState$kotlinx_coroutines_core() instanceof NotCompleted;
     }
 
     public boolean isCompleted() {
         return !(getState$kotlinx_coroutines_core() instanceof NotCompleted);
+    }
+
+    @Override // kotlinx.coroutines.CancellableContinuation
+    public boolean isCancelled() {
+        return getState$kotlinx_coroutines_core() instanceof CancelledContinuation;
     }
 
     private final String getStateDebugRepresentation() {
@@ -85,12 +92,19 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         DisposableHandle installParentHandle = installParentHandle();
         if (installParentHandle != null && isCompleted()) {
             installParentHandle.dispose();
-            this.parentHandle = NonDisposableHandle.INSTANCE;
+            _parentHandle$FU.set(this, NonDisposableHandle.INSTANCE);
         }
     }
 
     private final boolean isReusable() {
-        return DispatchedTaskKt.isReusableMode(this.resumeMode) && ((DispatchedContinuation) this.delegate).isReusable();
+        if (DispatchedTaskKt.isReusableMode(this.resumeMode)) {
+            Continuation<T> continuation = this.delegate;
+            Intrinsics.checkNotNull(continuation, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<*>");
+            if (((DispatchedContinuation) continuation).isReusable$kotlinx_coroutines_core()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final boolean resetStateReusable() {
@@ -100,19 +114,20 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             }
         }
         if (DebugKt.getASSERTIONS_ENABLED()) {
-            if (!(this.parentHandle != NonDisposableHandle.INSTANCE)) {
+            if (!(getParentHandle() != NonDisposableHandle.INSTANCE)) {
                 throw new AssertionError();
             }
         }
-        Object obj = this._state;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        Object obj = atomicReferenceFieldUpdater.get(this);
         if (!DebugKt.getASSERTIONS_ENABLED() || (!(obj instanceof NotCompleted))) {
-            if ((obj instanceof CompletedContinuation) && ((CompletedContinuation) obj).idempotentResume != null) {
-                detachChild$kotlinx_coroutines_core();
-                return false;
+            if (!(obj instanceof CompletedContinuation) || ((CompletedContinuation) obj).idempotentResume == null) {
+                _decisionAndIndex$FU.set(this, 536870911);
+                atomicReferenceFieldUpdater.set(this, Active.INSTANCE);
+                return true;
             }
-            this._decision = 0;
-            this._state = Active.INSTANCE;
-            return true;
+            detachChild$kotlinx_coroutines_core();
+            return false;
         }
         throw new AssertionError();
     }
@@ -131,11 +146,64 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         return getState$kotlinx_coroutines_core();
     }
 
+    @Override // kotlinx.coroutines.DispatchedTask
+    public void cancelCompletedResult$kotlinx_coroutines_core(Object obj, Throwable th) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        while (true) {
+            Object obj2 = atomicReferenceFieldUpdater.get(this);
+            if (obj2 instanceof NotCompleted) {
+                throw new IllegalStateException("Not completed".toString());
+            }
+            if (obj2 instanceof CompletedExceptionally) {
+                return;
+            }
+            if (obj2 instanceof CompletedContinuation) {
+                CompletedContinuation completedContinuation = (CompletedContinuation) obj2;
+                if (!(!completedContinuation.getCancelled())) {
+                    throw new IllegalStateException("Must be called at most once".toString());
+                }
+                if (_state$FU.compareAndSet(this, obj2, CompletedContinuation.copy$default(completedContinuation, null, null, null, null, th, 15, null))) {
+                    completedContinuation.invokeHandlers(this, th);
+                    return;
+                }
+            } else if (_state$FU.compareAndSet(this, obj2, new CompletedContinuation(obj2, null, null, null, th, 14, null))) {
+                return;
+            }
+        }
+    }
+
     private final boolean cancelLater(Throwable th) {
         if (isReusable()) {
-            return ((DispatchedContinuation) this.delegate).postponeCancellation(th);
+            Continuation<T> continuation = this.delegate;
+            Intrinsics.checkNotNull(continuation, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<*>");
+            return ((DispatchedContinuation) continuation).postponeCancellation$kotlinx_coroutines_core(th);
         }
         return false;
+    }
+
+    public boolean cancel(Throwable th) {
+        Object obj;
+        boolean z;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        do {
+            obj = atomicReferenceFieldUpdater.get(this);
+            z = false;
+            if (!(obj instanceof NotCompleted)) {
+                return false;
+            }
+            if ((obj instanceof CancelHandler) || (obj instanceof Segment)) {
+                z = true;
+            }
+        } while (!_state$FU.compareAndSet(this, obj, new CancelledContinuation(this, th, z)));
+        NotCompleted notCompleted = (NotCompleted) obj;
+        if (notCompleted instanceof CancelHandler) {
+            callCancelHandler((CancelHandler) obj, th);
+        } else if (notCompleted instanceof Segment) {
+            callSegmentOnCancellation((Segment) obj, th);
+        }
+        detachChildIfNonResuable();
+        dispatchResume(this.resumeMode);
+        return true;
     }
 
     public final void parentCancelled$kotlinx_coroutines_core(Throwable th) {
@@ -155,6 +223,19 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         }
     }
 
+    private final void callSegmentOnCancellation(Segment<?> segment, Throwable th) {
+        int i = _decisionAndIndex$FU.get(this) & 536870911;
+        if (!(i != 536870911)) {
+            throw new IllegalStateException("The index for Segment.onCancellation(..) is broken".toString());
+        }
+        try {
+            segment.onCancellation(i, th, getContext());
+        } catch (Throwable th2) {
+            CoroutineContext context = getContext();
+            CoroutineExceptionHandlerKt.handleCoroutineException(context, new CompletionHandlerException("Exception in invokeOnCancellation handler for " + this, th2));
+        }
+    }
+
     public final void callOnCancellation(Function1<? super Throwable, Unit> function1, Throwable th) {
         try {
             function1.invoke(th);
@@ -168,6 +249,38 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         return job.getCancellationException();
     }
 
+    private final boolean trySuspend() {
+        int i;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        do {
+            i = atomicIntegerFieldUpdater.get(this);
+            int i2 = i >> 29;
+            if (i2 != 0) {
+                if (i2 == 2) {
+                    return false;
+                }
+                throw new IllegalStateException("Already suspended".toString());
+            }
+        } while (!_decisionAndIndex$FU.compareAndSet(this, i, 536870912 + (536870911 & i)));
+        return true;
+    }
+
+    private final boolean tryResume() {
+        int i;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        do {
+            i = atomicIntegerFieldUpdater.get(this);
+            int i2 = i >> 29;
+            if (i2 != 0) {
+                if (i2 == 1) {
+                    return false;
+                }
+                throw new IllegalStateException("Already resumed".toString());
+            }
+        } while (!_decisionAndIndex$FU.compareAndSet(this, i, 1073741824 + (536870911 & i)));
+        return true;
+    }
+
     public final Object getResult() {
         Job job;
         Throwable recoverFromStackFrame;
@@ -175,17 +288,17 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         Object coroutine_suspended;
         boolean isReusable = isReusable();
         if (trySuspend()) {
-            if (this.parentHandle == null) {
+            if (getParentHandle() == null) {
                 installParentHandle();
             }
             if (isReusable) {
-                releaseClaimedReusableContinuation();
+                releaseClaimedReusableContinuation$kotlinx_coroutines_core();
             }
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             return coroutine_suspended;
         }
         if (isReusable) {
-            releaseClaimedReusableContinuation();
+            releaseClaimedReusableContinuation$kotlinx_coroutines_core();
         }
         Object state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
         if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
@@ -214,19 +327,19 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             return null;
         }
         DisposableHandle invokeOnCompletion$default = Job.DefaultImpls.invokeOnCompletion$default(job, true, false, new ChildContinuation(this), 2, null);
-        this.parentHandle = invokeOnCompletion$default;
+        _parentHandle$FU.compareAndSet(this, null, invokeOnCompletion$default);
         return invokeOnCompletion$default;
     }
 
-    private final void releaseClaimedReusableContinuation() {
-        Throwable tryReleaseClaimedContinuation;
+    public final void releaseClaimedReusableContinuation$kotlinx_coroutines_core() {
+        Throwable tryReleaseClaimedContinuation$kotlinx_coroutines_core;
         Continuation<T> continuation = this.delegate;
         DispatchedContinuation dispatchedContinuation = continuation instanceof DispatchedContinuation ? (DispatchedContinuation) continuation : null;
-        if (dispatchedContinuation == null || (tryReleaseClaimedContinuation = dispatchedContinuation.tryReleaseClaimedContinuation(this)) == null) {
+        if (dispatchedContinuation == null || (tryReleaseClaimedContinuation$kotlinx_coroutines_core = dispatchedContinuation.tryReleaseClaimedContinuation$kotlinx_coroutines_core(this)) == null) {
             return;
         }
         detachChild$kotlinx_coroutines_core();
-        cancel(tryReleaseClaimedContinuation);
+        cancel(tryReleaseClaimedContinuation$kotlinx_coroutines_core);
     }
 
     @Override // kotlin.coroutines.Continuation
@@ -239,61 +352,94 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         resumeImpl(t, this.resumeMode, function1);
     }
 
+    @Override // kotlinx.coroutines.Waiter
+    public void invokeOnCancellation(Segment<?> segment, int i) {
+        int i2;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        do {
+            i2 = atomicIntegerFieldUpdater.get(this);
+            if (!((i2 & 536870911) == 536870911)) {
+                throw new IllegalStateException("invokeOnCancellation should be called at most once".toString());
+            }
+        } while (!atomicIntegerFieldUpdater.compareAndSet(this, i2, ((i2 >> 29) << 29) + i));
+        invokeOnCancellationImpl(segment);
+    }
+
     @Override // kotlinx.coroutines.CancellableContinuation
     public void invokeOnCancellation(Function1<? super Throwable, Unit> function1) {
-        CancelHandler makeCancelHandler = makeCancelHandler(function1);
+        invokeOnCancellationImpl(makeCancelHandler(function1));
+    }
+
+    private final void invokeOnCancellationImpl(Object obj) {
+        if (DebugKt.getASSERTIONS_ENABLED()) {
+            if (!((obj instanceof CancelHandler) || (obj instanceof Segment))) {
+                throw new AssertionError();
+            }
+        }
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
         while (true) {
-            Object obj = this._state;
-            if (obj instanceof Active) {
-                if (_state$FU.compareAndSet(this, obj, makeCancelHandler)) {
+            Object obj2 = atomicReferenceFieldUpdater.get(this);
+            if (obj2 instanceof Active) {
+                if (_state$FU.compareAndSet(this, obj2, obj)) {
                     return;
                 }
-            } else if (obj instanceof CancelHandler) {
-                multipleHandlersError(function1, obj);
             } else {
-                boolean z = obj instanceof CompletedExceptionally;
-                if (z) {
-                    CompletedExceptionally completedExceptionally = (CompletedExceptionally) obj;
-                    if (!completedExceptionally.makeHandled()) {
-                        multipleHandlersError(function1, obj);
-                    }
-                    if (obj instanceof CancelledContinuation) {
-                        if (!z) {
-                            completedExceptionally = null;
+                if (obj2 instanceof CancelHandler ? true : obj2 instanceof Segment) {
+                    multipleHandlersError(obj, obj2);
+                } else {
+                    boolean z = obj2 instanceof CompletedExceptionally;
+                    if (z) {
+                        CompletedExceptionally completedExceptionally = (CompletedExceptionally) obj2;
+                        if (!completedExceptionally.makeHandled()) {
+                            multipleHandlersError(obj, obj2);
                         }
-                        callCancelHandler(function1, completedExceptionally != null ? completedExceptionally.cause : null);
-                        return;
-                    }
-                    return;
-                } else if (obj instanceof CompletedContinuation) {
-                    CompletedContinuation completedContinuation = (CompletedContinuation) obj;
-                    if (completedContinuation.cancelHandler != null) {
-                        multipleHandlersError(function1, obj);
-                    }
-                    if (makeCancelHandler instanceof BeforeResumeCancelHandler) {
-                        return;
-                    }
-                    if (completedContinuation.getCancelled()) {
-                        callCancelHandler(function1, completedContinuation.cancelCause);
-                        return;
-                    } else {
-                        if (_state$FU.compareAndSet(this, obj, CompletedContinuation.copy$default(completedContinuation, null, makeCancelHandler, null, null, null, 29, null))) {
+                        if (obj2 instanceof CancelledContinuation) {
+                            if (!z) {
+                                completedExceptionally = null;
+                            }
+                            Throwable th = completedExceptionally != null ? completedExceptionally.cause : null;
+                            if (obj instanceof CancelHandler) {
+                                callCancelHandler((CancelHandler) obj, th);
+                                return;
+                            }
+                            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.internal.Segment<*>");
+                            callSegmentOnCancellation((Segment) obj, th);
                             return;
                         }
-                    }
-                } else if (makeCancelHandler instanceof BeforeResumeCancelHandler) {
-                    return;
-                } else {
-                    if (_state$FU.compareAndSet(this, obj, new CompletedContinuation(obj, makeCancelHandler, null, null, null, 28, null))) {
                         return;
+                    } else if (obj2 instanceof CompletedContinuation) {
+                        CompletedContinuation completedContinuation = (CompletedContinuation) obj2;
+                        if (completedContinuation.cancelHandler != null) {
+                            multipleHandlersError(obj, obj2);
+                        }
+                        if (obj instanceof Segment) {
+                            return;
+                        }
+                        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.CancelHandler");
+                        CancelHandler cancelHandler = (CancelHandler) obj;
+                        if (completedContinuation.getCancelled()) {
+                            callCancelHandler(cancelHandler, completedContinuation.cancelCause);
+                            return;
+                        } else {
+                            if (_state$FU.compareAndSet(this, obj2, CompletedContinuation.copy$default(completedContinuation, null, cancelHandler, null, null, null, 29, null))) {
+                                return;
+                            }
+                        }
+                    } else if (obj instanceof Segment) {
+                        return;
+                    } else {
+                        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.CancelHandler");
+                        if (_state$FU.compareAndSet(this, obj2, new CompletedContinuation(obj2, (CancelHandler) obj, null, null, null, 28, null))) {
+                            return;
+                        }
                     }
                 }
             }
         }
     }
 
-    private final void multipleHandlersError(Function1<? super Throwable, Unit> function1, Object obj) {
-        throw new IllegalStateException(("It's prohibited to register multiple handlers, tried to register " + function1 + ", already has " + obj).toString());
+    private final void multipleHandlersError(Object obj, Object obj2) {
+        throw new IllegalStateException(("It's prohibited to register multiple handlers, tried to register " + obj + ", already has " + obj2).toString());
     }
 
     private final CancelHandler makeCancelHandler(Function1<? super Throwable, Unit> function1) {
@@ -322,10 +468,10 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             }
             return obj;
         } else if (DispatchedTaskKt.isCancellableMode(i) || obj2 != null) {
-            if (function1 != null || (((notCompleted instanceof CancelHandler) && !(notCompleted instanceof BeforeResumeCancelHandler)) || obj2 != null)) {
-                return new CompletedContinuation(obj, notCompleted instanceof CancelHandler ? (CancelHandler) notCompleted : null, function1, obj2, null, 16, null);
+            if (function1 == null && !(notCompleted instanceof CancelHandler) && obj2 == null) {
+                return obj;
             }
-            return obj;
+            return new CompletedContinuation(obj, notCompleted instanceof CancelHandler ? (CancelHandler) notCompleted : null, function1, obj2, null, 16, null);
         } else {
             return obj;
         }
@@ -342,6 +488,54 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         cancellableContinuationImpl.resumeImpl(obj, i, function1);
     }
 
+    private final void resumeImpl(Object obj, int i, Function1<? super Throwable, Unit> function1) {
+        Object obj2;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        do {
+            obj2 = atomicReferenceFieldUpdater.get(this);
+            if (obj2 instanceof NotCompleted) {
+            } else {
+                if (obj2 instanceof CancelledContinuation) {
+                    CancelledContinuation cancelledContinuation = (CancelledContinuation) obj2;
+                    if (cancelledContinuation.makeResumed()) {
+                        if (function1 != null) {
+                            callOnCancellation(function1, cancelledContinuation.cause);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                alreadyResumedError(obj);
+                throw new KotlinNothingValueException();
+            }
+        } while (!_state$FU.compareAndSet(this, obj2, resumedState((NotCompleted) obj2, obj, i, function1, null)));
+        detachChildIfNonResuable();
+        dispatchResume(i);
+    }
+
+    private final Symbol tryResumeImpl(Object obj, Object obj2, Function1<? super Throwable, Unit> function1) {
+        Object obj3;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        do {
+            obj3 = atomicReferenceFieldUpdater.get(this);
+            if (obj3 instanceof NotCompleted) {
+            } else if (!(obj3 instanceof CompletedContinuation) || obj2 == null) {
+                return null;
+            } else {
+                CompletedContinuation completedContinuation = (CompletedContinuation) obj3;
+                if (completedContinuation.idempotentResume == obj2) {
+                    if (!DebugKt.getASSERTIONS_ENABLED() || Intrinsics.areEqual(completedContinuation.result, obj)) {
+                        return CancellableContinuationImplKt.RESUME_TOKEN;
+                    }
+                    throw new AssertionError();
+                }
+                return null;
+            }
+        } while (!_state$FU.compareAndSet(this, obj3, resumedState((NotCompleted) obj3, obj, this.resumeMode, function1, obj2)));
+        detachChildIfNonResuable();
+        return CancellableContinuationImplKt.RESUME_TOKEN;
+    }
+
     private final Void alreadyResumedError(Object obj) {
         throw new IllegalStateException(("Already resumed, but proposed with update " + obj).toString());
     }
@@ -354,27 +548,17 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     }
 
     public final void detachChild$kotlinx_coroutines_core() {
-        DisposableHandle disposableHandle = this.parentHandle;
-        if (disposableHandle == null) {
+        DisposableHandle parentHandle = getParentHandle();
+        if (parentHandle == null) {
             return;
         }
-        disposableHandle.dispose();
-        this.parentHandle = NonDisposableHandle.INSTANCE;
-    }
-
-    @Override // kotlinx.coroutines.CancellableContinuation
-    public Object tryResume(T t, Object obj) {
-        return tryResumeImpl(t, obj, null);
+        parentHandle.dispose();
+        _parentHandle$FU.set(this, NonDisposableHandle.INSTANCE);
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation
     public Object tryResume(T t, Object obj, Function1<? super Throwable, Unit> function1) {
         return tryResumeImpl(t, obj, function1);
-    }
-
-    @Override // kotlinx.coroutines.CancellableContinuation
-    public Object tryResumeWithException(Throwable th) {
-        return tryResumeImpl(new CompletedExceptionally(th, false, 2, null), null, null);
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation
@@ -417,121 +601,5 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     public String toString() {
         return nameString() + '(' + DebugStringsKt.toDebugString(this.delegate) + "){" + getStateDebugRepresentation() + "}@" + DebugStringsKt.getHexAddress(this);
-    }
-
-    @Override // kotlinx.coroutines.DispatchedTask
-    public void cancelCompletedResult$kotlinx_coroutines_core(Object obj, Throwable th) {
-        while (true) {
-            Object obj2 = this._state;
-            if (obj2 instanceof NotCompleted) {
-                throw new IllegalStateException("Not completed".toString());
-            }
-            if (obj2 instanceof CompletedExceptionally) {
-                return;
-            }
-            if (obj2 instanceof CompletedContinuation) {
-                CompletedContinuation completedContinuation = (CompletedContinuation) obj2;
-                if (!(!completedContinuation.getCancelled())) {
-                    throw new IllegalStateException("Must be called at most once".toString());
-                }
-                if (_state$FU.compareAndSet(this, obj2, CompletedContinuation.copy$default(completedContinuation, null, null, null, null, th, 15, null))) {
-                    completedContinuation.invokeHandlers(this, th);
-                    return;
-                }
-            } else if (_state$FU.compareAndSet(this, obj2, new CompletedContinuation(obj2, null, null, null, th, 14, null))) {
-                return;
-            }
-        }
-    }
-
-    public boolean cancel(Throwable th) {
-        Object obj;
-        boolean z;
-        do {
-            obj = this._state;
-            if (!(obj instanceof NotCompleted)) {
-                return false;
-            }
-            z = obj instanceof CancelHandler;
-        } while (!_state$FU.compareAndSet(this, obj, new CancelledContinuation(this, th, z)));
-        CancelHandler cancelHandler = z ? (CancelHandler) obj : null;
-        if (cancelHandler != null) {
-            callCancelHandler(cancelHandler, th);
-        }
-        detachChildIfNonResuable();
-        dispatchResume(this.resumeMode);
-        return true;
-    }
-
-    private final boolean trySuspend() {
-        do {
-            int i = this._decision;
-            if (i != 0) {
-                if (i == 2) {
-                    return false;
-                }
-                throw new IllegalStateException("Already suspended".toString());
-            }
-        } while (!_decision$FU.compareAndSet(this, 0, 1));
-        return true;
-    }
-
-    private final boolean tryResume() {
-        do {
-            int i = this._decision;
-            if (i != 0) {
-                if (i == 1) {
-                    return false;
-                }
-                throw new IllegalStateException("Already resumed".toString());
-            }
-        } while (!_decision$FU.compareAndSet(this, 0, 2));
-        return true;
-    }
-
-    private final void resumeImpl(Object obj, int i, Function1<? super Throwable, Unit> function1) {
-        Object obj2;
-        do {
-            obj2 = this._state;
-            if (obj2 instanceof NotCompleted) {
-            } else {
-                if (obj2 instanceof CancelledContinuation) {
-                    CancelledContinuation cancelledContinuation = (CancelledContinuation) obj2;
-                    if (cancelledContinuation.makeResumed()) {
-                        if (function1 != null) {
-                            callOnCancellation(function1, cancelledContinuation.cause);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                alreadyResumedError(obj);
-                throw new KotlinNothingValueException();
-            }
-        } while (!_state$FU.compareAndSet(this, obj2, resumedState((NotCompleted) obj2, obj, i, function1, null)));
-        detachChildIfNonResuable();
-        dispatchResume(i);
-    }
-
-    private final Symbol tryResumeImpl(Object obj, Object obj2, Function1<? super Throwable, Unit> function1) {
-        Object obj3;
-        do {
-            obj3 = this._state;
-            if (obj3 instanceof NotCompleted) {
-            } else if (!(obj3 instanceof CompletedContinuation) || obj2 == null) {
-                return null;
-            } else {
-                CompletedContinuation completedContinuation = (CompletedContinuation) obj3;
-                if (completedContinuation.idempotentResume == obj2) {
-                    if (!DebugKt.getASSERTIONS_ENABLED() || Intrinsics.areEqual(completedContinuation.result, obj)) {
-                        return CancellableContinuationImplKt.RESUME_TOKEN;
-                    }
-                    throw new AssertionError();
-                }
-                return null;
-            }
-        } while (!_state$FU.compareAndSet(this, obj3, resumedState((NotCompleted) obj3, obj, this.resumeMode, function1, obj2)));
-        detachChildIfNonResuable();
-        return CancellableContinuationImplKt.RESUME_TOKEN;
     }
 }

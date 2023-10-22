@@ -2,12 +2,12 @@ package com.trustwallet.walletconnect.models.binance;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceOrder.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WCBinanceTxConfirmParam {
     private final String errorMsg;
 
     /* renamed from: ok */
-    private final boolean f479ok;
+    private final boolean f418ok;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -15,7 +15,7 @@ public final class WCBinanceTxConfirmParam {
         }
         if (obj instanceof WCBinanceTxConfirmParam) {
             WCBinanceTxConfirmParam wCBinanceTxConfirmParam = (WCBinanceTxConfirmParam) obj;
-            return this.f479ok == wCBinanceTxConfirmParam.f479ok && Intrinsics.areEqual(this.errorMsg, wCBinanceTxConfirmParam.errorMsg);
+            return this.f418ok == wCBinanceTxConfirmParam.f418ok && Intrinsics.areEqual(this.errorMsg, wCBinanceTxConfirmParam.errorMsg);
         }
         return false;
     }
@@ -25,7 +25,7 @@ public final class WCBinanceTxConfirmParam {
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
     public int hashCode() {
-        boolean z = this.f479ok;
+        boolean z = this.f418ok;
         ?? r0 = z;
         if (z) {
             r0 = 1;
@@ -36,6 +36,6 @@ public final class WCBinanceTxConfirmParam {
     }
 
     public String toString() {
-        return "WCBinanceTxConfirmParam(ok=" + this.f479ok + ", errorMsg=" + this.errorMsg + ')';
+        return "WCBinanceTxConfirmParam(ok=" + this.f418ok + ", errorMsg=" + this.errorMsg + ')';
     }
 }

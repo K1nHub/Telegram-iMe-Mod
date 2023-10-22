@@ -8,18 +8,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "GetCloudSyncOptInStatusCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzdy extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzdy> CREATOR = new zzdx();
-    @SafeParcelable.Field(m797id = 2)
+    @SafeParcelable.Field(m1089id = 2)
     public final int zza;
-    @SafeParcelable.Field(m797id = 3)
+    @SafeParcelable.Field(m1089id = 3)
     public final boolean zzb;
-    @SafeParcelable.Field(m797id = 4)
+    @SafeParcelable.Field(m1089id = 4)
     public final boolean zzc;
 
     @SafeParcelable.Constructor
-    public zzdy(@SafeParcelable.Param(m796id = 2) int i, @SafeParcelable.Param(m796id = 3) boolean z, @SafeParcelable.Param(m796id = 4) boolean z2) {
+    public zzdy(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) boolean z, @SafeParcelable.Param(m1088id = 4) boolean z2) {
         this.zza = i;
         this.zzb = z;
         this.zzc = z2;

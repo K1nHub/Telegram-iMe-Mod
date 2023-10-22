@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_auth_signIn extends TLObject {
     public static int constructor = -1923962543;
     public TLRPC$EmailVerification email_verification;

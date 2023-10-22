@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class EventBus implements Subscriber, Publisher {
     private final Executor defaultExecutor;
     private final Map<Class<?>, ConcurrentHashMap<EventHandler<Object>, Executor>> handlerMap = new HashMap();

@@ -9,7 +9,7 @@ import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Maps.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
     public static <K, V> Map<K, V> emptyMap() {
         EmptyMap emptyMap = EmptyMap.INSTANCE;
@@ -45,6 +45,11 @@ public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
         HashMap<K, V> hashMap = new HashMap<>(mapCapacity);
         putAll(hashMap, pairs);
         return hashMap;
+    }
+
+    public static <K, V> V getValue(Map<K, ? extends V> map, K k) {
+        Intrinsics.checkNotNullParameter(map, "<this>");
+        return (V) MapsKt__MapWithDefaultKt.getOrImplicitDefaultNullable(map, k);
     }
 
     public static final <K, V> void putAll(Map<? super K, ? super V> map, Pair<? extends K, ? extends V>[] pairs) {
@@ -92,6 +97,24 @@ public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
         return destination;
     }
 
+    public static <K, V> Map<K, V> toMap(Pair<? extends K, ? extends V>[] pairArr) {
+        Map<K, V> emptyMap;
+        Map<K, V> mapOf;
+        int mapCapacity;
+        Intrinsics.checkNotNullParameter(pairArr, "<this>");
+        int length = pairArr.length;
+        if (length == 0) {
+            emptyMap = emptyMap();
+            return emptyMap;
+        } else if (length == 1) {
+            mapOf = MapsKt__MapsJVMKt.mapOf(pairArr[0]);
+            return mapOf;
+        } else {
+            mapCapacity = MapsKt__MapsJVMKt.mapCapacity(pairArr.length);
+            return toMap(pairArr, new LinkedHashMap(mapCapacity));
+        }
+    }
+
     public static final <K, V, M extends Map<? super K, ? super V>> M toMap(Pair<? extends K, ? extends V>[] pairArr, M destination) {
         Intrinsics.checkNotNullParameter(pairArr, "<this>");
         Intrinsics.checkNotNullParameter(destination, "destination");
@@ -118,6 +141,14 @@ public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
     public static <K, V> Map<K, V> toMutableMap(Map<? extends K, ? extends V> map) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         return new LinkedHashMap(map);
+    }
+
+    public static <K, V> Map<K, V> plus(Map<? extends K, ? extends V> map, Map<? extends K, ? extends V> map2) {
+        Intrinsics.checkNotNullParameter(map, "<this>");
+        Intrinsics.checkNotNullParameter(map2, "map");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
+        linkedHashMap.putAll(map2);
+        return linkedHashMap;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

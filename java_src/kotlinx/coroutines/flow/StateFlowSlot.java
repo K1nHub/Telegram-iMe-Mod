@@ -14,24 +14,44 @@ import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>> {
-    static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
-    volatile /* synthetic */ Object _state = null;
+    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
+    private volatile Object _state;
 
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
     public boolean allocateLocked(StateFlowImpl<?> stateFlowImpl) {
-        if (this._state != null) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        if (atomicReferenceFieldUpdater.get(this) != null) {
             return false;
         }
-        this._state = StateFlowKt.access$getNONE$p();
+        atomicReferenceFieldUpdater.set(this, StateFlowKt.access$getNONE$p());
         return true;
     }
 
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
     public Continuation<Unit>[] freeLocked(StateFlowImpl<?> stateFlowImpl) {
-        this._state = null;
+        _state$FU.set(this, null);
         return AbstractSharedFlowKt.EMPTY_RESUMES;
+    }
+
+    public final void makePending() {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        while (true) {
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            if (obj == null || obj == StateFlowKt.access$getPENDING$p()) {
+                return;
+            }
+            if (obj == StateFlowKt.access$getNONE$p()) {
+                if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getPENDING$p())) {
+                    return;
+                }
+            } else if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getNONE$p())) {
+                Result.Companion companion = Result.Companion;
+                ((CancellableContinuationImpl) obj).resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
+                return;
+            }
+        }
     }
 
     public final boolean takePending() {
@@ -50,15 +70,15 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
         intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
         cancellableContinuationImpl.initCancellability();
-        if (!DebugKt.getASSERTIONS_ENABLED() || (!(this._state instanceof CancellableContinuationImpl))) {
+        if (!DebugKt.getASSERTIONS_ENABLED() || (!(_state$FU.get(this) instanceof CancellableContinuationImpl))) {
             if (!_state$FU.compareAndSet(this, StateFlowKt.access$getNONE$p(), cancellableContinuationImpl)) {
                 if (DebugKt.getASSERTIONS_ENABLED()) {
-                    if (!(this._state == StateFlowKt.access$getPENDING$p())) {
+                    if (!(_state$FU.get(this) == StateFlowKt.access$getPENDING$p())) {
                         throw new AssertionError();
                     }
                 }
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
             }
             Object result = cancellableContinuationImpl.getResult();
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -69,23 +89,5 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
             return result == coroutine_suspended2 ? result : Unit.INSTANCE;
         }
         throw new AssertionError();
-    }
-
-    public final void makePending() {
-        while (true) {
-            Object obj = this._state;
-            if (obj == null || obj == StateFlowKt.access$getPENDING$p()) {
-                return;
-            }
-            if (obj == StateFlowKt.access$getNONE$p()) {
-                if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getPENDING$p())) {
-                    return;
-                }
-            } else if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getNONE$p())) {
-                Result.Companion companion = Result.Companion;
-                ((CancellableContinuationImpl) obj).resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
-                return;
-            }
-        }
     }
 }

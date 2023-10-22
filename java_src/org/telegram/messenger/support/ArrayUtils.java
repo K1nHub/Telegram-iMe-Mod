@@ -1,7 +1,7 @@
 package org.telegram.messenger.support;
 
 import java.lang.reflect.Array;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ArrayUtils {
     private static final int CACHE_SIZE = 73;
     private static Object[] EMPTY = new Object[0];

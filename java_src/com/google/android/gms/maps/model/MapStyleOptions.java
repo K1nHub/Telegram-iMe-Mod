@@ -13,15 +13,15 @@ import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "MapStyleOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MapStyleOptions extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getJson", m797id = 2)
+    @SafeParcelable.Field(getter = "getJson", m1089id = 2)
     private String zzb;
     private static final String zza = MapStyleOptions.class.getSimpleName();
     public static final Parcelable.Creator<MapStyleOptions> CREATOR = new zzh();
 
     @SafeParcelable.Constructor
-    public MapStyleOptions(@SafeParcelable.Param(m796id = 2) String str) {
+    public MapStyleOptions(@SafeParcelable.Param(m1088id = 2) String str) {
         Preconditions.checkNotNull(str, "json must not be null");
         this.zzb = str;
     }

@@ -24,13 +24,13 @@ import okhttp3.internal.Util;
 import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.connection.RealCall;
 import okhttp3.internal.connection.RouteDatabase;
-import okhttp3.internal.p037ws.RealWebSocket;
+import okhttp3.internal.p036ws.RealWebSocket;
 import okhttp3.internal.platform.Platform;
 import okhttp3.internal.proxy.NullProxySelector;
 import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.OkHostnameVerifier;
 /* compiled from: OkHttpClient.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class OkHttpClient implements Cloneable, Call.Factory {
     private final Authenticator authenticator;
     private final Cache cache;
@@ -350,7 +350,7 @@ public class OkHttpClient implements Cloneable, Call.Factory {
     }
 
     /* compiled from: OkHttpClient.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private Authenticator authenticator;
         private Cache cache;
@@ -632,7 +632,7 @@ public class OkHttpClient implements Cloneable, Call.Factory {
     }
 
     /* compiled from: OkHttpClient.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

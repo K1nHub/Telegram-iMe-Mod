@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class DataClient extends GoogleApi<Wearable.WearableOptions> {
     public static final String ACTION_DATA_CHANGED = "com.google.android.gms.wearable.DATA_CHANGED";
     public static final int FILTER_LITERAL = 0;
@@ -21,12 +21,12 @@ public abstract class DataClient extends GoogleApi<Wearable.WearableOptions> {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface FilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class GetFdForAssetResponse implements Releasable {
         public abstract ParcelFileDescriptor getFdForAsset();
 
@@ -34,7 +34,7 @@ public abstract class DataClient extends GoogleApi<Wearable.WearableOptions> {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnDataChangedListener extends DataApi.DataListener {
         @Override // com.google.android.gms.wearable.DataApi.DataListener
         void onDataChanged(DataEventBuffer dataEventBuffer);

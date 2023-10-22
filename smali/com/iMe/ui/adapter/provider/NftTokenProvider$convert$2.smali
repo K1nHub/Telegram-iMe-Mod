@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 48
     check-cast p1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->invoke(Lorg/telegram/ui/Components/BackupImageView;)V
@@ -60,7 +60,7 @@
 .end method
 
 .method public final invoke(Lorg/telegram/ui/Components/BackupImageView;)V
-    .locals 3
+    .locals 5
 
     const-string v0, "$this$applyForView"
 
@@ -68,38 +68,61 @@
 
     const/4 v0, 0x1
 
-    .line 45
+    .line 49
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 46
+    .line 50
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
 
-    .line 48
+    .line 51
+    new-instance v1, Lorg/telegram/ui/Components/LoadingDrawable;
+
+    invoke-direct {v1}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
+
+    .line 53
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    const/4 v3, -0x1
+
+    const v4, 0x3e19999a    # 0.15f
+
+    .line 54
+    invoke-static {v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withAlpha(IF)I
+
+    move-result v3
+
+    .line 52
+    invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(II)V
+
+    .line 56
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/LoadingDrawable;->setAppearByGradient(Z)V
+
+    .line 51
+    invoke-virtual {p1, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 58
+    iput-boolean v0, p1, Lorg/telegram/ui/Components/BackupImageView;->shouldResetBackGroundOnLoaded:Z
+
+    .line 59
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/NftToken;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;->getImage()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/nft/NftToken;->getImageUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 50
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;->$item:Lcom/iMe/model/wallet/home/nft/NftTokenItem;
+    const-string v1, "50_50"
 
-    invoke-virtual {v1}, Lcom/iMe/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;
+    const/4 v2, 0x0
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftToken;->getImage()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "50_50"
-
-    .line 47
-    invoke-virtual {p1, v0, v2, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

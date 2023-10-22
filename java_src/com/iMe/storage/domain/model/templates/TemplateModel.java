@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.model.templates;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TemplateModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TemplateModel {
     private final long creationDate;
     private final long groupId;
@@ -54,13 +54,13 @@ public final class TemplateModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.messageId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.groupId)) * 31) + this.name.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.creationDate)) * 31) + this.usageRating) * 31;
+        int m1017m = ((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.messageId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.groupId)) * 31) + this.name.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.creationDate)) * 31) + this.usageRating) * 31;
         boolean z = this.sent;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m724m + i;
+        return m1017m + i;
     }
 
     public String toString() {

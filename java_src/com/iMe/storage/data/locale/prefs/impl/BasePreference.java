@@ -9,7 +9,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BasePreference.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BasePreference implements BasePreferenceHelper {
     private final Context context;
     private final Lazy mPref$delegate;

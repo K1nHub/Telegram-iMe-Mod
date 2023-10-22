@@ -11,12 +11,10 @@ import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.StringExtKt;
-import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.ton.TonController;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
+import com.iMe.storage.domain.model.crypto.send.TonTransactionPayload;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.model.wallet.token.Token;
@@ -24,9 +22,8 @@ import io.reactivex.Observable;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TONWalletTransferDataSourceImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TONWalletTransferDataSourceImpl implements WalletTransferDataSource {
-    private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
     private final TonController tonController;
@@ -39,12 +36,10 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         return just;
     }
 
-    public TONWalletTransferDataSourceImpl(CryptoAccessManager cryptoAccessManager, FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, TonController tonController) {
-        Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
+    public TONWalletTransferDataSourceImpl(FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, TonController tonController) {
         Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
         Intrinsics.checkNotNullParameter(cryptoWalletApi, "cryptoWalletApi");
         Intrinsics.checkNotNullParameter(tonController, "tonController");
-        this.cryptoAccessManager = cryptoAccessManager;
         this.firebaseErrorHandler = firebaseErrorHandler;
         this.cryptoWalletApi = cryptoWalletApi;
         this.tonController = tonController;
@@ -79,19 +74,13 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
     }
 
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
-    public Observable<Result<Boolean>> transfer(TransactionArgs args, String networkId) {
+    public Observable<Result<String>> transfer(TransactionArgs args, String networkId) {
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
         if (!(args instanceof TransferArgs.TON)) {
             throw new IllegalStateException("Incorrect transfer args passed");
         }
         TransferArgs.TON ton = (TransferArgs.TON) args;
-        TonController tonController = this.tonController;
-        Wallet wallet2 = this.cryptoAccessManager.getWallet(BlockchainType.TON);
-        String address = wallet2 != null ? wallet2.getAddress() : null;
-        if (address == null) {
-            address = "";
-        }
-        return tonController.sendTransaction(address, ton.getRecipientAddress(), ton.getConvertedAmount().longValue(), ton.getMessage(), ton.isUnencrypted(), ton.getSendMode());
+        return this.tonController.sendTransaction(ton.getRecipientAddress(), ton.getConvertedAmount().longValue(), new TonTransactionPayload.Message(ton.getMessage(), ton.isUnencrypted()), ton.getSendMode());
     }
 }

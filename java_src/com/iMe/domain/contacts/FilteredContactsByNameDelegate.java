@@ -23,10 +23,12 @@ import org.telegram.tgnet.TLRPC$TL_contact;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$UserStatus;
 /* compiled from: FilteredContactsByNameDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class FilteredContactsByNameDelegate extends BaseController {
     private final Lazy blockedUsers$delegate;
     private final Lazy blockedUsersArr$delegate;
+    private final Lazy giftPremiumContacts$delegate;
+    private final Lazy giftPremiumContactsArr$delegate;
     private final Lazy mutualContacts$delegate;
     private final Lazy mutualContactsArr$delegate;
     private final Lazy notMutualContacts$delegate;
@@ -49,7 +51,158 @@ public final class FilteredContactsByNameDelegate extends BaseController {
         Lazy lazy8;
         Lazy lazy9;
         Lazy lazy10;
-        lazy = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsDictionary$2
+        Lazy lazy11;
+        Lazy lazy12;
+        lazy = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContacts$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
+                HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContacts$2.1
+                    {
+                        super(1);
+                    }
+
+                    /* JADX WARN: Code restructure failed: missing block: B:18:0x003c, code lost:
+                        if (r6 == false) goto L20;
+                     */
+                    @Override // kotlin.jvm.functions.Function1
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                        To view partially-correct add '--show-bad-code' argument
+                    */
+                    public final java.lang.Boolean invoke(org.telegram.tgnet.TLRPC$TL_contact r6) {
+                        /*
+                            r5 = this;
+                            java.lang.String r0 = "it"
+                            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, r0)
+                            long r0 = r6.user_id
+                            com.iMe.domain.contacts.FilteredContactsByNameDelegate r2 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.this
+                            long r2 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.access$getSelfId$p(r2)
+                            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+                            r1 = 1
+                            r2 = 0
+                            if (r0 == 0) goto L3f
+                            com.iMe.domain.contacts.FilteredContactsByNameDelegate r0 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.this
+                            org.telegram.messenger.MessagesController r0 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.access$getMessagesController(r0)
+                            long r3 = r6.user_id
+                            java.lang.Long r6 = java.lang.Long.valueOf(r3)
+                            org.telegram.tgnet.TLRPC$User r6 = r0.getUser(r6)
+                            if (r6 == 0) goto L3b
+                            boolean r0 = r6.premium
+                            if (r0 != 0) goto L3b
+                            java.lang.String r6 = r6.username
+                            if (r6 == 0) goto L36
+                            int r6 = r6.length()
+                            if (r6 != 0) goto L34
+                            goto L36
+                        L34:
+                            r6 = r2
+                            goto L37
+                        L36:
+                            r6 = r1
+                        L37:
+                            if (r6 != 0) goto L3b
+                            r6 = r1
+                            goto L3c
+                        L3b:
+                            r6 = r2
+                        L3c:
+                            if (r6 == 0) goto L3f
+                            goto L40
+                        L3f:
+                            r1 = r2
+                        L40:
+                            java.lang.Boolean r6 = java.lang.Boolean.valueOf(r1)
+                            return r6
+                        */
+                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContacts$2.C13501.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
+                    }
+                });
+                return usersByPredicate;
+            }
+        });
+        this.giftPremiumContacts$delegate = lazy;
+        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContactsArr$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(0);
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            public final ArrayList<String> invoke() {
+                ArrayList<String> arrCharsByPredicate;
+                final FilteredContactsByNameDelegate filteredContactsByNameDelegate = FilteredContactsByNameDelegate.this;
+                arrCharsByPredicate = filteredContactsByNameDelegate.getArrCharsByPredicate(new Function1<TLRPC$TL_contact, Boolean>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContactsArr$2.1
+                    {
+                        super(1);
+                    }
+
+                    /* JADX WARN: Code restructure failed: missing block: B:16:0x003a, code lost:
+                        if (r6 == false) goto L18;
+                     */
+                    @Override // kotlin.jvm.functions.Function1
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                        To view partially-correct add '--show-bad-code' argument
+                    */
+                    public final java.lang.Boolean invoke(org.telegram.tgnet.TLRPC$TL_contact r6) {
+                        /*
+                            r5 = this;
+                            java.lang.String r0 = "it"
+                            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, r0)
+                            long r0 = r6.user_id
+                            com.iMe.domain.contacts.FilteredContactsByNameDelegate r2 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.this
+                            long r2 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.access$getSelfId$p(r2)
+                            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+                            r1 = 1
+                            r2 = 0
+                            if (r0 == 0) goto L3d
+                            com.iMe.domain.contacts.FilteredContactsByNameDelegate r0 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.this
+                            org.telegram.messenger.MessagesController r0 = com.iMe.domain.contacts.FilteredContactsByNameDelegate.access$getMessagesController(r0)
+                            long r3 = r6.user_id
+                            java.lang.Long r6 = java.lang.Long.valueOf(r3)
+                            org.telegram.tgnet.TLRPC$User r6 = r0.getUser(r6)
+                            boolean r0 = r6.premium
+                            if (r0 != 0) goto L39
+                            java.lang.String r6 = r6.username
+                            if (r6 == 0) goto L34
+                            int r6 = r6.length()
+                            if (r6 != 0) goto L32
+                            goto L34
+                        L32:
+                            r6 = r2
+                            goto L35
+                        L34:
+                            r6 = r1
+                        L35:
+                            if (r6 != 0) goto L39
+                            r6 = r1
+                            goto L3a
+                        L39:
+                            r6 = r2
+                        L3a:
+                            if (r6 == 0) goto L3d
+                            goto L3e
+                        L3d:
+                            r1 = r2
+                        L3e:
+                            java.lang.Boolean r6 = java.lang.Boolean.valueOf(r1)
+                            return r6
+                        */
+                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContactsArr$2.C13511.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
+                    }
+                });
+                return arrCharsByPredicate;
+            }
+        });
+        this.giftPremiumContactsArr$delegate = lazy2;
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsDictionary$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -91,8 +244,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return usersByPredicate;
             }
         });
-        this.onlineContactsDictionary$delegate = lazy;
-        lazy2 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsArr$2
+        this.onlineContactsDictionary$delegate = lazy3;
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$onlineContactsArr$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -134,8 +287,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return arrCharsByPredicate;
             }
         });
-        this.onlineContactsArr$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$premiumContactsArr$2
+        this.onlineContactsArr$delegate = lazy4;
+        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$premiumContactsArr$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -172,8 +325,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return arrCharsByPredicate;
             }
         });
-        this.premiumContactsArr$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$premiumContacts$2
+        this.premiumContactsArr$delegate = lazy5;
+        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$premiumContacts$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -210,8 +363,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return usersByPredicate;
             }
         });
-        this.premiumContacts$delegate = lazy4;
-        lazy5 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContacts$2
+        this.premiumContacts$delegate = lazy6;
+        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContacts$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -230,8 +383,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return usersByPredicate;
             }
         });
-        this.mutualContacts$delegate = lazy5;
-        lazy6 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContactsArr$2
+        this.mutualContacts$delegate = lazy7;
+        lazy8 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContactsArr$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -250,8 +403,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return arrCharsByPredicate;
             }
         });
-        this.mutualContactsArr$delegate = lazy6;
-        lazy7 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContacts$2
+        this.mutualContactsArr$delegate = lazy8;
+        lazy9 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContacts$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -270,8 +423,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return usersByPredicate;
             }
         });
-        this.notMutualContacts$delegate = lazy7;
-        lazy8 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContactsArr$2
+        this.notMutualContacts$delegate = lazy9;
+        lazy10 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$notMutualContactsArr$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -290,8 +443,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return arrCharsByPredicate;
             }
         });
-        this.notMutualContactsArr$delegate = lazy8;
-        lazy9 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsers$2
+        this.notMutualContactsArr$delegate = lazy10;
+        lazy11 = LazyKt__LazyJVMKt.lazy(new Function0<HashMap<String, ArrayList<TLRPC$TL_contact>>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsers$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -328,8 +481,8 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return usersByPredicate;
             }
         });
-        this.blockedUsers$delegate = lazy9;
-        lazy10 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsersArr$2
+        this.blockedUsers$delegate = lazy11;
+        lazy12 = LazyKt__LazyJVMKt.lazy(new Function0<ArrayList<String>>() { // from class: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsersArr$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -366,8 +519,16 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                 return arrCharsByPredicate;
             }
         });
-        this.blockedUsersArr$delegate = lazy10;
+        this.blockedUsersArr$delegate = lazy12;
         this.selfId = UserConfig.getInstance(this.currentAccount).clientUserId;
+    }
+
+    public final HashMap<String, ArrayList<TLRPC$TL_contact>> getGiftPremiumContacts() {
+        return (HashMap) this.giftPremiumContacts$delegate.getValue();
+    }
+
+    public final ArrayList<String> getGiftPremiumContactsArr() {
+        return (ArrayList) this.giftPremiumContactsArr$delegate.getValue();
     }
 
     public final HashMap<String, ArrayList<TLRPC$TL_contact>> getOnlineContactsDictionary() {
@@ -413,7 +574,7 @@ public final class FilteredContactsByNameDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1685id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1762id));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

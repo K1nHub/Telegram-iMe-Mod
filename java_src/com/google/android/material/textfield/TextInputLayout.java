@@ -56,7 +56,7 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class TextInputLayout extends LinearLayout {
     private static final int DEF_STYLE_RES = R$style.Widget_Design_TextInputLayout;
     private ValueAnimator animator;
@@ -147,12 +147,12 @@ public class TextInputLayout extends LinearLayout {
     private final RectF tmpRectF;
     private Typeface typeface;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnEditTextAttachedListener {
         void onEditTextAttached(TextInputLayout textInputLayout);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface OnEndIconChangedListener {
         void onEndIconChanged(TextInputLayout textInputLayout, int i);
     }
@@ -1335,7 +1335,7 @@ public class TextInputLayout extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class SavedState extends AbsSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() { // from class: com.google.android.material.textfield.TextInputLayout.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */
@@ -2231,7 +2231,7 @@ public class TextInputLayout extends LinearLayout {
         return this.indicatorViewController.getErrorViewCurrentTextColor();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class AccessibilityDelegate extends AccessibilityDelegateCompat {
         private final TextInputLayout layout;
 

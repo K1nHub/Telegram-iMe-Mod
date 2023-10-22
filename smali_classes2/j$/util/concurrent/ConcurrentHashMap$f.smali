@@ -2,7 +2,7 @@
 .super Lj$/util/concurrent/ConcurrentHashMap$p;
 
 # interfaces
-.implements Lj$/util/s;
+.implements Lj$/util/Spliterator;
 
 
 # annotations
@@ -130,7 +130,7 @@
 .method public synthetic getExactSizeIfKnown()J
     .locals 2
 
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/s;)J
+    invoke-static {p0}, Lj$/util/k;->d(Lj$/util/Spliterator;)J
 
     move-result-wide v0
 
@@ -140,14 +140,14 @@
 .method public synthetic hasCharacteristics(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/s;I)Z
+    invoke-static {p0, p1}, Lj$/util/k;->e(Lj$/util/Spliterator;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public trySplit()Lj$/util/s;
+.method public trySplit()Lj$/util/Spliterator;
     .locals 10
 
     iget v0, p0, Lj$/util/concurrent/ConcurrentHashMap$p;->f:I

@@ -1,5 +1,5 @@
 package org.aspectj.runtime.reflect;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 abstract class MemberSignatureImpl extends SignatureImpl {
     /* JADX INFO: Access modifiers changed from: package-private */
     public MemberSignatureImpl(int i, String str, Class cls) {

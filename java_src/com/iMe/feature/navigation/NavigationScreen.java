@@ -13,14 +13,14 @@ import com.iMe.feature.socialMedias.SocialNetwork;
 import com.iMe.feature.socialMedias.auth.AuthScreenDirections;
 import com.iMe.feature.socialMedias.webScreen.SocialWebScreenDirections;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 import timber.log.Timber;
 /* compiled from: NavigationScreen.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NavigationScreen extends FragmentActivity {
 
     /* compiled from: NavigationScreen.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -48,7 +48,7 @@ public final class NavigationScreen extends FragmentActivity {
         Parcelable parcelable;
         super.onCreate(bundle);
         requestWindowFeature(1);
-        setContentView(C3473R.layout.fork_navigation_screen);
+        setContentView(C3630R.layout.fork_navigation_screen);
         Intent intent = getIntent();
         Intrinsics.checkNotNullExpressionValue(intent, "intent");
         if (Build.VERSION.SDK_INT >= 33) {
@@ -65,10 +65,10 @@ public final class NavigationScreen extends FragmentActivity {
 
     private final void startDestination(NavigationBundle<Parcelable> navigationBundle) {
         NavDirection navDirection = navigationBundle != null ? navigationBundle.getNavDirection() : null;
-        Fragment findFragmentById = getSupportFragmentManager().findFragmentById(C3473R.C3476id.main_content);
+        Fragment findFragmentById = getSupportFragmentManager().findFragmentById(C3630R.C3633id.main_content);
         Intrinsics.checkNotNull(findFragmentById, "null cannot be cast to non-null type androidx.navigation.fragment.NavHostFragment");
         NavHostFragment navHostFragment = (NavHostFragment) findFragmentById;
-        NavGraph inflate = navHostFragment.getNavController().getNavInflater().inflate(C3473R.C3478navigation.fork_main_nav_graph);
+        NavGraph inflate = navHostFragment.getNavController().getNavInflater().inflate(C3630R.C3635navigation.fork_main_nav_graph);
         StringBuilder sb = new StringBuilder();
         sb.append("Start new destination with: ");
         sb.append(navigationBundle != null ? navigationBundle.getNavDirection() : null);
@@ -76,7 +76,7 @@ public final class NavigationScreen extends FragmentActivity {
         NavDirection navDirection2 = navigationBundle != null ? navigationBundle.getNavDirection() : null;
         int i = navDirection2 == null ? -1 : WhenMappings.$EnumSwitchMapping$0[navDirection2.ordinal()];
         if (i == 1) {
-            inflate.setStartDestination(C3473R.C3476id.socialAuthScreen);
+            inflate.setStartDestination(C3630R.C3633id.socialAuthScreen);
             navHostFragment.getNavController().setGraph(inflate, getIntent().getExtras());
             Parcelable data = navigationBundle.getData();
             Intrinsics.checkNotNull(data, "null cannot be cast to non-null type com.iMe.feature.socialMedias.SocialAuthDomain");
@@ -85,12 +85,12 @@ public final class NavigationScreen extends FragmentActivity {
             navHostFragment.getNavController().navigate(socialAuth);
         } else if (i != 2) {
             if (i == 3) {
-                inflate.setStartDestination(C3473R.C3476id.devSettings);
+                inflate.setStartDestination(C3630R.C3633id.devSettings);
                 return;
             }
             Timber.m7e("NavDirection is skipped: " + navDirection, new Object[0]);
         } else {
-            inflate.setStartDestination(C3473R.C3476id.socialWebScreen);
+            inflate.setStartDestination(C3630R.C3633id.socialWebScreen);
             navHostFragment.getNavController().setGraph(inflate, getIntent().getExtras());
             Parcelable data2 = navigationBundle.getData();
             Intrinsics.checkNotNull(data2, "null cannot be cast to non-null type com.iMe.feature.socialMedias.SocialNetwork");

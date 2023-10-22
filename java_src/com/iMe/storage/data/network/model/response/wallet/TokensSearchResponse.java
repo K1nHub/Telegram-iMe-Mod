@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensSearchResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TokensSearchResponse {
     private final String cursor;
     private final List<FoundTokenWithFamilyResponse> tokens;

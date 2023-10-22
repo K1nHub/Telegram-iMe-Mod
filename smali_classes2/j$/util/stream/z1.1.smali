@@ -21,5 +21,5 @@
 .method public abstract g(Ljava/lang/Object;)V
 .end method
 
-.method public abstract spliterator()Lj$/util/t;
+.method public abstract spliterator()Lj$/util/Spliterator$d;
 .end method

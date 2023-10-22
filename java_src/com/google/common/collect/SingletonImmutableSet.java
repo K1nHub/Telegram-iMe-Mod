@@ -2,7 +2,7 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SingletonImmutableSet<E> extends ImmutableSet<E> {
     final transient E element;
 
@@ -34,7 +34,7 @@ public final class SingletonImmutableSet<E> extends ImmutableSet<E> {
 
     @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection
     public ImmutableList<E> asList() {
-        return ImmutableList.m761of((Object) this.element);
+        return ImmutableList.m1053of((Object) this.element);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

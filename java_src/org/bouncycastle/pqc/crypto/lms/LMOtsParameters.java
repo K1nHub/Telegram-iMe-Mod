@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class LMOtsParameters {
     public static final LMOtsParameters sha256_n32_w1;
     public static final LMOtsParameters sha256_n32_w2;
@@ -14,14 +14,14 @@ public class LMOtsParameters {
     private final ASN1ObjectIdentifier digestOID;
 
     /* renamed from: n */
-    private final int f1396n;
+    private final int f1477n;
 
     /* renamed from: p */
-    private final int f1397p;
+    private final int f1478p;
     private final int type;
 
     /* renamed from: w */
-    private final int f1398w;
+    private final int f1479w;
 
     static {
         ASN1ObjectIdentifier aSN1ObjectIdentifier = NISTObjectIdentifiers.id_sha256;
@@ -45,9 +45,9 @@ public class LMOtsParameters {
 
     protected LMOtsParameters(int i, int i2, int i3, int i4, int i5, int i6, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         this.type = i;
-        this.f1396n = i2;
-        this.f1398w = i3;
-        this.f1397p = i4;
+        this.f1477n = i2;
+        this.f1479w = i3;
+        this.f1478p = i4;
         this.digestOID = aSN1ObjectIdentifier;
     }
 
@@ -60,11 +60,11 @@ public class LMOtsParameters {
     }
 
     public int getN() {
-        return this.f1396n;
+        return this.f1477n;
     }
 
     public int getP() {
-        return this.f1397p;
+        return this.f1478p;
     }
 
     public int getType() {
@@ -72,6 +72,6 @@ public class LMOtsParameters {
     }
 
     public int getW() {
-        return this.f1398w;
+        return this.f1479w;
     }
 }

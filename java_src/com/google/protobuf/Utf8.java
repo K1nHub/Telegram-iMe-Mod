@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Utf8 {
     private static final Processor processor;
 
@@ -48,11 +48,6 @@ public final class Utf8 {
         return processor.isValidUtf8(bArr, i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static int partialIsValidUtf8(int i, byte[] bArr, int i2, int i3) {
-        return processor.partialIsValidUtf8(i, bArr, i2, i3);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static int incompleteStateFor(byte[] bArr, int i, int i2) {
         byte b = bArr[i - 1];
@@ -84,7 +79,7 @@ public final class Utf8 {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class UnpairedSurrogateException extends IllegalArgumentException {
         UnpairedSurrogateException(int i, int i2) {
             super("Unpaired surrogate at index " + i + " of " + i2);
@@ -150,11 +145,6 @@ public final class Utf8 {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static int partialIsValidUtf8(int i, ByteBuffer byteBuffer, int i2, int i3) {
-        return processor.partialIsValidUtf8(i, byteBuffer, i2, i3);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static String decodeUtf8(ByteBuffer byteBuffer, int i, int i2) throws InvalidProtocolBufferException {
         return processor.decodeUtf8(byteBuffer, i, i2);
     }
@@ -175,7 +165,7 @@ public final class Utf8 {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Processor {
         abstract String decodeUtf8(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException;
 
@@ -441,7 +431,7 @@ public final class Utf8 {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class SafeProcessor extends Processor {
         SafeProcessor() {
         }
@@ -709,7 +699,7 @@ public final class Utf8 {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class UnsafeProcessor extends Processor {
         UnsafeProcessor() {
         }
@@ -1222,7 +1212,7 @@ public final class Utf8 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class DecodeUtil {
         private static char highSurrogate(int i) {
             return (char) ((i >>> 10) + 55232);

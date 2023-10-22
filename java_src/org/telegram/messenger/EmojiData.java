@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class EmojiData {
     public static final String[] aliasNew;
     public static final char[] dataChars;

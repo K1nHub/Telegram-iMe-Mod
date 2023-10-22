@@ -3,7 +3,7 @@ package com.otaliastudios.gif.internal;
 import android.media.MediaCodec;
 import android.os.Build;
 import java.nio.ByteBuffer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class MediaCodecBuffers {
     private final MediaCodec mMediaCodec;
     private ByteBuffer[] mOutputBuffers;

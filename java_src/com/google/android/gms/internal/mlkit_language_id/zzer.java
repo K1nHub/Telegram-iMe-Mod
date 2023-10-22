@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzer extends zzdi<Integer> implements zzew<Integer>, zzgi {
     private static final zzer zza;
     private int[] zzb;
@@ -235,6 +235,6 @@ final class zzer extends zzdi<Integer> implements zzew<Integer>, zzgi {
     static {
         zzer zzerVar = new zzer(new int[0], 0);
         zza = zzerVar;
-        zzerVar.mo780b_();
+        zzerVar.mo1072b_();
     }
 }

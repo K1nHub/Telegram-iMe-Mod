@@ -1,200 +1,16 @@
 !!brut.androlib.apk.ApkInfo
-apkFileName: iMe+10.0.7.apk
+apkFileName: ime_android_10_1_2.apk
 doNotCompress:
 - resources.arsc
-- META-INF/androidx.activity_activity-ktx.version
-- META-INF/androidx.activity_activity.version
-- META-INF/androidx.annotation_annotation-experimental.version
-- META-INF/androidx.appcompat_appcompat-resources.version
-- META-INF/androidx.appcompat_appcompat.version
-- META-INF/androidx.cardview_cardview.version
-- META-INF/androidx.coordinatorlayout_coordinatorlayout.version
-- META-INF/androidx.core_core-ktx.version
-- META-INF/androidx.core_core.version
-- META-INF/androidx.cursoradapter_cursoradapter.version
-- META-INF/androidx.customview_customview.version
-- META-INF/androidx.databinding_viewbinding.version
-- META-INF/androidx.documentfile_documentfile.version
-- META-INF/androidx.drawerlayout_drawerlayout.version
-- META-INF/androidx.dynamicanimation_dynamicanimation.version
-- META-INF/androidx.emoji2_emoji2-views-helper.version
-- META-INF/androidx.emoji2_emoji2.version
-- META-INF/androidx.exifinterface_exifinterface.version
-- META-INF/androidx.fragment_fragment-ktx.version
-- META-INF/androidx.fragment_fragment.version
-- META-INF/androidx.interpolator_interpolator.version
-- META-INF/androidx.legacy_legacy-support-core-utils.version
-- META-INF/androidx.lifecycle_lifecycle-extensions.version
-- META-INF/androidx.loader_loader.version
-- META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version
-- META-INF/androidx.navigation_navigation-common-ktx.version
-- META-INF/androidx.navigation_navigation-common.version
-- META-INF/androidx.navigation_navigation-fragment-ktx.version
-- META-INF/androidx.navigation_navigation-fragment.version
-- META-INF/androidx.navigation_navigation-runtime-ktx.version
-- META-INF/androidx.navigation_navigation-runtime.version
-- META-INF/androidx.navigation_navigation-ui-ktx.version
-- META-INF/androidx.navigation_navigation-ui.version
-- META-INF/androidx.palette_palette-ktx.version
-- META-INF/androidx.palette_palette.version
-- META-INF/androidx.print_print.version
-- META-INF/androidx.profileinstaller_profileinstaller.version
-- META-INF/androidx.room_room-runtime.version
-- META-INF/androidx.room_room-rxjava2.version
-- META-INF/androidx.savedstate_savedstate-ktx.version
-- META-INF/androidx.savedstate_savedstate.version
-- META-INF/androidx.sharetarget_sharetarget.version
-- META-INF/androidx.slidingpanelayout_slidingpanelayout.version
-- META-INF/androidx.sqlite_sqlite-framework.version
-- META-INF/androidx.sqlite_sqlite-ktx.version
-- META-INF/androidx.sqlite_sqlite.version
-- META-INF/androidx.startup_startup-runtime.version
-- META-INF/androidx.swiperefreshlayout_swiperefreshlayout.version
-- META-INF/androidx.tracing_tracing.version
-- META-INF/androidx.transition_transition.version
-- META-INF/androidx.vectordrawable_vectordrawable-animated.version
-- META-INF/androidx.vectordrawable_vectordrawable.version
-- META-INF/androidx.versionedparcelable_versionedparcelable.version
-- META-INF/androidx.viewpager2_viewpager2.version
-- META-INF/androidx.viewpager_viewpager.version
-- META-INF/androidx.window_window.version
-- META-INF/com.google.android.material_material.version
-- META-INF/kotlinx_coroutines_android.version
-- META-INF/kotlinx_coroutines_core.version
-- META-INF/kotlinx_coroutines_reactive.version
-- META-INF/kotlinx_coroutines_rx2.version
-- META-INF/services/io.grpc.ManagedChannelProvider
-- META-INF/services/io.grpc.NameResolverProvider
 - png
 - jpg
-- assets/bots/assistant/intents_cl/intent_1/intent_1_model.tflite
-- assets/bots/assistant/intents_cl/intent_10/intent_10_model.tflite
-- assets/bots/assistant/intents_cl/intent_100/intent_100_model.tflite
-- assets/bots/assistant/intents_cl/intent_101/intent_101_model.tflite
-- assets/bots/assistant/intents_cl/intent_102/intent_102_model.tflite
-- assets/bots/assistant/intents_cl/intent_103/intent_103_model.tflite
-- assets/bots/assistant/intents_cl/intent_104/intent_104_model.tflite
-- assets/bots/assistant/intents_cl/intent_105/intent_105_model.tflite
-- assets/bots/assistant/intents_cl/intent_106/intent_106_model.tflite
-- assets/bots/assistant/intents_cl/intent_107/intent_107_model.tflite
-- assets/bots/assistant/intents_cl/intent_108/intent_108_model.tflite
-- assets/bots/assistant/intents_cl/intent_109/intent_109_model.tflite
-- assets/bots/assistant/intents_cl/intent_11/intent_11_model.tflite
-- assets/bots/assistant/intents_cl/intent_110/intent_110_model.tflite
-- assets/bots/assistant/intents_cl/intent_111/intent_111_model.tflite
-- assets/bots/assistant/intents_cl/intent_112/intent_112_model.tflite
-- assets/bots/assistant/intents_cl/intent_113/intent_113_model.tflite
-- assets/bots/assistant/intents_cl/intent_114/intent_114_model.tflite
-- assets/bots/assistant/intents_cl/intent_115/intent_115_model.tflite
-- assets/bots/assistant/intents_cl/intent_116/intent_116_model.tflite
-- assets/bots/assistant/intents_cl/intent_117/intent_117_model.tflite
-- assets/bots/assistant/intents_cl/intent_118/intent_118_model.tflite
-- assets/bots/assistant/intents_cl/intent_119/intent_119_model.tflite
-- assets/bots/assistant/intents_cl/intent_12/intent_12_model.tflite
-- assets/bots/assistant/intents_cl/intent_13/intent_13_model.tflite
-- assets/bots/assistant/intents_cl/intent_14/intent_14_model.tflite
-- assets/bots/assistant/intents_cl/intent_15/intent_15_model.tflite
-- assets/bots/assistant/intents_cl/intent_16/intent_16_model.tflite
-- assets/bots/assistant/intents_cl/intent_17/intent_17_model.tflite
-- assets/bots/assistant/intents_cl/intent_18/intent_18_model.tflite
-- assets/bots/assistant/intents_cl/intent_19/intent_19_model.tflite
-- assets/bots/assistant/intents_cl/intent_2/intent_2_model.tflite
-- assets/bots/assistant/intents_cl/intent_20/intent_20_model.tflite
-- assets/bots/assistant/intents_cl/intent_21/intent_21_model.tflite
-- assets/bots/assistant/intents_cl/intent_22/intent_22_model.tflite
-- assets/bots/assistant/intents_cl/intent_23/intent_23_model.tflite
-- assets/bots/assistant/intents_cl/intent_24/intent_24_model.tflite
-- assets/bots/assistant/intents_cl/intent_25/intent_25_model.tflite
-- assets/bots/assistant/intents_cl/intent_26/intent_26_model.tflite
-- assets/bots/assistant/intents_cl/intent_27/intent_27_model.tflite
-- assets/bots/assistant/intents_cl/intent_28/intent_28_model.tflite
-- assets/bots/assistant/intents_cl/intent_29/intent_29_model.tflite
-- assets/bots/assistant/intents_cl/intent_3/intent_3_model.tflite
-- assets/bots/assistant/intents_cl/intent_30/intent_30_model.tflite
-- assets/bots/assistant/intents_cl/intent_31/intent_31_model.tflite
-- assets/bots/assistant/intents_cl/intent_32/intent_32_model.tflite
-- assets/bots/assistant/intents_cl/intent_33/intent_33_model.tflite
-- assets/bots/assistant/intents_cl/intent_34/intent_34_model.tflite
-- assets/bots/assistant/intents_cl/intent_35/intent_35_model.tflite
-- assets/bots/assistant/intents_cl/intent_36/intent_36_model.tflite
-- assets/bots/assistant/intents_cl/intent_37/intent_37_model.tflite
-- assets/bots/assistant/intents_cl/intent_38/intent_38_model.tflite
-- assets/bots/assistant/intents_cl/intent_39/intent_39_model.tflite
-- assets/bots/assistant/intents_cl/intent_4/intent_4_model.tflite
-- assets/bots/assistant/intents_cl/intent_40/intent_40_model.tflite
-- assets/bots/assistant/intents_cl/intent_41/intent_41_model.tflite
-- assets/bots/assistant/intents_cl/intent_42/intent_42_model.tflite
-- assets/bots/assistant/intents_cl/intent_43/intent_43_model.tflite
-- assets/bots/assistant/intents_cl/intent_44/intent_44_model.tflite
-- assets/bots/assistant/intents_cl/intent_45/intent_45_model.tflite
-- assets/bots/assistant/intents_cl/intent_46/intent_46_model.tflite
-- assets/bots/assistant/intents_cl/intent_47/intent_47_model.tflite
-- assets/bots/assistant/intents_cl/intent_48/intent_48_model.tflite
-- assets/bots/assistant/intents_cl/intent_49/intent_49_model.tflite
-- assets/bots/assistant/intents_cl/intent_5/intent_5_model.tflite
-- assets/bots/assistant/intents_cl/intent_50/intent_50_model.tflite
-- assets/bots/assistant/intents_cl/intent_51/intent_51_model.tflite
-- assets/bots/assistant/intents_cl/intent_52/intent_52_model.tflite
-- assets/bots/assistant/intents_cl/intent_53/intent_53_model.tflite
-- assets/bots/assistant/intents_cl/intent_54/intent_54_model.tflite
-- assets/bots/assistant/intents_cl/intent_55/intent_55_model.tflite
-- assets/bots/assistant/intents_cl/intent_56/intent_56_model.tflite
-- assets/bots/assistant/intents_cl/intent_57/intent_57_model.tflite
-- assets/bots/assistant/intents_cl/intent_58/intent_58_model.tflite
-- assets/bots/assistant/intents_cl/intent_59/intent_59_model.tflite
-- assets/bots/assistant/intents_cl/intent_6/intent_6_model.tflite
-- assets/bots/assistant/intents_cl/intent_60/intent_60_model.tflite
-- assets/bots/assistant/intents_cl/intent_61/intent_61_model.tflite
-- assets/bots/assistant/intents_cl/intent_62/intent_62_model.tflite
-- assets/bots/assistant/intents_cl/intent_63/intent_63_model.tflite
-- assets/bots/assistant/intents_cl/intent_64/intent_64_model.tflite
-- assets/bots/assistant/intents_cl/intent_65/intent_65_model.tflite
-- assets/bots/assistant/intents_cl/intent_66/intent_66_model.tflite
-- assets/bots/assistant/intents_cl/intent_67/intent_67_model.tflite
-- assets/bots/assistant/intents_cl/intent_68/intent_68_model.tflite
-- assets/bots/assistant/intents_cl/intent_69/intent_69_model.tflite
-- assets/bots/assistant/intents_cl/intent_7/intent_7_model.tflite
-- assets/bots/assistant/intents_cl/intent_70/intent_70_model.tflite
-- assets/bots/assistant/intents_cl/intent_71/intent_71_model.tflite
-- assets/bots/assistant/intents_cl/intent_72/intent_72_model.tflite
-- assets/bots/assistant/intents_cl/intent_73/intent_73_model.tflite
-- assets/bots/assistant/intents_cl/intent_74/intent_74_model.tflite
-- assets/bots/assistant/intents_cl/intent_75/intent_75_model.tflite
-- assets/bots/assistant/intents_cl/intent_76/intent_76_model.tflite
-- assets/bots/assistant/intents_cl/intent_77/intent_77_model.tflite
-- assets/bots/assistant/intents_cl/intent_78/intent_78_model.tflite
-- assets/bots/assistant/intents_cl/intent_79/intent_79_model.tflite
-- assets/bots/assistant/intents_cl/intent_8/intent_8_model.tflite
-- assets/bots/assistant/intents_cl/intent_80/intent_80_model.tflite
-- assets/bots/assistant/intents_cl/intent_81/intent_81_model.tflite
-- assets/bots/assistant/intents_cl/intent_82/intent_82_model.tflite
-- assets/bots/assistant/intents_cl/intent_83/intent_83_model.tflite
-- assets/bots/assistant/intents_cl/intent_84/intent_84_model.tflite
-- assets/bots/assistant/intents_cl/intent_85/intent_85_model.tflite
-- assets/bots/assistant/intents_cl/intent_86/intent_86_model.tflite
-- assets/bots/assistant/intents_cl/intent_87/intent_87_model.tflite
-- assets/bots/assistant/intents_cl/intent_88/intent_88_model.tflite
-- assets/bots/assistant/intents_cl/intent_89/intent_89_model.tflite
-- assets/bots/assistant/intents_cl/intent_9/intent_9_model.tflite
-- assets/bots/assistant/intents_cl/intent_90/intent_90_model.tflite
-- assets/bots/assistant/intents_cl/intent_91/intent_91_model.tflite
-- assets/bots/assistant/intents_cl/intent_92/intent_92_model.tflite
-- assets/bots/assistant/intents_cl/intent_93/intent_93_model.tflite
-- assets/bots/assistant/intents_cl/intent_94/intent_94_model.tflite
-- assets/bots/assistant/intents_cl/intent_95/intent_95_model.tflite
-- assets/bots/assistant/intents_cl/intent_96/intent_96_model.tflite
-- assets/bots/assistant/intents_cl/intent_97/intent_97_model.tflite
-- assets/bots/assistant/intents_cl/intent_98/intent_98_model.tflite
-- assets/bots/assistant/intents_cl/intent_99/intent_99_model.tflite
-- assets/bots/assistant/main_cl/assistant_model.tflite
-- assets/bots/assistant_eng/main_cl/assistant_eng_model.tflite
 - assets/dexopt/baseline.prof
 - wav
 - mp3
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: org.telegram.messenger
+  renameManifestPackage: null
 resourcesAreCompressed: false
 sdkInfo:
   minSdkVersion: '23'
@@ -203,8 +19,11 @@ sharedLibrary: false
 sparseResources: true
 unknownFiles:
   DebugProbesKt.bin: '8'
-  androidsupportmultidexversion.txt: '0'
+  Fift.fif: '8'
+  androidsupportmultidexversion.txt: '8'
   billing.properties: '8'
+  block.tlb: '8'
+  boc.tlb: '8'
   builddef.lst: '8'
   common.properties: '8'
   core.properties: '8'
@@ -234,8 +53,8 @@ unknownFiles:
   firebase-measurement-connector.properties: '8'
   firebase-messaging.properties: '8'
   firebase-ml-common.properties: '8'
-  firebase-ml-model-interpreter.properties: '8'
   firebase-ml-vision.properties: '8'
+  hashmap.tlb: '8'
   isoparser-default.properties: '8'
   language-id.properties: '8'
   play-services-ads-identifier.properties: '8'
@@ -266,11 +85,12 @@ unknownFiles:
   play-services-wallet.properties: '8'
   play-services-wearable.properties: '8'
   protolite-well-known-types.properties: '8'
+  tokendata.tlb: '8'
+  tonstdlib.tlb: '8'
   transport-api.properties: '8'
   transport-backend-cct.properties: '8'
   transport-runtime.properties: '8'
-  version.txt: '0'
-  stamp-cert-sha256: '8'
+  version.txt: '8'
   com/google/android/search/verification/client/R.java: '8'
   fabric/com.stripe.stripe-android.properties: '8'
   google/protobuf/any.proto: '8'
@@ -284,7 +104,7 @@ unknownFiles:
   google/protobuf/type.proto: '8'
   google/protobuf/wrappers.proto: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
-  okhttp3/internal/publicsuffix/publicsuffixes.gz: '0'
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
   org/apache/commons/codec/language/dmrules.txt: '8'
   org/apache/commons/codec/language/bm/ash_approx_any.txt: '8'
   org/apache/commons/codec/language/bm/ash_approx_common.txt: '8'
@@ -421,5 +241,5 @@ usesFramework:
   tag: null
 version: 2.8.1
 versionInfo:
-  versionCode: '1000702'
-  versionName: 10.0.7
+  versionCode: '1010209'
+  versionName: 10.1.2

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC$TL_messageFwdHeader;
 import org.telegram.tgnet.TLRPC$TL_messageMediaPoll;
 import org.telegram.tgnet.TLRPC$TL_pollAnswerVoters;
 import org.telegram.tgnet.TLRPC$TL_pollResults;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class ForwardingMessagesParams {
     public boolean hasCaption;
     public boolean hasPreview;
@@ -79,7 +79,7 @@ public class ForwardingMessagesParams {
             this.selectedIds.put(messageObject.getId(), true);
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-            tLRPC$TL_message.f1546id = tLRPC$Message.f1546id;
+            tLRPC$TL_message.f1624id = tLRPC$Message.f1624id;
             tLRPC$TL_message.grouped_id = tLRPC$Message.grouped_id;
             tLRPC$TL_message.peer_id = tLRPC$Message.peer_id;
             tLRPC$TL_message.from_id = tLRPC$Message.from_id;
@@ -239,7 +239,7 @@ public class ForwardingMessagesParams {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public class PreviewMediaPoll extends TLRPC$TL_messageMediaPoll {
         public int totalVotersCached;
 

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzig {
     public static Object zza(Object obj) {
         Throwable th;

@@ -42,14 +42,14 @@ public final class zbb implements Runnable {
             if (responseCode == 200) {
                 status = Status.RESULT_SUCCESS;
             } else {
-                zba.m791e("Unable to revoke access!", new Object[0]);
+                zba.m1083e("Unable to revoke access!", new Object[0]);
             }
             Logger logger = zba;
-            logger.m793d("Response Code: " + responseCode, new Object[0]);
+            logger.m1085d("Response Code: " + responseCode, new Object[0]);
         } catch (IOException e) {
-            zba.m791e("IOException when revoking access: ".concat(String.valueOf(e.toString())), new Object[0]);
+            zba.m1083e("IOException when revoking access: ".concat(String.valueOf(e.toString())), new Object[0]);
         } catch (Exception e2) {
-            zba.m791e("Exception when revoking access: ".concat(String.valueOf(e2.toString())), new Object[0]);
+            zba.m1083e("Exception when revoking access: ".concat(String.valueOf(e2.toString())), new Object[0]);
         }
         this.zbc.setResult(status);
     }

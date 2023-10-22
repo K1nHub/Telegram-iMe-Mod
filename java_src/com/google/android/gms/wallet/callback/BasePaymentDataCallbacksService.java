@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import com.google.android.gms.wallet.PaymentData;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class BasePaymentDataCallbacksService extends zzd {
     protected abstract BasePaymentDataCallbacks createPaymentDataCallbacks();
 

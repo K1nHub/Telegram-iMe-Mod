@@ -5,7 +5,7 @@
 # instance fields
 .field private final j:Lj$/util/stream/c;
 
-.field private final k:Lj$/util/function/m;
+.field private final k:Lj$/util/function/IntFunction;
 
 .field private final l:J
 
@@ -17,18 +17,18 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/A3;Lj$/util/s;)V
+.method constructor <init>(Lj$/util/stream/A3;Lj$/util/Spliterator;)V
     .locals 2
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/d;-><init>(Lj$/util/stream/d;Lj$/util/s;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/d;-><init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
 
     iget-object p2, p1, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
     iput-object p2, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    iget-object p2, p1, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iget-object p2, p1, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
-    iput-object p2, p0, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iput-object p2, p0, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
     iget-wide v0, p1, Lj$/util/stream/A3;->l:J
 
@@ -41,14 +41,14 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/s;Lj$/util/function/m;JJ)V
+.method constructor <init>(Lj$/util/stream/c;Lj$/util/stream/y2;Lj$/util/Spliterator;Lj$/util/function/IntFunction;JJ)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lj$/util/stream/d;-><init>(Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {p0, p2, p3}, Lj$/util/stream/d;-><init>(Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     iput-object p1, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    iput-object p4, p0, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iput-object p4, p0, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
     iput-wide p5, p0, Lj$/util/stream/A3;->l:J
 
@@ -139,18 +139,18 @@
 
     iget-object v0, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    iget-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, v1}, Lj$/util/stream/c;->q0(Lj$/util/s;)J
+    invoke-virtual {v0, v1}, Lj$/util/stream/c;->p0(Lj$/util/Spliterator;)J
 
     move-result-wide v1
 
     :cond_0
     iget-object v0, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    iget-object v3, p0, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iget-object v3, p0, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
-    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/y2;->t0(JLj$/util/function/m;)Lj$/util/stream/s1;
+    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/y2;->s0(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 
     move-result-object v0
 
@@ -158,23 +158,23 @@
 
     iget-object v2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/y2;
 
-    invoke-virtual {v2}, Lj$/util/stream/y2;->s0()I
+    invoke-virtual {v2}, Lj$/util/stream/y2;->r0()I
 
     move-result v2
 
-    invoke-virtual {v1, v2, v0}, Lj$/util/stream/c;->H0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v1, v2, v0}, Lj$/util/stream/c;->G0(ILj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v1
 
     iget-object v2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/y2;
 
-    invoke-virtual {v2, v1}, Lj$/util/stream/y2;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {v2, v1}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v1
 
-    iget-object v3, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v3, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v2, v1, v3}, Lj$/util/stream/y2;->o0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {v2, v1, v3}, Lj$/util/stream/y2;->n0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     invoke-interface {v0}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
 
@@ -185,15 +185,15 @@
     :cond_1
     iget-object v0, p0, Lj$/util/stream/f;->a:Lj$/util/stream/y2;
 
-    iget-object v3, p0, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iget-object v3, p0, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
-    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/y2;->t0(JLj$/util/function/m;)Lj$/util/stream/s1;
+    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/y2;->s0(JLj$/util/function/IntFunction;)Lj$/util/stream/s1;
 
     move-result-object v1
 
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, v1, v2}, Lj$/util/stream/y2;->u0(Lj$/util/stream/m3;Lj$/util/s;)Lj$/util/stream/m3;
+    invoke-virtual {v0, v1, v2}, Lj$/util/stream/y2;->t0(Lj$/util/stream/m3;Lj$/util/Spliterator;)Lj$/util/stream/m3;
 
     invoke-interface {v1}, Lj$/util/stream/s1;->a()Lj$/util/stream/A1;
 
@@ -211,19 +211,19 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     :goto_0
     return-object v0
 .end method
 
-.method protected f(Lj$/util/s;)Lj$/util/stream/f;
+.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
     .locals 1
 
     .line 1
     new-instance v0, Lj$/util/stream/A3;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/A3;Lj$/util/s;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/A3;-><init>(Lj$/util/stream/A3;Lj$/util/Spliterator;)V
 
     return-object v0
 .end method
@@ -266,7 +266,7 @@
 
     iget-object v0, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    invoke-virtual {v0}, Lj$/util/stream/c;->B0()Lj$/util/stream/e4;
+    invoke-virtual {v0}, Lj$/util/stream/c;->A0()Lj$/util/stream/e4;
 
     move-result-object v0
 
@@ -357,7 +357,7 @@
     :cond_2
     iget-object p1, p0, Lj$/util/stream/A3;->j:Lj$/util/stream/c;
 
-    invoke-virtual {p1}, Lj$/util/stream/c;->B0()Lj$/util/stream/e4;
+    invoke-virtual {p1}, Lj$/util/stream/c;->A0()Lj$/util/stream/e4;
 
     move-result-object p1
 
@@ -425,9 +425,9 @@
 
     iget-wide v4, p0, Lj$/util/stream/A3;->l:J
 
-    iget-object v8, p0, Lj$/util/stream/A3;->k:Lj$/util/function/m;
+    iget-object v8, p0, Lj$/util/stream/A3;->k:Lj$/util/function/IntFunction;
 
-    invoke-interface/range {v3 .. v8}, Lj$/util/stream/A1;->r(JJLj$/util/function/m;)Lj$/util/stream/A1;
+    invoke-interface/range {v3 .. v8}, Lj$/util/stream/A1;->q(JJLj$/util/function/IntFunction;)Lj$/util/stream/A1;
 
     move-result-object v3
 
@@ -546,7 +546,7 @@
     const/4 p1, 0x0
 
     .line 5
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
     iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 

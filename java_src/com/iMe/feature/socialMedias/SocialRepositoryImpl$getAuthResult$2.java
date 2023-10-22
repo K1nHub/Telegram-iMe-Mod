@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: SocialRepositoryImpl.kt */
-@DebugMetadata(m102c = "com.iMe.feature.socialMedias.SocialRepositoryImpl$getAuthResult$2", m101f = "SocialRepositoryImpl.kt", m100l = {}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+@DebugMetadata(m143c = "com.iMe.feature.socialMedias.SocialRepositoryImpl$getAuthResult$2", m142f = "SocialRepositoryImpl.kt", m141l = {}, m140m = "invokeSuspend")
+/* loaded from: classes3.dex */
 final class SocialRepositoryImpl$getAuthResult$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super SocialAuthResult>, Object> {
     final /* synthetic */ String $overrideUrl;
     int label;

@@ -19,17 +19,17 @@ public final class zzw extends zzbz {
     private static final HashMap zzc;
     @SafeParcelable.Indicator
     final Set zza;
-    @SafeParcelable.VersionField(m794id = 1)
+    @SafeParcelable.VersionField(m1086id = 1)
     final int zzb;
-    @SafeParcelable.Field(getter = "getAccountType", m797id = 2)
+    @SafeParcelable.Field(getter = "getAccountType", m1089id = 2)
     private String zzd;
-    @SafeParcelable.Field(getter = "getStatus", m797id = 3)
+    @SafeParcelable.Field(getter = "getStatus", m1089id = 3)
     private int zze;
-    @SafeParcelable.Field(getter = "getTransferBytes", m797id = 4)
+    @SafeParcelable.Field(getter = "getTransferBytes", m1089id = 4)
     private byte[] zzf;
-    @SafeParcelable.Field(getter = "getPendingIntent", m797id = 5)
+    @SafeParcelable.Field(getter = "getPendingIntent", m1089id = 5)
     private PendingIntent zzg;
-    @SafeParcelable.Field(getter = "getDeviceMetaData", m797id = 6)
+    @SafeParcelable.Field(getter = "getDeviceMetaData", m1089id = 6)
     private DeviceMetaData zzh;
 
     static {
@@ -135,7 +135,7 @@ public final class zzw extends zzbz {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzw(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m796id = 1) int i, @SafeParcelable.Param(m796id = 2) String str, @SafeParcelable.Param(m796id = 3) int i2, @SafeParcelable.Param(m796id = 4) byte[] bArr, @SafeParcelable.Param(m796id = 5) PendingIntent pendingIntent, @SafeParcelable.Param(m796id = 6) DeviceMetaData deviceMetaData) {
+    public zzw(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) byte[] bArr, @SafeParcelable.Param(m1088id = 5) PendingIntent pendingIntent, @SafeParcelable.Param(m1088id = 6) DeviceMetaData deviceMetaData) {
         this.zza = set;
         this.zzb = i;
         this.zzd = str;

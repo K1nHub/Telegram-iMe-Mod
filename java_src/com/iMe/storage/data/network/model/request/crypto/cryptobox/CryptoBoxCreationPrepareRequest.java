@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationPrepareRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxCreationPrepareRequest {
     private final int capacity;
     private final String network;

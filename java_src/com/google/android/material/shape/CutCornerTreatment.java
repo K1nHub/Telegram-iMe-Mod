@@ -1,7 +1,7 @@
 package com.google.android.material.shape;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class CutCornerTreatment extends CornerTreatment {
     float size = -1.0f;
 

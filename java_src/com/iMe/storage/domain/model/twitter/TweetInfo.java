@@ -1,10 +1,10 @@
 package com.iMe.storage.domain.model.twitter;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TweetInfo.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TweetInfo {
     private final String authorName;
     private final String authorNickname;
@@ -12,7 +12,7 @@ public final class TweetInfo {
     private final long createdAt;
 
     /* renamed from: id */
-    private final long f443id;
+    private final long f376id;
     private final boolean isLiked;
     private final int likesCount;
     private final List<MediaInfoDomain> mediaInfo;
@@ -21,7 +21,7 @@ public final class TweetInfo {
     private final String text;
 
     public final long component1() {
-        return this.f443id;
+        return this.f376id;
     }
 
     public final boolean component10() {
@@ -79,24 +79,24 @@ public final class TweetInfo {
         }
         if (obj instanceof TweetInfo) {
             TweetInfo tweetInfo = (TweetInfo) obj;
-            return this.f443id == tweetInfo.f443id && Intrinsics.areEqual(this.authorName, tweetInfo.authorName) && Intrinsics.areEqual(this.authorNickname, tweetInfo.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetInfo.avatarUrl) && this.likesCount == tweetInfo.likesCount && this.quotesCount == tweetInfo.quotesCount && this.retweetsCount == tweetInfo.retweetsCount && Intrinsics.areEqual(this.text, tweetInfo.text) && this.createdAt == tweetInfo.createdAt && this.isLiked == tweetInfo.isLiked && Intrinsics.areEqual(this.mediaInfo, tweetInfo.mediaInfo);
+            return this.f376id == tweetInfo.f376id && Intrinsics.areEqual(this.authorName, tweetInfo.authorName) && Intrinsics.areEqual(this.authorNickname, tweetInfo.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetInfo.avatarUrl) && this.likesCount == tweetInfo.likesCount && this.quotesCount == tweetInfo.quotesCount && this.retweetsCount == tweetInfo.retweetsCount && Intrinsics.areEqual(this.text, tweetInfo.text) && this.createdAt == tweetInfo.createdAt && this.isLiked == tweetInfo.isLiked && Intrinsics.areEqual(this.mediaInfo, tweetInfo.mediaInfo);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m724m = ((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f443id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.createdAt)) * 31;
+        int m1017m = ((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f376id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.createdAt)) * 31;
         boolean z = this.isLiked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((m724m + i) * 31) + this.mediaInfo.hashCode();
+        return ((m1017m + i) * 31) + this.mediaInfo.hashCode();
     }
 
     public String toString() {
-        return "TweetInfo(id=" + this.f443id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCount=" + this.likesCount + ", quotesCount=" + this.quotesCount + ", retweetsCount=" + this.retweetsCount + ", text=" + this.text + ", createdAt=" + this.createdAt + ", isLiked=" + this.isLiked + ", mediaInfo=" + this.mediaInfo + ')';
+        return "TweetInfo(id=" + this.f376id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCount=" + this.likesCount + ", quotesCount=" + this.quotesCount + ", retweetsCount=" + this.retweetsCount + ", text=" + this.text + ", createdAt=" + this.createdAt + ", isLiked=" + this.isLiked + ", mediaInfo=" + this.mediaInfo + ')';
     }
 
     public TweetInfo(long j, String authorName, String authorNickname, String avatarUrl, int i, int i2, int i3, String text, long j2, boolean z, List<MediaInfoDomain> mediaInfo) {
@@ -105,7 +105,7 @@ public final class TweetInfo {
         Intrinsics.checkNotNullParameter(avatarUrl, "avatarUrl");
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(mediaInfo, "mediaInfo");
-        this.f443id = j;
+        this.f376id = j;
         this.authorName = authorName;
         this.authorNickname = authorNickname;
         this.avatarUrl = avatarUrl;
@@ -119,7 +119,7 @@ public final class TweetInfo {
     }
 
     public final long getId() {
-        return this.f443id;
+        return this.f376id;
     }
 
     public final String getAuthorName() {

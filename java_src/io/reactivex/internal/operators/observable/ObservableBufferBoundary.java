@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableBufferBoundary<T, U extends Collection<? super T>, Open, Close> extends AbstractObservableWithUpstream<T, U> {
     final Function<? super Open, ? extends ObservableSource<? extends Close>> bufferClose;
     final ObservableSource<? extends Open> bufferOpen;
@@ -38,7 +38,7 @@ public final class ObservableBufferBoundary<T, U extends Collection<? super T>, 
         this.source.subscribe(bufferBoundaryObserver);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class BufferBoundaryObserver<T, C extends Collection<? super T>, Open, Close> extends AtomicInteger implements Observer<T>, Disposable {
         final Function<? super Open, ? extends ObservableSource<? extends Close>> bufferClose;
         final ObservableSource<? extends Open> bufferOpen;
@@ -224,7 +224,7 @@ public final class ObservableBufferBoundary<T, U extends Collection<? super T>, 
             spscLinkedArrayQueue.clear();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         static final class BufferOpenObserver<Open> extends AtomicReference<Disposable> implements Observer<Open>, Disposable {
             final BufferBoundaryObserver<?, ?, Open, ?> parent;
 
@@ -267,7 +267,7 @@ public final class ObservableBufferBoundary<T, U extends Collection<? super T>, 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BufferCloseObserver<T, C extends Collection<? super T>> extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         final long index;
         final BufferBoundaryObserver<T, C, ?, ?> parent;

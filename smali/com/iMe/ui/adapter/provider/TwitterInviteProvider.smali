@@ -280,24 +280,3 @@
 
     return-void
 .end method
-
-.method public final setOnInviteClickAction(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
-            "Lcom/iMe/model/twitter/TwitterInviteItem;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string v0, "<set-?>"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 20
-    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;->onInviteClickAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
-
-    return-void
-.end method

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_emailVerifyPurposeLoginSetup extends TLRPC$EmailVerifyPurpose {
     public static int constructor = 1128644211;
     public String phone_code_hash;

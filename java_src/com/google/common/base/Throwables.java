@@ -1,10 +1,8 @@
 package com.google.common.base;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Throwables {
     private static final Object jla;
 
@@ -16,12 +14,6 @@ public final class Throwables {
         if (th instanceof Error) {
             throw ((Error) th);
         }
-    }
-
-    public static String getStackTraceAsString(Throwable th) {
-        StringWriter stringWriter = new StringWriter();
-        th.printStackTrace(new PrintWriter(stringWriter));
-        return stringWriter.toString();
     }
 
     static {

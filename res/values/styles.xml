@@ -9,10 +9,6 @@
         <item name="android:title"></item>
         <item name="android:logo">@drawable/transparent</item>
     </style>
-    <style name="AdsLabel">
-        <item name="android:textSize">11.0sp</item>
-        <item name="android:textColor">@color/colorAnswerAdsText</item>
-    </style>
     <style name="AlertDialog.AppCompat" parent="@style/Base.AlertDialog.AppCompat" />
     <style name="AlertDialog.AppCompat.Light" parent="@style/Base.AlertDialog.AppCompat.Light" />
     <style name="AndroidThemeColorAccentYellow">
@@ -28,13 +24,6 @@
     <style name="Animation.MaterialComponents.BottomSheetDialog" parent="@style/Animation.AppCompat.Dialog">
         <item name="android:windowEnterAnimation">@anim/mtrl_bottom_sheet_slide_in</item>
         <item name="android:windowExitAnimation">@anim/mtrl_bottom_sheet_slide_out</item>
-    </style>
-    <style name="AnswerText">
-        <item name="android:textSize">15.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff000000</item>
-        <item name="android:lineSpacingExtra">2.0sp</item>
-        <item name="android:fontFamily">sans-serif</item>
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="@android:style/Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1655,30 +1644,6 @@
         <item name="suffixTextColor">@color/mtrl_indicator_text_color</item>
     </style>
     <style name="Base.Widget.MaterialComponents.TextView" parent="@style/Widget.AppCompat.TextView" />
-    <style name="BotInfoBoldText">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff8a8a8a</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="BotInfoGrayText">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff8a8a8a</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="BotInfoNormalText">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff8a8a8a</item>
-        <item name="android:lineSpacingExtra">4.0sp</item>
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-    <style name="BotsPanelNameText">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
     <style name="CardView" parent="@style/Base.CardView">
         <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
     </style>
@@ -1938,37 +1903,6 @@
     </style>
     <style name="ShapeAppearanceOverlay.TopRightDifferentCornerSize" parent="@style/ShapeAppearanceOverlay">
         <item name="cornerSizeTopRight">20.0px</item>
-    </style>
-    <style name="ShopBotNameGrid">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff000000</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="ShopBotNameList">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff000000</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
-    <style name="ShopBotStatusText">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/colorShopStatusText</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-    <style name="ShopNewLabel">
-        <item name="android:textSize">11.0sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/colorShopButtonTextLight</item>
-        <item name="android:background">@drawable/fork_bg_new</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
     <style name="TMessages.AppWidget.Background" parent="@style/Base.TMessages.AppWidget.Background">
         <item name="android:background">@drawable/widget_bg</item>

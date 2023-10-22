@@ -4,7 +4,7 @@ import com.google.android.gms.internal.vision.zzhe;
 import com.google.android.gms.internal.vision.zzhf;
 import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzhe<MessageType extends zzhf<MessageType, BuilderType>, BuilderType extends zzhe<MessageType, BuilderType>> implements zzkn {
     @Override // 
     /* renamed from: zza */

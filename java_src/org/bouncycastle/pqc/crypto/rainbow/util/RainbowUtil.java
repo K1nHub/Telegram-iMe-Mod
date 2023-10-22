@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.rainbow.util;
 
 import java.lang.reflect.Array;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class RainbowUtil {
     public static byte[] convertArray(short[] sArr) {
         byte[] bArr = new byte[sArr.length];

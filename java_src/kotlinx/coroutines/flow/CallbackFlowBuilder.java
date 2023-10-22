@@ -10,7 +10,7 @@ import kotlinx.coroutines.channels.BufferOverflow;
 import kotlinx.coroutines.channels.ProducerScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CallbackFlowBuilder<T> extends ChannelFlowBuilder<T> {
     private final Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> block;
 

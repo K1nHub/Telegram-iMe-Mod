@@ -20,7 +20,7 @@ import okhttp3.internal.HostnamesKt;
 import okhttp3.internal.Util;
 import okio.Utf8;
 /* compiled from: OkHostnameVerifier.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class OkHostnameVerifier implements HostnameVerifier {
     public static final OkHostnameVerifier INSTANCE = new OkHostnameVerifier();
 

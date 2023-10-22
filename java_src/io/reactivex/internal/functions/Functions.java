@@ -30,7 +30,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscription;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Functions {
     static final Predicate<Object> ALWAYS_FALSE;
     static final Predicate<Object> ALWAYS_TRUE;
@@ -117,7 +117,7 @@ public final class Functions {
         return (Comparator<T>) NATURAL_COMPARATOR;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class JustValue<T, U> implements Callable<U>, Function<T, U> {
         final U value;
 
@@ -144,7 +144,7 @@ public final class Functions {
         return new JustValue(u);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class CastToClass<T, U> implements Function<T, U> {
         final Class<U> clazz;
 
@@ -162,7 +162,7 @@ public final class Functions {
         return new CastToClass(cls);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ArrayListCapacityCallable<T> implements Callable<List<T>> {
         final int capacity;
 
@@ -180,7 +180,7 @@ public final class Functions {
         return new ArrayListCapacityCallable(i);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EqualsPredicate<T> implements Predicate<T> {
         final T value;
 
@@ -198,7 +198,7 @@ public final class Functions {
         return new EqualsPredicate(t);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     enum HashSetCallable implements Callable<Set<Object>> {
         INSTANCE;
 
@@ -212,7 +212,7 @@ public final class Functions {
         return HashSetCallable.INSTANCE;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnNext<T> implements Consumer<T> {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -226,7 +226,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnError<T> implements Consumer<Throwable> {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -240,7 +240,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnComplete<T> implements Action {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -266,7 +266,7 @@ public final class Functions {
         return new NotificationOnComplete(consumer);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ActionConsumer<T> implements Consumer<T> {
         final Action action;
 
@@ -284,7 +284,7 @@ public final class Functions {
         return new ActionConsumer(action);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ClassFilter<T, U> implements Predicate<T> {
         final Class<U> clazz;
 
@@ -302,7 +302,7 @@ public final class Functions {
         return new ClassFilter(cls);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class BooleanSupplierPredicateReverse<T> implements Predicate<T> {
         final BooleanSupplier supplier;
 
@@ -320,7 +320,7 @@ public final class Functions {
         return new BooleanSupplierPredicateReverse(booleanSupplier);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class TimestampFunction<T> implements Function<T, Timed<T>> {
         final Scheduler scheduler;
         final TimeUnit unit;
@@ -346,7 +346,7 @@ public final class Functions {
         return new TimestampFunction(timeUnit, scheduler);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ToMapKeySelector<K, T> implements BiConsumer<Map<K, T>, T> {
         private final Function<? super T, ? extends K> keySelector;
 
@@ -369,7 +369,7 @@ public final class Functions {
         return new ToMapKeySelector(function);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ToMapKeyValueSelector<K, V, T> implements BiConsumer<Map<K, V>, T> {
         private final Function<? super T, ? extends K> keySelector;
         private final Function<? super T, ? extends V> valueSelector;
@@ -394,7 +394,7 @@ public final class Functions {
         return new ToMapKeyValueSelector(function2, function);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ToMultimapKeyValueSelector<K, V, T> implements BiConsumer<Map<K, Collection<V>>, T> {
         private final Function<? super K, ? extends Collection<? super V>> collectionFactory;
         private final Function<? super T, ? extends K> keySelector;
@@ -427,7 +427,7 @@ public final class Functions {
         return new ToMultimapKeyValueSelector(function3, function2, function);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     enum NaturalComparator implements Comparator<Object> {
         INSTANCE;
 
@@ -441,7 +441,7 @@ public final class Functions {
         return NaturalComparator.INSTANCE;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ListSorter<T> implements Function<List<T>, List<T>> {
         final Comparator<? super T> comparator;
 
@@ -464,14 +464,14 @@ public final class Functions {
         return new ListSorter(comparator);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array2Func<T1, T2, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final BiFunction<? super T1, ? super T2, ? extends R> f525f;
+        final BiFunction<? super T1, ? super T2, ? extends R> f438f;
 
         Array2Func(BiFunction<? super T1, ? super T2, ? extends R> biFunction) {
-            this.f525f = biFunction;
+            this.f438f = biFunction;
         }
 
         @Override // io.reactivex.functions.Function
@@ -479,18 +479,18 @@ public final class Functions {
             if (objArr.length != 2) {
                 throw new IllegalArgumentException("Array of size 2 expected but got " + objArr.length);
             }
-            return this.f525f.apply(objArr[0], objArr[1]);
+            return this.f438f.apply(objArr[0], objArr[1]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array3Func<T1, T2, T3, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function3<T1, T2, T3, R> f526f;
+        final Function3<T1, T2, T3, R> f439f;
 
         Array3Func(Function3<T1, T2, T3, R> function3) {
-            this.f526f = function3;
+            this.f439f = function3;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -499,18 +499,18 @@ public final class Functions {
             if (objArr.length != 3) {
                 throw new IllegalArgumentException("Array of size 3 expected but got " + objArr.length);
             }
-            return (R) this.f526f.apply(objArr[0], objArr[1], objArr[2]);
+            return (R) this.f439f.apply(objArr[0], objArr[1], objArr[2]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array4Func<T1, T2, T3, T4, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function4<T1, T2, T3, T4, R> f527f;
+        final Function4<T1, T2, T3, T4, R> f440f;
 
         Array4Func(Function4<T1, T2, T3, T4, R> function4) {
-            this.f527f = function4;
+            this.f440f = function4;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -519,18 +519,18 @@ public final class Functions {
             if (objArr.length != 4) {
                 throw new IllegalArgumentException("Array of size 4 expected but got " + objArr.length);
             }
-            return (R) this.f527f.apply(objArr[0], objArr[1], objArr[2], objArr[3]);
+            return (R) this.f440f.apply(objArr[0], objArr[1], objArr[2], objArr[3]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array5Func<T1, T2, T3, T4, T5, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        private final Function5<T1, T2, T3, T4, T5, R> f528f;
+        private final Function5<T1, T2, T3, T4, T5, R> f441f;
 
         Array5Func(Function5<T1, T2, T3, T4, T5, R> function5) {
-            this.f528f = function5;
+            this.f441f = function5;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -539,18 +539,18 @@ public final class Functions {
             if (objArr.length != 5) {
                 throw new IllegalArgumentException("Array of size 5 expected but got " + objArr.length);
             }
-            return (R) this.f528f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4]);
+            return (R) this.f441f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array6Func<T1, T2, T3, T4, T5, T6, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function6<T1, T2, T3, T4, T5, T6, R> f529f;
+        final Function6<T1, T2, T3, T4, T5, T6, R> f442f;
 
         Array6Func(Function6<T1, T2, T3, T4, T5, T6, R> function6) {
-            this.f529f = function6;
+            this.f442f = function6;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -559,18 +559,18 @@ public final class Functions {
             if (objArr.length != 6) {
                 throw new IllegalArgumentException("Array of size 6 expected but got " + objArr.length);
             }
-            return (R) this.f529f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5]);
+            return (R) this.f442f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array7Func<T1, T2, T3, T4, T5, T6, T7, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function7<T1, T2, T3, T4, T5, T6, T7, R> f530f;
+        final Function7<T1, T2, T3, T4, T5, T6, T7, R> f443f;
 
         Array7Func(Function7<T1, T2, T3, T4, T5, T6, T7, R> function7) {
-            this.f530f = function7;
+            this.f443f = function7;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -579,18 +579,18 @@ public final class Functions {
             if (objArr.length != 7) {
                 throw new IllegalArgumentException("Array of size 7 expected but got " + objArr.length);
             }
-            return (R) this.f530f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6]);
+            return (R) this.f443f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array8Func<T1, T2, T3, T4, T5, T6, T7, T8, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> f531f;
+        final Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> f444f;
 
         Array8Func(Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> function8) {
-            this.f531f = function8;
+            this.f444f = function8;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -599,18 +599,18 @@ public final class Functions {
             if (objArr.length != 8) {
                 throw new IllegalArgumentException("Array of size 8 expected but got " + objArr.length);
             }
-            return (R) this.f531f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6], objArr[7]);
+            return (R) this.f444f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6], objArr[7]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Array9Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> implements Function<Object[], R> {
 
         /* renamed from: f */
-        final Function9<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> f532f;
+        final Function9<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> f445f;
 
         Array9Func(Function9<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> function9) {
-            this.f532f = function9;
+            this.f445f = function9;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -619,11 +619,11 @@ public final class Functions {
             if (objArr.length != 9) {
                 throw new IllegalArgumentException("Array of size 9 expected but got " + objArr.length);
             }
-            return (R) this.f532f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6], objArr[7], objArr[8]);
+            return (R) this.f445f.apply(objArr[0], objArr[1], objArr[2], objArr[3], objArr[4], objArr[5], objArr[6], objArr[7], objArr[8]);
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class Identity implements Function<Object, Object> {
         @Override // io.reactivex.functions.Function
         public Object apply(Object obj) {
@@ -638,7 +638,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyRunnable implements Runnable {
         @Override // java.lang.Runnable
         public void run() {
@@ -652,7 +652,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyAction implements Action {
         @Override // io.reactivex.functions.Action
         public void run() {
@@ -666,7 +666,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyConsumer implements Consumer<Object> {
         @Override // io.reactivex.functions.Consumer
         public void accept(Object obj) {
@@ -680,7 +680,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ErrorConsumer implements Consumer<Throwable> {
         ErrorConsumer() {
         }
@@ -691,7 +691,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class OnErrorMissingConsumer implements Consumer<Throwable> {
         OnErrorMissingConsumer() {
         }
@@ -702,13 +702,13 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyLongConsumer {
         EmptyLongConsumer() {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class TruePredicate implements Predicate<Object> {
         @Override // io.reactivex.functions.Predicate
         public boolean test(Object obj) {
@@ -719,7 +719,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class FalsePredicate implements Predicate<Object> {
         @Override // io.reactivex.functions.Predicate
         public boolean test(Object obj) {
@@ -730,7 +730,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class NullCallable implements Callable<Object> {
         @Override // java.util.concurrent.Callable
         public Object call() {
@@ -741,7 +741,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class NaturalObjectComparator implements Comparator<Object> {
         NaturalObjectComparator() {
         }
@@ -752,7 +752,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class MaxRequestSubscription implements Consumer<Subscription> {
         MaxRequestSubscription() {
         }

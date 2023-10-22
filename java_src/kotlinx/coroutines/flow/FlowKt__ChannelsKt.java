@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.channels.ReceiveChannel;
 /* compiled from: Channels.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 final /* synthetic */ class FlowKt__ChannelsKt {
     public static final <T> Object emitAll(FlowCollector<? super T> flowCollector, ReceiveChannel<? extends T> receiveChannel, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
@@ -15,14 +15,13 @@ final /* synthetic */ class FlowKt__ChannelsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x006b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0076 A[Catch: all -> 0x0055, TRY_LEAVE, TryCatch #0 {all -> 0x0055, blocks: (B:13:0x0032, B:28:0x0070, B:30:0x0076, B:36:0x0084, B:37:0x0085, B:18:0x004b), top: B:47:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0085 A[Catch: all -> 0x0055, TRY_LEAVE, TryCatch #0 {all -> 0x0055, blocks: (B:13:0x0032, B:28:0x0070, B:30:0x0076, B:36:0x0084, B:37:0x0085, B:18:0x004b), top: B:47:0x0022 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:38:0x0095 -> B:14:0x0035). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0070 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x007e A[Catch: all -> 0x009b, TRY_LEAVE, TryCatch #0 {all -> 0x009b, blocks: (B:13:0x0036, B:22:0x0060, B:26:0x0075, B:28:0x007e, B:18:0x0052, B:21:0x005c), top: B:41:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0093  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0090 -> B:14:0x0039). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -49,86 +48,81 @@ final /* synthetic */ class FlowKt__ChannelsKt {
             int r2 = r0.label
             r3 = 2
             r4 = 1
-            if (r2 == 0) goto L57
-            if (r2 == r4) goto L41
-            if (r2 != r3) goto L39
-            boolean r7 = r0.Z$0
+            if (r2 == 0) goto L56
+            if (r2 == r4) goto L44
+            if (r2 != r3) goto L3c
+            boolean r9 = r0.Z$0
+            java.lang.Object r7 = r0.L$2
+            kotlinx.coroutines.channels.ChannelIterator r7 = (kotlinx.coroutines.channels.ChannelIterator) r7
             java.lang.Object r8 = r0.L$1
             kotlinx.coroutines.channels.ReceiveChannel r8 = (kotlinx.coroutines.channels.ReceiveChannel) r8
-            java.lang.Object r9 = r0.L$0
-            kotlinx.coroutines.flow.FlowCollector r9 = (kotlinx.coroutines.flow.FlowCollector) r9
-            kotlin.ResultKt.throwOnFailure(r10)     // Catch: java.lang.Throwable -> L55
-        L35:
-            r6 = r9
-            r9 = r7
-            r7 = r6
-            goto L5d
+            java.lang.Object r2 = r0.L$0
+            kotlinx.coroutines.flow.FlowCollector r2 = (kotlinx.coroutines.flow.FlowCollector) r2
+            kotlin.ResultKt.throwOnFailure(r10)     // Catch: java.lang.Throwable -> L9b
         L39:
+            r10 = r7
+            r7 = r2
+            goto L60
+        L3c:
             java.lang.IllegalStateException r7 = new java.lang.IllegalStateException
             java.lang.String r8 = "call to 'resume' before 'invoke' with coroutine"
             r7.<init>(r8)
             throw r7
-        L41:
-            boolean r7 = r0.Z$0
+        L44:
+            boolean r9 = r0.Z$0
+            java.lang.Object r7 = r0.L$2
+            kotlinx.coroutines.channels.ChannelIterator r7 = (kotlinx.coroutines.channels.ChannelIterator) r7
             java.lang.Object r8 = r0.L$1
             kotlinx.coroutines.channels.ReceiveChannel r8 = (kotlinx.coroutines.channels.ReceiveChannel) r8
-            java.lang.Object r9 = r0.L$0
-            kotlinx.coroutines.flow.FlowCollector r9 = (kotlinx.coroutines.flow.FlowCollector) r9
-            kotlin.ResultKt.throwOnFailure(r10)     // Catch: java.lang.Throwable -> L55
-            kotlinx.coroutines.channels.ChannelResult r10 = (kotlinx.coroutines.channels.ChannelResult) r10     // Catch: java.lang.Throwable -> L55
-            java.lang.Object r10 = r10.m1680unboximpl()     // Catch: java.lang.Throwable -> L55
-            goto L6f
-        L55:
-            r9 = move-exception
-            goto L9c
-        L57:
+            java.lang.Object r2 = r0.L$0
+            kotlinx.coroutines.flow.FlowCollector r2 = (kotlinx.coroutines.flow.FlowCollector) r2
+            kotlin.ResultKt.throwOnFailure(r10)     // Catch: java.lang.Throwable -> L9b
+            goto L75
+        L56:
             kotlin.ResultKt.throwOnFailure(r10)
             kotlinx.coroutines.flow.FlowKt.ensureActive(r7)
-        L5d:
-            r0.L$0 = r7     // Catch: java.lang.Throwable -> L98
-            r0.L$1 = r8     // Catch: java.lang.Throwable -> L98
-            r0.Z$0 = r9     // Catch: java.lang.Throwable -> L98
-            r0.label = r4     // Catch: java.lang.Throwable -> L98
-            java.lang.Object r10 = r8.mo1670receiveCatchingJP2dKIU(r0)     // Catch: java.lang.Throwable -> L98
-            if (r10 != r1) goto L6c
+            kotlinx.coroutines.channels.ChannelIterator r10 = r8.iterator()     // Catch: java.lang.Throwable -> L9b
+        L60:
+            r0.L$0 = r7     // Catch: java.lang.Throwable -> L9b
+            r0.L$1 = r8     // Catch: java.lang.Throwable -> L9b
+            r0.L$2 = r10     // Catch: java.lang.Throwable -> L9b
+            r0.Z$0 = r9     // Catch: java.lang.Throwable -> L9b
+            r0.label = r4     // Catch: java.lang.Throwable -> L9b
+            java.lang.Object r2 = r10.hasNext(r0)     // Catch: java.lang.Throwable -> L9b
+            if (r2 != r1) goto L71
             return r1
-        L6c:
-            r6 = r9
-            r9 = r7
-            r7 = r6
-        L6f:
-            r2 = 0
-            boolean r5 = kotlinx.coroutines.channels.ChannelResult.m1678isClosedimpl(r10)     // Catch: java.lang.Throwable -> L55
-            if (r5 == 0) goto L85
-            java.lang.Throwable r9 = kotlinx.coroutines.channels.ChannelResult.m1675exceptionOrNullimpl(r10)     // Catch: java.lang.Throwable -> L55
-            if (r9 != 0) goto L84
-            if (r7 == 0) goto L81
-            kotlinx.coroutines.channels.ChannelsKt.cancelConsumed(r8, r2)
-        L81:
+        L71:
+            r6 = r2
+            r2 = r7
+            r7 = r10
+            r10 = r6
+        L75:
+            r5 = 0
+            java.lang.Boolean r10 = (java.lang.Boolean) r10     // Catch: java.lang.Throwable -> L9b
+            boolean r10 = r10.booleanValue()     // Catch: java.lang.Throwable -> L9b
+            if (r10 == 0) goto L93
+            java.lang.Object r10 = r7.next()     // Catch: java.lang.Throwable -> L9b
+            r0.L$0 = r2     // Catch: java.lang.Throwable -> L9b
+            r0.L$1 = r8     // Catch: java.lang.Throwable -> L9b
+            r0.L$2 = r7     // Catch: java.lang.Throwable -> L9b
+            r0.Z$0 = r9     // Catch: java.lang.Throwable -> L9b
+            r0.label = r3     // Catch: java.lang.Throwable -> L9b
+            java.lang.Object r10 = r2.emit(r10, r0)     // Catch: java.lang.Throwable -> L9b
+            if (r10 != r1) goto L39
+            return r1
+        L93:
+            if (r9 == 0) goto L98
+            kotlinx.coroutines.channels.ChannelsKt.cancelConsumed(r8, r5)
+        L98:
             kotlin.Unit r7 = kotlin.Unit.INSTANCE
             return r7
-        L84:
-            throw r9     // Catch: java.lang.Throwable -> L55
-        L85:
-            java.lang.Object r10 = kotlinx.coroutines.channels.ChannelResult.m1676getOrThrowimpl(r10)     // Catch: java.lang.Throwable -> L55
-            r0.L$0 = r9     // Catch: java.lang.Throwable -> L55
-            r0.L$1 = r8     // Catch: java.lang.Throwable -> L55
-            r0.Z$0 = r7     // Catch: java.lang.Throwable -> L55
-            r0.label = r3     // Catch: java.lang.Throwable -> L55
-            java.lang.Object r10 = r9.emit(r10, r0)     // Catch: java.lang.Throwable -> L55
-            if (r10 != r1) goto L35
-            return r1
-        L98:
+        L9b:
             r7 = move-exception
-            r6 = r9
-            r9 = r7
-            r7 = r6
-        L9c:
-            throw r9     // Catch: java.lang.Throwable -> L9d
+            throw r7     // Catch: java.lang.Throwable -> L9d
         L9d:
             r10 = move-exception
-            if (r7 == 0) goto La3
-            kotlinx.coroutines.channels.ChannelsKt.cancelConsumed(r8, r9)
+            if (r9 == 0) goto La3
+            kotlinx.coroutines.channels.ChannelsKt.cancelConsumed(r8, r7)
         La3:
             throw r10
         */

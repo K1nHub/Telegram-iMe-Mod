@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseInstallationServiceClient {
     private static final Pattern EXPIRATION_TIMESTAMP_PATTERN = Pattern.compile("[0-9]+s");
     private static final Charset UTF_8 = Charset.forName("UTF-8");

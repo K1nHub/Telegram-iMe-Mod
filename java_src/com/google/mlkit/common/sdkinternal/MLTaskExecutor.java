@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MLTaskExecutor {
     private static final Object zza = new Object();
     private static MLTaskExecutor zzb;
@@ -24,7 +24,7 @@ public class MLTaskExecutor {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.mlkit:common@@17.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public enum zza implements Executor {
         INSTANCE;
 

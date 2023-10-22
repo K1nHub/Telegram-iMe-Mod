@@ -7,7 +7,7 @@ import com.google.firebase.appindexing.Action;
 import com.google.firebase.appindexing.FirebaseAppIndexingInvalidArgumentException;
 import com.google.firebase.appindexing.FirebaseUserActions;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzt extends FirebaseUserActions {
     private final zzr zza;
 

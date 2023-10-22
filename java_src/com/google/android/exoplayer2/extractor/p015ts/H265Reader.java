@@ -257,7 +257,7 @@ public final class H265Reader implements ElementaryStreamReader {
                     if (readBits5 < fArr.length) {
                         f = fArr[readBits5];
                     } else {
-                        Log.m814w(TAG, "Unexpected aspect_ratio_idc value: " + readBits5);
+                        Log.m1106w(TAG, "Unexpected aspect_ratio_idc value: " + readBits5);
                     }
                 }
             }

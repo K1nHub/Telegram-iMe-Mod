@@ -10,16 +10,16 @@ public interface Predicate<T> {
     public final /* synthetic */ class CC {
         public static Predicate $default$and(Predicate predicate, Predicate predicate2) {
             Objects.requireNonNull(predicate2);
-            return new C2893x(predicate, predicate2, 0);
+            return new C2833w(predicate, predicate2, 0);
         }
 
         public static Predicate $default$negate(Predicate predicate) {
-            return new C2870a(predicate);
+            return new C2811a(predicate);
         }
 
         public static Predicate $default$or(Predicate predicate, Predicate predicate2) {
             Objects.requireNonNull(predicate2);
-            return new C2893x(predicate, predicate2, 1);
+            return new C2833w(predicate, predicate2, 1);
         }
     }
 
@@ -28,7 +28,7 @@ public interface Predicate<T> {
     Predicate<T> negate();
 
     /* renamed from: or */
-    Predicate<T> mo25or(Predicate<? super T> predicate);
+    Predicate<T> mo53or(Predicate<? super T> predicate);
 
     boolean test(T t);
 }

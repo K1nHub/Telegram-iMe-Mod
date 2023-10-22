@@ -16,7 +16,7 @@ import com.google.android.material.R$style;
 import com.google.android.material.internal.ToolbarUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.MaterialShapeUtils;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class MaterialToolbar extends Toolbar {
     private static final int DEF_STYLE_RES = R$style.Widget_MaterialComponents_Toolbar;
     private Integer navigationIconTint;

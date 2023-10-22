@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_language_id;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzeg {
     private static final zzee<?> zza = new zzeh();
     private static final zzee<?> zzb = zzc();

@@ -21,7 +21,7 @@ import kotlin.text.StringsKt__StringsKt;
 import okhttp3.internal.tls.CertificateChainCleaner;
 import okio.ByteString;
 /* compiled from: CertificatePinner.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class CertificatePinner {
     public static final Companion Companion = new Companion(null);
     public static final CertificatePinner DEFAULT = new Builder().build();
@@ -170,7 +170,7 @@ public final class CertificatePinner {
     }
 
     /* compiled from: CertificatePinner.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Pin {
         private final ByteString hash;
         private final String hashAlgorithm;
@@ -243,7 +243,7 @@ public final class CertificatePinner {
     }
 
     /* compiled from: CertificatePinner.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final List<Pin> pins = new ArrayList();
 
@@ -255,7 +255,7 @@ public final class CertificatePinner {
     }
 
     /* compiled from: CertificatePinner.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

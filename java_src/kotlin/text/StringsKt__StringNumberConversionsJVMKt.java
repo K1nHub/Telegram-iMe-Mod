@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringNumberConversionsJVM.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class StringsKt__StringNumberConversionsJVMKt extends StringsKt__StringBuilderKt {
     public static BigInteger toBigIntegerOrNull(String str) {
         Intrinsics.checkNotNullParameter(str, "<this>");

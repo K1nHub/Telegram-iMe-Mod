@@ -2,7 +2,7 @@ package org.bouncycastle.crypto.digests;
 
 import org.bouncycastle.crypto.ExtendedDigest;
 import org.bouncycastle.util.Memoable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class GeneralDigest implements ExtendedDigest, Memoable {
     private long byteCount;
     private final byte[] xBuf;

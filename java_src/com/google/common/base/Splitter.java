@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Splitter {
     private final int limit;
     private final boolean omitEmptyStrings;
@@ -12,7 +12,7 @@ public final class Splitter {
     private final CharMatcher trimmer;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public interface Strategy {
         Iterator<String> iterator(Splitter splitter, CharSequence charSequence);
     }
@@ -29,12 +29,12 @@ public final class Splitter {
     }
 
     /* renamed from: on */
-    public static Splitter m764on(char c) {
-        return m763on(CharMatcher.m767is(c));
+    public static Splitter m1056on(char c) {
+        return m1055on(CharMatcher.m1059is(c));
     }
 
     /* renamed from: on */
-    public static Splitter m763on(final CharMatcher charMatcher) {
+    public static Splitter m1055on(final CharMatcher charMatcher) {
         Preconditions.checkNotNull(charMatcher);
         return new Splitter(new Strategy() { // from class: com.google.common.base.Splitter.1
             @Override // com.google.common.base.Splitter.Strategy
@@ -54,15 +54,6 @@ public final class Splitter {
         });
     }
 
-    public Splitter trimResults() {
-        return trimResults(CharMatcher.whitespace());
-    }
-
-    public Splitter trimResults(CharMatcher charMatcher) {
-        Preconditions.checkNotNull(charMatcher);
-        return new Splitter(this.strategy, this.omitEmptyStrings, charMatcher, this.limit);
-    }
-
     private Iterator<String> splittingIterator(CharSequence charSequence) {
         return this.strategy.iterator(this, charSequence);
     }
@@ -77,7 +68,7 @@ public final class Splitter {
         return Collections.unmodifiableList(arrayList);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static abstract class SplittingIterator extends AbstractIterator<String> {
         int limit;
         int offset = 0;

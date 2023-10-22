@@ -33,12 +33,12 @@
     return v0
 .end method
 
-.method public c(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public c(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 1
 
     new-instance v0, Lj$/util/stream/V2;
 
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/V2;-><init>(Lj$/util/stream/U2;Lj$/util/stream/y2;Lj$/util/s;)V
+    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/V2;-><init>(Lj$/util/stream/U2;Lj$/util/stream/y2;Lj$/util/Spliterator;)V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
@@ -46,14 +46,14 @@
 
     check-cast p1, Lj$/util/stream/S2;
 
-    invoke-interface {p1}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public d(Lj$/util/stream/y2;Lj$/util/s;)Ljava/lang/Object;
+.method public d(Lj$/util/stream/y2;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 2
 
     invoke-virtual {p0}, Lj$/util/stream/U2;->a()Lj$/util/stream/S2;
@@ -66,14 +66,14 @@
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {p1, v0}, Lj$/util/stream/c;->v0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
+    invoke-virtual {p1, v0}, Lj$/util/stream/c;->u0(Lj$/util/stream/m3;)Lj$/util/stream/m3;
 
     move-result-object v1
 
-    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->n0(Lj$/util/stream/m3;Lj$/util/s;)V
+    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->m0(Lj$/util/stream/m3;Lj$/util/Spliterator;)V
 
     .line 3
-    invoke-interface {v0}, Lj$/util/function/y;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lj$/util/function/x;->get()Ljava/lang/Object;
 
     move-result-object p1
 

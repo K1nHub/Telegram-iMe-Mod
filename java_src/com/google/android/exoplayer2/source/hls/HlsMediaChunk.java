@@ -139,7 +139,7 @@ public final class HlsMediaChunk extends MediaChunk {
         this.scratchId3Data = parsableByteArray;
         this.shouldSpliceIn = z6;
         this.playerId = playerId;
-        this.sampleQueueFirstSampleIndices = ImmutableList.m762of();
+        this.sampleQueueFirstSampleIndices = ImmutableList.m1054of();
         this.uid = uidSource.getAndIncrement();
     }
 

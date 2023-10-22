@@ -1,10 +1,10 @@
 package com.iMe.i_staking.request;
 
-import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDepositPrepareRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class StakingDepositPrepareRequest {
     private final BigDecimal amount;
     private final long stakingId;
@@ -44,7 +44,7 @@ public final class StakingDepositPrepareRequest {
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m724m(this.stakingId) * 31) + this.amount.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.amount.hashCode();
     }
 
     public String toString() {

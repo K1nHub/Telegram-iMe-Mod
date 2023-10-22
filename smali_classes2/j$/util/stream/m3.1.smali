@@ -15,10 +15,10 @@
 .method public abstract accept(J)V
 .end method
 
-.method public abstract m()V
+.method public abstract l()V
 .end method
 
-.method public abstract n(J)V
+.method public abstract m(J)V
 .end method
 
 .method public abstract o()Z

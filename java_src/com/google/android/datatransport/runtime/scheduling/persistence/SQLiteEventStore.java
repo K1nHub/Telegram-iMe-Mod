@@ -35,7 +35,7 @@ import java.util.Objects;
 import java.util.Set;
 /* loaded from: classes.dex */
 public class SQLiteEventStore implements EventStore, SynchronizationGuard, ClientHealthMetricsStore {
-    private static final Encoding PROTOBUF_ENCODING = Encoding.m829of("proto");
+    private static final Encoding PROTOBUF_ENCODING = Encoding.m1121of("proto");
     private final EventStoreConfig config;
     private final Clock monotonicClock;
     private final Lazy<String> packageName;
@@ -88,7 +88,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     @Override // com.google.android.datatransport.runtime.scheduling.persistence.EventStore
     public PersistedEvent persist(final TransportContext transportContext, final EventInternal eventInternal) {
-        Logging.m826d("SQLiteEventStore", "Storing event with priority=%s, name=%s for destination %s", transportContext.getPriority(), eventInternal.getTransportName(), transportContext.getBackendName());
+        Logging.m1118d("SQLiteEventStore", "Storing event with priority=%s, name=%s for destination %s", transportContext.getPriority(), eventInternal.getTransportName(), transportContext.getBackendName());
         long longValue = ((Long) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda6
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
@@ -485,7 +485,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         if (str == null) {
             return PROTOBUF_ENCODING;
         }
-        return Encoding.m829of(str);
+        return Encoding.m1121of(str);
     }
 
     private Map<Long, Set<Metadata>> loadMetadata(SQLiteDatabase sQLiteDatabase, List<PersistedEvent> list) {
@@ -619,7 +619,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         if (i == reason7.getNumber()) {
             return reason7;
         }
-        Logging.m827d("SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN", Integer.valueOf(i));
+        Logging.m1119d("SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN", Integer.valueOf(i));
         return reason;
     }
 

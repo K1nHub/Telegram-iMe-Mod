@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.storage;
 /* compiled from: BasePreferenceHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface BasePreferenceHelper {
     void remove(String str);
 
@@ -10,7 +10,7 @@ public interface BasePreferenceHelper {
 
     /* compiled from: BasePreferenceHelper.kt */
     /* renamed from: com.iMe.storage.domain.storage.BasePreferenceHelper$-CC  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         public static /* synthetic */ String withTgAccount$default(BasePreferenceHelper basePreferenceHelper, String str, String str2, int i, Object obj) {
             if (obj == null) {

@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BalanceFormatter.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BalanceFormatter {
     public static final BalanceFormatter INSTANCE = new BalanceFormatter();
     private static final HashMap<String, BalanceFormatterInfo> availableLocalesFormatter = new HashMap<>();

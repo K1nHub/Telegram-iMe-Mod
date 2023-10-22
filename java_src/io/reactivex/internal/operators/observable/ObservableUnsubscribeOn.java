@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableUnsubscribeOn<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;
 
@@ -21,7 +21,7 @@ public final class ObservableUnsubscribeOn<T> extends AbstractObservableWithUpst
         this.source.subscribe(new UnsubscribeObserver(observer, this.scheduler));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class UnsubscribeObserver<T> extends AtomicBoolean implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         final Scheduler scheduler;
@@ -77,7 +77,7 @@ public final class ObservableUnsubscribeOn<T> extends AbstractObservableWithUpst
             return get();
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         final class DisposeTask implements Runnable {
             DisposeTask() {
             }

@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class BERApplicationSpecific extends ASN1ApplicationSpecific {
     public BERApplicationSpecific(int i, ASN1EncodableVector aSN1EncodableVector) {
         super(true, i, getEncodedVector(aSN1EncodableVector));

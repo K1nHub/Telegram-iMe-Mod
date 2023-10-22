@@ -1,12 +1,13 @@
 package kotlinx.coroutines.flow;
 
+import com.google.android.exoplayer2.RendererCapabilities;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-@DebugMetadata(m102c = "kotlinx.coroutines.flow.StateFlowImpl", m101f = "StateFlow.kt", m100l = {386, 398, 403}, m99m = "collect")
-/* loaded from: classes6.dex */
+@DebugMetadata(m143c = "kotlinx.coroutines.flow.StateFlowImpl", m142f = "StateFlow.kt", m141l = {RendererCapabilities.MODE_SUPPORT_MASK, 396, 401}, m140m = "collect")
+/* loaded from: classes4.dex */
 public final class StateFlowImpl$collect$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

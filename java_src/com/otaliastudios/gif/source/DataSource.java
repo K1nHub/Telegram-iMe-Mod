@@ -2,10 +2,10 @@ package com.otaliastudios.gif.source;
 
 import android.graphics.Bitmap;
 import android.media.MediaFormat;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public interface DataSource {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Chunk {
         public Bitmap bitmap;
         public long timestampUs;

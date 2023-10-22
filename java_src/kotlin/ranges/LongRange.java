@@ -2,10 +2,14 @@ package kotlin.ranges;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: PrimitiveRanges.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class LongRange extends LongProgression {
     public LongRange(long j, long j2) {
         super(j, j2, 1L);
+    }
+
+    public boolean contains(long j) {
+        return getFirst() <= j && j <= getLast();
     }
 
     @Override // kotlin.ranges.LongProgression
@@ -40,7 +44,7 @@ public final class LongRange extends LongProgression {
     }
 
     /* compiled from: PrimitiveRanges.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

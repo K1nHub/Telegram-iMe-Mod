@@ -10,19 +10,19 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;Lj$/util/stream/y2;[I)V
+.method constructor <init>(Lj$/util/Spliterator;Lj$/util/stream/y2;[I)V
     .locals 1
 
     array-length v0, p3
 
-    invoke-direct {p0, p1, p2, v0}, Lj$/util/stream/s2;-><init>(Lj$/util/s;Lj$/util/stream/y2;I)V
+    invoke-direct {p0, p1, p2, v0}, Lj$/util/stream/s2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/y2;I)V
 
     iput-object p3, p0, Lj$/util/stream/p2;->h:[I
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/stream/p2;Lj$/util/s;JJ)V
+.method constructor <init>(Lj$/util/stream/p2;Lj$/util/Spliterator;JJ)V
     .locals 9
 
     iget-object v0, p1, Lj$/util/stream/p2;->h:[I
@@ -39,7 +39,7 @@
 
     move-wide v6, p5
 
-    invoke-direct/range {v1 .. v8}, Lj$/util/stream/s2;-><init>(Lj$/util/stream/s2;Lj$/util/s;JJI)V
+    invoke-direct/range {v1 .. v8}, Lj$/util/stream/s2;-><init>(Lj$/util/stream/s2;Lj$/util/Spliterator;JJI)V
 
     iget-object p1, p1, Lj$/util/stream/p2;->h:[I
 
@@ -94,7 +94,7 @@
     return-void
 .end method
 
-.method b(Lj$/util/s;JJ)Lj$/util/stream/s2;
+.method b(Lj$/util/Spliterator;JJ)Lj$/util/stream/s2;
     .locals 8
 
     .line 1
@@ -110,7 +110,7 @@
 
     move-wide v5, p4
 
-    invoke-direct/range {v0 .. v6}, Lj$/util/stream/p2;-><init>(Lj$/util/stream/p2;Lj$/util/s;JJ)V
+    invoke-direct/range {v0 .. v6}, Lj$/util/stream/p2;-><init>(Lj$/util/stream/p2;Lj$/util/Spliterator;JJ)V
 
     return-object v7
 .end method
@@ -123,7 +123,7 @@
     return-void
 .end method
 
-.method public l(Lj$/util/function/l;)Lj$/util/function/l;
+.method public k(Lj$/util/function/l;)Lj$/util/function/l;
     .locals 1
 
     .line 1

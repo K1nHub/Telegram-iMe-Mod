@@ -2,7 +2,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 
 import java.util.ListIterator;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class zzr<E> extends zzo<E> implements ListIterator<E> {
     @Override // java.util.ListIterator
     @Deprecated

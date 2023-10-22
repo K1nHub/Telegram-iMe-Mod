@@ -17,7 +17,7 @@ import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.connection.RealCall;
 import okhttp3.internal.platform.Platform;
 /* compiled from: RealConnectionPool.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class RealConnectionPool {
     private final TaskQueue cleanupQueue;
     private final RealConnectionPool$cleanupTask$1 cleanupTask;
@@ -127,7 +127,7 @@ public final class RealConnectionPool {
     }
 
     /* compiled from: RealConnectionPool.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }

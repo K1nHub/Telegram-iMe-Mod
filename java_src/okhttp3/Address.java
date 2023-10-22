@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.HttpUrl;
 import okhttp3.internal.Util;
 /* compiled from: Address.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Address {
     private final CertificatePinner certificatePinner;
     private final List<ConnectionSpec> connectionSpecs;

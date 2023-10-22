@@ -4,7 +4,7 @@ import com.google.protobuf.WireFormat;
 import java.io.IOException;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CodedInputStreamReader implements Reader {
     private int endGroupTag;
     private final CodedInputStream input;
@@ -1093,8 +1093,8 @@ public final class CodedInputStreamReader implements Reader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.CodedInputStreamReader$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C11961 {
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class C11171 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -1172,7 +1172,7 @@ public final class CodedInputStreamReader implements Reader {
     }
 
     private Object readField(WireFormat.FieldType fieldType, Class<?> cls, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        switch (C11961.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11171.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return Boolean.valueOf(readBool());
             case 2:

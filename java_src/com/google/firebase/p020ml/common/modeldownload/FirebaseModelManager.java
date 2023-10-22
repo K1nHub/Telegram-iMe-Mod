@@ -7,10 +7,9 @@ import com.google.firebase.FirebaseApp;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseModelManager */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseModelManager {
-    private static final GmsLogger zzass = new GmsLogger("FirebaseModelManager", "");
-    private static final Map<String, FirebaseModelManager> zzatg = new HashMap();
+    private static final Map<String, FirebaseModelManager> zzatg;
     private final Map<String, FirebaseRemoteModel> zzawp = new HashMap();
     private final Map<String, FirebaseLocalModel> zzawr;
 
@@ -43,18 +42,6 @@ public class FirebaseModelManager {
         this.zzawr = new HashMap();
     }
 
-    public synchronized boolean registerLocalModel(FirebaseLocalModel firebaseLocalModel) {
-        Preconditions.checkNotNull(firebaseLocalModel, "FirebaseLocalModel can not be null");
-        if (this.zzawr.containsKey(firebaseLocalModel.getModelName())) {
-            GmsLogger gmsLogger = zzass;
-            String valueOf = String.valueOf(firebaseLocalModel.getModelName());
-            gmsLogger.m799w("FirebaseModelManager", valueOf.length() != 0 ? "The local model name is already registered: ".concat(valueOf) : new String("The local model name is already registered: "));
-            return false;
-        }
-        this.zzawr.put(firebaseLocalModel.getModelName(), firebaseLocalModel);
-        return true;
-    }
-
     @KeepForSdk
     public synchronized FirebaseRemoteModel getNonBaseRemoteModel(String str) {
         return this.zzawp.get(str);
@@ -66,6 +53,8 @@ public class FirebaseModelManager {
     }
 
     static {
+        new GmsLogger("FirebaseModelManager", "");
+        zzatg = new HashMap();
         new HashMap();
     }
 }

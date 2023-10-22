@@ -12,30 +12,30 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "PolygonOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PolygonOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PolygonOptions> CREATOR = new zzl();
-    @SafeParcelable.Field(getter = "getPoints", m797id = 2)
+    @SafeParcelable.Field(getter = "getPoints", m1089id = 2)
     private final List zza;
-    @SafeParcelable.Field(getter = "getHolesForParcel", m797id = 3, type = "java.util.List")
+    @SafeParcelable.Field(getter = "getHolesForParcel", m1089id = 3, type = "java.util.List")
     private final List zzb;
-    @SafeParcelable.Field(getter = "getStrokeWidth", m797id = 4)
+    @SafeParcelable.Field(getter = "getStrokeWidth", m1089id = 4)
     private float zzc;
-    @SafeParcelable.Field(getter = "getStrokeColor", m797id = 5)
+    @SafeParcelable.Field(getter = "getStrokeColor", m1089id = 5)
     private int zzd;
-    @SafeParcelable.Field(getter = "getFillColor", m797id = 6)
+    @SafeParcelable.Field(getter = "getFillColor", m1089id = 6)
     private int zze;
-    @SafeParcelable.Field(getter = "getZIndex", m797id = 7)
+    @SafeParcelable.Field(getter = "getZIndex", m1089id = 7)
     private float zzf;
-    @SafeParcelable.Field(getter = "isVisible", m797id = 8)
+    @SafeParcelable.Field(getter = "isVisible", m1089id = 8)
     private boolean zzg;
-    @SafeParcelable.Field(getter = "isGeodesic", m797id = 9)
+    @SafeParcelable.Field(getter = "isGeodesic", m1089id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "isClickable", m797id = 10)
+    @SafeParcelable.Field(getter = "isClickable", m1089id = 10)
     private boolean zzi;
-    @SafeParcelable.Field(getter = "getStrokeJointType", m797id = 11)
+    @SafeParcelable.Field(getter = "getStrokeJointType", m1089id = 11)
     private int zzj;
-    @SafeParcelable.Field(getter = "getStrokePattern", m797id = 12)
+    @SafeParcelable.Field(getter = "getStrokePattern", m1089id = 12)
     private List zzk;
 
     public PolygonOptions() {
@@ -190,7 +190,7 @@ public final class PolygonOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PolygonOptions(@SafeParcelable.Param(m796id = 2) List list, @SafeParcelable.Param(m796id = 3) List list2, @SafeParcelable.Param(m796id = 4) float f, @SafeParcelable.Param(m796id = 5) int i, @SafeParcelable.Param(m796id = 6) int i2, @SafeParcelable.Param(m796id = 7) float f2, @SafeParcelable.Param(m796id = 8) boolean z, @SafeParcelable.Param(m796id = 9) boolean z2, @SafeParcelable.Param(m796id = 10) boolean z3, @SafeParcelable.Param(m796id = 11) int i3, @SafeParcelable.Param(m796id = 12) List list3) {
+    public PolygonOptions(@SafeParcelable.Param(m1088id = 2) List list, @SafeParcelable.Param(m1088id = 3) List list2, @SafeParcelable.Param(m1088id = 4) float f, @SafeParcelable.Param(m1088id = 5) int i, @SafeParcelable.Param(m1088id = 6) int i2, @SafeParcelable.Param(m1088id = 7) float f2, @SafeParcelable.Param(m1088id = 8) boolean z, @SafeParcelable.Param(m1088id = 9) boolean z2, @SafeParcelable.Param(m1088id = 10) boolean z3, @SafeParcelable.Param(m1088id = 11) int i3, @SafeParcelable.Param(m1088id = 12) List list3) {
         this.zza = list;
         this.zzb = list2;
         this.zzc = f;

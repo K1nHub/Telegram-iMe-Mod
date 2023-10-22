@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3473R;
-/* loaded from: classes6.dex */
+import org.telegram.messenger.C3630R;
+/* loaded from: classes4.dex */
 public final class ForkContentNetworkTypeBinding implements ViewBinding {
     public final AppCompatImageView imageNetwork;
     private final LinearLayout rootView;
@@ -21,7 +21,6 @@ public final class ForkContentNetworkTypeBinding implements ViewBinding {
         this.textNetwork = appCompatTextView;
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public LinearLayout getRoot() {
         return this.rootView;
     }
@@ -31,7 +30,7 @@ public final class ForkContentNetworkTypeBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkTypeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_network_type, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_network_type, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +38,10 @@ public final class ForkContentNetworkTypeBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkTypeBinding bind(View view) {
-        int i = C3473R.C3476id.image_network;
+        int i = C3630R.C3633id.image_network;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3473R.C3476id.text_network;
+            i = C3630R.C3633id.text_network;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
                 return new ForkContentNetworkTypeBinding((LinearLayout) view, appCompatImageView, appCompatTextView);

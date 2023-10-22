@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_stats_loadAsyncGraph extends TLObject {
     public static int constructor = 1646092192;
     public int flags;
     public String token;
 
     /* renamed from: x */
-    public long f1661x;
+    public long f1738x;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -19,7 +19,7 @@ public class TLRPC$TL_stats_loadAsyncGraph extends TLObject {
         abstractSerializedData.writeInt32(this.flags);
         abstractSerializedData.writeString(this.token);
         if ((this.flags & 1) != 0) {
-            abstractSerializedData.writeInt64(this.f1661x);
+            abstractSerializedData.writeInt64(this.f1738x);
         }
     }
 }

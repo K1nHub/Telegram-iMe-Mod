@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.AbstractPlatformRandom;
 import p033j$.util.concurrent.ThreadLocalRandom;
 /* compiled from: PlatformThreadLocalRandom.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class PlatformThreadLocalRandom extends AbstractPlatformRandom {
     @Override // kotlin.random.AbstractPlatformRandom
     public Random getImpl() {

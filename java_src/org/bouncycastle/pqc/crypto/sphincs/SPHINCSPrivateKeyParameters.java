@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.sphincs;
 
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SPHINCSPrivateKeyParameters extends SPHINCSKeyParameters {
     private final byte[] keyData;
 

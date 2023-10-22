@@ -16,11 +16,11 @@ import io.reactivex.observables.ConnectableObservable;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableInternalHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class SimpleGenerator<T, S> implements BiFunction<S, Emitter<T>, S> {
         final Consumer<Emitter<T>> consumer;
 
@@ -45,7 +45,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class SimpleBiGenerator<T, S> implements BiFunction<S, Emitter<T>, S> {
         final BiConsumer<S, Emitter<T>> consumer;
 
@@ -70,7 +70,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ItemDelayFunction<T, U> implements Function<T, ObservableSource<T>> {
         final Function<? super T, ? extends ObservableSource<U>> itemDelay;
 
@@ -95,7 +95,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ObserverOnNext<T> implements Consumer<T> {
         final Observer<T> observer;
 
@@ -110,7 +110,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ObserverOnError<T> implements Consumer<Throwable> {
         final Observer<T> observer;
 
@@ -125,7 +125,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ObserverOnComplete<T> implements Action {
         final Observer<T> observer;
 
@@ -152,26 +152,26 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class FlatMapWithCombinerInner<U, R, T> implements Function<U, R> {
         private final BiFunction<? super T, ? super U, ? extends R> combiner;
 
         /* renamed from: t */
-        private final T f545t;
+        private final T f458t;
 
         FlatMapWithCombinerInner(BiFunction<? super T, ? super U, ? extends R> biFunction, T t) {
             this.combiner = biFunction;
-            this.f545t = t;
+            this.f458t = t;
         }
 
         @Override // io.reactivex.functions.Function
         public R apply(U u) throws Exception {
-            return this.combiner.apply((T) this.f545t, u);
+            return this.combiner.apply((T) this.f458t, u);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class FlatMapWithCombinerOuter<T, R, U> implements Function<T, ObservableSource<R>> {
         private final BiFunction<? super T, ? super U, ? extends R> combiner;
         private final Function<? super T, ? extends ObservableSource<? extends U>> mapper;
@@ -198,7 +198,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class FlatMapIntoIterable<T, U> implements Function<T, ObservableSource<U>> {
         private final Function<? super T, ? extends Iterable<? extends U>> mapper;
 
@@ -243,7 +243,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ZipIterableFunction<T, R> implements Function<List<ObservableSource<? extends T>>, ObservableSource<? extends R>> {
         private final Function<? super Object[], ? extends R> zipper;
 
@@ -266,7 +266,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ReplayCallable<T> implements Callable<ConnectableObservable<T>> {
         private final Observable<T> parent;
 
@@ -281,7 +281,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BufferedReplayCallable<T> implements Callable<ConnectableObservable<T>> {
         private final int bufferSize;
         private final Observable<T> parent;
@@ -298,7 +298,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class BufferedTimedReplayCallable<T> implements Callable<ConnectableObservable<T>> {
         private final int bufferSize;
         private final Observable<T> parent;
@@ -321,7 +321,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class TimedReplayCallable<T> implements Callable<ConnectableObservable<T>> {
         private final Observable<T> parent;
         private final Scheduler scheduler;
@@ -342,7 +342,7 @@ public final class ObservableInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ReplayFunction<T, R> implements Function<Observable<T>, ObservableSource<R>> {
         private final Scheduler scheduler;
         private final Function<? super Observable<T>, ? extends ObservableSource<R>> selector;

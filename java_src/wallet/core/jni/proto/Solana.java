@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class Solana {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface CreateAndTransferTokenOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -59,7 +59,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface CreateTokenAccountOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -80,7 +80,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DeactivateAllStakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -97,7 +97,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DeactivateStakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -110,7 +110,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface DelegateStakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -129,7 +129,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         CreateAndTransferToken getCreateAndTransferTokenTransaction();
 
@@ -184,7 +184,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -201,7 +201,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface StakeAccountValueOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -216,7 +216,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TokenTransferOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -253,7 +253,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -280,7 +280,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface WithdrawAllStakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -295,7 +295,7 @@ public final class Solana {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public interface WithdrawStakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -316,7 +316,7 @@ public final class Solana {
     private Solana() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         private static final Transfer DEFAULT_INSTANCE;
         public static final int MEMO_FIELD_NUMBER = 3;
@@ -517,9 +517,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -653,7 +653,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -699,47 +699,47 @@ public final class Solana {
     }
 
     /* renamed from: wallet.core.jni.proto.Solana$1 */
-    /* loaded from: classes5.dex */
-    static /* synthetic */ class C73541 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C76881 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1969xa1df5c61;
+        static final /* synthetic */ int[] f2143xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1969xa1df5c61 = iArr;
+            f2143xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1969xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DelegateStake extends GeneratedMessageLite<DelegateStake, Builder> implements DelegateStakeOrBuilder {
         private static final DelegateStake DEFAULT_INSTANCE;
         private static volatile Parser<DelegateStake> PARSER = null;
@@ -878,9 +878,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DelegateStake, Builder> implements DelegateStakeOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -964,7 +964,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DelegateStake();
                 case 2:
@@ -1009,7 +1009,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DeactivateStake extends GeneratedMessageLite<DeactivateStake, Builder> implements DeactivateStakeOrBuilder {
         private static final DeactivateStake DEFAULT_INSTANCE;
         private static volatile Parser<DeactivateStake> PARSER = null;
@@ -1102,9 +1102,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeactivateStake, Builder> implements DeactivateStakeOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -1143,7 +1143,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeactivateStake();
                 case 2:
@@ -1188,7 +1188,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class DeactivateAllStake extends GeneratedMessageLite<DeactivateAllStake, Builder> implements DeactivateAllStakeOrBuilder {
         private static final DeactivateAllStake DEFAULT_INSTANCE;
         private static volatile Parser<DeactivateAllStake> PARSER = null;
@@ -1314,9 +1314,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeactivateAllStake, Builder> implements DeactivateAllStakeOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -1377,7 +1377,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeactivateAllStake();
                 case 2:
@@ -1422,7 +1422,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class WithdrawStake extends GeneratedMessageLite<WithdrawStake, Builder> implements WithdrawStakeOrBuilder {
         private static final WithdrawStake DEFAULT_INSTANCE;
         private static volatile Parser<WithdrawStake> PARSER = null;
@@ -1532,9 +1532,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawStake, Builder> implements WithdrawStakeOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -1590,7 +1590,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawStake();
                 case 2:
@@ -1635,7 +1635,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class StakeAccountValue extends GeneratedMessageLite<StakeAccountValue, Builder> implements StakeAccountValueOrBuilder {
         private static final StakeAccountValue DEFAULT_INSTANCE;
         private static volatile Parser<StakeAccountValue> PARSER = null;
@@ -1745,9 +1745,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StakeAccountValue, Builder> implements StakeAccountValueOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -1803,7 +1803,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new StakeAccountValue();
                 case 2:
@@ -1848,7 +1848,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class WithdrawAllStake extends GeneratedMessageLite<WithdrawAllStake, Builder> implements WithdrawAllStakeOrBuilder {
         private static final WithdrawAllStake DEFAULT_INSTANCE;
         private static volatile Parser<WithdrawAllStake> PARSER = null;
@@ -1983,9 +1983,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawAllStake, Builder> implements WithdrawAllStakeOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -2065,7 +2065,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawAllStake();
                 case 2:
@@ -2110,7 +2110,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class CreateTokenAccount extends GeneratedMessageLite<CreateTokenAccount, Builder> implements CreateTokenAccountOrBuilder {
         private static final CreateTokenAccount DEFAULT_INSTANCE;
         public static final int MAIN_ADDRESS_FIELD_NUMBER = 1;
@@ -2261,9 +2261,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateTokenAccount, Builder> implements CreateTokenAccountOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -2358,7 +2358,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateTokenAccount();
                 case 2:
@@ -2403,7 +2403,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class TokenTransfer extends GeneratedMessageLite<TokenTransfer, Builder> implements TokenTransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 4;
         public static final int DECIMALS_FIELD_NUMBER = 5;
@@ -2679,9 +2679,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenTransfer, Builder> implements TokenTransferOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -2888,7 +2888,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenTransfer();
                 case 2:
@@ -2933,7 +2933,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class CreateAndTransferToken extends GeneratedMessageLite<CreateAndTransferToken, Builder> implements CreateAndTransferTokenOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 5;
         public static final int DECIMALS_FIELD_NUMBER = 6;
@@ -3238,9 +3238,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateAndTransferToken, Builder> implements CreateAndTransferTokenOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -3475,7 +3475,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateAndTransferToken();
                 case 2:
@@ -3520,7 +3520,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int CREATE_AND_TRANSFER_TOKEN_TRANSACTION_FIELD_NUMBER = 12;
         public static final int CREATE_TOKEN_ACCOUNT_TRANSACTION_FIELD_NUMBER = 10;
@@ -3545,7 +3545,7 @@ public final class Solana {
         private SigningInput() {
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public enum TransactionTypeCase {
             TRANSFER_TRANSACTION(4),
             DELEGATE_STAKE_TRANSACTION(5),
@@ -4078,9 +4078,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -4470,7 +4470,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4515,7 +4515,7 @@ public final class Solana {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -4637,9 +4637,9 @@ public final class Solana {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C73541 c73541) {
+            /* synthetic */ Builder(C76881 c76881) {
                 this();
             }
 
@@ -4706,7 +4706,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C73541.f1969xa1df5c61[method.ordinal()]) {
+            switch (C76881.f2143xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

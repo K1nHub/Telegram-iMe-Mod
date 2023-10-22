@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.donations;
 import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PrepareDonationTransactionRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class PrepareDonationTransactionRequest {
     private final String chatId;
     private final TokenRequest token;

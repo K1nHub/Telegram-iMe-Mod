@@ -10,7 +10,7 @@ import com.otaliastudios.opengl.internal.MiscKt;
 import kotlin.UInt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Egloo.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Egloo {
     public static final float[] IDENTITY_MATRIX;
 
@@ -46,12 +46,12 @@ public final class Egloo {
     }
 
     public static final void checkGlError(String opName) {
-        int m1662constructorimpl;
+        int m1967constructorimpl;
         Intrinsics.checkNotNullParameter(opName, "opName");
-        if (UInt.m1662constructorimpl(GLES20.glGetError()) == GlKt.getGL_NO_ERROR()) {
+        if (UInt.m1967constructorimpl(GLES20.glGetError()) == GlKt.getGL_NO_ERROR()) {
             return;
         }
-        String str = "Error during " + opName + ": glError 0x" + MiscKt.intToHexString(m1662constructorimpl) + ": " + MiscKt.gluErrorString(m1662constructorimpl);
+        String str = "Error during " + opName + ": glError 0x" + MiscKt.intToHexString(m1967constructorimpl) + ": " + MiscKt.gluErrorString(m1967constructorimpl);
         Log.e("Egloo", str);
         throw new RuntimeException(str);
     }

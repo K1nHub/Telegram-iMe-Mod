@@ -7,7 +7,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.model.wallet.NotificationExtKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class NotificationItem implements ClickableItem {
     private String category;
     private String message;
@@ -108,13 +108,13 @@ public final class NotificationItem implements ClickableItem {
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getLinkedText() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C2036In ? ((Notification.CryptoTransfer.C2036In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C2037In ? ((Notification.Donation.C2037In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1959In ? ((Notification.CryptoTransfer.C1959In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1960In ? ((Notification.Donation.C1960In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getRecipientAddress() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C2036In ? ((Notification.CryptoTransfer.C2036In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C2037In ? ((Notification.Donation.C2037In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1959In ? ((Notification.CryptoTransfer.C1959In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1960In ? ((Notification.Donation.C1960In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem

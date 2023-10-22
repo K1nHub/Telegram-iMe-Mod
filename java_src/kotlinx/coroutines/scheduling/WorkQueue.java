@@ -3,38 +3,32 @@ package kotlinx.coroutines.scheduling;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.DebugKt;
 /* compiled from: WorkQueue.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WorkQueue {
-    private static final /* synthetic */ AtomicReferenceFieldUpdater lastScheduledTask$FU = AtomicReferenceFieldUpdater.newUpdater(WorkQueue.class, Object.class, "lastScheduledTask");
-    private static final /* synthetic */ AtomicIntegerFieldUpdater producerIndex$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "producerIndex");
-    private static final /* synthetic */ AtomicIntegerFieldUpdater consumerIndex$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "consumerIndex");
-    private static final /* synthetic */ AtomicIntegerFieldUpdater blockingTasksInBuffer$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "blockingTasksInBuffer");
+    private volatile int blockingTasksInBuffer;
     private final AtomicReferenceArray<Task> buffer = new AtomicReferenceArray<>(128);
-    private volatile /* synthetic */ Object lastScheduledTask = null;
-    private volatile /* synthetic */ int producerIndex = 0;
-    private volatile /* synthetic */ int consumerIndex = 0;
-    private volatile /* synthetic */ int blockingTasksInBuffer = 0;
+    private volatile int consumerIndex;
+    private volatile Object lastScheduledTask;
+    private volatile int producerIndex;
+    private static final AtomicReferenceFieldUpdater lastScheduledTask$FU = AtomicReferenceFieldUpdater.newUpdater(WorkQueue.class, Object.class, "lastScheduledTask");
+    private static final AtomicIntegerFieldUpdater producerIndex$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "producerIndex");
+    private static final AtomicIntegerFieldUpdater consumerIndex$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "consumerIndex");
+    private static final AtomicIntegerFieldUpdater blockingTasksInBuffer$FU = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "blockingTasksInBuffer");
 
-    public final int getBufferSize$kotlinx_coroutines_core() {
-        return this.producerIndex - this.consumerIndex;
+    private final int getBufferSize() {
+        return producerIndex$FU.get(this) - consumerIndex$FU.get(this);
     }
 
     public final int getSize$kotlinx_coroutines_core() {
-        return this.lastScheduledTask != null ? getBufferSize$kotlinx_coroutines_core() + 1 : getBufferSize$kotlinx_coroutines_core();
+        return lastScheduledTask$FU.get(this) != null ? getBufferSize() + 1 : getBufferSize();
     }
 
     public final Task poll() {
         Task task = (Task) lastScheduledTask$FU.getAndSet(this, null);
         return task == null ? pollBuffer() : task;
-    }
-
-    public static /* synthetic */ Task add$default(WorkQueue workQueue, Task task, boolean z, int i, Object obj) {
-        if ((i & 2) != 0) {
-            z = false;
-        }
-        return workQueue.add(task, z);
     }
 
     public final Task add(Task task, boolean z) {
@@ -46,22 +40,6 @@ public final class WorkQueue {
             return null;
         }
         return addLast(task2);
-    }
-
-    private final Task addLast(Task task) {
-        if (task.taskContext.getTaskMode() == 1) {
-            blockingTasksInBuffer$FU.incrementAndGet(this);
-        }
-        if (getBufferSize$kotlinx_coroutines_core() == 127) {
-            return task;
-        }
-        int i = this.producerIndex & 127;
-        while (this.buffer.get(i) != null) {
-            Thread.yield();
-        }
-        this.buffer.lazySet(i, task);
-        producerIndex$FU.incrementAndGet(this);
-        return null;
     }
 
     private final void decrementIfBlocking(Task task) {
@@ -77,49 +55,98 @@ public final class WorkQueue {
         }
     }
 
-    public final long tryStealFrom(WorkQueue workQueue) {
-        if (DebugKt.getASSERTIONS_ENABLED()) {
-            if (!(getBufferSize$kotlinx_coroutines_core() == 0)) {
-                throw new AssertionError();
-            }
+    private final Task addLast(Task task) {
+        if (getBufferSize() == 127) {
+            return task;
         }
-        Task pollBuffer = workQueue.pollBuffer();
-        if (pollBuffer != null) {
-            Task add$default = add$default(this, pollBuffer, false, 2, null);
-            if (DebugKt.getASSERTIONS_ENABLED()) {
-                if (add$default == null) {
-                    return -1L;
-                }
-                throw new AssertionError();
-            }
-            return -1L;
+        if (task.taskContext.getTaskMode() == 1) {
+            blockingTasksInBuffer$FU.incrementAndGet(this);
         }
-        return tryStealLastScheduled(workQueue, false);
+        int i = producerIndex$FU.get(this) & 127;
+        while (this.buffer.get(i) != null) {
+            Thread.yield();
+        }
+        this.buffer.lazySet(i, task);
+        producerIndex$FU.incrementAndGet(this);
+        return null;
     }
 
-    public final long tryStealBlockingFrom(WorkQueue workQueue) {
-        if (DebugKt.getASSERTIONS_ENABLED()) {
-            if (!(getBufferSize$kotlinx_coroutines_core() == 0)) {
-                throw new AssertionError();
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    public final long trySteal(int i, Ref$ObjectRef<Task> ref$ObjectRef) {
+        T t;
+        if (i == 3) {
+            t = pollBuffer();
+        } else {
+            t = stealWithExclusiveMode(i);
         }
-        int i = workQueue.producerIndex;
-        AtomicReferenceArray<Task> atomicReferenceArray = workQueue.buffer;
-        for (int i2 = workQueue.consumerIndex; i2 != i; i2++) {
-            int i3 = i2 & 127;
-            if (workQueue.blockingTasksInBuffer == 0) {
-                break;
+        if (t != 0) {
+            ref$ObjectRef.element = t;
+            return -1L;
+        }
+        return tryStealLastScheduled(i, ref$ObjectRef);
+    }
+
+    private final Task stealWithExclusiveMode(int i) {
+        int i2 = consumerIndex$FU.get(this);
+        int i3 = producerIndex$FU.get(this);
+        boolean z = i == 1;
+        while (i2 != i3) {
+            if (z && blockingTasksInBuffer$FU.get(this) == 0) {
+                return null;
             }
-            Task task = atomicReferenceArray.get(i3);
+            int i4 = i2 + 1;
+            Task tryExtractFromTheMiddle = tryExtractFromTheMiddle(i2, z);
+            if (tryExtractFromTheMiddle != null) {
+                return tryExtractFromTheMiddle;
+            }
+            i2 = i4;
+        }
+        return null;
+    }
+
+    public final Task pollBlocking() {
+        return pollWithExclusiveMode(true);
+    }
+
+    private final Task pollWithExclusiveMode(boolean z) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        Task task;
+        do {
+            atomicReferenceFieldUpdater = lastScheduledTask$FU;
+            task = (Task) atomicReferenceFieldUpdater.get(this);
             if (task != null) {
-                if ((task.taskContext.getTaskMode() == 1) && atomicReferenceArray.compareAndSet(i3, task, null)) {
-                    blockingTasksInBuffer$FU.decrementAndGet(workQueue);
-                    add$default(this, task, false, 2, null);
-                    return -1L;
+                if ((task.taskContext.getTaskMode() == 1) == z) {
                 }
             }
+            int i = consumerIndex$FU.get(this);
+            int i2 = producerIndex$FU.get(this);
+            while (i != i2) {
+                if (z && blockingTasksInBuffer$FU.get(this) == 0) {
+                    return null;
+                }
+                i2--;
+                Task tryExtractFromTheMiddle = tryExtractFromTheMiddle(i2, z);
+                if (tryExtractFromTheMiddle != null) {
+                    return tryExtractFromTheMiddle;
+                }
+            }
+            return null;
+        } while (!atomicReferenceFieldUpdater.compareAndSet(this, task, null));
+        return task;
+    }
+
+    private final Task tryExtractFromTheMiddle(int i, boolean z) {
+        int i2 = i & 127;
+        Task task = this.buffer.get(i2);
+        if (task != null) {
+            if ((task.taskContext.getTaskMode() == 1) == z && this.buffer.compareAndSet(i2, task, null)) {
+                if (z) {
+                    blockingTasksInBuffer$FU.decrementAndGet(this);
+                }
+                return task;
+            }
         }
-        return tryStealLastScheduled(workQueue, true);
+        return null;
     }
 
     public final void offloadAllWorkTo(GlobalQueue globalQueue) {
@@ -131,25 +158,26 @@ public final class WorkQueue {
         } while (pollTo(globalQueue));
     }
 
-    private final long tryStealLastScheduled(WorkQueue workQueue, boolean z) {
-        Task task;
+    /* JADX WARN: Type inference failed for: r1v1, types: [T, kotlinx.coroutines.scheduling.Task, java.lang.Object] */
+    private final long tryStealLastScheduled(int i, Ref$ObjectRef<Task> ref$ObjectRef) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        ?? r1;
         do {
-            task = (Task) workQueue.lastScheduledTask;
-            if (task == null) {
+            atomicReferenceFieldUpdater = lastScheduledTask$FU;
+            r1 = (Task) atomicReferenceFieldUpdater.get(this);
+            if (r1 == 0) {
                 return -2L;
             }
-            if (z) {
-                if (!(task.taskContext.getTaskMode() == 1)) {
-                    return -2L;
-                }
+            if (((r1.taskContext.getTaskMode() == 1 ? 1 : 2) & i) == 0) {
+                return -2L;
             }
-            long nanoTime = TasksKt.schedulerTimeSource.nanoTime() - task.submissionTime;
+            long nanoTime = TasksKt.schedulerTimeSource.nanoTime() - r1.submissionTime;
             long j = TasksKt.WORK_STEALING_TIME_RESOLUTION_NS;
             if (nanoTime < j) {
                 return j - nanoTime;
             }
-        } while (!lastScheduledTask$FU.compareAndSet(workQueue, task, null));
-        add$default(this, task, false, 2, null);
+        } while (!atomicReferenceFieldUpdater.compareAndSet(this, r1, null));
+        ref$ObjectRef.element = r1;
         return -1L;
     }
 
@@ -165,12 +193,13 @@ public final class WorkQueue {
     private final Task pollBuffer() {
         Task andSet;
         while (true) {
-            int i = this.consumerIndex;
-            if (i - this.producerIndex == 0) {
+            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = consumerIndex$FU;
+            int i = atomicIntegerFieldUpdater.get(this);
+            if (i - producerIndex$FU.get(this) == 0) {
                 return null;
             }
             int i2 = i & 127;
-            if (consumerIndex$FU.compareAndSet(this, i, i + 1) && (andSet = this.buffer.getAndSet(i2, null)) != null) {
+            if (atomicIntegerFieldUpdater.compareAndSet(this, i, i + 1) && (andSet = this.buffer.getAndSet(i2, null)) != null) {
                 decrementIfBlocking(andSet);
                 return andSet;
             }

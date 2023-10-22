@@ -3,14 +3,14 @@ package kotlinx.coroutines.channels;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Channel.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ChannelResult<T> {
     public static final Companion Companion = new Companion(null);
     private static final Failed failed = new Failed();
     private final Object holder;
 
     /* compiled from: Channel.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class Failed {
         public String toString() {
             return "Failed";
@@ -18,22 +18,22 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ChannelResult m1672boximpl(Object obj) {
+    public static final /* synthetic */ ChannelResult m2096boximpl(Object obj) {
         return new ChannelResult(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1673constructorimpl(Object obj) {
+    public static <T> Object m2097constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1674equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m1680unboximpl());
+    public static boolean m2098equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m2104unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1677hashCodeimpl(Object obj) {
+    public static int m2100hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -41,15 +41,15 @@ public final class ChannelResult<T> {
     }
 
     public boolean equals(Object obj) {
-        return m1674equalsimpl(this.holder, obj);
+        return m2098equalsimpl(this.holder, obj);
     }
 
     public int hashCode() {
-        return m1677hashCodeimpl(this.holder);
+        return m2100hashCodeimpl(this.holder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m1680unboximpl() {
+    public final /* synthetic */ Object m2104unboximpl() {
         return this.holder;
     }
 
@@ -57,26 +57,18 @@ public final class ChannelResult<T> {
         this.holder = obj;
     }
 
+    /* renamed from: isSuccess-impl  reason: not valid java name */
+    public static final boolean m2102isSuccessimpl(Object obj) {
+        return !(obj instanceof Failed);
+    }
+
     /* renamed from: isClosed-impl  reason: not valid java name */
-    public static final boolean m1678isClosedimpl(Object obj) {
+    public static final boolean m2101isClosedimpl(Object obj) {
         return obj instanceof Closed;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* renamed from: getOrThrow-impl  reason: not valid java name */
-    public static final T m1676getOrThrowimpl(Object obj) {
-        Throwable th;
-        if (obj instanceof Failed) {
-            if (!(obj instanceof Closed) || (th = ((Closed) obj).cause) == null) {
-                throw new IllegalStateException(("Trying to call 'getOrThrow' on a failed channel result: " + obj).toString());
-            }
-            throw th;
-        }
-        return obj;
-    }
-
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m1675exceptionOrNullimpl(Object obj) {
+    public static final Throwable m2099exceptionOrNullimpl(Object obj) {
         Closed closed = obj instanceof Closed ? (Closed) obj : null;
         if (closed != null) {
             return closed.cause;
@@ -85,7 +77,7 @@ public final class ChannelResult<T> {
     }
 
     /* compiled from: Channel.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Closed extends Failed {
         public final Throwable cause;
 
@@ -112,7 +104,7 @@ public final class ChannelResult<T> {
     }
 
     /* compiled from: Channel.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -122,27 +114,27 @@ public final class ChannelResult<T> {
         }
 
         /* renamed from: success-JP2dKIU  reason: not valid java name */
-        public final <E> Object m1683successJP2dKIU(E e) {
-            return ChannelResult.m1673constructorimpl(e);
+        public final <E> Object m2107successJP2dKIU(E e) {
+            return ChannelResult.m2097constructorimpl(e);
         }
 
         /* renamed from: failure-PtdJZtk  reason: not valid java name */
-        public final <E> Object m1682failurePtdJZtk() {
-            return ChannelResult.m1673constructorimpl(ChannelResult.failed);
+        public final <E> Object m2106failurePtdJZtk() {
+            return ChannelResult.m2097constructorimpl(ChannelResult.failed);
         }
 
         /* renamed from: closed-JP2dKIU  reason: not valid java name */
-        public final <E> Object m1681closedJP2dKIU(Throwable th) {
-            return ChannelResult.m1673constructorimpl(new Closed(th));
+        public final <E> Object m2105closedJP2dKIU(Throwable th) {
+            return ChannelResult.m2097constructorimpl(new Closed(th));
         }
     }
 
     public String toString() {
-        return m1679toStringimpl(this.holder);
+        return m2103toStringimpl(this.holder);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1679toStringimpl(Object obj) {
+    public static String m2103toStringimpl(Object obj) {
         if (obj instanceof Closed) {
             return ((Closed) obj).toString();
         }

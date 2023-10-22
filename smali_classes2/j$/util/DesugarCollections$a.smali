@@ -263,7 +263,7 @@
 .method public synthetic compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -337,7 +337,7 @@
 .method public synthetic computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$Function$-V-WRP;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p2
 
@@ -449,7 +449,7 @@
 .method public synthetic computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -926,7 +926,7 @@
 .method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p3}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p3}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p3
 
@@ -1095,7 +1095,7 @@
 .end method
 
 .method public replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lj$/util/DesugarCollections$a;->b:Ljava/lang/Object;
 
@@ -1104,36 +1104,17 @@
     :try_start_0
     iget-object v1, p0, Lj$/util/DesugarCollections$a;->a:Ljava/util/Map;
 
-    .line 1
-    instance-of v2, v1, Lj$/util/Map;
-
-    if-eqz v2, :cond_0
-
-    check-cast v1, Lj$/util/Map;
-
-    invoke-interface {v1, p1, p2}, Lj$/util/Map;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, p1, p2}, Lj$/util/Map$-EL;->replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {v1, p1, p2}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    .line 2
-    :goto_0
     monitor-exit v0
 
     return-object p1
 
-    :goto_1
+    :catchall_0
+    move-exception p1
+
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1151,7 +1132,7 @@
     :try_start_0
     iget-object v1, p0, Lj$/util/DesugarCollections$a;->a:Ljava/util/Map;
 
-    .line 3
+    .line 1
     instance-of v2, v1, Lj$/util/Map;
 
     if-eqz v2, :cond_0
@@ -1174,7 +1155,7 @@
 
     move-result p1
 
-    .line 4
+    .line 2
     :goto_0
     monitor-exit v0
 
@@ -1266,7 +1247,7 @@
 .method public synthetic replaceAll(Ljava/util/function/BiFunction;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p1
 

@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableThrottleLatest<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean emitLast;
     final Scheduler scheduler;
@@ -28,7 +28,7 @@ public final class ObservableThrottleLatest<T> extends AbstractObservableWithUps
         this.source.subscribe(new ThrottleLatestObserver(observer, this.timeout, this.unit, this.scheduler.createWorker(), this.emitLast));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class ThrottleLatestObserver<T> extends AtomicInteger implements Observer<T>, Disposable, Runnable {
         volatile boolean cancelled;
         volatile boolean done;

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_groupCallParticipant extends TLObject {
     public static int constructor = -341428482;
     public String about;

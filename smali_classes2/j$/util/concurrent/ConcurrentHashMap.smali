@@ -3161,7 +3161,7 @@
 .method public synthetic compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -3476,7 +3476,7 @@
 .method public synthetic computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/L;->a(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$Function$-V-WRP;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p2
 
@@ -3724,7 +3724,7 @@
 .method public synthetic computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -5093,7 +5093,7 @@
 .method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p3}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p3}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p3
 
@@ -5347,7 +5347,7 @@
 .method public synthetic replaceAll(Ljava/util/function/BiFunction;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/s;->a(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p1
 

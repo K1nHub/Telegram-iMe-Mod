@@ -18,21 +18,21 @@ public final class zbm {
     private static final Logger zba = new Logger("GoogleSignInCommon", new String[0]);
 
     public static Intent zba(Context context, GoogleSignInOptions googleSignInOptions) {
-        zba.m793d("getFallbackSignInIntent()", new Object[0]);
+        zba.m1085d("getFallbackSignInIntent()", new Object[0]);
         Intent zbc = zbc(context, googleSignInOptions);
         zbc.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
         return zbc;
     }
 
     public static Intent zbb(Context context, GoogleSignInOptions googleSignInOptions) {
-        zba.m793d("getNoImplementationSignInIntent()", new Object[0]);
+        zba.m1085d("getNoImplementationSignInIntent()", new Object[0]);
         Intent zbc = zbc(context, googleSignInOptions);
         zbc.setAction("com.google.android.gms.auth.NO_IMPL");
         return zbc;
     }
 
     public static Intent zbc(Context context, GoogleSignInOptions googleSignInOptions) {
-        zba.m793d("getSignInIntent()", new Object[0]);
+        zba.m1085d("getSignInIntent()", new Object[0]);
         SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
         Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
         intent.setPackage(context.getPackageName());
@@ -70,10 +70,10 @@ public final class zbm {
             r1 = 0
             java.lang.Object[] r2 = new java.lang.Object[r1]
             java.lang.String r3 = "silentSignIn()"
-            r0.m793d(r3, r2)
+            r0.m1085d(r3, r2)
             java.lang.Object[] r2 = new java.lang.Object[r1]
             java.lang.String r3 = "getEligibleSavedSignInResult()"
-            r0.m793d(r3, r2)
+            r0.m1085d(r3, r2)
             com.google.android.gms.common.internal.Preconditions.checkNotNull(r8)
             com.google.android.gms.auth.api.signin.internal.zbn r2 = com.google.android.gms.auth.api.signin.internal.zbn.zbc(r7)
             com.google.android.gms.auth.api.signin.GoogleSignInOptions r2 = r2.zbb()
@@ -131,7 +131,7 @@ public final class zbm {
             if (r4 == 0) goto L97
             java.lang.Object[] r7 = new java.lang.Object[r1]
             java.lang.String r8 = "Eligible saved sign in result found"
-            r0.m793d(r8, r7)
+            r0.m1085d(r8, r7)
             com.google.android.gms.common.api.OptionalPendingResult r6 = com.google.android.gms.common.api.PendingResults.immediatePendingResult(r4, r6)
             return r6
         L97:
@@ -146,7 +146,7 @@ public final class zbm {
         La9:
             java.lang.Object[] r9 = new java.lang.Object[r1]
             java.lang.String r1 = "trySilentSignIn()"
-            r0.m793d(r1, r9)
+            r0.m1085d(r1, r9)
             com.google.android.gms.auth.api.signin.internal.zbg r9 = new com.google.android.gms.auth.api.signin.internal.zbg
             r9.<init>(r6, r7, r8)
             com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl r6 = r6.enqueue(r9)
@@ -158,7 +158,7 @@ public final class zbm {
     }
 
     public static PendingResult zbf(GoogleApiClient googleApiClient, Context context, boolean z) {
-        zba.m793d("Revoking access", new Object[0]);
+        zba.m1085d("Revoking access", new Object[0]);
         String savedRefreshToken = C0697Storage.getInstance(context).getSavedRefreshToken();
         zbh(context);
         if (z) {
@@ -168,7 +168,7 @@ public final class zbm {
     }
 
     public static PendingResult zbg(GoogleApiClient googleApiClient, Context context, boolean z) {
-        zba.m793d("Signing out", new Object[0]);
+        zba.m1085d("Signing out", new Object[0]);
         zbh(context);
         if (z) {
             return PendingResults.immediatePendingResult(Status.RESULT_SUCCESS, googleApiClient);

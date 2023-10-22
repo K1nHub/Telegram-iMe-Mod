@@ -2,10 +2,11 @@ package com.iMe.utils.extentions.model.wallet;
 
 import com.iMe.model.wallet.home.PriceRateDirection;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalanceExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TokenBalanceExtKt {
     public static final String getDollarsBalanceText(TokenBalance tokenBalance) {
         Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
@@ -30,5 +31,10 @@ public final class TokenBalanceExtKt {
     public static final PriceRateDirection getPriceDirection(TokenBalance tokenBalance) {
         Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
         return tokenBalance.getRatePercentageChange24h() > 0.0d ? PriceRateDirection.UP : tokenBalance.getRatePercentageChange24h() < 0.0d ? PriceRateDirection.DOWN : PriceRateDirection.NOT_CHANGED;
+    }
+
+    public static final String getInsertedTokenAmountInDollars(TokenBalance tokenBalance, double d) {
+        Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
+        return BalanceFormatter.INSTANCE.formatFiatBalance(Double.valueOf(d * tokenBalance.getRateToFiat().getValue()), Integer.valueOf(TokenDetailed.Companion.getUSD().getDecimals()));
     }
 }

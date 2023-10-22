@@ -5,10 +5,11 @@ import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.internal.SystemPropsKt;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 /* compiled from: Tasks.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TasksKt {
     public static final TaskContext BlockingContext;
     public static final int CORE_POOL_SIZE;
+    public static final String DEFAULT_SCHEDULER_NAME = SystemPropsKt.systemProp("kotlinx.coroutines.scheduler.default.name", "DefaultDispatcher");
     public static final long IDLE_WORKER_KEEP_ALIVE_NS;
     public static final int MAX_POOL_SIZE;
     public static final TaskContext NonBlockingContext;

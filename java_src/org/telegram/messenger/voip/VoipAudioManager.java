@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import android.media.AudioManager;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
@@ -11,7 +11,7 @@ public class VoipAudioManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 

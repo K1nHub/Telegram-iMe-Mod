@@ -9,7 +9,7 @@ import kotlin.text.StringsKt__StringsKt;
 import kotlin.text.StringsKt___StringsKt;
 import org.telegram.messenger.MessageObject;
 /* compiled from: StringExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StringExtKt {
     public static /* synthetic */ String formatISODate$default(String str, DateFormatter.DateType dateType, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -21,12 +21,12 @@ public final class StringExtKt {
     public static final String formatISODate(String str, DateFormatter.DateType dateType) {
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(dateType, "dateType");
-        return DateFormatter.format$default(dateType, DateFormatter.parse$default(DateFormatter.DateType.ISO, str, null, 4, null), null, 4, null);
+        return DateFormatter.format$default(dateType, DateFormatter.parse$default(DateFormatter.DateType.ISO, str, null, null, 12, null), null, null, 12, null);
     }
 
     public static final long parseISODate(String str) {
         Intrinsics.checkNotNullParameter(str, "<this>");
-        return DateFormatter.parse$default(DateFormatter.DateType.ISO, str, null, 4, null).getTime();
+        return DateFormatter.parse$default(DateFormatter.DateType.ISO, str, null, null, 12, null).getTime();
     }
 
     public static /* synthetic */ String stripZeros$default(String str, char c, int i, Object obj) {

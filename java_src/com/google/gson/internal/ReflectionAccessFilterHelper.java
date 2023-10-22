@@ -3,7 +3,7 @@ package com.google.gson.internal;
 import com.google.gson.ReflectionAccessFilter;
 import java.lang.reflect.AccessibleObject;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ReflectionAccessFilterHelper {
     public static ReflectionAccessFilter.FilterResult getFilterResult(List<ReflectionAccessFilter> list, Class<?> cls) {
         for (ReflectionAccessFilter reflectionAccessFilter : list) {
@@ -19,7 +19,7 @@ public class ReflectionAccessFilterHelper {
         return AccessChecker.INSTANCE.canAccess(accessibleObject, obj);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private static abstract class AccessChecker {
         public static final AccessChecker INSTANCE;
 

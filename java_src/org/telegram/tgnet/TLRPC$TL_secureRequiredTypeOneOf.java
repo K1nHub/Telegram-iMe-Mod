@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_secureRequiredTypeOneOf extends TLRPC$SecureRequiredType {
     public static int constructor = 41187252;
     public ArrayList<TLRPC$SecureRequiredType> types = new ArrayList<>();

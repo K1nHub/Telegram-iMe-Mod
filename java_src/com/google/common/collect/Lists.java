@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Lists {
     public static <E> ArrayList<E> newArrayList() {
         return new ArrayList<>();

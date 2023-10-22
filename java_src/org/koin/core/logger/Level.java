@@ -1,6 +1,6 @@
 package org.koin.core.logger;
 /* compiled from: Logger.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public enum Level {
     DEBUG,
     INFO,

@@ -188,7 +188,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Publisher;
 import org.telegram.messenger.NotificationBadge;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Observable<T> implements ObservableSource<T> {
     protected abstract void subscribeActual(Observer<? super T> observer);
 
@@ -1031,7 +1031,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /* renamed from: as */
-    public final <R> R m699as(ObservableConverter<T, ? extends R> observableConverter) {
+    public final <R> R m994as(ObservableConverter<T, ? extends R> observableConverter) {
         return (R) ((ObservableConverter) ObjectHelper.requireNonNull(observableConverter, "converter is null")).apply(this);
     }
 
@@ -2580,7 +2580,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /* renamed from: to */
-    public final <R> R m698to(Function<? super Observable<T>, R> function) {
+    public final <R> R m993to(Function<? super Observable<T>, R> function) {
         try {
             return (R) ((Function) ObjectHelper.requireNonNull(function, "converter is null")).apply(this);
         } catch (Throwable th) {
@@ -2645,7 +2645,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
 
     public final Flowable<T> toFlowable(BackpressureStrategy backpressureStrategy) {
         FlowableFromObservable flowableFromObservable = new FlowableFromObservable(this);
-        int i = C27751.$SwitchMap$io$reactivex$BackpressureStrategy[backpressureStrategy.ordinal()];
+        int i = C26631.$SwitchMap$io$reactivex$BackpressureStrategy[backpressureStrategy.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -2662,8 +2662,8 @@ public abstract class Observable<T> implements ObservableSource<T> {
     }
 
     /* renamed from: io.reactivex.Observable$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C27751 {
+    /* loaded from: classes4.dex */
+    static /* synthetic */ class C26631 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$BackpressureStrategy;
 
         static {

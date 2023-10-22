@@ -2,7 +2,7 @@ package moxy;
 
 import java.util.List;
 import moxy.presenter.PresenterField;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class PresenterBinder<PresentersContainer> {
     public abstract List<PresenterField<? super PresentersContainer>> getPresenterFields();
 }

@@ -7,7 +7,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt__SequencesKt;
 import kotlin.sequences.SequencesKt___SequencesKt;
 /* compiled from: SelectedContactsDataStore.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SelectedContactsDataStore {
     private final LongSparseArray<Void> selectedContactsId = new LongSparseArray<>();
 

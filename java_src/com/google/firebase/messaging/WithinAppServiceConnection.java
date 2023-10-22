@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
@@ -30,7 +30,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class BindRequest {
         final Intent intent;
         private final TaskCompletionSource<Void> taskCompletionSource = new TaskCompletionSource<>();
@@ -43,7 +43,7 @@ class WithinAppServiceConnection implements ServiceConnection {
             final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WithinAppServiceConnection.BindRequest.this.m726x9cf97a38();
+                    WithinAppServiceConnection.BindRequest.this.m1019x9cf97a38();
                 }
             }, 9000L, TimeUnit.MILLISECONDS);
             getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda0
@@ -65,7 +65,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$arrangeTimeout$0$com-google-firebase-messaging-WithinAppServiceConnection$BindRequest */
-        public /* synthetic */ void m726x9cf97a38() {
+        public /* synthetic */ void m1019x9cf97a38() {
             String action = this.intent.getAction();
             StringBuilder sb = new StringBuilder(String.valueOf(action).length() + 61);
             sb.append("Service took too long to process intent: ");

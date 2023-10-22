@@ -203,13 +203,13 @@
     .end packed-switch
 .end method
 
-.method public synthetic m()V
+.method public synthetic l()V
     .locals 0
 
     return-void
 .end method
 
-.method public synthetic n(J)V
+.method public synthetic m(J)V
     .locals 0
 
     return-void

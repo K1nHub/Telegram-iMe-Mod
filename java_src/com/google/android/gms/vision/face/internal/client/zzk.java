@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzk extends com.google.android.gms.internal.vision.zzb implements zzi {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzk(IBinder iBinder) {
@@ -16,10 +16,10 @@ public final class zzk extends com.google.android.gms.internal.vision.zzb implem
     @Override // com.google.android.gms.vision.face.internal.client.zzi
     public final zzh newFaceDetector(IObjectWrapper iObjectWrapper, zzf zzfVar) throws RemoteException {
         zzh zzjVar;
-        Parcel m778a_ = m778a_();
-        com.google.android.gms.internal.vision.zzd.zza(m778a_, iObjectWrapper);
-        com.google.android.gms.internal.vision.zzd.zza(m778a_, zzfVar);
-        Parcel zza = zza(1, m778a_);
+        Parcel m1070a_ = m1070a_();
+        com.google.android.gms.internal.vision.zzd.zza(m1070a_, iObjectWrapper);
+        com.google.android.gms.internal.vision.zzd.zza(m1070a_, zzfVar);
+        Parcel zza = zza(1, m1070a_);
         IBinder readStrongBinder = zza.readStrongBinder();
         if (readStrongBinder == null) {
             zzjVar = null;

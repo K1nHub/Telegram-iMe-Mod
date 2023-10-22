@@ -1,6 +1,6 @@
 package com.iMe.fork.enums;
 /* compiled from: TranslationDialogType.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public enum TranslationDialogType {
     INCOMING,
     OUTGOING,

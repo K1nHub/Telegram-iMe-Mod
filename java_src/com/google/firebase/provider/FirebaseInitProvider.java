@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.FirebaseApp;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FirebaseInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public int delete(Uri uri, String str, String[] strArr) {

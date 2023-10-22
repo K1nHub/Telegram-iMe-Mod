@@ -1,8 +1,9 @@
 package kotlinx.coroutines.internal;
 
+import _COROUTINE.ArtificialStackFrames;
+import _COROUTINE.CoroutineDebuggingKt;
 import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.Objects;
 import kotlin.Pair;
 import kotlin.Result;
 import kotlin.ResultKt;
@@ -10,11 +11,11 @@ import kotlin.TuplesKt;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
-import kotlinx.coroutines.CopyableThrowable;
 import kotlinx.coroutines.DebugKt;
 /* compiled from: StackTraceRecovery.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StackTraceRecoveryKt {
+    private static final StackTraceElement ARTIFICIAL_FRAME = new ArtificialStackFrames().coroutineBoundary();
     private static final String baseContinuationImplClassName;
     private static final String stackTraceRecoveryClassName;
 
@@ -24,49 +25,62 @@ public final class StackTraceRecoveryKt {
 
     static {
         Object obj;
-        Object m1658constructorimpl;
+        Object m1935constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m1658constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
+            obj = Result.m1935constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1658constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m1935constructorimpl(ResultKt.createFailure(th));
         }
-        baseContinuationImplClassName = (String) (Result.m1659exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
+        baseContinuationImplClassName = (String) (Result.m1938exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
         try {
             Result.Companion companion3 = Result.Companion;
-            m1658constructorimpl = Result.m1658constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
+            m1935constructorimpl = Result.m1935constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th2));
+            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m1659exceptionOrNullimpl(m1658constructorimpl) != null) {
-            m1658constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (Result.m1938exceptionOrNullimpl(m1935constructorimpl) != null) {
+            m1935constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
-        stackTraceRecoveryClassName = (String) m1658constructorimpl;
+        stackTraceRecoveryClassName = (String) m1935constructorimpl;
     }
 
     public static final <E extends Throwable> E recoverStackTrace(E e) {
-        Throwable tryCopyAndVerify;
-        return (DebugKt.getRECOVER_STACK_TRACES() && (tryCopyAndVerify = tryCopyAndVerify(e)) != null) ? (E) sanitizeStackTrace(tryCopyAndVerify) : e;
+        Throwable tryCopyException;
+        return (DebugKt.getRECOVER_STACK_TRACES() && (tryCopyException = ExceptionsConstructorKt.tryCopyException(e)) != null) ? (E) sanitizeStackTrace(tryCopyException) : e;
     }
 
     private static final <E extends Throwable> E sanitizeStackTrace(E e) {
         StackTraceElement stackTraceElement;
         StackTraceElement[] stackTrace = e.getStackTrace();
         int length = stackTrace.length;
-        int frameIndex = frameIndex(stackTrace, stackTraceRecoveryClassName);
-        int i = frameIndex + 1;
-        int frameIndex2 = frameIndex(stackTrace, baseContinuationImplClassName);
-        int i2 = (length - frameIndex) - (frameIndex2 == -1 ? 0 : length - frameIndex2);
-        StackTraceElement[] stackTraceElementArr = new StackTraceElement[i2];
-        for (int i3 = 0; i3 < i2; i3++) {
-            if (i3 == 0) {
-                stackTraceElement = artificialFrame("Coroutine boundary");
-            } else {
-                stackTraceElement = stackTrace[(i + i3) - 1];
+        int length2 = stackTrace.length - 1;
+        if (length2 >= 0) {
+            while (true) {
+                int i = length2 - 1;
+                if (Intrinsics.areEqual(stackTraceRecoveryClassName, stackTrace[length2].getClassName())) {
+                    break;
+                } else if (i < 0) {
+                    break;
+                } else {
+                    length2 = i;
+                }
             }
-            stackTraceElementArr[i3] = stackTraceElement;
+        }
+        length2 = -1;
+        int i2 = length2 + 1;
+        int firstFrameIndex = firstFrameIndex(stackTrace, baseContinuationImplClassName);
+        int i3 = (length - length2) - (firstFrameIndex == -1 ? 0 : length - firstFrameIndex);
+        StackTraceElement[] stackTraceElementArr = new StackTraceElement[i3];
+        for (int i4 = 0; i4 < i3; i4++) {
+            if (i4 == 0) {
+                stackTraceElement = ARTIFICIAL_FRAME;
+            } else {
+                stackTraceElement = stackTrace[(i2 + i4) - 1];
+            }
+            stackTraceElementArr[i4] = stackTraceElement;
         }
         e.setStackTrace(stackTraceElementArr);
         return e;
@@ -76,8 +90,8 @@ public final class StackTraceRecoveryKt {
         Pair causeAndStacktrace = causeAndStacktrace(e);
         Throwable th = (Throwable) causeAndStacktrace.component1();
         StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) causeAndStacktrace.component2();
-        Throwable tryCopyAndVerify = tryCopyAndVerify(th);
-        if (tryCopyAndVerify == null) {
+        Throwable tryCopyException = ExceptionsConstructorKt.tryCopyException(th);
+        if (tryCopyException == null) {
             return e;
         }
         ArrayDeque<StackTraceElement> createStackTrace = createStackTrace(coroutineStackFrame);
@@ -87,38 +101,25 @@ public final class StackTraceRecoveryKt {
         if (th != e) {
             mergeRecoveredTraces(stackTraceElementArr, createStackTrace);
         }
-        return (E) createFinalException(th, tryCopyAndVerify, createStackTrace);
-    }
-
-    private static final <E extends Throwable> E tryCopyAndVerify(E e) {
-        E e2 = (E) ExceptionsConstructorKt.tryCopyException(e);
-        if (e2 == null) {
-            return null;
-        }
-        if ((e instanceof CopyableThrowable) || Intrinsics.areEqual(e2.getMessage(), e.getMessage())) {
-            return e2;
-        }
-        return null;
+        return (E) createFinalException(th, tryCopyException, createStackTrace);
     }
 
     private static final <E extends Throwable> E createFinalException(E e, E e2, ArrayDeque<StackTraceElement> arrayDeque) {
-        arrayDeque.addFirst(artificialFrame("Coroutine boundary"));
+        arrayDeque.addFirst(ARTIFICIAL_FRAME);
         StackTraceElement[] stackTrace = e.getStackTrace();
-        int frameIndex = frameIndex(stackTrace, baseContinuationImplClassName);
+        int firstFrameIndex = firstFrameIndex(stackTrace, baseContinuationImplClassName);
         int i = 0;
-        if (frameIndex == -1) {
-            Object[] array = arrayDeque.toArray(new StackTraceElement[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            e2.setStackTrace((StackTraceElement[]) array);
+        if (firstFrameIndex == -1) {
+            e2.setStackTrace((StackTraceElement[]) arrayDeque.toArray(new StackTraceElement[0]));
             return e2;
         }
-        StackTraceElement[] stackTraceElementArr = new StackTraceElement[arrayDeque.size() + frameIndex];
-        for (int i2 = 0; i2 < frameIndex; i2++) {
+        StackTraceElement[] stackTraceElementArr = new StackTraceElement[arrayDeque.size() + firstFrameIndex];
+        for (int i2 = 0; i2 < firstFrameIndex; i2++) {
             stackTraceElementArr[i2] = stackTrace[i2];
         }
         Iterator<StackTraceElement> it = arrayDeque.iterator();
         while (it.hasNext()) {
-            stackTraceElementArr[i + frameIndex] = it.next();
+            stackTraceElementArr[i + firstFrameIndex] = it.next();
             i++;
         }
         e2.setStackTrace(stackTraceElementArr);
@@ -144,11 +145,11 @@ public final class StackTraceRecoveryKt {
                 }
             }
             if (z) {
-                return TuplesKt.m103to(cause, stackTrace);
+                return TuplesKt.m144to(cause, stackTrace);
             }
-            return TuplesKt.m103to(e, new StackTraceElement[0]);
+            return TuplesKt.m144to(e, new StackTraceElement[0]);
         }
-        return TuplesKt.m103to(e, new StackTraceElement[0]);
+        return TuplesKt.m144to(e, new StackTraceElement[0]);
     }
 
     public static final <E extends Throwable> E unwrapImpl(E e) {
@@ -193,13 +194,9 @@ public final class StackTraceRecoveryKt {
         }
     }
 
-    public static final StackTraceElement artificialFrame(String str) {
-        return new StackTraceElement("\b\b\b(" + str, "\b", "\b", -1);
-    }
-
     public static final boolean isArtificial(StackTraceElement stackTraceElement) {
         boolean startsWith$default;
-        startsWith$default = StringsKt__StringsJVMKt.startsWith$default(stackTraceElement.getClassName(), "\b\b\b", false, 2, null);
+        startsWith$default = StringsKt__StringsJVMKt.startsWith$default(stackTraceElement.getClassName(), CoroutineDebuggingKt.getARTIFICIAL_FRAME_PACKAGE_NAME(), false, 2, null);
         return startsWith$default;
     }
 
@@ -207,7 +204,7 @@ public final class StackTraceRecoveryKt {
         return stackTraceElement.getLineNumber() == stackTraceElement2.getLineNumber() && Intrinsics.areEqual(stackTraceElement.getMethodName(), stackTraceElement2.getMethodName()) && Intrinsics.areEqual(stackTraceElement.getFileName(), stackTraceElement2.getFileName()) && Intrinsics.areEqual(stackTraceElement.getClassName(), stackTraceElement2.getClassName());
     }
 
-    private static final int frameIndex(StackTraceElement[] stackTraceElementArr, String str) {
+    private static final int firstFrameIndex(StackTraceElement[] stackTraceElementArr, String str) {
         int length = stackTraceElementArr.length;
         for (int i = 0; i < length; i++) {
             if (Intrinsics.areEqual(str, stackTraceElementArr[i].getClassName())) {

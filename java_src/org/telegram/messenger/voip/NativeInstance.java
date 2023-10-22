@@ -11,7 +11,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.voip.Instance;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class NativeInstance {
     private AudioLevelsCallback audioLevelsCallback;
     private RequestBroadcastPartCallback cancelRequestBroadcastPartCallback;
@@ -30,33 +30,33 @@ public class NativeInstance {
     private float[] temp = new float[1];
     private VideoSourcesCallback unknownParticipantsCallback;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface AudioLevelsCallback {
         void run(int[] iArr, float[] fArr, boolean[] zArr);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface PayloadCallback {
         void run(int i, String str);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface RequestBroadcastPartCallback {
         void run(long j, long j2, int i, int i2);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface RequestCurrentTimeCallback {
         void run(long j);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static class SsrcGroup {
         public String semantics;
         public int[] ssrcs;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public interface VideoSourcesCallback {
         void run(long j, int[] iArr);
     }
@@ -145,7 +145,7 @@ public class NativeInstance {
 
     public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, AudioLevelsCallback audioLevelsCallback) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m70d("create new tgvoip instance, version " + str);
+            FileLog.m100d("create new tgvoip instance, version " + str);
         }
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.persistentStateFilePath = str2;
@@ -282,7 +282,7 @@ public class NativeInstance {
                 }
             });
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
     }
 
@@ -312,7 +312,7 @@ public class NativeInstance {
         try {
             this.stopBarrier.await();
         } catch (Exception e) {
-            FileLog.m67e(e);
+            FileLog.m97e(e);
         }
         return this.finalState;
     }

@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectableTokenItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class SelectableTokenItem {
     private final SelectableTokenBalance balance;
     private final boolean isBinance;

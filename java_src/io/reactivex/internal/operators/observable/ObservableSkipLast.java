@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.ArrayDeque;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableSkipLast<T> extends AbstractObservableWithUpstream<T, T> {
     final int skip;
 
@@ -19,7 +19,7 @@ public final class ObservableSkipLast<T> extends AbstractObservableWithUpstream<
         this.source.subscribe(new SkipLastObserver(observer, this.skip));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SkipLastObserver<T> extends ArrayDeque<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         final int skip;

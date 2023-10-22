@@ -3,7 +3,7 @@ package okhttp3.internal.http2;
 import java.io.IOException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StreamResetException.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class StreamResetException extends IOException {
     public final ErrorCode errorCode;
 

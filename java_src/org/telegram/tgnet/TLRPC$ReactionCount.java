@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public abstract class TLRPC$ReactionCount extends TLObject {
     public boolean chosen;
     public int chosen_order;

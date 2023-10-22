@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_encryptedChatRequested extends TLRPC$EncryptedChat {
     public static int constructor = 1223809356;
 
@@ -10,7 +10,7 @@ public class TLRPC$TL_encryptedChatRequested extends TLRPC$EncryptedChat {
         if ((readInt32 & 1) != 0) {
             this.folder_id = abstractSerializedData.readInt32(z);
         }
-        this.f1534id = abstractSerializedData.readInt32(z);
+        this.f1612id = abstractSerializedData.readInt32(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.admin_id = abstractSerializedData.readInt64(z);
@@ -25,7 +25,7 @@ public class TLRPC$TL_encryptedChatRequested extends TLRPC$EncryptedChat {
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.folder_id);
         }
-        abstractSerializedData.writeInt32(this.f1534id);
+        abstractSerializedData.writeInt32(this.f1612id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt64(this.admin_id);

@@ -2,7 +2,7 @@ package org.telegram.tgnet;
 
 import android.graphics.Path;
 import org.telegram.messenger.SvgHelper;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_photoPathSize extends TLRPC$PhotoSize {
     public static int constructor = -668906175;
     public Path svgPath;
@@ -12,8 +12,8 @@ public class TLRPC$TL_photoPathSize extends TLRPC$PhotoSize {
         this.type = abstractSerializedData.readString(z);
         byte[] readByteArray = abstractSerializedData.readByteArray(z);
         this.bytes = readByteArray;
-        this.f1553h = 50;
-        this.f1554w = 50;
+        this.f1631h = 50;
+        this.f1632w = 50;
         this.svgPath = SvgHelper.doPath(SvgHelper.decompress(readByteArray));
     }
 

@@ -5,13 +5,18 @@ import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.ExceptionsKt__ExceptionsKt;
 import kotlin.Unit;
+import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
+import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -23,11 +28,12 @@ import kotlinx.coroutines.internal.OpDescriptor;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: JobSupport.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class JobSupport implements Job, ChildJob, ParentJob {
-    private static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(JobSupport.class, Object.class, "_state");
-    private volatile /* synthetic */ Object _parentHandle;
-    private volatile /* synthetic */ Object _state;
+    private volatile Object _parentHandle;
+    private volatile Object _state;
+    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(JobSupport.class, Object.class, "_state");
+    private static final AtomicReferenceFieldUpdater _parentHandle$FU = AtomicReferenceFieldUpdater.newUpdater(JobSupport.class, Object.class, "_parentHandle");
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void afterCompletion(Object obj) {
@@ -65,10 +71,9 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     public JobSupport(boolean z) {
         this._state = z ? JobSupportKt.EMPTY_ACTIVE : JobSupportKt.EMPTY_NEW;
-        this._parentHandle = null;
     }
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) Job.DefaultImpls.fold(this, r, function2);
     }
@@ -78,7 +83,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return (E) Job.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return Job.DefaultImpls.minusKey(this, key);
     }
@@ -114,11 +119,20 @@ public class JobSupport implements Job, ChildJob, ParentJob {
     }
 
     public final ChildHandle getParentHandle$kotlinx_coroutines_core() {
-        return (ChildHandle) this._parentHandle;
+        return (ChildHandle) _parentHandle$FU.get(this);
     }
 
     public final void setParentHandle$kotlinx_coroutines_core(ChildHandle childHandle) {
-        this._parentHandle = childHandle;
+        _parentHandle$FU.set(this, childHandle);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public Job getParent() {
+        ChildHandle parentHandle$kotlinx_coroutines_core = getParentHandle$kotlinx_coroutines_core();
+        if (parentHandle$kotlinx_coroutines_core != null) {
+            return parentHandle$kotlinx_coroutines_core.getParent();
+        }
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -138,6 +152,17 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         if (isCompleted()) {
             attachChild.dispose();
             setParentHandle$kotlinx_coroutines_core(NonDisposableHandle.INSTANCE);
+        }
+    }
+
+    public final Object getState$kotlinx_coroutines_core() {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        while (true) {
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            if (!(obj instanceof OpDescriptor)) {
+                return obj;
+            }
+            ((OpDescriptor) obj).perform(this);
         }
     }
 
@@ -216,6 +241,25 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         }
     }
 
+    public final boolean makeCompleting$kotlinx_coroutines_core(Object obj) {
+        Object tryMakeCompleting;
+        Symbol symbol;
+        Symbol symbol2;
+        do {
+            tryMakeCompleting = tryMakeCompleting(getState$kotlinx_coroutines_core(), obj);
+            symbol = JobSupportKt.COMPLETING_ALREADY;
+            if (tryMakeCompleting == symbol) {
+                return false;
+            }
+            if (tryMakeCompleting == JobSupportKt.COMPLETING_WAITING_CHILDREN) {
+                return true;
+            }
+            symbol2 = JobSupportKt.COMPLETING_RETRY;
+        } while (tryMakeCompleting == symbol2);
+        afterCompletion(tryMakeCompleting);
+        return true;
+    }
+
     public final Object makeCompletingOnce$kotlinx_coroutines_core(Object obj) {
         Object tryMakeCompleting;
         Symbol symbol;
@@ -242,7 +286,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (!(state$kotlinx_coroutines_core instanceof Incomplete) || ((Incomplete) state$kotlinx_coroutines_core).getList() == null) {
                     return;
                 }
-                jobNode.mo1687remove();
+                jobNode.remove();
                 return;
             } else if (state$kotlinx_coroutines_core != jobNode) {
                 return;
@@ -271,10 +315,12 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return (state$kotlinx_coroutines_core instanceof Incomplete) && ((Incomplete) state$kotlinx_coroutines_core).isActive();
     }
 
+    @Override // kotlinx.coroutines.Job
     public final boolean isCompleted() {
         return !(getState$kotlinx_coroutines_core() instanceof Incomplete);
     }
 
+    @Override // kotlinx.coroutines.Job
     public final boolean isCancelled() {
         Object state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
         return (state$kotlinx_coroutines_core instanceof CompletedExceptionally) || ((state$kotlinx_coroutines_core instanceof Finishing) && ((Finishing) state$kotlinx_coroutines_core).isCancelling());
@@ -309,7 +355,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                         z = false;
                     }
                     if (z) {
-                        Objects.requireNonNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally");
+                        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally");
                         ((CompletedExceptionally) obj).makeHandled();
                     }
                 }
@@ -330,7 +376,9 @@ public class JobSupport implements Job, ChildJob, ParentJob {
     }
 
     private final Throwable getFinalRootCause(Finishing finishing, List<? extends Throwable> list) {
-        Object obj = null;
+        Object obj;
+        boolean z;
+        Object obj2 = null;
         if (list.isEmpty()) {
             if (finishing.isCancelling()) {
                 return new JobCancellationException(cancellationExceptionMessage(), null, this);
@@ -340,16 +388,45 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         Iterator<T> it = list.iterator();
         while (true) {
             if (!it.hasNext()) {
+                obj = null;
                 break;
             }
-            Object next = it.next();
-            if (!(((Throwable) next) instanceof CancellationException)) {
-                obj = next;
+            obj = it.next();
+            if (!(((Throwable) obj) instanceof CancellationException)) {
                 break;
             }
         }
         Throwable th = (Throwable) obj;
-        return th != null ? th : list.get(0);
+        if (th != null) {
+            return th;
+        }
+        Throwable th2 = list.get(0);
+        if (th2 instanceof TimeoutCancellationException) {
+            Iterator<T> it2 = list.iterator();
+            while (true) {
+                if (!it2.hasNext()) {
+                    break;
+                }
+                Object next = it2.next();
+                Throwable th3 = (Throwable) next;
+                if (th3 == th2 || !(th3 instanceof TimeoutCancellationException)) {
+                    z = false;
+                    continue;
+                } else {
+                    z = true;
+                    continue;
+                }
+                if (z) {
+                    obj2 = next;
+                    break;
+                }
+            }
+            Throwable th4 = (Throwable) obj2;
+            if (th4 != null) {
+                return th4;
+            }
+        }
+        return th2;
     }
 
     private final void addSuppressedExceptions(Throwable th, List<? extends Throwable> list) {
@@ -411,8 +488,10 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     private final void notifyCancelling(NodeList nodeList, Throwable th) {
         onCancelling(th);
+        Object next = nodeList.getNext();
+        Intrinsics.checkNotNull(next, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
         CompletionHandlerException completionHandlerException = null;
-        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) nodeList.getNext(); !Intrinsics.areEqual(lockFreeLinkedListNode, nodeList); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
+        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) next; !Intrinsics.areEqual(lockFreeLinkedListNode, nodeList); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
             if (lockFreeLinkedListNode instanceof JobCancellingNode) {
                 JobNode jobNode = (JobNode) lockFreeLinkedListNode;
                 try {
@@ -431,6 +510,30 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             handleOnCompletionException$kotlinx_coroutines_core(completionHandlerException);
         }
         cancelParent(th);
+    }
+
+    private final void notifyCompletion(NodeList nodeList, Throwable th) {
+        Object next = nodeList.getNext();
+        Intrinsics.checkNotNull(next, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
+        CompletionHandlerException completionHandlerException = null;
+        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) next; !Intrinsics.areEqual(lockFreeLinkedListNode, nodeList); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
+            if (lockFreeLinkedListNode instanceof JobNode) {
+                JobNode jobNode = (JobNode) lockFreeLinkedListNode;
+                try {
+                    jobNode.invoke(th);
+                } catch (Throwable th2) {
+                    if (completionHandlerException != null) {
+                        ExceptionsKt__ExceptionsKt.addSuppressed(completionHandlerException, th2);
+                    } else {
+                        completionHandlerException = new CompletionHandlerException("Exception in completion handler " + jobNode + " for " + this, th2);
+                        Unit unit = Unit.INSTANCE;
+                    }
+                }
+            }
+        }
+        if (completionHandlerException != null) {
+            handleOnCompletionException$kotlinx_coroutines_core(completionHandlerException);
+        }
     }
 
     private final boolean cancelParent(Throwable th) {
@@ -508,6 +611,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return cancellationException;
     }
 
+    @Override // kotlinx.coroutines.Job
     public final DisposableHandle invokeOnCompletion(Function1<? super Throwable, Unit> function1) {
         return invokeOnCompletion(false, true, function1);
     }
@@ -530,7 +634,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
                 if (state$kotlinx_coroutines_core instanceof Incomplete) {
                     NodeList list = ((Incomplete) state$kotlinx_coroutines_core).getList();
                     if (list == null) {
-                        Objects.requireNonNull(state$kotlinx_coroutines_core, "null cannot be cast to non-null type kotlinx.coroutines.JobNode");
+                        Intrinsics.checkNotNull(state$kotlinx_coroutines_core, "null cannot be cast to non-null type kotlinx.coroutines.JobNode");
                         promoteSingleToNodeList((JobNode) state$kotlinx_coroutines_core);
                     } else {
                         DisposableHandle disposableHandle = NonDisposableHandle.INSTANCE;
@@ -613,28 +717,6 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         cancelImpl$kotlinx_coroutines_core(parentJob);
     }
 
-    private final void notifyCompletion(NodeList nodeList, Throwable th) {
-        CompletionHandlerException completionHandlerException = null;
-        for (LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) nodeList.getNext(); !Intrinsics.areEqual(lockFreeLinkedListNode, nodeList); lockFreeLinkedListNode = lockFreeLinkedListNode.getNextNode()) {
-            if (lockFreeLinkedListNode instanceof JobNode) {
-                JobNode jobNode = (JobNode) lockFreeLinkedListNode;
-                try {
-                    jobNode.invoke(th);
-                } catch (Throwable th2) {
-                    if (completionHandlerException != null) {
-                        ExceptionsKt__ExceptionsKt.addSuppressed(completionHandlerException, th2);
-                    } else {
-                        completionHandlerException = new CompletionHandlerException("Exception in completion handler " + jobNode + " for " + this, th2);
-                        Unit unit = Unit.INSTANCE;
-                    }
-                }
-            }
-        }
-        if (completionHandlerException != null) {
-            handleOnCompletionException$kotlinx_coroutines_core(completionHandlerException);
-        }
-    }
-
     public boolean childCancelled(Throwable th) {
         if (th instanceof CancellationException) {
             return true;
@@ -704,7 +786,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             Throwable th = (Throwable) obj;
             return th == null ? new JobCancellationException(cancellationExceptionMessage(), null, this) : th;
         }
-        Objects.requireNonNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.ParentJob");
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.ParentJob");
         return ((ParentJob) obj).getChildJobCancellationCause();
     }
 
@@ -868,7 +950,9 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     @Override // kotlinx.coroutines.Job
     public final ChildHandle attachChild(ChildJob childJob) {
-        return (ChildHandle) Job.DefaultImpls.invokeOnCompletion$default(this, true, false, new ChildHandleNode(childJob), 2, null);
+        DisposableHandle invokeOnCompletion$default = Job.DefaultImpls.invokeOnCompletion$default(this, true, false, new ChildHandleNode(childJob), 2, null);
+        Intrinsics.checkNotNull(invokeOnCompletion$default, "null cannot be cast to non-null type kotlinx.coroutines.ChildHandle");
+        return (ChildHandle) invokeOnCompletion$default;
     }
 
     public void handleOnCompletionException$kotlinx_coroutines_core(Throwable th) {
@@ -897,12 +981,15 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: JobSupport.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Finishing implements Incomplete {
-        private volatile /* synthetic */ Object _exceptionsHolder = null;
-        private volatile /* synthetic */ int _isCompleting;
-        private volatile /* synthetic */ Object _rootCause;
+        private volatile Object _exceptionsHolder;
+        private volatile int _isCompleting;
+        private volatile Object _rootCause;
         private final NodeList list;
+        private static final AtomicIntegerFieldUpdater _isCompleting$FU = AtomicIntegerFieldUpdater.newUpdater(Finishing.class, "_isCompleting");
+        private static final AtomicReferenceFieldUpdater _rootCause$FU = AtomicReferenceFieldUpdater.newUpdater(Finishing.class, Object.class, "_rootCause");
+        private static final AtomicReferenceFieldUpdater _exceptionsHolder$FU = AtomicReferenceFieldUpdater.newUpdater(Finishing.class, Object.class, "_exceptionsHolder");
 
         @Override // kotlinx.coroutines.Incomplete
         public NodeList getList() {
@@ -915,29 +1002,28 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             this._rootCause = th;
         }
 
-        /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
         public final boolean isCompleting() {
-            return this._isCompleting;
+            return _isCompleting$FU.get(this) != 0;
         }
 
         public final void setCompleting(boolean z) {
-            this._isCompleting = z ? 1 : 0;
+            _isCompleting$FU.set(this, z ? 1 : 0);
         }
 
         public final Throwable getRootCause() {
-            return (Throwable) this._rootCause;
+            return (Throwable) _rootCause$FU.get(this);
         }
 
         public final void setRootCause(Throwable th) {
-            this._rootCause = th;
+            _rootCause$FU.set(this, th);
         }
 
         private final Object getExceptionsHolder() {
-            return this._exceptionsHolder;
+            return _exceptionsHolder$FU.get(this);
         }
 
         private final void setExceptionsHolder(Object obj) {
-            this._exceptionsHolder = obj;
+            _exceptionsHolder$FU.set(this, obj);
         }
 
         public final boolean isSealed() {
@@ -1020,7 +1106,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: JobSupport.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class ChildCompletion extends JobNode {
         private final ChildHandleNode child;
         private final JobSupport parent;
@@ -1047,13 +1133,64 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         }
     }
 
-    public final Object getState$kotlinx_coroutines_core() {
-        while (true) {
-            Object obj = this._state;
-            if (!(obj instanceof OpDescriptor)) {
-                return obj;
-            }
-            ((OpDescriptor) obj).perform(this);
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: JobSupport.kt */
+    /* loaded from: classes4.dex */
+    public static final class AwaitContinuation<T> extends CancellableContinuationImpl<T> {
+        private final JobSupport job;
+
+        @Override // kotlinx.coroutines.CancellableContinuationImpl
+        protected String nameString() {
+            return "AwaitContinuation";
         }
+
+        public AwaitContinuation(Continuation<? super T> continuation, JobSupport jobSupport) {
+            super(continuation, 1);
+            this.job = jobSupport;
+        }
+
+        @Override // kotlinx.coroutines.CancellableContinuationImpl
+        public Throwable getContinuationCancellationCause(Job job) {
+            Throwable rootCause;
+            Object state$kotlinx_coroutines_core = this.job.getState$kotlinx_coroutines_core();
+            return (!(state$kotlinx_coroutines_core instanceof Finishing) || (rootCause = ((Finishing) state$kotlinx_coroutines_core).getRootCause()) == null) ? state$kotlinx_coroutines_core instanceof CompletedExceptionally ? ((CompletedExceptionally) state$kotlinx_coroutines_core).cause : job.getCancellationException() : rootCause;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final Object awaitInternal(Continuation<Object> continuation) {
+        Object state$kotlinx_coroutines_core;
+        do {
+            state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
+            if (!(state$kotlinx_coroutines_core instanceof Incomplete)) {
+                if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
+                    Throwable th = ((CompletedExceptionally) state$kotlinx_coroutines_core).cause;
+                    if (!DebugKt.getRECOVER_STACK_TRACES()) {
+                        throw th;
+                    }
+                    if (continuation instanceof CoroutineStackFrame) {
+                        throw StackTraceRecoveryKt.access$recoverFromStackFrame(th, (CoroutineStackFrame) continuation);
+                    }
+                    throw th;
+                }
+                return JobSupportKt.unboxState(state$kotlinx_coroutines_core);
+            }
+        } while (startInternal(state$kotlinx_coroutines_core) < 0);
+        return awaitSuspend(continuation);
+    }
+
+    private final Object awaitSuspend(Continuation<Object> continuation) {
+        Continuation intercepted;
+        Object coroutine_suspended;
+        intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
+        AwaitContinuation awaitContinuation = new AwaitContinuation(intercepted, this);
+        awaitContinuation.initCancellability();
+        CancellableContinuationKt.disposeOnCancellation(awaitContinuation, invokeOnCompletion(new ResumeAwaitOnCompletion(awaitContinuation)));
+        Object result = awaitContinuation.getResult();
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        if (result == coroutine_suspended) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
+        }
+        return result;
     }
 }

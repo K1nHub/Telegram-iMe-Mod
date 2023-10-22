@@ -2,6 +2,8 @@ package com.iMe.storage.data.utils.system;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.net.Uri;
 import androidx.core.content.ContextCompat;
 import androidx.core.p010os.ConfigurationCompat;
 import com.iMe.storage.domain.gateway.TelegramGateway;
@@ -13,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: AndroidResourceManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AndroidResourceManager implements ResourceManager {
     private Configuration config;
     private Context context;
@@ -63,6 +65,14 @@ public final class AndroidResourceManager implements ResourceManager {
     @Override // com.iMe.storage.domain.utils.system.ResourceManager
     public float getDimens(int i) {
         return this.context.getResources().getDimension(i);
+    }
+
+    @Override // com.iMe.storage.domain.utils.system.ResourceManager
+    public Uri getUriDrawable(int i) {
+        Resources resources = this.context.getResources();
+        Uri build = new Uri.Builder().scheme("android.resource").authority(resources.getResourcePackageName(i)).appendPath(resources.getResourceTypeName(i)).appendPath(resources.getResourceEntryName(i)).build();
+        Intrinsics.checkNotNullExpressionValue(build, "Builder()\n            .s…Id))\n            .build()");
+        return build;
     }
 
     private final Locale resolveCorrectLocale() {

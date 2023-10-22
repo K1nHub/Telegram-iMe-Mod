@@ -5,7 +5,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 final class zzij implements Callable {
     final /* synthetic */ ParcelFileDescriptor zza;
     final /* synthetic */ byte[] zzb;

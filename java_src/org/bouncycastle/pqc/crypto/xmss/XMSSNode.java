@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import java.io.Serializable;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class XMSSNode implements Serializable {
     private final int height;
     private final byte[] value;

@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.math.linearalgebra;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class Matrix {
     protected int numColumns;
     protected int numRows;

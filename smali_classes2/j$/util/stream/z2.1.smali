@@ -13,7 +13,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;Lj$/util/function/y;)V
+.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;Lj$/util/function/x;)V
     .locals 1
 
     const/4 v0, 0x3
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/u;Lj$/util/function/y;)V
+.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/t;Lj$/util/function/x;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -70,7 +70,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/v;Lj$/util/function/y;)V
+.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/u;Lj$/util/function/x;)V
     .locals 1
 
     const/4 v0, 0x4
@@ -89,7 +89,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/w;Lj$/util/function/y;)V
+.method public constructor <init>(Lj$/util/stream/e4;Lj$/util/function/b;Lj$/util/function/v;Lj$/util/function/x;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -125,7 +125,7 @@
 
     iget-object v1, p0, Lj$/util/stream/z2;->e:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/y;
+    check-cast v1, Lj$/util/function/x;
 
     iget-object v2, p0, Lj$/util/stream/z2;->d:Ljava/lang/Object;
 
@@ -135,7 +135,7 @@
 
     check-cast v3, Lj$/util/function/BiConsumer;
 
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/K2;-><init>(Lj$/util/function/y;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/K2;-><init>(Lj$/util/function/x;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
 
     return-object v0
 
@@ -163,17 +163,17 @@
 
     iget-object v1, p0, Lj$/util/stream/z2;->e:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/y;
+    check-cast v1, Lj$/util/function/x;
 
     iget-object v2, p0, Lj$/util/stream/z2;->d:Ljava/lang/Object;
 
-    check-cast v2, Lj$/util/function/u;
+    check-cast v2, Lj$/util/function/t;
 
     iget-object v3, p0, Lj$/util/stream/z2;->c:Ljava/lang/Object;
 
     check-cast v3, Lj$/util/function/b;
 
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/F2;-><init>(Lj$/util/function/y;Lj$/util/function/u;Lj$/util/function/b;)V
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/F2;-><init>(Lj$/util/function/x;Lj$/util/function/t;Lj$/util/function/b;)V
 
     return-object v0
 
@@ -183,27 +183,7 @@
 
     iget-object v1, p0, Lj$/util/stream/z2;->e:Ljava/lang/Object;
 
-    check-cast v1, Lj$/util/function/y;
-
-    iget-object v2, p0, Lj$/util/stream/z2;->d:Ljava/lang/Object;
-
-    check-cast v2, Lj$/util/function/w;
-
-    iget-object v3, p0, Lj$/util/stream/z2;->c:Ljava/lang/Object;
-
-    check-cast v3, Lj$/util/function/b;
-
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/A2;-><init>(Lj$/util/function/y;Lj$/util/function/w;Lj$/util/function/b;)V
-
-    return-object v0
-
-    .line 5
-    :goto_0
-    new-instance v0, Lj$/util/stream/O2;
-
-    iget-object v1, p0, Lj$/util/stream/z2;->e:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/function/y;
+    check-cast v1, Lj$/util/function/x;
 
     iget-object v2, p0, Lj$/util/stream/z2;->d:Ljava/lang/Object;
 
@@ -213,7 +193,27 @@
 
     check-cast v3, Lj$/util/function/b;
 
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/O2;-><init>(Lj$/util/function/y;Lj$/util/function/v;Lj$/util/function/b;)V
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/A2;-><init>(Lj$/util/function/x;Lj$/util/function/v;Lj$/util/function/b;)V
+
+    return-object v0
+
+    .line 5
+    :goto_0
+    new-instance v0, Lj$/util/stream/O2;
+
+    iget-object v1, p0, Lj$/util/stream/z2;->e:Ljava/lang/Object;
+
+    check-cast v1, Lj$/util/function/x;
+
+    iget-object v2, p0, Lj$/util/stream/z2;->d:Ljava/lang/Object;
+
+    check-cast v2, Lj$/util/function/u;
+
+    iget-object v3, p0, Lj$/util/stream/z2;->c:Ljava/lang/Object;
+
+    check-cast v3, Lj$/util/function/b;
+
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/O2;-><init>(Lj$/util/function/x;Lj$/util/function/u;Lj$/util/function/b;)V
 
     return-object v0
 

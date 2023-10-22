@@ -21,7 +21,7 @@ import com.iMe.fork.enums.TemplatesSortingType;
 import com.iMe.fork.enums.VideoVoiceCamera;
 import com.iMe.fork.models.backup.Backup;
 import com.iMe.fork.utils.Callbacks$Callback1;
-import com.iMe.p031ui.drawer.DrawerSwitchableItem;
+import com.iMe.p030ui.drawer.DrawerItem;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import java.io.FileReader;
@@ -43,19 +43,19 @@ import org.koin.core.component.KoinScopeComponent;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p042mp.KoinPlatformTools;
+import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.ActionBar.BaseFragment;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: BackupController.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class BackupController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, BackupController> accountInstances = new ConcurrentHashMap<>(5);
@@ -65,7 +65,7 @@ public final class BackupController extends BaseController implements KoinCompon
     private Interval selectedAutoBackupInterval;
 
     /* compiled from: BackupController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -218,16 +218,16 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /*  JADX ERROR: IndexOutOfBoundsException in pass: SSATransform
-        java.lang.IndexOutOfBoundsException: bitIndex < 0: -71
+        java.lang.IndexOutOfBoundsException: bitIndex < 0: -73
         	at java.base/java.util.BitSet.get(BitSet.java:626)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.fillBasicBlockInfo(LiveVarAnalysis.java:65)
         	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.runAnalysis(LiveVarAnalysis.java:36)
         	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
         	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
         */
-    public final void backup(boolean r185) {
+    public final void backup(boolean r183) {
         /*
-            Method dump skipped, instructions count: 1396
+            Method dump skipped, instructions count: 1388
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.backup(boolean):void");
@@ -281,9 +281,6 @@ public final class BackupController extends BaseController implements KoinCompon
             if (migrateToCurrentVersion.isMultiForwardingOptionsHintShown() != null) {
                 SharedConfig.setMultiForwardingOptionsHintShown(migrateToCurrentVersion.isMultiForwardingOptionsHintShown().booleanValue());
             }
-            if (migrateToCurrentVersion.isSuggestPremiumReactionsEmoji() != null) {
-                SharedConfig.setSuggestPremiumReactionsEmoji(migrateToCurrentVersion.isSuggestPremiumReactionsEmoji().booleanValue());
-            }
             Iterator it = components.iterator();
             while (it.hasNext()) {
                 switch (WhenMappings.$EnumSwitchMapping$0[((BackupComponent) it.next()).ordinal()]) {
@@ -294,7 +291,7 @@ public final class BackupController extends BaseController implements KoinCompon
                             SharedConfig.setDrawerHeaderSettings(migrateToCurrentVersion.getDrawerHeaderSettings());
                         }
                         if (migrateToCurrentVersion.getDrawerItems() != null) {
-                            SharedConfig.setSelectedDrawerItems(DrawerSwitchableItem.Companion.mapNamesToEnums(migrateToCurrentVersion.getDrawerItems()));
+                            SharedConfig.setSelectedDrawerItems(DrawerItem.Companion.mapNamesToEnums(migrateToCurrentVersion.getDrawerItems()));
                         }
                         if (migrateToCurrentVersion.isActionBarAccountSwitchEnabled() != null) {
                             SharedConfig.setActionBarAccountSwitchEnabled(migrateToCurrentVersion.isActionBarAccountSwitchEnabled().booleanValue());
@@ -518,13 +515,16 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0107, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x018c, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$1());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x02d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0359, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new com.iMe.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$2());
      */
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x00d5 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x009a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0058  */
     /* JADX WARN: Type inference failed for: r1v0 */
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r1v36 */
@@ -532,9 +532,9 @@ public final class BackupController extends BaseController implements KoinCompon
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r245) {
+    private final com.iMe.fork.models.backup.Backup migrateToCurrentVersion(com.iMe.fork.models.backup.Backup r243) {
         /*
-            Method dump skipped, instructions count: 1844
+            Method dump skipped, instructions count: 1970
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.controller.BackupController.migrateToCurrentVersion(com.iMe.fork.models.backup.Backup):com.iMe.fork.models.backup.Backup");
@@ -547,7 +547,7 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     /* compiled from: BackupController.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

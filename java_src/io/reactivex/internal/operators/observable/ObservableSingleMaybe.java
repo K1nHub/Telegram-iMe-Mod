@@ -7,7 +7,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class ObservableSingleMaybe<T> extends Maybe<T> {
     final ObservableSource<T> source;
 
@@ -20,7 +20,7 @@ public final class ObservableSingleMaybe<T> extends Maybe<T> {
         this.source.subscribe(new SingleElementObserver(maybeObserver));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class SingleElementObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final MaybeObserver<? super T> downstream;

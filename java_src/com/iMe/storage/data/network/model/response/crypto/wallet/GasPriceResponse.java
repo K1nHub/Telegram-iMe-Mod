@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.wallet.FiatValueResponse;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GasPriceResponse {
     private final float duration;
     private final double fee;
@@ -75,7 +75,7 @@ public final class GasPriceResponse {
         BigInteger bigInteger = this.price;
         int hashCode = (bigInteger == null ? 0 : bigInteger.hashCode()) * 31;
         BigInteger bigInteger2 = this.limit;
-        return ((((((hashCode + (bigInteger2 != null ? bigInteger2.hashCode() : 0)) * 31) + Float.floatToIntBits(this.duration)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m718m(this.fee)) * 31) + this.feeInFiat.hashCode();
+        return ((((((hashCode + (bigInteger2 != null ? bigInteger2.hashCode() : 0)) * 31) + Float.floatToIntBits(this.duration)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fee)) * 31) + this.feeInFiat.hashCode();
     }
 
     public String toString() {

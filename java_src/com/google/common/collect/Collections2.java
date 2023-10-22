@@ -5,7 +5,7 @@ import com.google.common.base.Predicate;
 import java.util.AbstractCollection;
 import java.util.Collection;
 import java.util.Iterator;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Collections2 {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean safeContains(Collection<?> collection, Object obj) {
@@ -18,7 +18,7 @@ public final class Collections2 {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class FilteredCollection<E> extends AbstractCollection<E> {
         final Predicate<? super E> predicate;
         final Collection<E> unfiltered;

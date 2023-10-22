@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.RemoteWalletInf
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetDonationWalletInfoResponse.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class GetDonationWalletInfoResponse {
     private final String chatId;
     private final List<RemoteWalletInfoResponse> wallets;

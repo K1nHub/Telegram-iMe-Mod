@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Looper;
 import android.os.RemoteException;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.BaseGmsClient;
 import com.google.android.gms.common.internal.Preconditions;
@@ -17,7 +18,7 @@ import com.google.android.gms.common.stats.ConnectionTracker;
 import com.google.android.gms.common.util.VisibleForTesting;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @VisibleForTesting
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzjn implements ServiceConnection, BaseGmsClient.BaseConnectionCallbacks, BaseGmsClient.BaseOnConnectionFailedListener {
     final /* synthetic */ zzjo zza;
     private volatile boolean zzb;
@@ -127,7 +128,7 @@ public final class zzjn implements ServiceConnection, BaseGmsClient.BaseConnecti
             this.zza.zzs.zzay().zzj().zza("Using local app measurement service");
             this.zzb = true;
             zzjnVar = this.zza.zza;
-            connectionTracker.bindService(zzau, intent, zzjnVar, 129);
+            connectionTracker.bindService(zzau, intent, zzjnVar, TsExtractor.TS_STREAM_TYPE_AC3);
         }
     }
 

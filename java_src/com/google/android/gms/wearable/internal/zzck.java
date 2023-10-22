@@ -10,7 +10,7 @@ import com.google.android.gms.common.data.DataHolder;
 import com.google.android.gms.wearable.DataItemBuffer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class zzck extends zzu {
     final /* synthetic */ Uri zza;
     final /* synthetic */ int zzb;

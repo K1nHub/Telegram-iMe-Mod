@@ -2,7 +2,7 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIterator<E> {
     private int position;
     private final int size;

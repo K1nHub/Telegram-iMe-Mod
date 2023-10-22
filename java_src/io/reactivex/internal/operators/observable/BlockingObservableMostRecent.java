@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class BlockingObservableMostRecent<T> implements Iterable<T> {
     final T initialValue;
     final ObservableSource<T> source;
@@ -25,7 +25,7 @@ public final class BlockingObservableMostRecent<T> implements Iterable<T> {
         return mostRecentObserver.getIterable();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     static final class MostRecentObserver<T> extends DefaultObserver<T> {
         volatile Object value;
 
@@ -53,7 +53,7 @@ public final class BlockingObservableMostRecent<T> implements Iterable<T> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public final class Iterator implements java.util.Iterator<T>, p033j$.util.Iterator {
             private Object buf;
 

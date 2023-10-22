@@ -4,7 +4,7 @@ import android.view.View;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p042ui.ActionBar.BaseFragment;
 /*  JADX ERROR: JadxRuntimeException in pass: ClassModifier
     jadx.core.utils.exceptions.JadxRuntimeException: Not class type: T extends org.telegram.ui.ActionBar.BaseFragment
     	at jadx.core.dex.info.ClassInfo.checkClassType(ClassInfo.java:53)
@@ -14,7 +14,7 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
     	at jadx.core.dex.visitors.ClassModifier.visit(ClassModifier.java:55)
     */
 /* compiled from: TabbedFragmentPage.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTabbedViewPage {
     private final T fragment;
     private final int icon;

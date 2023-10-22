@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class MapTypeAdapterFactory implements TypeAdapterFactory {
     final boolean complexMapKeySerialization;
     private final ConstructorConstructor constructorConstructor;
@@ -47,7 +47,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
         return gson.getAdapter(TypeToken.get(type));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     private final class Adapter<K, V> extends TypeAdapter<Map<K, V>> {
         private final ObjectConstructor<? extends Map<K, V>> constructor;
         private final TypeAdapter<K> keyTypeAdapter;

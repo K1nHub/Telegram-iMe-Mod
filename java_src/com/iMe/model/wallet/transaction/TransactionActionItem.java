@@ -4,9 +4,9 @@ import com.iMe.model.wallet.ActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3473R;
+import org.telegram.messenger.C3630R;
 /* compiled from: TransactionActionItem.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class TransactionActionItem implements ActionItem {
     private final int icon;
     private final int title;
@@ -47,62 +47,62 @@ public abstract class TransactionActionItem implements ActionItem {
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Send extends TransactionActionItem {
         public static final Send INSTANCE = new Send();
 
         private Send() {
-            super(C3473R.string.wallet_token_details_details_action_send, C3473R.C3475drawable.msg_send, null, 4, null);
+            super(C3630R.string.wallet_token_details_details_action_send, C3630R.C3632drawable.msg_send, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Support extends TransactionActionItem {
         public static final Support INSTANCE = new Support();
 
         private Support() {
-            super(C3473R.string.wallet_token_details_action_simplex_support, C3473R.C3475drawable.msg_help, null, 4, null);
+            super(C3630R.string.wallet_token_details_action_simplex_support, C3630R.C3632drawable.msg_help, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Profile extends TransactionActionItem {
         public static final Profile INSTANCE = new Profile();
 
         private Profile() {
-            super(C3473R.string.wallet_transaction_details_action_open_profile, C3473R.C3475drawable.msg_openprofile, null, 4, null);
+            super(C3630R.string.wallet_transaction_details_action_open_profile, C3630R.C3632drawable.msg_openprofile, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Cancel extends TransactionActionItem {
         public static final Cancel INSTANCE = new Cancel();
 
         private Cancel() {
-            super(C3473R.string.wallet_transaction_details_action_cancel, C3473R.C3475drawable.fork_cancel_transaction, null, 4, null);
+            super(C3630R.string.wallet_transaction_details_action_cancel, C3630R.C3632drawable.fork_cancel_transaction, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Boost extends TransactionActionItem {
         public static final Boost INSTANCE = new Boost();
 
         private Boost() {
-            super(C3473R.string.wallet_transaction_details_action_boost, C3473R.C3475drawable.fork_ic_speed_up_transaction, null, 4, null);
+            super(C3630R.string.wallet_transaction_details_action_boost, C3630R.C3632drawable.fork_ic_speed_up_transaction, null, 4, null);
         }
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Copy extends TransactionActionItem {
         private final int title;
 
         public Copy(int i) {
-            super(i, C3473R.C3475drawable.fork_ic_id_28, null, 4, null);
+            super(i, C3630R.C3632drawable.fork_ic_id_28, null, 4, null);
             this.title = i;
         }
 
@@ -113,7 +113,7 @@ public abstract class TransactionActionItem implements ActionItem {
     }
 
     /* compiled from: TransactionActionItem.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class OpenScan extends TransactionActionItem {
         private final String iconUrl;
         private final String titleString;

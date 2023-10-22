@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_messageActionRequestedPeer extends TLRPC$MessageAction {
     public static int constructor = -25742243;
     public int button_id;

@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import org.telegram.messenger.LiteMode;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_chatBannedRights extends TLObject {
     public static int constructor = -1626209256;
     public boolean change_info;

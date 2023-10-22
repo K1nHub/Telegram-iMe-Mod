@@ -9,7 +9,7 @@ import org.orbitmvi.orbit.ContainerHost;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 import org.orbitmvi.orbit.viewmodel.ViewModelExtensionsKt;
 /* compiled from: AuthViewModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AuthViewModel extends ViewModel implements ContainerHost<AuthState, AuthSideEffects> {
     private final AuthUseCase authUseCase;
     private final Container<AuthState, AuthSideEffects> container;
@@ -60,7 +60,7 @@ public final class AuthViewModel extends ViewModel implements ContainerHost<Auth
     }
 
     /* compiled from: AuthViewModel.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

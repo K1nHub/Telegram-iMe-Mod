@@ -13,7 +13,7 @@
     return-wide p0
 .end method
 
-.method static b(Lj$/util/stream/e4;Lj$/util/s;JJ)Lj$/util/s;
+.method static b(Lj$/util/stream/e4;Lj$/util/Spliterator;JJ)Lj$/util/Spliterator;
     .locals 6
 
     .line 1
@@ -49,13 +49,13 @@
 
     move-object v1, p1
 
-    check-cast v1, Lj$/util/s$a;
+    check-cast v1, Lj$/util/Spliterator$a;
 
     move-object v0, p0
 
     move-wide v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/u4;-><init>(Lj$/util/s$a;JJ)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/u4;-><init>(Lj$/util/Spliterator$a;JJ)V
 
     goto :goto_0
 
@@ -85,13 +85,13 @@
 
     move-object v1, p1
 
-    check-cast v1, Lj$/util/s$c;
+    check-cast v1, Lj$/util/Spliterator$c;
 
     move-object v0, p0
 
     move-wide v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/y4;-><init>(Lj$/util/s$c;JJ)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/y4;-><init>(Lj$/util/Spliterator$c;JJ)V
 
     goto :goto_0
 
@@ -100,13 +100,13 @@
 
     move-object v1, p1
 
-    check-cast v1, Lj$/util/s$b;
+    check-cast v1, Lj$/util/Spliterator$b;
 
     move-object v0, p0
 
     move-wide v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/w4;-><init>(Lj$/util/s$b;JJ)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/w4;-><init>(Lj$/util/Spliterator$b;JJ)V
 
     goto :goto_0
 
@@ -119,7 +119,7 @@
 
     move-wide v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/C4;-><init>(Lj$/util/s;JJ)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/C4;-><init>(Lj$/util/Spliterator;JJ)V
 
     :goto_0
     return-object p0

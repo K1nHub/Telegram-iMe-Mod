@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.social;
 import com.google.gson.annotations.SerializedName;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialNetworksRaw.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class Network {
     @SerializedName("beforeConnectMessage")
     private final String beforeConnectMessage;

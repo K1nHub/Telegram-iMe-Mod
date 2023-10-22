@@ -3,7 +3,7 @@ package org.telegram.SQLite;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
     private boolean isOpen = true;
@@ -57,7 +57,7 @@ public class SQLiteDatabase {
                 sb.append(query.stringValue(i));
                 sb.append(", ");
             }
-            FileLog.m70d("EXPLAIN QUERY PLAN " + sb.toString());
+            FileLog.m100d("EXPLAIN QUERY PLAN " + sb.toString());
         }
         query.dispose();
     }
@@ -74,7 +74,7 @@ public class SQLiteDatabase {
                 closedb(this.sqliteHandle);
             } catch (SQLiteException e) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m68e(e.getMessage(), e);
+                    FileLog.m98e(e.getMessage(), e);
                 }
             }
             this.isOpen = false;

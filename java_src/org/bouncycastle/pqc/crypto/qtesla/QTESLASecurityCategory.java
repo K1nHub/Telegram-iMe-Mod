@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.crypto.qtesla;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class QTESLASecurityCategory {
     public static String getName(int i) {
         if (i != 5) {

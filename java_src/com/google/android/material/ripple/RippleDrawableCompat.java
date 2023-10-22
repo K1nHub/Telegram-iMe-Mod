@@ -10,7 +10,7 @@ import androidx.core.graphics.drawable.TintAwareDrawable;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class RippleDrawableCompat extends Drawable implements Shapeable, TintAwareDrawable {
     private RippleDrawableCompatState drawableState;
 
@@ -103,7 +103,7 @@ public class RippleDrawableCompat extends Drawable implements Shapeable, TintAwa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class RippleDrawableCompatState extends Drawable.ConstantState {
         MaterialShapeDrawable delegate;
         boolean shouldDrawDelegate;

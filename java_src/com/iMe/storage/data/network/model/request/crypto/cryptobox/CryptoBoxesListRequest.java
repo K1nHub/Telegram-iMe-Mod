@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxesListRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxesListRequest {
     private final String chatId;
     private final Long lastItemId;

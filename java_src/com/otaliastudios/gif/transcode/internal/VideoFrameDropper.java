@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.transcode.internal;
 
 import com.otaliastudios.gif.internal.Logger;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class VideoFrameDropper {
     private static final Logger LOG = new Logger(VideoFrameDropper.class.getSimpleName());
 
@@ -14,7 +14,7 @@ public abstract class VideoFrameDropper {
         return new Dropper1(i, i2);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     private static class Dropper1 extends VideoFrameDropper {
         private int mFrameCount;
         private double mFrameRateReciprocalSum;
@@ -26,7 +26,7 @@ public abstract class VideoFrameDropper {
             this.mInFrameRateReciprocal = 1.0d / i;
             this.mOutFrameRateReciprocal = 1.0d / i2;
             Logger logger = VideoFrameDropper.LOG;
-            logger.m709i("inFrameRateReciprocal:" + this.mInFrameRateReciprocal + " outFrameRateReciprocal:" + this.mOutFrameRateReciprocal);
+            logger.m1002i("inFrameRateReciprocal:" + this.mInFrameRateReciprocal + " outFrameRateReciprocal:" + this.mOutFrameRateReciprocal);
         }
 
         @Override // com.otaliastudios.gif.transcode.internal.VideoFrameDropper
@@ -37,18 +37,18 @@ public abstract class VideoFrameDropper {
             this.mFrameCount = i + 1;
             if (i == 0) {
                 Logger logger = VideoFrameDropper.LOG;
-                logger.m707v("RENDERING (first frame) - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+                logger.m1000v("RENDERING (first frame) - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
                 return true;
             }
             double d2 = this.mOutFrameRateReciprocal;
             if (d <= d2) {
                 Logger logger2 = VideoFrameDropper.LOG;
-                logger2.m707v("DROPPING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+                logger2.m1000v("DROPPING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
                 return false;
             }
             this.mFrameRateReciprocalSum = d - d2;
             Logger logger3 = VideoFrameDropper.LOG;
-            logger3.m707v("RENDERING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
+            logger3.m1000v("RENDERING - frameRateReciprocalSum:" + this.mFrameRateReciprocalSum);
             return true;
         }
     }

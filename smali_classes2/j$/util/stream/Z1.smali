@@ -26,10 +26,10 @@
     return-void
 .end method
 
-.method public spliterator()Lj$/util/s;
+.method public spliterator()Lj$/util/Spliterator;
     .locals 1
 
-    invoke-static {}, Lj$/util/I;->e()Lj$/util/s;
+    invoke-static {}, Lj$/util/F;->e()Lj$/util/Spliterator;
 
     move-result-object v0
 

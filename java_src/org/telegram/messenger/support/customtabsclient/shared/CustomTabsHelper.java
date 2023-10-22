@@ -12,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public class CustomTabsHelper {
     private static String sPackageNameToUse;
 

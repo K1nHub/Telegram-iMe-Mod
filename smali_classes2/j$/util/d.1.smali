@@ -1,179 +1,302 @@
-.class public final synthetic Lj$/util/d;
+.class public Lj$/util/d;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
-.implements Ljava/io/Serializable;
+.implements Lj$/util/function/f;
 
 
 # instance fields
-.field public final synthetic a:I
+.field private a:D
 
-.field public final synthetic b:Ljava/lang/Object;
+.field private b:D
+
+.field private count:J
+
+.field private max:D
+
+.field private min:D
+
+.field private sum:D
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/Function;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/d;->a:I
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
+    const-wide/high16 v0, 0x7ff0000000000000L    # Double.POSITIVE_INFINITY
+
+    iput-wide v0, p0, Lj$/util/d;->min:D
+
+    const-wide/high16 v0, -0x10000000000000L    # Double.NEGATIVE_INFINITY
+
+    iput-wide v0, p0, Lj$/util/d;->max:D
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lj$/util/function/ToDoubleFunction;)V
-    .locals 1
+.method private d(D)V
+    .locals 4
 
-    const/4 v0, 0x1
+    iget-wide v0, p0, Lj$/util/d;->a:D
 
-    iput v0, p0, Lj$/util/d;->a:I
+    sub-double/2addr p1, v0
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-wide v0, p0, Lj$/util/d;->sum:D
 
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
+    add-double v2, v0, p1
 
-    return-void
-.end method
+    sub-double v0, v2, v0
 
-.method public synthetic constructor <init>(Lj$/util/function/ToIntFunction;)V
-    .locals 1
+    sub-double/2addr v0, p1
 
-    const/4 v0, 0x2
+    iput-wide v0, p0, Lj$/util/d;->a:D
 
-    iput v0, p0, Lj$/util/d;->a:I
-
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/function/ToLongFunction;)V
-    .locals 1
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lj$/util/d;->a:I
-
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
+    iput-wide v2, p0, Lj$/util/d;->sum:D
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 3
+.method public accept(D)V
+    .locals 4
 
-    iget v0, p0, Lj$/util/d;->a:I
+    iget-wide v0, p0, Lj$/util/d;->count:J
 
-    packed-switch v0, :pswitch_data_0
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/d;->count:J
+
+    iget-wide v0, p0, Lj$/util/d;->b:D
+
+    add-double/2addr v0, p1
+
+    iput-wide v0, p0, Lj$/util/d;->b:D
+
+    invoke-direct {p0, p1, p2}, Lj$/util/d;->d(D)V
+
+    iget-wide v0, p0, Lj$/util/d;->min:D
+
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lj$/util/d;->min:D
+
+    iget-wide v0, p0, Lj$/util/d;->max:D
+
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lj$/util/d;->max:D
+
+    return-void
+.end method
+
+.method public b(Lj$/util/d;)V
+    .locals 4
+
+    iget-wide v0, p0, Lj$/util/d;->count:J
+
+    iget-wide v2, p1, Lj$/util/d;->count:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/d;->count:J
+
+    iget-wide v0, p0, Lj$/util/d;->b:D
+
+    iget-wide v2, p1, Lj$/util/d;->b:D
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/d;->b:D
+
+    iget-wide v0, p1, Lj$/util/d;->sum:D
+
+    invoke-direct {p0, v0, v1}, Lj$/util/d;->d(D)V
+
+    iget-wide v0, p1, Lj$/util/d;->a:D
+
+    invoke-direct {p0, v0, v1}, Lj$/util/d;->d(D)V
+
+    iget-wide v0, p0, Lj$/util/d;->min:D
+
+    iget-wide v2, p1, Lj$/util/d;->min:D
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lj$/util/d;->min:D
+
+    iget-wide v0, p0, Lj$/util/d;->max:D
+
+    iget-wide v2, p1, Lj$/util/d;->max:D
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lj$/util/d;->max:D
+
+    return-void
+.end method
+
+.method public final c()D
+    .locals 4
+
+    iget-wide v0, p0, Lj$/util/d;->sum:D
+
+    iget-wide v2, p0, Lj$/util/d;->a:D
+
+    add-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-wide v2, p0, Lj$/util/d;->b:D
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->isInfinite(D)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-wide v0, p0, Lj$/util/d;->b:D
+
+    :cond_0
+    return-wide v0
+.end method
+
+.method public j(Lj$/util/function/f;)Lj$/util/function/f;
+    .locals 1
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    new-instance v0, Lj$/util/function/e;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/function/e;-><init>(Lj$/util/function/f;Lj$/util/function/f;)V
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const-class v1, Lj$/util/d;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    .line 1
+    iget-wide v1, p0, Lj$/util/d;->count:J
+
+    .line 2
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-virtual {p0}, Lj$/util/d;->c()D
+
+    move-result-wide v1
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    .line 3
+    iget-wide v1, p0, Lj$/util/d;->min:D
+
+    .line 4
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    .line 5
+    iget-wide v1, p0, Lj$/util/d;->count:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v1, v3
+
+    if-lez v1, :cond_0
+
+    .line 6
+    invoke-virtual {p0}, Lj$/util/d;->c()D
+
+    move-result-wide v1
+
+    .line 7
+    iget-wide v3, p0, Lj$/util/d;->count:J
+
+    long-to-double v3, v3
+
+    div-double/2addr v1, v3
 
     goto :goto_0
 
-    .line 1
-    :pswitch_0
-    iget-object v0, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/function/ToIntFunction;
-
-    .line 2
-    invoke-interface {v0, p1}, Lj$/util/function/ToIntFunction;->applyAsInt(Ljava/lang/Object;)I
-
-    move-result p1
-
-    invoke-interface {v0, p2}, Lj$/util/function/ToIntFunction;->applyAsInt(Ljava/lang/Object;)I
-
-    move-result p2
-
-    invoke-static {p1, p2}, Ljava/lang/Integer;->compare(II)I
-
-    move-result p1
-
-    return p1
-
-    .line 3
-    :pswitch_1
-    iget-object v0, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/function/ToDoubleFunction;
-
-    .line 4
-    invoke-interface {v0, p1}, Lj$/util/function/ToDoubleFunction;->applyAsDouble(Ljava/lang/Object;)D
-
-    move-result-wide v1
-
-    invoke-interface {v0, p2}, Lj$/util/function/ToDoubleFunction;->applyAsDouble(Ljava/lang/Object;)D
-
-    move-result-wide p1
-
-    invoke-static {v1, v2, p1, p2}, Ljava/lang/Double;->compare(DD)I
-
-    move-result p1
-
-    return p1
-
-    .line 5
-    :pswitch_2
-    iget-object v0, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/function/Function;
-
-    .line 6
-    invoke-interface {v0, p1}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Comparable;
-
-    invoke-interface {v0, p2}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result p1
-
-    return p1
-
-    .line 7
-    :goto_0
-    iget-object v0, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/function/ToLongFunction;
+    :cond_0
+    const-wide/16 v1, 0x0
 
     .line 8
-    invoke-interface {v0, p1}, Lj$/util/function/ToLongFunction;->applyAsLong(Ljava/lang/Object;)J
+    :goto_0
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-wide v1
+    move-result-object v1
 
-    invoke-interface {v0, p2}, Lj$/util/function/ToLongFunction;->applyAsLong(Ljava/lang/Object;)J
+    const/4 v2, 0x4
 
-    move-result-wide p1
+    aput-object v1, v0, v2
 
-    invoke-static {v1, v2, p1, p2}, Ljava/lang/Long;->compare(JJ)I
+    .line 9
+    iget-wide v1, p0, Lj$/util/d;->max:D
 
-    move-result p1
+    .line 10
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    return p1
+    move-result-object v1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    const-string v1, "%s{count=%d, sum=%f, min=%f, average=%f, max=%f}"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

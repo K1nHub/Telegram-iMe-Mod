@@ -12,24 +12,24 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "GeofencingRequestCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class GeofencingRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GeofencingRequest> CREATOR = new zzn();
     public static final int INITIAL_TRIGGER_DWELL = 4;
     public static final int INITIAL_TRIGGER_ENTER = 1;
     public static final int INITIAL_TRIGGER_EXIT = 2;
-    @SafeParcelable.Field(getter = "getParcelableGeofences", m797id = 1)
+    @SafeParcelable.Field(getter = "getParcelableGeofences", m1089id = 1)
     private final List zza;
     @InitialTrigger
-    @SafeParcelable.Field(getter = "getInitialTrigger", m797id = 2)
+    @SafeParcelable.Field(getter = "getInitialTrigger", m1089id = 2)
     private final int zzb;
-    @SafeParcelable.Field(defaultValue = "", getter = "getTag", m797id = 3)
+    @SafeParcelable.Field(defaultValue = "", getter = "getTag", m1089id = 3)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getContextAttributionTag", m797id = 4)
+    @SafeParcelable.Field(getter = "getContextAttributionTag", m1089id = 4)
     private final String zzd;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final List zza = new ArrayList();
         @InitialTrigger
@@ -66,13 +66,13 @@ public class GeofencingRequest extends AbstractSafeParcelable {
     }
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public @interface InitialTrigger {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GeofencingRequest(@SafeParcelable.Param(m796id = 1) List list, @SafeParcelable.Param(m796id = 2) @InitialTrigger int i, @SafeParcelable.Param(m796id = 3) String str, @SafeParcelable.Param(m796id = 4) String str2) {
+    public GeofencingRequest(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) @InitialTrigger int i, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2) {
         this.zza = list;
         this.zzb = i;
         this.zzc = str;

@@ -2,7 +2,7 @@ package com.google.android.material.textfield;
 
 import android.graphics.drawable.Drawable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class NoEndIconDelegate extends EndIconDelegate {
     /* JADX INFO: Access modifiers changed from: package-private */
     public NoEndIconDelegate(TextInputLayout textInputLayout) {

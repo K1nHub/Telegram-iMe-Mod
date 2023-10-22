@@ -33,7 +33,6 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.TraceUtil;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.exoplayer2.video.VideoRendererEventListener;
-import com.google.android.gms.common.Scopes;
 import com.google.common.collect.ImmutableList;
 import java.nio.ByteBuffer;
 import java.util.Collection;
@@ -197,7 +196,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     private static List<MediaCodecInfo> getDecoderInfos(Context context, MediaCodecSelector mediaCodecSelector, Format format, boolean z, boolean z2) throws MediaCodecUtil.DecoderQueryException {
         String str = format.sampleMimeType;
         if (str == null) {
-            return ImmutableList.m762of();
+            return ImmutableList.m1054of();
         }
         List<MediaCodecInfo> decoderInfos = mediaCodecSelector.getDecoderInfos(str, z, z2);
         String alternativeCodecMimeType = MediaCodecUtil.getAlternativeCodecMimeType(format);
@@ -521,7 +520,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected void onCodecError(Exception exc) {
-        Log.m817e(TAG, "Video codec error", exc);
+        Log.m1109e(TAG, "Video codec error", exc);
         this.eventDispatcher.videoCodecError(exc);
     }
 
@@ -940,7 +939,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         MediaFormatUtil.maybeSetInteger(mediaFormat, "rotation-degrees", format.rotationDegrees);
         MediaFormatUtil.maybeSetColorInfo(mediaFormat, format.colorInfo);
         if (MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && (codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format)) != null) {
-            MediaFormatUtil.maybeSetInteger(mediaFormat, Scopes.PROFILE, ((Integer) codecProfileAndLevel.first).intValue());
+            MediaFormatUtil.maybeSetInteger(mediaFormat, "profile", ((Integer) codecProfileAndLevel.first).intValue());
         }
         mediaFormat.setInteger("max-width", codecMaxValues.width);
         mediaFormat.setInteger("max-height", codecMaxValues.height);
@@ -988,13 +987,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             }
         }
         if (z) {
-            Log.m814w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
+            Log.m1106w(TAG, "Resolutions unknown. Codec max resolution: " + i + "x" + i2);
             Point codecMaxSize = getCodecMaxSize(mediaCodecInfo, format);
             if (codecMaxSize != null) {
                 i = Math.max(i, codecMaxSize.x);
                 i2 = Math.max(i2, codecMaxSize.y);
                 maxInputSize = Math.max(maxInputSize, getCodecMaxInputSize(mediaCodecInfo, format.buildUpon().setWidth(i).setHeight(i2).build()));
-                Log.m814w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
+                Log.m1106w(TAG, "Codec max resolution adjusted to: " + i + "x" + i2);
             }
         }
         return new CodecMaxValues(i, i2, maxInputSize);

@@ -14,28 +14,28 @@ import com.google.android.gms.fido.fido2.api.common.PublicKeyCredential;
 /* loaded from: classes.dex */
 public final class SignInCredential extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SignInCredential> CREATOR = new zbn();
-    @SafeParcelable.Field(getter = "getId", m797id = 1)
+    @SafeParcelable.Field(getter = "getId", m1089id = 1)
     private final String zba;
-    @SafeParcelable.Field(getter = "getDisplayName", m797id = 2)
+    @SafeParcelable.Field(getter = "getDisplayName", m1089id = 2)
     private final String zbb;
-    @SafeParcelable.Field(getter = "getGivenName", m797id = 3)
+    @SafeParcelable.Field(getter = "getGivenName", m1089id = 3)
     private final String zbc;
-    @SafeParcelable.Field(getter = "getFamilyName", m797id = 4)
+    @SafeParcelable.Field(getter = "getFamilyName", m1089id = 4)
     private final String zbd;
-    @SafeParcelable.Field(getter = "getProfilePictureUri", m797id = 5)
+    @SafeParcelable.Field(getter = "getProfilePictureUri", m1089id = 5)
     private final Uri zbe;
-    @SafeParcelable.Field(getter = "getPassword", m797id = 6)
+    @SafeParcelable.Field(getter = "getPassword", m1089id = 6)
     private final String zbf;
-    @SafeParcelable.Field(getter = "getGoogleIdToken", m797id = 7)
+    @SafeParcelable.Field(getter = "getGoogleIdToken", m1089id = 7)
     private final String zbg;
-    @SafeParcelable.Field(getter = "getPhoneNumber", m797id = 8)
+    @SafeParcelable.Field(getter = "getPhoneNumber", m1089id = 8)
     private final String zbh;
-    @SafeParcelable.Field(getter = "getPublicKeyCredential", m797id = 9)
+    @SafeParcelable.Field(getter = "getPublicKeyCredential", m1089id = 9)
     private final PublicKeyCredential zbi;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public SignInCredential(@SafeParcelable.Param(m796id = 1) String str, @SafeParcelable.Param(m796id = 2) String str2, @SafeParcelable.Param(m796id = 3) String str3, @SafeParcelable.Param(m796id = 4) String str4, @SafeParcelable.Param(m796id = 5) Uri uri, @SafeParcelable.Param(m796id = 6) String str5, @SafeParcelable.Param(m796id = 7) String str6, @SafeParcelable.Param(m796id = 8) String str7, @SafeParcelable.Param(m796id = 9) PublicKeyCredential publicKeyCredential) {
+    public SignInCredential(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) String str3, @SafeParcelable.Param(m1088id = 4) String str4, @SafeParcelable.Param(m1088id = 5) Uri uri, @SafeParcelable.Param(m1088id = 6) String str5, @SafeParcelable.Param(m1088id = 7) String str6, @SafeParcelable.Param(m1088id = 8) String str7, @SafeParcelable.Param(m1088id = 9) PublicKeyCredential publicKeyCredential) {
         this.zba = Preconditions.checkNotEmpty(str);
         this.zbb = str2;
         this.zbc = str3;

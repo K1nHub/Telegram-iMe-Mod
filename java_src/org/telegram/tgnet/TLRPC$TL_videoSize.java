@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class TLRPC$TL_videoSize extends TLRPC$VideoSize {
     public static int constructor = -567037804;
 
@@ -7,8 +7,8 @@ public class TLRPC$TL_videoSize extends TLRPC$VideoSize {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.flags = abstractSerializedData.readInt32(z);
         this.type = abstractSerializedData.readString(z);
-        this.f1692w = abstractSerializedData.readInt32(z);
-        this.f1691h = abstractSerializedData.readInt32(z);
+        this.f1769w = abstractSerializedData.readInt32(z);
+        this.f1768h = abstractSerializedData.readInt32(z);
         this.size = abstractSerializedData.readInt32(z);
         if ((this.flags & 1) != 0) {
             this.video_start_ts = abstractSerializedData.readDouble(z);
@@ -20,8 +20,8 @@ public class TLRPC$TL_videoSize extends TLRPC$VideoSize {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         abstractSerializedData.writeString(this.type);
-        abstractSerializedData.writeInt32(this.f1692w);
-        abstractSerializedData.writeInt32(this.f1691h);
+        abstractSerializedData.writeInt32(this.f1769w);
+        abstractSerializedData.writeInt32(this.f1768h);
         abstractSerializedData.writeInt32(this.size);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeDouble(this.video_start_ts);

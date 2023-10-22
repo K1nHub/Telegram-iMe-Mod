@@ -43,14 +43,14 @@ public final class zznr {
     public final synchronized <TResult> Task<TResult> zza(zznx zznxVar, Callable<TResult> callable) {
         Preconditions.checkNotNull(callable, "Operation can not be null");
         Preconditions.checkNotNull(zznxVar, "Model resource can not be null");
-        zzasz.m807d("MLTaskManager", "Execute task");
+        zzasz.m1099d("MLTaskManager", "Execute task");
         return zznn.zzlk().zza(new zznu(this, zznxVar, callable));
     }
 
     public final synchronized <T, S extends zzns> Task<T> zza(zzno<T, S> zznoVar, S s) {
         Preconditions.checkNotNull(zznoVar, "Operation can not be null");
         Preconditions.checkNotNull(s, "Input can not be null");
-        zzasz.m807d("MLTaskManager", "Execute task");
+        zzasz.m1099d("MLTaskManager", "Execute task");
         return zznn.zzlk().zza(new zznt(this, zznoVar.zzll(), zznoVar, s));
     }
 }

@@ -22,7 +22,7 @@ import okhttp3.internal.HostnamesKt;
 import okhttp3.internal.Util;
 import okio.Buffer;
 /* compiled from: HttpUrl.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class HttpUrl {
     public static final Companion Companion = new Companion(null);
     private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -252,7 +252,7 @@ public final class HttpUrl {
     }
 
     /* compiled from: HttpUrl.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         public static final Companion Companion = new Companion(null);
         private String encodedFragment;
@@ -887,7 +887,7 @@ public final class HttpUrl {
         }
 
         /* compiled from: HttpUrl.kt */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes4.dex */
         public static final class Companion {
             private Companion() {
             }
@@ -902,7 +902,7 @@ public final class HttpUrl {
                     return -1;
                 }
                 char charAt = str.charAt(i);
-                if ((Intrinsics.compare(charAt, 97) < 0 || Intrinsics.compare(charAt, 122) > 0) && (Intrinsics.compare(charAt, 65) < 0 || Intrinsics.compare(charAt, 90) > 0)) {
+                if ((Intrinsics.compare((int) charAt, 97) < 0 || Intrinsics.compare((int) charAt, 122) > 0) && (Intrinsics.compare((int) charAt, 65) < 0 || Intrinsics.compare((int) charAt, 90) > 0)) {
                     return -1;
                 }
                 while (true) {
@@ -975,7 +975,7 @@ public final class HttpUrl {
     }
 
     /* compiled from: HttpUrl.kt */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -1185,7 +1185,7 @@ public final class HttpUrl {
             return substring;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x0065, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x0066, code lost:
             if (isPercentEncoded(r16, r5, r18) == false) goto L39;
          */
         /*
@@ -1203,90 +1203,90 @@ public final class HttpUrl {
                 r5 = r17
                 r6 = r4
             Lb:
-                if (r5 >= r2) goto Lbf
+                if (r5 >= r2) goto Lc0
                 java.lang.String r7 = "null cannot be cast to non-null type java.lang.String"
                 java.util.Objects.requireNonNull(r1, r7)
                 int r7 = r1.codePointAt(r5)
-                if (r20 == 0) goto L2e
+                if (r20 == 0) goto L2f
                 r8 = 9
-                if (r7 == r8) goto L29
+                if (r7 == r8) goto L2a
                 r8 = 10
-                if (r7 == r8) goto L29
+                if (r7 == r8) goto L2a
                 r8 = 12
-                if (r7 == r8) goto L29
+                if (r7 == r8) goto L2a
                 r8 = 13
-                if (r7 == r8) goto L29
-                goto L2e
-            L29:
+                if (r7 == r8) goto L2a
+                goto L2f
+            L2a:
                 r8 = r14
                 r12 = r19
-                goto Lb8
-            L2e:
+                goto Lb9
+            L2f:
                 r8 = 43
-                if (r7 != r8) goto L3f
-                if (r22 == 0) goto L3f
-                if (r20 == 0) goto L39
+                if (r7 != r8) goto L40
+                if (r22 == 0) goto L40
+                if (r20 == 0) goto L3a
                 java.lang.String r8 = "+"
-                goto L3b
-            L39:
+                goto L3c
+            L3a:
                 java.lang.String r8 = "%2B"
-            L3b:
+            L3c:
                 r15.writeUtf8(r8)
-                goto L29
-            L3f:
+                goto L2a
+            L40:
                 r8 = 32
                 r9 = 37
-                if (r7 < r8) goto L6f
+                if (r7 < r8) goto L70
                 r8 = 127(0x7f, float:1.78E-43)
-                if (r7 == r8) goto L6f
+                if (r7 == r8) goto L70
                 r8 = 128(0x80, float:1.794E-43)
-                if (r7 < r8) goto L4f
-                if (r23 == 0) goto L6f
-            L4f:
+                if (r7 < r8) goto L50
+                if (r23 == 0) goto L70
+            L50:
                 char r8 = (char) r7
                 r10 = 0
                 r11 = 2
                 r12 = r19
                 boolean r8 = kotlin.text.StringsKt.contains$default(r12, r8, r10, r11, r4)
-                if (r8 != 0) goto L6d
-                if (r7 != r9) goto L68
-                if (r20 == 0) goto L6d
-                if (r21 == 0) goto L68
+                if (r8 != 0) goto L6e
+                if (r7 != r9) goto L69
+                if (r20 == 0) goto L6e
+                if (r21 == 0) goto L69
                 r8 = r14
                 boolean r10 = r14.isPercentEncoded(r1, r5, r2)
-                if (r10 != 0) goto L69
-                goto L72
-            L68:
-                r8 = r14
+                if (r10 != 0) goto L6a
+                goto L73
             L69:
-                r15.writeUtf8CodePoint(r7)
-                goto Lb8
-            L6d:
                 r8 = r14
-                goto L72
-            L6f:
+            L6a:
+                r15.writeUtf8CodePoint(r7)
+                goto Lb9
+            L6e:
+                r8 = r14
+                goto L73
+            L70:
                 r8 = r14
                 r12 = r19
-            L72:
-                if (r6 != 0) goto L79
+            L73:
+                if (r6 != 0) goto L7a
                 okio.Buffer r6 = new okio.Buffer
                 r6.<init>()
-            L79:
-                if (r3 == 0) goto L8d
+            L7a:
+                if (r3 == 0) goto L8e
                 java.nio.charset.Charset r10 = java.nio.charset.StandardCharsets.UTF_8
                 boolean r10 = kotlin.jvm.internal.Intrinsics.areEqual(r3, r10)
-                if (r10 == 0) goto L84
-                goto L8d
-            L84:
+                if (r10 == 0) goto L85
+                goto L8e
+            L85:
                 int r10 = java.lang.Character.charCount(r7)
                 int r10 = r10 + r5
                 r6.writeString(r1, r5, r10, r3)
-                goto L90
-            L8d:
+                goto L91
+            L8e:
                 r6.writeUtf8CodePoint(r7)
-            L90:
+            L91:
                 boolean r10 = r6.exhausted()
-                if (r10 != 0) goto Lb8
+                if (r10 != 0) goto Lb9
                 byte r10 = r6.readByte()
                 r10 = r10 & 255(0xff, float:3.57E-43)
                 r15.writeByte(r9)
@@ -1299,12 +1299,12 @@ public final class HttpUrl {
                 r10 = r10 & 15
                 char r10 = r11[r10]
                 r15.writeByte(r10)
-                goto L90
-            Lb8:
+                goto L91
+            Lb9:
                 int r7 = java.lang.Character.charCount(r7)
                 int r5 = r5 + r7
                 goto Lb
-            Lbf:
+            Lc0:
                 r8 = r14
                 return
             */

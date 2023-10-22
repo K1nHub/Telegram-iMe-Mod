@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field protected final a:Lj$/util/s;
+.field protected final a:Lj$/util/Spliterator;
 
 .field protected final b:Z
 
@@ -13,12 +13,12 @@
 
 
 # direct methods
-.method constructor <init>(Lj$/util/s;JJ)V
+.method constructor <init>(Lj$/util/Spliterator;JJ)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/J4;->a:Lj$/util/Spliterator;
 
     const-wide/16 v0, 0x0
 
@@ -57,12 +57,12 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/s;Lj$/util/stream/J4;)V
+.method constructor <init>(Lj$/util/Spliterator;Lj$/util/stream/J4;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
+    iput-object p1, p0, Lj$/util/stream/J4;->a:Lj$/util/Spliterator;
 
     iget-boolean p1, p2, Lj$/util/stream/J4;->b:Z
 
@@ -84,9 +84,9 @@
 .method public final characteristics()I
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->characteristics()I
+    invoke-interface {v0}, Lj$/util/Spliterator;->characteristics()I
 
     move-result v0
 
@@ -98,9 +98,9 @@
 .method public final estimateSize()J
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
     move-result-wide v0
 
@@ -188,7 +188,7 @@
     return-wide v4
 .end method
 
-.method protected abstract q(Lj$/util/s;)Lj$/util/s;
+.method protected abstract q(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 .end method
 
 .method protected final r()I
@@ -226,43 +226,55 @@
     return v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$a;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$a;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$a;
+    check-cast v0, Lj$/util/Spliterator$a;
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$b;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$b;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$b;
+    check-cast v0, Lj$/util/Spliterator$b;
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/s$c;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$c;
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/s;
+    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    check-cast v0, Lj$/util/s$c;
+    check-cast v0, Lj$/util/Spliterator$c;
 
     return-object v0
 .end method
 
-.method public final trySplit()Lj$/util/s;
+.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/Spliterator$d;
+
+    return-object v0
+.end method
+
+.method public final trySplit()Lj$/util/Spliterator;
     .locals 4
 
     iget-object v0, p0, Lj$/util/stream/J4;->d:Ljava/util/concurrent/atomic/AtomicLong;
@@ -282,9 +294,9 @@
     return-object v1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
+    iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/Spliterator;
 
-    invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
@@ -293,22 +305,10 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0, v0}, Lj$/util/stream/J4;->q(Lj$/util/s;)Lj$/util/s;
+    invoke-virtual {p0, v0}, Lj$/util/stream/J4;->q(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
     move-result-object v1
 
     :goto_0
     return-object v1
-.end method
-
-.method public bridge synthetic trySplit()Lj$/util/t;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/J4;->trySplit()Lj$/util/s;
-
-    move-result-object v0
-
-    check-cast v0, Lj$/util/t;
-
-    return-object v0
 .end method

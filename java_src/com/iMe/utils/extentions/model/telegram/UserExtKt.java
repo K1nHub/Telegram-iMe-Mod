@@ -5,7 +5,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: UserExt.kt */
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class UserExtKt {
     public static final String getFullName(TLRPC$User tLRPC$User) {
         Intrinsics.checkNotNullParameter(tLRPC$User, "<this>");
